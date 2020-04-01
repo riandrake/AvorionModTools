@@ -149,6 +149,7 @@ class StubGenerator:
         
         properties = []
         functions = []
+        enums = {}
 
         namespace = None
 
@@ -159,6 +160,7 @@ class StubGenerator:
         for line in lines:
             if line.startswith('--'):
                 continue # ignore this line, it's just pseudocode
+            
             if not properties and line.startswith('property'):
 
                 # If there's a function before some properties, it's definitely the namespace
@@ -184,12 +186,16 @@ class StubGenerator:
                     namespace = parsed.name
 
                 functions.append(parsed)
+            elif 'enum' in line:
+                values = [line.strip() for line in line.split('\n') if line.strip()]
+                name = values[0].split()[-1]
+                enums[name] = [value for value in values if value.isalnum()]
             else:
-                pass # unhandled
+                print('Unhandled:', line, file.name)
 
         luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
         with open((stubs / luaName), 'w') as writer:
-            print(luaName)
+            #print(luaName)
             if properties:
                 assert(namespace)
                 writer.write(f'{namespace} = {{\n')
@@ -205,6 +211,18 @@ class StubGenerator:
                 writer.write(f'\t{last.name} = nil -- {last.remark}{last.type}\n')
 
                 writer.write('}\n\n')
+
+            if enums:
+                for enum, values in enums.items():
+                    writer.write(f'{enum} = {{\n')
+
+                    for idx, value in enumerate(values[:-1]):
+                        writer.write(f'\t{value} = {idx},\n')
+
+                    idx = idx + 1
+                    writer.write(f'\t{values[idx]} = {idx}\n')
+
+                    writer.write('}\n\n')
 
             for function in functions:
                 writer.write(function.remarks)
