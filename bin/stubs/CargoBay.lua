@@ -1,24 +1,27 @@
-CargoBay = {
-	alwaysStoreAtLeastOne = true, -- bool
-	cargoHold = 0.0, -- float
-	cargoVolume = 0.0, -- [read-only] float
-	empty = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	fixedSize = true, -- bool
-	freeSpace = 0.0, -- [read-only] float
-	numCargos = 0, -- [read-only] int
-	pickUpDangerous = true, -- bool
-	pickUpDefaults = true, -- bool
-	pickUpIllegal = true, -- bool
-	pickUpOres = true, -- bool
-	pickUpScrap = true, -- bool
-	pickUpStolen = true -- bool
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of CargoBay
-setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
+function CargoBay(id)
+	o = {
+		alwaysStoreAtLeastOne = true, -- bool
+		cargoHold = 0.0, -- float
+		cargoVolume = 0.0, -- [read-only] float
+		empty = true, -- [read-only] bool
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		fixedSize = true, -- bool
+		freeSpace = 0.0, -- [read-only] float
+		numCargos = 0, -- [read-only] int
+		pickUpDangerous = true, -- bool
+		pickUpDefaults = true, -- bool
+		pickUpIllegal = true, -- bool
+		pickUpOres = true, -- bool
+		pickUpScrap = true, -- bool
+		pickUpStolen = true -- bool
+	}
+
+	setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
+	return o
+end
 
 -- @return nothing
 function CargoBay.add(other)

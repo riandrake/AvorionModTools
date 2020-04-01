@@ -1,9 +1,12 @@
-NamedFormat = {
-	text = "" -- [read-only] string
-}
-
 -- @return A new instance of NamedFormat
-setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
+function NamedFormat(string, MapType)
+	o = {
+		text = "" -- [read-only] string
+	}
+
+	setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
+	return o
+end
 
 function NamedFormat.arguments()
 	return {"", PluralForm()}

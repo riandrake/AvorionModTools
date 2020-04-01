@@ -1,10 +1,13 @@
-Format = {
-	empty = true, -- [read-only] bool
-	text = "" -- [read-only] string
-}
-
 -- @return A new instance of Format
-setmetatable(Format, {__call = function(self, text, args) return Format end})
+function Format(text, args)
+	o = {
+		empty = true, -- [read-only] bool
+		text = "" -- [read-only] string
+	}
+
+	setmetatable(Format, {__call = function(self, text, args) return Format end})
+	return o
+end
 
 -- @return nothing
 function Format.add()

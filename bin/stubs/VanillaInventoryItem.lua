@@ -1,22 +1,25 @@
-VanillaInventoryItem = {
-	boundFaction = 0, -- int
-	droppable = true, -- bool
-	favorite = true, -- bool
-	icon = "", -- string
-	iconColor = Color(), -- Color
-	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-	name = "", -- string
-	price = 0, -- int
-	rarity = Rarity(), -- Rarity
-	recent = true, -- bool
-	stackable = true, -- bool
-	tradeable = true, -- bool
-	trash = true -- bool
-}
-
 -- This is the default constructor of VanillaInventoryItem. No further arguments are required.
 -- @return A new instance of VanillaInventoryItem
-setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
+function VanillaInventoryItem()
+	o = {
+		boundFaction = 0, -- int
+		droppable = true, -- bool
+		favorite = true, -- bool
+		icon = "", -- string
+		iconColor = Color(), -- Color
+		itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
+		name = "", -- string
+		price = 0, -- int
+		rarity = Rarity(), -- Rarity
+		recent = true, -- bool
+		stackable = true, -- bool
+		tradeable = true, -- bool
+		trash = true -- bool
+	}
+
+	setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
+	return o
+end
 
 function VanillaInventoryItem.__eq(other)
 	return true

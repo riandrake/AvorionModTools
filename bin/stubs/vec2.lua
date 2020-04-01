@@ -1,11 +1,14 @@
-vec2 = {
-	x = 0.0, -- float
-	y = 0.0 -- float
-}
-
 -- @param x - y
 -- @return A new instance of vec2
-setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
+function vec2(x, y)
+	o = {
+		x = 0.0, -- float
+		y = 0.0 -- float
+	}
+
+	setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
+	return o
+end
 
 function vec2.__add(other)
 	return vec2()

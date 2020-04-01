@@ -1,20 +1,23 @@
-SystemUpgradeTemplate = {
-	favorite = true, -- bool
-	icon = "", -- [read-only] string
-	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-	name = "", -- [read-only] string
-	price = 0, -- [read-only] int
-	rarity = Rarity(), -- Rarity
-	recent = true, -- bool
-	script = "", -- string
-	seed = Seed(), -- Seed
-	stackable = true, -- [read-only] bool
-	tooltip = UserObject(), -- [read-only] UserObject
-	trash = true -- bool
-}
-
 -- @return A new instance of SystemUpgradeTemplate
-setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
+function SystemUpgradeTemplate(script, rarity, seed)
+	o = {
+		favorite = true, -- bool
+		icon = "", -- [read-only] string
+		itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
+		name = "", -- [read-only] string
+		price = 0, -- [read-only] int
+		rarity = Rarity(), -- Rarity
+		recent = true, -- bool
+		script = "", -- string
+		seed = Seed(), -- Seed
+		stackable = true, -- [read-only] bool
+		tooltip = UserObject(), -- [read-only] UserObject
+		trash = true -- bool
+	}
+
+	setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
+	return o
+end
 
 function SystemUpgradeTemplate.__eq(other)
 	return true

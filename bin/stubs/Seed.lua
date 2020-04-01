@@ -1,10 +1,13 @@
-Seed = {
-	int32 = 0, -- [read-only] int
-	value = 0.0 -- double
-}
-
 -- @return A new instance of Seed
-setmetatable(Seed, {__call = function(self, _in) return Seed end})
+function Seed(_in)
+	o = {
+		int32 = 0, -- [read-only] int
+		value = 0.0 -- double
+	}
+
+	setmetatable(Seed, {__call = function(self, _in) return Seed end})
+	return o
+end
 
 function Seed.__add(other)
 	return Seed()

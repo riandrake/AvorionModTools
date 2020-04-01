@@ -1,14 +1,17 @@
-ShipSystem = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	maxSlots = 0, -- [read-only] unsigned int
-	numSlots = 0, -- [read-only] unsigned int
-	numUpgrades = 0 -- [read-only] unsigned int
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ShipSystem
-setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
+function ShipSystem(id)
+	o = {
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		maxSlots = 0, -- [read-only] unsigned int
+		numSlots = 0, -- [read-only] unsigned int
+		numUpgrades = 0 -- [read-only] unsigned int
+	}
+
+	setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
+	return o
+end
 
 function ShipSystem.addUpgrade(upgrade, permanent)
 	return 0

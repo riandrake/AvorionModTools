@@ -1,13 +1,16 @@
-vec3 = {
-	x = 0.0, -- float
-	y = 0.0, -- float
-	z = 0.0 -- float
-}
-
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of vec3
-setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
+function vec3(x, y, z)
+	o = {
+		x = 0.0, -- float
+		y = 0.0, -- float
+		z = 0.0 -- float
+	}
+
+	setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
+	return o
+end
 
 function vec3.__add(other)
 	return vec3()

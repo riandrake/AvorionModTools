@@ -1,27 +1,30 @@
-StatisticsBar = {
-	center = vec2(), -- vec2
-	color = Color(), -- [write-only] Color
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	name = "", -- [write-only] string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	value = 0.0, -- [write-only] float
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
 -- @return A new instance of StatisticsBar
-setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
+function StatisticsBar(index)
+	o = {
+		center = vec2(), -- vec2
+		color = Color(), -- [write-only] Color
+		height = 0.0, -- float
+		index = 0, -- [read-only] int
+		layer = 0, -- int
+		localCenter = vec2(), -- [read-only] vec2
+		localPosition = vec2(), -- [read-only] vec2
+		localRect = Rect(), -- [read-only] Rect
+		lower = vec2(), -- vec2
+		mouseOver = true, -- [read-only] bool
+		name = "", -- [write-only] string
+		position = vec2(), -- vec2
+		rect = Rect(), -- Rect
+		size = vec2(), -- vec2
+		tooltip = nil, -- var
+		upper = vec2(), -- vec2
+		value = 0.0, -- [write-only] float
+		visible = true, -- bool
+		width = 0.0 -- float
+	}
+
+	setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
+	return o
+end
 
 -- @return nothing
 function StatisticsBar.setRange(minRange, maxRange)

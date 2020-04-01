@@ -1,14 +1,17 @@
-vec4 = {
-	w = 0.0, -- float
-	x = 0.0, -- float
-	y = 0.0, -- float
-	z = 0.0 -- float
-}
-
 -- @param x - y
 -- @param z - w
 -- @return A new instance of vec4
-setmetatable(vec4, {__call = function(self, x, y, z, w) return vec4 end})
+function vec4(x, y, z, w)
+	o = {
+		w = 0.0, -- float
+		x = 0.0, -- float
+		y = 0.0, -- float
+		z = 0.0 -- float
+	}
+
+	setmetatable(vec4, {__call = function(self, x, y, z, w) return vec4 end})
+	return o
+end
 
 function vec4.__add(other)
 	return vec4()

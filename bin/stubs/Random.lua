@@ -1,8 +1,11 @@
-Random = {
-}
-
 -- @return A new instance of Random
-setmetatable(Random, {__call = function(self, seed) return Random end})
+function Random(seed)
+	o = {
+	}
+
+	setmetatable(Random, {__call = function(self, seed) return Random end})
+	return o
+end
 
 function Random.createSeed()
 	return Seed()

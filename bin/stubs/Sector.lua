@@ -1,13 +1,16 @@
-Sector = {
-	name = "", -- string
-	numEntities = 0, -- [read-only] unsigned int
-	numPlayers = 0, -- [read-only] unsigned int
-	pvpDamage = true, -- bool
-	seed = Seed() -- [read-only] Seed
-}
-
 -- @return A new instance of Sector
-setmetatable(Sector, {__call = function(self) return Sector end})
+function Sector()
+	o = {
+		name = "", -- string
+		numEntities = 0, -- [read-only] unsigned int
+		numPlayers = 0, -- [read-only] unsigned int
+		pvpDamage = true, -- bool
+		seed = Seed() -- [read-only] Seed
+	}
+
+	setmetatable(Sector, {__call = function(self) return Sector end})
+	return o
+end
 
 function Sector.addScript()
 	return 0

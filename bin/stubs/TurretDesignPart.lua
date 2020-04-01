@@ -1,9 +1,12 @@
-TurretDesignPart = {
-}
-
 -- This is the default constructor of TurretDesignPart. No further arguments are required.
 -- @return A new instance of TurretDesignPart
-setmetatable(TurretDesignPart, {__call = function(self) return TurretDesignPart end})
+function TurretDesignPart()
+	o = {
+	}
+
+	setmetatable(TurretDesignPart, {__call = function(self) return TurretDesignPart end})
+	return o
+end
 
 function TurretDesignPart.getMovePlan()
 	return BlockPlan()

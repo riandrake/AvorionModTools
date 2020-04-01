@@ -1,38 +1,41 @@
-InputWindow = {
-	cancelButton = Button(), -- [read-only] Button
-	caption = "", -- string
-	center = vec2(), -- vec2
-	clickThrough = true, -- bool
-	closeableWithEscape = true, -- bool
-	consumeAllEvents = true, -- bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	label = Label(), -- [read-only] Label
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	moveable = true, -- bool
-	okButton = Button(), -- [read-only] Button
-	onCancelFunction = "", -- string
-	onOKFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	showCloseButton = true, -- bool
-	size = vec2(), -- vec2
-	text = "", -- [read-only] string
-	textBox = TextBox(), -- [read-only] TextBox
-	tooltip = nil, -- var
-	transparency = 0.0, -- float
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
 -- @return A new instance of InputWindow
-setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
+function InputWindow(index)
+	o = {
+		cancelButton = Button(), -- [read-only] Button
+		caption = "", -- string
+		center = vec2(), -- vec2
+		clickThrough = true, -- bool
+		closeableWithEscape = true, -- bool
+		consumeAllEvents = true, -- bool
+		height = 0.0, -- float
+		index = 0, -- [read-only] int
+		label = Label(), -- [read-only] Label
+		layer = 0, -- int
+		localCenter = vec2(), -- [read-only] vec2
+		localPosition = vec2(), -- [read-only] vec2
+		localRect = Rect(), -- [read-only] Rect
+		lower = vec2(), -- vec2
+		mouseOver = true, -- [read-only] bool
+		moveable = true, -- bool
+		okButton = Button(), -- [read-only] Button
+		onCancelFunction = "", -- string
+		onOKFunction = "", -- string
+		position = vec2(), -- vec2
+		rect = Rect(), -- Rect
+		showCloseButton = true, -- bool
+		size = vec2(), -- vec2
+		text = "", -- [read-only] string
+		textBox = TextBox(), -- [read-only] TextBox
+		tooltip = nil, -- var
+		transparency = 0.0, -- float
+		upper = vec2(), -- vec2
+		visible = true, -- bool
+		width = 0.0 -- float
+	}
+
+	setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
+	return o
+end
 
 -- @return nothing
 function InputWindow.show(caption)

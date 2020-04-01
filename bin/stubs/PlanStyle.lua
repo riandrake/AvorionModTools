@@ -1,15 +1,18 @@
-PlanStyle = {
-	additionalFeatures = 0, -- int
-	balanceRotation = true, -- bool
-	forbiddenFeatures = 0, -- int
-	requiredFeatures = 0, -- int
-	scaleRecommendation = true, -- bool
-	seed = "", -- string
-	settings = nil -- var
-}
-
 -- @return A new instance of PlanStyle
-setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
+function PlanStyle()
+	o = {
+		additionalFeatures = 0, -- int
+		balanceRotation = true, -- bool
+		forbiddenFeatures = 0, -- int
+		requiredFeatures = 0, -- int
+		scaleRecommendation = true, -- bool
+		seed = "", -- string
+		settings = nil -- var
+	}
+
+	setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
+	return o
+end
 
 -- Adds a new stage to the style.
 -- @return nothing

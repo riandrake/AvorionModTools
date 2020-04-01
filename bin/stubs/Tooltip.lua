@@ -1,11 +1,14 @@
-Tooltip = {
-	icon = "", -- string
-	price = 0.0 -- double
-}
-
 -- This is the default constructor of Tooltip. No further arguments are required.
 -- @return A new instance of Tooltip
-setmetatable(Tooltip, {__call = function(self) return Tooltip end})
+function Tooltip()
+	o = {
+		icon = "", -- string
+		price = 0.0 -- double
+	}
+
+	setmetatable(Tooltip, {__call = function(self) return Tooltip end})
+	return o
+end
 
 -- @return nothing
 function Tooltip.addLine(line)

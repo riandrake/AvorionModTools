@@ -1,8 +1,11 @@
-UIRenderer = {
-}
-
 -- @return A new instance of UIRenderer
-setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
+function UIRenderer()
+	o = {
+	}
+
+	setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
+	return o
+end
 
 -- @return nothing
 function UIRenderer.display()

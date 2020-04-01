@@ -1,11 +1,14 @@
-GameInput = {
-	isMouseSteeringEnabled = true, -- [read-only] bool
-	isSteeringEnabled = true -- [read-only] bool
-}
-
 -- This is the default constructor of GameInput. No further arguments are required.
 -- @return A new instance of GameInput
-setmetatable(GameInput, {__call = function(self) return GameInput end})
+function GameInput()
+	o = {
+		isMouseSteeringEnabled = true, -- [read-only] bool
+		isSteeringEnabled = true -- [read-only] bool
+	}
+
+	setmetatable(GameInput, {__call = function(self) return GameInput end})
+	return o
+end
 
 function GameInput.getActionName(action)
 	return ""

@@ -1,29 +1,32 @@
-UIVerticalSplitter = {
-	inner = Rect(), -- [read-only] Rect
-	left = Rect(), -- [read-only] Rect
-	leftSize = 0, -- [write-only] int
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	ratio = 0.0, -- float
-	rect = Rect(), -- Rect
-	right = Rect(), -- [read-only] Rect
-	rightSize = 0 -- [write-only] int
-}
-
 -- @param rect - The rect to split
 -- @param padding - margin
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIVerticalSplitter
-setmetatable(UIVerticalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIVerticalSplitter end})
+function UIVerticalSplitter(rect, padding, margin, ratio)
+	o = {
+		inner = Rect(), -- [read-only] Rect
+		left = Rect(), -- [read-only] Rect
+		leftSize = 0, -- [write-only] int
+		margin = 0, -- [write-only] int
+		marginBottom = 0, -- int
+		marginLeft = 0, -- int
+		marginRight = 0, -- int
+		marginTop = 0, -- int
+		padding = 0, -- [write-only] int
+		paddingBottom = 0, -- int
+		paddingInside = 0, -- int
+		paddingLeft = 0, -- int
+		paddingRight = 0, -- int
+		paddingTop = 0, -- int
+		ratio = 0.0, -- float
+		rect = Rect(), -- Rect
+		right = Rect(), -- [read-only] Rect
+		rightSize = 0 -- [write-only] int
+	}
+
+	setmetatable(UIVerticalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIVerticalSplitter end})
+	return o
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

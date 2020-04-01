@@ -1,9 +1,12 @@
-QuadTree = {
-	empty = true -- [read-only] bool
-}
-
 -- @return A new instance of QuadTree
-setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
+function QuadTree(min, max, maxLevel)
+	o = {
+		empty = true -- [read-only] bool
+	}
+
+	setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
+	return o
+end
 
 function QuadTree.get(center, radius)
 	return nil

@@ -1,11 +1,12 @@
-Galaxy = {
-}
-
 -- @callback
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created
-function Galaxy.onAllianceCreated(index)
-	return nil
+function onAllianceCreated(index)
+	o = {
+	}
+
+	setmetatable(onAllianceCreated, {__call = function(self, index) return onAllianceCreated end})
+	return o
 end
 
 -- @callback

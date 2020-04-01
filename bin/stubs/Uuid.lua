@@ -1,12 +1,15 @@
-Uuid = {
-	isNil = true, -- [read-only] bool
-	number = 0, -- [read-only] int
-	string = "", -- [read-only] string
-	value = "" -- [read-only] string
-}
-
 -- @return A new instance of Uuid
-setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
+function Uuid(uuid)
+	o = {
+		isNil = true, -- [read-only] bool
+		number = 0, -- [read-only] int
+		string = "", -- [read-only] string
+		value = "" -- [read-only] string
+	}
+
+	setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
+	return o
+end
 
 function Uuid.__eq(other)
 	return true

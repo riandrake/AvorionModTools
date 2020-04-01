@@ -1,11 +1,14 @@
-Music = {
-	autoPlay = true, -- bool
-	currentTrack = nil, -- [read-only] var
-	isPlaying = true -- [read-only] bool
-}
-
 -- @return A new instance of Music
-setmetatable(Music, {__call = function(self) return Music end})
+function Music()
+	o = {
+		autoPlay = true, -- bool
+		currentTrack = nil, -- [read-only] var
+		isPlaying = true -- [read-only] bool
+	}
+
+	setmetatable(Music, {__call = function(self) return Music end})
+	return o
+end
 
 -- @return nothing
 function Music.fadeOut(time)

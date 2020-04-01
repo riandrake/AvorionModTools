@@ -1,11 +1,14 @@
-CraftDesign = {
-	empty = true, -- [read-only] bool
-	numTurrets = nil -- [read-only] Box getCoaxialTurretDesignBoundingBox(float
-}
-
 -- This is the default constructor of CraftDesign. No further arguments are required.
 -- @return A new instance of CraftDesign
-setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
+function CraftDesign()
+	o = {
+		empty = true, -- [read-only] bool
+		numTurrets = nil -- [read-only] Box getCoaxialTurretDesignBoundingBox(float
+	}
+
+	setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
+	return o
+end
 
 function CraftDesign.getMovePlan()
 	return BlockPlan()

@@ -1,9 +1,12 @@
-PlayerWindow = {
-	onSelectedFunction = "" -- string
-}
-
 -- @return A new instance of PlayerWindow
-setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
+function PlayerWindow()
+	o = {
+		onSelectedFunction = "" -- string
+	}
+
+	setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
+	return o
+end
 
 -- @return nothing
 function PlayerWindow.activateAllTabs()

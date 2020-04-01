@@ -1,15 +1,18 @@
-Matrix = {
-	look = vec3(), -- vec3
-	pos = vec3(), -- vec3
-	position = vec3(), -- vec3
-	right = vec3(), -- vec3
-	translation = vec3(), -- vec3
-	up = vec3() -- vec3
-}
-
 -- This is the default constructor of Matrix. No further arguments are required.
 -- @return A new instance of Matrix
-setmetatable(Matrix, {__call = function(self) return Matrix end})
+function Matrix()
+	o = {
+		look = vec3(), -- vec3
+		pos = vec3(), -- vec3
+		position = vec3(), -- vec3
+		right = vec3(), -- vec3
+		translation = vec3(), -- vec3
+		up = vec3() -- vec3
+	}
+
+	setmetatable(Matrix, {__call = function(self) return Matrix end})
+	return o
+end
 
 function Matrix.__mul(m)
 	return Matrix()

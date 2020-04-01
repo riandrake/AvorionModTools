@@ -1,26 +1,29 @@
-UIVerticalMultiSplitter = {
-	inner = Rect(), -- [read-only] Rect
-	left = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect(), -- Rect
-	right = Rect() -- [read-only] Rect
-}
-
 -- @param rect - The rect to split
 -- @param padding - margin
 -- @param splits - The number of splits performed
 -- @return A new instance of UIVerticalMultiSplitter
-setmetatable(UIVerticalMultiSplitter, {__call = function(self, rect, padding, margin, splits) return UIVerticalMultiSplitter end})
+function UIVerticalMultiSplitter(rect, padding, margin, splits)
+	o = {
+		inner = Rect(), -- [read-only] Rect
+		left = Rect(), -- [read-only] Rect
+		margin = 0, -- [write-only] int
+		marginBottom = 0, -- int
+		marginLeft = 0, -- int
+		marginRight = 0, -- int
+		marginTop = 0, -- int
+		padding = 0, -- [write-only] int
+		paddingBottom = 0, -- int
+		paddingInside = 0, -- int
+		paddingLeft = 0, -- int
+		paddingRight = 0, -- int
+		paddingTop = 0, -- int
+		rect = Rect(), -- Rect
+		right = Rect() -- [read-only] Rect
+	}
+
+	setmetatable(UIVerticalMultiSplitter, {__call = function(self, rect, padding, margin, splits) return UIVerticalMultiSplitter end})
+	return o
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

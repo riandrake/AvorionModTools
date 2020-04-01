@@ -1,12 +1,15 @@
-Rarity = {
-	color = Color(), -- [read-only] Color
-	name = "", -- [read-only] string
-	type = 0, -- int
-	value = 0 -- int
-}
-
 -- @return A new instance of Rarity
-setmetatable(Rarity, {__call = function(self, value) return Rarity end})
+function Rarity(value)
+	o = {
+		color = Color(), -- [read-only] Color
+		name = "", -- [read-only] string
+		type = 0, -- int
+		value = 0 -- int
+	}
+
+	setmetatable(Rarity, {__call = function(self, value) return Rarity end})
+	return o
+end
 
 function Rarity.__eq(other)
 	return true

@@ -1,8 +1,11 @@
-DebugInfo = {
-}
-
 -- @return A new instance of DebugInfo
-setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
+function DebugInfo()
+	o = {
+	}
+
+	setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
+	return o
+end
 
 function DebugInfo.getEndingLog()
 	return ""

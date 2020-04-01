@@ -1,10 +1,13 @@
-Mouse = {
-	position = vec2() -- vec2
-}
-
 -- This is the default constructor of Mouse. No further arguments are required.
 -- @return A new instance of Mouse
-setmetatable(Mouse, {__call = function(self) return Mouse end})
+function Mouse()
+	o = {
+		position = vec2() -- vec2
+	}
+
+	setmetatable(Mouse, {__call = function(self) return Mouse end})
+	return o
+end
 
 function Mouse.mouseDown(button)
 	return true

@@ -1,10 +1,13 @@
-TurretDesign = {
-	empty = true -- [read-only] bool
-}
-
 -- This is the default constructor of TurretDesign. No further arguments are required.
 -- @return A new instance of TurretDesign
-setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
+function TurretDesign()
+	o = {
+		empty = true -- [read-only] bool
+	}
+
+	setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
+	return o
+end
 
 function TurretDesign.getBarrels()
 	return TurretDesignPart()

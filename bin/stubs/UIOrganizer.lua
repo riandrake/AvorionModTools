@@ -1,23 +1,26 @@
-UIOrganizer = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
 -- Expects either a Rect specifying the rect of this UI organizer for parameter a and nil for b, or a vec2 for a and a vec2 for b, specifying the lower and upper bounds for the UI organizer rect. Examples:  UIOrganizer(Rect(0, 20, 150, 250)) UIOrganizer(vec2(0, 20), vec2(150, 250))
 -- @param a - Either a Rect and b is nil, or a vec2 and b is a vec2, too
 -- @param b - Nil if a is a Rect, or a vec2 if a is a vec2
 -- @return A new instance of UIOrganizer
-setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
+function UIOrganizer(a, b)
+	o = {
+		inner = Rect(), -- [read-only] Rect
+		margin = 0, -- [write-only] int
+		marginBottom = 0, -- int
+		marginLeft = 0, -- int
+		marginRight = 0, -- int
+		marginTop = 0, -- int
+		padding = 0, -- [write-only] int
+		paddingBottom = 0, -- int
+		paddingLeft = 0, -- int
+		paddingRight = 0, -- int
+		paddingTop = 0, -- int
+		rect = Rect() -- Rect
+	}
+
+	setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
+	return o
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

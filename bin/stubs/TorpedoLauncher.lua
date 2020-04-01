@@ -1,17 +1,20 @@
-TorpedoLauncher = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	freeStorage = 0.0, -- [read-only] float
-	maxShafts = 0, -- [read-only] int
-	maximumStorage = 0.0, -- [read-only] float
-	numShafts = 0, -- [read-only] unsigned int
-	numTorpedoes = 0, -- [read-only] unsigned int
-	occupiedStorage = 0.0 -- [read-only] float
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of TorpedoLauncher
-setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
+function TorpedoLauncher(id)
+	o = {
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		freeStorage = 0.0, -- [read-only] float
+		maxShafts = 0, -- [read-only] int
+		maximumStorage = 0.0, -- [read-only] float
+		numShafts = 0, -- [read-only] unsigned int
+		numTorpedoes = 0, -- [read-only] unsigned int
+		occupiedStorage = 0.0 -- [read-only] float
+	}
+
+	setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
+	return o
+end
 
 function TorpedoLauncher.addTorpedo(torpedo, shaft)
 	return true

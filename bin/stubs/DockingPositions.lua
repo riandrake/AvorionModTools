@@ -1,10 +1,13 @@
-DockingPositions = {
-	alwaysDocked = true -- bool
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of DockingPositions
-setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
+function DockingPositions(id)
+	o = {
+		alwaysDocked = true -- bool
+	}
+
+	setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
+	return o
+end
 
 -- @return nothing
 function DockingPositions.deleteRemovableObstacles()

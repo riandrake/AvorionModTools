@@ -1,13 +1,16 @@
-Inventory = {
-	empty = true, -- [read-only] bool
-	items = 0, -- [read-only] unsigned int
-	maxSlots = 0, -- [read-only] unsigned int
-	occupiedSlots = 0 -- [read-only] unsigned int
-}
-
 -- This is the default constructor of Inventory. No further arguments are required.
 -- @return A new instance of Inventory
-setmetatable(Inventory, {__call = function(self) return Inventory end})
+function Inventory()
+	o = {
+		empty = true, -- [read-only] bool
+		items = 0, -- [read-only] unsigned int
+		maxSlots = 0, -- [read-only] unsigned int
+		occupiedSlots = 0 -- [read-only] unsigned int
+	}
+
+	setmetatable(Inventory, {__call = function(self) return Inventory end})
+	return o
+end
 
 function Inventory.add(item, recent)
 	return 0

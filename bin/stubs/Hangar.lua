@@ -1,20 +1,23 @@
-Hangar = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	freeSpace = 0.0, -- [read-only] float
-	maxFighters = 0, -- [read-only] int
-	maxSquads = 0, -- [read-only] int
-	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
-	occupiedSpace = 0.0, -- [read-only] float
-	producing = true, -- [read-only] bool
-	space = 0.0 -- [read-only] float
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Hangar
-setmetatable(Hangar, {__call = function(self, id) return Hangar end})
+function Hangar(id)
+	o = {
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		freeSpace = 0.0, -- [read-only] float
+		maxFighters = 0, -- [read-only] int
+		maxSquads = 0, -- [read-only] int
+		minFighters = 0, -- [read-only] int
+		numFighters = 0, -- [read-only] unsigned int
+		numSquads = 0, -- [read-only] unsigned int
+		occupiedSpace = 0.0, -- [read-only] float
+		producing = true, -- [read-only] bool
+		space = 0.0 -- [read-only] float
+	}
+
+	setmetatable(Hangar, {__call = function(self, id) return Hangar end})
+	return o
+end
 
 -- @return nothing
 function Hangar.addFighter(squad, fighter)

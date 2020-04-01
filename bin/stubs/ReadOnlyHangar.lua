@@ -1,20 +1,23 @@
-ReadOnlyHangar = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	freeSpace = 0.0, -- [read-only] float
-	maxFighters = 0, -- [read-only] int
-	maxSquads = 0, -- [read-only] int
-	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
-	occupiedSpace = 0.0, -- [read-only] float
-	producing = true, -- [read-only] bool
-	space = 0.0 -- [read-only] float
-}
-
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyHangar
-setmetatable(ReadOnlyHangar, {__call = function(self, id) return ReadOnlyHangar end})
+function ReadOnlyHangar(id)
+	o = {
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		freeSpace = 0.0, -- [read-only] float
+		maxFighters = 0, -- [read-only] int
+		maxSquads = 0, -- [read-only] int
+		minFighters = 0, -- [read-only] int
+		numFighters = 0, -- [read-only] unsigned int
+		numSquads = 0, -- [read-only] unsigned int
+		occupiedSpace = 0.0, -- [read-only] float
+		producing = true, -- [read-only] bool
+		space = 0.0 -- [read-only] float
+	}
+
+	setmetatable(ReadOnlyHangar, {__call = function(self, id) return ReadOnlyHangar end})
+	return o
+end
 
 function ReadOnlyHangar.canLand(entity)
 	return true

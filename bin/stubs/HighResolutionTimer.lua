@@ -1,13 +1,16 @@
-HighResolutionTimer = {
-	microseconds = 0, -- [read-only] int
-	milliseconds = 0, -- [read-only] int
-	running = true, -- [read-only] bool
-	seconds = 0.0, -- [read-only] double
-	secondsStr = "" -- [read-only] string
-}
-
 -- @return A new instance of HighResolutionTimer
-setmetatable(HighResolutionTimer, {__call = function(self) return HighResolutionTimer end})
+function HighResolutionTimer()
+	o = {
+		microseconds = 0, -- [read-only] int
+		milliseconds = 0, -- [read-only] int
+		running = true, -- [read-only] bool
+		seconds = 0.0, -- [read-only] double
+		secondsStr = "" -- [read-only] string
+	}
+
+	setmetatable(HighResolutionTimer, {__call = function(self) return HighResolutionTimer end})
+	return o
+end
 
 -- @return nothing
 function HighResolutionTimer.reset()

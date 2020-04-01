@@ -1,11 +1,14 @@
-ivec2 = {
-	x = 0, -- int
-	y = 0 -- int
-}
-
 -- @param x - y
 -- @return A new instance of ivec2
-setmetatable(ivec2, {__call = function(self, x, y) return ivec2 end})
+function ivec2(x, y)
+	o = {
+		x = 0, -- int
+		y = 0 -- int
+	}
+
+	setmetatable(ivec2, {__call = function(self, x, y) return ivec2 end})
+	return o
+end
 
 function ivec2.__add(other)
 	return ivec2()

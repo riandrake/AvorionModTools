@@ -1,9 +1,12 @@
-ModManager = {
-	forceEnabledMods = true -- [read-only] bool
-}
-
 -- @return A new instance of ModManager
-setmetatable(ModManager, {__call = function(self) return ModManager end})
+function ModManager()
+	o = {
+		forceEnabledMods = true -- [read-only] bool
+	}
+
+	setmetatable(ModManager, {__call = function(self) return ModManager end})
+	return o
+end
 
 function ModManager.addMod(folder)
 	return nil

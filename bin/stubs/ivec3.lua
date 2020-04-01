@@ -1,13 +1,16 @@
-ivec3 = {
-	x = 0, -- int
-	y = 0, -- int
-	z = 0 -- int
-}
-
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of ivec3
-setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
+function ivec3(x, y, z)
+	o = {
+		x = 0, -- int
+		y = 0, -- int
+		z = 0 -- int
+	}
+
+	setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
+	return o
+end
 
 function ivec3.__add(other)
 	return ivec3()

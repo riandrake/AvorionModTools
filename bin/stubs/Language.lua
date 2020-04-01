@@ -1,10 +1,13 @@
-Language = {
-	apostrophes = true, -- bool
-	seed = Seed() -- [write-only] Seed
-}
-
 -- @return A new instance of Language
-setmetatable(Language, {__call = function(self, seed) return Language end})
+function Language(seed)
+	o = {
+		apostrophes = true, -- bool
+		seed = Seed() -- [write-only] Seed
+	}
+
+	setmetatable(Language, {__call = function(self, seed) return Language end})
+	return o
+end
 
 function Language.getConsonantSound()
 	return ""

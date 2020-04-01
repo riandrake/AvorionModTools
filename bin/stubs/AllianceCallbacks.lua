@@ -1,11 +1,12 @@
-Alliance = {
-}
-
 -- @callback
 -- Called whenever the auto-pay-crews property was changed
 -- @param autoPayCrews - The new setting for auto-pay-crews
-function Alliance.onAutoPayCrewsChanged(autoPayCrews)
-	return nil
+function onAutoPayCrewsChanged(autoPayCrews)
+	o = {
+	}
+
+	setmetatable(onAutoPayCrewsChanged, {__call = function(self, autoPayCrews) return onAutoPayCrewsChanged end})
+	return o
 end
 
 -- @callback

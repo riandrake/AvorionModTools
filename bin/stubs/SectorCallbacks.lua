@@ -1,12 +1,13 @@
-Sector = {
-}
-
 -- @callback
 -- Executed whenever the AI state of an entity changes
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
-function Sector.onAIStateChanged(entityId, state)
-	return nil
+function onAIStateChanged(entityId, state)
+	o = {
+	}
+
+	setmetatable(onAIStateChanged, {__call = function(self, entityId, state) return onAIStateChanged end})
+	return o
 end
 
 -- @callback

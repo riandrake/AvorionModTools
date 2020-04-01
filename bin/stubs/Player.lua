@@ -1,37 +1,40 @@
-Player = {
-	alliance = Alliance(), -- [read-only] Alliance
-	allianceIndex = nil, -- [read-only] var
-	alwaysAtWar = true, -- bool
-	baseName = "", -- [read-only] string
-	craft = Entity(), -- Entity
-	craftFaction = Faction(), -- [read-only] Faction
-	craftIndex = 0, -- Uuid
-	homeSectorUnknown = true, -- bool
-	id = PlayerId(), -- [read-only] PlayerId
-	index = 0, -- [read-only] int
-	infiniteResources = true, -- bool
-	initialRelations = 0, -- int
-	initialRelationsToPlayer = 0, -- int
-	isAIFaction = true, -- [read-only] bool
-	isAlliance = true, -- [read-only] bool
-	isPlayer = true, -- [read-only] bool
-	maxNumMails = 0, -- [read-only] unsigned int
-	money = 0, -- int
-	name = "", -- [read-only] string
-	numCrafts = 0, -- [read-only] unsigned int
-	numMails = 0, -- [read-only] unsigned int
-	numShips = 0, -- [read-only] int
-	numStations = 0, -- [read-only] int
-	playtime = 0, -- [read-only] unsigned int
-	stateForm = "", -- [read-only] string
-	staticRelationsToAI = true, -- bool
-	staticRelationsToAll = true, -- bool
-	staticRelationsToPlayers = true, -- bool
-	unformattedName = Format() -- [read-only] Format
-}
-
 -- @return A new instance of Player
-setmetatable(Player, {__call = function(self, index) return Player end})
+function Player(index)
+	o = {
+		alliance = Alliance(), -- [read-only] Alliance
+		allianceIndex = nil, -- [read-only] var
+		alwaysAtWar = true, -- bool
+		baseName = "", -- [read-only] string
+		craft = Entity(), -- Entity
+		craftFaction = Faction(), -- [read-only] Faction
+		craftIndex = 0, -- Uuid
+		homeSectorUnknown = true, -- bool
+		id = PlayerId(), -- [read-only] PlayerId
+		index = 0, -- [read-only] int
+		infiniteResources = true, -- bool
+		initialRelations = 0, -- int
+		initialRelationsToPlayer = 0, -- int
+		isAIFaction = true, -- [read-only] bool
+		isAlliance = true, -- [read-only] bool
+		isPlayer = true, -- [read-only] bool
+		maxNumMails = 0, -- [read-only] unsigned int
+		money = 0, -- int
+		name = "", -- [read-only] string
+		numCrafts = 0, -- [read-only] unsigned int
+		numMails = 0, -- [read-only] unsigned int
+		numShips = 0, -- [read-only] int
+		numStations = 0, -- [read-only] int
+		playtime = 0, -- [read-only] unsigned int
+		stateForm = "", -- [read-only] string
+		staticRelationsToAI = true, -- bool
+		staticRelationsToAll = true, -- bool
+		staticRelationsToPlayers = true, -- bool
+		unformattedName = Format() -- [read-only] Format
+	}
+
+	setmetatable(Player, {__call = function(self, index) return Player end})
+	return o
+end
 
 -- @return nothing
 function Player.addKnownSector(view)

@@ -1,18 +1,21 @@
-BlockPlan = {
-	accumulatingHealth = true, -- bool
-	centerOfMass = vec3(), -- [read-only] vec3
-	convex = true, -- bool
-	durability = 0.0, -- [read-only] double
-	numBlocks = 0, -- [read-only] int
-	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
-	rootIndex = nil, -- [read-only] var
-	volume = 0.0 -- [read-only] double
-}
-
 -- This is the default constructor of BlockPlan. No further arguments are required.
 -- @return A new instance of BlockPlan
-setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
+function BlockPlan()
+	o = {
+		accumulatingHealth = true, -- bool
+		centerOfMass = vec3(), -- [read-only] vec3
+		convex = true, -- bool
+		durability = 0.0, -- [read-only] double
+		numBlocks = 0, -- [read-only] int
+		radius = 0.0, -- [read-only] float
+		root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
+		rootIndex = nil, -- [read-only] var
+		volume = 0.0 -- [read-only] double
+	}
+
+	setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
+	return o
+end
 
 -- Add a new block to an existing plan.
 -- @param position - The position of the new

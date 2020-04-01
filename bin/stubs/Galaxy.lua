@@ -1,8 +1,11 @@
-Galaxy = {
-}
-
 -- @return A new instance of Galaxy
-setmetatable(Galaxy, {__call = function(self) return Galaxy end})
+function Galaxy()
+	o = {
+	}
+
+	setmetatable(Galaxy, {__call = function(self) return Galaxy end})
+	return o
+end
 
 function Galaxy.addScript()
 	return nil

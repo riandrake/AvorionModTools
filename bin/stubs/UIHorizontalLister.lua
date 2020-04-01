@@ -1,22 +1,25 @@
-UIHorizontalLister = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
 -- @param rect - The rect in which the lister aligns its elenents
 -- @param padding - margin
 -- @return A new instance of UIHorizontalLister
-setmetatable(UIHorizontalLister, {__call = function(self, rect, padding, margin) return UIHorizontalLister end})
+function UIHorizontalLister(rect, padding, margin)
+	o = {
+		inner = Rect(), -- [read-only] Rect
+		margin = 0, -- [write-only] int
+		marginBottom = 0, -- int
+		marginLeft = 0, -- int
+		marginRight = 0, -- int
+		marginTop = 0, -- int
+		padding = 0, -- [write-only] int
+		paddingBottom = 0, -- int
+		paddingLeft = 0, -- int
+		paddingRight = 0, -- int
+		paddingTop = 0, -- int
+		rect = Rect() -- Rect
+	}
+
+	setmetatable(UIHorizontalLister, {__call = function(self, rect, padding, margin) return UIHorizontalLister end})
+	return o
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

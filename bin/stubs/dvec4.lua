@@ -1,14 +1,17 @@
-dvec4 = {
-	w = 0.0, -- double
-	x = 0.0, -- double
-	y = 0.0, -- double
-	z = 0.0 -- double
-}
-
 -- @param x - y
 -- @param z - w
 -- @return A new instance of dvec4
-setmetatable(dvec4, {__call = function(self, x, y, z, w) return dvec4 end})
+function dvec4(x, y, z, w)
+	o = {
+		w = 0.0, -- double
+		x = 0.0, -- double
+		y = 0.0, -- double
+		z = 0.0 -- double
+	}
+
+	setmetatable(dvec4, {__call = function(self, x, y, z, w) return dvec4 end})
+	return o
+end
 
 function dvec4.__add(other)
 	return dvec4()

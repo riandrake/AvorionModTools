@@ -118,9 +118,32 @@ class ParsedFunction:
 
     def make_constructor(self):
         """ I have spoken """
-        additional_args = f', {self.arguments}' if self.arguments else ''
-        self.definition = f"setmetatable({self.name}, {{__call = function(self{additional_args}) return {self.name} end}})\n\n"
         self.is_constructor = True
+
+    def write_constructor(self, properties, writer):
+        writer.write(self.remarks)
+
+        writer.write(f'function {self.name}({self.arguments})\n')
+
+        writer.write(f'\to = {{\n')
+
+        if properties:
+            # Remove duplicates cleanly, then sort
+            properties = { property.name : property for property in properties }
+            properties = sorted(list(properties.values()))
+
+            for property in properties[:-1]:
+                writer.write(f'\t\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
+
+            last = properties[-1]
+            writer.write(f'\t\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
+
+        writer.write('\t}\n\n')
+
+        additional_args = f', {self.arguments}' if self.arguments else ''
+        writer.write(f"\tsetmetatable({self.name}, {{__call = function(self{additional_args}) return {self.name} end}})\n")
+        writer.write('\treturn o\n')
+        writer.write('end\n\n')
 
     def parse_return_value(self, return_value):
         """ Parse a return value for defaults """
@@ -296,23 +319,7 @@ class StubGenerator:
 
         luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
         with open((stubs / luaName), 'w') as writer:
-            #print(luaName)
-            if namespace:
-                writer.write(f'{namespace} = {{\n')
-
-                if properties:
-                    # Remove duplicates cleanly, then sort
-                    properties = { property.name : property for property in properties }
-                    properties = sorted(list(properties.values()))
-
-                    for property in properties[:-1]:
-                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
-
-                    last = properties[-1]
-                    writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
-
-                writer.write('}\n\n')
-
+            print(luaName)
             if enums:
                 for enum, values in enums.items():
                     writer.write(f'{enum} = {{\n')
@@ -325,9 +332,17 @@ class StubGenerator:
 
                     writer.write('}\n\n')
 
-            for function in functions:
-                writer.write(function.remarks)
-                writer.write(function.definition)
+            if namespace:
+                functions[0].write_constructor(properties, writer)
+
+                for function in functions[1:]:
+                    writer.write(function.remarks)
+                    writer.write(function.definition)
+
+            else:
+                for function in functions:
+                    writer.write(function.remarks)
+                    writer.write(function.definition)
 
         
         return 0

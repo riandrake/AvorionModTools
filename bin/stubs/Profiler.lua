@@ -1,10 +1,13 @@
-Profiler = {
-	printedSections = 0, -- int
-	started = true -- [read-only] bool
-}
-
 -- @return A new instance of Profiler
-setmetatable(Profiler, {__call = function(self, str) return Profiler end})
+function Profiler(str)
+	o = {
+		printedSections = 0, -- int
+		started = true -- [read-only] bool
+	}
+
+	setmetatable(Profiler, {__call = function(self, str) return Profiler end})
+	return o
+end
 
 function Profiler.__tostring()
 	return ""

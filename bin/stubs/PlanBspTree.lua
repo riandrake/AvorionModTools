@@ -1,8 +1,11 @@
-PlanBspTree = {
-}
-
 -- @return A new instance of PlanBspTree
-setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
+function PlanBspTree(plan)
+	o = {
+	}
+
+	setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
+	return o
+end
 
 function PlanBspTree.getBlocksByBox(box)
 	return 0

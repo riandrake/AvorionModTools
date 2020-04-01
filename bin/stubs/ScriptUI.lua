@@ -1,11 +1,14 @@
-ScriptUI = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0 -- [read-only] uuid
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ScriptUI
-setmetatable(ScriptUI, {__call = function(self, id) return ScriptUI end})
+function ScriptUI(id)
+	o = {
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0 -- [read-only] uuid
+	}
+
+	setmetatable(ScriptUI, {__call = function(self, id) return ScriptUI end})
+	return o
+end
 
 -- Adds a new dialog option to a dialog that is currently in construction. Dialogs are only in construction during the entity or player callback "onStartDialog". Invoking this function at any other point will do nothing.
 -- @param text - The text that will be displayed as a chooseable option in the dialog

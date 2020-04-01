@@ -1,23 +1,26 @@
-UsableInventoryItem = {
-	boundFaction = 0, -- int
-	depleteOnUse = true, -- bool
-	droppable = true, -- bool
-	favorite = true, -- bool
-	icon = "", -- string
-	iconColor = Color(), -- Color
-	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-	name = "", -- string
-	price = 0, -- int
-	rarity = Rarity(), -- Rarity
-	recent = true, -- bool
-	script = "", -- string
-	stackable = true, -- bool
-	tradeable = true, -- bool
-	trash = true -- bool
-}
-
 -- @return A new instance of UsableInventoryItem
-setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
+function UsableInventoryItem(script, rarity, values)
+	o = {
+		boundFaction = 0, -- int
+		depleteOnUse = true, -- bool
+		droppable = true, -- bool
+		favorite = true, -- bool
+		icon = "", -- string
+		iconColor = Color(), -- Color
+		itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
+		name = "", -- string
+		price = 0, -- int
+		rarity = Rarity(), -- Rarity
+		recent = true, -- bool
+		script = "", -- string
+		stackable = true, -- bool
+		tradeable = true, -- bool
+		trash = true -- bool
+	}
+
+	setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
+	return o
+end
 
 function UsableInventoryItem.__eq(other)
 	return true

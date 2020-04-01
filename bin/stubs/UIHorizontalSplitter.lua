@@ -1,29 +1,32 @@
-UIHorizontalSplitter = {
-	bottom = Rect(), -- [read-only] Rect
-	bottomSize = 0, -- [write-only] int
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	ratio = 0.0, -- float
-	rect = Rect(), -- Rect
-	top = Rect(), -- [read-only] Rect
-	topSize = 0 -- [write-only] int
-}
-
 -- @param rect - The rect to split
 -- @param padding - margin
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIHorizontalSplitter
-setmetatable(UIHorizontalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIHorizontalSplitter end})
+function UIHorizontalSplitter(rect, padding, margin, ratio)
+	o = {
+		bottom = Rect(), -- [read-only] Rect
+		bottomSize = 0, -- [write-only] int
+		inner = Rect(), -- [read-only] Rect
+		margin = 0, -- [write-only] int
+		marginBottom = 0, -- int
+		marginLeft = 0, -- int
+		marginRight = 0, -- int
+		marginTop = 0, -- int
+		padding = 0, -- [write-only] int
+		paddingBottom = 0, -- int
+		paddingInside = 0, -- int
+		paddingLeft = 0, -- int
+		paddingRight = 0, -- int
+		paddingTop = 0, -- int
+		ratio = 0.0, -- float
+		rect = Rect(), -- Rect
+		top = Rect(), -- [read-only] Rect
+		topSize = 0 -- [write-only] int
+	}
+
+	setmetatable(UIHorizontalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIHorizontalSplitter end})
+	return o
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

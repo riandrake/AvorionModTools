@@ -1,17 +1,20 @@
-ShipAI = {
-	attackedEntity = 0, -- [read-only] uuid
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	flyTarget = vec3(), -- [read-only] vec3
-	isAttackingSomething = true, -- [read-only] bool
-	isBusy = true, -- [read-only] bool
-	isStuck = true, -- [read-only] bool
-	state = 0 -- [read-only] int
-}
-
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ShipAI
-setmetatable(ShipAI, {__call = function(self, id) return ShipAI end})
+function ShipAI(id)
+	o = {
+		attackedEntity = 0, -- [read-only] uuid
+		entity = Entity(), -- [read-only] Entity
+		entityId = 0, -- [read-only] uuid
+		flyTarget = vec3(), -- [read-only] vec3
+		isAttackingSomething = true, -- [read-only] bool
+		isBusy = true, -- [read-only] bool
+		isStuck = true, -- [read-only] bool
+		state = 0 -- [read-only] int
+	}
+
+	setmetatable(ShipAI, {__call = function(self, id) return ShipAI end})
+	return o
+end
 
 function ShipAI.enemyFightersPresent()
 	return true

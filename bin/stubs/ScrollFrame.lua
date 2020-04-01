@@ -1,27 +1,30 @@
-ScrollFrame = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	paddingBottom = 0, -- [write-only] int
-	paddingTop = 0, -- [write-only] int
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	scrollSpeed = 0, -- [write-only] int
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
 -- @return A new instance of ScrollFrame
-setmetatable(ScrollFrame, {__call = function(self, index) return ScrollFrame end})
+function ScrollFrame(index)
+	o = {
+		center = vec2(), -- vec2
+		height = 0.0, -- float
+		index = 0, -- [read-only] int
+		layer = 0, -- int
+		localCenter = vec2(), -- [read-only] vec2
+		localPosition = vec2(), -- [read-only] vec2
+		localRect = Rect(), -- [read-only] Rect
+		lower = vec2(), -- vec2
+		mouseOver = true, -- [read-only] bool
+		paddingBottom = 0, -- [write-only] int
+		paddingTop = 0, -- [write-only] int
+		position = vec2(), -- vec2
+		rect = Rect(), -- Rect
+		scrollSpeed = 0, -- [write-only] int
+		size = vec2(), -- vec2
+		tooltip = nil, -- var
+		upper = vec2(), -- vec2
+		visible = true, -- bool
+		width = 0.0 -- float
+	}
+
+	setmetatable(ScrollFrame, {__call = function(self, index) return ScrollFrame end})
+	return o
+end
 
 -- @return nothing
 function ScrollFrame.scroll(numSteps)
