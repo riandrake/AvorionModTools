@@ -1,6 +1,6 @@
 -- @return A new instance of Planet
 function Planet(index)
-	o = {
+	local o = {
 		position = Matrix(), -- [read-only] Matrix
 		size = 0.0 -- [read-only] float
 	}

@@ -1,6 +1,6 @@
 -- @return A new instance of Window
 function Window(index)
-	o = {
+	local o = {
 		caption = "", -- string
 		center = vec2(), -- vec2
 		clickThrough = true, -- bool

@@ -1,6 +1,6 @@
 -- @return A new instance of PluralForm
 function PluralForm(singular, plural, contextOrAmount, amount)
-	o = {
+	local o = {
 		amount = 0, -- int
 		context = "", -- string
 		plural = "", -- string

@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyPlan
 function ReadOnlyPlan(id)
-	o = {
+	local o = {
 		accumulatingHealth = true, -- [read-only] bool
 		boundingBox = Box(), -- [read-only] Box
 		boundingSphere = Sphere(), -- [read-only] Sphere

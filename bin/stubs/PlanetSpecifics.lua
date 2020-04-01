@@ -1,7 +1,7 @@
 -- This is the default constructor of PlanetSpecifics. No further arguments are required.
 -- @return A new instance of PlanetSpecifics
 function PlanetSpecifics()
-	o = {
+	local o = {
 		atmosphere = true, -- bool
 		clouds = true, -- bool
 		habitated = true, -- bool

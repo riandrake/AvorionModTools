@@ -1,6 +1,6 @@
 -- @return A new instance of ModManager
 function ModManager()
-	o = {
+	local o = {
 		forceEnabledMods = true -- [read-only] bool
 	}
 

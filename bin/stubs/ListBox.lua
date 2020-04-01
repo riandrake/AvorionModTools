@@ -1,6 +1,6 @@
 -- @return A new instance of ListBox
 function ListBox(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		empty = true, -- [read-only] bool
 		font = 0, -- [write-only] int

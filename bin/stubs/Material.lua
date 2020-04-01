@@ -1,6 +1,6 @@
 -- @return A new instance of Material
 function Material(type)
-	o = {
+	local o = {
 		blockColor = Color(), -- [read-only] Color
 		color = Color(), -- [read-only] Color
 		costFactor = 0.0, -- [read-only] double

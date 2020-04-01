@@ -1,6 +1,6 @@
 -- @return A new instance of Language
 function Language(seed)
-	o = {
+	local o = {
 		apostrophes = true, -- bool
 		seed = Seed() -- [write-only] Seed
 	}

@@ -1,6 +1,6 @@
 -- @return A new instance of Sector
 function Sector()
-	o = {
+	local o = {
 		name = "", -- string
 		numEntities = 0, -- [read-only] unsigned int
 		numPlayers = 0, -- [read-only] unsigned int

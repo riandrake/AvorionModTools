@@ -1,6 +1,6 @@
 -- @return A new instance of TabbedWindow
 function TabbedWindow(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		height = 0.0, -- float
 		index = 0, -- [read-only] int

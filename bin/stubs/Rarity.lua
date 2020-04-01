@@ -1,6 +1,6 @@
 -- @return A new instance of Rarity
 function Rarity(value)
-	o = {
+	local o = {
 		color = Color(), -- [read-only] Color
 		name = "", -- [read-only] string
 		type = 0, -- int

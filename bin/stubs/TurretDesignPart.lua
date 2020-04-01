@@ -1,7 +1,7 @@
 -- This is the default constructor of TurretDesignPart. No further arguments are required.
 -- @return A new instance of TurretDesignPart
 function TurretDesignPart()
-	o = {
+	local o = {
 	}
 
 	setmetatable(TurretDesignPart, {__call = function(self) return TurretDesignPart end})

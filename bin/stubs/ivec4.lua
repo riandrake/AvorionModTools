@@ -2,7 +2,7 @@
 -- @param z - w
 -- @return A new instance of ivec4
 function ivec4(x, y, z, w)
-	o = {
+	local o = {
 		w = 0, -- int
 		x = 0, -- int
 		y = 0, -- int

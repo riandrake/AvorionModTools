@@ -1,6 +1,6 @@
 -- @return A new instance of MapArrowLine
 function MapArrowLine(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		color = Color(), -- [write-only] Color
 		from = ivec2(), -- [write-only] ivec2

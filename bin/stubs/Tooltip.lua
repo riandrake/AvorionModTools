@@ -1,7 +1,7 @@
 -- This is the default constructor of Tooltip. No further arguments are required.
 -- @return A new instance of Tooltip
 function Tooltip()
-	o = {
+	local o = {
 		icon = "", -- string
 		price = 0.0 -- double
 	}

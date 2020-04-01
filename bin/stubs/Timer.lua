@@ -1,6 +1,6 @@
 -- @return A new instance of Timer
 function Timer()
-	o = {
+	local o = {
 		milliseconds = 0, -- [read-only] int
 		running = true, -- [read-only] bool
 		seconds = 0.0, -- [read-only] double

@@ -1,7 +1,7 @@
 -- Creates a new sound source.
 -- @return A new instance of SoundSource
 function SoundSource(soundName, position, radius)
-	o = {
+	local o = {
 		is3D = true, -- [read-only] bool
 		loop = true, -- bool
 		maxRadius = 0.0, -- float

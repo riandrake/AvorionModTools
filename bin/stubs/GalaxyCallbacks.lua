@@ -2,7 +2,7 @@
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created
 function onAllianceCreated(index)
-	o = {
+	local o = {
 	}
 
 	setmetatable(onAllianceCreated, {__call = function(self, index) return onAllianceCreated end})

@@ -1,6 +1,6 @@
 -- @return A new instance of TextBox
 function TextBox(index)
-	o = {
+	local o = {
 		active = true, -- [write-only] bool
 		allowedCharacters = "", -- [write-only] string
 		backgroundIcon = "", -- [write-only] string

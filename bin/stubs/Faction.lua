@@ -52,7 +52,7 @@ function Faction.getAllRelations()
 end
 
 function Faction.getHomeSectorCoordinates()
-	return Coordinates()
+	return 0, 0
 end
 
 function Faction.getInventory()

@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyControlUnit
 function ReadOnlyControlUnit(id)
-	o = {
+	local o = {
 		desiredVelocity = 0.0, -- [read-only] float
 		entity = Entity(), -- [read-only] Entity
 		entityId = 0, -- [read-only] uuid

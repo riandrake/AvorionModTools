@@ -1,6 +1,6 @@
 -- @return A new instance of HighResolutionTimer
 function HighResolutionTimer()
-	o = {
+	local o = {
 		microseconds = 0, -- [read-only] int
 		milliseconds = 0, -- [read-only] int
 		running = true, -- [read-only] bool

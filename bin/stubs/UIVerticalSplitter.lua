@@ -3,7 +3,7 @@
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIVerticalSplitter
 function UIVerticalSplitter(rect, padding, margin, ratio)
-	o = {
+	local o = {
 		inner = Rect(), -- [read-only] Rect
 		left = Rect(), -- [read-only] Rect
 		leftSize = 0, -- [write-only] int

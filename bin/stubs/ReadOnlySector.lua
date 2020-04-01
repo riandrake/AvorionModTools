@@ -1,6 +1,6 @@
 -- @return A new instance of ReadOnlySector
 function ReadOnlySector()
-	o = {
+	local o = {
 		name = "", -- [read-only] string
 		numEntities = 0, -- [read-only] unsigned int
 		numPlayers = 0, -- [read-only] unsigned int

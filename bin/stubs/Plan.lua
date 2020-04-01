@@ -1,7 +1,7 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Plan
 function Plan(id)
-	o = {
+	local o = {
 		accumulatingHealth = true, -- bool
 		boundingBox = Box(), -- [read-only] Box
 		boundingSphere = Sphere(), -- [read-only] Sphere

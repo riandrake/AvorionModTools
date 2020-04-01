@@ -3,7 +3,7 @@
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
 function onAIStateChanged(entityId, state)
-	o = {
+	local o = {
 	}
 
 	setmetatable(onAIStateChanged, {__call = function(self, entityId, state) return onAIStateChanged end})

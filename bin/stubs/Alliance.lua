@@ -92,7 +92,7 @@ function Alliance.getMemberRank(playerIndex)
 end
 
 function Alliance.getMembers()
-	return {0, ""}
+	return {0, Member()}
 end
 
 function Alliance.getNamesOfShipsInSector(x, y)
@@ -160,7 +160,7 @@ function Alliance.getShipPlan(name)
 end
 
 function Alliance.getShipPosition(name)
-	return Coordinates()
+	return 0, 0
 end
 
 function Alliance.getShipReconstructionValue(name)
@@ -338,7 +338,7 @@ end
 
 -- Inherited from Faction [Server]
 function Alliance.getHomeSectorCoordinates()
-	return Coordinates()
+	return 0, 0
 end
 
 -- Inherited from Faction [Server]

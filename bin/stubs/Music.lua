@@ -1,6 +1,6 @@
 -- @return A new instance of Music
 function Music()
-	o = {
+	local o = {
 		autoPlay = true, -- bool
 		currentTrack = nil, -- [read-only] var
 		isPlaying = true -- [read-only] bool

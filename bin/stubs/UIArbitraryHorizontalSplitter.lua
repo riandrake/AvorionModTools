@@ -3,7 +3,7 @@
 -- @param splits - The y coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryHorizontalSplitter
 function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
-	o = {
+	local o = {
 		inner = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int
 		marginBottom = 0, -- int

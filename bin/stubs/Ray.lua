@@ -1,6 +1,6 @@
 -- @return A new instance of Ray
 function Ray(pos, size)
-	o = {
+	local o = {
 		direction = vec3(), -- vec3
 		origin = vec3(), -- vec3
 		planeIntersectionThickness = 0.0 -- float

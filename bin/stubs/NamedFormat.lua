@@ -1,6 +1,6 @@
 -- @return A new instance of NamedFormat
 function NamedFormat(string, MapType)
-	o = {
+	local o = {
 		text = "" -- [read-only] string
 	}
 

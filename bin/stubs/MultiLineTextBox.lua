@@ -1,6 +1,6 @@
 -- @return A new instance of MultiLineTextBox
 function MultiLineTextBox(index)
-	o = {
+	local o = {
 		active = true, -- [write-only] bool
 		center = vec2(), -- vec2
 		editable = true, -- [write-only] bool

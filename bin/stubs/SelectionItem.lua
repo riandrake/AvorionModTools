@@ -1,6 +1,6 @@
 -- @return A new instance of SelectionItem
 function SelectionItem()
-	o = {
+	local o = {
 		amount = nil, -- var
 		borderColor = Color(), -- Color
 		color = Color(), -- Color

@@ -1,6 +1,6 @@
 -- @return A new instance of Uuid
 function Uuid(uuid)
-	o = {
+	local o = {
 		isNil = true, -- [read-only] bool
 		number = 0, -- [read-only] int
 		string = "", -- [read-only] string

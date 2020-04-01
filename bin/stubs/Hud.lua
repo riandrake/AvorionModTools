@@ -1,6 +1,6 @@
 -- @return A new instance of Hud
 function Hud()
-	o = {
+	local o = {
 		buildingUIVisible = true, -- [read-only] bool
 		center = vec2(), -- vec2
 		height = 0.0, -- float

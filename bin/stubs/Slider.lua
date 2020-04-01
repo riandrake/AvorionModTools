@@ -1,6 +1,6 @@
 -- @return A new instance of Slider
 function Slider(index)
-	o = {
+	local o = {
 		caption = "", -- [write-only] string
 		center = vec2(), -- vec2
 		description = "", -- [write-only] string

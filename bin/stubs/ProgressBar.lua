@@ -1,6 +1,6 @@
 -- @return A new instance of ProgressBar
 function ProgressBar(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		color = Color(), -- Color
 		height = 0.0, -- float

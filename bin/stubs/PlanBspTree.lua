@@ -1,6 +1,6 @@
 -- @return A new instance of PlanBspTree
 function PlanBspTree(plan)
-	o = {
+	local o = {
 	}
 
 	setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})

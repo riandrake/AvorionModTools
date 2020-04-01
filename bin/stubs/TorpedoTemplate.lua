@@ -1,7 +1,7 @@
 -- This is the default constructor of TorpedoTemplate. No further arguments are required.
 -- @return A new instance of TorpedoTemplate
 function TorpedoTemplate()
-	o = {
+	local o = {
 		acceleration = 0.0, -- float
 		bodyClass = "", -- string
 		damageType = DamageType.Physical, -- DamageType

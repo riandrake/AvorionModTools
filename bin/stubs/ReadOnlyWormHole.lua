@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyWormHole
 function ReadOnlyWormHole(id)
-	o = {
+	local o = {
 		color = Color(), -- [read-only] Color
 		enabled = true, -- [read-only] bool
 		entity = Entity(), -- [read-only] Entity

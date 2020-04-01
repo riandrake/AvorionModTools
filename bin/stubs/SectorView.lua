@@ -1,7 +1,7 @@
 -- This is the default constructor of SectorView. No further arguments are required.
 -- @return A new instance of SectorView
 function SectorView()
-	o = {
+	local o = {
 		deathLocation = true, -- bool
 		factionIndex = 0, -- int
 		hasContent = true, -- [read-only] bool

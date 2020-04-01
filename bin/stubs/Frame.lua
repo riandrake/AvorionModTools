@@ -1,6 +1,6 @@
 -- @return A new instance of Frame
 function Frame(index)
-	o = {
+	local o = {
 		backgroundColor = Color(), -- [write-only] Color
 		center = vec2(), -- vec2
 		height = 0.0, -- float

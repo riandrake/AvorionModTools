@@ -1,7 +1,7 @@
 -- This is the default constructor of TurretDesign. No further arguments are required.
 -- @return A new instance of TurretDesign
 function TurretDesign()
-	o = {
+	local o = {
 		empty = true -- [read-only] bool
 	}
 

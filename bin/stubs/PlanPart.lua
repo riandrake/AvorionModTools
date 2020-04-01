@@ -1,6 +1,6 @@
 -- @return A new instance of PlanPart
 function PlanPart()
-	o = {
+	local o = {
 		allrounders = 0, -- int
 		features = 0, -- int
 		othersPaddingBox = Box(), -- Box

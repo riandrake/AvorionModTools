@@ -1,6 +1,6 @@
 -- @return A new instance of Tab
 function Tab(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		description = "", -- string
 		height = 0.0, -- float

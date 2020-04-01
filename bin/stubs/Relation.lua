@@ -1,7 +1,7 @@
 -- This is the default constructor of Relation. No further arguments are required.
 -- @return A new instance of Relation
 function Relation()
-	o = {
+	local o = {
 		color = Color(), -- [read-only] Color
 		description = "", -- [read-only] string
 		factionIndex = 0, -- int

@@ -1,6 +1,6 @@
 -- @return A new instance of InputWindow
 function InputWindow(index)
-	o = {
+	local o = {
 		cancelButton = Button(), -- [read-only] Button
 		caption = "", -- string
 		center = vec2(), -- vec2

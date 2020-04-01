@@ -3,7 +3,7 @@
 -- @param b - Nil if a is a Rect, or a vec2 if a is a vec2
 -- @return A new instance of UIOrganizer
 function UIOrganizer(a, b)
-	o = {
+	local o = {
 		inner = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int
 		marginBottom = 0, -- int

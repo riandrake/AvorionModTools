@@ -1,6 +1,6 @@
 -- @return A new instance of SystemUpgradeTemplate
 function SystemUpgradeTemplate(script, rarity, seed)
-	o = {
+	local o = {
 		favorite = true, -- bool
 		icon = "", -- [read-only] string
 		itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType

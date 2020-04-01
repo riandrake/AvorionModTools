@@ -1,6 +1,6 @@
 -- @return A new instance of InventoryReferenceSelectionItem
 function InventoryReferenceSelectionItem()
-	o = {
+	local o = {
 		amount = nil, -- var
 		border = IconBorderMode(), -- [read-only] IconBorderMode
 		deleteable = true, -- bool

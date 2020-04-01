@@ -2,7 +2,7 @@
 -- @param z - Returns
 -- @param A new instance of vec3
 function vec3(x, y, z)
-	o = {
+	local o = {
 		x = 0.0, -- float
 		y = 0.0, -- float
 		z = 0.0 -- float

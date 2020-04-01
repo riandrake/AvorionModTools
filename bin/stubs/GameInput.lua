@@ -1,7 +1,7 @@
 -- This is the default constructor of GameInput. No further arguments are required.
 -- @return A new instance of GameInput
 function GameInput()
-	o = {
+	local o = {
 		isMouseSteeringEnabled = true, -- [read-only] bool
 		isSteeringEnabled = true -- [read-only] bool
 	}

@@ -3,7 +3,7 @@
 -- @param splits - The number of splits performed
 -- @return A new instance of UIHorizontalMultiSplitter
 function UIHorizontalMultiSplitter(rect, padding, margin, splits)
-	o = {
+	local o = {
 		bottom = Rect(), -- [read-only] Rect
 		inner = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int

@@ -1,6 +1,6 @@
 -- @return A new instance of TradingGood
 function TradingGood(name, plural, description, icon, price, size)
-	o = {
+	local o = {
 		dangerous = true, -- bool
 		description = "", -- string
 		displayDescription = "", -- [read-only] string

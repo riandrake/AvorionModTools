@@ -1,6 +1,6 @@
 -- @return A new instance of GalaxyMap
 function GalaxyMap()
-	o = {
+	local o = {
 		showAllianceInfo = true, -- bool
 		showCustomColorLayer = true, -- bool
 		showFactionLayer = true, -- bool

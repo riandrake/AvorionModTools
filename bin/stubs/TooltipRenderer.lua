@@ -1,6 +1,6 @@
 -- @return A new instance of TooltipRenderer
 function TooltipRenderer(tooltip)
-	o = {
+	local o = {
 	}
 
 	setmetatable(TooltipRenderer, {__call = function(self, tooltip) return TooltipRenderer end})

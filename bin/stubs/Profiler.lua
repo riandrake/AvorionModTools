@@ -1,6 +1,6 @@
 -- @return A new instance of Profiler
 function Profiler(str)
-	o = {
+	local o = {
 		printedSections = 0, -- int
 		started = true -- [read-only] bool
 	}

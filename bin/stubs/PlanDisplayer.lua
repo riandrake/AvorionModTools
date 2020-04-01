@@ -1,6 +1,6 @@
 -- @return A new instance of PlanDisplayer
 function PlanDisplayer(index)
-	o = {
+	local o = {
 		autoCenter = true, -- [write-only] bool
 		autoRotationSpeed = 0.0, -- [write-only] float
 		center = vec2(), -- vec2

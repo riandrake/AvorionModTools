@@ -1,7 +1,7 @@
 -- This is the default constructor of Matrix. No further arguments are required.
 -- @return A new instance of Matrix
 function Matrix()
-	o = {
+	local o = {
 		look = vec3(), -- vec3
 		pos = vec3(), -- vec3
 		position = vec3(), -- vec3

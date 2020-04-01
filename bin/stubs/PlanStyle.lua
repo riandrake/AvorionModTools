@@ -1,6 +1,6 @@
 -- @return A new instance of PlanStyle
 function PlanStyle()
-	o = {
+	local o = {
 		additionalFeatures = 0, -- int
 		balanceRotation = true, -- bool
 		forbiddenFeatures = 0, -- int

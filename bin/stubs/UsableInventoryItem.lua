@@ -1,6 +1,6 @@
 -- @return A new instance of UsableInventoryItem
 function UsableInventoryItem(script, rarity, values)
-	o = {
+	local o = {
 		boundFaction = 0, -- int
 		depleteOnUse = true, -- bool
 		droppable = true, -- bool

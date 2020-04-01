@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyEngine
 function ReadOnlyEngine(id)
-	o = {
+	local o = {
 		acceleration = 0.0, -- [read-only] double
 		boost = true, -- [read-only] bool
 		consumerIcon = "", -- [read-only] string

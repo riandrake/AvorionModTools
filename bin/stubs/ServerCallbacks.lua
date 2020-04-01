@@ -4,7 +4,7 @@
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
 function onChatMessage(playerIndex, text, channel)
-	o = {
+	local o = {
 	}
 
 	setmetatable(onChatMessage, {__call = function(self, playerIndex, text, channel) return onChatMessage end})

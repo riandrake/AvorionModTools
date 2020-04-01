@@ -2,7 +2,7 @@
 -- @param z - w
 -- @return A new instance of vec4
 function vec4(x, y, z, w)
-	o = {
+	local o = {
 		w = 0.0, -- float
 		x = 0.0, -- float
 		y = 0.0, -- float

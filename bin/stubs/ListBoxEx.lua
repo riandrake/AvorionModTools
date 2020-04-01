@@ -1,6 +1,6 @@
 -- @return A new instance of ListBoxEx
 function ListBoxEx(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		columns = 0, -- unsigned int
 		empty = true, -- [read-only] bool

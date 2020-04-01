@@ -1,7 +1,7 @@
 -- This is the default constructor of GameSettings. No further arguments are required.
 -- @return A new instance of GameSettings
 function GameSettings()
-	o = {
+	local o = {
 		bigWreckageDespawnTime = 0.0, -- float
 		collisionDamage = 0.0, -- float
 		devMode = true, -- bool

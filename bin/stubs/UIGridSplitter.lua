@@ -3,7 +3,7 @@
 -- @param horizontalTiles - verticalTiles
 -- @return A new instance of UIGridSplitter
 function UIGridSplitter(rect, padding, margin, horizontalTiles, verticalTiles)
-	o = {
+	local o = {
 		horizontalTiles = 0, -- int
 		inner = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int

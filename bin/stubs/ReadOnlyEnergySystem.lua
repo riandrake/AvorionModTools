@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyEnergySystem
 function ReadOnlyEnergySystem(id)
-	o = {
+	local o = {
 		capacity = 0.0, -- [read-only] double
 		consumableEnergy = 0.0, -- [read-only] double
 		energy = 0.0, -- [read-only] double

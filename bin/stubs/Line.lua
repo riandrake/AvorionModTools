@@ -1,6 +1,6 @@
 -- @return A new instance of Line
 function Line(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		color = Color(), -- [write-only] Color
 		height = 0.0, -- float

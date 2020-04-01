@@ -2,7 +2,7 @@
 -- @param padding - margin
 -- @return A new instance of UIVerticalLister
 function UIVerticalLister(rect, padding, margin)
-	o = {
+	local o = {
 		inner = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int
 		marginBottom = 0, -- int

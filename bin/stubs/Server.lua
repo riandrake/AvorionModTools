@@ -1,6 +1,6 @@
 -- @return A new instance of Server
 function Server()
-	o = {
+	local o = {
 		accessMode = 0, -- [read-only] int
 		collisionDamage = 0.0, -- [read-only] float
 		description = "", -- [read-only] string

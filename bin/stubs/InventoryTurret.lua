@@ -1,6 +1,6 @@
 -- @return A new instance of InventoryTurret
 function InventoryTurret(other)
-	o = {
+	local o = {
 		accuracy = 0.0, -- [read-only] float
 		armed = true, -- [read-only] bool
 		automatic = true, -- bool

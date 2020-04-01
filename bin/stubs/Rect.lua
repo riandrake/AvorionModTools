@@ -1,6 +1,6 @@
 -- @return A new instance of Rect
 function Rect(a, b, c, d)
-	o = {
+	local o = {
 		area = 0.0, -- [read-only] float
 		bottomLeft = vec2(), -- [read-only] vec2
 		bottomRight = vec2(), -- [read-only] vec2

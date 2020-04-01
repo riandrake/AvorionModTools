@@ -1,6 +1,6 @@
 -- @return A new instance of Seed
 function Seed(_in)
-	o = {
+	local o = {
 		int32 = 0, -- [read-only] int
 		value = 0.0 -- double
 	}

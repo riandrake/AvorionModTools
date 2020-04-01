@@ -1,6 +1,6 @@
 -- @return A new instance of Sphere
 function Sphere(center, radius)
-	o = {
+	local o = {
 		center = vec3(), -- vec3
 		radius = 0.0 -- float
 	}

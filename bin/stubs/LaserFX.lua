@@ -1,6 +1,6 @@
 -- @return A new instance of LaserFX
 function LaserFX(key)
-	o = {
+	local o = {
 		aliveTime = 0.0, -- float
 		animation = 0.0, -- float
 		animationAcceleration = 0.0, -- float

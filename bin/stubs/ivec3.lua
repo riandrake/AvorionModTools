@@ -2,7 +2,7 @@
 -- @param z - Returns
 -- @param A new instance of ivec3
 function ivec3(x, y, z)
-	o = {
+	local o = {
 		x = 0, -- int
 		y = 0, -- int
 		z = 0 -- int

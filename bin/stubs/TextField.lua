@@ -1,6 +1,6 @@
 -- @return A new instance of TextField
 function TextField(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		font = 0, -- [write-only] int
 		fontColor = Color(), -- [write-only] Color

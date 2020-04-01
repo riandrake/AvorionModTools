@@ -1,7 +1,7 @@
 -- This is the default constructor of Mail. No further arguments are required.
 -- @return A new instance of Mail
 function Mail()
-	o = {
+	local o = {
 		empty = true, -- [read-only] bool
 		header = Format(), -- Format
 		id = "", -- string

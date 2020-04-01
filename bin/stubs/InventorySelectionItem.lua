@@ -1,6 +1,6 @@
 -- @return A new instance of InventorySelectionItem
 function InventorySelectionItem()
-	o = {
+	local o = {
 		amount = nil, -- var
 		border = IconBorderMode(), -- IconBorderMode
 		deleteable = true, -- bool

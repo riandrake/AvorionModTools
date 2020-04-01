@@ -1,6 +1,6 @@
 -- @return A new instance of PlanGenerationStage
 function PlanGenerationStage()
-	o = {
+	local o = {
 		additionalFeatures = 0, -- int
 		allrounderBlockIndex = nil, -- var
 		arrangementSeed = "", -- string

@@ -3,7 +3,7 @@
 -- @param splits - The number of splits performed
 -- @return A new instance of UIVerticalMultiSplitter
 function UIVerticalMultiSplitter(rect, padding, margin, splits)
-	o = {
+	local o = {
 		inner = Rect(), -- [read-only] Rect
 		left = Rect(), -- [read-only] Rect
 		margin = 0, -- [write-only] int

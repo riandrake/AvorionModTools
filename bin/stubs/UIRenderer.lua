@@ -1,6 +1,6 @@
 -- @return A new instance of UIRenderer
 function UIRenderer()
-	o = {
+	local o = {
 	}
 
 	setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})

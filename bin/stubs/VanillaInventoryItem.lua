@@ -1,7 +1,7 @@
 -- This is the default constructor of VanillaInventoryItem. No further arguments are required.
 -- @return A new instance of VanillaInventoryItem
 function VanillaInventoryItem()
-	o = {
+	local o = {
 		boundFaction = 0, -- int
 		droppable = true, -- bool
 		favorite = true, -- bool

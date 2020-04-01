@@ -1,6 +1,6 @@
 -- @return A new instance of Weapon
 function Weapon()
-	o = {
+	local o = {
 		accuracy = 0.0, -- float
 		appearance = 0, -- int
 		appearanceSeed = 0, -- int

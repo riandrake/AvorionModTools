@@ -1,6 +1,6 @@
 -- @return A new instance of PlayerWindow
 function PlayerWindow()
-	o = {
+	local o = {
 		onSelectedFunction = "" -- string
 	}
 

@@ -3,7 +3,7 @@
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIHorizontalSplitter
 function UIHorizontalSplitter(rect, padding, margin, ratio)
-	o = {
+	local o = {
 		bottom = Rect(), -- [read-only] Rect
 		bottomSize = 0, -- [write-only] int
 		inner = Rect(), -- [read-only] Rect

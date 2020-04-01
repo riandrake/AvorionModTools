@@ -1,6 +1,6 @@
 -- @return A new instance of Picture
 function Picture(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		color = Color(), -- [write-only] Color
 		flipped = true, -- [write-only] bool

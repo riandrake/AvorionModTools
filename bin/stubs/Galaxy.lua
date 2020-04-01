@@ -1,6 +1,6 @@
 -- @return A new instance of Galaxy
 function Galaxy()
-	o = {
+	local o = {
 	}
 
 	setmetatable(Galaxy, {__call = function(self) return Galaxy end})

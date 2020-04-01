@@ -1,6 +1,6 @@
 -- @return A new instance of SavedDesignsSelection
 function SavedDesignsSelection(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		dragFromEnabled = true, -- [write-only] bool
 		dropIntoEnabled = true, -- [write-only] bool

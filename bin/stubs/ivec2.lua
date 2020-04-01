@@ -1,7 +1,7 @@
 -- @param x - y
 -- @return A new instance of ivec2
 function ivec2(x, y)
-	o = {
+	local o = {
 		x = 0, -- int
 		y = 0 -- int
 	}

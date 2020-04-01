@@ -1,7 +1,7 @@
 -- @param x - y
 -- @return A new instance of vec2
 function vec2(x, y)
-	o = {
+	local o = {
 		x = 0.0, -- float
 		y = 0.0 -- float
 	}

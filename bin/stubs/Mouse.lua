@@ -1,7 +1,7 @@
 -- This is the default constructor of Mouse. No further arguments are required.
 -- @return A new instance of Mouse
 function Mouse()
-	o = {
+	local o = {
 		position = vec2() -- vec2
 	}
 

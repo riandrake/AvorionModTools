@@ -1,6 +1,6 @@
 -- @return A new instance of Player
 function Player(index)
-	o = {
+	local o = {
 		alliance = Alliance(), -- [read-only] Alliance
 		allianceIndex = nil, -- [read-only] var
 		alwaysAtWar = true, -- bool
@@ -91,7 +91,7 @@ function Player.getNamesOfShipsInSector(x, y)
 end
 
 function Player.getRespawnSectorCoordinates()
-	return Coordinates()
+	return 0, 0
 end
 
 function Player.getScripts()
@@ -99,7 +99,7 @@ function Player.getScripts()
 end
 
 function Player.getSectorCoordinates()
-	return Coordinates()
+	return 0, 0
 end
 
 function Player.getShipBoundingBox(name)
@@ -151,7 +151,7 @@ function Player.getShipPlan(name)
 end
 
 function Player.getShipPosition(name)
-	return Coordinates()
+	return 0, 0
 end
 
 function Player.getShipReconstructionValue(name)
@@ -320,7 +320,7 @@ end
 
 -- Inherited from Faction [Server]
 function Player.getHomeSectorCoordinates()
-	return Coordinates()
+	return 0, 0
 end
 
 -- Inherited from Faction [Server]

@@ -1,6 +1,6 @@
 -- @return A new instance of TurretDesignSelectionItem
 function TurretDesignSelectionItem(path)
-	o = {
+	local o = {
 		deleteable = true, -- bool
 		design = TurretDesign(), -- [read-only] TurretDesign
 		hasWorkshopIcon = true, -- [read-only] bool

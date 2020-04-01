@@ -43,7 +43,7 @@ DEFAULT_VALUES_BY_TYPE = {
     'Uuid': '0',
     'uuid': '0',
     'char': '0',
-    'Member': '""',
+    'Coordinates': '0, 0',
 }
 
 def get_default_value(type):
@@ -67,7 +67,7 @@ def get_default_value(type):
                 print(f'Weird type: "{type}"')
                 return 'nil'
 
-        print('New type: ', type)
+        #print('New type: ', type)
         DEFAULT_VALUES_BY_TYPE[type] = type + '()'
 
     return DEFAULT_VALUES_BY_TYPE[type]
@@ -319,7 +319,6 @@ class StubGenerator:
 
         luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
         with open((stubs / luaName), 'w') as writer:
-            print(luaName)
             if enums:
                 for enum, values in enums.items():
                     writer.write(f'{enum} = {{\n')
@@ -333,6 +332,7 @@ class StubGenerator:
                     writer.write('}\n\n')
 
             if namespace:
+                print(namespace)
                 functions[0].write_constructor(properties, writer)
 
                 for function in functions[1:]:

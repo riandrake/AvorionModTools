@@ -1,6 +1,6 @@
 -- @return A new instance of Random
 function Random(seed)
-	o = {
+	local o = {
 	}
 
 	setmetatable(Random, {__call = function(self, seed) return Random end})

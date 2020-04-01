@@ -1,6 +1,6 @@
 -- @return A new instance of Version
 function Version(majorVersion, minorVersion, patch)
-	o = {
+	local o = {
 		major = 0, -- int
 		minor = 0, -- int
 		patch = 0, -- int

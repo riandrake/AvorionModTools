@@ -1,6 +1,6 @@
 -- @return A new instance of TooltipLine
 function TooltipLine(height, fontSize)
-	o = {
+	local o = {
 		backgroundColor = Color(), -- Color
 		cbold = true, -- bool
 		ccolor = Color(), -- Color

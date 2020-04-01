@@ -1,6 +1,6 @@
 -- @return A new instance of Format
 function Format(text, args)
-	o = {
+	local o = {
 		empty = true, -- [read-only] bool
 		text = "" -- [read-only] string
 	}

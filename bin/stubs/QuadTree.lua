@@ -1,6 +1,6 @@
 -- @return A new instance of QuadTree
 function QuadTree(min, max, maxLevel)
-	o = {
+	local o = {
 		empty = true -- [read-only] bool
 	}
 

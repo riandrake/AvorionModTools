@@ -1,6 +1,6 @@
 -- @return A new instance of InventorySelection
 function InventorySelection(index)
-	o = {
+	local o = {
 		borderCombo = ComboBox(), -- [read-only] ComboBox
 		borderMode = 0, -- int
 		center = vec2(), -- vec2
