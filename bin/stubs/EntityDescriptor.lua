@@ -213,7 +213,7 @@ end
 
 -- Inherited from Entity
 function EntityDescriptor.canAddCrew(number, profession, change)
-	return nil, nil, table<int,string>()
+	return nil, nil, {0, ""}
 end
 
 -- Inherited from Entity
@@ -284,7 +284,7 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 function EntityDescriptor.findCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 -- Inherited from Entity
@@ -348,7 +348,7 @@ end
 
 -- Inherited from Entity
 function EntityDescriptor.getCargos()
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 -- Inherited from Entity
@@ -465,12 +465,12 @@ end
 
 -- Inherited from Entity
 function EntityDescriptor.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 -- Retrieves the arguments to a title Inherited from Entity
 function EntityDescriptor.getTitleArguments()
-	return table<string,string>()
+	return {"", ""}
 end
 
 -- Retrieves the title as NamedFormat Inherited from Entity
@@ -533,7 +533,7 @@ end
 -- Retrieves all key-value pairs of custom values of the entity Inherited from Entity
 -- @return A table containing all custom key-value pairs
 function EntityDescriptor.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 -- Inherited from Entity

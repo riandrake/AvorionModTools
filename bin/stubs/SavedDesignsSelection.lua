@@ -42,7 +42,7 @@ function SavedDesignsSelection.getItem(key)
 end
 
 function SavedDesignsSelection.getItems()
-	return table<ivec2,UserObject>()
+	return {ivec2(), UserObject()}
 end
 
 function SavedDesignsSelection.getMouseOveredKey()

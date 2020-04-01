@@ -19,7 +19,7 @@ function ReadOnlyControlUnit(id)
 end
 
 function ReadOnlyControlUnit.getActiveWeapons()
-	return bitset<10>()
+	return 
 end
 
 function ReadOnlyControlUnit.getAimedPositionBySeat(seatIndex)

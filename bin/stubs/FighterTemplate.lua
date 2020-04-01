@@ -97,7 +97,7 @@ function FighterTemplate.clearWeapons()
 end
 
 function FighterTemplate.getDescriptions()
-	return table<string,string>()
+	return {"", ""}
 end
 
 -- Returns all weapons of the object

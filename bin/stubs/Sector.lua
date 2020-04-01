@@ -327,7 +327,7 @@ function Sector.getPresentFactions()
 end
 
 function Sector.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
@@ -340,7 +340,7 @@ end
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
 function Sector.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 -- Checks if the given faction has any enemy ships or objects in the sector

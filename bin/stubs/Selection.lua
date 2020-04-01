@@ -60,7 +60,7 @@ function Selection.getItem(key)
 end
 
 function Selection.getItems()
-	return table<ivec2,UserObject>()
+	return {ivec2(), UserObject()}
 end
 
 function Selection.getMouseOveredKey()

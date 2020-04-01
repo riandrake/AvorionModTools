@@ -43,7 +43,7 @@ function Crew.clear()
 end
 
 function Crew.getMembers()
-	return table<CrewMan,unsignedint>()
+	return {CrewMan(), 0}
 end
 
 function Crew.getMembersByProfession(profession)
@@ -55,7 +55,7 @@ function Crew.getNumMembers(crewman)
 end
 
 function Crew.getWorkforce()
-	return table<CrewProfession,float>()
+	return {CrewProfession(), 0.0}
 end
 
 -- @return nothing

@@ -190,7 +190,7 @@ function Entity.callbacksRegistered(callbackName, functionName)
 end
 
 function Entity.canAddCrew(number, profession, change)
-	return nil, nil, table<int,string>()
+	return nil, nil, {0, ""}
 end
 
 -- @return nothing
@@ -258,7 +258,7 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 function Entity.findCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function Entity.getAimedPositionBySeat(seat)
@@ -315,7 +315,7 @@ function Entity.getCargoAmount(name)
 end
 
 function Entity.getCargos()
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function Entity.getCrewMembers(profession)
@@ -417,12 +417,12 @@ function Entity.getRandomDockingPosition(radius)
 end
 
 function Entity.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 -- Retrieves the arguments to a title
 function Entity.getTitleArguments()
-	return table<string,string>()
+	return {"", ""}
 end
 
 -- Retrieves the title as NamedFormat
@@ -476,7 +476,7 @@ end
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
 function Entity.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 function Entity.getWormholeComponent()

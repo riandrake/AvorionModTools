@@ -80,14 +80,14 @@ function ReadOnlyEntity(id)
 end
 
 function ReadOnlyEntity.canAddCrew(number, profession, change)
-	return nil, nil, table<int,string>()
+	return nil, nil, {0, ""}
 end
 
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 function ReadOnlyEntity.findCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function ReadOnlyEntity.getAimedPositionBySeat(seat)
@@ -144,7 +144,7 @@ function ReadOnlyEntity.getCargoAmount(name)
 end
 
 function ReadOnlyEntity.getCargos()
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function ReadOnlyEntity.getCrewMembers(profession)
@@ -236,12 +236,12 @@ function ReadOnlyEntity.getPlanResourceValue()
 end
 
 function ReadOnlyEntity.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 -- Retrieves the arguments to a title
 function ReadOnlyEntity.getTitleArguments()
-	return table<string,string>()
+	return {"", ""}
 end
 
 -- Retrieves the title as NamedFormat
@@ -287,7 +287,7 @@ end
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
 function ReadOnlyEntity.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 function ReadOnlyEntity.hasComponent(type)

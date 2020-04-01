@@ -8,7 +8,7 @@ function NamedFormat(string, MapType)
 end
 
 function NamedFormat.arguments()
-	return table<string,PluralForm>()
+	return {"", PluralForm()}
 end
 
 function NamedFormat.translated()

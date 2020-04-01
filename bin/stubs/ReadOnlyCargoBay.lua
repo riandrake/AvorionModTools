@@ -26,7 +26,7 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 function ReadOnlyCargoBay.findCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function ReadOnlyCargoBay.getCargo(n)
@@ -34,7 +34,7 @@ function ReadOnlyCargoBay.getCargo(n)
 end
 
 function ReadOnlyCargoBay.getCargos()
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.

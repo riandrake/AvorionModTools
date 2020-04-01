@@ -29,15 +29,15 @@ function Faction.addPlanStyle(name, style)
 end
 
 function Faction.canPay()
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 function Faction.canPayMoney(money)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 function Faction.canPayResource(material, amount)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object
@@ -96,7 +96,7 @@ end
 -- Retrieves all key-value trait pairs of the faction
 -- @return A table containing all custom key-value pairs
 function Faction.getTraits()
-	return table<string,float>()
+	return {"", 0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
@@ -109,7 +109,7 @@ end
 -- Retrieves all key-value pairs of custom values
 -- @return A table containing all custom key-value pairs
 function Faction.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 function Faction.hasStaticRelationsToFaction(factionIndex)

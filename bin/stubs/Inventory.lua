@@ -37,11 +37,11 @@ function Inventory.find(index)
 end
 
 function Inventory.getItems()
-	return table<int,tableltunsignedint,InventoryItem>>()
+	return 
 end
 
 function Inventory.getItemsByType(type)
-	return table<int,tableltunsignedint,InventoryItem>>()
+	return 
 end
 
 function Inventory.hasSlot(item)

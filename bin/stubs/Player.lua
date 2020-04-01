@@ -94,7 +94,7 @@ function Player.getRespawnSectorCoordinates()
 end
 
 function Player.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 function Player.getSectorCoordinates()
@@ -114,7 +114,7 @@ function Player.getShipCargo(name)
 end
 
 function Player.getShipCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function Player.getShipCrew(name)
@@ -293,17 +293,17 @@ end
 
 -- Inherited from Faction [Server]
 function Player.canPay()
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 function Player.canPayMoney(money)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 function Player.canPayResource(material, amount)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object Inherited from Faction [Server]
@@ -372,7 +372,7 @@ end
 -- Retrieves all key-value trait pairs of the faction Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
 function Player.getTraits()
-	return table<string,float>()
+	return {"", 0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key Inherited from Faction [Server]
@@ -385,7 +385,7 @@ end
 -- Retrieves all key-value pairs of custom values Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
 function Player.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 -- Inherited from Faction [Server]

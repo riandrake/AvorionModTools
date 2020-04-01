@@ -79,7 +79,7 @@ end
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
 function Server.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 function Server.getWhiteList()

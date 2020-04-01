@@ -91,7 +91,7 @@ function Alliance.getMemberRank(playerIndex)
 end
 
 function Alliance.getMembers()
-	return table<int,Member>()
+	return {0, ""}
 end
 
 function Alliance.getNamesOfShipsInSector(x, y)
@@ -107,7 +107,7 @@ function Alliance.getRank(name)
 end
 
 function Alliance.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 function Alliance.getShipBoundingBox(name)
@@ -123,7 +123,7 @@ function Alliance.getShipCargo(name)
 end
 
 function Alliance.getShipCargos(name)
-	return table<TradingGood,int>()
+	return {TradingGood(), 0}
 end
 
 function Alliance.getShipCrew(name)
@@ -311,17 +311,17 @@ end
 
 -- Inherited from Faction [Server]
 function Alliance.canPay()
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 function Alliance.canPayMoney(money)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 function Alliance.canPayResource(material, amount)
-	return true, "", table<int,string>()
+	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object Inherited from Faction [Server]
@@ -390,7 +390,7 @@ end
 -- Retrieves all key-value trait pairs of the faction Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
 function Alliance.getTraits()
-	return table<string,float>()
+	return {"", 0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key Inherited from Faction [Server]
@@ -403,7 +403,7 @@ end
 -- Retrieves all key-value pairs of custom values Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
 function Alliance.getValues()
-	return table<string,var>()
+	return {"", nil}
 end
 
 -- Inherited from Faction [Server]

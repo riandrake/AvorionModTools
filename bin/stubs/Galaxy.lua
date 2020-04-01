@@ -92,7 +92,7 @@ end
 -- @param radius - The radius of the circle
 -- @return A table containing faction indices and corresponding home sector
 function Galaxy.getMapHomeSectors(x, y, radius)
-	return table<int,vec2>()
+	return {0, vec2()}
 end
 
 -- Does a lookup on the faction map and retrieves the nearest faction to the given sector. Distance is calculated by the factions' home sector. This may trigger a creation of a faction that does not yet exist.
@@ -116,7 +116,7 @@ function Galaxy.getPlayerNames()
 end
 
 function Galaxy.getScripts()
-	return table<int,string>()
+	return {0, ""}
 end
 
 function Galaxy.getSectorView(x, y)

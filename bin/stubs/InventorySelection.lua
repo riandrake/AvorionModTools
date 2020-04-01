@@ -73,7 +73,7 @@ function InventorySelection.getItem(key)
 end
 
 function InventorySelection.getItems()
-	return table<ivec2,UserObject>()
+	return {ivec2(), UserObject()}
 end
 
 function InventorySelection.getMouseOveredKey()

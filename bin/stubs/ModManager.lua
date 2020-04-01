@@ -73,7 +73,7 @@ function ModManager.getLoadOrder()
 end
 
 function ModManager.getLoadPriorities()
-	return table<string,int>()
+	return {"", 0}
 end
 
 function ModManager.getModsModifyingFile(file)
@@ -89,7 +89,7 @@ function ModManager.getOutdatedMods()
 end
 
 function ModManager.getProblematicMods()
-	return table<string,string>()
+	return {"", ""}
 end
 
 function ModManager.getRequiredMods(id, optionalToo)

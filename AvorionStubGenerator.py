@@ -10,6 +10,23 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 import re
 
+def split_careful(s):
+     parts = []
+     bracket_level = 0
+     current = []
+     # trick to remove special-case of trailing chars
+     for c in (s + ","):
+         if c == "," and bracket_level == 0:
+             parts.append("".join(current))
+             current = []
+         else:
+             if c == "{":
+                 bracket_level += 1
+             elif c == "}":
+                 bracket_level -= 1
+             current.append(c)
+     return parts
+
 
 BIN_DIR = Path('bin')
 
@@ -19,17 +36,25 @@ DEFAULT_VALUES_BY_TYPE = {
     'string': '""',
     'int': '0',
     'unsigned int': '0',
+    'unsignedint': '0',
     'float': '0.0',
     'var': 'nil',
     'double': '0.0',
     'Uuid': '0',
     'uuid': '0',
     'char': '0',
+    'Member': '""',
 }
 
 def get_default_value(type):
     """ Return a default value for a type, so inference works in lua
     """
+    type = type.strip()
+
+    if '{' in type:
+        between = type[1:-1]
+        between_args = [subarg for subarg in split_careful(between) if subarg.strip()]
+        return '{' + ', '.join((get_default_value(arg) for arg in between_args)) + '}'
 
     # Assume these are enums that need collapsing
     type = type.replace('::', '')
@@ -39,9 +64,10 @@ def get_default_value(type):
 
         for weird in ('=', ' '):
             if weird in type:
-                print('Weird type:', type)
+                print(f'Weird type: "{type}"')
                 return 'nil'
 
+        print('New type: ', type)
         DEFAULT_VALUES_BY_TYPE[type] = type + '()'
 
     return DEFAULT_VALUES_BY_TYPE[type]
@@ -92,8 +118,11 @@ class ParsedFunction:
         """ Parse a return value for defaults """
         for strip in ('...', 'static ', 'const '):
             return_value = return_value.replace(strip, '')
+        
+        return_value = return_value.replace('table<', '{')
+        return_value = return_value.replace('>', '}')
 
-        return_values = return_value.split(', ')
+        return_values = split_careful(return_value)
 
         for idx, type in enumerate(return_values):
             return_values[idx] = get_default_value(type)
@@ -107,7 +136,7 @@ class ParsedFunction:
         end_bracket = definition.rfind(')')
         start_bracket = definition.rfind('(', 0, end_bracket)
 
-        args = definition[start_bracket+1:end_bracket].split(',')
+        args = split_careful(definition[start_bracket+1:end_bracket])
 
         for idx, arg in enumerate(args):
             if split := arg.split():

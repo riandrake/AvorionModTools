@@ -102,7 +102,7 @@ function TurretTemplate.getCrew()
 end
 
 function TurretTemplate.getDescriptions()
-	return table<string,string>()
+	return {"", ""}
 end
 
 -- Returns all weapons of the object

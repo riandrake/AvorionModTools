@@ -31,7 +31,7 @@ function Boarding.getBoarderPower()
 end
 
 function Boarding.getBoarders()
-	return table<int,unsignedint>()
+	return {0, 0}
 end
 
 function Boarding.getDefenderHealth()

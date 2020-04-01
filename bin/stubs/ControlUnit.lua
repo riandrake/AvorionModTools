@@ -44,7 +44,7 @@ function ControlUnit.flyToLocation(location, targetVelocity)
 end
 
 function ControlUnit.getActiveWeapons()
-	return bitset<10>()
+	return 
 end
 
 function ControlUnit.getAimedPositionBySeat(seatIndex)

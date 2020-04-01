@@ -28,7 +28,7 @@ function SectorView.getCoordinates()
 end
 
 function SectorView.getCraftsByFaction()
-	return table<int,int>()
+	return {0, 0}
 end
 
 function SectorView.getGateDestinations()
@@ -36,11 +36,11 @@ function SectorView.getGateDestinations()
 end
 
 function SectorView.getShipsByFaction()
-	return table<int,int>()
+	return {0, 0}
 end
 
 function SectorView.getStationsByFaction()
-	return table<int,int>()
+	return {0, 0}
 end
 
 function SectorView.getStationTitles()
