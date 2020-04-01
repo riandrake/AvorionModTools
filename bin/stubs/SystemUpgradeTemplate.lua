@@ -1,25 +1,28 @@
 SystemUpgradeTemplate = {
-	favorite = nil, -- bool
-	icon = nil, -- [read-only] string
-	itemType = nil, -- [read-only] InventoryItemType
-	name = nil, -- [read-only] string
-	price = nil, -- [read-only] int
-	rarity = nil, -- Rarity
-	recent = nil, -- bool
-	script = nil, -- string
-	seed = nil, -- Seed
-	stackable = nil, -- [read-only] bool
-	tooltip = nil, -- [read-only] UserObject
-	trash = nil -- bool
+	favorite = true, -- bool
+	icon = "", -- [read-only] string
+	itemType = Turret, -- [read-only] InventoryItemType
+	name = "", -- [read-only] string
+	price = 0, -- [read-only] int
+	rarity = Rarity(), -- Rarity
+	recent = true, -- bool
+	script = "", -- string
+	seed = Seed(), -- Seed
+	stackable = true, -- [read-only] bool
+	tooltip = UserObject(), -- [read-only] UserObject
+	trash = true -- bool
 }
 
 -- @return A new instance of SystemUpgradeTemplate
 function SystemUpgradeTemplate(script, rarity, seed)
+	return nil
 end
 
 function SystemUpgradeTemplate.__eq(other)
+	return true
 end
 
 function SystemUpgradeTemplate.getEnergy(permanent)
+	return 0.0
 end
 

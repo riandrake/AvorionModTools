@@ -1,9 +1,9 @@
 SelectionItem = {
 	amount = nil, -- var
-	borderColor = nil, -- Color
-	color = nil, -- Color
-	highlightStrength = nil, -- float
-	texture = nil, -- string
+	borderColor = Color(), -- Color
+	color = Color(), -- Color
+	highlightStrength = 0.0, -- float
+	texture = "", -- string
 	value0 = nil, -- var
 	value1 = nil, -- var
 	value2 = nil, -- var
@@ -18,5 +18,6 @@ SelectionItem = {
 
 -- @return A new instance of SelectionItem
 function SelectionItem()
+	return nil
 end
 

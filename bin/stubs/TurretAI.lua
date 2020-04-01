@@ -1,13 +1,14 @@
 TurretAI = {
-	aimedPosition = nil, -- vec3
-	independentTargetingEnabled = nil, -- [read-only] bool
-	parentSaysShouldFire = nil, -- [read-only] bool
-	shouldFire = nil, -- [read-only] bool
-	targetedEntity = nil -- Uuid
+	aimedPosition = vec3(), -- vec3
+	independentTargetingEnabled = true, -- [read-only] bool
+	parentSaysShouldFire = true, -- [read-only] bool
+	shouldFire = true, -- [read-only] bool
+	targetedEntity = 0 -- Uuid
 }
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of TurretAI
 function TurretAI(id)
+	return nil
 end
 

@@ -1,36 +1,45 @@
 dvec3 = {
-	x = nil, -- double
-	y = nil, -- double
-	z = nil -- double
+	x = 0.0, -- double
+	y = 0.0, -- double
+	z = 0.0 -- double
 }
 
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of dvec3
 function dvec3(x, y, z)
+	return nil
 end
 
 function dvec3.__add(other)
+	return dvec3()
 end
 
 function dvec3.__div(other)
+	return dvec3()
 end
 
 function dvec3.__eq(other)
+	return true
 end
 
 function dvec3.__lt(other)
+	return true
 end
 
 function dvec3.__mul(other)
+	return dvec3()
 end
 
 function dvec3.__sub(other)
+	return dvec3()
 end
 
 function dvec3.__tostring()
+	return ""
 end
 
 function dvec3.__unm()
+	return dvec3()
 end
 

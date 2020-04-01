@@ -1,17 +1,18 @@
 ReadOnlyVelocity = {
-	axis = nil, -- [read-only] vec3
-	entity = nil, -- [read-only] Entity
-	entityId = nil, -- [read-only] uuid
-	linear = nil, -- [read-only] double
-	linear2 = nil, -- [read-only] double
-	localAngular = nil, -- [read-only] vec3
-	rotationSpeed = nil, -- [read-only] float
-	velocity = nil, -- [read-only] dvec3
-	velocityf = nil -- [read-only] vec3
+	axis = vec3(), -- [read-only] vec3
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	linear = 0.0, -- [read-only] double
+	linear2 = 0.0, -- [read-only] double
+	localAngular = vec3(), -- [read-only] vec3
+	rotationSpeed = 0.0, -- [read-only] float
+	velocity = dvec3(), -- [read-only] dvec3
+	velocityf = vec3() -- [read-only] vec3
 }
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyVelocity
 function ReadOnlyVelocity(id)
+	return nil
 end
 

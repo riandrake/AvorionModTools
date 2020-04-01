@@ -1,82 +1,86 @@
 Weapon = {
-	accuracy = nil, -- float
-	appearance = nil, -- int
-	appearanceSeed = nil, -- int
-	armed = nil, -- [read-only] bool
-	banimationAcceleration = nil, -- float
-	banimationSpeed = nil, -- float
-	bauraWidth = nil, -- float
-	binnerColor = nil, -- Color
-	blength = nil, -- float
-	blockPenetration = nil, -- int
-	bouterColor = nil, -- Color
-	bshape = nil, -- int
-	bshapeSize = nil, -- float
-	bwidth = nil, -- float
-	civil = nil, -- [read-only] bool
-	continuousBeam = nil, -- bool
-	damage = nil, -- float
-	damageType = nil, -- DamageType
-	deathExplosion = nil, -- bool
-	dps = nil, -- [read-only] float
-	explosionRadius = nil, -- float
-	fireDelay = nil, -- float
-	fireRate = nil, -- float
-	hullDamage = nil, -- [read-only] float
-	hullDamageMultiplicator = nil, -- float
-	hullRepair = nil, -- float
-	icon = nil, -- string
-	impactExplosion = nil, -- bool
-	impactParticles = nil, -- int
-	impactSound = nil, -- int
-	isBeam = nil, -- [read-only] bool
-	isProjectile = nil, -- [read-only] bool
-	localPosition = nil, -- vec3
-	material = nil, -- Material
-	metalRawEfficiency = nil, -- float
-	metalRefinedEfficiency = nil, -- float
-	name = nil, -- string
-	otherForce = nil, -- float
-	pcolor = nil, -- Color
-	pmaximumTime = nil, -- float
-	position = nil, -- [read-only] vec3
-	prefix = nil, -- string
-	pshape = nil, -- int
-	psize = nil, -- float
-	pvelocity = nil, -- float
-	rarity = nil, -- Rarity
-	reach = nil, -- float
-	recoil = nil, -- float
-	seeker = nil, -- bool
-	selfForce = nil, -- float
-	shieldDamage = nil, -- [read-only] float
-	shieldDamageMultiplicator = nil, -- float
-	shieldPenetration = nil, -- float
-	shieldRepair = nil, -- float
-	shotCreationPosition = nil, -- vec3
-	shotsFired = nil, -- int
-	shotsPerSecond = nil, -- [read-only] float
-	smaterial = nil, -- Material
-	sound = nil, -- string
-	stoneDamageMultiplicator = nil, -- float
-	stoneRawEfficiency = nil, -- float
-	stoneRefinedEfficiency = nil, -- float
-	tech = nil, -- int
-	timedDeath = nil -- bool
+	accuracy = 0.0, -- float
+	appearance = 0, -- int
+	appearanceSeed = 0, -- int
+	armed = true, -- [read-only] bool
+	banimationAcceleration = 0.0, -- float
+	banimationSpeed = 0.0, -- float
+	bauraWidth = 0.0, -- float
+	binnerColor = Color(), -- Color
+	blength = 0.0, -- float
+	blockPenetration = 0, -- int
+	bouterColor = Color(), -- Color
+	bshape = 0, -- int
+	bshapeSize = 0.0, -- float
+	bwidth = 0.0, -- float
+	civil = true, -- [read-only] bool
+	continuousBeam = true, -- bool
+	damage = 0.0, -- float
+	damageType = Physical, -- DamageType
+	deathExplosion = true, -- bool
+	dps = 0.0, -- [read-only] float
+	explosionRadius = 0.0, -- float
+	fireDelay = 0.0, -- float
+	fireRate = 0.0, -- float
+	hullDamage = 0.0, -- [read-only] float
+	hullDamageMultiplicator = 0.0, -- float
+	hullRepair = 0.0, -- float
+	icon = "", -- string
+	impactExplosion = true, -- bool
+	impactParticles = 0, -- int
+	impactSound = 0, -- int
+	isBeam = true, -- [read-only] bool
+	isProjectile = true, -- [read-only] bool
+	localPosition = vec3(), -- vec3
+	material = Material(), -- Material
+	metalRawEfficiency = 0.0, -- float
+	metalRefinedEfficiency = 0.0, -- float
+	name = "", -- string
+	otherForce = 0.0, -- float
+	pcolor = Color(), -- Color
+	pmaximumTime = 0.0, -- float
+	position = vec3(), -- [read-only] vec3
+	prefix = "", -- string
+	pshape = 0, -- int
+	psize = 0.0, -- float
+	pvelocity = 0.0, -- float
+	rarity = Rarity(), -- Rarity
+	reach = 0.0, -- float
+	recoil = 0.0, -- float
+	seeker = true, -- bool
+	selfForce = 0.0, -- float
+	shieldDamage = 0.0, -- [read-only] float
+	shieldDamageMultiplicator = 0.0, -- float
+	shieldPenetration = 0.0, -- float
+	shieldRepair = 0.0, -- float
+	shotCreationPosition = vec3(), -- vec3
+	shotsFired = 0, -- int
+	shotsPerSecond = 0.0, -- [read-only] float
+	smaterial = Material(), -- Material
+	sound = "", -- string
+	stoneDamageMultiplicator = 0.0, -- float
+	stoneRawEfficiency = 0.0, -- float
+	stoneRefinedEfficiency = 0.0, -- float
+	tech = 0, -- int
+	timedDeath = true -- bool
 }
 
 -- @return A new instance of Weapon
 function Weapon()
+	return nil
 end
 
 function Weapon.propertiesEqual(other)
+	return true
 end
 
 -- @return nothing
 function Weapon.setBeam()
+	return nil
 end
 
 -- @return nothing
 function Weapon.setProjectile()
+	return nil
 end
 

@@ -1,107 +1,117 @@
 TurretTemplate = {
-	accuracy = nil, -- [read-only] float
-	armed = nil, -- [read-only] bool
-	automatic = nil, -- bool
-	averageTech = nil, -- [read-only] int
-	baseEnergyPerSecond = nil, -- float
-	bestEfficiency = nil, -- [read-only] float
-	category = nil, -- [read-only] WeaponCategory
-	civil = nil, -- [read-only] bool
-	coaxial = nil, -- bool
-	continuousBeam = nil, -- [read-only] bool
-	coolingRate = nil, -- float
-	coolingTime = nil, -- [read-only] float
-	coolingType = nil, -- int
-	crew = nil, -- Crew
-	damage = nil, -- [read-only] float
-	damageType = nil, -- [read-only] int
-	deathExplosion = nil, -- [read-only] bool
-	dps = nil, -- [read-only] float
-	energyIncreasePerSecond = nil, -- float
-	favorite = nil, -- bool
-	fireRate = nil, -- [read-only] float
-	firing = nil, -- bool
-	firingsPerSecond = nil, -- [read-only] float
-	flavorText = nil, -- string
-	heat = nil, -- [read-only] float
-	heatPerShot = nil, -- float
-	hullDamageMultiplicator = nil, -- [read-only] float
-	hullRepairRate = nil, -- [read-only] float
-	itemType = nil, -- [read-only] int
-	material = nil, -- [read-only] Material
-	maxHeat = nil, -- float
-	maxTech = nil, -- [read-only] int
-	metalBestEfficiency = nil, -- [read-only] float
-	metalRawEfficiency = nil, -- [read-only] float
-	metalRefinedEfficiency = nil, -- [read-only] float
-	numVisibleWeapons = nil, -- [read-only] int
-	numWeapons = nil, -- [read-only] int
-	otherForce = nil, -- [read-only] float
-	overheated = nil, -- [read-only] bool
-	rarity = nil, -- [read-only] Rarity
-	reach = nil, -- [read-only] float
-	recent = nil, -- bool
-	requiredShootingEnergy = nil, -- [read-only] double
-	seeker = nil, -- [read-only] bool
-	selfForce = nil, -- [read-only] float
-	shieldDamageMultiplicator = nil, -- [read-only] float
-	shieldPenetration = nil, -- [read-only] float
-	shieldRepairRate = nil, -- [read-only] float
-	shootingTime = nil, -- [read-only] float
-	shotSpeed = nil, -- [read-only] float
-	shotsPerFiring = nil, -- [read-only] int
-	shotsPerSecond = nil, -- [read-only] float
-	shotsUntilOverheated = nil, -- [read-only] int
-	simultaneousShooting = nil, -- bool
-	size = nil, -- float
-	slots = nil, -- int
-	stackable = nil, -- [read-only] bool
-	stoneBestEfficiency = nil, -- [read-only] float
-	stoneDamageMultiplicator = nil, -- [read-only] float
-	stoneDamageMultiplier = nil, -- [read-only] float
-	stoneRawEfficiency = nil, -- [read-only] float
-	stoneRefinedEfficiency = nil, -- [read-only] float
-	trash = nil, -- bool
-	turningSpeed = nil, -- float
-	weaponIcon = nil, -- [read-only] string
-	weaponName = nil, -- [read-only] string
-	weaponPrefix = nil -- [read-only] string
+	accuracy = 0.0, -- [read-only] float
+	armed = true, -- [read-only] bool
+	automatic = true, -- bool
+	averageTech = 0, -- [read-only] int
+	baseEnergyPerSecond = 0.0, -- float
+	bestEfficiency = 0.0, -- [read-only] float
+	category = Armed, -- [read-only] WeaponCategory
+	civil = true, -- [read-only] bool
+	coaxial = true, -- bool
+	continuousBeam = true, -- [read-only] bool
+	coolingRate = 0.0, -- float
+	coolingTime = 0.0, -- [read-only] float
+	coolingType = 0, -- int
+	crew = Crew(), -- Crew
+	damage = 0.0, -- [read-only] float
+	damageType = 0, -- [read-only] int
+	deathExplosion = true, -- [read-only] bool
+	dps = 0.0, -- [read-only] float
+	energyIncreasePerSecond = 0.0, -- float
+	favorite = true, -- bool
+	fireRate = 0.0, -- [read-only] float
+	firing = true, -- bool
+	firingsPerSecond = 0.0, -- [read-only] float
+	flavorText = "", -- string
+	heat = 0.0, -- [read-only] float
+	heatPerShot = 0.0, -- float
+	hullDamageMultiplicator = 0.0, -- [read-only] float
+	hullRepairRate = 0.0, -- [read-only] float
+	itemType = 0, -- [read-only] int
+	material = Material(), -- [read-only] Material
+	maxHeat = 0.0, -- float
+	maxTech = 0, -- [read-only] int
+	metalBestEfficiency = 0.0, -- [read-only] float
+	metalRawEfficiency = 0.0, -- [read-only] float
+	metalRefinedEfficiency = 0.0, -- [read-only] float
+	numVisibleWeapons = 0, -- [read-only] int
+	numWeapons = 0, -- [read-only] int
+	otherForce = 0.0, -- [read-only] float
+	overheated = true, -- [read-only] bool
+	rarity = Rarity(), -- [read-only] Rarity
+	reach = 0.0, -- [read-only] float
+	recent = true, -- bool
+	requiredShootingEnergy = 0.0, -- [read-only] double
+	seeker = true, -- [read-only] bool
+	selfForce = 0.0, -- [read-only] float
+	shieldDamageMultiplicator = 0.0, -- [read-only] float
+	shieldPenetration = 0.0, -- [read-only] float
+	shieldRepairRate = 0.0, -- [read-only] float
+	shootingTime = 0.0, -- [read-only] float
+	shotSpeed = 0.0, -- [read-only] float
+	shotsPerFiring = 0, -- [read-only] int
+	shotsPerSecond = 0.0, -- [read-only] float
+	shotsUntilOverheated = 0, -- [read-only] int
+	simultaneousShooting = true, -- bool
+	size = 0.0, -- float
+	slots = 0, -- int
+	stackable = true, -- [read-only] bool
+	stoneBestEfficiency = 0.0, -- [read-only] float
+	stoneDamageMultiplicator = 0.0, -- [read-only] float
+	stoneDamageMultiplier = 0.0, -- [read-only] float
+	stoneRawEfficiency = 0.0, -- [read-only] float
+	stoneRefinedEfficiency = 0.0, -- [read-only] float
+	trash = true, -- bool
+	turningSpeed = 0.0, -- float
+	weaponIcon = "", -- [read-only] string
+	weaponName = "", -- [read-only] string
+	weaponPrefix = "" -- [read-only] string
 }
 
 -- @return A new instance of TurretTemplate
 function TurretTemplate(other)
+	return nil
 end
 
 function TurretTemplate.__eq(other)
+	return true
 end
 
 -- @return nothing
 function TurretTemplate.addDescription(str, value)
+	return nil
 end
 
 -- @return nothing
 function TurretTemplate.addWeapon(weapon)
+	return nil
 end
 
 -- @return nothing
 function TurretTemplate.clearDescriptions()
+	return nil
 end
 
 -- @return nothing
 function TurretTemplate.clearWeapons()
+	return nil
 end
 
 function TurretTemplate.getCrew()
+	return Crew()
 end
 
 function TurretTemplate.getDescriptions()
+	return table<string,string>()
 end
 
 -- Returns all weapons of the object
 function TurretTemplate.getWeapons()
+	return Weapon()
 end
 
 -- @return nothing
 function TurretTemplate.updateStaticStats()
+	return nil
 end
 

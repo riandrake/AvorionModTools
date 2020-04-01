@@ -1,9 +1,10 @@
 Planet = {
-	position = nil, -- [read-only] Matrix
-	size = nil -- [read-only] float
+	position = Matrix(), -- [read-only] Matrix
+	size = 0.0 -- [read-only] float
 }
 
 -- @return A new instance of Planet
 function Planet(index)
+	return nil
 end
 

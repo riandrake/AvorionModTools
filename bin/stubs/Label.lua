@@ -1,81 +1,93 @@
 Label = {
-	active = nil, -- [write-only] bool
-	bold = nil, -- [write-only] bool
-	caption = nil, -- string
-	center = nil, -- vec2
-	centered = nil, -- [write-only] bool
-	color = nil, -- [write-only] Color
-	font = nil, -- [write-only] int
-	fontSize = nil, -- [write-only] int
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	italic = nil, -- [write-only] bool
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	mouseDownFunction = nil, -- [write-only] string
-	mouseOver = nil, -- [read-only] bool
-	outline = nil, -- [write-only] bool
-	position = nil, -- vec2
-	rect = nil, -- Rect
-	shortenText = nil, -- [write-only] bool
-	size = nil, -- vec2
+	active = true, -- [write-only] bool
+	bold = true, -- [write-only] bool
+	caption = "", -- string
+	center = vec2(), -- vec2
+	centered = true, -- [write-only] bool
+	color = Color(), -- [write-only] Color
+	font = 0, -- [write-only] int
+	fontSize = 0, -- [write-only] int
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	italic = true, -- [write-only] bool
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseDownFunction = "", -- [write-only] string
+	mouseOver = true, -- [read-only] bool
+	outline = true, -- [write-only] bool
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	shortenText = true, -- [write-only] bool
+	size = vec2(), -- vec2
 	tooltip = nil, -- var
-	upper = nil, -- vec2
-	visible = nil, -- bool
-	width = nil, -- float
-	wordBreak = nil -- [write-only] bool
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0, -- float
+	wordBreak = true -- [write-only] bool
 }
 
 -- @return A new instance of Label
 function Label(index)
+	return nil
 end
 
 -- @return nothing
 function Label.setBottomAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setBottomLeftAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setBottomRightAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setCenterAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setLeftAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setRightAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setTopAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setTopLeftAligned()
+	return nil
 end
 
 -- @return nothing
 function Label.setTopRightAligned()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Label.hide()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Label.show()
+	return nil
 end
 

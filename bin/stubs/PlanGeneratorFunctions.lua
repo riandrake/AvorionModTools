@@ -3,5 +3,6 @@
 -- @param settings - The settings for the generation
 -- @return The new generated part
 function topLevelGenerate(seed, settings)
+	return nil
 end
 

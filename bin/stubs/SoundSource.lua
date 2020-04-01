@@ -1,28 +1,32 @@
 SoundSource = {
-	is3D = nil, -- [read-only] bool
-	loop = nil, -- bool
-	maxRadius = nil, -- float
-	minRadius = nil, -- float
-	playing = nil, -- [read-only] bool
-	position = nil, -- vec3
-	volume = nil -- float
+	is3D = true, -- [read-only] bool
+	loop = true, -- bool
+	maxRadius = 0.0, -- float
+	minRadius = 0.0, -- float
+	playing = true, -- [read-only] bool
+	position = vec3(), -- vec3
+	volume = 0.0 -- float
 }
 
 -- Creates a new sound source.
 -- @return A new instance of SoundSource
 function SoundSource(soundName, position, radius)
+	return nil
 end
 
 -- @return nothing
 function SoundSource.play()
+	return nil
 end
 
 -- @return nothing
 function SoundSource.stop()
+	return nil
 end
 
 -- Stops the sound and frees all resources connected to it. The SoundSource object will be inaccessible after this function.
 -- @return nothing
 function SoundSource.terminate()
+	return nil
 end
 

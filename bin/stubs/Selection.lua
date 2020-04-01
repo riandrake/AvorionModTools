@@ -1,91 +1,105 @@
 Selection = {
-	center = nil, -- vec2
-	dragFromEnabled = nil, -- [write-only] bool
-	dropIntoEnabled = nil, -- [write-only] bool
-	dropIntoSelfEnabled = nil, -- [write-only] bool
-	entriesHighlightable = nil, -- [write-only] bool
-	entriesSelectable = nil, -- [write-only] bool
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	isRenderingDraggedItem = nil, -- [read-only] bool
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	maxHorizontalEntries = nil, -- [read-only] unsigned int
-	mouseOver = nil, -- [read-only] bool
-	numEntries = nil, -- [read-only] int
-	onClickedFunction = nil, -- string
-	onDeselectedFunction = nil, -- string
-	onDroppedFunction = nil, -- string
-	onInsertedFunction = nil, -- string
-	onReceivedFunction = nil, -- string
-	onSelectedFunction = nil, -- string
-	padding = nil, -- [write-only] float
-	position = nil, -- vec2
-	rect = nil, -- Rect
-	selected = nil, -- [read-only] UserObject
-	selectedKey = nil, -- [read-only] ivec2
-	showEntriesOnly = nil, -- [write-only] bool
-	size = nil, -- vec2
+	center = vec2(), -- vec2
+	dragFromEnabled = true, -- [write-only] bool
+	dropIntoEnabled = true, -- [write-only] bool
+	dropIntoSelfEnabled = true, -- [write-only] bool
+	entriesHighlightable = true, -- [write-only] bool
+	entriesSelectable = true, -- [write-only] bool
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	isRenderingDraggedItem = true, -- [read-only] bool
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	maxHorizontalEntries = 0, -- [read-only] unsigned int
+	mouseOver = true, -- [read-only] bool
+	numEntries = 0, -- [read-only] int
+	onClickedFunction = "", -- string
+	onDeselectedFunction = "", -- string
+	onDroppedFunction = "", -- string
+	onInsertedFunction = "", -- string
+	onReceivedFunction = "", -- string
+	onSelectedFunction = "", -- string
+	padding = 0.0, -- [write-only] float
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	selected = UserObject(), -- [read-only] UserObject
+	selectedKey = ivec2(), -- [read-only] ivec2
+	showEntriesOnly = true, -- [write-only] bool
+	size = vec2(), -- vec2
 	tooltip = nil, -- var
-	upper = nil, -- vec2
-	visible = nil, -- bool
-	width = nil -- float
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
 }
 
 -- @return A new instance of Selection
 function Selection(index)
+	return nil
 end
 
 -- @return nothing
 function Selection.add(item, pos)
+	return nil
 end
 
 -- @return nothing
 function Selection.addEmpty(pos)
+	return nil
 end
 
 -- @return nothing
 function Selection.clear()
+	return nil
 end
 
 function Selection.getItem(key)
+	return UserObject()
 end
 
 function Selection.getItems()
+	return table<ivec2,UserObject>()
 end
 
 function Selection.getMouseOveredKey()
+	return ivec2()
 end
 
 function Selection.getRect(x, y)
+	return 0, Rect()
 end
 
 -- @return nothing
 function Selection.remove(key)
+	return nil
 end
 
 -- @return nothing
 function Selection.select(pos)
+	return nil
 end
 
 -- @return nothing
 function Selection.selectNoCallback(pos)
+	return nil
 end
 
 -- @return nothing
 function Selection.unselect()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Selection.hide()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Selection.show()
+	return nil
 end
 

@@ -1,58 +1,64 @@
 Slider = {
-	caption = nil, -- [write-only] string
-	center = nil, -- vec2
-	description = nil, -- [write-only] string
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	max = nil, -- float
-	min = nil, -- float
-	mouseOver = nil, -- [read-only] bool
-	onChangedFunction = nil, -- [write-only] string
-	position = nil, -- vec2
-	rect = nil, -- Rect
-	segments = nil, -- [write-only] unsigned int
-	showCaption = nil, -- [write-only] bool
-	showDescription = nil, -- [write-only] bool
-	showMaxValue = nil, -- [write-only] bool
-	showValue = nil, -- [write-only] bool
-	size = nil, -- vec2
-	sliderPosition = nil, -- float
+	caption = "", -- [write-only] string
+	center = vec2(), -- vec2
+	description = "", -- [write-only] string
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	max = 0.0, -- float
+	min = 0.0, -- float
+	mouseOver = true, -- [read-only] bool
+	onChangedFunction = "", -- [write-only] string
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	segments = 0, -- [write-only] unsigned int
+	showCaption = true, -- [write-only] bool
+	showDescription = true, -- [write-only] bool
+	showMaxValue = true, -- [write-only] bool
+	showValue = true, -- [write-only] bool
+	size = vec2(), -- vec2
+	sliderPosition = 0.0, -- float
 	tooltip = nil, -- var
-	unit = nil, -- [write-only] string
-	upper = nil, -- vec2
-	value = nil, -- float
-	visible = nil, -- bool
-	width = nil -- float
+	unit = "", -- [write-only] string
+	upper = vec2(), -- vec2
+	value = 0.0, -- float
+	visible = true, -- bool
+	width = 0.0 -- float
 }
 
 -- @return A new instance of Slider
 function Slider(index)
+	return nil
 end
 
 -- @return nothing
 function Slider.setRatio(inFrom, inTo)
+	return nil
 end
 
 -- @return nothing
 function Slider.setSliderPositionNoCallback(_in)
+	return nil
 end
 
 -- @return nothing
 function Slider.setValueNoCallback(_in)
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Slider.hide()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function Slider.show()
+	return nil
 end
 

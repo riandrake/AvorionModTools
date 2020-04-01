@@ -1,17 +1,19 @@
 CrewProfession = {
-	assignable = nil, -- [read-only] bool
-	color = nil, -- [read-only] Color
-	description = nil, -- [read-only] string
-	icon = nil, -- [read-only] string
-	price = nil, -- [read-only] int
-	salary = nil, -- [read-only] int
-	value = nil -- int
+	assignable = true, -- [read-only] bool
+	color = Color(), -- [read-only] Color
+	description = "", -- [read-only] string
+	icon = "", -- [read-only] string
+	price = 0, -- [read-only] int
+	salary = 0, -- [read-only] int
+	value = 0 -- int
 }
 
 -- @return A new instance of CrewProfession
 function CrewProfession(value)
+	return nil
 end
 
 function CrewProfession.name(amount)
+	return ""
 end
 

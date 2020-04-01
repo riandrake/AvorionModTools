@@ -2,18 +2,21 @@
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created
 function Galaxy.onAllianceCreated(index)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a new faction is created on the server
 -- @param index - Index of the faction that was created
 function Galaxy.onFactionCreated(index)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a new player is created on the server
 -- @param index - Index of the player that was created
 function Galaxy.onPlayerCreated(index)
+	return nil
 end
 
 -- @callback
@@ -25,5 +28,6 @@ end
 -- @param relationsBefore - The relations between the factions before the change, nil if none
 -- @param statusBefore - The relation status between the factions before the change, nil if none
 function Galaxy.onRelationsChanged(indexA, indexB, relations, status, relationsBefore, statusBefore)
+	return nil
 end
 

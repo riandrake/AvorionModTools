@@ -1,39 +1,42 @@
 TextField = {
-	center = nil, -- vec2
-	font = nil, -- [write-only] int
-	fontColor = nil, -- [write-only] Color
-	fontSize = nil, -- [write-only] int
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	mouseOver = nil, -- [read-only] bool
-	padding = nil, -- [write-only] int
-	position = nil, -- vec2
-	rect = nil, -- Rect
-	scrollable = nil, -- [write-only] bool
-	size = nil, -- vec2
-	text = nil, -- [write-only] string
+	center = vec2(), -- vec2
+	font = 0, -- [write-only] int
+	fontColor = Color(), -- [write-only] Color
+	fontSize = 0, -- [write-only] int
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	padding = 0, -- [write-only] int
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	scrollable = true, -- [write-only] bool
+	size = vec2(), -- vec2
+	text = "", -- [write-only] string
 	tooltip = nil, -- var
-	upper = nil, -- vec2
-	visible = nil, -- bool
-	width = nil -- float
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
 }
 
 -- @return A new instance of TextField
 function TextField(index)
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function TextField.hide()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function TextField.show()
+	return nil
 end
 

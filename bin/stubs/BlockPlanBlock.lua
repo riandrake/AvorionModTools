@@ -1,35 +1,37 @@
 BlockPlanBlock = {
-	blockIndex = nil, -- int
-	box = nil, -- Box
-	color = nil, -- Color
-	costFactor = nil, -- [read-only] double
-	density = nil, -- [read-only] double
-	durability = nil, -- double
-	durabilityFactor = nil, -- [read-only] double
-	harvestFactor = nil, -- [read-only] double
-	hasAO = nil, -- [read-only] bool
-	index = nil, -- [read-only] int
-	maintenance = nil, -- [read-only] double
-	material = nil, -- Material
-	maxDurability = nil, -- double
-	moneyCostFactor = nil, -- [read-only] double
-	numChildren = nil, -- [read-only] int
-	orientation = nil, -- Matrix
+	blockIndex = 0, -- int
+	box = Box(), -- Box
+	color = Color(), -- Color
+	costFactor = 0.0, -- [read-only] double
+	density = 0.0, -- [read-only] double
+	durability = 0.0, -- double
+	durabilityFactor = 0.0, -- [read-only] double
+	harvestFactor = 0.0, -- [read-only] double
+	hasAO = true, -- [read-only] bool
+	index = 0, -- [read-only] int
+	maintenance = 0.0, -- [read-only] double
+	material = Material(), -- Material
+	maxDurability = 0.0, -- double
+	moneyCostFactor = 0.0, -- [read-only] double
+	numChildren = 0, -- [read-only] int
+	orientation = Matrix(), -- Matrix
 	parent = nil, -- [read-only] var
-	processingPower = nil, -- [read-only] double
-	resourceCostFactor = nil, -- [read-only] double
-	staticMoneyCostFactor = nil, -- [read-only] double
-	surfaceCostFactor = nil, -- [read-only] double
-	valid = nil, -- [read-only] bool
-	volumeCostFactor = nil, -- [read-only] double
-	volumeFactor = nil -- [read-only] double
+	processingPower = 0.0, -- [read-only] double
+	resourceCostFactor = 0.0, -- [read-only] double
+	staticMoneyCostFactor = 0.0, -- [read-only] double
+	surfaceCostFactor = 0.0, -- [read-only] double
+	valid = true, -- [read-only] bool
+	volumeCostFactor = 0.0, -- [read-only] double
+	volumeFactor = 0.0 -- [read-only] double
 }
 
 -- This is the default constructor of BlockPlanBlock. No further arguments are required.
 -- @return A new instance of BlockPlanBlock
 function BlockPlanBlock()
+	return nil
 end
 
 function BlockPlanBlock.getChildren()
+	return 0
 end
 

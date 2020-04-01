@@ -1,47 +1,52 @@
 BlockStatistics = {
-	averageSize = nil, -- [read-only] vec3
-	cargoHold = nil, -- [read-only] double
-	centerOfMass = nil, -- [read-only] vec3
-	durability = nil, -- [read-only] double
-	energyYield = nil, -- [read-only] double
-	gyroPower = nil, -- [read-only] dvec3
-	hangarSpace = nil, -- [read-only] double
-	height = nil, -- [read-only] double
-	hyperspacePower = nil, -- [read-only] double
-	inertiaDampening = nil, -- [read-only] double
-	length = nil, -- [read-only] double
-	maintenance = nil, -- [read-only] double
-	mass = nil, -- [read-only] double
-	momentOfInertia = nil, -- [read-only] vec3
-	pitch = nil, -- [read-only] double
-	processingPower = nil, -- [read-only] double
-	productionCapacity = nil, -- [read-only] double
-	radarRadius = nil, -- [read-only] double
-	roll = nil, -- [read-only] double
-	shield = nil, -- [read-only] double
-	storableEnergy = nil, -- [read-only] double
-	thrust = nil, -- [read-only] double
-	thrusterPower = nil, -- [read-only] vec3
-	torpedoSpace = nil, -- [read-only] double
-	volume = nil, -- [read-only] double
-	width = nil, -- [read-only] double
-	yaw = nil -- [read-only] double
+	averageSize = vec3(), -- [read-only] vec3
+	cargoHold = 0.0, -- [read-only] double
+	centerOfMass = vec3(), -- [read-only] vec3
+	durability = 0.0, -- [read-only] double
+	energyYield = 0.0, -- [read-only] double
+	gyroPower = dvec3(), -- [read-only] dvec3
+	hangarSpace = 0.0, -- [read-only] double
+	height = 0.0, -- [read-only] double
+	hyperspacePower = 0.0, -- [read-only] double
+	inertiaDampening = 0.0, -- [read-only] double
+	length = 0.0, -- [read-only] double
+	maintenance = 0.0, -- [read-only] double
+	mass = 0.0, -- [read-only] double
+	momentOfInertia = vec3(), -- [read-only] vec3
+	pitch = 0.0, -- [read-only] double
+	processingPower = 0.0, -- [read-only] double
+	productionCapacity = 0.0, -- [read-only] double
+	radarRadius = 0.0, -- [read-only] double
+	roll = 0.0, -- [read-only] double
+	shield = 0.0, -- [read-only] double
+	storableEnergy = 0.0, -- [read-only] double
+	thrust = 0.0, -- [read-only] double
+	thrusterPower = vec3(), -- [read-only] vec3
+	torpedoSpace = 0.0, -- [read-only] double
+	volume = 0.0, -- [read-only] double
+	width = 0.0, -- [read-only] double
+	yaw = 0.0 -- [read-only] double
 }
 
 -- This is the default constructor of BlockStatistics. No further arguments are required.
 -- @return A new instance of BlockStatistics
 function BlockStatistics()
+	return nil
 end
 
 function BlockStatistics.getBlockEnergyDrain(blockIndex)
+	return 0.0
 end
 
 function BlockStatistics.getBlockNumber(blockIndex)
+	return 0
 end
 
 function BlockStatistics.getBlockVolume(blockIndex)
+	return 0.0
 end
 
 function BlockStatistics.getTotalEnergyDrain()
+	return 0.0
 end
 

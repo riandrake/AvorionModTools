@@ -3,6 +3,7 @@
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
 function Sector.onAIStateChanged(entityId, state)
+	return nil
 end
 
 -- @callback
@@ -11,6 +12,7 @@ end
 -- @param blockIndex - The index of the block
 -- @param changeFlags - The flags of the block changes
 function Sector.onBlockChanged(objectIndex, blockIndex, changeFlags)
+	return nil
 end
 
 -- @callback
@@ -21,6 +23,7 @@ end
 -- @param damage - The damage that was inflicted to the entity
 -- @param damageType - The type of damage
 function Sector.onBlockDamaged(objectIndex, blockIndex, inflictorId, damage, damageType)
+	return nil
 end
 
 -- @callback
@@ -31,6 +34,7 @@ end
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed block
 -- @param damageSource - The source of damage
 function Sector.onBlockDestroyed(objectIndex, index, block, lastDamageInflictor, damageSource)
+	return nil
 end
 
 -- @callback
@@ -39,6 +43,7 @@ end
 -- @param blockIndex - The index of the healed block
 -- @param damage - The damage the entity was healed for
 function Sector.onBlockHealed(objectIndex, blockIndex, damage)
+	return nil
 end
 
 -- @callback
@@ -46,6 +51,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param allBlocksChanged - A boolean that indicates whether all the blocks in the block plan have potentially changed
 function Sector.onBlockPlanChanged(objectIndex, allBlocksChanged)
+	return nil
 end
 
 -- @callback
@@ -54,6 +60,7 @@ end
 -- @param wasRepaired - true if the callback was fired because of a repair operation, false otherwise
 -- @param blockIndices - The indices of the added blocks, as variable arguments list
 function Sector.onBlocksAdded(objectIndex, wasRepaired, blockIndices)
+	return nil
 end
 
 -- @callback
@@ -61,6 +68,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param blockIndices - The indices of the removed blocks, as variable arguments list
 function Sector.onBlocksRemove(objectIndex, blockIndices)
+	return nil
 end
 
 -- @callback
@@ -68,6 +76,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param blockIndices - The indices of the removed blocks, as variable arguments list
 function Sector.onBlocksRemoved(objectIndex, blockIndices)
+	return nil
 end
 
 -- @callback
@@ -75,6 +84,7 @@ end
 -- @param entityId - The id of the entity
 -- @param attackingFaction - The index of the attacking faction
 function Sector.onBoardersDefeated(entityId, attackingFaction)
+	return nil
 end
 
 -- @callback
@@ -83,6 +93,7 @@ end
 -- @param attackingFaction - The index of the attacking faction
 -- @param firstLanding - True if these are the first boarders, false otherwise
 function Sector.onBoardersLand(entityId, attackingFaction, firstLanding)
+	return nil
 end
 
 -- @callback
@@ -90,6 +101,7 @@ end
 -- @param entityId - The id of the entity
 -- @param attackingFaction - The index of the attacking faction
 function Sector.onBoardingFight(entityId, attackingFaction)
+	return nil
 end
 
 -- @callback
@@ -98,6 +110,7 @@ end
 -- @param oldFactionIndex - The index of the faction that owned the entity before boarding
 -- @param newFactionIndex - The index of the attacking faction that now owns the entity
 function Sector.onBoardingSuccessful(entityId, oldFactionIndex, newFactionIndex)
+	return nil
 end
 
 -- @callback
@@ -106,6 +119,7 @@ end
 -- @param delta - The amount of cargo that changed
 -- @param good - The good that changed
 function Sector.onCargoChanged(objectIndex, delta, good)
+	return nil
 end
 
 -- @callback
@@ -116,6 +130,7 @@ end
 -- @param good - The good that was inside the loot entity
 -- @param owner - The original owner of the cargo
 function Sector.onCargoLootCollected(collector, lootIndex, amount, good, owner)
+	return nil
 end
 
 -- @callback
@@ -123,6 +138,7 @@ end
 -- @param objectIndexA - The index of the one colliding object
 -- @param objectIndexB - The index of the other colliding object
 function Sector.onCollision(objectIndexA, objectIndexB)
+	return nil
 end
 
 -- @callback
@@ -132,6 +148,7 @@ end
 -- @param playerIndex - The index of the player that entered the seat
 -- @param firstPlayer - A bool indicating whether the craft's seats were empty before
 function Sector.onCraftSeatEntered(entityId, seat, playerIndex, firstPlayer)
+	return nil
 end
 
 -- @callback
@@ -141,12 +158,14 @@ end
 -- @param playerIndex - The index of the player that left the seat
 -- @param playersRemaining - A bool indicating whether there are still players on the craft
 function Sector.onCraftSeatLeft(entityId, seat, playerIndex, playersRemaining)
+	return nil
 end
 
 -- @callback
 -- Executed whenever the crew of a entity in the sector changes. This callback is executed *after* the crew was changed on the entity.
 -- @param index - The id of the entity
 function Sector.onCrewChanged(index)
+	return nil
 end
 
 -- @callback
@@ -155,6 +174,7 @@ end
 -- @param delta - The amount of crewmen that changed
 -- @param profession - The profession of the crew that changed
 function Sector.onCrewChanged(index, delta, profession)
+	return nil
 end
 
 -- @callback
@@ -162,6 +182,7 @@ end
 -- @param collector - The id of the entity that collected loot
 -- @param lootIndex - The index of the collected loot
 function Sector.onCrewLootCollected(collector, lootIndex)
+	return nil
 end
 
 -- @callback
@@ -172,6 +193,7 @@ end
 -- @param damageSource - The source of damage
 -- @param damageType - The type of damage
 function Sector.onDamaged(objectIndex, amount, inflictor, damageSource, damageType)
+	return nil
 end
 
 -- @callback
@@ -179,18 +201,21 @@ end
 -- @param index - The id of the entity that was destroyed
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed entity
 function Sector.onDestroyed(index, lastDamageInflictor)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a new entity is created in the sector
 -- @param entityId - The index of the new entity
 function Sector.onEntityCreated(entityId)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a entity enters the sector.
 -- @param shipIndex - The index of the entity that entered the sector
 function Sector.onEntityEntered(shipIndex)
+	return nil
 end
 
 -- @callback
@@ -199,6 +224,7 @@ end
 -- @param x - The x coordinate of the target sector
 -- @param y - The y coordinate of the target sector
 function Sector.onEntityJump(shipIndex, x, y)
+	return nil
 end
 
 -- @callback
@@ -208,6 +234,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param landed - A boolean whether the fighter landed or got added otherwise
 function Sector.onFighterAdded(entityId, squadIndex, fighterIndex, landed)
+	return nil
 end
 
 -- @callback
@@ -216,6 +243,7 @@ end
 -- @param squadIndex - The index of the squad
 -- @param fighterId - The id of the fighter that landed
 function Sector.onFighterLanded(entityId, squadIndex, fighterId)
+	return nil
 end
 
 -- @callback
@@ -225,6 +253,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param started - A boolean whether the fighter started or got removed otherwise
 function Sector.onFighterRemove(entityId, squadIndex, fighterIndex, started)
+	return nil
 end
 
 -- @callback
@@ -234,6 +263,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param started - A boolean whether the fighter started or got removed otherwise
 function Sector.onFighterRemoved(entityId, squadIndex, fighterIndex, started)
+	return nil
 end
 
 -- @callback
@@ -242,6 +272,7 @@ end
 -- @param squadIndex - The index of the squad
 -- @param fighterId - The id of the fighter that started
 function Sector.onFighterStarted(entityId, squadIndex, fighterId)
+	return nil
 end
 
 -- @callback
@@ -250,6 +281,7 @@ end
 -- @param amount - The amount of damage that was healed
 -- @param inflictor - The id of the entity that dealt the damage
 function Sector.onHealed(objectIndex, amount, inflictor)
+	return nil
 end
 
 -- @callback
@@ -260,6 +292,7 @@ end
 -- @param damage - The damage the shot dealt to the object
 -- @param location - The impact location
 function Sector.onHullHit(objectIndex, blockIndex, shooterIndex, damage, location)
+	return nil
 end
 
 -- @callback
@@ -267,6 +300,7 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the collected loot
 function Sector.onLootCollected(collector, lootIndex)
+	return nil
 end
 
 -- @callback
@@ -276,6 +310,7 @@ end
 -- @param materialType - The type of material contained in the loot
 -- @param value - The amount of material the loot contained
 function Sector.onMaterialLootCollected(collector, lootIndex, materialType, value)
+	return nil
 end
 
 -- @callback
@@ -284,12 +319,14 @@ end
 -- @param lootIndex - The index of the collected loot
 -- @param value - The amount of credits the loot contained
 function Sector.onMoneyLootCollected(collector, lootIndex, value)
+	return nil
 end
 
 -- @callback
 -- Executed whenever the plan of an entity was modified by building, meaning adding or removing blocks.
 -- @param shipIndex - The index of the ship
 function Sector.onPlanModifiedByBuilding(shipIndex)
+	return nil
 end
 
 -- @callback
@@ -297,6 +334,7 @@ end
 -- @param playerIndex - Index of the player
 -- @param sectorChangeType - The kind of sector change that is happening
 function Sector.onPlayerEntered(playerIndex, sectorChangeType)
+	return nil
 end
 
 -- @callback
@@ -304,18 +342,21 @@ end
 -- @param playerIndex - Index of the player
 -- @param sectorChangeType - The kind of sector change that is happening
 function Sector.onPlayerLeft(playerIndex, sectorChangeType)
+	return nil
 end
 
 -- @callback
 -- Executed when a sector is loaded/restored from disk. This callback is called after the "restore" callback, for both entity and sector scripts.
 -- @param time - The time since the sector has been last updated. This value can be 0 or too small after database corruptions.
 function Sector.onRestoredFromDisk(time)
+	return nil
 end
 
 -- @callback
 -- Executed when a sector is generated/created for the first time for both entity and sector scripts.
 -- @param time - The time the game has been running already. This value can be 0 or too small after database corruptions.
 function Sector.onSectorGenerated(time)
+	return nil
 end
 
 -- @callback
@@ -323,12 +364,14 @@ end
 -- @param entityId - The index of the entity that is to be deleted
 -- @param deletionType - The deletion type
 function Sector.onSetForDeletion(entityId, deletionType)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a shield activates in the sector
 -- @param entityId - The id of the entity
 function Sector.onShieldActivate(entityId)
+	return nil
 end
 
 -- @callback
@@ -338,12 +381,14 @@ end
 -- @param damageType - The type of damage dealt
 -- @param inflictorId - The id of the entity that inflicted the damage
 function Sector.onShieldDamaged(entityId, amount, damageType, inflictorId)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a shield deactivates in the sector
 -- @param entityId - The id of the entity
 function Sector.onShieldDeactivate(entityId)
+	return nil
 end
 
 -- @callback
@@ -351,6 +396,7 @@ end
 -- @param entityId - The id of the entity
 -- @param amount - The amount of damage healed
 function Sector.onShieldHealed(entityId, amount)
+	return nil
 end
 
 -- @callback
@@ -360,18 +406,21 @@ end
 -- @param damage - The damage the shot dealt to the object
 -- @param location - The impact location
 function Sector.onShieldHit(objectIndex, shooterIndex, damage, location)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a new shot is created in the sector
 -- @param shotIndex - The index of the new shot
 function Sector.onShotCreated(shotIndex)
+	return nil
 end
 
 -- @callback
 -- Executed whenever a shot is fired in the sector
 -- @param entityId - The index of the firing entity (weapon)
 function Sector.onShotFired(entityId)
+	return nil
 end
 
 -- @callback
@@ -380,6 +429,7 @@ end
 -- @param shooterIndex - The index of the craft that fired the shot
 -- @param location - The impact location
 function Sector.onShotHit(objectIndex, shooterIndex, location)
+	return nil
 end
 
 -- @callback
@@ -387,6 +437,7 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 function Sector.onSquadAdded(entityId, index)
+	return nil
 end
 
 -- @callback
@@ -396,6 +447,7 @@ end
 -- @param orders - The orders of the squad
 -- @param targetId - The target assigned to the fighters
 function Sector.onSquadOrdersChanged(entityId, squadIndex, orders, targetId)
+	return nil
 end
 
 -- @callback
@@ -403,6 +455,7 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 function Sector.onSquadRemove(entityId, index)
+	return nil
 end
 
 -- @callback
@@ -410,24 +463,28 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 function Sector.onSquadRemoved(entityId, index)
+	return nil
 end
 
 -- @callback
 -- Executed whenever an entity starts firing in the sector
 -- @param entityId - The index of the firing entity (weapon)
 function Sector.onStartFiring(entityId)
+	return nil
 end
 
 -- @callback
 -- Executed whenever an entity stops firing in the sector
 -- @param entityId - The index of the firing entity (weapon)
 function Sector.onStopFiring(entityId)
+	return nil
 end
 
 -- @callback
 -- Executed whenever the systems of a ship in the sector changed. This callback is executed *after* the system was changed on the entity.
 -- @param shipIndex - The index of the ship
 function Sector.onSystemsChanged(shipIndex)
+	return nil
 end
 
 -- @callback
@@ -435,6 +492,7 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the loot that was collected
 function Sector.onSystemUpgradeLootCollected(collector, lootIndex)
+	return nil
 end
 
 -- @callback
@@ -443,6 +501,7 @@ end
 -- @param shooterIndex - The index of the craft that fired the torpedo
 -- @param torpedoIndex - The index of the torpedo that hit the object
 function Sector.onTorpedoHit(objectIndex, shooterIndex, torpedoIndex)
+	return nil
 end
 
 -- @callback
@@ -453,6 +512,7 @@ end
 -- @param damage - The damage the torpedo dealt to the object
 -- @param torpedoIndex - The index of the torpedo that hit the object
 function Sector.onTorpedoHullHit(objectIndex, blockIndex, shooterIndex, damage, torpedoIndex)
+	return nil
 end
 
 -- @callback
@@ -460,6 +520,7 @@ end
 -- @param entityId - The id of the entity
 -- @param torpedoId - The id of the launched torpedo
 function Sector.onTorpedoLaunched(entityId, torpedoId)
+	return nil
 end
 
 -- @callback
@@ -469,6 +530,7 @@ end
 -- @param damage - The damage the torpedo dealt to the object
 -- @param torpedoIndex - The index of the torpedo that hit the object
 function Sector.onTorpedoShieldHit(objectIndex, shooterIndex, damage, torpedoIndex)
+	return nil
 end
 
 -- @callback
@@ -477,6 +539,7 @@ end
 -- @param shipIndex - The id of the entity that turret was attached to
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed entity
 function Sector.onTurretDestroyed(turretIndex, shipIndex, lastDamageInflictor)
+	return nil
 end
 
 -- @callback
@@ -484,5 +547,6 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the collected loot
 function Sector.onTurretLootCollected(collector, lootIndex)
+	return nil
 end
 

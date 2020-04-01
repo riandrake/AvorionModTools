@@ -1,38 +1,41 @@
 CraftPortrait = {
-	alliance = nil, -- [write-only] bool
-	center = nil, -- vec2
-	craftName = nil, -- [write-only] string
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	mouseOver = nil, -- [read-only] bool
-	position = nil, -- vec2
-	radius = nil, -- [read-only] float
-	rect = nil, -- Rect
-	selectable = nil, -- bool
-	selected = nil, -- bool
-	size = nil, -- vec2
+	alliance = true, -- [write-only] bool
+	center = vec2(), -- vec2
+	craftName = "", -- [write-only] string
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	position = vec2(), -- vec2
+	radius = 0.0, -- [read-only] float
+	rect = Rect(), -- Rect
+	selectable = true, -- bool
+	selected = true, -- bool
+	size = vec2(), -- vec2
 	tooltip = nil, -- var
-	upper = nil, -- vec2
-	visible = nil, -- bool
-	width = nil -- float
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
 }
 
 -- @return A new instance of CraftPortrait
 function CraftPortrait(index)
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function CraftPortrait.hide()
+	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
 function CraftPortrait.show()
+	return nil
 end
 

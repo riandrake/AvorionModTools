@@ -1,37 +1,46 @@
 dvec4 = {
-	w = nil, -- double
-	x = nil, -- double
-	y = nil, -- double
-	z = nil -- double
+	w = 0.0, -- double
+	x = 0.0, -- double
+	y = 0.0, -- double
+	z = 0.0 -- double
 }
 
 -- @param x - y
 -- @param z - w
 -- @return A new instance of dvec4
 function dvec4(x, y, z, w)
+	return nil
 end
 
 function dvec4.__add(other)
+	return dvec4()
 end
 
 function dvec4.__div(other)
+	return dvec4()
 end
 
 function dvec4.__eq(other)
+	return true
 end
 
 function dvec4.__lt(other)
+	return true
 end
 
 function dvec4.__mul(other)
+	return dvec4()
 end
 
 function dvec4.__sub(other)
+	return dvec4()
 end
 
 function dvec4.__tostring()
+	return ""
 end
 
 function dvec4.__unm()
+	return dvec4()
 end
 

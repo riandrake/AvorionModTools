@@ -1,12 +1,13 @@
 ReadOnlySector = {
-	name = nil, -- [read-only] string
-	numEntities = nil, -- [read-only] unsigned int
-	numPlayers = nil, -- [read-only] unsigned int
-	pvpDamage = nil, -- [read-only] bool
-	seed = nil -- [read-only] Seed
+	name = "", -- [read-only] string
+	numEntities = 0, -- [read-only] unsigned int
+	numPlayers = 0, -- [read-only] unsigned int
+	pvpDamage = true, -- [read-only] bool
+	seed = Seed() -- [read-only] Seed
 }
 
 -- @return A new instance of ReadOnlySector
 function ReadOnlySector()
+	return nil
 end
 

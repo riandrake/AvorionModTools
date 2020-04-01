@@ -1,104 +1,112 @@
 FighterTemplate = {
-	accuracy = nil, -- [read-only] float
-	armed = nil, -- [read-only] bool
-	automatic = nil, -- [read-only] bool
-	averageTech = nil, -- [read-only] int
-	baseEnergyPerSecond = nil, -- float
-	bestEfficiency = nil, -- [read-only] float
-	category = nil, -- [read-only] WeaponCategory
-	civil = nil, -- [read-only] bool
-	continuousBeam = nil, -- [read-only] bool
-	coolingRate = nil, -- float
-	coolingTime = nil, -- [read-only] float
-	coolingType = nil, -- int
-	crew = nil, -- int
-	damage = nil, -- [read-only] float
-	damageType = nil, -- [read-only] int
-	deathExplosion = nil, -- [read-only] bool
-	diameter = nil, -- float
-	dps = nil, -- [read-only] float
-	durability = nil, -- float
-	energyIncreasePerSecond = nil, -- float
-	fireRate = nil, -- [read-only] float
-	firing = nil, -- bool
-	firingsPerSecond = nil, -- [read-only] float
-	flavorText = nil, -- string
-	heat = nil, -- [read-only] float
-	heatPerShot = nil, -- float
-	hullDamageMultiplicator = nil, -- [read-only] float
-	hullRepairRate = nil, -- [read-only] float
-	material = nil, -- [read-only] Material
-	maxFighterDiameter = nil, -- [read-only] static float
-	maxHeat = nil, -- float
-	maxTech = nil, -- [read-only] int
-	maxVelocity = nil, -- float
-	metalBestEfficiency = nil, -- [read-only] float
-	metalRawEfficiency = nil, -- [read-only] float
-	metalRefinedEfficiency = nil, -- [read-only] float
-	minFighterDiameter = nil, -- [read-only] static float
-	numVisibleWeapons = nil, -- [read-only] int
-	numWeapons = nil, -- [read-only] int
-	otherForce = nil, -- [read-only] float
-	overheated = nil, -- [read-only] bool
-	plan = nil, -- BlockPlan
-	rarity = nil, -- [read-only] Rarity
-	reach = nil, -- [read-only] float
-	requiredShootingEnergy = nil, -- [read-only] double
-	seeker = nil, -- [read-only] bool
-	selfForce = nil, -- [read-only] float
-	shield = nil, -- float
-	shieldDamageMultiplicator = nil, -- [read-only] float
-	shieldPenetration = nil, -- [read-only] float
-	shieldRepairRate = nil, -- [read-only] float
-	shootingTime = nil, -- [read-only] float
-	shotSpeed = nil, -- [read-only] float
-	shotsPerFiring = nil, -- [read-only] int
-	shotsPerSecond = nil, -- [read-only] float
-	shotsUntilOverheated = nil, -- [read-only] int
-	simultaneousShooting = nil, -- bool
-	slots = nil, -- [read-only] int
-	stoneBestEfficiency = nil, -- [read-only] float
-	stoneDamageMultiplicator = nil, -- [read-only] float
-	stoneDamageMultiplier = nil, -- [read-only] float
-	stoneRawEfficiency = nil, -- [read-only] float
-	stoneRefinedEfficiency = nil, -- [read-only] float
-	turningSpeed = nil, -- float
-	type = nil, -- FighterType
-	volume = nil, -- [read-only] float
-	weaponIcon = nil, -- [read-only] string
-	weaponName = nil, -- [read-only] string
-	weaponPrefix = nil -- [read-only] string
+	accuracy = 0.0, -- [read-only] float
+	armed = true, -- [read-only] bool
+	automatic = true, -- [read-only] bool
+	averageTech = 0, -- [read-only] int
+	baseEnergyPerSecond = 0.0, -- float
+	bestEfficiency = 0.0, -- [read-only] float
+	category = Armed, -- [read-only] WeaponCategory
+	civil = true, -- [read-only] bool
+	continuousBeam = true, -- [read-only] bool
+	coolingRate = 0.0, -- float
+	coolingTime = 0.0, -- [read-only] float
+	coolingType = 0, -- int
+	crew = 0, -- int
+	damage = 0.0, -- [read-only] float
+	damageType = 0, -- [read-only] int
+	deathExplosion = true, -- [read-only] bool
+	diameter = 0.0, -- float
+	dps = 0.0, -- [read-only] float
+	durability = 0.0, -- float
+	energyIncreasePerSecond = 0.0, -- float
+	fireRate = 0.0, -- [read-only] float
+	firing = true, -- bool
+	firingsPerSecond = 0.0, -- [read-only] float
+	flavorText = "", -- string
+	heat = 0.0, -- [read-only] float
+	heatPerShot = 0.0, -- float
+	hullDamageMultiplicator = 0.0, -- [read-only] float
+	hullRepairRate = 0.0, -- [read-only] float
+	material = Material(), -- [read-only] Material
+	maxFighterDiameter = 0.0, -- [read-only] float
+	maxHeat = 0.0, -- float
+	maxTech = 0, -- [read-only] int
+	maxVelocity = 0.0, -- float
+	metalBestEfficiency = 0.0, -- [read-only] float
+	metalRawEfficiency = 0.0, -- [read-only] float
+	metalRefinedEfficiency = 0.0, -- [read-only] float
+	minFighterDiameter = 0.0, -- [read-only] float
+	numVisibleWeapons = 0, -- [read-only] int
+	numWeapons = 0, -- [read-only] int
+	otherForce = 0.0, -- [read-only] float
+	overheated = true, -- [read-only] bool
+	plan = BlockPlan(), -- BlockPlan
+	rarity = Rarity(), -- [read-only] Rarity
+	reach = 0.0, -- [read-only] float
+	requiredShootingEnergy = 0.0, -- [read-only] double
+	seeker = true, -- [read-only] bool
+	selfForce = 0.0, -- [read-only] float
+	shield = 0.0, -- float
+	shieldDamageMultiplicator = 0.0, -- [read-only] float
+	shieldPenetration = 0.0, -- [read-only] float
+	shieldRepairRate = 0.0, -- [read-only] float
+	shootingTime = 0.0, -- [read-only] float
+	shotSpeed = 0.0, -- [read-only] float
+	shotsPerFiring = 0, -- [read-only] int
+	shotsPerSecond = 0.0, -- [read-only] float
+	shotsUntilOverheated = 0, -- [read-only] int
+	simultaneousShooting = true, -- bool
+	slots = 0, -- [read-only] int
+	stoneBestEfficiency = 0.0, -- [read-only] float
+	stoneDamageMultiplicator = 0.0, -- [read-only] float
+	stoneDamageMultiplier = 0.0, -- [read-only] float
+	stoneRawEfficiency = 0.0, -- [read-only] float
+	stoneRefinedEfficiency = 0.0, -- [read-only] float
+	turningSpeed = 0.0, -- float
+	type = Fighter, -- FighterType
+	volume = 0.0, -- [read-only] float
+	weaponIcon = "", -- [read-only] string
+	weaponName = "", -- [read-only] string
+	weaponPrefix = "" -- [read-only] string
 }
 
 -- This is the default constructor of FighterTemplate. No further arguments are required.
 -- @return A new instance of FighterTemplate
 function FighterTemplate()
+	return nil
 end
 
 -- @return nothing
 function FighterTemplate.addDescription(str, value)
+	return nil
 end
 
 -- @return nothing
 function FighterTemplate.addWeapon(weapon)
+	return nil
 end
 
 -- @return nothing
 function FighterTemplate.clearDescriptions()
+	return nil
 end
 
 -- @return nothing
 function FighterTemplate.clearWeapons()
+	return nil
 end
 
 function FighterTemplate.getDescriptions()
+	return table<string,string>()
 end
 
 -- Returns all weapons of the object
 function FighterTemplate.getWeapons()
+	return Weapon()
 end
 
 -- @return nothing
 function FighterTemplate.updateStaticStats()
+	return nil
 end
 

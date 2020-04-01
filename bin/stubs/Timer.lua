@@ -1,27 +1,32 @@
 Timer = {
-	milliseconds = nil, -- [read-only] int
-	running = nil, -- [read-only] bool
-	seconds = nil, -- [read-only] double
-	secondsStr = nil -- [read-only] string
+	milliseconds = 0, -- [read-only] int
+	running = true, -- [read-only] bool
+	seconds = 0.0, -- [read-only] double
+	secondsStr = "" -- [read-only] string
 }
 
 -- @return A new instance of Timer
 function Timer()
+	return nil
 end
 
 -- @return nothing
 function Timer.reset()
+	return nil
 end
 
 -- @return nothing
 function Timer.restart()
+	return nil
 end
 
 -- @return nothing
 function Timer.start()
+	return nil
 end
 
 -- @return nothing
 function Timer.stop()
+	return nil
 end
 

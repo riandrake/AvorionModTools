@@ -1,31 +1,34 @@
 UIElement = {
-	center = nil, -- vec2
-	height = nil, -- float
-	index = nil, -- [read-only] int
-	layer = nil, -- int
-	localCenter = nil, -- [read-only] vec2
-	localPosition = nil, -- [read-only] vec2
-	localRect = nil, -- [read-only] Rect
-	lower = nil, -- vec2
-	mouseOver = nil, -- [read-only] bool
-	position = nil, -- vec2
-	rect = nil, -- Rect
-	size = nil, -- vec2
+	center = vec2(), -- vec2
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	size = vec2(), -- vec2
 	tooltip = nil, -- var
-	upper = nil, -- vec2
-	visible = nil, -- bool
-	width = nil -- float
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
 }
 
 -- @return A new instance of UIElement
 function UIElement(index)
+	return nil
 end
 
 -- @return nothing
 function UIElement.hide()
+	return nil
 end
 
 -- @return nothing
 function UIElement.show()
+	return nil
 end
 

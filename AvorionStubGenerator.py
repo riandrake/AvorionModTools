@@ -13,6 +13,39 @@ import re
 
 BIN_DIR = Path('bin')
 
+DEFAULT_VALUES_BY_TYPE = {
+    '': 'nil',
+    'bool': 'true',
+    'string': '""',
+    'int': '0',
+    'unsigned int': '0',
+    'float': '0.0',
+    'var': 'nil',
+    'double': '0.0',
+    'Uuid': '0',
+    'uuid': '0',
+    'char': '0',
+}
+
+def get_default_value(type):
+    """ Return a default value for a type, so inference works in lua
+    """
+
+    # Assume these are enums that need collapsing
+    type = type.replace('::', '')
+
+    global DEFAULT_VALUES_BY_TYPE
+    if type not in DEFAULT_VALUES_BY_TYPE:
+
+        for weird in ('=', ' '):
+            if weird in type:
+                print('Weird type:', type)
+                return 'nil'
+
+        DEFAULT_VALUES_BY_TYPE[type] = type + '()'
+
+    return DEFAULT_VALUES_BY_TYPE[type]
+
 
 class StubGeneratorError(Exception):
     pass
@@ -41,6 +74,9 @@ class ParsedProperty:
         self.name = words[-1]
         self.type = ' '.join(words[:-1]).strip().replace('\n', '')
 
+        for strip in ('...', 'static '):
+            self.type = self.type.replace(strip, '')
+
 
 
 @dataclass(init=False)
@@ -50,10 +86,23 @@ class ParsedFunction:
     definition: str
     remarks: str
     callback: bool
+    return_value: str
+
+    def parse_return_value(self, return_value):
+        """ Parse a return value for defaults """
+        for strip in ('...', 'static ', 'const '):
+            return_value = return_value.replace(strip, '')
+
+        return_values = return_value.split(', ')
+
+        for idx, type in enumerate(return_values):
+            return_values[idx] = get_default_value(type)
+
+        self.return_value = ', '.join(return_values)
 
     def parse_definition(self, definition, namespace):
         """ Parse a definition from documentation """
-        self.callback = definition.startswith('callback')
+        self.callback = definition.startswith('callback ')
 
         end_bracket = definition.rfind(')')
         start_bracket = definition.rfind('(', 0, end_bracket)
@@ -79,8 +128,11 @@ class ParsedFunction:
 
         self.name = definition[name_start + 1:start_bracket]
 
+        prefix_len = len('callback ' if self.callback else 'function ')
+        self.parse_return_value(definition[prefix_len:name_start])
+
         namespace = namespace + '.' if namespace else ''
-        self.definition = 'function ' + namespace + self.name + f"({', '.join(args)})" + '\nend\n\n'
+        self.definition = 'function ' + namespace + self.name + f"({', '.join(args)})" + f'\n\treturn {self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
@@ -141,9 +193,12 @@ class StubGenerator:
 
         lines = []
         for code in code_containers[1:]:
-            text = re.sub(r'\<[^\<]*\>', '', str(code)).strip()
+            text = str(code)
+            text = re.sub(r'\<[^\<]*\>', '', text).strip()
             text = text.replace('&lt;', '<')
             text = text.replace('&gt;', '>')
+            text = text.replace('&amp;', '')
+            text = re.sub(r'\s+(?=[^<>]*>)', '', text).strip()
             if text:
                 lines.append(text)
         
@@ -161,20 +216,20 @@ class StubGenerator:
             if line.startswith('--'):
                 continue # ignore this line, it's just pseudocode
             
-            if not properties and line.startswith('property'):
+            if not properties and line.startswith('property '):
 
                 # If there's a function before some properties, it's definitely the namespace
                 if namespace is None and len(functions):
                     assert(len(functions) == 1)
                     namespace = functions[0].name
 
-                properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property')]
+                properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
                 for idx, property in enumerate(properties):
                     parsed = ParsedProperty()
                     parsed.parse_property(property, namespace)
                     properties[idx] = parsed
 
-            elif 'function' in line or 'callback' in line:
+            elif line.startswith('function ') or line.startswith('callback '):
                 function = [line.strip() for line in line.split('\n') if line.strip()]
                 parsed = ParsedFunction()
                 parsed.parse_definition(function[0], namespace)
@@ -186,12 +241,14 @@ class StubGenerator:
                     namespace = parsed.name
 
                 functions.append(parsed)
-            elif 'enum' in line:
+            elif line.startswith('enum '):
                 values = [line.strip() for line in line.split('\n') if line.strip()]
                 name = values[0].split()[-1]
                 enums[name] = [value for value in values if ' ' not in value]
+                DEFAULT_VALUES_BY_TYPE[name] = enums[name][0]
             else:
-                print('Unhandled:', line, file.name)
+                #print('Unhandled:', line, file.name)
+                pass
 
         luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
         with open((stubs / luaName), 'w') as writer:
@@ -205,10 +262,10 @@ class StubGenerator:
                 properties = sorted(list(properties.values()))
 
                 for property in properties[:-1]:
-                    writer.write(f'\t{property.name} = nil, -- {property.remark}{property.type}\n')
+                    writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
 
                 last = properties[-1]
-                writer.write(f'\t{last.name} = nil -- {last.remark}{last.type}\n')
+                writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
 
                 writer.write('}\n\n')
 

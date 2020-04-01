@@ -1,51 +1,58 @@
 Turret = {
-	activated = nil, -- bool
-	attachedPart = nil, -- int
-	automatic = nil, -- bool
-	coaxial = nil, -- bool
-	craftPlayerPiloted = nil, -- [read-only] bool
-	damageMultiplier = nil, -- [read-only] float
-	favorite = nil, -- bool
-	group = nil, -- int
-	horizontalRotation = nil, -- [read-only] bool
-	lookingAtTarget = nil, -- [read-only] bool
-	rigin = nil, -- [read-only] bool
-	selected = nil, -- bool
-	shootingCraft = nil, -- [read-only] uuid
-	shootingFaction = nil, -- [read-only] int
-	shotCollisionException = nil, -- [read-only] uuid
-	size = nil, -- [read-only] float
-	targetedObject = nil, -- [read-only] uuid
-	templateSize = nil, -- float
-	trash = nil, -- bool
-	turningSpeed = nil, -- float
-	usedSlots = nil, -- int
-	verticalRotation = nil, -- [read-only] bool
-	weaponsPlayerControlled = nil -- [read-only] bool
+	activated = true, -- bool
+	attachedPart = 0, -- int
+	automatic = true, -- bool
+	coaxial = true, -- bool
+	craftPlayerPiloted = true, -- [read-only] bool
+	damageMultiplier = 0.0, -- [read-only] float
+	favorite = true, -- bool
+	group = 0, -- int
+	horizontalRotation = true, -- [read-only] bool
+	lookingAtTarget = true, -- [read-only] bool
+	rigin = true, -- [read-only] bool
+	selected = true, -- bool
+	shootingCraft = 0, -- [read-only] uuid
+	shootingFaction = 0, -- [read-only] int
+	shotCollisionException = 0, -- [read-only] uuid
+	size = 0.0, -- [read-only] float
+	targetedObject = 0, -- [read-only] uuid
+	templateSize = 0.0, -- float
+	trash = true, -- bool
+	turningSpeed = 0.0, -- float
+	usedSlots = 0, -- int
+	verticalRotation = true, -- [read-only] bool
+	weaponsPlayerControlled = true -- [read-only] bool
 }
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Turret
 function Turret(id)
+	return nil
 end
 
 -- @return nothing
 function Turret.consumeEnergyForShot(amount)
+	return nil
 end
 
 function Turret.getCurrentVelocity()
+	return vec3()
 end
 
 function Turret.getLookingPosition()
+	return Matrix()
 end
 
 function Turret.hasEnergyForShot(amount)
+	return true
 end
 
 -- @return nothing
 function Turret.setOrientation(rotationVertical, rotationHorizontal, lookingAtTarget)
+	return nil
 end
 
 function Turret.shootingVectorOk(ray)
+	return true
 end
 

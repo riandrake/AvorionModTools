@@ -1,26 +1,27 @@
 TooltipLine = {
-	backgroundColor = nil, -- Color
-	cbold = nil, -- bool
-	ccolor = nil, -- Color
-	citalic = nil, -- bool
-	ctext = nil, -- string
-	fontSize = nil, -- int
-	height = nil, -- int
-	icon = nil, -- string
-	iconColor = nil, -- Color
-	iconRight = nil, -- string
-	iconRightColor = nil, -- Color
-	lbold = nil, -- bool
-	lcolor = nil, -- Color
-	litalic = nil, -- bool
-	ltext = nil, -- string
-	rbold = nil, -- bool
-	rcolor = nil, -- Color
-	ritalic = nil, -- bool
-	rtext = nil -- string
+	backgroundColor = Color(), -- Color
+	cbold = true, -- bool
+	ccolor = Color(), -- Color
+	citalic = true, -- bool
+	ctext = "", -- string
+	fontSize = 0, -- int
+	height = 0, -- int
+	icon = "", -- string
+	iconColor = Color(), -- Color
+	iconRight = "", -- string
+	iconRightColor = Color(), -- Color
+	lbold = true, -- bool
+	lcolor = Color(), -- Color
+	litalic = true, -- bool
+	ltext = "", -- string
+	rbold = true, -- bool
+	rcolor = Color(), -- Color
+	ritalic = true, -- bool
+	rtext = "" -- string
 }
 
 -- @return A new instance of TooltipLine
 function TooltipLine(height, fontSize)
+	return nil
 end
 
