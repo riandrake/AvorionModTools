@@ -1,0 +1,1529 @@
+<html>
+<head>
+<title> Avorion Documentation - Enums</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="maincentered">
+<div class="maincontent">
+<h1 class="documentationheader">Avorion Script API Documentation</h1>
+<div class="sitemap">
+<div class="headerlisting flexheader">
+<div>
+<a href="index.html">Home</a>
+<a href="Functions.html">Functions</a>
+<a href="Search.html">Search</a>
+</div>
+<div class="flexheaderwhitespace"></div>
+<form action="Search.html" method="get">Search:<input name="search" class="headersearchinput" type="search"></form></div></div>
+<div class="floatleft">
+<div class="codecontainer">
+<table>
+<tr><td>
+<a class="type" href="#AIState">AIState</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#AlliancePrivilege">AlliancePrivilege</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#BeamShape">BeamShape</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#BlockShading">BlockShading</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#BlockType">BlockType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#BoxType">BoxType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ChatChannel">ChatChannel</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ChatMessageType">ChatMessageType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ComponentType">ComponentType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ControlAction">ControlAction</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ControlActionBit">ControlActionBit</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#CoolingType">CoolingType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#CrewProfessionType">CrewProfessionType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#DamageSource">DamageSource</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#DamageType">DamageType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#DeletionType">DeletionType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#Difficulty">Difficulty</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#EntityArrivalType">EntityArrivalType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#EntityType">EntityType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#FighterOrders">FighterOrders</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#FighterStartError">FighterStartError</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#FighterType">FighterType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#FontType">FontType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ImpactParticles">ImpactParticles</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#InventoryItemType">InventoryItemType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#KeyboardKey">KeyboardKey</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ListBoxEntryType">ListBoxEntryType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#MalusReason">MalusReason</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#MaterialType">MaterialType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#MoonType">MoonType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#MouseButton">MouseButton</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#PlanetType">PlanetType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#PlayerStateType">PlayerStateType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#ProjectileShape">ProjectileShape</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#RarityType">RarityType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#RelationStatus">RelationStatus</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#SavedDesignType">SavedDesignType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#SectorChangeType">SectorChangeType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#SoundType">SoundType</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#StatsBonuses">StatsBonuses</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#TransformationFeature">TransformationFeature</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#TurretAutoFireMode">TurretAutoFireMode</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#WeaponAppearance">WeaponAppearance</a>
+</td></tr>
+<tr><td>
+<a class="type" href="#WeaponCategory">WeaponCategory</a>
+</td></tr>
+</table>
+</div>
+</div>
+<div class="floatright">
+<div id="AIState" class="codecontainer">
+<span class="type">enum AIState </span><br/><br/>
+None<br/>
+Idle<br/>
+Escort<br/>
+Aggressive<br/>
+Passive<br/>
+Guard<br/>
+Jump<br/>
+Fly<br/>
+LinearFly<br/>
+Attack<br/>
+Follow<br/>
+Harvest<br/>
+Boarding<br/>
+PassiveTurning<br/>
+RepairTarget<br/>
+Repair<br/>
+</div>
+<div id="AlliancePrivilege" class="codecontainer">
+<span class="type">enum AlliancePrivilege </span><br/><br/>
+Invite<br/>
+Kick<br/>
+Promote<br/>
+Demote<br/>
+EditRanks<br/>
+EditMap<br/>
+AddItems<br/>
+SpendItems<br/>
+TakeItems<br/>
+AddResources<br/>
+SpendResources<br/>
+TakeResources<br/>
+FoundShips<br/>
+FoundStations<br/>
+ManageStations<br/>
+ManageShips<br/>
+FlyCrafts<br/>
+ModifyCrafts<br/>
+ModifyEmblem<br/>
+ModifyMessageOfTheDay<br/>
+NegotiateRelations<br/>
+</div>
+<div id="BeamShape" class="codecontainer">
+<span class="type">enum BeamShape </span><br/><br/>
+None<br/>
+Straight<br/>
+Lightning<br/>
+Swirly<br/>
+</div>
+<div id="BlockShading" class="codecontainer">
+<span class="type">enum BlockShading </span><br/><br/>
+WindowedHull<br/>
+Hull<br/>
+Engine<br/>
+Stone<br/>
+Housing<br/>
+Cargo<br/>
+Thruster<br/>
+Armor<br/>
+ShieldGen<br/>
+Generator<br/>
+EnergyContainer<br/>
+IntegrityGenerator<br/>
+ComputerCore<br/>
+SolarPanel<br/>
+Hangar<br/>
+Emissive<br/>
+Glass<br/>
+Reflector<br/>
+Framework<br/>
+Dock<br/>
+Hologram<br/>
+WormHole<br/>
+RichStone<br/>
+TurretLocker<br/>
+Gyro<br/>
+InertiaDampener<br/>
+BlackBox<br/>
+Translucent<br/>
+Assembly<br/>
+TorpedoLauncher<br/>
+TorpedoStorage<br/>
+TurretBase<br/>
+SuperRichStone<br/>
+</div>
+<div id="BlockType" class="codecontainer">
+<span class="type">enum BlockType </span><br/><br/>
+Hull<br/>
+BlankHull<br/>
+Engine<br/>
+Thruster<br/>
+CargoBay<br/>
+Quarters<br/>
+Dock<br/>
+Stone<br/>
+StoneEdge<br/>
+StoneCorner<br/>
+StoneOuterCorner<br/>
+StoneInnerCorner<br/>
+Glass<br/>
+GlassEdge<br/>
+GlassCorner<br/>
+GlassOuterCorner<br/>
+GlassInnerCorner<br/>
+Reflector<br/>
+ReflectorEdge<br/>
+ReflectorCorner<br/>
+ReflectorOuterCorner<br/>
+ReflectorInnerCorner<br/>
+Framework<br/>
+ShieldGenerator<br/>
+Generator<br/>
+Armor<br/>
+ComputerCore<br/>
+SolarPanel<br/>
+Light<br/>
+EnergyContainer<br/>
+Hangar<br/>
+EdgeHull<br/>
+CornerHull<br/>
+OuterCornerHull<br/>
+InnerCornerHull<br/>
+EdgeArmor<br/>
+CornerArmor<br/>
+OuterCornerArmor<br/>
+InnerCornerArmor<br/>
+Glow<br/>
+GlowEdge<br/>
+GlowCorner<br/>
+GlowInnerCorner<br/>
+GlowOuterCorner<br/>
+Holo<br/>
+HoloEdge<br/>
+HoloCorner<br/>
+HoloInnerCorner<br/>
+HoloOuterCorner<br/>
+RichStone<br/>
+RichStoneEdge<br/>
+RichStoneCorner<br/>
+RichStoneInnerCorner<br/>
+RichStoneOuterCorner<br/>
+SuperRichStone<br/>
+SuperRichStoneEdge<br/>
+SuperRichStoneCorner<br/>
+SuperRichStoneInnerCorner<br/>
+SuperRichStoneOuterCorner<br/>
+Portal<br/>
+TurretImmobilizer<br/>
+Assembly<br/>
+TorpedoLauncher<br/>
+TorpedoStorage<br/>
+TurretBase<br/>
+EdgeTurretBase<br/>
+BlackBox<br/>
+DirectionalThruster<br/>
+InertiaDampener<br/>
+IntegrityGenerator<br/>
+HyperspaceCore<br/>
+Gyro<br/>
+Transporter<br/>
+TwistedCorner1<br/>
+TwistedCorner2<br/>
+TwistedCorner1Armor<br/>
+TwistedCorner2Armor<br/>
+GlowTwistedCorner1<br/>
+GlowTwistedCorner2<br/>
+GlassTwistedCorner1<br/>
+GlassTwistedCorner2<br/>
+ReflectorTwistedCorner1<br/>
+ReflectorTwistedCorner2<br/>
+StoneTwistedCorner1<br/>
+StoneTwistedCorner2<br/>
+HoloTwistedCorner1<br/>
+HoloTwistedCorner2<br/>
+RichStoneTwistedCorner1<br/>
+RichStoneTwistedCorner2<br/>
+SuperRichStoneTwistedCorner1<br/>
+SuperRichStoneTwistedCorner2<br/>
+</div>
+<div id="BoxType" class="codecontainer">
+<span class="type">enum BoxType </span><br/><br/>
+Default<br/>
+OrientedBox<br/>
+Edge<br/>
+Corner<br/>
+InnerCorner<br/>
+TwistedCorner1<br/>
+TwistedCorner2<br/>
+</div>
+<div id="ChatChannel" class="codecontainer">
+<span class="type">enum ChatChannel </span><br/><br/>
+All<br/>
+Sector<br/>
+Group<br/>
+Alliance<br/>
+Economy<br/>
+</div>
+<div id="ChatMessageType" class="codecontainer">
+<span class="type">enum ChatMessageType </span><br/><br/>
+Normal<br/>
+Information<br/>
+Error<br/>
+Warning<br/>
+Whisp<br/>
+ServerInfo<br/>
+Chatter<br/>
+</div>
+<div id="ComponentType" class="codecontainer">
+<span class="type">enum ComponentType </span><br/><p>
+This enum represents all types of components that can be added to an entity. Some of these components are only available on the client, i.e. effects for explosions. Typical server components are components that manage game-related data that doesn't have to be synchronized between client and server, i.e. contribution to damage or database management. 
+</p>
+Position<br/>
+Plan<br/>
+Asleep<br/>
+BoundingSphere<br/>
+BoundingBox<br/>
+Velocity<br/>
+Physics<br/>
+Owner<br/>
+Scripts<br/>
+ScriptCallback<br/>
+EntityType<br/>
+Children<br/>
+Intersection<br/>
+BspTree<br/>
+StructuralIntegrity<br/>
+SimpleScriptValues<br/>
+TurretBases<br/>
+Transporter<br/>
+CargoBay<br/>
+Name<br/>
+Crew<br/>
+Durability<br/>
+PlanMaxDurability<br/>
+Title<br/>
+Turrets<br/>
+ControlUnit<br/>
+ShipSystem<br/>
+DockingPositions<br/>
+DirectFlightPhysics<br/>
+Mothership<br/>
+ShipAI<br/>
+Hangar<br/>
+FighterAI<br/>
+TorpedoAI<br/>
+Torpedo<br/>
+FighterController<br/>
+StatsBonuses<br/>
+InteractionText<br/>
+TurretAI<br/>
+TurretController<br/>
+Rotator<br/>
+DamageMultiplier<br/>
+FighterDodge<br/>
+ShotIntersection<br/>
+TorpedoLauncher<br/>
+EnergySystem<br/>
+Shield<br/>
+LifeSupport<br/>
+Engine<br/>
+Thrusters<br/>
+HyperspaceEngine<br/>
+Radar<br/>
+Scanners<br/>
+Gyros<br/>
+FlightAssist<br/>
+MineableMaterial<br/>
+LootPhysics<br/>
+CargoLoot<br/>
+MoneyLoot<br/>
+ResourceLoot<br/>
+TurretLoot<br/>
+SystemUpgradeLoot<br/>
+CrewLoot<br/>
+Turret<br/>
+LocalPositioner<br/>
+Weapons<br/>
+ParentEntity<br/>
+RecoilApplyer<br/>
+WormHole<br/>
+DeletionTimer<br/>
+LootAttractor<br/>
+HitFeedbackSender<br/>
+Boarding<br/>
+PlanMesh<br/>
+TurretMesh<br/>
+ShieldMesh<br/>
+WeaponMesh<br/>
+BlockExplosions<br/>
+TurretExplosions<br/>
+LootCollectionSound<br/>
+Rotation<br/>
+LootParticles<br/>
+PlanSparks<br/>
+WeaponSound<br/>
+EngineSound<br/>
+ScriptUI<br/>
+Tooltip<br/>
+Icon<br/>
+FlickerLights<br/>
+ClientNotifier<br/>
+HangarDoorMesh<br/>
+WeaponFireGlow<br/>
+ShieldAmbientSound<br/>
+PlacementSounds<br/>
+ScannerData<br/>
+ShadowMap<br/>
+EffectNotifier<br/>
+InstancingNotifier<br/>
+AmbientLightCache<br/>
+RemovedBlocksMesh<br/>
+InertiaDampenerBrightness<br/>
+TorpedoMeshBuilder<br/>
+CustomMesh<br/>
+CraftDecay<br/>
+ShipInfoUpdater<br/>
+FactionNotifier<br/>
+WreckageCreator<br/>
+MoneyDropper<br/>
+ResourceDropper<br/>
+TurretDropper<br/>
+CargoDropper<br/>
+DroneDeleter<br/>
+LootCollector<br/>
+EntityTransferrer<br/>
+DamageContributors<br/>
+UnhappyCrewRemover<br/>
+DestroyedItemReturner<br/>
+SystemUpgradeDropper<br/>
+CrewPayday<br/>
+Loot<br/>
+CrewBehaviour<br/>
+DeathLocationMarker<br/>
+CrewEjector<br/>
+TorpedoImpact<br/>
+PlayerNotifier<br/>
+DockingPartner<br/>
+DummyComponent0<br/>
+DummyComponent1<br/>
+DummyComponent2<br/>
+DummyComponent3<br/>
+DummyComponent4<br/>
+DummyComponent5<br/>
+</div>
+<div id="ControlAction" class="codecontainer">
+<span class="type">enum ControlAction </span><br/><br/>
+None<br/>
+TurnUp<br/>
+TurnDown<br/>
+TurnRight<br/>
+TurnLeft<br/>
+StrafeUp<br/>
+StrafeDown<br/>
+StrafeLeft<br/>
+StrafeRight<br/>
+RollRight<br/>
+RollLeft<br/>
+Accelerate<br/>
+Brake<br/>
+ToggleVelocity<br/>
+Fire1<br/>
+Fire2<br/>
+FireTorpedoes<br/>
+SelectAllWeapons<br/>
+SelectWeapons1<br/>
+SelectWeapons2<br/>
+SelectWeapons3<br/>
+SelectWeapons4<br/>
+SelectWeapons5<br/>
+SelectWeapons6<br/>
+SelectWeapons7<br/>
+SelectWeapons8<br/>
+SelectWeapons9<br/>
+NextTarget<br/>
+SelectTarget<br/>
+NearestEnemy<br/>
+NextAlly<br/>
+ReleaseMouse<br/>
+ShowServerInfo<br/>
+FreeLook<br/>
+MoveCamera<br/>
+ResetCamera<br/>
+CameraForward<br/>
+CameraBackward<br/>
+CameraLeft<br/>
+CameraRight<br/>
+ToggleFreeCamera<br/>
+DisplaceCamera<br/>
+Jump<br/>
+BuildingMode<br/>
+TransferPlayer<br/>
+PauseMenu<br/>
+Interact<br/>
+ShowMap<br/>
+ShowPlayerMenu<br/>
+ShowShipMenu<br/>
+ShowChatWindow<br/>
+ShowMailWindow<br/>
+DebugScript<br/>
+ToggleStrategyMode<br/>
+PauseGame<br/>
+AcceptHail<br/>
+RejectHail<br/>
+SwapControls<br/>
+ShowScriptConsole<br/>
+QuickAccess0<br/>
+QuickAccess1<br/>
+QuickAccess2<br/>
+QuickAccess3<br/>
+QuickAccess4<br/>
+QuickAccess5<br/>
+QuickAccess6<br/>
+QuickAccess7<br/>
+QuickAccess8<br/>
+QuickAccess9<br/>
+ScaleBlock<br/>
+ScaleBlockLinear<br/>
+ScaleBlockX<br/>
+ScaleBlockY<br/>
+ScaleBlockZ<br/>
+RotateBlocks<br/>
+DeleteBlock<br/>
+ColorMode<br/>
+ShowInventory<br/>
+FocusBlock<br/>
+MirrorX<br/>
+MirrorY<br/>
+MirrorZ<br/>
+BlockMode<br/>
+TurretMode<br/>
+SavedDesigns<br/>
+TurretDesignMode<br/>
+MirrorPlaneX<br/>
+MirrorPlaneY<br/>
+MirrorPlaneZ<br/>
+ToggleEngines<br/>
+ToggleFlightAssist<br/>
+ToggleGyros<br/>
+ToggleHyperspaceEngine<br/>
+ToggleLifeSupport<br/>
+ToggleShield<br/>
+ToggleStructuralIntegrity<br/>
+ToggleThrusters<br/>
+SelectSquad1<br/>
+SelectSquad2<br/>
+SelectSquad3<br/>
+SelectSquad4<br/>
+SelectSquad5<br/>
+SelectSquad6<br/>
+SelectSquad7<br/>
+SelectSquad8<br/>
+SelectSquad9<br/>
+SelectSquad10<br/>
+SquadAttack<br/>
+SquadDefend<br/>
+SquadReturn<br/>
+SquadCollect<br/>
+SquadHarvest<br/>
+AttackOrder<br/>
+GuardOrder<br/>
+PatrolOrder<br/>
+AggressiveOrder<br/>
+MineOrder<br/>
+SalvageOrder<br/>
+StopOrder<br/>
+</div>
+<div id="ControlActionBit" class="codecontainer">
+<span class="type">enum ControlActionBit </span><br/><br/>
+Up<br/>
+Down<br/>
+Left<br/>
+Right<br/>
+RollLeft<br/>
+RollRight<br/>
+Fire1<br/>
+Fire2<br/>
+Boost<br/>
+StrafeLeft<br/>
+StrafeRight<br/>
+StrafeUp<br/>
+StrafeDown<br/>
+Torpedoes<br/>
+Drift<br/>
+</div>
+<div id="CoolingType" class="codecontainer">
+<span class="type">enum CoolingType </span><br/><br/>
+Standard<br/>
+EnergyPerShot<br/>
+EnergyContinuous<br/>
+BatteryCharge<br/>
+</div>
+<div id="CrewProfessionType" class="codecontainer">
+<span class="type">enum CrewProfessionType </span><br/><br/>
+None<br/>
+Engine<br/>
+Gunner<br/>
+Miner<br/>
+Repair<br/>
+Pilot<br/>
+Security<br/>
+Attacker<br/>
+Sergeant<br/>
+Lieutenant<br/>
+Commander<br/>
+General<br/>
+Captain<br/>
+Number<br/>
+</div>
+<div id="DamageSource" class="codecontainer">
+<span class="type">enum DamageSource </span><br/><br/>
+Energy<br/>
+Collision<br/>
+Decay<br/>
+Arbitrary<br/>
+Torpedo<br/>
+Invalid<br/>
+</div>
+<div id="DamageType" class="codecontainer">
+<span class="type">enum DamageType </span><br/><br/>
+Physical<br/>
+Energy<br/>
+AntiMatter<br/>
+Electric<br/>
+Plasma<br/>
+Fragments<br/>
+None<br/>
+</div>
+<div id="DeletionType" class="codecontainer">
+<span class="type">enum DeletionType </span><br/><br/>
+Default<br/>
+Jumped<br/>
+Destroyed<br/>
+</div>
+<div id="Difficulty" class="codecontainer">
+<span class="type">enum Difficulty </span><br/><br/>
+Lowest<br/>
+Beginner<br/>
+Easy<br/>
+Normal<br/>
+Veteran<br/>
+Expert<br/>
+Hardcore<br/>
+Insane<br/>
+Highest<br/>
+</div>
+<div id="EntityArrivalType" class="codecontainer">
+<span class="type">enum EntityArrivalType </span><br/><br/>
+Default<br/>
+GateOrWormhole<br/>
+Jump<br/>
+</div>
+<div id="EntityType" class="codecontainer">
+<span class="type">enum EntityType </span><br/><br/>
+None<br/>
+Ship<br/>
+Drone<br/>
+Station<br/>
+Turret<br/>
+Asteroid<br/>
+Wreckage<br/>
+Anomaly<br/>
+Loot<br/>
+WormHole<br/>
+Torpedo<br/>
+Fighter<br/>
+Unknown<br/>
+Other<br/>
+</div>
+<div id="FighterOrders" class="codecontainer">
+<span class="type">enum FighterOrders </span><br/><br/>
+Attack<br/>
+Defend<br/>
+Return<br/>
+Harvest<br/>
+FlyToLocation<br/>
+Board<br/>
+</div>
+<div id="FighterStartError" class="codecontainer">
+<span class="type">enum FighterStartError </span><br/><br/>
+NoError<br/>
+NoHangar<br/>
+SquadNotFound<br/>
+SquadEmpty<br/>
+NoStartPosition<br/>
+MaximumFightersStarted<br/>
+FighterNotFound<br/>
+NoPilots<br/>
+NoCrew<br/>
+NoFighterFound<br/>
+Other<br/>
+</div>
+<div id="FighterType" class="codecontainer">
+<span class="type">enum FighterType </span><br/><br/>
+Fighter<br/>
+CargoShuttle<br/>
+CrewShuttle<br/>
+</div>
+<div id="FontType" class="codecontainer">
+<span class="type">enum FontType </span><br/><br/>
+Normal<br/>
+SciFi<br/>
+</div>
+<div id="ImpactParticles" class="codecontainer">
+<span class="type">enum ImpactParticles </span><br/><br/>
+None<br/>
+Physical<br/>
+Energy<br/>
+Explosion<br/>
+DustExplosion<br/>
+</div>
+<div id="InventoryItemType" class="codecontainer">
+<span class="type">enum InventoryItemType </span><br/><br/>
+Turret<br/>
+TurretTemplate<br/>
+SystemUpgrade<br/>
+VanillaItem<br/>
+UsableItem<br/>
+</div>
+<div id="KeyboardKey" class="codecontainer">
+<span class="type">enum KeyboardKey </span><br/><br/>
+Unknown<br/>
+Return<br/>
+Escape<br/>
+Backspace<br/>
+Tab<br/>
+Space<br/>
+Exclaim<br/>
+QuoteDBL<br/>
+Hash<br/>
+Percent<br/>
+Dollar<br/>
+Apersand<br/>
+Quote<br/>
+LeftParen<br/>
+RightParent<br/>
+Asterisk<br/>
+Plus<br/>
+Comma<br/>
+Minus<br/>
+Period<br/>
+Slash<br/>
+_0<br/>
+_1<br/>
+_2<br/>
+_3<br/>
+_4<br/>
+_5<br/>
+_6<br/>
+_7<br/>
+_8<br/>
+_9<br/>
+Colon<br/>
+Semicolon<br/>
+Less<br/>
+Equals<br/>
+Greater<br/>
+Question<br/>
+At<br/>
+LeftBracket<br/>
+Backslash<br/>
+RightBrackent<br/>
+Caret<br/>
+Underscore<br/>
+BackQuote<br/>
+_A<br/>
+_B<br/>
+_C<br/>
+_D<br/>
+_E<br/>
+_F<br/>
+_G<br/>
+_H<br/>
+_I<br/>
+_J<br/>
+_K<br/>
+_L<br/>
+_M<br/>
+_N<br/>
+_O<br/>
+_P<br/>
+_Q<br/>
+_R<br/>
+_S<br/>
+_T<br/>
+_U<br/>
+_V<br/>
+_W<br/>
+_X<br/>
+_Y<br/>
+_Z<br/>
+CapsLock<br/>
+F1<br/>
+F2<br/>
+F3<br/>
+F4<br/>
+F5<br/>
+F6<br/>
+F7<br/>
+F8<br/>
+F9<br/>
+F10<br/>
+F11<br/>
+F12<br/>
+PrintScreen<br/>
+ScrollLock<br/>
+Pause<br/>
+Insert<br/>
+Home<br/>
+PageUp<br/>
+Delete<br/>
+End<br/>
+PageDown<br/>
+Right<br/>
+Left<br/>
+Down<br/>
+Up<br/>
+NumlockClear<br/>
+KP_Divide<br/>
+KP_Multiply<br/>
+KP_Minus<br/>
+KP_Plus<br/>
+KP_Enter<br/>
+KP_1<br/>
+KP_2<br/>
+KP_3<br/>
+KP_4<br/>
+KP_5<br/>
+KP_6<br/>
+KP_7<br/>
+KP_8<br/>
+KP_9<br/>
+KP_0<br/>
+KP_Period<br/>
+Application<br/>
+Power<br/>
+KP_Equals<br/>
+F13<br/>
+F14<br/>
+F15<br/>
+F16<br/>
+F17<br/>
+F18<br/>
+F19<br/>
+F20<br/>
+F21<br/>
+F22<br/>
+F23<br/>
+F24<br/>
+Execute<br/>
+Help<br/>
+Menu<br/>
+Select<br/>
+Stop<br/>
+Again<br/>
+Undo<br/>
+Cut<br/>
+Copy<br/>
+Paste<br/>
+Find<br/>
+Mute<br/>
+VolumeUp<br/>
+VolumeDown<br/>
+KP_Comma<br/>
+KP_EqualsAs400<br/>
+AltErase<br/>
+SysReq<br/>
+Cancel<br/>
+Clear<br/>
+Prior<br/>
+Return2<br/>
+Separator<br/>
+Out<br/>
+Oper<br/>
+ClearAgain<br/>
+Crsel<br/>
+Exsel<br/>
+ThousandsSeparator<br/>
+DecimalSeparator<br/>
+CurrencyUnit<br/>
+CurrencySubUnit<br/>
+KP_00<br/>
+KP_000<br/>
+KP_LeftParen<br/>
+KP_RightParen<br/>
+KP_LeftBrace<br/>
+KP_RightBrace<br/>
+KP_Tab<br/>
+KP_Backspace<br/>
+KP_A<br/>
+KP_B<br/>
+KP_C<br/>
+KP_D<br/>
+KP_E<br/>
+KP_F<br/>
+KP_Xor<br/>
+KP_Power<br/>
+KP_Percent<br/>
+KP_Less<br/>
+KP_Greater<br/>
+KP_Ampersand<br/>
+KP_DblAmpersand<br/>
+KP_VerticalBar<br/>
+KP_DlbVerticalBar<br/>
+KP_Colon<br/>
+KP_Hash<br/>
+KP_Space<br/>
+KP_At<br/>
+KP_Exclam<br/>
+KP_Memstore<br/>
+KP_Memrecall<br/>
+KP_Memclear<br/>
+KP_Memadd<br/>
+KP_Memsubtract<br/>
+KP_Memmultiply<br/>
+KP_Memdivide<br/>
+KP_PlusMinus<br/>
+KP_Clear<br/>
+KP_ClearEntry<br/>
+KP_Binary<br/>
+KP_Octal<br/>
+KP_Decimal<br/>
+KP_Hexadecimal<br/>
+LControl<br/>
+LShift<br/>
+LAlt<br/>
+LGui<br/>
+RControl<br/>
+RShift<br/>
+RAlt<br/>
+RGui<br/>
+Mode<br/>
+AudioNext<br/>
+AudioPrev<br/>
+AudioStop<br/>
+AudioPlay<br/>
+AudioMute<br/>
+MediaSelect<br/>
+Www<br/>
+Mail<br/>
+Calculator<br/>
+Computer<br/>
+AC_Search<br/>
+AC_Home<br/>
+AC_Back<br/>
+AC_Forward<br/>
+AC_Stop<br/>
+AC_Refresh<br/>
+AC_Bookmarks<br/>
+BrightnessDown<br/>
+BrightnessUp<br/>
+DisplaySwitch<br/>
+KbdIllumToggle<br/>
+KbdIllumDown<br/>
+KbdIllumUp<br/>
+Eject<br/>
+Sleep<br/>
+</div>
+<div id="ListBoxEntryType" class="codecontainer">
+<span class="type">enum ListBoxEntryType </span><br/><br/>
+Icon<br/>
+Image<br/>
+Text<br/>
+</div>
+<div id="MalusReason" class="codecontainer">
+<span class="type">enum MalusReason </span><br/><br/>
+None<br/>
+Reconstruction<br/>
+Boarding<br/>
+</div>
+<div id="MaterialType" class="codecontainer">
+<span class="type">enum MaterialType </span><br/><br/>
+Iron<br/>
+Titanium<br/>
+Naonite<br/>
+Trinium<br/>
+Xanion<br/>
+Ogonite<br/>
+Avorion<br/>
+</div>
+<div id="MoonType" class="codecontainer">
+<span class="type">enum MoonType </span><br/><br/>
+Rocky<br/>
+Smooth<br/>
+Moon<br/>
+Volcanic<br/>
+NumMoonTypes<br/>
+</div>
+<div id="MouseButton" class="codecontainer">
+<span class="type">enum MouseButton </span><br/><br/>
+Left<br/>
+Middle<br/>
+Right<br/>
+M4<br/>
+M5<br/>
+M6<br/>
+M7<br/>
+M8<br/>
+M9<br/>
+M10<br/>
+</div>
+<div id="PlanetType" class="codecontainer">
+<span class="type">enum PlanetType </span><br/><br/>
+Terrestrial<br/>
+Rocky<br/>
+GasGiant<br/>
+Smooth<br/>
+Moon<br/>
+Volcanic<br/>
+BlackHole<br/>
+NumPlanetTypes<br/>
+</div>
+<div id="PlayerStateType" class="codecontainer">
+<span class="type">enum PlayerStateType </span><br/><br/>
+Fly<br/>
+BuildCraft<br/>
+BuildTurret<br/>
+Interact<br/>
+Strategy<br/>
+</div>
+<div id="ProjectileShape" class="codecontainer">
+<span class="type">enum ProjectileShape </span><br/><br/>
+Default<br/>
+Plasma<br/>
+Rocket<br/>
+</div>
+<div id="RarityType" class="codecontainer">
+<span class="type">enum RarityType </span><br/><br/>
+Petty<br/>
+Common<br/>
+Uncommon<br/>
+Rare<br/>
+Exceptional<br/>
+Exotic<br/>
+Legendary<br/>
+</div>
+<div id="RelationStatus" class="codecontainer">
+<span class="type">enum RelationStatus </span><br/><br/>
+War<br/>
+Ceasefire<br/>
+Neutral<br/>
+Allies<br/>
+</div>
+<div id="SavedDesignType" class="codecontainer">
+<span class="type">enum SavedDesignType </span><br/><br/>
+Unknown<br/>
+CraftDesign<br/>
+TurretDesign<br/>
+Plan<br/>
+</div>
+<div id="SectorChangeType" class="codecontainer">
+<span class="type">enum SectorChangeType </span><br/><br/>
+AlreadyPresent<br/>
+Gate<br/>
+Wormhole<br/>
+Jump<br/>
+Forced<br/>
+Switch<br/>
+</div>
+<div id="SoundType" class="codecontainer">
+<span class="type">enum SoundType </span><br/><br/>
+Weapon<br/>
+UI<br/>
+Other<br/>
+</div>
+<div id="StatsBonuses" class="codecontainer">
+<span class="type">enum StatsBonuses </span><br/><br/>
+RadarReach<br/>
+HiddenSectorRadarReach<br/>
+ScannerReach<br/>
+ScannerMaterialReach<br/>
+HyperspaceReach<br/>
+HyperspaceCooldown<br/>
+HyperspaceRechargeEnergy<br/>
+ShieldDurability<br/>
+ShieldRecharge<br/>
+ShieldTimeUntilRechargeAfterHit<br/>
+ShieldTimeUntilRechargeAfterDepletion<br/>
+ShieldImpenetrable<br/>
+Velocity<br/>
+Acceleration<br/>
+GeneratedEnergy<br/>
+EnergyCapacity<br/>
+BatteryRecharge<br/>
+ArbitraryTurrets<br/>
+UnarmedTurrets<br/>
+ArmedTurrets<br/>
+CargoHold<br/>
+LootCollectionRange<br/>
+TransporterRange<br/>
+DefenseWeapons<br/>
+FighterCargoPickup<br/>
+PilotsPerFighter<br/>
+MinersPerTurret<br/>
+GunnersPerTurret<br/>
+MechanicsPerTurret<br/>
+Engineers<br/>
+Mechanics<br/>
+Gunners<br/>
+Miners<br/>
+Security<br/>
+Attackers<br/>
+Sergeants<br/>
+Lieutenants<br/>
+Commanders<br/>
+Generals<br/>
+Captains<br/>
+</div>
+<div id="TransformationFeature" class="codecontainer">
+<span class="type">enum TransformationFeature </span><br/><br/>
+SingleRotationX<br/>
+SingleRotationY<br/>
+SingleRotationZ<br/>
+MirrorX<br/>
+MirrorY<br/>
+MirrorZ<br/>
+DoubleRotationX<br/>
+DoubleRotationY<br/>
+DoubleRotationZ<br/>
+</div>
+<div id="TurretAutoFireMode" class="codecontainer">
+<span class="type">enum TurretAutoFireMode </span><br/><br/>
+Never<br/>
+Situational<br/>
+Always<br/>
+AttackTarget<br/>
+Defensive<br/>
+Idle<br/>
+</div>
+<div id="WeaponAppearance" class="codecontainer">
+<span class="type">enum WeaponAppearance </span><br/><br/>
+Invisible<br/>
+ChainGun<br/>
+Laser<br/>
+MiningLaser<br/>
+PlasmaGun<br/>
+RocketLauncher<br/>
+Cannon<br/>
+RailGun<br/>
+Repair<br/>
+Bolter<br/>
+Tesla<br/>
+PulseCannon<br/>
+AntiFighter<br/>
+</div>
+<div id="WeaponCategory" class="codecontainer">
+<span class="type">enum WeaponCategory </span><br/><br/>
+Armed<br/>
+Mining<br/>
+Salvaging<br/>
+Heal<br/>
+None<br/>
+</div>
+</div>
+</div>
+<div class="sitemap">
+<div class="flexheader">   <div class="headerlisting">
+      <span class="docheader">Overview</span>
+      <br>      <a href="index.html">Home</a>
+      <a href="Functions.html">Functions</a>
+      <a href="Search.html">Search</a>
+   </div>   <div class="flexheaderwhitespace"></div>
+   <form action="Search.html" method="get">      Search:<input name="search" class="headersearchinput" type="search">   </form></div><div class="headerlisting">
+<span class="docheader">Callbacks</span>
+<br><a href="Callbacks.html"> Callbacks</a>
+<a href="Alliance [Client] Callbacks.html">Alliance [Client]  Callbacks</a>
+<a href="Alliance [Server] Callbacks.html">Alliance [Server]  Callbacks</a>
+<a href="Alliance [Server]  Callbacks.html">Alliance [Server]   Callbacks</a>
+<a href="Entity Callbacks.html">Entity  Callbacks</a>
+<a href="Galaxy Callbacks.html">Galaxy  Callbacks</a>
+<a href="Player Callbacks.html">Player  Callbacks</a>
+<a href="Player [Client] Callbacks.html">Player [Client]  Callbacks</a>
+<a href="Sector Callbacks.html">Sector  Callbacks</a>
+<a href="Server Callbacks.html">Server  Callbacks</a>
+</div><div class="headerlisting">
+<span class="docheader">Predefined Functions & Example Scripts</span>
+<br><a href="CommandFunctions.html">Command</a>
+<a href="EntityFunctions.html">Entity</a>
+<a href="FactionDatabaseFunctions.html">FactionDatabase</a>
+<a href="PlanGeneratorFunctions.html">PlanGenerator</a>
+<a href="PlayerFunctions.html">Player</a>
+<a href="SectorFunctions.html">Sector</a>
+<a href="ServerFunctions.html">Server</a>
+<a href="UsableInventoryItemFunctions.html">UsableInventoryItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Components</span>
+<br><a href="Boarding.html">Boarding</a>
+<a href="BspTree.html">BspTree</a>
+<a href="CargoBay.html">CargoBay</a>
+<a href="ControlUnit.html">ControlUnit</a>
+<a href="DeletionTimer.html">DeletionTimer</a>
+<a href="DirectFlightPhysics.html">DirectFlightPhysics</a>
+<a href="DockingPositions.html">DockingPositions</a>
+<a href="Durability.html">Durability</a>
+<a href="EnergySystem.html">EnergySystem</a>
+<a href="Engine.html">Engine</a>
+<a href="FighterAI.html">FighterAI</a>
+<a href="Hangar.html">Hangar</a>
+<a href="InteractionText.html">InteractionText</a>
+<a href="Owner.html">Owner</a>
+<a href="Physics.html">Physics</a>
+<a href="Plan.html">Plan</a>
+<a href="ReadOnlyBoarding.html">ReadOnlyBoarding</a>
+<a href="ReadOnlyBspTree.html">ReadOnlyBspTree</a>
+<a href="ReadOnlyCargoBay.html">ReadOnlyCargoBay</a>
+<a href="ReadOnlyControlUnit.html">ReadOnlyControlUnit</a>
+<a href="ReadOnlyDeletionTimer.html">ReadOnlyDeletionTimer</a>
+<a href="ReadOnlyEnergySystem.html">ReadOnlyEnergySystem</a>
+<a href="ReadOnlyEngine.html">ReadOnlyEngine</a>
+<a href="ReadOnlyFighterAI.html">ReadOnlyFighterAI</a>
+<a href="ReadOnlyHangar.html">ReadOnlyHangar</a>
+<a href="ReadOnlyInteractionText.html">ReadOnlyInteractionText</a>
+<a href="ReadOnlyOwner.html">ReadOnlyOwner</a>
+<a href="ReadOnlyPhysics.html">ReadOnlyPhysics</a>
+<a href="ReadOnlyPlan.html">ReadOnlyPlan</a>
+<a href="ReadOnlyShipAI.html">ReadOnlyShipAI</a>
+<a href="ReadOnlyShipSystem.html">ReadOnlyShipSystem</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoLauncher.html">ReadOnlyTorpedoLauncher</a>
+<a href="ReadOnlyTurretBases.html">ReadOnlyTurretBases</a>
+<a href="ReadOnlyVelocity.html">ReadOnlyVelocity</a>
+<a href="ReadOnlyWeapons.html">ReadOnlyWeapons</a>
+<a href="ReadOnlyWormHole.html">ReadOnlyWormHole</a>
+<a href="Shield.html">Shield</a>
+<a href="ShipAI.html">ShipAI</a>
+<a href="ShipSystem.html">ShipSystem</a>
+<a href="SystemUpgradeLoot.html">SystemUpgradeLoot</a>
+<a href="Thrusters.html">Thrusters</a>
+<a href="Torpedo.html">Torpedo</a>
+<a href="TorpedoAI.html">TorpedoAI</a>
+<a href="TorpedoLauncher.html">TorpedoLauncher</a>
+<a href="Turret.html">Turret</a>
+<a href="TurretAI.html">TurretAI</a>
+<a href="TurretBases.html">TurretBases</a>
+<a href="Velocity.html">Velocity</a>
+<a href="Weapons.html">Weapons</a>
+<a href="WormHole.html">WormHole</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Objects</span>
+<br><a href="AllianceMember.html">AllianceMember</a>
+<a href="AllianceRank.html">AllianceRank</a>
+<a href="BlockPlan.html">BlockPlan</a>
+<a href="BlockPlanBlock.html">BlockPlanBlock</a>
+<a href="BlockStatistics.html">BlockStatistics</a>
+<a href="Box.html">Box</a>
+<a href="Color.html">Color</a>
+<a href="ControlUnitSeat.html">ControlUnitSeat</a>
+<a href="CraftDesign.html">CraftDesign</a>
+<a href="Crew.html">Crew</a>
+<a href="CrewMan.html">CrewMan</a>
+<a href="CrewProfession.html">CrewProfession</a>
+<a href="DebugInfo.html">DebugInfo</a>
+<a href="dvec2.html">dvec2</a>
+<a href="dvec3.html">dvec3</a>
+<a href="dvec4.html">dvec4</a>
+<a href="Entity.html">Entity</a>
+<a href="EntityDescriptor.html">EntityDescriptor</a>
+<a href="FighterTemplate.html">FighterTemplate</a>
+<a href="Format.html">Format</a>
+<a href="GameSettings.html">GameSettings</a>
+<a href="HighResolutionTimer.html">HighResolutionTimer</a>
+<a href="Inventory.html">Inventory</a>
+<a href="InventoryTurret.html">InventoryTurret</a>
+<a href="ivec2.html">ivec2</a>
+<a href="ivec3.html">ivec3</a>
+<a href="ivec4.html">ivec4</a>
+<a href="Language.html">Language</a>
+<a href="Mail.html">Mail</a>
+<a href="Material.html">Material</a>
+<a href="Matrix.html">Matrix</a>
+<a href="ModManager.html">ModManager</a>
+<a href="NamedFormat.html">NamedFormat</a>
+<a href="PlanBspTree.html">PlanBspTree</a>
+<a href="PlanetSpecifics.html">PlanetSpecifics</a>
+<a href="PlanGenerationStage.html">PlanGenerationStage</a>
+<a href="PlanPart.html">PlanPart</a>
+<a href="PlanStyle.html">PlanStyle</a>
+<a href="PlayerId.html">PlayerId</a>
+<a href="PluralForm.html">PluralForm</a>
+<a href="Profiler.html">Profiler</a>
+<a href="QuadTree.html">QuadTree</a>
+<a href="Random.html">Random</a>
+<a href="Rarity.html">Rarity</a>
+<a href="Ray.html">Ray</a>
+<a href="ReadOnlyEntity.html">ReadOnlyEntity</a>
+<a href="Rect.html">Rect</a>
+<a href="Relation.html">Relation</a>
+<a href="SectorView.html">SectorView</a>
+<a href="Seed.html">Seed</a>
+<a href="Sphere.html">Sphere</a>
+<a href="SystemUpgradeTemplate.html">SystemUpgradeTemplate</a>
+<a href="Timer.html">Timer</a>
+<a href="Tooltip.html">Tooltip</a>
+<a href="TooltipLine.html">TooltipLine</a>
+<a href="TorpedoTemplate.html">TorpedoTemplate</a>
+<a href="TradingGood.html">TradingGood</a>
+<a href="TurretDesign.html">TurretDesign</a>
+<a href="TurretDesignPart.html">TurretDesignPart</a>
+<a href="TurretTemplate.html">TurretTemplate</a>
+<a href="UsableInventoryItem.html">UsableInventoryItem</a>
+<a href="Uuid.html">Uuid</a>
+<a href="VanillaInventoryItem.html">VanillaInventoryItem</a>
+<a href="vec2.html">vec2</a>
+<a href="vec3.html">vec3</a>
+<a href="vec4.html">vec4</a>
+<a href="Version.html">Version</a>
+<a href="Weapon.html">Weapon</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Components</span>
+<br><a href="EntityIcon.html">EntityIcon</a>
+<a href="EntityTooltip.html">EntityTooltip</a>
+<a href="PlanMesh.html">PlanMesh</a>
+<a href="ReadOnlyIcon.html">ReadOnlyIcon</a>
+<a href="ReadOnlyPlanMesh.html">ReadOnlyPlanMesh</a>
+<a href="ReadOnlyScriptUI.html">ReadOnlyScriptUI</a>
+<a href="ReadOnlyTooltip.html">ReadOnlyTooltip</a>
+<a href="ScriptUI.html">ScriptUI</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Objects</span>
+<br><a href="Achievements.html">Achievements</a>
+<a href="Alliance [Client].html">Alliance [Client]</a>
+<a href="ClientSettings.html">ClientSettings</a>
+<a href="CraftDesignSelectionItem.html">CraftDesignSelectionItem</a>
+<a href="Faction [Client].html">Faction [Client]</a>
+<a href="Galaxy [Client].html">Galaxy [Client]</a>
+<a href="GalaxyMap.html">GalaxyMap</a>
+<a href="GameInput.html">GameInput</a>
+<a href="InputWindow.html">InputWindow</a>
+<a href="InventoryReferenceSelectionItem.html">InventoryReferenceSelectionItem</a>
+<a href="InventorySelectionItem.html">InventorySelectionItem</a>
+<a href="Keyboard.html">Keyboard</a>
+<a href="LaserFX.html">LaserFX</a>
+<a href="Mouse.html">Mouse</a>
+<a href="Music.html">Music</a>
+<a href="Planet.html">Planet</a>
+<a href="Player [Client].html">Player [Client]</a>
+<a href="PlayerWindow.html">PlayerWindow</a>
+<a href="Sector [Client].html">Sector [Client]</a>
+<a href="SelectionItem.html">SelectionItem</a>
+<a href="SoundSource.html">SoundSource</a>
+<a href="TooltipRenderer.html">TooltipRenderer</a>
+<a href="TurretDesignSelectionItem.html">TurretDesignSelectionItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Client UI Objects</span>
+<br><a href="AllianceTab.html">AllianceTab</a>
+<a href="ArrowLine.html">ArrowLine</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="CheckBox.html">CheckBox</a>
+<a href="ComboBox.html">ComboBox</a>
+<a href="CraftPortrait.html">CraftPortrait</a>
+<a href="Frame.html">Frame</a>
+<a href="Hud.html">Hud</a>
+<a href="InventorySelection.html">InventorySelection</a>
+<a href="Label.html">Label</a>
+<a href="Line.html">Line</a>
+<a href="ListBox.html">ListBox</a>
+<a href="ListBoxEx.html">ListBoxEx</a>
+<a href="MapArrowLine.html">MapArrowLine</a>
+<a href="MultiLineTextBox.html">MultiLineTextBox</a>
+<a href="NumbersBar.html">NumbersBar</a>
+<a href="Picture.html">Picture</a>
+<a href="PlanDisplayer.html">PlanDisplayer</a>
+<a href="ProgressBar.html">ProgressBar</a>
+<a href="SavedDesignsSelection.html">SavedDesignsSelection</a>
+<a href="ScrollFrame.html">ScrollFrame</a>
+<a href="Selection.html">Selection</a>
+<a href="ShipWindow.html">ShipWindow</a>
+<a href="Slider.html">Slider</a>
+<a href="StatisticsBar.html">StatisticsBar</a>
+<a href="Tab.html">Tab</a>
+<a href="TabbedWindow.html">TabbedWindow</a>
+<a href="TextBox.html">TextBox</a>
+<a href="TextField.html">TextField</a>
+<a href="Tree.html">Tree</a>
+<a href="UIArbitraryHorizontalSplitter.html">UIArbitraryHorizontalSplitter</a>
+<a href="UIArbitraryVerticalSplitter.html">UIArbitraryVerticalSplitter</a>
+<a href="UIContainer.html">UIContainer</a>
+<a href="UIElement.html">UIElement</a>
+<a href="UIGridSplitter.html">UIGridSplitter</a>
+<a href="UIHorizontalLister.html">UIHorizontalLister</a>
+<a href="UIHorizontalMultiSplitter.html">UIHorizontalMultiSplitter</a>
+<a href="UIHorizontalSplitter.html">UIHorizontalSplitter</a>
+<a href="UIOrganizer.html">UIOrganizer</a>
+<a href="UIRect.html">UIRect</a>
+<a href="UIRenderer.html">UIRenderer</a>
+<a href="UIVerticalLister.html">UIVerticalLister</a>
+<a href="UIVerticalMultiSplitter.html">UIVerticalMultiSplitter</a>
+<a href="UIVerticalSplitter.html">UIVerticalSplitter</a>
+<a href="ValueComboBox.html">ValueComboBox</a>
+<a href="Window.html">Window</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Components</span>
+<br><a href="EntityTransferrer.html">EntityTransferrer</a>
+<a href="FighterController.html">FighterController</a>
+<a href="Loot.html">Loot</a>
+<a href="ReadOnlyEntityTransferrer.html">ReadOnlyEntityTransferrer</a>
+<a href="ReadOnlyFighterController.html">ReadOnlyFighterController</a>
+<a href="ReadOnlyLoot.html">ReadOnlyLoot</a>
+<a href="ReadOnlyTurretController.html">ReadOnlyTurretController</a>
+<a href="ReadOnlyWreckageCreator.html">ReadOnlyWreckageCreator</a>
+<a href="TurretController.html">TurretController</a>
+<a href="WreckageCreator.html">WreckageCreator</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Objects</span>
+<br><a href="Alliance [Server].html">Alliance [Server]</a>
+<a href="Faction [Server].html">Faction [Server]</a>
+<a href="Galaxy [Server].html">Galaxy [Server]</a>
+<a href="Player [Server].html">Player [Server]</a>
+<a href="ReadOnlySector.html">ReadOnlySector</a>
+<a href="Sector [Server].html">Sector [Server]</a>
+<a href="Server.html">Server</a>
+</div><div class="lastheaderlisting">
+<span class="docheader">Enums</span>
+<br><a href="Enums.html#AIState">AIState</a>
+<a href="Enums.html#AlliancePrivilege">AlliancePrivilege</a>
+<a href="Enums.html#BeamShape">BeamShape</a>
+<a href="Enums.html#BlockShading">BlockShading</a>
+<a href="Enums.html#BlockType">BlockType</a>
+<a href="Enums.html#BoxType">BoxType</a>
+<a href="Enums.html#ChatChannel">ChatChannel</a>
+<a href="Enums.html#ChatMessageType">ChatMessageType</a>
+<a href="Enums.html#ComponentType">ComponentType</a>
+<a href="Enums.html#ControlAction">ControlAction</a>
+<a href="Enums.html#ControlActionBit">ControlActionBit</a>
+<a href="Enums.html#CoolingType">CoolingType</a>
+<a href="Enums.html#CrewProfessionType">CrewProfessionType</a>
+<a href="Enums.html#DamageSource">DamageSource</a>
+<a href="Enums.html#DamageType">DamageType</a>
+<a href="Enums.html#DeletionType">DeletionType</a>
+<a href="Enums.html#Difficulty">Difficulty</a>
+<a href="Enums.html#EntityArrivalType">EntityArrivalType</a>
+<a href="Enums.html#EntityType">EntityType</a>
+<a href="Enums.html#FighterOrders">FighterOrders</a>
+<a href="Enums.html#FighterStartError">FighterStartError</a>
+<a href="Enums.html#FighterType">FighterType</a>
+<a href="Enums.html#FontType">FontType</a>
+<a href="Enums.html#ImpactParticles">ImpactParticles</a>
+<a href="Enums.html#InventoryItemType">InventoryItemType</a>
+<a href="Enums.html#KeyboardKey">KeyboardKey</a>
+<a href="Enums.html#ListBoxEntryType">ListBoxEntryType</a>
+<a href="Enums.html#MalusReason">MalusReason</a>
+<a href="Enums.html#MaterialType">MaterialType</a>
+<a href="Enums.html#MoonType">MoonType</a>
+<a href="Enums.html#MouseButton">MouseButton</a>
+<a href="Enums.html#PlanetType">PlanetType</a>
+<a href="Enums.html#PlayerStateType">PlayerStateType</a>
+<a href="Enums.html#ProjectileShape">ProjectileShape</a>
+<a href="Enums.html#RarityType">RarityType</a>
+<a href="Enums.html#RelationStatus">RelationStatus</a>
+<a href="Enums.html#SavedDesignType">SavedDesignType</a>
+<a href="Enums.html#SectorChangeType">SectorChangeType</a>
+<a href="Enums.html#SoundType">SoundType</a>
+<a href="Enums.html#StatsBonuses">StatsBonuses</a>
+<a href="Enums.html#TransformationFeature">TransformationFeature</a>
+<a href="Enums.html#TurretAutoFireMode">TurretAutoFireMode</a>
+<a href="Enums.html#WeaponAppearance">WeaponAppearance</a>
+<a href="Enums.html#WeaponCategory">WeaponCategory</a>
+</div></div>
+<div class="disclaimer">
+<p>This is the official documentation for the scripting API of Avorion. This documentation is automatically generated and <strong>not</strong> necessarily complete. Depending on the context in which functions exist, some documentation such as descriptions, return values or variable names or types may be missing.</p>
+<p>Work in Progress. Documentation of Avorion Version: 1.0 r22102 938a1bf97ccb</p>
+</div>
+<div class="footer">
+<p align="center">Work in Progress.</p>
+<p align="center">Copyright &copy; 2020 Boxelware GmbH. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

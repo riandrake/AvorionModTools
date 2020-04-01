@@ -1,0 +1,3227 @@
+<html>
+<head>
+<title> Entity</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="maincentered">
+<div class="maincontent">
+<h1 class="documentationheader">Avorion Script API Documentation</h1>
+<div class="sitemap">
+<div class="headerlisting flexheader">
+<div>
+<a href="index.html">Home</a>
+<a href="Functions.html">Functions</a>
+<a href="Search.html">Search</a>
+</div>
+<div class="flexheaderwhitespace"></div>
+<form action="Search.html" method="get">Search:<input name="search" class="headersearchinput" type="search"></form></div></div>
+<div class="floatleft">
+<div class="codecontainer">
+<table>
+<tr>
+<td>
+<a class="type" href="Entity.html">Entity</a>
+<a class="function" href="#Entity">Entity</a>
+</td>
+</tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Properties</span></td></tr>
+<tr><td>
+<a href="#aiOwned">aiOwned</a>
+</td></tr>
+<tr><td>
+<a href="#allianceOwned">allianceOwned</a>
+</td></tr>
+<tr><td>
+<a href="#canPassRifts">canPassRifts</a>
+</td></tr>
+<tr><td>
+<a href="#controlActions">controlActions</a>
+</td></tr>
+<tr><td>
+<a href="#crew">crew</a>
+</td></tr>
+<tr><td>
+<a href="#crewSize">crewSize</a>
+</td></tr>
+<tr><td>
+<a href="#damageMultiplier">damageMultiplier</a>
+</td></tr>
+<tr><td>
+<a href="#desiredVelocity">desiredVelocity</a>
+</td></tr>
+<tr><td>
+<a href="#durability">durability</a>
+</td></tr>
+<tr><td>
+<a href="#excludedPlayer">excludedPlayer</a>
+</td></tr>
+<tr><td>
+<a href="#exclusionTime">exclusionTime</a>
+</td></tr>
+<tr><td>
+<a href="#factionIndex">factionIndex</a>
+</td></tr>
+<tr><td>
+<a href="#fighterCargoPickup">fighterCargoPickup</a>
+</td></tr>
+<tr><td>
+<a href="#firePower">firePower</a>
+</td></tr>
+<tr><td>
+<a href="#freeCargoSpace">freeCargoSpace</a>
+</td></tr>
+<tr><td>
+<a href="#hasPilot">hasPilot</a>
+</td></tr>
+<tr><td>
+<a href="#hyperspaceCooldown">hyperspaceCooldown</a>
+</td></tr>
+<tr><td>
+<a href="#hyperspaceJumpReach">hyperspaceJumpReach</a>
+</td></tr>
+<tr><td>
+<a href="#id">id</a>
+</td></tr>
+<tr><td>
+<a href="#index">index</a>
+</td></tr>
+<tr><td>
+<a href="#invincible">invincible</a>
+</td></tr>
+<tr><td>
+<a href="#isAnomaly">isAnomaly</a>
+</td></tr>
+<tr><td>
+<a href="#isArmedTurret">isArmedTurret</a>
+</td></tr>
+<tr><td>
+<a href="#isAsteroid">isAsteroid</a>
+</td></tr>
+<tr><td>
+<a href="#isDrone">isDrone</a>
+</td></tr>
+<tr><td>
+<a href="#isFighter">isFighter</a>
+</td></tr>
+<tr><td>
+<a href="#isFlyable">isFlyable</a>
+</td></tr>
+<tr><td>
+<a href="#isLoot">isLoot</a>
+</td></tr>
+<tr><td>
+<a href="#isObviouslyMineable">isObviouslyMineable</a>
+</td></tr>
+<tr><td>
+<a href="#isOther">isOther</a>
+</td></tr>
+<tr><td>
+<a href="#isShieldActive">isShieldActive</a>
+</td></tr>
+<tr><td>
+<a href="#isShip">isShip</a>
+</td></tr>
+<tr><td>
+<a href="#isStation">isStation</a>
+</td></tr>
+<tr><td>
+<a href="#isTurning">isTurning</a>
+</td></tr>
+<tr><td>
+<a href="#isTurret">isTurret</a>
+</td></tr>
+<tr><td>
+<a href="#isUnarmedTurret">isUnarmedTurret</a>
+</td></tr>
+<tr><td>
+<a href="#isUnknown">isUnknown</a>
+</td></tr>
+<tr><td>
+<a href="#isWormHole">isWormHole</a>
+</td></tr>
+<tr><td>
+<a href="#isWreckage">isWreckage</a>
+</td></tr>
+<tr><td>
+<a href="#look">look</a>
+</td></tr>
+<tr><td>
+<a href="#mass">mass</a>
+</td></tr>
+<tr><td>
+<a href="#maxCargoSpace">maxCargoSpace</a>
+</td></tr>
+<tr><td>
+<a href="#maxCrewSize">maxCrewSize</a>
+</td></tr>
+<tr><td>
+<a href="#maxDurability">maxDurability</a>
+</td></tr>
+<tr><td>
+<a href="#minCrew">minCrew</a>
+</td></tr>
+<tr><td>
+<a href="#name">name</a>
+</td></tr>
+<tr><td>
+<a href="#numCargos">numCargos</a>
+</td></tr>
+<tr><td>
+<a href="#numDefenseWeapons">numDefenseWeapons</a>
+</td></tr>
+<tr><td>
+<a href="#numDefenseWeaponsCurrentAttack">numDefenseWeaponsCurrentAttack</a>
+</td></tr>
+<tr><td>
+<a href="#numTurrets">numTurrets</a>
+</td></tr>
+<tr><td>
+<a href="#occupiedCargoSpace">occupiedCargoSpace</a>
+</td></tr>
+<tr><td>
+<a href="#orientation">orientation</a>
+</td></tr>
+<tr><td>
+<a href="#playerOwned">playerOwned</a>
+</td></tr>
+<tr><td>
+<a href="#position">position</a>
+</td></tr>
+<tr><td>
+<a href="#radius">radius</a>
+</td></tr>
+<tr><td>
+<a href="#reservationTime">reservationTime</a>
+</td></tr>
+<tr><td>
+<a href="#reservedPlayer">reservedPlayer</a>
+</td></tr>
+<tr><td>
+<a href="#right">right</a>
+</td></tr>
+<tr><td>
+<a href="#selectedObject">selectedObject</a>
+</td></tr>
+<tr><td>
+<a href="#shieldDurability">shieldDurability</a>
+</td></tr>
+<tr><td>
+<a href="#shieldMaxDurability">shieldMaxDurability</a>
+</td></tr>
+<tr><td>
+<a href="#size">size</a>
+</td></tr>
+<tr><td>
+<a href="#timeAlive">timeAlive</a>
+</td></tr>
+<tr><td>
+<a href="#title">title</a>
+</td></tr>
+<tr><td>
+<a href="#translatedTitle">translatedTitle</a>
+</td></tr>
+<tr><td>
+<a href="#translation">translation</a>
+</td></tr>
+<tr><td>
+<a href="#translationf">translationf</a>
+</td></tr>
+<tr><td>
+<a href="#transporterRange">transporterRange</a>
+</td></tr>
+<tr><td>
+<a href="#type">type</a>
+</td></tr>
+<tr><td>
+<a href="#typename">typename</a>
+</td></tr>
+<tr><td>
+<a href="#up">up</a>
+</td></tr>
+<tr><td>
+<a href="#volume">volume</a>
+</td></tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Member Functions</span></td></tr>
+<tr><td>
+<a class="code" href="#addAbsoluteBias">addAbsoluteBias</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addBaseMultiplier">addBaseMultiplier</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addCargo">addCargo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addCrew">addCrew</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addKeyedAbsoluteBias">addKeyedAbsoluteBias</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addKeyedBaseMultiplier">addKeyedBaseMultiplier</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addKeyedMultiplier">addKeyedMultiplier</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addKeyedMultiplyableBias">addKeyedMultiplyableBias</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addMultiplier">addMultiplier</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addMultiplyableBias">addMultiplyableBias</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addScript">addScript</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addScriptOnce">addScriptOnce</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#addTurret">addTurret</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#blockHyperspace">blockHyperspace</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#callbacksRegistered">callbacksRegistered</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#canAddCrew">canAddCrew</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#changeCrew">changeCrew</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#changeShield">changeShield</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#clearCargoBay">clearCargoBay</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#clearValues">clearValues</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#damageShield">damageShield</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#destroy">destroy</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#destroyBlock">destroyBlock</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#destroyCargo">destroyCargo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#distortHyperspace">distortHyperspace</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#findCargos">findCargos</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAimedPositionBySeat">getAimedPositionBySeat</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAimedPositions">getAimedPositions</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAllowedArbitraryTurrets">getAllowedArbitraryTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAllowedArmedTurrets">getAllowedArmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAllowedUnarmedTurrets">getAllowedUnarmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAttachedBlockIndex">getAttachedBlockIndex</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getBoostedValue">getBoostedValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getBoundingBox">getBoundingBox</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getBoundingSphere">getBoundingSphere</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getCargo">getCargo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getCargoAmount">getCargoAmount</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getCargos">getCargos</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getCrewMembers">getCrewMembers</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getDamageContributorPlayerFactions">getDamageContributorPlayerFactions</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getDamageContributorPlayers">getDamageContributorPlayers</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getDamageContributors">getDamageContributors</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getDockingPositions">getDockingPositions</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getFreeArbitraryTurrets">getFreeArbitraryTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getFreeArmedTurrets">getFreeArmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getFreeUnarmedTurrets">getFreeUnarmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getFullPlanCopy">getFullPlanCopy</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getLowestMineableMaterial">getLowestMineableMaterial</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getMalusFactor">getMalusFactor</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getMineableMaterial">getMineableMaterial</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getMineableResources">getMineableResources</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getMovePlan">getMovePlan</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getNearestDistance">getNearestDistance</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getNumArmedTurrets">getNumArmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getNumUnarmedTurrets">getNumUnarmedTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPilotIndices">getPilotIndices</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPlanMoneyValue">getPlanMoneyValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPlanResourceValue">getPlanResourceValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getRandomDockingPosition">getRandomDockingPosition</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getScripts">getScripts</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTitleArguments">getTitleArguments</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTitleFormat">getTitleFormat</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurret">getTurret</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurretPositions">getTurretPositions</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurretPositionsLineOfSight">getTurretPositionsLineOfSight</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurrets">getTurrets</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurretSize">getTurretSize</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurretTemplateSize">getTurretTemplateSize</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getTurretTurningSpeed">getTurretTurningSpeed</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getUndamagedPlanMoneyValue">getUndamagedPlanMoneyValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getUndamagedPlanResourceValue">getUndamagedPlanResourceValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getValue">getValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getValues">getValues</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getWormholeComponent">getWormholeComponent</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#hasComponent">hasComponent</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#hasScript">hasScript</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#heal">heal</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#healShield">healShield</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#hyperspaceBlocked">hyperspaceBlocked</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#inflictDamage">inflictDamage</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#invokeFunction">invokeFunction</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isCollectable">isCollectable</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isDocked">isDocked</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isInsideShield">isInsideShield</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isJumpRouteValid">isJumpRouteValid</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isManned">isManned</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isTurretAllowed">isTurretAllowed</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#jumpPossible">jumpPossible</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#moveBy">moveBy</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#registerCallback">registerCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeBonus">removeBonus</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeCargo">removeCargo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeCrew">removeCrew</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeScript">removeScript</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#resolveScriptPath">resolveScriptPath</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#sendCallback">sendCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setAccumulatingBlockHealth">setAccumulatingBlockHealth</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setAimedPosition">setAimedPosition</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setAttachedBlockIndex">setAttachedBlockIndex</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setMalusFactor">setMalusFactor</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setManned">setManned</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setMovePlan">setMovePlan</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setPlan">setPlan</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setTitle">setTitle</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setTitleArguments">setTitleArguments</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setTurretSize">setTurretSize</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setTurretTurningSpeed">setTurretTurningSpeed</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setValue">setValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#singleFlyToLocationTick">singleFlyToLocationTick</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#unregisterCallback">unregisterCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#waitUntilAsyncWorkFinished">waitUntilAsyncWorkFinished</a>
+</td></tr>
+</table>
+</div>
+</div>
+<div class="floatright">
+<h1>Entity</h1>
+<p>
+This represents an interface to an entity in the scene. Creating an object of this type will not create a new entity in the scene, but will rather enable access to an existing entity. Use the Sector class to create new entities. <br/> Avorion uses an entity component system (See <a href="https://en.wikipedia.org/wiki/Entity_component_system">entity component system on Wikipedia</a>). Thus, some properties and functions are only available if the entity has the corresponding component. The list of components can be found here: Enum ComponentType <br/> <br/> Note: The <b>id</b> property of an Entity can be changed, but won't change the actual id of the underlying entity. Instead, the entity interface will be pointing to another entity with the new id. Use this for performance tuning to avoid creating lots of entity interfaces. <br/> Note 2: This class is considered to have too many members and functions. Over time these will be phased out into their respective component classes. Only a few frequently used properties and functions will remain for coding comfort.  
+</p>
+<div id="Entity" class="codecontainer">
+<div id="Entity" class="function">
+<p>
+<span class="keyword">function </span> Entity(<span class="type">var</span> <span class="parameter">id</span>) <br/>
+</p>
+</div>
+<div id="Entity" class="">
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">id</span>
+The id of the entity, must be an id of an existing entity <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A new instance of Entity
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="Properties" class="codecontainer">
+<div id="aiOwned">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">aiOwned</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="allianceOwned">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">allianceOwned</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="canPassRifts">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">canPassRifts</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="controlActions">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">controlActions</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="crew">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Crew.html">Crew</a> <span class="property">crew</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="crewSize">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">crewSize</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="damageMultiplier">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">damageMultiplier</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="desiredVelocity">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">desiredVelocity</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="durability">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">durability</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="excludedPlayer">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">excludedPlayer</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="exclusionTime">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">exclusionTime</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="factionIndex">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">factionIndex</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="fighterCargoPickup">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">fighterCargoPickup</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="firePower">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">firePower</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="freeCargoSpace">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">freeCargoSpace</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="hasPilot">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">hasPilot</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="hyperspaceCooldown">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">hyperspaceCooldown</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="hyperspaceJumpReach">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">hyperspaceJumpReach</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="id">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Uuid.html">Uuid</a> <span class="property">id</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="index">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Uuid.html">Uuid</a> <span class="property">index</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="invincible">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">invincible</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isAnomaly">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isAnomaly</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isArmedTurret">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">isArmedTurret</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isAsteroid">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isAsteroid</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isDrone">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isDrone</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isFighter">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isFighter</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isFlyable">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isFlyable</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isLoot">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isLoot</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isObviouslyMineable">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isObviouslyMineable</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isOther">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isOther</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isShieldActive">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">isShieldActive</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isShip">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isShip</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isStation">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isStation</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isTurning">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">isTurning</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isTurret">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isTurret</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isUnarmedTurret">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">isUnarmedTurret</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isUnknown">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isUnknown</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isWormHole">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isWormHole</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isWreckage">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isWreckage</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="look">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="vec3.html">vec3</a> <span class="property">look</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="mass">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">mass</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="maxCargoSpace">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">maxCargoSpace</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="maxCrewSize">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">maxCrewSize</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="maxDurability">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">maxDurability</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="minCrew">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Crew.html">Crew</a> <span class="property">minCrew</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="name">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">name</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numCargos">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">numCargos</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numDefenseWeapons">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">numDefenseWeapons</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numDefenseWeaponsCurrentAttack">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">numDefenseWeaponsCurrentAttack</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numTurrets">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">numTurrets</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="occupiedCargoSpace">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">occupiedCargoSpace</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="orientation">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Matrix.html">Matrix</a> <span class="property">orientation</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="playerOwned">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">playerOwned</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="position">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Matrix.html">Matrix</a> <span class="property">position</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="radius">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">radius</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="reservationTime">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">reservationTime</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="reservedPlayer">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">reservedPlayer</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="right">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="vec3.html">vec3</a> <span class="property">right</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="selectedObject">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">selectedObject</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="shieldDurability">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">shieldDurability</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="shieldMaxDurability">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">shieldMaxDurability</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="size">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="vec3.html">vec3</a> <span class="property">size</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="timeAlive">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">timeAlive</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="title">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">title</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="translatedTitle">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">translatedTitle</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="translation">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="dvec3.html">dvec3</a> <span class="property">translation</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="translationf">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="vec3.html">vec3</a> <span class="property">translationf</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="transporterRange">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">transporterRange</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="type">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">type</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="typename">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">typename</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="up">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="vec3.html">vec3</a> <span class="property">up</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="volume">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">volume</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+</div>
+<div id="addAbsoluteBias" class="codecontainer">
+<div id="addAbsoluteBias" class="function">
+<p>
+<span class="keyword">function var</span> addAbsoluteBias(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addAbsoluteBias" class="">
+<p>
+Adds a flat bias for stat of type <b>type</b>. This bias will be added to stat after multipliers are considered. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Type of Bonus, e.g. acceleration, higher level crew <br/>
+<span class="parameter">value</span>
+Bias added to base stats. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addBaseMultiplier" class="codecontainer">
+<div id="addBaseMultiplier" class="function">
+<p>
+<span class="keyword">function var</span> addBaseMultiplier(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">float</span> <span class="parameter">factor</span>) <br/>
+</p>
+</div>
+<div id="addBaseMultiplier" class="">
+<p>
+Adds a multiplyer for stat of type <b>type</b>. This is to increase a stat, so a factor of 0.3 will become 1.3. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Type of Bonus, e.g. acceleration, higher level crew <br/>
+<span class="parameter">factor</span>
+Factor that is used as Multiplier <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addCargo" class="codecontainer">
+<div id="addCargo" class="function">
+<p>
+<span class="keyword">function var</span> addCargo(<a href="TradingGood.html">TradingGood</a> <span class="parameter">good</span>, <span class="type">int</span> <span class="parameter">amount</span>) <br/>
+</p>
+</div>
+<div id="addCargo" class="">
+<p>
+Adds cargo to the entity. If the amount specified exceeds the maximum capacity of the cargo bay, as much cargo as still fits in will be added. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">good</span>
+TradingGood that is to be added. <br/>
+<span class="parameter">amount</span>
+The amount of cargo that should be added. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addCrew" class="codecontainer">
+<div id="addCrew" class="function">
+<p>
+<span class="keyword">function var</span> addCrew(<span class="type">int</span> <span class="parameter">number</span>, <a href="CrewMan.html">CrewMan</a> <span class="parameter">crewman</span>) <br/>
+</p>
+</div>
+<div id="addCrew" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addKeyedAbsoluteBias" class="codecontainer">
+<div id="addKeyedAbsoluteBias" class="function">
+<p>
+<span class="keyword">function var</span> addKeyedAbsoluteBias(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">int</span> <span class="parameter">key</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addKeyedAbsoluteBias" class="">
+<p>
+Exchanges flat bias at <b>key</b> with new value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Bonus type <br/>
+<span class="parameter">key</span>
+Location of the bonus that will be changed <br/>
+<span class="parameter">value</span>
+New value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addKeyedBaseMultiplier" class="codecontainer">
+<div id="addKeyedBaseMultiplier" class="function">
+<p>
+<span class="keyword">function var</span> addKeyedBaseMultiplier(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">int</span> <span class="parameter">key</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addKeyedBaseMultiplier" class="">
+<p>
+Exchanges multiplier at <b>key</b> with new value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Bonus type <br/>
+<span class="parameter">key</span>
+Location of the bonus that will be changed <br/>
+<span class="parameter">value</span>
+New value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addKeyedMultiplier" class="codecontainer">
+<div id="addKeyedMultiplier" class="function">
+<p>
+<span class="keyword">function var</span> addKeyedMultiplier(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">int</span> <span class="parameter">key</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addKeyedMultiplier" class="">
+<p>
+Exchanges multiplier at <b>key</b> with new value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Bonus type <br/>
+<span class="parameter">key</span>
+Location of the bonus that will be changed <br/>
+<span class="parameter">value</span>
+New value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addKeyedMultiplyableBias" class="codecontainer">
+<div id="addKeyedMultiplyableBias" class="function">
+<p>
+<span class="keyword">function var</span> addKeyedMultiplyableBias(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">int</span> <span class="parameter">key</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addKeyedMultiplyableBias" class="">
+<p>
+Exchanges bias at <b>key</b> with new value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Bonus type <br/>
+<span class="parameter">key</span>
+Location of the bonus that will be changed <br/>
+<span class="parameter">value</span>
+New value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addMultiplier" class="codecontainer">
+<div id="addMultiplier" class="function">
+<p>
+<span class="keyword">function var</span> addMultiplier(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">float</span> <span class="parameter">factor</span>) <br/>
+</p>
+</div>
+<div id="addMultiplier" class="">
+<p>
+Adds a multiplyer for stat of type <b>type</b>. The factor will be used unchanged. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Type of Bonus, e.g. acceleration, higher level crew <br/>
+<span class="parameter">factor</span>
+Factor that is used as Multiplier <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addMultiplyableBias" class="codecontainer">
+<div id="addMultiplyableBias" class="function">
+<p>
+<span class="keyword">function var</span> addMultiplyableBias(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="addMultiplyableBias" class="">
+<p>
+Adds a bias for stat of type <b>type</b>. This bias will be added to stat before multipliers are considered. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+Type of Bonus, e.g. acceleration, higher level crew <br/>
+<span class="parameter">value</span>
+Bias added to base stats. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+key that can be used to access the multiplier 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addScript" class="codecontainer">
+<div id="addScript" class="function">
+<p>
+<span class="keyword">function var</span> addScript(<span class="type">string</span> <span class="parameter">scriptPath</span>, <span class="type">var...</span> <span class="parameter">arguments</span>) <br/>
+</p>
+</div>
+<div id="addScript" class="">
+<p>
+ Adds a new script to an entity 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">scriptPath</span>
+The path of the script that should be added <br/>
+<span class="parameter">arguments</span>
+An arbitrary number of arguments that will be given to the 'initialize' function of the added script <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+0 on success, 1 if the entity could not be found 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="addScriptOnce" class="codecontainer">
+<div id="addScriptOnce" class="function">
+<p>
+<span class="keyword">function var</span> addScriptOnce() <br/>
+</p>
+</div>
+<div id="addScriptOnce" class="">
+</p>
+</div>
+</div>
+<div id="addTurret" class="codecontainer">
+<div id="addTurret" class="function">
+<p>
+<span class="keyword">function <a href="Uuid.html">Uuid</a></span> addTurret(<a href="TurretTemplate.html">TurretTemplate</a> <span class="parameter">turret</span>, <a href="Matrix.html">Matrix</a> <span class="parameter">position</span>, <span class="type">int</span> <span class="parameter">part</span>) <br/>
+</p>
+</div>
+<div id="addTurret" class="">
+</p>
+</div>
+</div>
+<div id="blockHyperspace" class="codecontainer">
+<div id="blockHyperspace" class="function">
+<p>
+<span class="keyword">function var</span> blockHyperspace(<span class="type">float</span> <span class="parameter">time</span>) <br/>
+</p>
+</div>
+<div id="blockHyperspace" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="callbacksRegistered" class="codecontainer">
+<div id="callbacksRegistered" class="function">
+<p>
+<span class="keyword">function int</span> callbacksRegistered(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">var</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="callbacksRegistered" class="">
+<p>
+Check how many functions are registered to a callback from the current script VM. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function for which to check. If nil, will count all functions that are registered to this callback. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The amount of functions registered to the callback 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="canAddCrew" class="codecontainer">
+<div id="canAddCrew" class="function">
+<p>
+<span class="keyword">function var, var, table&lt;int, string&gt;</span> canAddCrew(<span class="type">int</span> <span class="parameter">number</span>, <span class="type">int</span> <span class="parameter">profession</span>, <span class="type">bool</span> <span class="parameter">change</span>) <br/>
+</p>
+</div>
+<div id="canAddCrew" class="">
+</p>
+</div>
+</div>
+<div id="changeCrew" class="codecontainer">
+<div id="changeCrew" class="function">
+<p>
+<span class="keyword">function var</span> changeCrew(<span class="type">int</span> <span class="parameter">number</span>, <span class="type">int</span> <span class="parameter">profession</span>) <br/>
+</p>
+</div>
+<div id="changeCrew" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="changeShield" class="codecontainer">
+<div id="changeShield" class="function">
+<p>
+<span class="keyword">function var</span> changeShield(<span class="type">double</span> <span class="parameter">delta</span>) <br/>
+</p>
+</div>
+<div id="changeShield" class="">
+<p>
+Adds delta to shield durability 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">delta</span>
+<br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="clearCargoBay" class="codecontainer">
+<div id="clearCargoBay" class="function">
+<p>
+<span class="keyword">function var</span> clearCargoBay() <br/>
+</p>
+</div>
+<div id="clearCargoBay" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="clearValues" class="codecontainer">
+<div id="clearValues" class="function">
+<p>
+<span class="keyword">function var</span> clearValues() <br/>
+</p>
+</div>
+<div id="clearValues" class="">
+<p>
+Removes all custom values of the object 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="damageShield" class="codecontainer">
+<div id="damageShield" class="function">
+<p>
+<span class="keyword">function var</span> damageShield(<span class="type">double</span> <span class="parameter">amount</span>, <a href="vec3.html">vec3</a> <span class="parameter">location</span>, <a href="Uuid.html">Uuid</a> <span class="parameter">inflictorId</span>, <span class="type">var</span> <span class="parameter">damageSource</span>, <span class="type">var</span> <span class="parameter">damageType</span>) <br/>
+</p>
+</div>
+<div id="damageShield" class="">
+<p>
+Damages shield by delta amount, location and inflictorId are not necessary, but can be added if it is needed, e.g. you want to do effects on hitpoint. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">delta</span>
+<br/>
+<span class="parameter">location</span>
+<br/>
+<span class="parameter">inflictorId</span>
+<br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="destroy" class="codecontainer">
+<div id="destroy" class="function">
+<p>
+<span class="keyword">function var</span> destroy(<a href="Uuid.html">Uuid</a> <span class="parameter">inflictorId</span>, <span class="type">var</span> <span class="parameter">damageSource</span>, <span class="type">var</span> <span class="parameter">damageType</span>) <br/>
+</p>
+</div>
+<div id="destroy" class="">
+<p>
+Destroy entity by inflicting more damage than durability of entity 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">inflictorId</span>
+Index of the entity that destroys the block <br/>
+<span class="parameter">damageSource</span>
+Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary. * <br/>
+<span class="parameter">damageType</span>
+Type of damage received. Damage can be of type Physical, Energy, Electric, Plasma, AntiMatter or Fragments. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="destroyBlock" class="codecontainer">
+<div id="destroyBlock" class="function">
+<p>
+<span class="keyword">function var</span> destroyBlock(<span class="type">int</span> <span class="parameter">index</span>, <a href="Uuid.html">Uuid</a> <span class="parameter">inflictorId</span>, <span class="type">var</span> <span class="parameter">damageSource</span>) <br/>
+</p>
+</div>
+<div id="destroyBlock" class="">
+<p>
+Destroy one block 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">index</span>
+Index of the block that is destroyed <br/>
+<span class="parameter">inflictorId</span>
+Index of the entity that destroys the block <br/>
+<span class="parameter">damageSource</span>
+Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="destroyCargo" class="codecontainer">
+<div id="destroyCargo" class="function">
+<p>
+<span class="keyword">function var</span> destroyCargo(<span class="type">float</span> <span class="parameter">volume</span>) <br/>
+</p>
+</div>
+<div id="destroyCargo" class="">
+<p>
+Destroys cargo. The destruction distribution is generally equal over all goods. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">volume</span>
+The amount of volume that should be destroyed. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="distortHyperspace" class="codecontainer">
+<div id="distortHyperspace" class="function">
+<p>
+<span class="keyword">function var</span> distortHyperspace(<span class="type">float</span> <span class="parameter">time</span>) <br/>
+</p>
+</div>
+<div id="distortHyperspace" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="findCargos" class="codecontainer">
+<div id="findCargos" class="function">
+<p>
+<span class="keyword">function table&lt;TradingGood, int&gt;</span> findCargos(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="findCargos" class="">
+<p>
+Finds all cargos with the given name. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">name</span>
+A string that will be matched with the 'name' property of the cargos. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A map containing all matching goods, with the good as key and amount as value. 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getAimedPositionBySeat" class="codecontainer">
+<div id="getAimedPositionBySeat" class="function">
+<p>
+<span class="keyword">function <a href="vec3.html">vec3</a></span> getAimedPositionBySeat(<span class="type">int</span> <span class="parameter">seat</span>) <br/>
+</p>
+</div>
+<div id="getAimedPositionBySeat" class="">
+</p>
+</div>
+</div>
+<div id="getAimedPositions" class="codecontainer">
+<div id="getAimedPositions" class="function">
+<p>
+<span class="keyword">function <a href="vec3.html">vec3</a>...</span> getAimedPositions() <br/>
+</p>
+</div>
+<div id="getAimedPositions" class="">
+</p>
+</div>
+</div>
+<div id="getAllowedArbitraryTurrets" class="codecontainer">
+<div id="getAllowedArbitraryTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getAllowedArbitraryTurrets() <br/>
+</p>
+</div>
+<div id="getAllowedArbitraryTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getAllowedArmedTurrets" class="codecontainer">
+<div id="getAllowedArmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getAllowedArmedTurrets() <br/>
+</p>
+</div>
+<div id="getAllowedArmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getAllowedUnarmedTurrets" class="codecontainer">
+<div id="getAllowedUnarmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getAllowedUnarmedTurrets() <br/>
+</p>
+</div>
+<div id="getAllowedUnarmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getAttachedBlockIndex" class="codecontainer">
+<div id="getAttachedBlockIndex" class="function">
+<p>
+<span class="keyword">function var</span> getAttachedBlockIndex() <br/>
+</p>
+</div>
+<div id="getAttachedBlockIndex" class="">
+<p>
+Returns the Index of the block that the turret is build on 
+</p>
+</p>
+</div>
+</div>
+<div id="getBoostedValue" class="codecontainer">
+<div id="getBoostedValue" class="function">
+<p>
+<span class="keyword">function var</span> getBoostedValue(<span class="type">int</span> <span class="parameter">type</span>, <span class="type">float</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="getBoostedValue" class="">
+<p>
+Returns value with included bonus, in case a bonus exists. Returns Nil if no bonuses at all, returns value if no bonuses for this stat exist. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">type</span>
+type of bonus stat, e.g. acceleration, higher level crew <br/>
+<span class="parameter">value</span>
+the value, that might be changed by bonuses <br/>
+</div>
+</p>
+</div>
+</div>
+<div id="getBoundingBox" class="codecontainer">
+<div id="getBoundingBox" class="function">
+<p>
+<span class="keyword">function <a href="Box.html">Box</a></span> getBoundingBox() <br/>
+</p>
+</div>
+<div id="getBoundingBox" class="">
+<p>
+Returns Bounding Box for entity, use this if you need exact Bounding Box, e.g. for collision detection when entities are close to each other. 
+</p>
+</p>
+</div>
+</div>
+<div id="getBoundingSphere" class="codecontainer">
+<div id="getBoundingSphere" class="function">
+<p>
+<span class="keyword">function <a href="Sphere.html">Sphere</a></span> getBoundingSphere() <br/>
+</p>
+</div>
+<div id="getBoundingSphere" class="">
+<p>
+Returns Bounding Sphere for entity. Much faster than Bounding Box, but not as accurate. Use this if you need to check often. 
+</p>
+</p>
+</div>
+</div>
+<div id="getCargo" class="codecontainer">
+<div id="getCargo" class="function">
+<p>
+<span class="keyword">function <a href="TradingGood.html">TradingGood</a>, int...</span> getCargo(<span class="type">unsigned int</span> <span class="parameter">n</span>) <br/>
+</p>
+</div>
+<div id="getCargo" class="">
+</p>
+</div>
+</div>
+<div id="getCargoAmount" class="codecontainer">
+<div id="getCargoAmount" class="function">
+<p>
+<span class="keyword">function var</span> getCargoAmount(<span class="type">var</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getCargoAmount" class="">
+<p>
+Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">name</span>
+Either a TradingGood or a string containing the name of a trading good. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The number of goods 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getCargos" class="codecontainer">
+<div id="getCargos" class="function">
+<p>
+<span class="keyword">function table&lt;TradingGood, int&gt;</span> getCargos() <br/>
+</p>
+</div>
+<div id="getCargos" class="">
+</p>
+</div>
+</div>
+<div id="getCrewMembers" class="codecontainer">
+<div id="getCrewMembers" class="function">
+<p>
+<span class="keyword">function var</span> getCrewMembers(<span class="type">int</span> <span class="parameter">profession</span>) <br/>
+</p>
+</div>
+<div id="getCrewMembers" class="">
+</p>
+</div>
+</div>
+<div id="getDamageContributorPlayerFactions" class="codecontainer">
+<div id="getDamageContributorPlayerFactions" class="function">
+<p>
+<span class="keyword">function int...</span> getDamageContributorPlayerFactions() <br/>
+</p>
+</div>
+<div id="getDamageContributorPlayerFactions" class="">
+<p>
+Lists all players and alliances that contributed damage to the entity 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Indices of all players and alliances that contributed damage to the entity 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getDamageContributorPlayers" class="codecontainer">
+<div id="getDamageContributorPlayers" class="function">
+<p>
+<span class="keyword">function int...</span> getDamageContributorPlayers() <br/>
+</p>
+</div>
+<div id="getDamageContributorPlayers" class="">
+<p>
+Lists all players that contributed damage to the entity 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Indices of all players that contributed damage to the entity 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getDamageContributors" class="codecontainer">
+<div id="getDamageContributors" class="function">
+<p>
+<span class="keyword">function int...</span> getDamageContributors() <br/>
+</p>
+</div>
+<div id="getDamageContributors" class="">
+<p>
+Lists all factions that contributed damage to the entity 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Indices of all factions that contributed damage to the entity 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getDockingPositions" class="codecontainer">
+<div id="getDockingPositions" class="function">
+<p>
+<span class="keyword">function <a href="vec3.html">vec3</a>...</span> getDockingPositions() <br/>
+</p>
+</div>
+<div id="getDockingPositions" class="">
+<p>
+Lists all docking positions that the entity has 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock. 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getFreeArbitraryTurrets" class="codecontainer">
+<div id="getFreeArbitraryTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getFreeArbitraryTurrets() <br/>
+</p>
+</div>
+<div id="getFreeArbitraryTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getFreeArmedTurrets" class="codecontainer">
+<div id="getFreeArmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getFreeArmedTurrets() <br/>
+</p>
+</div>
+<div id="getFreeArmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getFreeUnarmedTurrets" class="codecontainer">
+<div id="getFreeUnarmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getFreeUnarmedTurrets() <br/>
+</p>
+</div>
+<div id="getFreeUnarmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getFullPlanCopy" class="codecontainer">
+<div id="getFullPlanCopy" class="function">
+<p>
+<span class="keyword">function <a href="BlockPlan.html">BlockPlan</a></span> getFullPlanCopy() <br/>
+</p>
+</div>
+<div id="getFullPlanCopy" class="">
+<p>
+Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts. 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A copy of the plan of the entity 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getLowestMineableMaterial" class="codecontainer">
+<div id="getLowestMineableMaterial" class="function">
+<p>
+<span class="keyword">function <a href="Material.html">Material</a></span> getLowestMineableMaterial() <br/>
+</p>
+</div>
+<div id="getLowestMineableMaterial" class="">
+</p>
+</div>
+</div>
+<div id="getMalusFactor" class="codecontainer">
+<div id="getMalusFactor" class="function">
+<p>
+<span class="keyword">function var, var</span> getMalusFactor() <br/>
+</p>
+</div>
+<div id="getMalusFactor" class="">
+</p>
+</div>
+</div>
+<div id="getMineableMaterial" class="codecontainer">
+<div id="getMineableMaterial" class="function">
+<p>
+<span class="keyword">function <a href="Material.html">Material</a></span> getMineableMaterial() <br/>
+</p>
+</div>
+<div id="getMineableMaterial" class="">
+</p>
+</div>
+</div>
+<div id="getMineableResources" class="codecontainer">
+<div id="getMineableResources" class="function">
+<p>
+<span class="keyword">function int...</span> getMineableResources() <br/>
+</p>
+</div>
+<div id="getMineableResources" class="">
+</p>
+</div>
+</div>
+<div id="getMovePlan" class="codecontainer">
+<div id="getMovePlan" class="function">
+<p>
+<span class="keyword">function <a href="BlockPlan.html">BlockPlan</a></span> getMovePlan() <br/>
+</p>
+</div>
+<div id="getMovePlan" class="">
+<p>
+Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks. 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The plan of the entity 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getNearestDistance" class="codecontainer">
+<div id="getNearestDistance" class="function">
+<p>
+<span class="keyword">function var</span> getNearestDistance(<a href="Entity.html">Entity</a> <span class="parameter">other</span>) <br/>
+</p>
+</div>
+<div id="getNearestDistance" class="">
+</p>
+</div>
+</div>
+<div id="getNumArmedTurrets" class="codecontainer">
+<div id="getNumArmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getNumArmedTurrets() <br/>
+</p>
+</div>
+<div id="getNumArmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getNumUnarmedTurrets" class="codecontainer">
+<div id="getNumUnarmedTurrets" class="function">
+<p>
+<span class="keyword">function var</span> getNumUnarmedTurrets() <br/>
+</p>
+</div>
+<div id="getNumUnarmedTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getPilotIndices" class="codecontainer">
+<div id="getPilotIndices" class="function">
+<p>
+<span class="keyword">function int...</span> getPilotIndices() <br/>
+</p>
+</div>
+<div id="getPilotIndices" class="">
+<p>
+Returns Indices of piloting players 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+multiple return values: indices of players 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getPlanMoneyValue" class="codecontainer">
+<div id="getPlanMoneyValue" class="function">
+<p>
+<span class="keyword">function var</span> getPlanMoneyValue() <br/>
+</p>
+</div>
+<div id="getPlanMoneyValue" class="">
+</p>
+</div>
+</div>
+<div id="getPlanResourceValue" class="codecontainer">
+<div id="getPlanResourceValue" class="function">
+<p>
+<span class="keyword">function double...</span> getPlanResourceValue() <br/>
+</p>
+</div>
+<div id="getPlanResourceValue" class="">
+</p>
+</div>
+</div>
+<div id="getRandomDockingPosition" class="codecontainer">
+<div id="getRandomDockingPosition" class="function">
+<p>
+<span class="keyword">function <a href="vec3.html">vec3</a></span> getRandomDockingPosition(<span class="type">float</span> <span class="parameter">radius</span>) <br/>
+</p>
+</div>
+<div id="getRandomDockingPosition" class="">
+</p>
+</div>
+</div>
+<div id="getScripts" class="codecontainer">
+<div id="getScripts" class="function">
+<p>
+<span class="keyword">function table&lt;int, string&gt;</span> getScripts() <br/>
+</p>
+</div>
+<div id="getScripts" class="">
+</p>
+</div>
+</div>
+<div id="getTitleArguments" class="codecontainer">
+<div id="getTitleArguments" class="function">
+<p>
+<span class="keyword">function table&lt;string, string&gt;</span> getTitleArguments() <br/>
+</p>
+</div>
+<div id="getTitleArguments" class="">
+<p>
+Retrieves the arguments to a title 
+</p>
+</p>
+</div>
+</div>
+<div id="getTitleFormat" class="codecontainer">
+<div id="getTitleFormat" class="function">
+<p>
+<span class="keyword">function <a href="NamedFormat.html">NamedFormat</a></span> getTitleFormat() <br/>
+</p>
+</div>
+<div id="getTitleFormat" class="">
+<p>
+Retrieves the title as NamedFormat 
+</p>
+</p>
+</div>
+</div>
+<div id="getTurret" class="codecontainer">
+<div id="getTurret" class="function">
+<p>
+<span class="keyword">function <a href="Entity.html">Entity</a></span> getTurret(<span class="type">int</span> <span class="parameter">index</span>) <br/>
+</p>
+</div>
+<div id="getTurret" class="">
+</p>
+</div>
+</div>
+<div id="getTurretPositions" class="codecontainer">
+<div id="getTurretPositions" class="function">
+<p>
+<span class="keyword">function <a href="Matrix.html">Matrix</a>, int...</span> getTurretPositions(<a href="TurretTemplate.html">TurretTemplate</a> <span class="parameter">turret</span>, <span class="type">int</span> <span class="parameter">number</span>) <br/>
+</p>
+</div>
+<div id="getTurretPositions" class="">
+</p>
+</div>
+</div>
+<div id="getTurretPositionsLineOfSight" class="codecontainer">
+<div id="getTurretPositionsLineOfSight" class="function">
+<p>
+<span class="keyword">function <a href="Matrix.html">Matrix</a>, int...</span> getTurretPositionsLineOfSight(<a href="TurretTemplate.html">TurretTemplate</a> <span class="parameter">turret</span>, <span class="type">int</span> <span class="parameter">number</span>) <br/>
+</p>
+</div>
+<div id="getTurretPositionsLineOfSight" class="">
+</p>
+</div>
+</div>
+<div id="getTurrets" class="codecontainer">
+<div id="getTurrets" class="function">
+<p>
+<span class="keyword">function <a href="Entity.html">Entity</a>...</span> getTurrets() <br/>
+</p>
+</div>
+<div id="getTurrets" class="">
+</p>
+</div>
+</div>
+<div id="getTurretSize" class="codecontainer">
+<div id="getTurretSize" class="function">
+<p>
+<span class="keyword">function var</span> getTurretSize() <br/>
+</p>
+</div>
+<div id="getTurretSize" class="">
+</p>
+</div>
+</div>
+<div id="getTurretTemplateSize" class="codecontainer">
+<div id="getTurretTemplateSize" class="function">
+<p>
+<span class="keyword">function var</span> getTurretTemplateSize() <br/>
+</p>
+</div>
+<div id="getTurretTemplateSize" class="">
+</p>
+</div>
+</div>
+<div id="getTurretTurningSpeed" class="codecontainer">
+<div id="getTurretTurningSpeed" class="function">
+<p>
+<span class="keyword">function var</span> getTurretTurningSpeed() <br/>
+</p>
+</div>
+<div id="getTurretTurningSpeed" class="">
+</p>
+</div>
+</div>
+<div id="getUndamagedPlanMoneyValue" class="codecontainer">
+<div id="getUndamagedPlanMoneyValue" class="function">
+<p>
+<span class="keyword">function var</span> getUndamagedPlanMoneyValue() <br/>
+</p>
+</div>
+<div id="getUndamagedPlanMoneyValue" class="">
+</p>
+</div>
+</div>
+<div id="getUndamagedPlanResourceValue" class="codecontainer">
+<div id="getUndamagedPlanResourceValue" class="function">
+<p>
+<span class="keyword">function double...</span> getUndamagedPlanResourceValue() <br/>
+</p>
+</div>
+<div id="getUndamagedPlanResourceValue" class="">
+</p>
+</div>
+</div>
+<div id="getValue" class="codecontainer">
+<div id="getValue" class="function">
+<p>
+<span class="keyword">function var</span> getValue(<span class="type">string</span> <span class="parameter">key</span>) <br/>
+</p>
+</div>
+<div id="getValue" class="">
+<p>
+Retrieves a custom value saved in the entity with the given key 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">key</span>
+A string that serves as the name of the value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The value if the key exists, otherwise nil 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getValues" class="codecontainer">
+<div id="getValues" class="function">
+<p>
+<span class="keyword">function table&lt;string, var&gt;</span> getValues() <br/>
+</p>
+</div>
+<div id="getValues" class="">
+<p>
+Retrieves all key-value pairs of custom values of the entity 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A table containing all custom key-value pairs 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getWormholeComponent" class="codecontainer">
+<div id="getWormholeComponent" class="function">
+<p>
+<span class="keyword">function <a href="WormHole.html">WormHole</a></span> getWormholeComponent() <br/>
+</p>
+</div>
+<div id="getWormholeComponent" class="">
+</p>
+</div>
+</div>
+<div id="hasComponent" class="codecontainer">
+<div id="hasComponent" class="function">
+<p>
+<span class="keyword">function bool</span> hasComponent(<span class="type">int</span> <span class="parameter">type</span>) <br/>
+</p>
+</div>
+<div id="hasComponent" class="">
+</p>
+</div>
+</div>
+<div id="hasScript" class="codecontainer">
+<div id="hasScript" class="function">
+<p>
+<span class="keyword">function var</span> hasScript(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="hasScript" class="">
+</p>
+</div>
+</div>
+<div id="heal" class="codecontainer">
+<div id="heal" class="function">
+<p>
+<span class="keyword">function var</span> heal(<span class="type">float</span> <span class="parameter">damage</span>, <span class="type">int</span> <span class="parameter">index</span>, <a href="vec3.html">vec3</a> <span class="parameter">location</span>, <a href="Uuid.html">Uuid</a> <span class="parameter">inflictorID</span>) <br/>
+</p>
+</div>
+<div id="heal" class="">
+<p>
+Increases durability of the plan of the Entity  
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">damage</span>
+The amount of durability that will be restored <br/>
+<span class="parameter">index</span>
+Index of the block that will be restored <br/>
+<span class="parameter">location</span>
+vector containing the hit point, if unknown/unnecessary use empty vector <br/>
+<span class="parameter">inflictorID</span>
+Index of the entity that heals  <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="healShield" class="codecontainer">
+<div id="healShield" class="function">
+<p>
+<span class="keyword">function var</span> healShield(<span class="type">double</span> <span class="parameter">delta</span>) <br/>
+</p>
+</div>
+<div id="healShield" class="">
+<p>
+Increases shield durability by delta 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">delta</span>
+<br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="hyperspaceBlocked" class="codecontainer">
+<div id="hyperspaceBlocked" class="function">
+<p>
+<span class="keyword">function var</span> hyperspaceBlocked() <br/>
+</p>
+</div>
+<div id="hyperspaceBlocked" class="">
+</p>
+</div>
+</div>
+<div id="inflictDamage" class="codecontainer">
+<div id="inflictDamage" class="function">
+<p>
+<span class="keyword">function var</span> inflictDamage(<span class="type">float</span> <span class="parameter">damage</span>, <span class="type">var</span> <span class="parameter">damageSource</span>, <span class="type">var</span> <span class="parameter">damageType</span>, <span class="type">int</span> <span class="parameter">index</span>, <a href="vec3.html">vec3</a> <span class="parameter">location</span>, <a href="Uuid.html">Uuid</a> <span class="parameter">inflictorId</span>) <br/>
+</p>
+</div>
+<div id="inflictDamage" class="">
+<p>
+Inflicts damage to the plan of the Entity  
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">damage</span>
+The amount of damage that will be dealt <br/>
+<span class="parameter">damageSource</span>
+The source of the damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary. <br/>
+<span class="parameter">damageType</span>
+Type of damage received. Damage can be of type Physical, Energy, Electric, Plasma, AntiMatter or Fragments <br/>
+<span class="parameter">index</span>
+Index of the block that will receive the damage <br/>
+<span class="parameter">location</span>
+vector containing the hit point, if unknown / unnecessary use empty vector <br/>
+<span class="parameter">inflictorId</span>
+Index of the entity that caused the damage <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="invokeFunction" class="codecontainer">
+<div id="invokeFunction" class="function">
+<p>
+<span class="keyword">function var...</span> invokeFunction(<span class="type">var</span> <span class="parameter">scriptName</span>, <span class="type">string</span> <span class="parameter">functionName</span>, <span class="type">var...</span> <span class="parameter">arguments</span>) <br/>
+</p>
+</div>
+<div id="invokeFunction" class="">
+<p>
+Invokes a function in a script of the entity. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">scriptName</span>
+The name or index of the script containing the function <br/>
+<span class="parameter">functionName</span>
+The name of the function that will be executed <br/>
+<span class="parameter">arguments</span>
+An arbitrary list of arguments that will be given to the invoked function <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Returns at least 1 value indicating if the call succeeded:<br/> 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result<br/> 1 The call failed because the entity with the specified index does not exist or has no Scripts component<br/> 2 The call failed because it came from another sector than the entity is in<br/> 3 The call failed because the given script was not found in the entity<br/> 4 The call failed because the given function was not found in the script <br/> 5 The call failed because the script's state has errors and is invalid <br/> 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="isCollectable" class="codecontainer">
+<div id="isCollectable" class="function">
+<p>
+<span class="keyword">function var</span> isCollectable(<a href="Entity.html">Entity</a> <span class="parameter">entity</span>) <br/>
+</p>
+</div>
+<div id="isCollectable" class="">
+</p>
+</div>
+</div>
+<div id="isDocked" class="codecontainer">
+<div id="isDocked" class="function">
+<p>
+<span class="keyword">function bool</span> isDocked(<a href="Entity.html">Entity</a> <span class="parameter">other</span>) <br/>
+</p>
+</div>
+<div id="isDocked" class="">
+</p>
+</div>
+</div>
+<div id="isInsideShield" class="codecontainer">
+<div id="isInsideShield" class="function">
+<p>
+<span class="keyword">function var</span> isInsideShield(<a href="vec3.html">vec3</a> <span class="parameter">point</span>) <br/>
+</p>
+</div>
+<div id="isInsideShield" class="">
+</p>
+</div>
+</div>
+<div id="isJumpRouteValid" class="codecontainer">
+<div id="isJumpRouteValid" class="function">
+<p>
+<span class="keyword">function bool, var</span> isJumpRouteValid(<span class="type">int</span> <span class="parameter">fromX</span>, <span class="type">int</span> <span class="parameter">fromY</span>, <span class="type">int</span> <span class="parameter">toX</span>, <span class="type">int</span> <span class="parameter">toY</span>) <br/>
+</p>
+</div>
+<div id="isJumpRouteValid" class="">
+</p>
+</div>
+</div>
+<div id="isManned" class="codecontainer">
+<div id="isManned" class="function">
+<p>
+<span class="keyword">function var</span> isManned() <br/>
+</p>
+</div>
+<div id="isManned" class="">
+</p>
+</div>
+</div>
+<div id="isTurretAllowed" class="codecontainer">
+<div id="isTurretAllowed" class="function">
+<p>
+<span class="keyword">function var</span> isTurretAllowed(<a href="TurretTemplate.html">TurretTemplate</a> <span class="parameter">ScriptTurretTemplate</span>) <br/>
+</p>
+</div>
+<div id="isTurretAllowed" class="">
+<p>
+Tests if the maximum number of turrets of this kind is not reached 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">ScriptTurretTemplate</span>
+the template of the turret to be placed <br/>
+</div>
+</p>
+</div>
+</div>
+<div id="jumpPossible" class="codecontainer">
+<div id="jumpPossible" class="function">
+<p>
+<span class="keyword">function int</span> jumpPossible(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+</p>
+</div>
+<div id="jumpPossible" class="">
+<p>
+Tests if the entity can jump to the specified coordinates 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">x</span>
+The x-coordinates of the target sector <br/>
+<span class="parameter">y</span>
+The y-coordinates of the target sector <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Returns an error code:<br/> -1 The entity doesn't have a hyperspace drive.<br/> 0 The entity can jump.<br/> 1 The hyperspace drive needs to recharge.<br/> 2 The target sector is too far away.<br/> 3 The entity is facing the wrong direction.<br/> 4 The hyperspace drive is being jammed.<br/> 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="moveBy" class="codecontainer">
+<div id="moveBy" class="function">
+<p>
+<span class="keyword">function var</span> moveBy(<a href="vec3.html">vec3</a> <span class="parameter">delta</span>) <br/>
+</p>
+</div>
+<div id="moveBy" class="">
+<p>
+Teleports entity by vector 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="registerCallback" class="codecontainer">
+<div id="registerCallback" class="function">
+<p>
+<span class="keyword">function int</span> registerCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="registerCallback" class="">
+<p>
+Register a callback in the entity. The callback receiver has to be inside the same sector for the registration to succeed. The callback will be removed if either the entity or the receiver leaves the sector or gets destroyed. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function that will be executed in the script when the callback happens <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+0 on success, 1 if the registration failed 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeBonus" class="codecontainer">
+<div id="removeBonus" class="function">
+<p>
+<span class="keyword">function var</span> removeBonus(<span class="type">int</span> <span class="parameter">key</span>) <br/>
+</p>
+</div>
+<div id="removeBonus" class="">
+<p>
+Deletes bonus 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">key</span>
+Location of the bonus <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeCargo" class="codecontainer">
+<div id="removeCargo" class="function">
+<p>
+<span class="keyword">function var</span> removeCargo(<span class="type">var</span> <span class="parameter">good</span>, <span class="type">int</span> <span class="parameter">amount</span>) <br/>
+</p>
+</div>
+<div id="removeCargo" class="">
+<p>
+Removes cargo from the entity. When given a TradingGood, an exact check for that good will be performed. When given a string, only a name check will be performed, and which cargo will be removed first is undefined if there are multiple goods with the same name. An example would be Energy Cells vs. Stolen Energy Cells. The 'name' property is the same, but the 'stolen' property is different. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">good</span>
+Either a TradingGood or a string with the name of a good. <br/>
+<span class="parameter">amount</span>
+The amount of cargo that should be removed. If this is more than there is on the ship, all specified cargo will be removed. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeCrew" class="codecontainer">
+<div id="removeCrew" class="function">
+<p>
+<span class="keyword">function var</span> removeCrew(<span class="type">int</span> <span class="parameter">number</span>, <a href="CrewMan.html">CrewMan</a> <span class="parameter">crewman</span>) <br/>
+</p>
+</div>
+<div id="removeCrew" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeScript" class="codecontainer">
+<div id="removeScript" class="function">
+<p>
+<span class="keyword">function var</span> removeScript(<span class="type">var</span> <span class="parameter">script</span>) <br/>
+</p>
+</div>
+<div id="removeScript" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="resolveScriptPath" class="codecontainer">
+<div id="resolveScriptPath" class="function">
+<p>
+<span class="keyword">function var</span> resolveScriptPath(<span class="type">string</span> <span class="parameter">path</span>) <br/>
+</p>
+</div>
+<div id="resolveScriptPath" class="">
+</p>
+</div>
+</div>
+<div id="sendCallback" class="codecontainer">
+<div id="sendCallback" class="function">
+<p>
+<span class="keyword">function bool</span> sendCallback() <br/>
+</p>
+</div>
+<div id="sendCallback" class="">
+</p>
+</div>
+</div>
+<div id="setAccumulatingBlockHealth" class="codecontainer">
+<div id="setAccumulatingBlockHealth" class="function">
+<p>
+<span class="keyword">function var</span> setAccumulatingBlockHealth(<span class="type">bool</span> <span class="parameter">bool</span>) <br/>
+</p>
+</div>
+<div id="setAccumulatingBlockHealth" class="">
+<p>
+If AccumulatingBlockHealth is true, a block needs to take as much damage as would be necessary to destroy all his children before it itself is destroyed. If it is set to false, the entity's blocks will have only their own durability. Set it to false if you want your entity to easily break apart, e.g. for wreckages. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">bool</span>
+<br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setAimedPosition" class="codecontainer">
+<div id="setAimedPosition" class="function">
+<p>
+<span class="keyword">function var</span> setAimedPosition(<span class="type">int</span> <span class="parameter">seat</span>, <a href="vec3.html">vec3</a> <span class="parameter">in</span>) <br/>
+</p>
+</div>
+<div id="setAimedPosition" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setAttachedBlockIndex" class="codecontainer">
+<div id="setAttachedBlockIndex" class="function">
+<p>
+<span class="keyword">function var</span> setAttachedBlockIndex(<span class="type">int</span> <span class="parameter">in</span>) <br/>
+</p>
+</div>
+<div id="setAttachedBlockIndex" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setMalusFactor" class="codecontainer">
+<div id="setMalusFactor" class="function">
+<p>
+<span class="keyword">function var</span> setMalusFactor(<span class="type">float</span> <span class="parameter">in</span>, <span class="type">int</span> <span class="parameter">reason</span>) <br/>
+</p>
+</div>
+<div id="setMalusFactor" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setManned" class="codecontainer">
+<div id="setManned" class="function">
+<p>
+<span class="keyword">function var</span> setManned(<span class="type">bool</span> <span class="parameter">in</span>) <br/>
+</p>
+</div>
+<div id="setManned" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setMovePlan" class="codecontainer">
+<div id="setMovePlan" class="function">
+<p>
+<span class="keyword">function var</span> setMovePlan(<a href="BlockPlan.html">BlockPlan</a> <span class="parameter">plan</span>) <br/>
+</p>
+</div>
+<div id="setMovePlan" class="">
+<p>
+Set the new plan of the entity. The entity will get deleted if the plan is empty. This moves all the data out of the plan that is used as the first argument. The content of the plan given as argument is then undefined, but still valid. It might be empty, it might contain the previous plan. This operation is independent of the size of the plan, use it when you have to set large plans with lots of blocks. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">plan</span>
+The new BlockPlan of the entity <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setPlan" class="codecontainer">
+<div id="setPlan" class="function">
+<p>
+<span class="keyword">function var</span> setPlan(<a href="BlockPlan.html">BlockPlan</a> <span class="parameter">plan</span>) <br/>
+</p>
+</div>
+<div id="setPlan" class="">
+<p>
+Set the new plan of the entity. The entity will get deleted if the plan is empty. This copies the entire plan that is given as argument, keep that in mind when setting plans with large block counts. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">plan</span>
+The new BlockPlan of the entity <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setTitle" class="codecontainer">
+<div id="setTitle" class="function">
+<p>
+<span class="keyword">function var</span> setTitle(<span class="type">string</span> <span class="parameter">title</span>, <span class="type">string_pair...</span> <span class="parameter">arguments</span>) <br/>
+</p>
+</div>
+<div id="setTitle" class="">
+<p>
+Sets the title that can be used as title in menus 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">title</span>
+a string that will be used as title, can be a format string for easier translation.</br> <br/>
+<span class="parameter">arguments</span>
+Set the string arguments (if format string is used) as vector of string_pair. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setTitleArguments" class="codecontainer">
+<div id="setTitleArguments" class="function">
+<p>
+<span class="keyword">function var</span> setTitleArguments(<span class="type">string_pair...</span> <span class="parameter">arguments</span>) <br/>
+</p>
+</div>
+<div id="setTitleArguments" class="">
+<p>
+Sets the arguments to a title 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">arguments</span>
+Set the string arguments as vector of string_pair. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setTurretSize" class="codecontainer">
+<div id="setTurretSize" class="function">
+<p>
+<span class="keyword">function var</span> setTurretSize(<span class="type">float</span> <span class="parameter">in</span>) <br/>
+</p>
+</div>
+<div id="setTurretSize" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setTurretTurningSpeed" class="codecontainer">
+<div id="setTurretTurningSpeed" class="function">
+<p>
+<span class="keyword">function var</span> setTurretTurningSpeed(<span class="type">float</span> <span class="parameter">in</span>) <br/>
+</p>
+</div>
+<div id="setTurretTurningSpeed" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setValue" class="codecontainer">
+<div id="setValue" class="function">
+<p>
+<span class="keyword">function var</span> setValue(<span class="type">string</span> <span class="parameter">key</span>, <span class="type">var</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="setValue" class="">
+<p>
+Sets a custom value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">key</span>
+A string that serves as the name of the value <br/>
+<span class="parameter">value</span>
+The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="singleFlyToLocationTick" class="codecontainer">
+<div id="singleFlyToLocationTick" class="function">
+<p>
+<span class="keyword">function var</span> singleFlyToLocationTick(<a href="vec3.html">vec3</a> <span class="parameter">location</span>) <br/>
+</p>
+</div>
+<div id="singleFlyToLocationTick" class="">
+<p>
+Tells the ship to fly to given location, directly and without pathfinding. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">location</span>
+the location to fly to (in global coordinates) Paired with setting desiredVelocity to 0, this can be used to rotate the ship to a given direction.  <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="unregisterCallback" class="codecontainer">
+<div id="unregisterCallback" class="function">
+<p>
+<span class="keyword">function int</span> unregisterCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="unregisterCallback" class="">
+</p>
+</div>
+</div>
+<div id="waitUntilAsyncWorkFinished" class="codecontainer">
+<div id="waitUntilAsyncWorkFinished" class="function">
+<p>
+<span class="keyword">function var</span> waitUntilAsyncWorkFinished(<span class="type">var</span> <span class="parameter">time</span>) <br/>
+</p>
+</div>
+<div id="waitUntilAsyncWorkFinished" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sitemap">
+<div class="flexheader">   <div class="headerlisting">
+      <span class="docheader">Overview</span>
+      <br>      <a href="index.html">Home</a>
+      <a href="Functions.html">Functions</a>
+      <a href="Search.html">Search</a>
+   </div>   <div class="flexheaderwhitespace"></div>
+   <form action="Search.html" method="get">      Search:<input name="search" class="headersearchinput" type="search">   </form></div><div class="headerlisting">
+<span class="docheader">Callbacks</span>
+<br><a href="Callbacks.html"> Callbacks</a>
+<a href="Alliance [Client] Callbacks.html">Alliance [Client]  Callbacks</a>
+<a href="Alliance [Server] Callbacks.html">Alliance [Server]  Callbacks</a>
+<a href="Alliance [Server]  Callbacks.html">Alliance [Server]   Callbacks</a>
+<a href="Entity Callbacks.html">Entity  Callbacks</a>
+<a href="Galaxy Callbacks.html">Galaxy  Callbacks</a>
+<a href="Player Callbacks.html">Player  Callbacks</a>
+<a href="Player [Client] Callbacks.html">Player [Client]  Callbacks</a>
+<a href="Sector Callbacks.html">Sector  Callbacks</a>
+<a href="Server Callbacks.html">Server  Callbacks</a>
+</div><div class="headerlisting">
+<span class="docheader">Predefined Functions & Example Scripts</span>
+<br><a href="CommandFunctions.html">Command</a>
+<a href="EntityFunctions.html">Entity</a>
+<a href="FactionDatabaseFunctions.html">FactionDatabase</a>
+<a href="PlanGeneratorFunctions.html">PlanGenerator</a>
+<a href="PlayerFunctions.html">Player</a>
+<a href="SectorFunctions.html">Sector</a>
+<a href="ServerFunctions.html">Server</a>
+<a href="UsableInventoryItemFunctions.html">UsableInventoryItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Components</span>
+<br><a href="Boarding.html">Boarding</a>
+<a href="BspTree.html">BspTree</a>
+<a href="CargoBay.html">CargoBay</a>
+<a href="ControlUnit.html">ControlUnit</a>
+<a href="DeletionTimer.html">DeletionTimer</a>
+<a href="DirectFlightPhysics.html">DirectFlightPhysics</a>
+<a href="DockingPositions.html">DockingPositions</a>
+<a href="Durability.html">Durability</a>
+<a href="EnergySystem.html">EnergySystem</a>
+<a href="Engine.html">Engine</a>
+<a href="FighterAI.html">FighterAI</a>
+<a href="Hangar.html">Hangar</a>
+<a href="InteractionText.html">InteractionText</a>
+<a href="Owner.html">Owner</a>
+<a href="Physics.html">Physics</a>
+<a href="Plan.html">Plan</a>
+<a href="ReadOnlyBoarding.html">ReadOnlyBoarding</a>
+<a href="ReadOnlyBspTree.html">ReadOnlyBspTree</a>
+<a href="ReadOnlyCargoBay.html">ReadOnlyCargoBay</a>
+<a href="ReadOnlyControlUnit.html">ReadOnlyControlUnit</a>
+<a href="ReadOnlyDeletionTimer.html">ReadOnlyDeletionTimer</a>
+<a href="ReadOnlyEnergySystem.html">ReadOnlyEnergySystem</a>
+<a href="ReadOnlyEngine.html">ReadOnlyEngine</a>
+<a href="ReadOnlyFighterAI.html">ReadOnlyFighterAI</a>
+<a href="ReadOnlyHangar.html">ReadOnlyHangar</a>
+<a href="ReadOnlyInteractionText.html">ReadOnlyInteractionText</a>
+<a href="ReadOnlyOwner.html">ReadOnlyOwner</a>
+<a href="ReadOnlyPhysics.html">ReadOnlyPhysics</a>
+<a href="ReadOnlyPlan.html">ReadOnlyPlan</a>
+<a href="ReadOnlyShipAI.html">ReadOnlyShipAI</a>
+<a href="ReadOnlyShipSystem.html">ReadOnlyShipSystem</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoLauncher.html">ReadOnlyTorpedoLauncher</a>
+<a href="ReadOnlyTurretBases.html">ReadOnlyTurretBases</a>
+<a href="ReadOnlyVelocity.html">ReadOnlyVelocity</a>
+<a href="ReadOnlyWeapons.html">ReadOnlyWeapons</a>
+<a href="ReadOnlyWormHole.html">ReadOnlyWormHole</a>
+<a href="Shield.html">Shield</a>
+<a href="ShipAI.html">ShipAI</a>
+<a href="ShipSystem.html">ShipSystem</a>
+<a href="SystemUpgradeLoot.html">SystemUpgradeLoot</a>
+<a href="Thrusters.html">Thrusters</a>
+<a href="Torpedo.html">Torpedo</a>
+<a href="TorpedoAI.html">TorpedoAI</a>
+<a href="TorpedoLauncher.html">TorpedoLauncher</a>
+<a href="Turret.html">Turret</a>
+<a href="TurretAI.html">TurretAI</a>
+<a href="TurretBases.html">TurretBases</a>
+<a href="Velocity.html">Velocity</a>
+<a href="Weapons.html">Weapons</a>
+<a href="WormHole.html">WormHole</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Objects</span>
+<br><a href="AllianceMember.html">AllianceMember</a>
+<a href="AllianceRank.html">AllianceRank</a>
+<a href="BlockPlan.html">BlockPlan</a>
+<a href="BlockPlanBlock.html">BlockPlanBlock</a>
+<a href="BlockStatistics.html">BlockStatistics</a>
+<a href="Box.html">Box</a>
+<a href="Color.html">Color</a>
+<a href="ControlUnitSeat.html">ControlUnitSeat</a>
+<a href="CraftDesign.html">CraftDesign</a>
+<a href="Crew.html">Crew</a>
+<a href="CrewMan.html">CrewMan</a>
+<a href="CrewProfession.html">CrewProfession</a>
+<a href="DebugInfo.html">DebugInfo</a>
+<a href="dvec2.html">dvec2</a>
+<a href="dvec3.html">dvec3</a>
+<a href="dvec4.html">dvec4</a>
+<a href="Entity.html">Entity</a>
+<a href="EntityDescriptor.html">EntityDescriptor</a>
+<a href="FighterTemplate.html">FighterTemplate</a>
+<a href="Format.html">Format</a>
+<a href="GameSettings.html">GameSettings</a>
+<a href="HighResolutionTimer.html">HighResolutionTimer</a>
+<a href="Inventory.html">Inventory</a>
+<a href="InventoryTurret.html">InventoryTurret</a>
+<a href="ivec2.html">ivec2</a>
+<a href="ivec3.html">ivec3</a>
+<a href="ivec4.html">ivec4</a>
+<a href="Language.html">Language</a>
+<a href="Mail.html">Mail</a>
+<a href="Material.html">Material</a>
+<a href="Matrix.html">Matrix</a>
+<a href="ModManager.html">ModManager</a>
+<a href="NamedFormat.html">NamedFormat</a>
+<a href="PlanBspTree.html">PlanBspTree</a>
+<a href="PlanetSpecifics.html">PlanetSpecifics</a>
+<a href="PlanGenerationStage.html">PlanGenerationStage</a>
+<a href="PlanPart.html">PlanPart</a>
+<a href="PlanStyle.html">PlanStyle</a>
+<a href="PlayerId.html">PlayerId</a>
+<a href="PluralForm.html">PluralForm</a>
+<a href="Profiler.html">Profiler</a>
+<a href="QuadTree.html">QuadTree</a>
+<a href="Random.html">Random</a>
+<a href="Rarity.html">Rarity</a>
+<a href="Ray.html">Ray</a>
+<a href="ReadOnlyEntity.html">ReadOnlyEntity</a>
+<a href="Rect.html">Rect</a>
+<a href="Relation.html">Relation</a>
+<a href="SectorView.html">SectorView</a>
+<a href="Seed.html">Seed</a>
+<a href="Sphere.html">Sphere</a>
+<a href="SystemUpgradeTemplate.html">SystemUpgradeTemplate</a>
+<a href="Timer.html">Timer</a>
+<a href="Tooltip.html">Tooltip</a>
+<a href="TooltipLine.html">TooltipLine</a>
+<a href="TorpedoTemplate.html">TorpedoTemplate</a>
+<a href="TradingGood.html">TradingGood</a>
+<a href="TurretDesign.html">TurretDesign</a>
+<a href="TurretDesignPart.html">TurretDesignPart</a>
+<a href="TurretTemplate.html">TurretTemplate</a>
+<a href="UsableInventoryItem.html">UsableInventoryItem</a>
+<a href="Uuid.html">Uuid</a>
+<a href="VanillaInventoryItem.html">VanillaInventoryItem</a>
+<a href="vec2.html">vec2</a>
+<a href="vec3.html">vec3</a>
+<a href="vec4.html">vec4</a>
+<a href="Version.html">Version</a>
+<a href="Weapon.html">Weapon</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Components</span>
+<br><a href="EntityIcon.html">EntityIcon</a>
+<a href="EntityTooltip.html">EntityTooltip</a>
+<a href="PlanMesh.html">PlanMesh</a>
+<a href="ReadOnlyIcon.html">ReadOnlyIcon</a>
+<a href="ReadOnlyPlanMesh.html">ReadOnlyPlanMesh</a>
+<a href="ReadOnlyScriptUI.html">ReadOnlyScriptUI</a>
+<a href="ReadOnlyTooltip.html">ReadOnlyTooltip</a>
+<a href="ScriptUI.html">ScriptUI</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Objects</span>
+<br><a href="Achievements.html">Achievements</a>
+<a href="Alliance [Client].html">Alliance [Client]</a>
+<a href="ClientSettings.html">ClientSettings</a>
+<a href="CraftDesignSelectionItem.html">CraftDesignSelectionItem</a>
+<a href="Faction [Client].html">Faction [Client]</a>
+<a href="Galaxy [Client].html">Galaxy [Client]</a>
+<a href="GalaxyMap.html">GalaxyMap</a>
+<a href="GameInput.html">GameInput</a>
+<a href="InputWindow.html">InputWindow</a>
+<a href="InventoryReferenceSelectionItem.html">InventoryReferenceSelectionItem</a>
+<a href="InventorySelectionItem.html">InventorySelectionItem</a>
+<a href="Keyboard.html">Keyboard</a>
+<a href="LaserFX.html">LaserFX</a>
+<a href="Mouse.html">Mouse</a>
+<a href="Music.html">Music</a>
+<a href="Planet.html">Planet</a>
+<a href="Player [Client].html">Player [Client]</a>
+<a href="PlayerWindow.html">PlayerWindow</a>
+<a href="Sector [Client].html">Sector [Client]</a>
+<a href="SelectionItem.html">SelectionItem</a>
+<a href="SoundSource.html">SoundSource</a>
+<a href="TooltipRenderer.html">TooltipRenderer</a>
+<a href="TurretDesignSelectionItem.html">TurretDesignSelectionItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Client UI Objects</span>
+<br><a href="AllianceTab.html">AllianceTab</a>
+<a href="ArrowLine.html">ArrowLine</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="CheckBox.html">CheckBox</a>
+<a href="ComboBox.html">ComboBox</a>
+<a href="CraftPortrait.html">CraftPortrait</a>
+<a href="Frame.html">Frame</a>
+<a href="Hud.html">Hud</a>
+<a href="InventorySelection.html">InventorySelection</a>
+<a href="Label.html">Label</a>
+<a href="Line.html">Line</a>
+<a href="ListBox.html">ListBox</a>
+<a href="ListBoxEx.html">ListBoxEx</a>
+<a href="MapArrowLine.html">MapArrowLine</a>
+<a href="MultiLineTextBox.html">MultiLineTextBox</a>
+<a href="NumbersBar.html">NumbersBar</a>
+<a href="Picture.html">Picture</a>
+<a href="PlanDisplayer.html">PlanDisplayer</a>
+<a href="ProgressBar.html">ProgressBar</a>
+<a href="SavedDesignsSelection.html">SavedDesignsSelection</a>
+<a href="ScrollFrame.html">ScrollFrame</a>
+<a href="Selection.html">Selection</a>
+<a href="ShipWindow.html">ShipWindow</a>
+<a href="Slider.html">Slider</a>
+<a href="StatisticsBar.html">StatisticsBar</a>
+<a href="Tab.html">Tab</a>
+<a href="TabbedWindow.html">TabbedWindow</a>
+<a href="TextBox.html">TextBox</a>
+<a href="TextField.html">TextField</a>
+<a href="Tree.html">Tree</a>
+<a href="UIArbitraryHorizontalSplitter.html">UIArbitraryHorizontalSplitter</a>
+<a href="UIArbitraryVerticalSplitter.html">UIArbitraryVerticalSplitter</a>
+<a href="UIContainer.html">UIContainer</a>
+<a href="UIElement.html">UIElement</a>
+<a href="UIGridSplitter.html">UIGridSplitter</a>
+<a href="UIHorizontalLister.html">UIHorizontalLister</a>
+<a href="UIHorizontalMultiSplitter.html">UIHorizontalMultiSplitter</a>
+<a href="UIHorizontalSplitter.html">UIHorizontalSplitter</a>
+<a href="UIOrganizer.html">UIOrganizer</a>
+<a href="UIRect.html">UIRect</a>
+<a href="UIRenderer.html">UIRenderer</a>
+<a href="UIVerticalLister.html">UIVerticalLister</a>
+<a href="UIVerticalMultiSplitter.html">UIVerticalMultiSplitter</a>
+<a href="UIVerticalSplitter.html">UIVerticalSplitter</a>
+<a href="ValueComboBox.html">ValueComboBox</a>
+<a href="Window.html">Window</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Components</span>
+<br><a href="EntityTransferrer.html">EntityTransferrer</a>
+<a href="FighterController.html">FighterController</a>
+<a href="Loot.html">Loot</a>
+<a href="ReadOnlyEntityTransferrer.html">ReadOnlyEntityTransferrer</a>
+<a href="ReadOnlyFighterController.html">ReadOnlyFighterController</a>
+<a href="ReadOnlyLoot.html">ReadOnlyLoot</a>
+<a href="ReadOnlyTurretController.html">ReadOnlyTurretController</a>
+<a href="ReadOnlyWreckageCreator.html">ReadOnlyWreckageCreator</a>
+<a href="TurretController.html">TurretController</a>
+<a href="WreckageCreator.html">WreckageCreator</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Objects</span>
+<br><a href="Alliance [Server].html">Alliance [Server]</a>
+<a href="Faction [Server].html">Faction [Server]</a>
+<a href="Galaxy [Server].html">Galaxy [Server]</a>
+<a href="Player [Server].html">Player [Server]</a>
+<a href="ReadOnlySector.html">ReadOnlySector</a>
+<a href="Sector [Server].html">Sector [Server]</a>
+<a href="Server.html">Server</a>
+</div><div class="lastheaderlisting">
+<span class="docheader">Enums</span>
+<br><a href="Enums.html#AIState">AIState</a>
+<a href="Enums.html#AlliancePrivilege">AlliancePrivilege</a>
+<a href="Enums.html#BeamShape">BeamShape</a>
+<a href="Enums.html#BlockShading">BlockShading</a>
+<a href="Enums.html#BlockType">BlockType</a>
+<a href="Enums.html#BoxType">BoxType</a>
+<a href="Enums.html#ChatChannel">ChatChannel</a>
+<a href="Enums.html#ChatMessageType">ChatMessageType</a>
+<a href="Enums.html#ComponentType">ComponentType</a>
+<a href="Enums.html#ControlAction">ControlAction</a>
+<a href="Enums.html#ControlActionBit">ControlActionBit</a>
+<a href="Enums.html#CoolingType">CoolingType</a>
+<a href="Enums.html#CrewProfessionType">CrewProfessionType</a>
+<a href="Enums.html#DamageSource">DamageSource</a>
+<a href="Enums.html#DamageType">DamageType</a>
+<a href="Enums.html#DeletionType">DeletionType</a>
+<a href="Enums.html#Difficulty">Difficulty</a>
+<a href="Enums.html#EntityArrivalType">EntityArrivalType</a>
+<a href="Enums.html#EntityType">EntityType</a>
+<a href="Enums.html#FighterOrders">FighterOrders</a>
+<a href="Enums.html#FighterStartError">FighterStartError</a>
+<a href="Enums.html#FighterType">FighterType</a>
+<a href="Enums.html#FontType">FontType</a>
+<a href="Enums.html#ImpactParticles">ImpactParticles</a>
+<a href="Enums.html#InventoryItemType">InventoryItemType</a>
+<a href="Enums.html#KeyboardKey">KeyboardKey</a>
+<a href="Enums.html#ListBoxEntryType">ListBoxEntryType</a>
+<a href="Enums.html#MalusReason">MalusReason</a>
+<a href="Enums.html#MaterialType">MaterialType</a>
+<a href="Enums.html#MoonType">MoonType</a>
+<a href="Enums.html#MouseButton">MouseButton</a>
+<a href="Enums.html#PlanetType">PlanetType</a>
+<a href="Enums.html#PlayerStateType">PlayerStateType</a>
+<a href="Enums.html#ProjectileShape">ProjectileShape</a>
+<a href="Enums.html#RarityType">RarityType</a>
+<a href="Enums.html#RelationStatus">RelationStatus</a>
+<a href="Enums.html#SavedDesignType">SavedDesignType</a>
+<a href="Enums.html#SectorChangeType">SectorChangeType</a>
+<a href="Enums.html#SoundType">SoundType</a>
+<a href="Enums.html#StatsBonuses">StatsBonuses</a>
+<a href="Enums.html#TransformationFeature">TransformationFeature</a>
+<a href="Enums.html#TurretAutoFireMode">TurretAutoFireMode</a>
+<a href="Enums.html#WeaponAppearance">WeaponAppearance</a>
+<a href="Enums.html#WeaponCategory">WeaponCategory</a>
+</div></div>
+<div class="disclaimer">
+<p>This is the official documentation for the scripting API of Avorion. This documentation is automatically generated and <strong>not</strong> necessarily complete. Depending on the context in which functions exist, some documentation such as descriptions, return values or variable names or types may be missing.</p>
+<p>Work in Progress. Documentation of Avorion Version: 1.0 r22102 938a1bf97ccb</p>
+</div>
+<div class="footer">
+<p align="center">Work in Progress.</p>
+<p align="center">Copyright &copy; 2020 Boxelware GmbH. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,998 @@
+<html>
+<head>
+<title> Server</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="maincentered">
+<div class="maincontent">
+<h1 class="documentationheader">Avorion Script API Documentation</h1>
+<div class="sitemap">
+<div class="headerlisting flexheader">
+<div>
+<a href="index.html">Home</a>
+<a href="Functions.html">Functions</a>
+<a href="Search.html">Search</a>
+</div>
+<div class="flexheaderwhitespace"></div>
+<form action="Search.html" method="get">Search:<input name="search" class="headersearchinput" type="search"></form></div></div>
+<div class="floatleft">
+<div class="codecontainer">
+<table>
+<tr>
+<td>
+<a class="type" href="Server.html">Server</a>
+<a class="function" href="#Server">Server</a>
+</td>
+</tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Properties</span></td></tr>
+<tr><td>
+<a href="#accessMode">accessMode</a>
+</td></tr>
+<tr><td>
+<a href="#collisionDamage">collisionDamage</a>
+</td></tr>
+<tr><td>
+<a href="#description">description</a>
+</td></tr>
+<tr><td>
+<a href="#difficulty">difficulty</a>
+</td></tr>
+<tr><td>
+<a href="#folder">folder</a>
+</td></tr>
+<tr><td>
+<a href="#gamePort">gamePort</a>
+</td></tr>
+<tr><td>
+<a href="#generatorThreads">generatorThreads</a>
+</td></tr>
+<tr><td>
+<a href="#infiniteResources">infiniteResources</a>
+</td></tr>
+<tr><td>
+<a href="#maxPlayers">maxPlayers</a>
+</td></tr>
+<tr><td>
+<a href="#name">name</a>
+</td></tr>
+<tr><td>
+<a href="#paused">paused</a>
+</td></tr>
+<tr><td>
+<a href="#players">players</a>
+</td></tr>
+<tr><td>
+<a href="#playerToPlayerDamage">playerToPlayerDamage</a>
+</td></tr>
+<tr><td>
+<a href="#rconPort">rconPort</a>
+</td></tr>
+<tr><td>
+<a href="#runtime">runtime</a>
+</td></tr>
+<tr><td>
+<a href="#sameStartSector">sameStartSector</a>
+</td></tr>
+<tr><td>
+<a href="#scriptThreads">scriptThreads</a>
+</td></tr>
+<tr><td>
+<a href="#seed">seed</a>
+</td></tr>
+<tr><td>
+<a href="#sessionId">sessionId</a>
+</td></tr>
+<tr><td>
+<a href="#steamMasterPort">steamMasterPort</a>
+</td></tr>
+<tr><td>
+<a href="#steamQueryPort">steamQueryPort</a>
+</td></tr>
+<tr><td>
+<a href="#udpPollingPort">udpPollingPort</a>
+</td></tr>
+<tr><td>
+<a href="#unpausedRuntime">unpausedRuntime</a>
+</td></tr>
+<tr><td>
+<a href="#workerThreads">workerThreads</a>
+</td></tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Member Functions</span></td></tr>
+<tr><td>
+<a class="code" href="#addChatCommand">addChatCommand</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#broadcastChatMessage">broadcastChatMessage</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#callbacksRegistered">callbacksRegistered</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getBlackList">getBlackList</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getIpBlackList">getIpBlackList</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getOnlinePlayers">getOnlinePlayers</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPlayers">getPlayers</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getValue">getValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getValues">getValues</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getWhiteList">getWhiteList</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#hasAdminPrivileges">hasAdminPrivileges</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#isOnline">isOnline</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#registerCallback">registerCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeBlacklistedIp">removeBlacklistedIp</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeBlacklistedName">removeBlacklistedName</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#removeWhitelistedName">removeWhitelistedName</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#save">save</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#sendCallback">sendCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#setValue">setValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#stop">stop</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#unregisterCallback">unregisterCallback</a>
+</td></tr>
+</table>
+</div>
+</div>
+<div class="floatright">
+<h1>Server</h1>
+<p>
+<span class="warning">This object is only available on the server.</span>
+</p>
+<div id="Server" class="codecontainer">
+<div id="Server" class="function">
+<p>
+<span class="keyword">function </span> Server() <br/>
+</p>
+</div>
+<div id="Server" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A new instance of Server
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="Properties" class="codecontainer">
+<div id="accessMode">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">accessMode</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="collisionDamage">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">float </span> <span class="property">collisionDamage</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="description">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">description</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="difficulty">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">difficulty</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="folder">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">folder</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="gamePort">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">gamePort</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="generatorThreads">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">generatorThreads</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="infiniteResources">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">infiniteResources</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="maxPlayers">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">maxPlayers</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="name">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">string </span> <span class="property">name</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="paused">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">paused</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="players">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">players</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="playerToPlayerDamage">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">playerToPlayerDamage</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="rconPort">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">rconPort</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="runtime">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">runtime</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="sameStartSector">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">sameStartSector</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="scriptThreads">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">scriptThreads</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="seed">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Seed.html">Seed</a> <span class="property">seed</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="sessionId">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">sessionId</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="steamMasterPort">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">steamMasterPort</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="steamQueryPort">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">steamQueryPort</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="udpPollingPort">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">udpPollingPort</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="unpausedRuntime">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">double </span> <span class="property">unpausedRuntime</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="workerThreads">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">workerThreads</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+</div>
+<div id="addChatCommand" class="codecontainer">
+<div id="addChatCommand" class="function">
+<p>
+<span class="keyword">function var</span> addChatCommand(<a href="Player.html">Player</a> <span class="parameter">sender</span>, <span class="type">string</span> <span class="parameter">command</span>) <br/>
+</p>
+</div>
+<div id="addChatCommand" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="broadcastChatMessage" class="codecontainer">
+<div id="broadcastChatMessage" class="function">
+<p>
+<span class="keyword">function var</span> broadcastChatMessage(<span class="type">var</span> <span class="parameter">sender</span>, <span class="type">int</span> <span class="parameter">messageType</span>, <span class="type">string</span> <span class="parameter">message</span>, <span class="type">PluralForm...</span> <span class="parameter">args</span>) <br/>
+</p>
+</div>
+<div id="broadcastChatMessage" class="">
+<p>
+Broadcast a chat message to all players on the server. Supports sending of format arguments so that the message can be translated on the client. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">sender</span>
+The sender that will be displayed for the chat message <br/>
+<span class="parameter">messageType</span>
+The type of chat message, 0 = Normal, 1 = Error, 2 = Warning, 3 = Info <br/>
+<span class="parameter">message</span>
+The message that will be sent <br/>
+<span class="parameter">args</span>
+The format arguments that will be sent <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="callbacksRegistered" class="codecontainer">
+<div id="callbacksRegistered" class="function">
+<p>
+<span class="keyword">function int</span> callbacksRegistered(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">var</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="callbacksRegistered" class="">
+<p>
+Check how many functions are registered to a callback from the current script VM. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function for which to check. If nil, will count all functions that are registered to this callback. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The amount of functions registered to the callback. -1 if an error occurred. 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getBlackList" class="codecontainer">
+<div id="getBlackList" class="function">
+<p>
+<span class="keyword">function string...</span> getBlackList() <br/>
+</p>
+</div>
+<div id="getBlackList" class="">
+</p>
+</div>
+</div>
+<div id="getIpBlackList" class="codecontainer">
+<div id="getIpBlackList" class="function">
+<p>
+<span class="keyword">function string...</span> getIpBlackList() <br/>
+</p>
+</div>
+<div id="getIpBlackList" class="">
+</p>
+</div>
+</div>
+<div id="getOnlinePlayers" class="codecontainer">
+<div id="getOnlinePlayers" class="function">
+<p>
+<span class="keyword">function <a href="Player.html">Player</a>...</span> getOnlinePlayers() <br/>
+</p>
+</div>
+<div id="getOnlinePlayers" class="">
+</p>
+</div>
+</div>
+<div id="getPlayers" class="codecontainer">
+<div id="getPlayers" class="function">
+<p>
+<span class="keyword">function <a href="Player.html">Player</a>...</span> getPlayers() <br/>
+</p>
+</div>
+<div id="getPlayers" class="">
+</p>
+</div>
+</div>
+<div id="getValue" class="codecontainer">
+<div id="getValue" class="function">
+<p>
+<span class="keyword">function var</span> getValue(<span class="type">string</span> <span class="parameter">key</span>) <br/>
+</p>
+</div>
+<div id="getValue" class="">
+<p>
+Retrieves a custom value saved in the entity with the given key 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">key</span>
+A string that serves as the name of the value <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The value if the key exists, otherwise nil 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getValues" class="codecontainer">
+<div id="getValues" class="function">
+<p>
+<span class="keyword">function table&lt;string, var&gt;</span> getValues() <br/>
+</p>
+</div>
+<div id="getValues" class="">
+<p>
+Retrieves all key-value pairs of custom values of the entity 
+</p>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A table containing all custom key-value pairs 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="getWhiteList" class="codecontainer">
+<div id="getWhiteList" class="function">
+<p>
+<span class="keyword">function string...</span> getWhiteList() <br/>
+</p>
+</div>
+<div id="getWhiteList" class="">
+</p>
+</div>
+</div>
+<div id="hasAdminPrivileges" class="codecontainer">
+<div id="hasAdminPrivileges" class="function">
+<p>
+<span class="keyword">function bool</span> hasAdminPrivileges(<a href="Player.html">Player</a> <span class="parameter">player</span>) <br/>
+</p>
+</div>
+<div id="hasAdminPrivileges" class="">
+</p>
+</div>
+</div>
+<div id="isOnline" class="codecontainer">
+<div id="isOnline" class="function">
+<p>
+<span class="keyword">function bool</span> isOnline(<span class="type">int</span> <span class="parameter">playerIndex</span>) <br/>
+</p>
+</div>
+<div id="isOnline" class="">
+</p>
+</div>
+</div>
+<div id="registerCallback" class="codecontainer">
+<div id="registerCallback" class="function">
+<p>
+<span class="keyword">function int</span> registerCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="registerCallback" class="">
+<p>
+Register a callback in the server. The callback may arrive with a delay. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function that will be executed in the script when the callback happens <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+0 on success, 1 if the registration failed 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeBlacklistedIp" class="codecontainer">
+<div id="removeBlacklistedIp" class="function">
+<p>
+<span class="keyword">function var</span> removeBlacklistedIp(<span class="type">string</span> <span class="parameter">ip</span>) <br/>
+</p>
+</div>
+<div id="removeBlacklistedIp" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeBlacklistedName" class="codecontainer">
+<div id="removeBlacklistedName" class="function">
+<p>
+<span class="keyword">function var</span> removeBlacklistedName(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="removeBlacklistedName" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="removeWhitelistedName" class="codecontainer">
+<div id="removeWhitelistedName" class="function">
+<p>
+<span class="keyword">function var</span> removeWhitelistedName(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="removeWhitelistedName" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="save" class="codecontainer">
+<div id="save" class="function">
+<p>
+<span class="keyword">function var</span> save() <br/>
+</p>
+</div>
+<div id="save" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="sendCallback" class="codecontainer">
+<div id="sendCallback" class="function">
+<p>
+<span class="keyword">function var</span> sendCallback() <br/>
+</p>
+</div>
+<div id="sendCallback" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="setValue" class="codecontainer">
+<div id="setValue" class="function">
+<p>
+<span class="keyword">function var</span> setValue(<span class="type">string</span> <span class="parameter">key</span>, <span class="type">var</span> <span class="parameter">value</span>) <br/>
+</p>
+</div>
+<div id="setValue" class="">
+<p>
+Sets a custom value 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">key</span>
+A string that serves as the name of the value <br/>
+<span class="parameter">value</span>
+The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="stop" class="codecontainer">
+<div id="stop" class="function">
+<p>
+<span class="keyword">function var</span> stop() <br/>
+</p>
+</div>
+<div id="stop" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="unregisterCallback" class="codecontainer">
+<div id="unregisterCallback" class="function">
+<p>
+<span class="keyword">function int</span> unregisterCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="unregisterCallback" class="">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sitemap">
+<div class="flexheader">   <div class="headerlisting">
+      <span class="docheader">Overview</span>
+      <br>      <a href="index.html">Home</a>
+      <a href="Functions.html">Functions</a>
+      <a href="Search.html">Search</a>
+   </div>   <div class="flexheaderwhitespace"></div>
+   <form action="Search.html" method="get">      Search:<input name="search" class="headersearchinput" type="search">   </form></div><div class="headerlisting">
+<span class="docheader">Callbacks</span>
+<br><a href="Callbacks.html"> Callbacks</a>
+<a href="Alliance [Client] Callbacks.html">Alliance [Client]  Callbacks</a>
+<a href="Alliance [Server] Callbacks.html">Alliance [Server]  Callbacks</a>
+<a href="Alliance [Server]  Callbacks.html">Alliance [Server]   Callbacks</a>
+<a href="Entity Callbacks.html">Entity  Callbacks</a>
+<a href="Galaxy Callbacks.html">Galaxy  Callbacks</a>
+<a href="Player Callbacks.html">Player  Callbacks</a>
+<a href="Player [Client] Callbacks.html">Player [Client]  Callbacks</a>
+<a href="Sector Callbacks.html">Sector  Callbacks</a>
+<a href="Server Callbacks.html">Server  Callbacks</a>
+</div><div class="headerlisting">
+<span class="docheader">Predefined Functions & Example Scripts</span>
+<br><a href="CommandFunctions.html">Command</a>
+<a href="EntityFunctions.html">Entity</a>
+<a href="FactionDatabaseFunctions.html">FactionDatabase</a>
+<a href="PlanGeneratorFunctions.html">PlanGenerator</a>
+<a href="PlayerFunctions.html">Player</a>
+<a href="SectorFunctions.html">Sector</a>
+<a href="ServerFunctions.html">Server</a>
+<a href="UsableInventoryItemFunctions.html">UsableInventoryItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Components</span>
+<br><a href="Boarding.html">Boarding</a>
+<a href="BspTree.html">BspTree</a>
+<a href="CargoBay.html">CargoBay</a>
+<a href="ControlUnit.html">ControlUnit</a>
+<a href="DeletionTimer.html">DeletionTimer</a>
+<a href="DirectFlightPhysics.html">DirectFlightPhysics</a>
+<a href="DockingPositions.html">DockingPositions</a>
+<a href="Durability.html">Durability</a>
+<a href="EnergySystem.html">EnergySystem</a>
+<a href="Engine.html">Engine</a>
+<a href="FighterAI.html">FighterAI</a>
+<a href="Hangar.html">Hangar</a>
+<a href="InteractionText.html">InteractionText</a>
+<a href="Owner.html">Owner</a>
+<a href="Physics.html">Physics</a>
+<a href="Plan.html">Plan</a>
+<a href="ReadOnlyBoarding.html">ReadOnlyBoarding</a>
+<a href="ReadOnlyBspTree.html">ReadOnlyBspTree</a>
+<a href="ReadOnlyCargoBay.html">ReadOnlyCargoBay</a>
+<a href="ReadOnlyControlUnit.html">ReadOnlyControlUnit</a>
+<a href="ReadOnlyDeletionTimer.html">ReadOnlyDeletionTimer</a>
+<a href="ReadOnlyEnergySystem.html">ReadOnlyEnergySystem</a>
+<a href="ReadOnlyEngine.html">ReadOnlyEngine</a>
+<a href="ReadOnlyFighterAI.html">ReadOnlyFighterAI</a>
+<a href="ReadOnlyHangar.html">ReadOnlyHangar</a>
+<a href="ReadOnlyInteractionText.html">ReadOnlyInteractionText</a>
+<a href="ReadOnlyOwner.html">ReadOnlyOwner</a>
+<a href="ReadOnlyPhysics.html">ReadOnlyPhysics</a>
+<a href="ReadOnlyPlan.html">ReadOnlyPlan</a>
+<a href="ReadOnlyShipAI.html">ReadOnlyShipAI</a>
+<a href="ReadOnlyShipSystem.html">ReadOnlyShipSystem</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoLauncher.html">ReadOnlyTorpedoLauncher</a>
+<a href="ReadOnlyTurretBases.html">ReadOnlyTurretBases</a>
+<a href="ReadOnlyVelocity.html">ReadOnlyVelocity</a>
+<a href="ReadOnlyWeapons.html">ReadOnlyWeapons</a>
+<a href="ReadOnlyWormHole.html">ReadOnlyWormHole</a>
+<a href="Shield.html">Shield</a>
+<a href="ShipAI.html">ShipAI</a>
+<a href="ShipSystem.html">ShipSystem</a>
+<a href="SystemUpgradeLoot.html">SystemUpgradeLoot</a>
+<a href="Thrusters.html">Thrusters</a>
+<a href="Torpedo.html">Torpedo</a>
+<a href="TorpedoAI.html">TorpedoAI</a>
+<a href="TorpedoLauncher.html">TorpedoLauncher</a>
+<a href="Turret.html">Turret</a>
+<a href="TurretAI.html">TurretAI</a>
+<a href="TurretBases.html">TurretBases</a>
+<a href="Velocity.html">Velocity</a>
+<a href="Weapons.html">Weapons</a>
+<a href="WormHole.html">WormHole</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Objects</span>
+<br><a href="AllianceMember.html">AllianceMember</a>
+<a href="AllianceRank.html">AllianceRank</a>
+<a href="BlockPlan.html">BlockPlan</a>
+<a href="BlockPlanBlock.html">BlockPlanBlock</a>
+<a href="BlockStatistics.html">BlockStatistics</a>
+<a href="Box.html">Box</a>
+<a href="Color.html">Color</a>
+<a href="ControlUnitSeat.html">ControlUnitSeat</a>
+<a href="CraftDesign.html">CraftDesign</a>
+<a href="Crew.html">Crew</a>
+<a href="CrewMan.html">CrewMan</a>
+<a href="CrewProfession.html">CrewProfession</a>
+<a href="DebugInfo.html">DebugInfo</a>
+<a href="dvec2.html">dvec2</a>
+<a href="dvec3.html">dvec3</a>
+<a href="dvec4.html">dvec4</a>
+<a href="Entity.html">Entity</a>
+<a href="EntityDescriptor.html">EntityDescriptor</a>
+<a href="FighterTemplate.html">FighterTemplate</a>
+<a href="Format.html">Format</a>
+<a href="GameSettings.html">GameSettings</a>
+<a href="HighResolutionTimer.html">HighResolutionTimer</a>
+<a href="Inventory.html">Inventory</a>
+<a href="InventoryTurret.html">InventoryTurret</a>
+<a href="ivec2.html">ivec2</a>
+<a href="ivec3.html">ivec3</a>
+<a href="ivec4.html">ivec4</a>
+<a href="Language.html">Language</a>
+<a href="Mail.html">Mail</a>
+<a href="Material.html">Material</a>
+<a href="Matrix.html">Matrix</a>
+<a href="ModManager.html">ModManager</a>
+<a href="NamedFormat.html">NamedFormat</a>
+<a href="PlanBspTree.html">PlanBspTree</a>
+<a href="PlanetSpecifics.html">PlanetSpecifics</a>
+<a href="PlanGenerationStage.html">PlanGenerationStage</a>
+<a href="PlanPart.html">PlanPart</a>
+<a href="PlanStyle.html">PlanStyle</a>
+<a href="PlayerId.html">PlayerId</a>
+<a href="PluralForm.html">PluralForm</a>
+<a href="Profiler.html">Profiler</a>
+<a href="QuadTree.html">QuadTree</a>
+<a href="Random.html">Random</a>
+<a href="Rarity.html">Rarity</a>
+<a href="Ray.html">Ray</a>
+<a href="ReadOnlyEntity.html">ReadOnlyEntity</a>
+<a href="Rect.html">Rect</a>
+<a href="Relation.html">Relation</a>
+<a href="SectorView.html">SectorView</a>
+<a href="Seed.html">Seed</a>
+<a href="Sphere.html">Sphere</a>
+<a href="SystemUpgradeTemplate.html">SystemUpgradeTemplate</a>
+<a href="Timer.html">Timer</a>
+<a href="Tooltip.html">Tooltip</a>
+<a href="TooltipLine.html">TooltipLine</a>
+<a href="TorpedoTemplate.html">TorpedoTemplate</a>
+<a href="TradingGood.html">TradingGood</a>
+<a href="TurretDesign.html">TurretDesign</a>
+<a href="TurretDesignPart.html">TurretDesignPart</a>
+<a href="TurretTemplate.html">TurretTemplate</a>
+<a href="UsableInventoryItem.html">UsableInventoryItem</a>
+<a href="Uuid.html">Uuid</a>
+<a href="VanillaInventoryItem.html">VanillaInventoryItem</a>
+<a href="vec2.html">vec2</a>
+<a href="vec3.html">vec3</a>
+<a href="vec4.html">vec4</a>
+<a href="Version.html">Version</a>
+<a href="Weapon.html">Weapon</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Components</span>
+<br><a href="EntityIcon.html">EntityIcon</a>
+<a href="EntityTooltip.html">EntityTooltip</a>
+<a href="PlanMesh.html">PlanMesh</a>
+<a href="ReadOnlyIcon.html">ReadOnlyIcon</a>
+<a href="ReadOnlyPlanMesh.html">ReadOnlyPlanMesh</a>
+<a href="ReadOnlyScriptUI.html">ReadOnlyScriptUI</a>
+<a href="ReadOnlyTooltip.html">ReadOnlyTooltip</a>
+<a href="ScriptUI.html">ScriptUI</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Objects</span>
+<br><a href="Achievements.html">Achievements</a>
+<a href="Alliance [Client].html">Alliance [Client]</a>
+<a href="ClientSettings.html">ClientSettings</a>
+<a href="CraftDesignSelectionItem.html">CraftDesignSelectionItem</a>
+<a href="Faction [Client].html">Faction [Client]</a>
+<a href="Galaxy [Client].html">Galaxy [Client]</a>
+<a href="GalaxyMap.html">GalaxyMap</a>
+<a href="GameInput.html">GameInput</a>
+<a href="InputWindow.html">InputWindow</a>
+<a href="InventoryReferenceSelectionItem.html">InventoryReferenceSelectionItem</a>
+<a href="InventorySelectionItem.html">InventorySelectionItem</a>
+<a href="Keyboard.html">Keyboard</a>
+<a href="LaserFX.html">LaserFX</a>
+<a href="Mouse.html">Mouse</a>
+<a href="Music.html">Music</a>
+<a href="Planet.html">Planet</a>
+<a href="Player [Client].html">Player [Client]</a>
+<a href="PlayerWindow.html">PlayerWindow</a>
+<a href="Sector [Client].html">Sector [Client]</a>
+<a href="SelectionItem.html">SelectionItem</a>
+<a href="SoundSource.html">SoundSource</a>
+<a href="TooltipRenderer.html">TooltipRenderer</a>
+<a href="TurretDesignSelectionItem.html">TurretDesignSelectionItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Client UI Objects</span>
+<br><a href="AllianceTab.html">AllianceTab</a>
+<a href="ArrowLine.html">ArrowLine</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="CheckBox.html">CheckBox</a>
+<a href="ComboBox.html">ComboBox</a>
+<a href="CraftPortrait.html">CraftPortrait</a>
+<a href="Frame.html">Frame</a>
+<a href="Hud.html">Hud</a>
+<a href="InventorySelection.html">InventorySelection</a>
+<a href="Label.html">Label</a>
+<a href="Line.html">Line</a>
+<a href="ListBox.html">ListBox</a>
+<a href="ListBoxEx.html">ListBoxEx</a>
+<a href="MapArrowLine.html">MapArrowLine</a>
+<a href="MultiLineTextBox.html">MultiLineTextBox</a>
+<a href="NumbersBar.html">NumbersBar</a>
+<a href="Picture.html">Picture</a>
+<a href="PlanDisplayer.html">PlanDisplayer</a>
+<a href="ProgressBar.html">ProgressBar</a>
+<a href="SavedDesignsSelection.html">SavedDesignsSelection</a>
+<a href="ScrollFrame.html">ScrollFrame</a>
+<a href="Selection.html">Selection</a>
+<a href="ShipWindow.html">ShipWindow</a>
+<a href="Slider.html">Slider</a>
+<a href="StatisticsBar.html">StatisticsBar</a>
+<a href="Tab.html">Tab</a>
+<a href="TabbedWindow.html">TabbedWindow</a>
+<a href="TextBox.html">TextBox</a>
+<a href="TextField.html">TextField</a>
+<a href="Tree.html">Tree</a>
+<a href="UIArbitraryHorizontalSplitter.html">UIArbitraryHorizontalSplitter</a>
+<a href="UIArbitraryVerticalSplitter.html">UIArbitraryVerticalSplitter</a>
+<a href="UIContainer.html">UIContainer</a>
+<a href="UIElement.html">UIElement</a>
+<a href="UIGridSplitter.html">UIGridSplitter</a>
+<a href="UIHorizontalLister.html">UIHorizontalLister</a>
+<a href="UIHorizontalMultiSplitter.html">UIHorizontalMultiSplitter</a>
+<a href="UIHorizontalSplitter.html">UIHorizontalSplitter</a>
+<a href="UIOrganizer.html">UIOrganizer</a>
+<a href="UIRect.html">UIRect</a>
+<a href="UIRenderer.html">UIRenderer</a>
+<a href="UIVerticalLister.html">UIVerticalLister</a>
+<a href="UIVerticalMultiSplitter.html">UIVerticalMultiSplitter</a>
+<a href="UIVerticalSplitter.html">UIVerticalSplitter</a>
+<a href="ValueComboBox.html">ValueComboBox</a>
+<a href="Window.html">Window</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Components</span>
+<br><a href="EntityTransferrer.html">EntityTransferrer</a>
+<a href="FighterController.html">FighterController</a>
+<a href="Loot.html">Loot</a>
+<a href="ReadOnlyEntityTransferrer.html">ReadOnlyEntityTransferrer</a>
+<a href="ReadOnlyFighterController.html">ReadOnlyFighterController</a>
+<a href="ReadOnlyLoot.html">ReadOnlyLoot</a>
+<a href="ReadOnlyTurretController.html">ReadOnlyTurretController</a>
+<a href="ReadOnlyWreckageCreator.html">ReadOnlyWreckageCreator</a>
+<a href="TurretController.html">TurretController</a>
+<a href="WreckageCreator.html">WreckageCreator</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Objects</span>
+<br><a href="Alliance [Server].html">Alliance [Server]</a>
+<a href="Faction [Server].html">Faction [Server]</a>
+<a href="Galaxy [Server].html">Galaxy [Server]</a>
+<a href="Player [Server].html">Player [Server]</a>
+<a href="ReadOnlySector.html">ReadOnlySector</a>
+<a href="Sector [Server].html">Sector [Server]</a>
+<a href="Server.html">Server</a>
+</div><div class="lastheaderlisting">
+<span class="docheader">Enums</span>
+<br><a href="Enums.html#AIState">AIState</a>
+<a href="Enums.html#AlliancePrivilege">AlliancePrivilege</a>
+<a href="Enums.html#BeamShape">BeamShape</a>
+<a href="Enums.html#BlockShading">BlockShading</a>
+<a href="Enums.html#BlockType">BlockType</a>
+<a href="Enums.html#BoxType">BoxType</a>
+<a href="Enums.html#ChatChannel">ChatChannel</a>
+<a href="Enums.html#ChatMessageType">ChatMessageType</a>
+<a href="Enums.html#ComponentType">ComponentType</a>
+<a href="Enums.html#ControlAction">ControlAction</a>
+<a href="Enums.html#ControlActionBit">ControlActionBit</a>
+<a href="Enums.html#CoolingType">CoolingType</a>
+<a href="Enums.html#CrewProfessionType">CrewProfessionType</a>
+<a href="Enums.html#DamageSource">DamageSource</a>
+<a href="Enums.html#DamageType">DamageType</a>
+<a href="Enums.html#DeletionType">DeletionType</a>
+<a href="Enums.html#Difficulty">Difficulty</a>
+<a href="Enums.html#EntityArrivalType">EntityArrivalType</a>
+<a href="Enums.html#EntityType">EntityType</a>
+<a href="Enums.html#FighterOrders">FighterOrders</a>
+<a href="Enums.html#FighterStartError">FighterStartError</a>
+<a href="Enums.html#FighterType">FighterType</a>
+<a href="Enums.html#FontType">FontType</a>
+<a href="Enums.html#ImpactParticles">ImpactParticles</a>
+<a href="Enums.html#InventoryItemType">InventoryItemType</a>
+<a href="Enums.html#KeyboardKey">KeyboardKey</a>
+<a href="Enums.html#ListBoxEntryType">ListBoxEntryType</a>
+<a href="Enums.html#MalusReason">MalusReason</a>
+<a href="Enums.html#MaterialType">MaterialType</a>
+<a href="Enums.html#MoonType">MoonType</a>
+<a href="Enums.html#MouseButton">MouseButton</a>
+<a href="Enums.html#PlanetType">PlanetType</a>
+<a href="Enums.html#PlayerStateType">PlayerStateType</a>
+<a href="Enums.html#ProjectileShape">ProjectileShape</a>
+<a href="Enums.html#RarityType">RarityType</a>
+<a href="Enums.html#RelationStatus">RelationStatus</a>
+<a href="Enums.html#SavedDesignType">SavedDesignType</a>
+<a href="Enums.html#SectorChangeType">SectorChangeType</a>
+<a href="Enums.html#SoundType">SoundType</a>
+<a href="Enums.html#StatsBonuses">StatsBonuses</a>
+<a href="Enums.html#TransformationFeature">TransformationFeature</a>
+<a href="Enums.html#TurretAutoFireMode">TurretAutoFireMode</a>
+<a href="Enums.html#WeaponAppearance">WeaponAppearance</a>
+<a href="Enums.html#WeaponCategory">WeaponCategory</a>
+</div></div>
+<div class="disclaimer">
+<p>This is the official documentation for the scripting API of Avorion. This documentation is automatically generated and <strong>not</strong> necessarily complete. Depending on the context in which functions exist, some documentation such as descriptions, return values or variable names or types may be missing.</p>
+<p>Work in Progress. Documentation of Avorion Version: 1.0 r22102 938a1bf97ccb</p>
+</div>
+<div class="footer">
+<p align="center">Work in Progress.</p>
+<p align="center">Copyright &copy; 2020 Boxelware GmbH. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>
