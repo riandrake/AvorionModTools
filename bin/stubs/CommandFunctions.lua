@@ -2,7 +2,7 @@
 -- @param playerIndex - The index of the player executing the command. nil if the command was issued over RCON interface or console.
 -- @param ... - The list of string arguments given
 -- @return 3 values: An int indicating whether or not the command was successfully executed (0: no success, otherwise: success), a response message, an error message
-function execute(playerIndex, )
+function execute(playerIndex)
 	return nil
 end
 

@@ -162,7 +162,8 @@ class ParsedFunction:
                 arg = arg.replace(illegal, '')
 
             args[idx] = arg
-
+        
+        args = [arg.strip() for arg in args if arg.strip()]
         self.arguments = ', '.join(args)
 
         name_start = definition.rfind(' ', 0, start_bracket)
