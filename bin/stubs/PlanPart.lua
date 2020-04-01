@@ -1,18 +1,14 @@
 -- @return A new instance of PlanPart
 function PlanPart()
-	local o = {
-		allrounders = 0, -- int
-		features = 0, -- int
-		othersPaddingBox = Box(), -- Box
-		paddingBox = Box(), -- [write-only] Box
-		selfPaddingBox = Box(), -- Box
-		symmetries = nil, -- var
-		transformationFeatures = TransformationFeature.SingleRotationX -- TransformationFeature
-	}
-
-	setmetatable(PlanPart, {__call = function(self) return PlanPart end})
-	return o
-end
+local PlanPart = {
+	allrounders = 0, -- int
+	features = 0, -- int
+	othersPaddingBox = Box(), -- Box
+	paddingBox = Box(), -- [write-only] Box
+	selfPaddingBox = Box(), -- Box
+	symmetries = nil, -- var
+	transformationFeatures = TransformationFeature.SingleRotationX -- TransformationFeature
+}
 
 -- Adds a new block to the part.
 -- @param parentIndex - The index of the block this one is attached to
@@ -123,5 +119,9 @@ end
 -- @return nothing
 function PlanPart.transform(blockIndex, flags)
 	return nil
+end
+
+setmetatable(PlanPart, {__call = function(self) return PlanPart end})
+return PlanPart
 end
 

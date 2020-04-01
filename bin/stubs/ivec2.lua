@@ -1,14 +1,10 @@
 -- @param x - y
 -- @return A new instance of ivec2
 function ivec2(x, y)
-	local o = {
-		x = 0, -- int
-		y = 0 -- int
-	}
-
-	setmetatable(ivec2, {__call = function(self, x, y) return ivec2 end})
-	return o
-end
+local ivec2 = {
+	x = 0, -- int
+	y = 0 -- int
+}
 
 function ivec2.__add(other)
 	return ivec2()
@@ -40,5 +36,9 @@ end
 
 function ivec2.__unm()
 	return ivec2()
+end
+
+setmetatable(ivec2, {__call = function(self, x, y) return ivec2 end})
+return ivec2
 end
 

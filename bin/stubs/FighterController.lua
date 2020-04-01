@@ -1,14 +1,10 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of FighterController
 function FighterController(id)
-	local o = {
-		entity = Entity(), -- [read-only] Entity
-		entityId = 0 -- [read-only] uuid
-	}
-
-	setmetatable(FighterController, {__call = function(self, id) return FighterController end})
-	return o
-end
+local FighterController = {
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0 -- [read-only] uuid
+}
 
 function FighterController.getDeployedFighters(squad)
 	return Entity()
@@ -40,5 +36,9 @@ end
 
 function FighterController.startFighterOfType(type)
 	return Entity(), 0
+end
+
+setmetatable(FighterController, {__call = function(self, id) return FighterController end})
+return FighterController
 end
 

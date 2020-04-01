@@ -1,20 +1,16 @@
 -- This is the default constructor of Mail. No further arguments are required.
 -- @return A new instance of Mail
 function Mail()
-	local o = {
-		empty = true, -- [read-only] bool
-		header = Format(), -- Format
-		id = "", -- string
-		money = 0, -- int
-		read = true, -- bool
-		receiver = PlayerId(), -- [write-only] PlayerId
-		sender = Format(), -- Format
-		text = Format() -- Format
-	}
-
-	setmetatable(Mail, {__call = function(self) return Mail end})
-	return o
-end
+local Mail = {
+	empty = true, -- [read-only] bool
+	header = Format(), -- Format
+	id = "", -- string
+	money = 0, -- int
+	read = true, -- bool
+	receiver = PlayerId(), -- [write-only] PlayerId
+	sender = Format(), -- Format
+	text = Format() -- Format
+}
 
 -- @return nothing
 function Mail.addTurret(turret)
@@ -45,5 +41,9 @@ end
 -- @return nothing
 function Mail.setResources()
 	return nil
+end
+
+setmetatable(Mail, {__call = function(self) return Mail end})
+return Mail
 end
 

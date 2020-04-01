@@ -1,13 +1,9 @@
 -- @callback
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created
-function onAllianceCreated(index)
-	local o = {
-	}
-
-	setmetatable(onAllianceCreated, {__call = function(self, index) return onAllianceCreated end})
-	return o
-end
+function Galaxy(index)
+local Galaxy = {
+}
 
 -- @callback
 -- Executed whenever a new faction is created on the server
@@ -33,5 +29,9 @@ end
 -- @param statusBefore - The relation status between the factions before the change, nil if none
 function Galaxy.onRelationsChanged(indexA, indexB, relations, status, relationsBefore, statusBefore)
 	return nil
+end
+
+setmetatable(Galaxy, {__call = function(self, index) return Galaxy end})
+return Galaxy
 end
 

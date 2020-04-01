@@ -2,15 +2,11 @@
 -- @param z - Returns
 -- @param A new instance of ivec3
 function ivec3(x, y, z)
-	local o = {
-		x = 0, -- int
-		y = 0, -- int
-		z = 0 -- int
-	}
-
-	setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
-	return o
-end
+local ivec3 = {
+	x = 0, -- int
+	y = 0, -- int
+	z = 0 -- int
+}
 
 function ivec3.__add(other)
 	return ivec3()
@@ -42,5 +38,9 @@ end
 
 function ivec3.__unm()
 	return ivec3()
+end
+
+setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
+return ivec3
 end
 

@@ -1,34 +1,30 @@
 -- @return A new instance of Window
 function Window(index)
-	local o = {
-		caption = "", -- string
-		center = vec2(), -- vec2
-		clickThrough = true, -- bool
-		closeableWithEscape = true, -- bool
-		consumeAllEvents = true, -- bool
-		height = 0.0, -- float
-		index = 0, -- [read-only] int
-		layer = 0, -- int
-		localCenter = vec2(), -- [read-only] vec2
-		localPosition = vec2(), -- [read-only] vec2
-		localRect = Rect(), -- [read-only] Rect
-		lower = vec2(), -- vec2
-		mouseOver = true, -- [read-only] bool
-		moveable = true, -- bool
-		position = vec2(), -- vec2
-		rect = Rect(), -- Rect
-		showCloseButton = true, -- bool
-		size = vec2(), -- vec2
-		tooltip = nil, -- var
-		transparency = 0.0, -- float
-		upper = vec2(), -- vec2
-		visible = true, -- bool
-		width = 0.0 -- float
-	}
-
-	setmetatable(Window, {__call = function(self, index) return Window end})
-	return o
-end
+local Window = {
+	caption = "", -- string
+	center = vec2(), -- vec2
+	clickThrough = true, -- bool
+	closeableWithEscape = true, -- bool
+	consumeAllEvents = true, -- bool
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	moveable = true, -- bool
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	showCloseButton = true, -- bool
+	size = vec2(), -- vec2
+	tooltip = nil, -- var
+	transparency = 0.0, -- float
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
+}
 
 -- Inherited from UIContainer
 -- @return nothing
@@ -206,5 +202,9 @@ end
 -- @return nothing
 function Window.show()
 	return nil
+end
+
+setmetatable(Window, {__call = function(self, index) return Window end})
+return Window
 end
 

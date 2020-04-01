@@ -114,36 +114,6 @@ class ParsedFunction:
     callback: bool
     return_value: str
     arguments: str
-    is_constructor: bool
-
-    def make_constructor(self):
-        """ I have spoken """
-        self.is_constructor = True
-
-    def write_constructor(self, properties, writer):
-        writer.write(self.remarks)
-
-        writer.write(f'function {self.name}({self.arguments})\n')
-
-        writer.write(f'\tlocal o = {{\n')
-
-        if properties:
-            # Remove duplicates cleanly, then sort
-            properties = { property.name : property for property in properties }
-            properties = sorted(list(properties.values()))
-
-            for property in properties[:-1]:
-                writer.write(f'\t\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
-
-            last = properties[-1]
-            writer.write(f'\t\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
-
-        writer.write('\t}\n\n')
-
-        additional_args = f', {self.arguments}' if self.arguments else ''
-        writer.write(f"\tsetmetatable({self.name}, {{__call = function(self{additional_args}) return {self.name} end}})\n")
-        writer.write('\treturn o\n')
-        writer.write('end\n\n')
 
     def parse_return_value(self, return_value):
         """ Parse a return value for defaults """
@@ -163,7 +133,6 @@ class ParsedFunction:
     def parse_definition(self, definition, namespace):
         """ Parse a definition from documentation """
         self.callback = definition.startswith('callback ')
-        self.is_constructor = False
 
         end_bracket = definition.rfind(')')
         start_bracket = definition.rfind('(', 0, end_bracket)
@@ -197,7 +166,8 @@ class ParsedFunction:
         self.parse_return_value(definition[prefix_len:name_start])
 
         namespace = namespace + '.' if namespace else ''
-        self.definition = 'function ' + namespace + self.name + f"({', '.join(args)})" + f'\n\treturn {self.return_value}\nend\n\n'
+        # self.definition = f'{namespace}{self.name} = function({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
+        self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
@@ -287,7 +257,6 @@ class StubGenerator:
                 if namespace is None and len(functions):
                     assert(len(functions) == 1)
                     namespace = functions[0].name
-                    functions[0].make_constructor()
 
                 properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
                 for idx, property in enumerate(properties):
@@ -305,7 +274,6 @@ class StubGenerator:
                 # Could still be a namespace otherwise, see other check above
                 if namespace is None and len(functions) == 0 and parsed.name[0].upper() == parsed.name[0]:
                     namespace = parsed.name
-                    parsed.make_constructor()
 
                 functions.append(parsed)
             elif line.startswith('enum '):
@@ -333,11 +301,35 @@ class StubGenerator:
 
             if namespace:
                 print(namespace)
-                functions[0].write_constructor(properties, writer)
+                constructor = functions[0]
+
+                writer.write(constructor.remarks)
+
+                writer.write(f'function {namespace}({constructor.arguments})\n')
+
+                writer.write(f'local {namespace} = {{\n')
+
+                if properties:
+                    # Remove duplicates cleanly, then sort
+                    properties = { property.name : property for property in properties }
+                    properties = sorted(list(properties.values()))
+
+                    for property in properties[:-1]:
+                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
+
+                    last = properties[-1]
+                    writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
+
+                writer.write('}\n\n')
 
                 for function in functions[1:]:
                     writer.write(function.remarks)
                     writer.write(function.definition)
+
+                additional_args = f', {constructor.arguments}' if constructor.arguments else ''
+                writer.write(f"setmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n")
+                writer.write(f'return {namespace}\n')
+                writer.write('end\n\n')
 
             else:
                 for function in functions:

@@ -1,14 +1,10 @@
 -- @param x - y
 -- @return A new instance of vec2
 function vec2(x, y)
-	local o = {
-		x = 0.0, -- float
-		y = 0.0 -- float
-	}
-
-	setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
-	return o
-end
+local vec2 = {
+	x = 0.0, -- float
+	y = 0.0 -- float
+}
 
 function vec2.__add(other)
 	return vec2()
@@ -40,5 +36,9 @@ end
 
 function vec2.__unm()
 	return vec2()
+end
+
+setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
+return vec2
 end
 

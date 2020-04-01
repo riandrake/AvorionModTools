@@ -1,18 +1,14 @@
 -- @return A new instance of GalaxyMap
 function GalaxyMap()
-	local o = {
-		showAllianceInfo = true, -- bool
-		showCustomColorLayer = true, -- bool
-		showFactionLayer = true, -- bool
-		showGates = true, -- bool
-		showNotes = true, -- bool
-		showWormholes = true, -- bool
-		visible = true -- [read-only] bool
-	}
-
-	setmetatable(GalaxyMap, {__call = function(self) return GalaxyMap end})
-	return o
-end
+local GalaxyMap = {
+	showAllianceInfo = true, -- bool
+	showCustomColorLayer = true, -- bool
+	showFactionLayer = true, -- bool
+	showGates = true, -- bool
+	showNotes = true, -- bool
+	showWormholes = true, -- bool
+	visible = true -- [read-only] bool
+}
 
 -- @return nothing
 function GalaxyMap.clearCustomColors()
@@ -80,5 +76,9 @@ end
 -- @return nothing
 function GalaxyMap.show(x, y)
 	return nil
+end
+
+setmetatable(GalaxyMap, {__call = function(self) return GalaxyMap end})
+return GalaxyMap
 end
 

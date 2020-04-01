@@ -1,11 +1,7 @@
 -- @return A new instance of PlanBspTree
 function PlanBspTree(plan)
-	local o = {
-	}
-
-	setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
-	return o
-end
+local PlanBspTree = {
+}
 
 function PlanBspTree.getBlocksByBox(box)
 	return 0
@@ -37,5 +33,9 @@ end
 
 function PlanBspTree.intersectsSphere(sphere, exceptionIndex)
 	return true
+end
+
+setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
+return PlanBspTree
 end
 

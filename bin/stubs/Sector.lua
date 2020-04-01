@@ -1,16 +1,12 @@
 -- @return A new instance of Sector
 function Sector()
-	local o = {
-		name = "", -- string
-		numEntities = 0, -- [read-only] unsigned int
-		numPlayers = 0, -- [read-only] unsigned int
-		pvpDamage = true, -- bool
-		seed = Seed() -- [read-only] Seed
-	}
-
-	setmetatable(Sector, {__call = function(self) return Sector end})
-	return o
-end
+local Sector = {
+	name = "", -- string
+	numEntities = 0, -- [read-only] unsigned int
+	numPlayers = 0, -- [read-only] unsigned int
+	pvpDamage = true, -- bool
+	seed = Seed() -- [read-only] Seed
+}
 
 function Sector.addScript()
 	return 0
@@ -411,5 +407,9 @@ end
 -- @return nothing
 function Sector.unregisterCallback(callbackName, functionName)
 	return nil
+end
+
+setmetatable(Sector, {__call = function(self) return Sector end})
+return Sector
 end
 

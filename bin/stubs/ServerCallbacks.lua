@@ -3,13 +3,9 @@
 -- @param playerIndex - Index of the player
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
-function onChatMessage(playerIndex, text, channel)
-	local o = {
-	}
-
-	setmetatable(onChatMessage, {__call = function(self, playerIndex, text, channel) return onChatMessage end})
-	return o
-end
+function Server(playerIndex, text, channel)
+local Server = {
+}
 
 -- @callback
 -- Executed whenever a player was logged in
@@ -23,5 +19,9 @@ end
 -- @param playerIndex - The index of the player who logged off
 function Server.onPlayerLogOff(playerIndex)
 	return nil
+end
+
+setmetatable(Server, {__call = function(self, playerIndex, text, channel) return Server end})
+return Server
 end
 

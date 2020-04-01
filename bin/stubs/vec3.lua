@@ -2,15 +2,11 @@
 -- @param z - Returns
 -- @param A new instance of vec3
 function vec3(x, y, z)
-	local o = {
-		x = 0.0, -- float
-		y = 0.0, -- float
-		z = 0.0 -- float
-	}
-
-	setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
-	return o
-end
+local vec3 = {
+	x = 0.0, -- float
+	y = 0.0, -- float
+	z = 0.0 -- float
+}
 
 function vec3.__add(other)
 	return vec3()
@@ -42,5 +38,9 @@ end
 
 function vec3.__unm()
 	return vec3()
+end
+
+setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
+return vec3
 end
 

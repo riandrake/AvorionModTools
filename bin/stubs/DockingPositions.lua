@@ -1,13 +1,9 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of DockingPositions
 function DockingPositions(id)
-	local o = {
-		alwaysDocked = true -- bool
-	}
-
-	setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
-	return o
-end
+local DockingPositions = {
+	alwaysDocked = true -- bool
+}
 
 -- @return nothing
 function DockingPositions.deleteRemovableObstacles()
@@ -66,5 +62,9 @@ end
 -- @return nothing
 function DockingPositions.stopUndocking(other)
 	return nil
+end
+
+setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
+return DockingPositions
 end
 

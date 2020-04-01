@@ -1,13 +1,9 @@
 -- This is the default constructor of TurretDesign. No further arguments are required.
 -- @return A new instance of TurretDesign
 function TurretDesign()
-	local o = {
-		empty = true -- [read-only] bool
-	}
-
-	setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
-	return o
-end
+local TurretDesign = {
+	empty = true -- [read-only] bool
+}
 
 function TurretDesign.getBarrels()
 	return TurretDesignPart()
@@ -61,5 +57,9 @@ end
 -- @return nothing
 function TurretDesign.setMoveBody(part)
 	return nil
+end
+
+setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
+return TurretDesign
 end
 

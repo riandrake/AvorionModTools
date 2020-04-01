@@ -1,14 +1,10 @@
 -- @param x - y
 -- @return A new instance of dvec2
 function dvec2(x, y)
-	local o = {
-		x = 0.0, -- double
-		y = 0.0 -- double
-	}
-
-	setmetatable(dvec2, {__call = function(self, x, y) return dvec2 end})
-	return o
-end
+local dvec2 = {
+	x = 0.0, -- double
+	y = 0.0 -- double
+}
 
 function dvec2.__add(other)
 	return dvec2()
@@ -40,5 +36,9 @@ end
 
 function dvec2.__unm()
 	return dvec2()
+end
+
+setmetatable(dvec2, {__call = function(self, x, y) return dvec2 end})
+return dvec2
 end
 

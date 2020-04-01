@@ -1,18 +1,14 @@
 -- @return A new instance of PlanStyle
 function PlanStyle()
-	local o = {
-		additionalFeatures = 0, -- int
-		balanceRotation = true, -- bool
-		forbiddenFeatures = 0, -- int
-		requiredFeatures = 0, -- int
-		scaleRecommendation = true, -- bool
-		seed = "", -- string
-		settings = nil -- var
-	}
-
-	setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
-	return o
-end
+local PlanStyle = {
+	additionalFeatures = 0, -- int
+	balanceRotation = true, -- bool
+	forbiddenFeatures = 0, -- int
+	requiredFeatures = 0, -- int
+	scaleRecommendation = true, -- bool
+	seed = "", -- string
+	settings = nil -- var
+}
 
 -- Adds a new stage to the style.
 -- @return nothing
@@ -36,5 +32,9 @@ end
 -- @return nothing
 function PlanStyle.setStage(index, stage)
 	return nil
+end
+
+setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
+return PlanStyle
 end
 

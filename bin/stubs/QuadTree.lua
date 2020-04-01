@@ -1,12 +1,8 @@
 -- @return A new instance of QuadTree
 function QuadTree(min, max, maxLevel)
-	local o = {
-		empty = true -- [read-only] bool
-	}
-
-	setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
-	return o
-end
+local QuadTree = {
+	empty = true -- [read-only] bool
+}
 
 function QuadTree.get(center, radius)
 	return nil
@@ -19,5 +15,9 @@ end
 
 function QuadTree.nearest(x, y, radius)
 	return nil, nil
+end
+
+setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
+return QuadTree
 end
 

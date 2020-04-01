@@ -1,11 +1,7 @@
 -- @return A new instance of Galaxy
 function Galaxy()
-	local o = {
-	}
-
-	setmetatable(Galaxy, {__call = function(self) return Galaxy end})
-	return o
-end
+local Galaxy = {
+}
 
 function Galaxy.addScript()
 	return nil
@@ -241,5 +237,9 @@ end
 
 function Galaxy.unregisterCallback(callbackName, functionName)
 	return 0
+end
+
+setmetatable(Galaxy, {__call = function(self) return Galaxy end})
+return Galaxy
 end
 

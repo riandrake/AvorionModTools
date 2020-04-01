@@ -1,15 +1,11 @@
 -- @return A new instance of Uuid
 function Uuid(uuid)
-	local o = {
-		isNil = true, -- [read-only] bool
-		number = 0, -- [read-only] int
-		string = "", -- [read-only] string
-		value = "" -- [read-only] string
-	}
-
-	setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
-	return o
-end
+local Uuid = {
+	isNil = true, -- [read-only] bool
+	number = 0, -- [read-only] int
+	string = "", -- [read-only] string
+	value = "" -- [read-only] string
+}
 
 function Uuid.__eq(other)
 	return true
@@ -35,5 +31,9 @@ end
 -- @return nothing
 function Uuid.toRandom()
 	return nil
+end
+
+setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
+return Uuid
 end
 

@@ -3,24 +3,20 @@
 -- @param b - Nil if a is a Rect, or a vec2 if a is a vec2
 -- @return A new instance of UIOrganizer
 function UIOrganizer(a, b)
-	local o = {
-		inner = Rect(), -- [read-only] Rect
-		margin = 0, -- [write-only] int
-		marginBottom = 0, -- int
-		marginLeft = 0, -- int
-		marginRight = 0, -- int
-		marginTop = 0, -- int
-		padding = 0, -- [write-only] int
-		paddingBottom = 0, -- int
-		paddingLeft = 0, -- int
-		paddingRight = 0, -- int
-		paddingTop = 0, -- int
-		rect = Rect() -- Rect
-	}
-
-	setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
-	return o
-end
+local UIOrganizer = {
+	inner = Rect(), -- [read-only] Rect
+	margin = 0, -- [write-only] int
+	marginBottom = 0, -- int
+	marginLeft = 0, -- int
+	marginRight = 0, -- int
+	marginTop = 0, -- int
+	padding = 0, -- [write-only] int
+	paddingBottom = 0, -- int
+	paddingLeft = 0, -- int
+	paddingRight = 0, -- int
+	paddingTop = 0, -- int
+	rect = Rect() -- Rect
+}
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
@@ -164,5 +160,9 @@ end
 -- @return nothing
 function UIOrganizer.setPadding(left, right, top, bottom)
 	return nil
+end
+
+setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
+return UIOrganizer
 end
 

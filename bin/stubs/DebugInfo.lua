@@ -1,11 +1,7 @@
 -- @return A new instance of DebugInfo
 function DebugInfo()
-	local o = {
-	}
-
-	setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
-	return o
-end
+local DebugInfo = {
+}
 
 function DebugInfo.getEndingLog()
 	return ""
@@ -28,5 +24,9 @@ end
 -- @return nothing
 function DebugInfo.threadSet(key, value)
 	return nil
+end
+
+setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
+return DebugInfo
 end
 

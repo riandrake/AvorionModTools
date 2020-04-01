@@ -3,25 +3,21 @@
 -- @param splits - The y coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryHorizontalSplitter
 function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
-	local o = {
-		inner = Rect(), -- [read-only] Rect
-		margin = 0, -- [write-only] int
-		marginBottom = 0, -- int
-		marginLeft = 0, -- int
-		marginRight = 0, -- int
-		marginTop = 0, -- int
-		padding = 0, -- [write-only] int
-		paddingBottom = 0, -- int
-		paddingInside = 0, -- int
-		paddingLeft = 0, -- int
-		paddingRight = 0, -- int
-		paddingTop = 0, -- int
-		rect = Rect() -- Rect
-	}
-
-	setmetatable(UIArbitraryHorizontalSplitter, {__call = function(self, rect, padding, margin, splits) return UIArbitraryHorizontalSplitter end})
-	return o
-end
+local UIArbitraryHorizontalSplitter = {
+	inner = Rect(), -- [read-only] Rect
+	margin = 0, -- [write-only] int
+	marginBottom = 0, -- int
+	marginLeft = 0, -- int
+	marginRight = 0, -- int
+	marginTop = 0, -- int
+	padding = 0, -- [write-only] int
+	paddingBottom = 0, -- int
+	paddingInside = 0, -- int
+	paddingLeft = 0, -- int
+	paddingRight = 0, -- int
+	paddingTop = 0, -- int
+	rect = Rect() -- Rect
+}
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
@@ -172,5 +168,9 @@ end
 -- @return nothing
 function UIArbitraryHorizontalSplitter.setPadding(left, right, top, bottom)
 	return nil
+end
+
+setmetatable(UIArbitraryHorizontalSplitter, {__call = function(self, rect, padding, margin, splits) return UIArbitraryHorizontalSplitter end})
+return UIArbitraryHorizontalSplitter
 end
 

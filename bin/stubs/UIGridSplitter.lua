@@ -3,27 +3,23 @@
 -- @param horizontalTiles - verticalTiles
 -- @return A new instance of UIGridSplitter
 function UIGridSplitter(rect, padding, margin, horizontalTiles, verticalTiles)
-	local o = {
-		horizontalTiles = 0, -- int
-		inner = Rect(), -- [read-only] Rect
-		margin = 0, -- [write-only] int
-		marginBottom = 0, -- int
-		marginLeft = 0, -- int
-		marginRight = 0, -- int
-		marginTop = 0, -- int
-		padding = 0, -- [write-only] int
-		paddingBottom = 0, -- int
-		paddingInside = 0, -- int
-		paddingLeft = 0, -- int
-		paddingRight = 0, -- int
-		paddingTop = 0, -- int
-		rect = Rect(), -- Rect
-		verticalTiles = 0 -- int
-	}
-
-	setmetatable(UIGridSplitter, {__call = function(self, rect, padding, margin, horizontalTiles, verticalTiles) return UIGridSplitter end})
-	return o
-end
+local UIGridSplitter = {
+	horizontalTiles = 0, -- int
+	inner = Rect(), -- [read-only] Rect
+	margin = 0, -- [write-only] int
+	marginBottom = 0, -- int
+	marginLeft = 0, -- int
+	marginRight = 0, -- int
+	marginTop = 0, -- int
+	padding = 0, -- [write-only] int
+	paddingBottom = 0, -- int
+	paddingInside = 0, -- int
+	paddingLeft = 0, -- int
+	paddingRight = 0, -- int
+	paddingTop = 0, -- int
+	rect = Rect(), -- Rect
+	verticalTiles = 0 -- int
+}
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
@@ -175,5 +171,9 @@ end
 -- @return nothing
 function UIGridSplitter.setPadding(left, right, top, bottom)
 	return nil
+end
+
+setmetatable(UIGridSplitter, {__call = function(self, rect, padding, margin, horizontalTiles, verticalTiles) return UIGridSplitter end})
+return UIGridSplitter
 end
 

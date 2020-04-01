@@ -1,53 +1,49 @@
 -- @return A new instance of InventorySelection
 function InventorySelection(index)
-	local o = {
-		borderCombo = ComboBox(), -- [read-only] ComboBox
-		borderMode = 0, -- int
-		center = vec2(), -- vec2
-		contextMenuAllowed = true, -- bool
-		dragFromEnabled = true, -- [write-only] bool
-		dropIntoEnabled = true, -- [write-only] bool
-		dropIntoSelfEnabled = true, -- [write-only] bool
-		entriesHighlightable = true, -- [write-only] bool
-		entriesSelectable = true, -- [write-only] bool
-		filterTextBox = TextBox(), -- [read-only] TextBox
-		height = 0.0, -- float
-		index = 0, -- [read-only] int
-		isRenderingDraggedItem = true, -- [read-only] bool
-		label = Label(), -- [read-only] Label
-		layer = 0, -- int
-		localCenter = vec2(), -- [read-only] vec2
-		localPosition = vec2(), -- [read-only] vec2
-		localRect = Rect(), -- [read-only] Rect
-		lower = vec2(), -- vec2
-		maxHorizontalEntries = 0, -- [read-only] unsigned int
-		mouseOver = true, -- [read-only] bool
-		numEntries = 0, -- [read-only] int
-		onClickedFunction = "", -- string
-		onDeselectedFunction = "", -- string
-		onDroppedFunction = "", -- string
-		onInsertedFunction = "", -- string
-		onReceivedFunction = "", -- string
-		onSelectedFunction = "", -- string
-		padding = 0.0, -- [write-only] float
-		position = vec2(), -- vec2
-		rect = Rect(), -- Rect
-		selected = UserObject(), -- [read-only] UserObject
-		selectedKey = ivec2(), -- [read-only] ivec2
-		selection = Selection(), -- [read-only] Selection
-		showEntriesOnly = true, -- [write-only] bool
-		size = vec2(), -- vec2
-		sortCombo = ComboBox(), -- [read-only] ComboBox
-		sortMode = 0, -- int
-		tooltip = nil, -- var
-		upper = vec2(), -- vec2
-		visible = true, -- bool
-		width = 0.0 -- float
-	}
-
-	setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
-	return o
-end
+local InventorySelection = {
+	borderCombo = ComboBox(), -- [read-only] ComboBox
+	borderMode = 0, -- int
+	center = vec2(), -- vec2
+	contextMenuAllowed = true, -- bool
+	dragFromEnabled = true, -- [write-only] bool
+	dropIntoEnabled = true, -- [write-only] bool
+	dropIntoSelfEnabled = true, -- [write-only] bool
+	entriesHighlightable = true, -- [write-only] bool
+	entriesSelectable = true, -- [write-only] bool
+	filterTextBox = TextBox(), -- [read-only] TextBox
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	isRenderingDraggedItem = true, -- [read-only] bool
+	label = Label(), -- [read-only] Label
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	maxHorizontalEntries = 0, -- [read-only] unsigned int
+	mouseOver = true, -- [read-only] bool
+	numEntries = 0, -- [read-only] int
+	onClickedFunction = "", -- string
+	onDeselectedFunction = "", -- string
+	onDroppedFunction = "", -- string
+	onInsertedFunction = "", -- string
+	onReceivedFunction = "", -- string
+	onSelectedFunction = "", -- string
+	padding = 0.0, -- [write-only] float
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	selected = UserObject(), -- [read-only] UserObject
+	selectedKey = ivec2(), -- [read-only] ivec2
+	selection = Selection(), -- [read-only] Selection
+	showEntriesOnly = true, -- [write-only] bool
+	size = vec2(), -- vec2
+	sortCombo = ComboBox(), -- [read-only] ComboBox
+	sortMode = 0, -- int
+	tooltip = nil, -- var
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
+}
 
 -- @return nothing
 function InventorySelection.add(item, pos)
@@ -286,5 +282,9 @@ end
 -- @return nothing
 function InventorySelection.show()
 	return nil
+end
+
+setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
+return InventorySelection
 end
 

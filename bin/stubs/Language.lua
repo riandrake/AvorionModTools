@@ -1,13 +1,9 @@
 -- @return A new instance of Language
 function Language(seed)
-	local o = {
-		apostrophes = true, -- bool
-		seed = Seed() -- [write-only] Seed
-	}
-
-	setmetatable(Language, {__call = function(self, seed) return Language end})
-	return o
-end
+local Language = {
+	apostrophes = true, -- bool
+	seed = Seed() -- [write-only] Seed
+}
 
 function Language.getConsonantSound()
 	return ""
@@ -62,5 +58,9 @@ end
 -- @return nothing
 function Language.setVocalSounds()
 	return nil
+end
+
+setmetatable(Language, {__call = function(self, seed) return Language end})
+return Language
 end
 

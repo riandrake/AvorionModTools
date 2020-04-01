@@ -1,32 +1,28 @@
 -- @return A new instance of Alliance
 function Alliance(index)
-	local o = {
-		alwaysAtWar = true, -- bool
-		baseName = "", -- [read-only] string
-		homeSectorUnknown = true, -- bool
-		index = 0, -- [read-only] int
-		infiniteResources = true, -- bool
-		initialRelations = 0, -- int
-		initialRelationsToPlayer = 0, -- int
-		isAIFaction = true, -- [read-only] bool
-		isAlliance = true, -- [read-only] bool
-		isPlayer = true, -- [read-only] bool
-		leader = 0, -- int
-		money = 0, -- int
-		name = "", -- [read-only] string
-		numCrafts = 0, -- [read-only] unsigned int
-		numShips = 0, -- [read-only] int
-		numStations = 0, -- [read-only] int
-		stateForm = "", -- [read-only] string
-		staticRelationsToAI = true, -- bool
-		staticRelationsToAll = true, -- bool
-		staticRelationsToPlayers = true, -- bool
-		unformattedName = Format() -- [read-only] Format
-	}
-
-	setmetatable(Alliance, {__call = function(self, index) return Alliance end})
-	return o
-end
+local Alliance = {
+	alwaysAtWar = true, -- bool
+	baseName = "", -- [read-only] string
+	homeSectorUnknown = true, -- bool
+	index = 0, -- [read-only] int
+	infiniteResources = true, -- bool
+	initialRelations = 0, -- int
+	initialRelationsToPlayer = 0, -- int
+	isAIFaction = true, -- [read-only] bool
+	isAlliance = true, -- [read-only] bool
+	isPlayer = true, -- [read-only] bool
+	leader = 0, -- int
+	money = 0, -- int
+	name = "", -- [read-only] string
+	numCrafts = 0, -- [read-only] unsigned int
+	numShips = 0, -- [read-only] int
+	numStations = 0, -- [read-only] int
+	stateForm = "", -- [read-only] string
+	staticRelationsToAI = true, -- bool
+	staticRelationsToAll = true, -- bool
+	staticRelationsToPlayers = true, -- bool
+	unformattedName = Format() -- [read-only] Format
+}
 
 -- @return nothing
 function Alliance.addKnownSector(view)
@@ -497,5 +493,9 @@ end
 -- @return nothing
 function Alliance.setValue(key, value)
 	return nil
+end
+
+setmetatable(Alliance, {__call = function(self, index) return Alliance end})
+return Alliance
 end
 

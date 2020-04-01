@@ -1,26 +1,22 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyPlan
 function ReadOnlyPlan(id)
-	local o = {
-		accumulatingHealth = true, -- [read-only] bool
-		boundingBox = Box(), -- [read-only] Box
-		boundingSphere = Sphere(), -- [read-only] Sphere
-		centerOfMass = vec3(), -- [read-only] vec3
-		convex = true, -- [read-only] bool
-		durability = 0.0, -- [read-only] double
-		entity = Entity(), -- [read-only] Entity
-		entityId = 0, -- [read-only] uuid
-		numBlocks = 0, -- [read-only] int
-		radius = 0.0, -- [read-only] float
-		root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
-		rootIndex = nil, -- [read-only] var
-		size = 0, -- [read-only] int
-		volume = 0.0 -- [read-only] float
-	}
-
-	setmetatable(ReadOnlyPlan, {__call = function(self, id) return ReadOnlyPlan end})
-	return o
-end
+local ReadOnlyPlan = {
+	accumulatingHealth = true, -- [read-only] bool
+	boundingBox = Box(), -- [read-only] Box
+	boundingSphere = Sphere(), -- [read-only] Sphere
+	centerOfMass = vec3(), -- [read-only] vec3
+	convex = true, -- [read-only] bool
+	durability = 0.0, -- [read-only] double
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	numBlocks = 0, -- [read-only] int
+	radius = 0.0, -- [read-only] float
+	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
+	rootIndex = nil, -- [read-only] var
+	size = 0, -- [read-only] int
+	volume = 0.0 -- [read-only] float
+}
 
 function ReadOnlyPlan.empty()
 	return true
@@ -82,5 +78,9 @@ end
 
 function ReadOnlyPlan.getUndamagedResourceValue()
 	return 0.0
+end
+
+setmetatable(ReadOnlyPlan, {__call = function(self, id) return ReadOnlyPlan end})
+return ReadOnlyPlan
 end
 

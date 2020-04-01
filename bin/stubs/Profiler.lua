@@ -1,13 +1,9 @@
 -- @return A new instance of Profiler
 function Profiler(str)
-	local o = {
-		printedSections = 0, -- int
-		started = true -- [read-only] bool
-	}
-
-	setmetatable(Profiler, {__call = function(self, str) return Profiler end})
-	return o
-end
+local Profiler = {
+	printedSections = 0, -- int
+	started = true -- [read-only] bool
+}
 
 function Profiler.__tostring()
 	return ""
@@ -40,5 +36,9 @@ end
 -- @return nothing
 function Profiler.section(name)
 	return nil
+end
+
+setmetatable(Profiler, {__call = function(self, str) return Profiler end})
+return Profiler
 end
 

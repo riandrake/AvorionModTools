@@ -1,13 +1,9 @@
 -- @callback
 -- Executed when the availability state of the destination sector changes. When the sector is loaded into memory, it's set to true. When the sector is unloaded from memory, because there's no player near it, it's set to false.
 -- @param sectorReady - Boolean indicating whether the destination sector is in memory
-function destinationSectorReady(sectorReady)
-	local o = {
-	}
-
-	setmetatable(destinationSectorReady, {__call = function(self, sectorReady) return destinationSectorReady end})
-	return o
-end
+function Entity(sectorReady)
+local Entity = {
+}
 
 -- @callback
 -- Executed whenever the AI state of the entity changes
@@ -590,5 +586,9 @@ end
 -- @param lootIndex - The index of the collected loot
 function Entity.onTurretLootCollected(collector, lootIndex)
 	return nil
+end
+
+setmetatable(Entity, {__call = function(self, sectorReady) return Entity end})
+return Entity
 end
 

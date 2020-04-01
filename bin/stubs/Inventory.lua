@@ -1,16 +1,12 @@
 -- This is the default constructor of Inventory. No further arguments are required.
 -- @return A new instance of Inventory
 function Inventory()
-	local o = {
-		empty = true, -- [read-only] bool
-		items = 0, -- [read-only] unsigned int
-		maxSlots = 0, -- [read-only] unsigned int
-		occupiedSlots = 0 -- [read-only] unsigned int
-	}
-
-	setmetatable(Inventory, {__call = function(self) return Inventory end})
-	return o
-end
+local Inventory = {
+	empty = true, -- [read-only] bool
+	items = 0, -- [read-only] unsigned int
+	maxSlots = 0, -- [read-only] unsigned int
+	occupiedSlots = 0 -- [read-only] unsigned int
+}
 
 function Inventory.add(item, recent)
 	return 0
@@ -70,5 +66,9 @@ end
 
 function Inventory.take(index)
 	return InventoryItem()
+end
+
+setmetatable(Inventory, {__call = function(self) return Inventory end})
+return Inventory
 end
 

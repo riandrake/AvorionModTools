@@ -3,13 +3,9 @@
 -- @param playerIndex - Index of the player
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
-function onChatMessage(playerIndex, text, channel)
-	local o = {
-	}
-
-	setmetatable(onChatMessage, {__call = function(self, playerIndex, text, channel) return onChatMessage end})
-	return o
-end
+function Player(playerIndex, text, channel)
+local Player = {
+}
 
 -- @callback
 -- Executed whenever on the galaxy map a mouse-up event occurs.
@@ -153,5 +149,9 @@ end
 -- @param objectIndex - The index of the entity the dialog is started with
 function Player.onStartDialog(objectIndex)
 	return nil
+end
+
+setmetatable(Player, {__call = function(self, playerIndex, text, channel) return Player end})
+return Player
 end
 

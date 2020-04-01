@@ -1,14 +1,10 @@
 -- This is the default constructor of GameInput. No further arguments are required.
 -- @return A new instance of GameInput
 function GameInput()
-	local o = {
-		isMouseSteeringEnabled = true, -- [read-only] bool
-		isSteeringEnabled = true -- [read-only] bool
-	}
-
-	setmetatable(GameInput, {__call = function(self) return GameInput end})
-	return o
-end
+local GameInput = {
+	isMouseSteeringEnabled = true, -- [read-only] bool
+	isSteeringEnabled = true -- [read-only] bool
+}
 
 function GameInput.getActionName(action)
 	return ""
@@ -48,5 +44,9 @@ end
 
 function GameInput.keyUpNotHeld(action)
 	return true
+end
+
+setmetatable(GameInput, {__call = function(self) return GameInput end})
+return GameInput
 end
 

@@ -1,13 +1,9 @@
 -- @callback
 -- Called whenever the auto-pay-crews property was changed
 -- @param autoPayCrews - The new setting for auto-pay-crews
-function onAutoPayCrewsChanged(autoPayCrews)
-	local o = {
-	}
-
-	setmetatable(onAutoPayCrewsChanged, {__call = function(self, autoPayCrews) return onAutoPayCrewsChanged end})
-	return o
-end
+function Alliance(autoPayCrews)
+local Alliance = {
+}
 
 -- @callback
 -- Called whenever the home sector of the alliance changes
@@ -336,5 +332,9 @@ end
 -- @param value - The value of the new trait, from -1 to 1
 function Alliance.onTraitChanged(trait, value)
 	return nil
+end
+
+setmetatable(Alliance, {__call = function(self, autoPayCrews) return Alliance end})
+return Alliance
 end
 

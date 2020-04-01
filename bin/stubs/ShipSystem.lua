@@ -1,17 +1,13 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ShipSystem
 function ShipSystem(id)
-	local o = {
-		entity = Entity(), -- [read-only] Entity
-		entityId = 0, -- [read-only] uuid
-		maxSlots = 0, -- [read-only] unsigned int
-		numSlots = 0, -- [read-only] unsigned int
-		numUpgrades = 0 -- [read-only] unsigned int
-	}
-
-	setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
-	return o
-end
+local ShipSystem = {
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	maxSlots = 0, -- [read-only] unsigned int
+	numSlots = 0, -- [read-only] unsigned int
+	numUpgrades = 0 -- [read-only] unsigned int
+}
 
 function ShipSystem.addUpgrade(upgrade, permanent)
 	return 0
@@ -52,5 +48,9 @@ end
 -- @return nothing
 function ShipSystem.swap(slotA, slotB)
 	return nil
+end
+
+setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
+return ShipSystem
 end
 

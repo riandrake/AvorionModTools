@@ -1,12 +1,8 @@
 -- @return A new instance of PlayerWindow
 function PlayerWindow()
-	local o = {
-		onSelectedFunction = "" -- string
-	}
-
-	setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
-	return o
-end
+local PlayerWindow = {
+	onSelectedFunction = "" -- string
+}
 
 -- @return nothing
 function PlayerWindow.activateAllTabs()
@@ -58,5 +54,9 @@ end
 -- @return nothing
 function PlayerWindow.show()
 	return nil
+end
+
+setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
+return PlayerWindow
 end
 

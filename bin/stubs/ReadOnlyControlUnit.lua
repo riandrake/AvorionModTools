@@ -1,23 +1,19 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyControlUnit
 function ReadOnlyControlUnit(id)
-	local o = {
-		desiredVelocity = 0.0, -- [read-only] float
-		entity = Entity(), -- [read-only] Entity
-		entityId = 0, -- [read-only] uuid
-		hasPilot = true, -- [read-only] bool
-		isBoosting = true, -- [read-only] bool
-		isDrifting = true, -- [read-only] bool
-		isStrafing = true, -- [read-only] bool
-		isTurning = true, -- [read-only] bool
-		numFreeSeats = 0, -- [read-only] int
-		numOccupiedSeats = 0, -- [read-only] int
-		turningSpeedFactor = vec3() -- [read-only] vec3
-	}
-
-	setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
-	return o
-end
+local ReadOnlyControlUnit = {
+	desiredVelocity = 0.0, -- [read-only] float
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	hasPilot = true, -- [read-only] bool
+	isBoosting = true, -- [read-only] bool
+	isDrifting = true, -- [read-only] bool
+	isStrafing = true, -- [read-only] bool
+	isTurning = true, -- [read-only] bool
+	numFreeSeats = 0, -- [read-only] int
+	numOccupiedSeats = 0, -- [read-only] int
+	turningSpeedFactor = vec3() -- [read-only] vec3
+}
 
 function ReadOnlyControlUnit.getActiveWeapons()
 	return 
@@ -101,5 +97,9 @@ end
 
 function ReadOnlyControlUnit.rotatingNecessary(brake, axis, from, to)
 	return true
+end
+
+setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
+return ReadOnlyControlUnit
 end
 

@@ -1,23 +1,19 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ControlUnit
 function ControlUnit(id)
-	local o = {
-		desiredVelocity = 0.0, -- [read-only] float
-		entity = Entity(), -- [read-only] Entity
-		entityId = 0, -- [read-only] uuid
-		hasPilot = true, -- [read-only] bool
-		isBoosting = true, -- [read-only] bool
-		isDrifting = true, -- [read-only] bool
-		isStrafing = true, -- [read-only] bool
-		isTurning = true, -- [read-only] bool
-		numFreeSeats = 0, -- [read-only] int
-		numOccupiedSeats = 0, -- [read-only] int
-		turningSpeedFactor = vec3() -- [read-only] vec3
-	}
-
-	setmetatable(ControlUnit, {__call = function(self, id) return ControlUnit end})
-	return o
-end
+local ControlUnit = {
+	desiredVelocity = 0.0, -- [read-only] float
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	hasPilot = true, -- [read-only] bool
+	isBoosting = true, -- [read-only] bool
+	isDrifting = true, -- [read-only] bool
+	isStrafing = true, -- [read-only] bool
+	isTurning = true, -- [read-only] bool
+	numFreeSeats = 0, -- [read-only] int
+	numOccupiedSeats = 0, -- [read-only] int
+	turningSpeedFactor = vec3() -- [read-only] vec3
+}
 
 -- @return nothing
 function ControlUnit.addSeat()
@@ -176,5 +172,9 @@ end
 -- @return nothing
 function ControlUnit.stopSteering()
 	return nil
+end
+
+setmetatable(ControlUnit, {__call = function(self, id) return ControlUnit end})
+return ControlUnit
 end
 

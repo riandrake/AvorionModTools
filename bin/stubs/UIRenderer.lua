@@ -1,11 +1,7 @@
 -- @return A new instance of UIRenderer
 function UIRenderer()
-	local o = {
-	}
-
-	setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
-	return o
-end
+local UIRenderer = {
+}
 
 -- @return nothing
 function UIRenderer.display()
@@ -65,5 +61,9 @@ end
 -- @return nothing
 function UIRenderer.renderTargeter(pos, size, color, layer)
 	return nil
+end
+
+setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
+return UIRenderer
 end
 

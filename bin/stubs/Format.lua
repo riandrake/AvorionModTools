@@ -1,13 +1,9 @@
 -- @return A new instance of Format
 function Format(text, args)
-	local o = {
-		empty = true, -- [read-only] bool
-		text = "" -- [read-only] string
-	}
-
-	setmetatable(Format, {__call = function(self, text, args) return Format end})
-	return o
-end
+local Format = {
+	empty = true, -- [read-only] bool
+	text = "" -- [read-only] string
+}
 
 -- @return nothing
 function Format.add()
@@ -29,5 +25,9 @@ end
 
 function Format.translated()
 	return ""
+end
+
+setmetatable(Format, {__call = function(self, text, args) return Format end})
+return Format
 end
 

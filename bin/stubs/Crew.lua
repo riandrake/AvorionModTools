@@ -1,28 +1,24 @@
 -- This is the default constructor of Crew. No further arguments are required.
 -- @return A new instance of Crew
 function Crew()
-	local o = {
-		attackers = 0, -- [read-only] int
-		autoAssignCrew = 0, -- [read-only] int
-		captains = 0, -- [read-only] int
-		commanders = 0, -- [read-only] int
-		engineers = 0, -- [read-only] int
-		generals = 0, -- [read-only] int
-		gunners = 0, -- [read-only] int
-		lieutenants = 0, -- [read-only] int
-		maxSize = 0, -- unsigned int
-		mechanics = 0, -- [read-only] int
-		miners = 0, -- [read-only] int
-		pilots = 0, -- [read-only] int
-		security = 0, -- [read-only] int
-		sergeants = 0, -- [read-only] int
-		size = 0, -- [read-only] unsigned int
-		unemployed = 0 -- [read-only] int
-	}
-
-	setmetatable(Crew, {__call = function(self) return Crew end})
-	return o
-end
+local Crew = {
+	attackers = 0, -- [read-only] int
+	autoAssignCrew = 0, -- [read-only] int
+	captains = 0, -- [read-only] int
+	commanders = 0, -- [read-only] int
+	engineers = 0, -- [read-only] int
+	generals = 0, -- [read-only] int
+	gunners = 0, -- [read-only] int
+	lieutenants = 0, -- [read-only] int
+	maxSize = 0, -- unsigned int
+	mechanics = 0, -- [read-only] int
+	miners = 0, -- [read-only] int
+	pilots = 0, -- [read-only] int
+	security = 0, -- [read-only] int
+	sergeants = 0, -- [read-only] int
+	size = 0, -- [read-only] unsigned int
+	unemployed = 0 -- [read-only] int
+}
 
 -- @return nothing
 function Crew.add(amount, crewman)
@@ -72,5 +68,9 @@ end
 -- @return nothing
 function Crew.removeByProfession(amount, crewProfessionType)
 	return nil
+end
+
+setmetatable(Crew, {__call = function(self) return Crew end})
+return Crew
 end
 

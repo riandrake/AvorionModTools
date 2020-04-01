@@ -1,33 +1,29 @@
 -- @return A new instance of Tab
 function Tab(index)
-	local o = {
-		center = vec2(), -- vec2
-		description = "", -- string
-		height = 0.0, -- float
-		icon = "", -- string
-		index = 0, -- [read-only] int
-		isActiveTab = true, -- [read-only] bool
-		layer = 0, -- int
-		localCenter = vec2(), -- [read-only] vec2
-		localPosition = vec2(), -- [read-only] vec2
-		localRect = Rect(), -- [read-only] Rect
-		lower = vec2(), -- vec2
-		mouseOver = true, -- [read-only] bool
-		name = "", -- [read-only] string
-		onSelectedFunction = "", -- string
-		onShowFunction = "", -- string
-		position = vec2(), -- vec2
-		rect = Rect(), -- Rect
-		size = vec2(), -- vec2
-		tooltip = nil, -- var
-		upper = vec2(), -- vec2
-		visible = true, -- bool
-		width = 0.0 -- float
-	}
-
-	setmetatable(Tab, {__call = function(self, index) return Tab end})
-	return o
-end
+local Tab = {
+	center = vec2(), -- vec2
+	description = "", -- string
+	height = 0.0, -- float
+	icon = "", -- string
+	index = 0, -- [read-only] int
+	isActiveTab = true, -- [read-only] bool
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	name = "", -- [read-only] string
+	onSelectedFunction = "", -- string
+	onShowFunction = "", -- string
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	size = vec2(), -- vec2
+	tooltip = nil, -- var
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0 -- float
+}
 
 -- Inherited from UIContainer
 -- @return nothing
@@ -205,5 +201,9 @@ end
 -- @return nothing
 function Tab.show()
 	return nil
+end
+
+setmetatable(Tab, {__call = function(self, index) return Tab end})
+return Tab
 end
 

@@ -1,12 +1,8 @@
 -- This is the default constructor of Keyboard. No further arguments are required.
 -- @return A new instance of Keyboard
 function Keyboard()
-	local o = {
-	}
-
-	setmetatable(Keyboard, {__call = function(self) return Keyboard end})
-	return o
-end
+local Keyboard = {
+}
 
 function Keyboard.keyDown(value)
 	return true
@@ -18,5 +14,9 @@ end
 
 function Keyboard.keyUp(value)
 	return true
+end
+
+setmetatable(Keyboard, {__call = function(self) return Keyboard end})
+return Keyboard
 end
 

@@ -1,25 +1,21 @@
 -- This is the default constructor of VanillaInventoryItem. No further arguments are required.
 -- @return A new instance of VanillaInventoryItem
 function VanillaInventoryItem()
-	local o = {
-		boundFaction = 0, -- int
-		droppable = true, -- bool
-		favorite = true, -- bool
-		icon = "", -- string
-		iconColor = Color(), -- Color
-		itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-		name = "", -- string
-		price = 0, -- int
-		rarity = Rarity(), -- Rarity
-		recent = true, -- bool
-		stackable = true, -- bool
-		tradeable = true, -- bool
-		trash = true -- bool
-	}
-
-	setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
-	return o
-end
+local VanillaInventoryItem = {
+	boundFaction = 0, -- int
+	droppable = true, -- bool
+	favorite = true, -- bool
+	icon = "", -- string
+	iconColor = Color(), -- Color
+	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
+	name = "", -- string
+	price = 0, -- int
+	rarity = Rarity(), -- Rarity
+	recent = true, -- bool
+	stackable = true, -- bool
+	tradeable = true, -- bool
+	trash = true -- bool
+}
 
 function VanillaInventoryItem.__eq(other)
 	return true
@@ -59,5 +55,9 @@ end
 -- @return nothing
 function VanillaInventoryItem.setValue(key, value)
 	return nil
+end
+
+setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
+return VanillaInventoryItem
 end
 

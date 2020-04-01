@@ -1,24 +1,20 @@
 -- This is the default constructor of SectorView. No further arguments are required.
 -- @return A new instance of SectorView
 function SectorView()
-	local o = {
-		deathLocation = true, -- bool
-		factionIndex = 0, -- int
-		hasContent = true, -- [read-only] bool
-		influence = 0.0, -- float
-		manuallyTagged = true, -- bool
-		note = "", -- string
-		numAsteroids = 0, -- int
-		numShips = 0, -- int
-		numStations = 0, -- int
-		numWrecks = 0, -- int
-		timeStamp = 0.0, -- double
-		visited = true -- [read-only] bool
-	}
-
-	setmetatable(SectorView, {__call = function(self) return SectorView end})
-	return o
-end
+local SectorView = {
+	deathLocation = true, -- bool
+	factionIndex = 0, -- int
+	hasContent = true, -- [read-only] bool
+	influence = 0.0, -- float
+	manuallyTagged = true, -- bool
+	note = "", -- string
+	numAsteroids = 0, -- int
+	numShips = 0, -- int
+	numStations = 0, -- int
+	numWrecks = 0, -- int
+	timeStamp = 0.0, -- double
+	visited = true -- [read-only] bool
+}
 
 function SectorView.calculateInfluence(stations)
 	return 0.0
@@ -85,5 +81,9 @@ end
 -- @return nothing
 function SectorView.setWormHoleDestinations()
 	return nil
+end
+
+setmetatable(SectorView, {__call = function(self) return SectorView end})
+return SectorView
 end
 

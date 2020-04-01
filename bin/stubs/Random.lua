@@ -1,11 +1,7 @@
 -- @return A new instance of Random
 function Random(seed)
-	local o = {
-	}
-
-	setmetatable(Random, {__call = function(self, seed) return Random end})
-	return o
-end
+local Random = {
+}
 
 function Random.createSeed()
 	return Seed()
@@ -46,5 +42,9 @@ end
 
 function Random.test(probability)
 	return true
+end
+
+setmetatable(Random, {__call = function(self, seed) return Random end})
+return Random
 end
 

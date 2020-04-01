@@ -1,12 +1,8 @@
 -- @return A new instance of ModManager
 function ModManager()
-	local o = {
-		forceEnabledMods = true -- [read-only] bool
-	}
-
-	setmetatable(ModManager, {__call = function(self) return ModManager end})
-	return o
-end
+local ModManager = {
+	forceEnabledMods = true -- [read-only] bool
+}
 
 function ModManager.addMod(folder)
 	return nil
@@ -114,5 +110,9 @@ end
 -- @return nothing
 function ModManager.refreshProblematicMods()
 	return nil
+end
+
+setmetatable(ModManager, {__call = function(self) return ModManager end})
+return ModManager
 end
 

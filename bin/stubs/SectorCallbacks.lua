@@ -2,13 +2,9 @@
 -- Executed whenever the AI state of an entity changes
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
-function onAIStateChanged(entityId, state)
-	local o = {
-	}
-
-	setmetatable(onAIStateChanged, {__call = function(self, entityId, state) return onAIStateChanged end})
-	return o
-end
+function Sector(entityId, state)
+local Sector = {
+}
 
 -- @callback
 -- Executed whenever a plan of an entity is changed in the sector.
@@ -552,5 +548,9 @@ end
 -- @param lootIndex - The index of the collected loot
 function Sector.onTurretLootCollected(collector, lootIndex)
 	return nil
+end
+
+setmetatable(Sector, {__call = function(self, entityId, state) return Sector end})
+return Sector
 end
 

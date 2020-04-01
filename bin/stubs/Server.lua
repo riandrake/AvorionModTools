@@ -1,35 +1,31 @@
 -- @return A new instance of Server
 function Server()
-	local o = {
-		accessMode = 0, -- [read-only] int
-		collisionDamage = 0.0, -- [read-only] float
-		description = "", -- [read-only] string
-		difficulty = 0, -- [read-only] int
-		folder = "", -- [read-only] string
-		gamePort = 0, -- [read-only] int
-		generatorThreads = 0, -- [read-only] int
-		infiniteResources = true, -- [read-only] bool
-		maxPlayers = 0, -- [read-only] int
-		name = "", -- [read-only] string
-		paused = 0.0, -- [read-only] double
-		playerToPlayerDamage = true, -- bool
-		players = 0, -- [read-only] int
-		rconPort = 0, -- [read-only] int
-		runtime = 0.0, -- [read-only] double
-		sameStartSector = true, -- [read-only] bool
-		scriptThreads = 0, -- [read-only] int
-		seed = Seed(), -- [read-only] Seed
-		sessionId = nil, -- [read-only] var
-		steamMasterPort = 0, -- [read-only] int
-		steamQueryPort = 0, -- [read-only] int
-		udpPollingPort = 0, -- [read-only] int
-		unpausedRuntime = 0.0, -- [read-only] double
-		workerThreads = 0 -- [read-only] int
-	}
-
-	setmetatable(Server, {__call = function(self) return Server end})
-	return o
-end
+local Server = {
+	accessMode = 0, -- [read-only] int
+	collisionDamage = 0.0, -- [read-only] float
+	description = "", -- [read-only] string
+	difficulty = 0, -- [read-only] int
+	folder = "", -- [read-only] string
+	gamePort = 0, -- [read-only] int
+	generatorThreads = 0, -- [read-only] int
+	infiniteResources = true, -- [read-only] bool
+	maxPlayers = 0, -- [read-only] int
+	name = "", -- [read-only] string
+	paused = 0.0, -- [read-only] double
+	playerToPlayerDamage = true, -- bool
+	players = 0, -- [read-only] int
+	rconPort = 0, -- [read-only] int
+	runtime = 0.0, -- [read-only] double
+	sameStartSector = true, -- [read-only] bool
+	scriptThreads = 0, -- [read-only] int
+	seed = Seed(), -- [read-only] Seed
+	sessionId = nil, -- [read-only] var
+	steamMasterPort = 0, -- [read-only] int
+	steamQueryPort = 0, -- [read-only] int
+	udpPollingPort = 0, -- [read-only] int
+	unpausedRuntime = 0.0, -- [read-only] double
+	workerThreads = 0 -- [read-only] int
+}
 
 -- @return nothing
 function Server.addChatCommand(sender, command)
@@ -143,5 +139,9 @@ end
 
 function Server.unregisterCallback(callbackName, functionName)
 	return 0
+end
+
+setmetatable(Server, {__call = function(self) return Server end})
+return Server
 end
 

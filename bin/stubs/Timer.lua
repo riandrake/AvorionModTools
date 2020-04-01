@@ -1,15 +1,11 @@
 -- @return A new instance of Timer
 function Timer()
-	local o = {
-		milliseconds = 0, -- [read-only] int
-		running = true, -- [read-only] bool
-		seconds = 0.0, -- [read-only] double
-		secondsStr = "" -- [read-only] string
-	}
-
-	setmetatable(Timer, {__call = function(self) return Timer end})
-	return o
-end
+local Timer = {
+	milliseconds = 0, -- [read-only] int
+	running = true, -- [read-only] bool
+	seconds = 0.0, -- [read-only] double
+	secondsStr = "" -- [read-only] string
+}
 
 -- @return nothing
 function Timer.reset()
@@ -29,5 +25,9 @@ end
 -- @return nothing
 function Timer.stop()
 	return nil
+end
+
+setmetatable(Timer, {__call = function(self) return Timer end})
+return Timer
 end
 
