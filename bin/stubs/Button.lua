@@ -23,9 +23,7 @@ Button = {
 }
 
 -- @return A new instance of Button
-function Button(index)
-	return nil
-end
+setmetatable(Button, {__call = function(self, index) return Button end})
 
 -- Inherited from UIElement
 -- @return nothing

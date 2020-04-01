@@ -1,7 +1,8 @@
+UIRenderer = {
+}
+
 -- @return A new instance of UIRenderer
-function UIRenderer()
-	return nil
-end
+setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
 
 -- @return nothing
 function UIRenderer.display()

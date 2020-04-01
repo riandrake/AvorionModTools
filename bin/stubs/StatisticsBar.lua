@@ -21,9 +21,7 @@ StatisticsBar = {
 }
 
 -- @return A new instance of StatisticsBar
-function StatisticsBar(index)
-	return nil
-end
+setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
 
 -- @return nothing
 function StatisticsBar.setRange(minRange, maxRange)

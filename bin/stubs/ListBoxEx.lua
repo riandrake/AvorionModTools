@@ -33,9 +33,7 @@ ListBoxEx = {
 }
 
 -- @return A new instance of ListBoxEx
-function ListBoxEx(index)
-	return nil
-end
+setmetatable(ListBoxEx, {__call = function(self, index) return ListBoxEx end})
 
 -- @return nothing
 function ListBoxEx.addRow()

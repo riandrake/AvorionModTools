@@ -5,7 +5,7 @@ InventoryTurret = {
 	averageTech = 0, -- [read-only] int
 	baseEnergyPerSecond = 0.0, -- float
 	bestEfficiency = 0.0, -- [read-only] float
-	category = Armed, -- [read-only] WeaponCategory
+	category = WeaponCategory.Armed, -- [read-only] WeaponCategory
 	civil = true, -- [read-only] bool
 	coaxial = true, -- bool
 	continuousBeam = true, -- [read-only] bool
@@ -69,9 +69,7 @@ InventoryTurret = {
 }
 
 -- @return A new instance of InventoryTurret
-function InventoryTurret(other)
-	return nil
-end
+setmetatable(InventoryTurret, {__call = function(self, other) return InventoryTurret end})
 
 function InventoryTurret.__eq(other)
 	return true

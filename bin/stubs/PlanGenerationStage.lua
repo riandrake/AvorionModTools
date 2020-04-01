@@ -22,7 +22,5 @@ PlanGenerationStage = {
 }
 
 -- @return A new instance of PlanGenerationStage
-function PlanGenerationStage()
-	return nil
-end
+setmetatable(PlanGenerationStage, {__call = function(self) return PlanGenerationStage end})
 

@@ -1,7 +1,7 @@
 TorpedoTemplate = {
 	acceleration = 0.0, -- float
 	bodyClass = "", -- string
-	damageType = Physical, -- DamageType
+	damageType = DamageType.Physical, -- DamageType
 	damageVelocityFactor = 0.0, -- float
 	durability = 0.0, -- float
 	energyDrain = true, -- bool
@@ -38,7 +38,5 @@ TorpedoTemplate = {
 
 -- This is the default constructor of TorpedoTemplate. No further arguments are required.
 -- @return A new instance of TorpedoTemplate
-function TorpedoTemplate()
-	return nil
-end
+setmetatable(TorpedoTemplate, {__call = function(self) return TorpedoTemplate end})
 

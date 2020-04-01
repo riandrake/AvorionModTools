@@ -5,7 +5,7 @@ UsableInventoryItem = {
 	favorite = true, -- bool
 	icon = "", -- string
 	iconColor = Color(), -- Color
-	itemType = Turret, -- [read-only] InventoryItemType
+	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
 	name = "", -- string
 	price = 0, -- int
 	rarity = Rarity(), -- Rarity
@@ -17,9 +17,7 @@ UsableInventoryItem = {
 }
 
 -- @return A new instance of UsableInventoryItem
-function UsableInventoryItem(script, rarity, values)
-	return nil
-end
+setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
 
 function UsableInventoryItem.__eq(other)
 	return true

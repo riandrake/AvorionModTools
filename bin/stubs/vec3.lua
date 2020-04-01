@@ -7,9 +7,7 @@ vec3 = {
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of vec3
-function vec3(x, y, z)
-	return nil
-end
+setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
 
 function vec3.__add(other)
 	return vec3()

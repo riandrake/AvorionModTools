@@ -3,9 +3,7 @@ NamedFormat = {
 }
 
 -- @return A new instance of NamedFormat
-function NamedFormat(string, MapType)
-	return nil
-end
+setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
 
 function NamedFormat.arguments()
 	return {"", PluralForm()}

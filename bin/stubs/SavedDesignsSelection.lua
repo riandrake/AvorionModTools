@@ -33,9 +33,7 @@ SavedDesignsSelection = {
 }
 
 -- @return A new instance of SavedDesignsSelection
-function SavedDesignsSelection(index)
-	return nil
-end
+setmetatable(SavedDesignsSelection, {__call = function(self, index) return SavedDesignsSelection end})
 
 function SavedDesignsSelection.getItem(key)
 	return UserObject()

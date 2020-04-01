@@ -7,9 +7,7 @@ Inventory = {
 
 -- This is the default constructor of Inventory. No further arguments are required.
 -- @return A new instance of Inventory
-function Inventory()
-	return nil
-end
+setmetatable(Inventory, {__call = function(self) return Inventory end})
 
 function Inventory.add(item, recent)
 	return 0

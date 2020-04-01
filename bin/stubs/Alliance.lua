@@ -23,9 +23,7 @@ Alliance = {
 }
 
 -- @return A new instance of Alliance
-function Alliance(index)
-	return nil
-end
+setmetatable(Alliance, {__call = function(self, index) return Alliance end})
 
 -- @return nothing
 function Alliance.addKnownSector(view)

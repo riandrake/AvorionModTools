@@ -3,9 +3,7 @@ QuadTree = {
 }
 
 -- @return A new instance of QuadTree
-function QuadTree(min, max, maxLevel)
-	return nil
-end
+setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
 
 function QuadTree.get(center, radius)
 	return nil

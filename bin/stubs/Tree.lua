@@ -20,9 +20,7 @@ Tree = {
 }
 
 -- @return A new instance of Tree
-function Tree(index)
-	return nil
-end
+setmetatable(Tree, {__call = function(self, index) return Tree end})
 
 function Tree.add(parent, caption, onSelected, hasContent)
 	return 0

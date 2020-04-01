@@ -27,9 +27,7 @@ BlockPlanBlock = {
 
 -- This is the default constructor of BlockPlanBlock. No further arguments are required.
 -- @return A new instance of BlockPlanBlock
-function BlockPlanBlock()
-	return nil
-end
+setmetatable(BlockPlanBlock, {__call = function(self) return BlockPlanBlock end})
 
 function BlockPlanBlock.getChildren()
 	return 0

@@ -18,9 +18,7 @@ UIArbitraryVerticalSplitter = {
 -- @param padding - margin
 -- @param splits - The x coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryVerticalSplitter
-function UIArbitraryVerticalSplitter(rect, padding, margin, splits)
-	return nil
-end
+setmetatable(UIArbitraryVerticalSplitter, {__call = function(self, rect, padding, margin, splits) return UIArbitraryVerticalSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

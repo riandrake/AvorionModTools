@@ -9,14 +9,12 @@ TurretDesignSelectionItem = {
 	loaded = true, -- [read-only] bool
 	path = "", -- string
 	readyForDeletion = true, -- bool
-	type = Unknown, -- [read-only] SavedDesignType
+	type = SavedDesignType.Unknown, -- [read-only] SavedDesignType
 	workshopUrl = "" -- [read-only] string
 }
 
 -- @return A new instance of TurretDesignSelectionItem
-function TurretDesignSelectionItem(path)
-	return nil
-end
+setmetatable(TurretDesignSelectionItem, {__call = function(self, path) return TurretDesignSelectionItem end})
 
 -- @return nothing
 function TurretDesignSelectionItem.refreshTexture()

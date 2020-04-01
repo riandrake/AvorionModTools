@@ -23,9 +23,7 @@ MultiLineTextBox = {
 }
 
 -- @return A new instance of MultiLineTextBox
-function MultiLineTextBox(index)
-	return nil
-end
+setmetatable(MultiLineTextBox, {__call = function(self, index) return MultiLineTextBox end})
 
 -- @return nothing
 function MultiLineTextBox.clear()

@@ -13,7 +13,5 @@ InventoryReferenceSelectionItem = {
 }
 
 -- @return A new instance of InventoryReferenceSelectionItem
-function InventoryReferenceSelectionItem()
-	return nil
-end
+setmetatable(InventoryReferenceSelectionItem, {__call = function(self) return InventoryReferenceSelectionItem end})
 

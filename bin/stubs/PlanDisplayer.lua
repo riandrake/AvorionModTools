@@ -25,9 +25,7 @@ PlanDisplayer = {
 }
 
 -- @return A new instance of PlanDisplayer
-function PlanDisplayer(index)
-	return nil
-end
+setmetatable(PlanDisplayer, {__call = function(self, index) return PlanDisplayer end})
 
 -- @return nothing
 function PlanDisplayer.setPlans(broken, intact)

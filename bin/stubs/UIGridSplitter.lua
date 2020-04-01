@@ -20,9 +20,7 @@ UIGridSplitter = {
 -- @param padding - margin
 -- @param horizontalTiles - verticalTiles
 -- @return A new instance of UIGridSplitter
-function UIGridSplitter(rect, padding, margin, horizontalTiles, verticalTiles)
-	return nil
-end
+setmetatable(UIGridSplitter, {__call = function(self, rect, padding, margin, horizontalTiles, verticalTiles) return UIGridSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

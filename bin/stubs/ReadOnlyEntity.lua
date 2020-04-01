@@ -75,9 +75,7 @@ ReadOnlyEntity = {
 
 -- @param id - The id of the entity, must be an id of an existing entity
 -- @return A new instance of ReadOnlyEntity
-function ReadOnlyEntity(id)
-	return nil
-end
+setmetatable(ReadOnlyEntity, {__call = function(self, id) return ReadOnlyEntity end})
 
 function ReadOnlyEntity.canAddCrew(number, profession, change)
 	return nil, nil, {0, ""}

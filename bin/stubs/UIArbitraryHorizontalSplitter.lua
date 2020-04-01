@@ -18,9 +18,7 @@ UIArbitraryHorizontalSplitter = {
 -- @param padding - margin
 -- @param splits - The y coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryHorizontalSplitter
-function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
-	return nil
-end
+setmetatable(UIArbitraryHorizontalSplitter, {__call = function(self, rect, padding, margin, splits) return UIArbitraryHorizontalSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

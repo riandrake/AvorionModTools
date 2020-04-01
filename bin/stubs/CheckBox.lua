@@ -26,9 +26,7 @@ CheckBox = {
 }
 
 -- @return A new instance of CheckBox
-function CheckBox(index)
-	return nil
-end
+setmetatable(CheckBox, {__call = function(self, index) return CheckBox end})
 
 -- @return nothing
 function CheckBox.setCheckedNoCallback(_in)

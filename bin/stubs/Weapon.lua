@@ -16,7 +16,7 @@ Weapon = {
 	civil = true, -- [read-only] bool
 	continuousBeam = true, -- bool
 	damage = 0.0, -- float
-	damageType = Physical, -- DamageType
+	damageType = DamageType.Physical, -- DamageType
 	deathExplosion = true, -- bool
 	dps = 0.0, -- [read-only] float
 	explosionRadius = 0.0, -- float
@@ -66,9 +66,7 @@ Weapon = {
 }
 
 -- @return A new instance of Weapon
-function Weapon()
-	return nil
-end
+setmetatable(Weapon, {__call = function(self) return Weapon end})
 
 function Weapon.propertiesEqual(other)
 	return true

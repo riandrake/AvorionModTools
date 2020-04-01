@@ -11,7 +11,5 @@ ControlUnitSeat = {
 
 -- This is the default constructor of ControlUnitSeat. No further arguments are required.
 -- @return A new instance of ControlUnitSeat
-function ControlUnitSeat()
-	return nil
-end
+setmetatable(ControlUnitSeat, {__call = function(self) return ControlUnitSeat end})
 

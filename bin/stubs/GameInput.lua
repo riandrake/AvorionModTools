@@ -5,9 +5,7 @@ GameInput = {
 
 -- This is the default constructor of GameInput. No further arguments are required.
 -- @return A new instance of GameInput
-function GameInput()
-	return nil
-end
+setmetatable(GameInput, {__call = function(self) return GameInput end})
 
 function GameInput.getActionName(action)
 	return ""

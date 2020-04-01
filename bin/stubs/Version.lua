@@ -8,9 +8,7 @@ Version = {
 }
 
 -- @return A new instance of Version
-function Version(majorVersion, minorVersion, patch)
-	return nil
-end
+setmetatable(Version, {__call = function(self, majorVersion, minorVersion, patch) return Version end})
 
 function Version.__eq(other)
 	return true

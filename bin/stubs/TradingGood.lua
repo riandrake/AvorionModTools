@@ -14,9 +14,7 @@ TradingGood = {
 }
 
 -- @return A new instance of TradingGood
-function TradingGood(name, plural, description, icon, price, size)
-	return nil
-end
+setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
 
 function TradingGood.__eq(other)
 	return true

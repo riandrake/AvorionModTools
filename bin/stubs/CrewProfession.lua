@@ -9,9 +9,7 @@ CrewProfession = {
 }
 
 -- @return A new instance of CrewProfession
-function CrewProfession(value)
-	return nil
-end
+setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
 
 function CrewProfession.name(amount)
 	return ""

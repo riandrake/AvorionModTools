@@ -16,9 +16,7 @@ UIVerticalLister = {
 -- @param rect - The rect in which the lister aligns its elenents
 -- @param padding - margin
 -- @return A new instance of UIVerticalLister
-function UIVerticalLister(rect, padding, margin)
-	return nil
-end
+setmetatable(UIVerticalLister, {__call = function(self, rect, padding, margin) return UIVerticalLister end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

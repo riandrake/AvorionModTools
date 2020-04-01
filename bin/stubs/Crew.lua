@@ -19,9 +19,7 @@ Crew = {
 
 -- This is the default constructor of Crew. No further arguments are required.
 -- @return A new instance of Crew
-function Crew()
-	return nil
-end
+setmetatable(Crew, {__call = function(self) return Crew end})
 
 -- @return nothing
 function Crew.add(amount, crewman)

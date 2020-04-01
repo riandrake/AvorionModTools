@@ -24,9 +24,7 @@ ComboBox = {
 }
 
 -- @return A new instance of ComboBox
-function ComboBox(index)
-	return nil
-end
+setmetatable(ComboBox, {__call = function(self, index) return ComboBox end})
 
 -- @return nothing
 function ComboBox.addEntry(entry, color)

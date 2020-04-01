@@ -1,7 +1,8 @@
+TooltipRenderer = {
+}
+
 -- @return A new instance of TooltipRenderer
-function TooltipRenderer(tooltip)
-	return nil
-end
+setmetatable(TooltipRenderer, {__call = function(self, tooltip) return TooltipRenderer end})
 
 -- @return nothing
 function TooltipRenderer.draw(vec2)

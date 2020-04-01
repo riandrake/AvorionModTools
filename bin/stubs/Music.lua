@@ -5,9 +5,7 @@ Music = {
 }
 
 -- @return A new instance of Music
-function Music()
-	return nil
-end
+setmetatable(Music, {__call = function(self) return Music end})
 
 -- @return nothing
 function Music.fadeOut(time)

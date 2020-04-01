@@ -23,9 +23,7 @@ UIVerticalSplitter = {
 -- @param padding - margin
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIVerticalSplitter
-function UIVerticalSplitter(rect, padding, margin, ratio)
-	return nil
-end
+setmetatable(UIVerticalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIVerticalSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

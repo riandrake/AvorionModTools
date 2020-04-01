@@ -3,9 +3,7 @@ ModManager = {
 }
 
 -- @return A new instance of ModManager
-function ModManager()
-	return nil
-end
+setmetatable(ModManager, {__call = function(self) return ModManager end})
 
 function ModManager.addMod(folder)
 	return nil

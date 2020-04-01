@@ -44,9 +44,7 @@ InventorySelection = {
 }
 
 -- @return A new instance of InventorySelection
-function InventorySelection(index)
-	return nil
-end
+setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
 
 -- @return nothing
 function InventorySelection.add(item, pos)

@@ -18,9 +18,7 @@ ReadOnlyCargoBay = {
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyCargoBay
-function ReadOnlyCargoBay(id)
-	return nil
-end
+setmetatable(ReadOnlyCargoBay, {__call = function(self, id) return ReadOnlyCargoBay end})
 
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.

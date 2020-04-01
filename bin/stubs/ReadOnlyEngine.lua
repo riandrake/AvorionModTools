@@ -13,7 +13,5 @@ ReadOnlyEngine = {
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyEngine
-function ReadOnlyEngine(id)
-	return nil
-end
+setmetatable(ReadOnlyEngine, {__call = function(self, id) return ReadOnlyEngine end})
 

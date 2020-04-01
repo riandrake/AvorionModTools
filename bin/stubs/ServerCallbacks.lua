@@ -1,3 +1,6 @@
+Server = {
+}
+
 -- @callback
 -- Executed whenever the player sent a chat message to the server. Only called if the chat message is valid and the player doesn't have a chat ban.
 -- @param playerIndex - Index of the player

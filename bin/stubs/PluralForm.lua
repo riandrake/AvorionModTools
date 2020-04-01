@@ -7,7 +7,5 @@ PluralForm = {
 }
 
 -- @return A new instance of PluralForm
-function PluralForm(singular, plural, contextOrAmount, amount)
-	return nil
-end
+setmetatable(PluralForm, {__call = function(self, singular, plural, contextOrAmount, amount) return PluralForm end})
 

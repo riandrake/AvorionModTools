@@ -4,9 +4,7 @@ Format = {
 }
 
 -- @return A new instance of Format
-function Format(text, args)
-	return nil
-end
+setmetatable(Format, {__call = function(self, text, args) return Format end})
 
 -- @return nothing
 function Format.add()

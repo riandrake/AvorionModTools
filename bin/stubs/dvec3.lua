@@ -7,9 +7,7 @@ dvec3 = {
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of dvec3
-function dvec3(x, y, z)
-	return nil
-end
+setmetatable(dvec3, {__call = function(self, x, y, z) return dvec3 end})
 
 function dvec3.__add(other)
 	return dvec3()

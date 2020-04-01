@@ -8,9 +8,7 @@ ShipSystem = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ShipSystem
-function ShipSystem(id)
-	return nil
-end
+setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
 
 function ShipSystem.addUpgrade(upgrade, permanent)
 	return 0

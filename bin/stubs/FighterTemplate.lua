@@ -5,7 +5,7 @@ FighterTemplate = {
 	averageTech = 0, -- [read-only] int
 	baseEnergyPerSecond = 0.0, -- float
 	bestEfficiency = 0.0, -- [read-only] float
-	category = Armed, -- [read-only] WeaponCategory
+	category = WeaponCategory.Armed, -- [read-only] WeaponCategory
 	civil = true, -- [read-only] bool
 	continuousBeam = true, -- [read-only] bool
 	coolingRate = 0.0, -- float
@@ -63,7 +63,7 @@ FighterTemplate = {
 	stoneRawEfficiency = 0.0, -- [read-only] float
 	stoneRefinedEfficiency = 0.0, -- [read-only] float
 	turningSpeed = 0.0, -- float
-	type = Fighter, -- FighterType
+	type = FighterType.Fighter, -- FighterType
 	volume = 0.0, -- [read-only] float
 	weaponIcon = "", -- [read-only] string
 	weaponName = "", -- [read-only] string
@@ -72,9 +72,7 @@ FighterTemplate = {
 
 -- This is the default constructor of FighterTemplate. No further arguments are required.
 -- @return A new instance of FighterTemplate
-function FighterTemplate()
-	return nil
-end
+setmetatable(FighterTemplate, {__call = function(self) return FighterTemplate end})
 
 -- @return nothing
 function FighterTemplate.addDescription(str, value)

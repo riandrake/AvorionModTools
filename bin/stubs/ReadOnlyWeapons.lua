@@ -4,7 +4,7 @@ ReadOnlyWeapons = {
 	averageTech = 0, -- [read-only] int
 	baseEnergyPerSecond = 0.0, -- [read-only] float
 	bestEfficiency = 0.0, -- [read-only] float
-	category = Armed, -- [read-only] WeaponCategory
+	category = WeaponCategory.Armed, -- [read-only] WeaponCategory
 	civil = true, -- [read-only] bool
 	continuousBeam = true, -- [read-only] bool
 	coolingRate = 0.0, -- [read-only] float
@@ -61,7 +61,5 @@ ReadOnlyWeapons = {
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyWeapons
-function ReadOnlyWeapons(id)
-	return nil
-end
+setmetatable(ReadOnlyWeapons, {__call = function(self, id) return ReadOnlyWeapons end})
 

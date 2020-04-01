@@ -74,9 +74,7 @@ EntityDescriptor = {
 }
 
 -- @return A new instance of EntityDescriptor
-function EntityDescriptor()
-	return nil
-end
+setmetatable(EntityDescriptor, {__call = function(self) return EntityDescriptor end})
 
 -- @return nothing
 function EntityDescriptor.addComponent(type)

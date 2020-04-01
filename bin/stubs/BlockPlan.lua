@@ -12,9 +12,7 @@ BlockPlan = {
 
 -- This is the default constructor of BlockPlan. No further arguments are required.
 -- @return A new instance of BlockPlan
-function BlockPlan()
-	return nil
-end
+setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
 
 -- Add a new block to an existing plan.
 -- @param position - The position of the new

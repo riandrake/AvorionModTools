@@ -19,9 +19,7 @@ Faction = {
 }
 
 -- @return A new instance of Faction
-function Faction(index)
-	return nil
-end
+setmetatable(Faction, {__call = function(self, index) return Faction end})
 
 -- @return nothing
 function Faction.addPlanStyle(name, style)

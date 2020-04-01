@@ -21,7 +21,5 @@ TooltipLine = {
 }
 
 -- @return A new instance of TooltipLine
-function TooltipLine(height, fontSize)
-	return nil
-end
+setmetatable(TooltipLine, {__call = function(self, height, fontSize) return TooltipLine end})
 

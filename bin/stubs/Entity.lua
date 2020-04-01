@@ -75,9 +75,7 @@ Entity = {
 
 -- @param id - The id of the entity, must be an id of an existing entity
 -- @return A new instance of Entity
-function Entity(id)
-	return nil
-end
+setmetatable(Entity, {__call = function(self, id) return Entity end})
 
 -- Adds a flat bias for stat of type type. This bias will be added to stat after multipliers are considered.
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew

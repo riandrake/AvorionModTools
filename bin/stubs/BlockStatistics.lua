@@ -30,9 +30,7 @@ BlockStatistics = {
 
 -- This is the default constructor of BlockStatistics. No further arguments are required.
 -- @return A new instance of BlockStatistics
-function BlockStatistics()
-	return nil
-end
+setmetatable(BlockStatistics, {__call = function(self) return BlockStatistics end})
 
 function BlockStatistics.getBlockEnergyDrain(blockIndex)
 	return 0.0

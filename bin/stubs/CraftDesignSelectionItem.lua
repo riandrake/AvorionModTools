@@ -14,7 +14,5 @@ CraftDesignSelectionItem = {
 }
 
 -- @return A new instance of CraftDesignSelectionItem
-function CraftDesignSelectionItem(path)
-	return nil
-end
+setmetatable(CraftDesignSelectionItem, {__call = function(self, path) return CraftDesignSelectionItem end})
 

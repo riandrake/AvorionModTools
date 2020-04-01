@@ -4,9 +4,7 @@ Language = {
 }
 
 -- @return A new instance of Language
-function Language(seed)
-	return nil
-end
+setmetatable(Language, {__call = function(self, seed) return Language end})
 
 function Language.getConsonantSound()
 	return ""

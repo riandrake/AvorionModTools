@@ -5,9 +5,7 @@ PlanMesh = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of PlanMesh
-function PlanMesh(id)
-	return nil
-end
+setmetatable(PlanMesh, {__call = function(self, id) return PlanMesh end})
 
 -- @return nothing
 function PlanMesh.disableMesh(shading, material)

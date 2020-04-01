@@ -1,7 +1,8 @@
+Achievements = {
+}
+
 -- @return A new instance of Achievements
-function Achievements()
-	return nil
-end
+setmetatable(Achievements, {__call = function(self) return Achievements end})
 
 -- @return nothing
 function Achievements.unlockProvokedSwoks()

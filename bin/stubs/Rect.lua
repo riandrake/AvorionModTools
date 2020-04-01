@@ -14,7 +14,5 @@ Rect = {
 }
 
 -- @return A new instance of Rect
-function Rect(a, b, c, d)
-	return nil
-end
+setmetatable(Rect, {__call = function(self, a, b, c, d) return Rect end})
 

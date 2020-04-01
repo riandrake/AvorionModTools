@@ -19,9 +19,7 @@ Line = {
 }
 
 -- @return A new instance of Line
-function Line(index)
-	return nil
-end
+setmetatable(Line, {__call = function(self, index) return Line end})
 
 -- Inherited from UIElement
 -- @return nothing

@@ -2,7 +2,7 @@ GameSettings = {
 	bigWreckageDespawnTime = 0.0, -- float
 	collisionDamage = 0.0, -- float
 	devMode = true, -- bool
-	difficulty = Lowest, -- Difficulty
+	difficulty = Difficulty.Lowest, -- Difficulty
 	infiniteResources = true, -- bool
 	maximumBlocksPerCraft = 0, -- int
 	maximumFightersPerSectorAndPlayer = 0, -- int
@@ -20,9 +20,7 @@ GameSettings = {
 
 -- This is the default constructor of GameSettings. No further arguments are required.
 -- @return A new instance of GameSettings
-function GameSettings()
-	return nil
-end
+setmetatable(GameSettings, {__call = function(self) return GameSettings end})
 
 -- @return nothing
 function GameSettings.activate()

@@ -10,9 +10,7 @@ SoundSource = {
 
 -- Creates a new sound source.
 -- @return A new instance of SoundSource
-function SoundSource(soundName, position, radius)
-	return nil
-end
+setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
 
 -- @return nothing
 function SoundSource.play()

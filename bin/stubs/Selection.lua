@@ -36,9 +36,7 @@ Selection = {
 }
 
 -- @return A new instance of Selection
-function Selection(index)
-	return nil
-end
+setmetatable(Selection, {__call = function(self, index) return Selection end})
 
 -- @return nothing
 function Selection.add(item, pos)

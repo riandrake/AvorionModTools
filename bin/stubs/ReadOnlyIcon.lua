@@ -9,7 +9,5 @@ ReadOnlyIcon = {
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyIcon
-function ReadOnlyIcon(id)
-	return nil
-end
+setmetatable(ReadOnlyIcon, {__call = function(self, id) return ReadOnlyIcon end})
 

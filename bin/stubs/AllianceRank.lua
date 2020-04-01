@@ -5,9 +5,7 @@ AllianceRank = {
 
 -- This is the default constructor of AllianceRank. No further arguments are required.
 -- @return A new instance of AllianceRank
-function AllianceRank()
-	return nil
-end
+setmetatable(AllianceRank, {__call = function(self) return AllianceRank end})
 
 function AllianceRank.getPrivileges()
 	return 0

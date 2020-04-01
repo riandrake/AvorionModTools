@@ -24,9 +24,7 @@ ValueComboBox = {
 }
 
 -- @return A new instance of ValueComboBox
-function ValueComboBox(index)
-	return nil
-end
+setmetatable(ValueComboBox, {__call = function(self, index) return ValueComboBox end})
 
 -- @return nothing
 function ValueComboBox.addEntry(value, entry, color)

@@ -7,9 +7,7 @@ Sector = {
 }
 
 -- @return A new instance of Sector
-function Sector()
-	return nil
-end
+setmetatable(Sector, {__call = function(self) return Sector end})
 
 function Sector.addScript()
 	return 0

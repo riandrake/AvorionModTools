@@ -5,7 +5,5 @@ PlayerId = {
 
 -- This is the default constructor of PlayerId. No further arguments are required.
 -- @return A new instance of PlayerId
-function PlayerId()
-	return nil
-end
+setmetatable(PlayerId, {__call = function(self) return PlayerId end})
 

@@ -15,9 +15,7 @@ SectorView = {
 
 -- This is the default constructor of SectorView. No further arguments are required.
 -- @return A new instance of SectorView
-function SectorView()
-	return nil
-end
+setmetatable(SectorView, {__call = function(self) return SectorView end})
 
 function SectorView.calculateInfluence(stations)
 	return 0.0

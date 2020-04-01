@@ -5,9 +5,7 @@ EntityTooltip = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of EntityTooltip
-function EntityTooltip(id)
-	return nil
-end
+setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip end})
 
 -- @return nothing
 function EntityTooltip.setDisplayTooltip(i, description, str)

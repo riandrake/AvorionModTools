@@ -4,9 +4,7 @@ TurretDesign = {
 
 -- This is the default constructor of TurretDesign. No further arguments are required.
 -- @return A new instance of TurretDesign
-function TurretDesign()
-	return nil
-end
+setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
 
 function TurretDesign.getBarrels()
 	return TurretDesignPart()

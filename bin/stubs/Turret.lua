@@ -26,9 +26,7 @@ Turret = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Turret
-function Turret(id)
-	return nil
-end
+setmetatable(Turret, {__call = function(self, id) return Turret end})
 
 -- @return nothing
 function Turret.consumeEnergyForShot(amount)

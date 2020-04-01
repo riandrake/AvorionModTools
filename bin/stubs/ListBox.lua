@@ -32,9 +32,7 @@ ListBox = {
 }
 
 -- @return A new instance of ListBox
-function ListBox(index)
-	return nil
-end
+setmetatable(ListBox, {__call = function(self, index) return ListBox end})
 
 -- @return nothing
 function ListBox.addEntry(str, value)

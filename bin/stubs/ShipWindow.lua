@@ -19,9 +19,7 @@ ShipWindow = {
 }
 
 -- @return A new instance of ShipWindow
-function ShipWindow()
-	return nil
-end
+setmetatable(ShipWindow, {__call = function(self) return ShipWindow end})
 
 -- @return nothing
 function ShipWindow.activateAllTabs()

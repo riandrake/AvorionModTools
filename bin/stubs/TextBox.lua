@@ -32,9 +32,7 @@ TextBox = {
 }
 
 -- @return A new instance of TextBox
-function TextBox(index)
-	return nil
-end
+setmetatable(TextBox, {__call = function(self, index) return TextBox end})
 
 -- @return nothing
 function TextBox.clear()

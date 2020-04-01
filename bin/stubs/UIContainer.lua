@@ -18,9 +18,7 @@ UIContainer = {
 }
 
 -- @return A new instance of UIContainer
-function UIContainer(index)
-	return nil
-end
+setmetatable(UIContainer, {__call = function(self, index) return UIContainer end})
 
 -- @return nothing
 function UIContainer.clear()

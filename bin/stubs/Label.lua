@@ -30,9 +30,7 @@ Label = {
 }
 
 -- @return A new instance of Label
-function Label(index)
-	return nil
-end
+setmetatable(Label, {__call = function(self, index) return Label end})
 
 -- @return nothing
 function Label.setBottomAligned()

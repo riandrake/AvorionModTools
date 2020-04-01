@@ -23,9 +23,7 @@ UIHorizontalSplitter = {
 -- @param padding - margin
 -- @param ratio - The ratio of the split rects' sizes
 -- @return A new instance of UIHorizontalSplitter
-function UIHorizontalSplitter(rect, padding, margin, ratio)
-	return nil
-end
+setmetatable(UIHorizontalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIHorizontalSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

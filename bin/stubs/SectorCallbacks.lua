@@ -1,3 +1,6 @@
+Sector = {
+}
+
 -- @callback
 -- Executed whenever the AI state of an entity changes
 -- @param entityId - The id of the entity

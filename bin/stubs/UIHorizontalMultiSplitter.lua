@@ -20,9 +20,7 @@ UIHorizontalMultiSplitter = {
 -- @param padding - margin
 -- @param splits - The number of splits performed
 -- @return A new instance of UIHorizontalMultiSplitter
-function UIHorizontalMultiSplitter(rect, padding, margin, splits)
-	return nil
-end
+setmetatable(UIHorizontalMultiSplitter, {__call = function(self, rect, padding, margin, splits) return UIHorizontalMultiSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

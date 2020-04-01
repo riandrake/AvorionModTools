@@ -11,9 +11,7 @@ Mail = {
 
 -- This is the default constructor of Mail. No further arguments are required.
 -- @return A new instance of Mail
-function Mail()
-	return nil
-end
+setmetatable(Mail, {__call = function(self) return Mail end})
 
 -- @return nothing
 function Mail.addTurret(turret)

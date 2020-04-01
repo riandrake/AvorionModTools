@@ -5,7 +5,7 @@ TurretTemplate = {
 	averageTech = 0, -- [read-only] int
 	baseEnergyPerSecond = 0.0, -- float
 	bestEfficiency = 0.0, -- [read-only] float
-	category = Armed, -- [read-only] WeaponCategory
+	category = WeaponCategory.Armed, -- [read-only] WeaponCategory
 	civil = true, -- [read-only] bool
 	coaxial = true, -- bool
 	continuousBeam = true, -- [read-only] bool
@@ -69,9 +69,7 @@ TurretTemplate = {
 }
 
 -- @return A new instance of TurretTemplate
-function TurretTemplate(other)
-	return nil
-end
+setmetatable(TurretTemplate, {__call = function(self, other) return TurretTemplate end})
 
 function TurretTemplate.__eq(other)
 	return true

@@ -5,9 +5,7 @@ Ray = {
 }
 
 -- @return A new instance of Ray
-function Ray(pos, size)
-	return nil
-end
+setmetatable(Ray, {__call = function(self, pos, size) return Ray end})
 
 function Ray.distanceToPoint(point)
 	return 0.0

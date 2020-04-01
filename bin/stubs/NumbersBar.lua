@@ -18,9 +18,7 @@ NumbersBar = {
 }
 
 -- @return A new instance of NumbersBar
-function NumbersBar(index)
-	return nil
-end
+setmetatable(NumbersBar, {__call = function(self, index) return NumbersBar end})
 
 -- @return nothing
 function NumbersBar.addEntry(num, name, color)

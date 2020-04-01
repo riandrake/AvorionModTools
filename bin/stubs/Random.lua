@@ -1,7 +1,8 @@
+Random = {
+}
+
 -- @return A new instance of Random
-function Random(seed)
-	return nil
-end
+setmetatable(Random, {__call = function(self, seed) return Random end})
 
 function Random.createSeed()
 	return Seed()

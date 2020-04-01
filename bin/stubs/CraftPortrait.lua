@@ -23,9 +23,7 @@ CraftPortrait = {
 }
 
 -- @return A new instance of CraftPortrait
-function CraftPortrait(index)
-	return nil
-end
+setmetatable(CraftPortrait, {__call = function(self, index) return CraftPortrait end})
 
 -- Inherited from UIElement
 -- @return nothing

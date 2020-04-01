@@ -5,7 +5,5 @@ CrewMan = {
 }
 
 -- @return A new instance of CrewMan
-function CrewMan(profession, specialist, level)
-	return nil
-end
+setmetatable(CrewMan, {__call = function(self, profession, specialist, level) return CrewMan end})
 

@@ -23,7 +23,5 @@ LaserFX = {
 }
 
 -- @return A new instance of LaserFX
-function LaserFX(key)
-	return nil
-end
+setmetatable(LaserFX, {__call = function(self, key) return LaserFX end})
 

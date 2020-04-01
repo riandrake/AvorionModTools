@@ -17,9 +17,7 @@ Plan = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Plan
-function Plan(id)
-	return nil
-end
+setmetatable(Plan, {__call = function(self, id) return Plan end})
 
 -- Add a new block to an existing plan.
 -- @param position - The position of the new

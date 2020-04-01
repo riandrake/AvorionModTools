@@ -19,9 +19,7 @@ AllianceTab = {
 }
 
 -- @return A new instance of AllianceTab
-function AllianceTab()
-	return nil
-end
+setmetatable(AllianceTab, {__call = function(self) return AllianceTab end})
 
 -- @return nothing
 function AllianceTab.activateAllTabs()

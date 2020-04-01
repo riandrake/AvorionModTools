@@ -19,9 +19,7 @@ Frame = {
 }
 
 -- @return A new instance of Frame
-function Frame(index)
-	return nil
-end
+setmetatable(Frame, {__call = function(self, index) return Frame end})
 
 -- Inherited from UIElement
 -- @return nothing

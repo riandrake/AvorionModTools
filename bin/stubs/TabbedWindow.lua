@@ -19,9 +19,7 @@ TabbedWindow = {
 }
 
 -- @return A new instance of TabbedWindow
-function TabbedWindow(index)
-	return nil
-end
+setmetatable(TabbedWindow, {__call = function(self, index) return TabbedWindow end})
 
 -- @return nothing
 function TabbedWindow.activateAllTabs()

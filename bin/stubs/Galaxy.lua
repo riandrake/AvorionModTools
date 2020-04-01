@@ -1,7 +1,8 @@
+Galaxy = {
+}
+
 -- @return A new instance of Galaxy
-function Galaxy()
-	return nil
-end
+setmetatable(Galaxy, {__call = function(self) return Galaxy end})
 
 function Galaxy.addScript()
 	return nil
@@ -69,7 +70,7 @@ function Galaxy.getFactionRelations(a, b)
 end
 
 function Galaxy.getFactionRelationStatus(a, b)
-	return War
+	return RelationStatus.War
 end
 
 -- Returns a table containing all loaded sectors. Returned table has format {{x = 12, y = 3}, {x = 4, y = 56}, {x = 78, y = 9}, ...}

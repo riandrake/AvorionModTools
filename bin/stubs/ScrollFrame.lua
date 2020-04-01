@@ -21,9 +21,7 @@ ScrollFrame = {
 }
 
 -- @return A new instance of ScrollFrame
-function ScrollFrame(index)
-	return nil
-end
+setmetatable(ScrollFrame, {__call = function(self, index) return ScrollFrame end})
 
 -- @return nothing
 function ScrollFrame.scroll(numSteps)

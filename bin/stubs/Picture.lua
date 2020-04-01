@@ -23,9 +23,7 @@ Picture = {
 }
 
 -- @return A new instance of Picture
-function Picture(index)
-	return nil
-end
+setmetatable(Picture, {__call = function(self, index) return Picture end})
 
 -- @return nothing
 function Picture.clear(color)

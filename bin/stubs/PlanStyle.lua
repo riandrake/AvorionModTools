@@ -9,9 +9,7 @@ PlanStyle = {
 }
 
 -- @return A new instance of PlanStyle
-function PlanStyle()
-	return nil
-end
+setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
 
 -- Adds a new stage to the style.
 -- @return nothing

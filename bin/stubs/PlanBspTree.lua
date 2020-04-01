@@ -1,7 +1,8 @@
+PlanBspTree = {
+}
+
 -- @return A new instance of PlanBspTree
-function PlanBspTree(plan)
-	return nil
-end
+setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
 
 function PlanBspTree.getBlocksByBox(box)
 	return 0

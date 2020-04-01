@@ -1,8 +1,9 @@
+Keyboard = {
+}
+
 -- This is the default constructor of Keyboard. No further arguments are required.
 -- @return A new instance of Keyboard
-function Keyboard()
-	return nil
-end
+setmetatable(Keyboard, {__call = function(self) return Keyboard end})
 
 function Keyboard.keyDown(value)
 	return true

@@ -10,9 +10,7 @@ Relation = {
 
 -- This is the default constructor of Relation. No further arguments are required.
 -- @return A new instance of Relation
-function Relation()
-	return nil
-end
+setmetatable(Relation, {__call = function(self) return Relation end})
 
 function Relation.getSegments()
 	return stdvector()

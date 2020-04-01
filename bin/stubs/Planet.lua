@@ -4,7 +4,5 @@ Planet = {
 }
 
 -- @return A new instance of Planet
-function Planet(index)
-	return nil
-end
+setmetatable(Planet, {__call = function(self, index) return Planet end})
 

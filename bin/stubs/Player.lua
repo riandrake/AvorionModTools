@@ -31,9 +31,7 @@ Player = {
 }
 
 -- @return A new instance of Player
-function Player(index)
-	return nil
-end
+setmetatable(Player, {__call = function(self, index) return Player end})
 
 -- @return nothing
 function Player.addKnownSector(view)

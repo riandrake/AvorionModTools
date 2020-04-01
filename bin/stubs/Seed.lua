@@ -4,9 +4,7 @@ Seed = {
 }
 
 -- @return A new instance of Seed
-function Seed(_in)
-	return nil
-end
+setmetatable(Seed, {__call = function(self, _in) return Seed end})
 
 function Seed.__add(other)
 	return Seed()

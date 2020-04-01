@@ -4,7 +4,7 @@ Weapons = {
 	averageTech = 0, -- [read-only] int
 	baseEnergyPerSecond = 0.0, -- float
 	bestEfficiency = 0.0, -- [read-only] float
-	category = Armed, -- [read-only] WeaponCategory
+	category = WeaponCategory.Armed, -- [read-only] WeaponCategory
 	civil = true, -- [read-only] bool
 	continuousBeam = true, -- [read-only] bool
 	coolingRate = 0.0, -- float
@@ -61,9 +61,7 @@ Weapons = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Weapons
-function Weapons(id)
-	return nil
-end
+setmetatable(Weapons, {__call = function(self, id) return Weapons end})
 
 -- @return nothing
 function Weapons.addDescription(str, value)

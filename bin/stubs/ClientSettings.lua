@@ -61,7 +61,5 @@ ClientSettings = {
 }
 
 -- @return A new instance of ClientSettings
-function ClientSettings()
-	return nil
-end
+setmetatable(ClientSettings, {__call = function(self) return ClientSettings end})
 

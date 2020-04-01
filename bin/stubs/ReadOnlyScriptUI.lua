@@ -5,7 +5,5 @@ ReadOnlyScriptUI = {
 
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyScriptUI
-function ReadOnlyScriptUI(id)
-	return nil
-end
+setmetatable(ReadOnlyScriptUI, {__call = function(self, id) return ReadOnlyScriptUI end})
 

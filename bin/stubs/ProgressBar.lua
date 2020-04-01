@@ -20,9 +20,7 @@ ProgressBar = {
 }
 
 -- @return A new instance of ProgressBar
-function ProgressBar(index)
-	return nil
-end
+setmetatable(ProgressBar, {__call = function(self, index) return ProgressBar end})
 
 -- Inherited from UIElement
 -- @return nothing

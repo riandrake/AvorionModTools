@@ -4,9 +4,7 @@ Profiler = {
 }
 
 -- @return A new instance of Profiler
-function Profiler(str)
-	return nil
-end
+setmetatable(Profiler, {__call = function(self, str) return Profiler end})
 
 function Profiler.__tostring()
 	return ""

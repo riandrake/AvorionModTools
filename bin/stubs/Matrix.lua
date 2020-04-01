@@ -9,9 +9,7 @@ Matrix = {
 
 -- This is the default constructor of Matrix. No further arguments are required.
 -- @return A new instance of Matrix
-function Matrix()
-	return nil
-end
+setmetatable(Matrix, {__call = function(self) return Matrix end})
 
 function Matrix.__mul(m)
 	return Matrix()

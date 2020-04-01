@@ -3,9 +3,7 @@ PlayerWindow = {
 }
 
 -- @return A new instance of PlayerWindow
-function PlayerWindow()
-	return nil
-end
+setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
 
 -- @return nothing
 function PlayerWindow.activateAllTabs()

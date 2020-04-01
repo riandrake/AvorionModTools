@@ -24,9 +24,7 @@ TextField = {
 }
 
 -- @return A new instance of TextField
-function TextField(index)
-	return nil
-end
+setmetatable(TextField, {__call = function(self, index) return TextField end})
 
 -- Inherited from UIElement
 -- @return nothing

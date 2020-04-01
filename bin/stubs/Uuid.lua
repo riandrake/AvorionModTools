@@ -6,9 +6,7 @@ Uuid = {
 }
 
 -- @return A new instance of Uuid
-function Uuid(uuid)
-	return nil
-end
+setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
 
 function Uuid.__eq(other)
 	return true

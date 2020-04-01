@@ -26,9 +26,7 @@ Hud = {
 }
 
 -- @return A new instance of Hud
-function Hud()
-	return nil
-end
+setmetatable(Hud, {__call = function(self) return Hud end})
 
 function Hud.createContainer(rect)
 	return UIContainer()

@@ -10,7 +10,5 @@ PlanetSpecifics = {
 
 -- This is the default constructor of PlanetSpecifics. No further arguments are required.
 -- @return A new instance of PlanetSpecifics
-function PlanetSpecifics()
-	return nil
-end
+setmetatable(PlanetSpecifics, {__call = function(self) return PlanetSpecifics end})
 

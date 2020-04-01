@@ -4,7 +4,7 @@ VanillaInventoryItem = {
 	favorite = true, -- bool
 	icon = "", -- string
 	iconColor = Color(), -- Color
-	itemType = Turret, -- [read-only] InventoryItemType
+	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
 	name = "", -- string
 	price = 0, -- int
 	rarity = Rarity(), -- Rarity
@@ -16,9 +16,7 @@ VanillaInventoryItem = {
 
 -- This is the default constructor of VanillaInventoryItem. No further arguments are required.
 -- @return A new instance of VanillaInventoryItem
-function VanillaInventoryItem()
-	return nil
-end
+setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
 
 function VanillaInventoryItem.__eq(other)
 	return true

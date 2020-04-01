@@ -16,9 +16,7 @@ UIHorizontalLister = {
 -- @param rect - The rect in which the lister aligns its elenents
 -- @param padding - margin
 -- @return A new instance of UIHorizontalLister
-function UIHorizontalLister(rect, padding, margin)
-	return nil
-end
+setmetatable(UIHorizontalLister, {__call = function(self, rect, padding, margin) return UIHorizontalLister end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

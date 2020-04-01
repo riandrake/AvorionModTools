@@ -8,9 +8,7 @@ ivec4 = {
 -- @param x - y
 -- @param z - w
 -- @return A new instance of ivec4
-function ivec4(x, y, z, w)
-	return nil
-end
+setmetatable(ivec4, {__call = function(self, x, y, z, w) return ivec4 end})
 
 function ivec4.__add(other)
 	return ivec4()

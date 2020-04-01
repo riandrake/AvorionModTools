@@ -19,9 +19,7 @@ UIRect = {
 }
 
 -- @return A new instance of UIRect
-function UIRect(index)
-	return nil
-end
+setmetatable(UIRect, {__call = function(self, index) return UIRect end})
 
 -- Inherited from UIElement
 -- @return nothing

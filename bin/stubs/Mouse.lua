@@ -4,9 +4,7 @@ Mouse = {
 
 -- This is the default constructor of Mouse. No further arguments are required.
 -- @return A new instance of Mouse
-function Mouse()
-	return nil
-end
+setmetatable(Mouse, {__call = function(self) return Mouse end})
 
 function Mouse.mouseDown(button)
 	return true

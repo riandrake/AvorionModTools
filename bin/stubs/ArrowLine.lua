@@ -21,9 +21,7 @@ ArrowLine = {
 }
 
 -- @return A new instance of ArrowLine
-function ArrowLine(index)
-	return nil
-end
+setmetatable(ArrowLine, {__call = function(self, index) return ArrowLine end})
 
 -- Inherited from UIElement
 -- @return nothing

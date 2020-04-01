@@ -1,3 +1,6 @@
+Galaxy = {
+}
+
 -- @callback
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created

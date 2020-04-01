@@ -1,7 +1,7 @@
 SystemUpgradeTemplate = {
 	favorite = true, -- bool
 	icon = "", -- [read-only] string
-	itemType = Turret, -- [read-only] InventoryItemType
+	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
 	name = "", -- [read-only] string
 	price = 0, -- [read-only] int
 	rarity = Rarity(), -- Rarity
@@ -14,9 +14,7 @@ SystemUpgradeTemplate = {
 }
 
 -- @return A new instance of SystemUpgradeTemplate
-function SystemUpgradeTemplate(script, rarity, seed)
-	return nil
-end
+setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
 
 function SystemUpgradeTemplate.__eq(other)
 	return true

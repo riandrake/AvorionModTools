@@ -5,9 +5,7 @@ CraftDesign = {
 
 -- This is the default constructor of CraftDesign. No further arguments are required.
 -- @return A new instance of CraftDesign
-function CraftDesign()
-	return nil
-end
+setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
 
 function CraftDesign.getMovePlan()
 	return BlockPlan()

@@ -6,9 +6,7 @@ Rarity = {
 }
 
 -- @return A new instance of Rarity
-function Rarity(value)
-	return nil
-end
+setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
 function Rarity.__eq(other)
 	return true

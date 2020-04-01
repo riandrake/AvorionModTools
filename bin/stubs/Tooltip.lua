@@ -5,9 +5,7 @@ Tooltip = {
 
 -- This is the default constructor of Tooltip. No further arguments are required.
 -- @return A new instance of Tooltip
-function Tooltip()
-	return nil
-end
+setmetatable(Tooltip, {__call = function(self) return Tooltip end})
 
 -- @return nothing
 function Tooltip.addLine(line)

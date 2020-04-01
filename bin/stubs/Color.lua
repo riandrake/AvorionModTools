@@ -10,9 +10,7 @@ Color = {
 
 -- This is the default constructor of Color. No further arguments are required.
 -- @return A new instance of Color
-function Color()
-	return nil
-end
+setmetatable(Color, {__call = function(self) return Color end})
 
 function Color.__tostring()
 	return ""

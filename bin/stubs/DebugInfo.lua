@@ -1,7 +1,8 @@
+DebugInfo = {
+}
+
 -- @return A new instance of DebugInfo
-function DebugInfo()
-	return nil
-end
+setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
 
 function DebugInfo.getEndingLog()
 	return ""

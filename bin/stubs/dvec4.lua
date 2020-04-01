@@ -8,9 +8,7 @@ dvec4 = {
 -- @param x - y
 -- @param z - w
 -- @return A new instance of dvec4
-function dvec4(x, y, z, w)
-	return nil
-end
+setmetatable(dvec4, {__call = function(self, x, y, z, w) return dvec4 end})
 
 function dvec4.__add(other)
 	return dvec4()

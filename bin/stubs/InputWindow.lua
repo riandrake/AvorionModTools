@@ -32,9 +32,7 @@ InputWindow = {
 }
 
 -- @return A new instance of InputWindow
-function InputWindow(index)
-	return nil
-end
+setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
 
 -- @return nothing
 function InputWindow.show(caption)

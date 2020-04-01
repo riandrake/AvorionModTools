@@ -17,7 +17,5 @@ SelectionItem = {
 }
 
 -- @return A new instance of SelectionItem
-function SelectionItem()
-	return nil
-end
+setmetatable(SelectionItem, {__call = function(self) return SelectionItem end})
 

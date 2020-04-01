@@ -7,9 +7,7 @@ HighResolutionTimer = {
 }
 
 -- @return A new instance of HighResolutionTimer
-function HighResolutionTimer()
-	return nil
-end
+setmetatable(HighResolutionTimer, {__call = function(self) return HighResolutionTimer end})
 
 -- @return nothing
 function HighResolutionTimer.reset()

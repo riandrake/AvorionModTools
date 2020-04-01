@@ -18,9 +18,7 @@ UIElement = {
 }
 
 -- @return A new instance of UIElement
-function UIElement(index)
-	return nil
-end
+setmetatable(UIElement, {__call = function(self, index) return UIElement end})
 
 -- @return nothing
 function UIElement.hide()

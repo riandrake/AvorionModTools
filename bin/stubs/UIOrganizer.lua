@@ -17,9 +17,7 @@ UIOrganizer = {
 -- @param a - Either a Rect and b is nil, or a vec2 and b is a vec2, too
 -- @param b - Nil if a is a Rect, or a vec2 if a is a vec2
 -- @return A new instance of UIOrganizer
-function UIOrganizer(a, b)
-	return nil
-end
+setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

@@ -6,7 +6,5 @@ AllianceMember = {
 
 -- This is the default constructor of AllianceMember. No further arguments are required.
 -- @return A new instance of AllianceMember
-function AllianceMember()
-	return nil
-end
+setmetatable(AllianceMember, {__call = function(self) return AllianceMember end})
 

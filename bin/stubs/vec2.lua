@@ -5,9 +5,7 @@ vec2 = {
 
 -- @param x - y
 -- @return A new instance of vec2
-function vec2(x, y)
-	return nil
-end
+setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
 
 function vec2.__add(other)
 	return vec2()

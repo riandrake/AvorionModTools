@@ -7,7 +7,5 @@ ReadOnlySector = {
 }
 
 -- @return A new instance of ReadOnlySector
-function ReadOnlySector()
-	return nil
-end
+setmetatable(ReadOnlySector, {__call = function(self) return ReadOnlySector end})
 

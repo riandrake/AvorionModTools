@@ -24,9 +24,7 @@ Tab = {
 }
 
 -- @return A new instance of Tab
-function Tab(index)
-	return nil
-end
+setmetatable(Tab, {__call = function(self, index) return Tab end})
 
 -- Inherited from UIContainer
 -- @return nothing

@@ -5,13 +5,11 @@ PlanPart = {
 	paddingBox = Box(), -- [write-only] Box
 	selfPaddingBox = Box(), -- Box
 	symmetries = nil, -- var
-	transformationFeatures = SingleRotationX -- TransformationFeature
+	transformationFeatures = TransformationFeature.SingleRotationX -- TransformationFeature
 }
 
 -- @return A new instance of PlanPart
-function PlanPart()
-	return nil
-end
+setmetatable(PlanPart, {__call = function(self) return PlanPart end})
 
 -- Adds a new block to the part.
 -- @param parentIndex - The index of the block this one is attached to

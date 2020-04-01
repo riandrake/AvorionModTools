@@ -26,9 +26,7 @@ Server = {
 }
 
 -- @return A new instance of Server
-function Server()
-	return nil
-end
+setmetatable(Server, {__call = function(self) return Server end})
 
 -- @return nothing
 function Server.addChatCommand(sender, command)

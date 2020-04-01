@@ -25,9 +25,7 @@ Window = {
 }
 
 -- @return A new instance of Window
-function Window(index)
-	return nil
-end
+setmetatable(Window, {__call = function(self, index) return Window end})
 
 -- Inherited from UIContainer
 -- @return nothing

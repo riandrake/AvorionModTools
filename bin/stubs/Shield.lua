@@ -18,9 +18,7 @@ Shield = {
 
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Shield
-function Shield(id)
-	return nil
-end
+setmetatable(Shield, {__call = function(self, id) return Shield end})
 
 -- @return nothing
 function Shield.changeDurability(amount)

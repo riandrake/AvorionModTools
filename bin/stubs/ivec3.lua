@@ -7,9 +7,7 @@ ivec3 = {
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of ivec3
-function ivec3(x, y, z)
-	return nil
-end
+setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
 
 function ivec3.__add(other)
 	return ivec3()

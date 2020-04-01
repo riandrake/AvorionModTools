@@ -21,9 +21,7 @@ MapArrowLine = {
 }
 
 -- @return A new instance of MapArrowLine
-function MapArrowLine(index)
-	return nil
-end
+setmetatable(MapArrowLine, {__call = function(self, index) return MapArrowLine end})
 
 -- Inherited from UIElement
 -- @return nothing

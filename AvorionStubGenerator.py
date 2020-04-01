@@ -113,6 +113,14 @@ class ParsedFunction:
     remarks: str
     callback: bool
     return_value: str
+    arguments: str
+    is_constructor: bool
+
+    def make_constructor(self):
+        """ I have spoken """
+        additional_args = f', {self.arguments}' if self.arguments else ''
+        self.definition = f"setmetatable({self.name}, {{__call = function(self{additional_args}) return {self.name} end}})\n\n"
+        self.is_constructor = True
 
     def parse_return_value(self, return_value):
         """ Parse a return value for defaults """
@@ -132,11 +140,13 @@ class ParsedFunction:
     def parse_definition(self, definition, namespace):
         """ Parse a definition from documentation """
         self.callback = definition.startswith('callback ')
+        self.is_constructor = False
 
         end_bracket = definition.rfind(')')
         start_bracket = definition.rfind('(', 0, end_bracket)
 
-        args = split_careful(definition[start_bracket+1:end_bracket])
+        args = definition[start_bracket+1:end_bracket] 
+        args = split_careful(args)
 
         for idx, arg in enumerate(args):
             if split := arg.split():
@@ -152,6 +162,8 @@ class ParsedFunction:
                 arg = arg.replace(illegal, '')
 
             args[idx] = arg
+
+        self.arguments = ', '.join(args)
 
         name_start = definition.rfind(' ', 0, start_bracket)
 
@@ -251,6 +263,7 @@ class StubGenerator:
                 if namespace is None and len(functions):
                     assert(len(functions) == 1)
                     namespace = functions[0].name
+                    functions[0].make_constructor()
 
                 properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
                 for idx, property in enumerate(properties):
@@ -268,13 +281,14 @@ class StubGenerator:
                 # Could still be a namespace otherwise, see other check above
                 if namespace is None and len(functions) == 0 and parsed.name[0].upper() == parsed.name[0]:
                     namespace = parsed.name
+                    parsed.make_constructor()
 
                 functions.append(parsed)
             elif line.startswith('enum '):
                 values = [line.strip() for line in line.split('\n') if line.strip()]
                 name = values[0].split()[-1]
                 enums[name] = [value for value in values if ' ' not in value]
-                DEFAULT_VALUES_BY_TYPE[name] = enums[name][0]
+                DEFAULT_VALUES_BY_TYPE[name] = f'{name}.{enums[name][0]}'
             else:
                 #print('Unhandled:', line, file.name)
                 pass
@@ -282,19 +296,19 @@ class StubGenerator:
         luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
         with open((stubs / luaName), 'w') as writer:
             #print(luaName)
-            if properties:
-                assert(namespace)
+            if namespace:
                 writer.write(f'{namespace} = {{\n')
 
-                # Remove duplicates cleanly, then sort
-                properties = { property.name : property for property in properties }
-                properties = sorted(list(properties.values()))
+                if properties:
+                    # Remove duplicates cleanly, then sort
+                    properties = { property.name : property for property in properties }
+                    properties = sorted(list(properties.values()))
 
-                for property in properties[:-1]:
-                    writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
+                    for property in properties[:-1]:
+                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
 
-                last = properties[-1]
-                writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
+                    last = properties[-1]
+                    writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
 
                 writer.write('}\n\n')
 

@@ -31,9 +31,7 @@ Slider = {
 }
 
 -- @return A new instance of Slider
-function Slider(index)
-	return nil
-end
+setmetatable(Slider, {__call = function(self, index) return Slider end})
 
 -- @return nothing
 function Slider.setRatio(inFrom, inTo)

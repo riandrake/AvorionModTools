@@ -6,9 +6,7 @@ Timer = {
 }
 
 -- @return A new instance of Timer
-function Timer()
-	return nil
-end
+setmetatable(Timer, {__call = function(self) return Timer end})
 
 -- @return nothing
 function Timer.reset()

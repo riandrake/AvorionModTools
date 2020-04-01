@@ -9,9 +9,7 @@ GalaxyMap = {
 }
 
 -- @return A new instance of GalaxyMap
-function GalaxyMap()
-	return nil
-end
+setmetatable(GalaxyMap, {__call = function(self) return GalaxyMap end})
 
 -- @return nothing
 function GalaxyMap.clearCustomColors()

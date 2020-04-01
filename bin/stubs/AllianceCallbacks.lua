@@ -1,3 +1,6 @@
+Alliance = {
+}
+
 -- @callback
 -- Called whenever the auto-pay-crews property was changed
 -- @param autoPayCrews - The new setting for auto-pay-crews

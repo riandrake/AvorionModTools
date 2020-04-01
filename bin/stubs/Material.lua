@@ -9,9 +9,7 @@ Material = {
 }
 
 -- @return A new instance of Material
-function Material(type)
-	return nil
-end
+setmetatable(Material, {__call = function(self, type) return Material end})
 
 function Material.__eq(other)
 	return true
