@@ -189,7 +189,7 @@ class StubGenerator:
             elif 'enum' in line:
                 values = [line.strip() for line in line.split('\n') if line.strip()]
                 name = values[0].split()[-1]
-                enums[name] = [value for value in values if value.isalnum()]
+                enums[name] = [value for value in values if ' ' not in value]
             else:
                 print('Unhandled:', line, file.name)
 
