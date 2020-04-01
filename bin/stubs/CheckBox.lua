@@ -1,6 +1,6 @@
 -- @return A new instance of CheckBox
 function CheckBox(index)
-	o = {
+	local o = {
 		active = true, -- [write-only] bool
 		bold = true, -- [write-only] bool
 		caption = "", -- [write-only] string

@@ -1,7 +1,7 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of CargoBay
 function CargoBay(id)
-	o = {
+	local o = {
 		alwaysStoreAtLeastOne = true, -- bool
 		cargoHold = 0.0, -- float
 		cargoVolume = 0.0, -- [read-only] float

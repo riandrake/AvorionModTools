@@ -125,7 +125,7 @@ class ParsedFunction:
 
         writer.write(f'function {self.name}({self.arguments})\n')
 
-        writer.write(f'\to = {{\n')
+        writer.write(f'\tlocal o = {{\n')
 
         if properties:
             # Remove duplicates cleanly, then sort

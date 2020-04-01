@@ -1,6 +1,6 @@
 -- @return A new instance of ClientSettings
 function ClientSettings()
-	o = {
+	local o = {
 		ambientOcclusion = true, -- [read-only] bool
 		autoPayCrews = true, -- [read-only] bool
 		autosaveInBuildMode = true, -- [read-only] bool

@@ -2,7 +2,7 @@
 -- Executed when the availability state of the destination sector changes. When the sector is loaded into memory, it's set to true. When the sector is unloaded from memory, because there's no player near it, it's set to false.
 -- @param sectorReady - Boolean indicating whether the destination sector is in memory
 function destinationSectorReady(sectorReady)
-	o = {
+	local o = {
 	}
 
 	setmetatable(destinationSectorReady, {__call = function(self, sectorReady) return destinationSectorReady end})

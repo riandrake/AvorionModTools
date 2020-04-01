@@ -1,7 +1,7 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Durability
 function Durability(id)
-	o = {
+	local o = {
 		durability = 0.0, -- double
 		entity = Entity(), -- [read-only] Entity
 		entityId = 0, -- [read-only] uuid

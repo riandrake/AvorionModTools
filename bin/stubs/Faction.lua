@@ -1,6 +1,6 @@
 -- @return A new instance of Faction
 function Faction(index)
-	o = {
+	local o = {
 		alwaysAtWar = true, -- bool
 		baseName = "", -- [read-only] string
 		homeSectorUnknown = true, -- bool

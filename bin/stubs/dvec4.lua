@@ -2,7 +2,7 @@
 -- @param z - w
 -- @return A new instance of dvec4
 function dvec4(x, y, z, w)
-	o = {
+	local o = {
 		w = 0.0, -- double
 		x = 0.0, -- double
 		y = 0.0, -- double

@@ -1,7 +1,7 @@
 -- This is the default constructor of BlockPlan. No further arguments are required.
 -- @return A new instance of BlockPlan
 function BlockPlan()
-	o = {
+	local o = {
 		accumulatingHealth = true, -- bool
 		centerOfMass = vec3(), -- [read-only] vec3
 		convex = true, -- bool

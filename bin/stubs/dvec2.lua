@@ -1,7 +1,7 @@
 -- @param x - y
 -- @return A new instance of dvec2
 function dvec2(x, y)
-	o = {
+	local o = {
 		x = 0.0, -- double
 		y = 0.0 -- double
 	}

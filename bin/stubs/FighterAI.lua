@@ -1,7 +1,7 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of FighterAI
 function FighterAI(id)
-	o = {
+	local o = {
 		circling = true, -- [read-only] bool
 		clearFeedbackEachTick = true, -- bool
 		entity = Entity(), -- [read-only] Entity

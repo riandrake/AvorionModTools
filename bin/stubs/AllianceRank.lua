@@ -1,7 +1,7 @@
 -- This is the default constructor of AllianceRank. No further arguments are required.
 -- @return A new instance of AllianceRank
 function AllianceRank()
-	o = {
+	local o = {
 		level = 0, -- [read-only] int
 		name = 0 -- [read-only] char
 	}

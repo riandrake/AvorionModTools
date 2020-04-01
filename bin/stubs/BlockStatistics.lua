@@ -1,7 +1,7 @@
 -- This is the default constructor of BlockStatistics. No further arguments are required.
 -- @return A new instance of BlockStatistics
 function BlockStatistics()
-	o = {
+	local o = {
 		averageSize = vec3(), -- [read-only] vec3
 		cargoHold = 0.0, -- [read-only] double
 		centerOfMass = vec3(), -- [read-only] vec3

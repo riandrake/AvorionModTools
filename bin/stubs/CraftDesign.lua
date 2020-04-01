@@ -1,7 +1,7 @@
 -- This is the default constructor of CraftDesign. No further arguments are required.
 -- @return A new instance of CraftDesign
 function CraftDesign()
-	o = {
+	local o = {
 		empty = true, -- [read-only] bool
 		numTurrets = nil -- [read-only] Box getCoaxialTurretDesignBoundingBox(float
 	}

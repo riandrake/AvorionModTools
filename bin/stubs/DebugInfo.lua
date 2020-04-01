@@ -1,6 +1,6 @@
 -- @return A new instance of DebugInfo
 function DebugInfo()
-	o = {
+	local o = {
 	}
 
 	setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})

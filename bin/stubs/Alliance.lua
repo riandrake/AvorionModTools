@@ -1,6 +1,6 @@
 -- @return A new instance of Alliance
 function Alliance(index)
-	o = {
+	local o = {
 		alwaysAtWar = true, -- bool
 		baseName = "", -- [read-only] string
 		homeSectorUnknown = true, -- bool

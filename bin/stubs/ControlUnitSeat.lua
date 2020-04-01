@@ -1,7 +1,7 @@
 -- This is the default constructor of ControlUnitSeat. No further arguments are required.
 -- @return A new instance of ControlUnitSeat
 function ControlUnitSeat()
-	o = {
+	local o = {
 		aimedPosition = vec3(), -- [read-only] vec3
 		controlActions = 0, -- [read-only] int
 		controllableSquadrons = bitset<10>(), -- [read-only] bitset<10>

@@ -1,6 +1,6 @@
 -- @return A new instance of Achievements
 function Achievements()
-	o = {
+	local o = {
 	}
 
 	setmetatable(Achievements, {__call = function(self) return Achievements end})

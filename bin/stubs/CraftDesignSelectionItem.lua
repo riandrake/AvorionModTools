@@ -1,6 +1,6 @@
 -- @return A new instance of CraftDesignSelectionItem
 function CraftDesignSelectionItem(path)
-	o = {
+	local o = {
 		deleteable = true, -- bool
 		design = CraftDesign(), -- [read-only] CraftDesign
 		hasWorkshopIcon = true, -- [read-only] bool

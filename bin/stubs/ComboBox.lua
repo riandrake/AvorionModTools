@@ -1,6 +1,6 @@
 -- @return A new instance of ComboBox
 function ComboBox(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		clampTextAtArrow = true, -- [write-only] bool
 		entriesPerPage = 0, -- [write-only] int

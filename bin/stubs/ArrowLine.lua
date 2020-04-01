@@ -1,6 +1,6 @@
 -- @return A new instance of ArrowLine
 function ArrowLine(index)
-	o = {
+	local o = {
 		center = vec2(), -- vec2
 		color = Color(), -- [write-only] Color
 		from = vec2(), -- [write-only] vec2

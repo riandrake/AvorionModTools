@@ -1,6 +1,6 @@
 -- @return A new instance of Box
 function Box(pos, size)
-	o = {
+	local o = {
 		center = vec3(), -- vec3
 		lower = vec3(), -- vec3
 		position = vec3(), -- vec3

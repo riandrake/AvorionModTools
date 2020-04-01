@@ -1,7 +1,7 @@
 -- This is the default constructor of Color. No further arguments are required.
 -- @return A new instance of Color
 function Color()
-	o = {
+	local o = {
 		a = 0.0, -- float
 		b = 0.0, -- float
 		g = 0.0, -- float

@@ -1,6 +1,6 @@
 -- @return A new instance of EntityDescriptor
 function EntityDescriptor()
-	o = {
+	local o = {
 		aiOwned = true, -- [read-only] bool
 		allianceOwned = true, -- [read-only] bool
 		canPassRifts = true, -- [read-only] bool

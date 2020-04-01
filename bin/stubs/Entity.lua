@@ -1,7 +1,7 @@
 -- @param id - The id of the entity, must be an id of an existing entity
 -- @return A new instance of Entity
 function Entity(id)
-	o = {
+	local o = {
 		aiOwned = true, -- [read-only] bool
 		allianceOwned = true, -- [read-only] bool
 		canPassRifts = true, -- [read-only] bool

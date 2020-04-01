@@ -1,6 +1,6 @@
 -- @return A new instance of Button
 function Button(index)
-	o = {
+	local o = {
 		active = true, -- bool
 		center = vec2(), -- vec2
 		height = 0.0, -- float

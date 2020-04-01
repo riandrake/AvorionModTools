@@ -2,7 +2,7 @@
 -- Called whenever the auto-pay-crews property was changed
 -- @param autoPayCrews - The new setting for auto-pay-crews
 function onAutoPayCrewsChanged(autoPayCrews)
-	o = {
+	local o = {
 	}
 
 	setmetatable(onAutoPayCrewsChanged, {__call = function(self, autoPayCrews) return onAutoPayCrewsChanged end})

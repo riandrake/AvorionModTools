@@ -1,7 +1,7 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of EnergySystem
 function EnergySystem(id)
-	o = {
+	local o = {
 		capacity = 0.0, -- double
 		consumableEnergy = 0.0, -- [read-only] double
 		energy = 0.0, -- double

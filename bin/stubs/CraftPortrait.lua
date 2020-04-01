@@ -1,6 +1,6 @@
 -- @return A new instance of CraftPortrait
 function CraftPortrait(index)
-	o = {
+	local o = {
 		alliance = true, -- [write-only] bool
 		center = vec2(), -- vec2
 		craftName = "", -- [write-only] string

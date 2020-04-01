@@ -1,7 +1,7 @@
 -- This is the default constructor of FighterTemplate. No further arguments are required.
 -- @return A new instance of FighterTemplate
 function FighterTemplate()
-	o = {
+	local o = {
 		accuracy = 0.0, -- [read-only] float
 		armed = true, -- [read-only] bool
 		automatic = true, -- [read-only] bool

@@ -1,7 +1,7 @@
 -- This is the default constructor of Crew. No further arguments are required.
 -- @return A new instance of Crew
 function Crew()
-	o = {
+	local o = {
 		attackers = 0, -- [read-only] int
 		autoAssignCrew = 0, -- [read-only] int
 		captains = 0, -- [read-only] int

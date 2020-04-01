@@ -1,6 +1,6 @@
 -- @return A new instance of CrewProfession
 function CrewProfession(value)
-	o = {
+	local o = {
 		assignable = true, -- [read-only] bool
 		color = Color(), -- [read-only] Color
 		description = "", -- [read-only] string

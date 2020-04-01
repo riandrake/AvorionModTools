@@ -1,6 +1,6 @@
 -- @return A new instance of CrewMan
 function CrewMan(profession, specialist, level)
-	o = {
+	local o = {
 		level = 0, -- int
 		profession = CrewProfession(), -- CrewProfession
 		specialist = 0 -- int

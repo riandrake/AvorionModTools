@@ -1,7 +1,7 @@
 -- This is the default constructor of BlockPlanBlock. No further arguments are required.
 -- @return A new instance of BlockPlanBlock
 function BlockPlanBlock()
-	o = {
+	local o = {
 		blockIndex = 0, -- int
 		box = Box(), -- Box
 		color = Color(), -- Color
