@@ -1,11 +1,9 @@
 -- This is the default constructor of Tooltip. No further arguments are required.
 -- @return A new instance of Tooltip
 function Tooltip()
-local Tooltip = {
-	icon = "", -- string
-	price = 0.0 -- double
-}
-
+local Tooltip = {}
+Tooltip.icon = "" -- string
+Tooltip.price = 0.0 -- double
 -- @return nothing
 function Tooltip.addLine(line)
 	return nil

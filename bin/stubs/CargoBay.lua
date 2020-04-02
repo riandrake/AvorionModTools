@@ -1,24 +1,22 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of CargoBay
 function CargoBay(id)
-local CargoBay = {
-	alwaysStoreAtLeastOne = true, -- bool
-	cargoHold = 0.0, -- float
-	cargoVolume = 0.0, -- [read-only] float
-	empty = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	fixedSize = true, -- bool
-	freeSpace = 0.0, -- [read-only] float
-	numCargos = 0, -- [read-only] int
-	pickUpDangerous = true, -- bool
-	pickUpDefaults = true, -- bool
-	pickUpIllegal = true, -- bool
-	pickUpOres = true, -- bool
-	pickUpScrap = true, -- bool
-	pickUpStolen = true -- bool
-}
-
+local CargoBay = {}
+CargoBay.alwaysStoreAtLeastOne = true -- bool
+CargoBay.cargoHold = 0.0 -- float
+CargoBay.cargoVolume = 0.0 -- [read-only] float
+CargoBay.empty = true -- [read-only] bool
+CargoBay.entity = Entity() -- [read-only] Entity
+CargoBay.entityId = 0 -- [read-only] uuid
+CargoBay.fixedSize = true -- bool
+CargoBay.freeSpace = 0.0 -- [read-only] float
+CargoBay.numCargos = 0 -- [read-only] int
+CargoBay.pickUpDangerous = true -- bool
+CargoBay.pickUpDefaults = true -- bool
+CargoBay.pickUpIllegal = true -- bool
+CargoBay.pickUpOres = true -- bool
+CargoBay.pickUpScrap = true -- bool
+CargoBay.pickUpStolen = true -- bool
 -- @return nothing
 function CargoBay.add(other)
 	return nil

@@ -1,11 +1,9 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyTurretController
 function ReadOnlyTurretController(id)
-local ReadOnlyTurretController = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0 -- [read-only] uuid
-}
-
+local ReadOnlyTurretController = {}
+ReadOnlyTurretController.entity = Entity() -- [read-only] Entity
+ReadOnlyTurretController.entityId = 0 -- [read-only] uuid
 function ReadOnlyTurretController.getGroupOrders(group)
 	return 0, 0
 end

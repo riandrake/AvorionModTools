@@ -1,10 +1,8 @@
 -- @return A new instance of Profiler
 function Profiler(str)
-local Profiler = {
-	printedSections = 0, -- int
-	started = true -- [read-only] bool
-}
-
+local Profiler = {}
+Profiler.printedSections = 0 -- int
+Profiler.started = true -- [read-only] bool
 function Profiler.__tostring()
 	return ""
 end

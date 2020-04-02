@@ -1,30 +1,28 @@
 -- @return A new instance of Tab
 function Tab(index)
-local Tab = {
-	center = vec2(), -- vec2
-	description = "", -- string
-	height = 0.0, -- float
-	icon = "", -- string
-	index = 0, -- [read-only] int
-	isActiveTab = true, -- [read-only] bool
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	name = "", -- [read-only] string
-	onSelectedFunction = "", -- string
-	onShowFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Tab = {}
+Tab.center = vec2() -- vec2
+Tab.description = "" -- string
+Tab.height = 0.0 -- float
+Tab.icon = "" -- string
+Tab.index = 0 -- [read-only] int
+Tab.isActiveTab = true -- [read-only] bool
+Tab.layer = 0 -- int
+Tab.localCenter = vec2() -- [read-only] vec2
+Tab.localPosition = vec2() -- [read-only] vec2
+Tab.localRect = Rect() -- [read-only] Rect
+Tab.lower = vec2() -- vec2
+Tab.mouseOver = true -- [read-only] bool
+Tab.name = "" -- [read-only] string
+Tab.onSelectedFunction = "" -- string
+Tab.onShowFunction = "" -- string
+Tab.position = vec2() -- vec2
+Tab.rect = Rect() -- Rect
+Tab.size = vec2() -- vec2
+Tab.tooltip = nil -- var
+Tab.upper = vec2() -- vec2
+Tab.visible = true -- bool
+Tab.width = 0.0 -- float
 -- Inherited from UIContainer
 -- @return nothing
 function Tab.clear()

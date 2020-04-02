@@ -1,29 +1,27 @@
 -- @return A new instance of Alliance
 function Alliance(index)
-local Alliance = {
-	alwaysAtWar = true, -- bool
-	baseName = "", -- [read-only] string
-	homeSectorUnknown = true, -- bool
-	index = 0, -- [read-only] int
-	infiniteResources = true, -- bool
-	initialRelations = 0, -- int
-	initialRelationsToPlayer = 0, -- int
-	isAIFaction = true, -- [read-only] bool
-	isAlliance = true, -- [read-only] bool
-	isPlayer = true, -- [read-only] bool
-	leader = 0, -- int
-	money = 0, -- int
-	name = "", -- [read-only] string
-	numCrafts = 0, -- [read-only] unsigned int
-	numShips = 0, -- [read-only] int
-	numStations = 0, -- [read-only] int
-	stateForm = "", -- [read-only] string
-	staticRelationsToAI = true, -- bool
-	staticRelationsToAll = true, -- bool
-	staticRelationsToPlayers = true, -- bool
-	unformattedName = Format() -- [read-only] Format
-}
-
+local Alliance = {}
+Alliance.alwaysAtWar = true -- bool
+Alliance.baseName = "" -- [read-only] string
+Alliance.homeSectorUnknown = true -- bool
+Alliance.index = 0 -- [read-only] int
+Alliance.infiniteResources = true -- bool
+Alliance.initialRelations = 0 -- int
+Alliance.initialRelationsToPlayer = 0 -- int
+Alliance.isAIFaction = true -- [read-only] bool
+Alliance.isAlliance = true -- [read-only] bool
+Alliance.isPlayer = true -- [read-only] bool
+Alliance.leader = 0 -- int
+Alliance.money = 0 -- int
+Alliance.name = "" -- [read-only] string
+Alliance.numCrafts = 0 -- [read-only] unsigned int
+Alliance.numShips = 0 -- [read-only] int
+Alliance.numStations = 0 -- [read-only] int
+Alliance.stateForm = "" -- [read-only] string
+Alliance.staticRelationsToAI = true -- bool
+Alliance.staticRelationsToAll = true -- bool
+Alliance.staticRelationsToPlayers = true -- bool
+Alliance.unformattedName = Format() -- [read-only] Format
 -- @return nothing
 function Alliance.addKnownSector(view)
 	return nil

@@ -1,8 +1,6 @@
 -- @return A new instance of Galaxy
 function Galaxy()
-local Galaxy = {
-}
-
+local Galaxy = {}
 function Galaxy.addScript()
 	return nil
 end

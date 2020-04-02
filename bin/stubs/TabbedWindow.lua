@@ -1,25 +1,23 @@
 -- @return A new instance of TabbedWindow
 function TabbedWindow(index)
-local TabbedWindow = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onSelectedFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local TabbedWindow = {}
+TabbedWindow.center = vec2() -- vec2
+TabbedWindow.height = 0.0 -- float
+TabbedWindow.index = 0 -- [read-only] int
+TabbedWindow.layer = 0 -- int
+TabbedWindow.localCenter = vec2() -- [read-only] vec2
+TabbedWindow.localPosition = vec2() -- [read-only] vec2
+TabbedWindow.localRect = Rect() -- [read-only] Rect
+TabbedWindow.lower = vec2() -- vec2
+TabbedWindow.mouseOver = true -- [read-only] bool
+TabbedWindow.onSelectedFunction = "" -- string
+TabbedWindow.position = vec2() -- vec2
+TabbedWindow.rect = Rect() -- Rect
+TabbedWindow.size = vec2() -- vec2
+TabbedWindow.tooltip = nil -- var
+TabbedWindow.upper = vec2() -- vec2
+TabbedWindow.visible = true -- bool
+TabbedWindow.width = 0.0 -- float
 -- @return nothing
 function TabbedWindow.activateAllTabs()
 	return nil

@@ -1,25 +1,23 @@
 -- This is the default constructor of Crew. No further arguments are required.
 -- @return A new instance of Crew
 function Crew()
-local Crew = {
-	attackers = 0, -- [read-only] int
-	autoAssignCrew = 0, -- [read-only] int
-	captains = 0, -- [read-only] int
-	commanders = 0, -- [read-only] int
-	engineers = 0, -- [read-only] int
-	generals = 0, -- [read-only] int
-	gunners = 0, -- [read-only] int
-	lieutenants = 0, -- [read-only] int
-	maxSize = 0, -- unsigned int
-	mechanics = 0, -- [read-only] int
-	miners = 0, -- [read-only] int
-	pilots = 0, -- [read-only] int
-	security = 0, -- [read-only] int
-	sergeants = 0, -- [read-only] int
-	size = 0, -- [read-only] unsigned int
-	unemployed = 0 -- [read-only] int
-}
-
+local Crew = {}
+Crew.attackers = 0 -- [read-only] int
+Crew.autoAssignCrew = 0 -- [read-only] int
+Crew.captains = 0 -- [read-only] int
+Crew.commanders = 0 -- [read-only] int
+Crew.engineers = 0 -- [read-only] int
+Crew.generals = 0 -- [read-only] int
+Crew.gunners = 0 -- [read-only] int
+Crew.lieutenants = 0 -- [read-only] int
+Crew.maxSize = 0 -- unsigned int
+Crew.mechanics = 0 -- [read-only] int
+Crew.miners = 0 -- [read-only] int
+Crew.pilots = 0 -- [read-only] int
+Crew.security = 0 -- [read-only] int
+Crew.sergeants = 0 -- [read-only] int
+Crew.size = 0 -- [read-only] unsigned int
+Crew.unemployed = 0 -- [read-only] int
 -- @return nothing
 function Crew.add(amount, crewman)
 	return nil

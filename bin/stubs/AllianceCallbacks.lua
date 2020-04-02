@@ -2,9 +2,7 @@
 -- Called whenever the auto-pay-crews property was changed
 -- @param autoPayCrews - The new setting for auto-pay-crews
 function Alliance(autoPayCrews)
-local Alliance = {
-}
-
+local Alliance = {}
 -- @callback
 -- Called whenever the home sector of the alliance changes
 -- @param x - The x coordinate of the new home sector

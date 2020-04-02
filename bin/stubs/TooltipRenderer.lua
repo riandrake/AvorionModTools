@@ -1,8 +1,6 @@
 -- @return A new instance of TooltipRenderer
 function TooltipRenderer(tooltip)
-local TooltipRenderer = {
-}
-
+local TooltipRenderer = {}
 -- @return nothing
 function TooltipRenderer.draw(vec2)
 	return nil

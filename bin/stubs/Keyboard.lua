@@ -1,9 +1,7 @@
 -- This is the default constructor of Keyboard. No further arguments are required.
 -- @return A new instance of Keyboard
 function Keyboard()
-local Keyboard = {
-}
-
+local Keyboard = {}
 function Keyboard.keyDown(value)
 	return true
 end

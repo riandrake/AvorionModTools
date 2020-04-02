@@ -1,20 +1,18 @@
 -- @return A new instance of TurretDesignSelectionItem
 function TurretDesignSelectionItem(path)
-local TurretDesignSelectionItem = {
-	deleteable = true, -- bool
-	design = TurretDesign(), -- [read-only] TurretDesign
-	hasWorkshopIcon = true, -- [read-only] bool
-	highlighted = true, -- bool
-	isLocalProject = true, -- bool
-	isOwnSubmission = true, -- bool
-	isSubscribedDesign = true, -- bool
-	loaded = true, -- [read-only] bool
-	path = "", -- string
-	readyForDeletion = true, -- bool
-	type = SavedDesignType.Unknown, -- [read-only] SavedDesignType
-	workshopUrl = "" -- [read-only] string
-}
-
+local TurretDesignSelectionItem = {}
+TurretDesignSelectionItem.deleteable = true -- bool
+TurretDesignSelectionItem.design = TurretDesign() -- [read-only] TurretDesign
+TurretDesignSelectionItem.hasWorkshopIcon = true -- [read-only] bool
+TurretDesignSelectionItem.highlighted = true -- bool
+TurretDesignSelectionItem.isLocalProject = true -- bool
+TurretDesignSelectionItem.isOwnSubmission = true -- bool
+TurretDesignSelectionItem.isSubscribedDesign = true -- bool
+TurretDesignSelectionItem.loaded = true -- [read-only] bool
+TurretDesignSelectionItem.path = "" -- string
+TurretDesignSelectionItem.readyForDeletion = true -- bool
+TurretDesignSelectionItem.type = SavedDesignType.Unknown -- [read-only] SavedDesignType
+TurretDesignSelectionItem.workshopUrl = "" -- [read-only] string
 -- @return nothing
 function TurretDesignSelectionItem.refreshTexture()
 	return nil

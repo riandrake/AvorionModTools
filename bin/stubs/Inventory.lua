@@ -1,13 +1,11 @@
 -- This is the default constructor of Inventory. No further arguments are required.
 -- @return A new instance of Inventory
 function Inventory()
-local Inventory = {
-	empty = true, -- [read-only] bool
-	items = 0, -- [read-only] unsigned int
-	maxSlots = 0, -- [read-only] unsigned int
-	occupiedSlots = 0 -- [read-only] unsigned int
-}
-
+local Inventory = {}
+Inventory.empty = true -- [read-only] bool
+Inventory.items = 0 -- [read-only] unsigned int
+Inventory.maxSlots = 0 -- [read-only] unsigned int
+Inventory.occupiedSlots = 0 -- [read-only] unsigned int
 function Inventory.add(item, recent)
 	return 0
 end

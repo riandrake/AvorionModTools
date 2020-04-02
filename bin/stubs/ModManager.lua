@@ -1,9 +1,7 @@
 -- @return A new instance of ModManager
 function ModManager()
-local ModManager = {
-	forceEnabledMods = true -- [read-only] bool
-}
-
+local ModManager = {}
+ModManager.forceEnabledMods = true -- [read-only] bool
 function ModManager.addMod(folder)
 	return nil
 end

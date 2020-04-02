@@ -4,9 +4,7 @@
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
 function Server(playerIndex, text, channel)
-local Server = {
-}
-
+local Server = {}
 -- @callback
 -- Executed whenever a player was logged in
 -- @param playerIndex - The index of the player who logged in

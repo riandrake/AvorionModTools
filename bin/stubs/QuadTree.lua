@@ -1,9 +1,7 @@
 -- @return A new instance of QuadTree
 function QuadTree(min, max, maxLevel)
-local QuadTree = {
-	empty = true -- [read-only] bool
-}
-
+local QuadTree = {}
+QuadTree.empty = true -- [read-only] bool
 function QuadTree.get(center, radius)
 	return nil
 end

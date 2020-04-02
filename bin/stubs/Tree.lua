@@ -1,26 +1,24 @@
 -- @return A new instance of Tree
 function Tree(index)
-local Tree = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onSelectedFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	selectedIndex = 0, -- int
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Tree = {}
+Tree.center = vec2() -- vec2
+Tree.height = 0.0 -- float
+Tree.index = 0 -- [read-only] int
+Tree.layer = 0 -- int
+Tree.localCenter = vec2() -- [read-only] vec2
+Tree.localPosition = vec2() -- [read-only] vec2
+Tree.localRect = Rect() -- [read-only] Rect
+Tree.lower = vec2() -- vec2
+Tree.mouseOver = true -- [read-only] bool
+Tree.onSelectedFunction = "" -- string
+Tree.position = vec2() -- vec2
+Tree.rect = Rect() -- Rect
+Tree.selectedIndex = 0 -- int
+Tree.size = vec2() -- vec2
+Tree.tooltip = nil -- var
+Tree.upper = vec2() -- vec2
+Tree.visible = true -- bool
+Tree.width = 0.0 -- float
 function Tree.add(parent, caption, onSelected, hasContent)
 	return 0
 end

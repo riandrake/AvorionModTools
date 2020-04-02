@@ -1,11 +1,9 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of FighterController
 function FighterController(id)
-local FighterController = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0 -- [read-only] uuid
-}
-
+local FighterController = {}
+FighterController.entity = Entity() -- [read-only] Entity
+FighterController.entityId = 0 -- [read-only] uuid
 function FighterController.getDeployedFighters(squad)
 	return Entity()
 end

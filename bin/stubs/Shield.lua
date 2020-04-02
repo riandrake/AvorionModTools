@@ -1,24 +1,22 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Shield
 function Shield(id)
-local Shield = {
-	createWithMaxDurability = true, -- [write-only] bool
-	deactivationFactor = 0.0, -- [read-only] float
-	deactivationTime = 0.0, -- [read-only] float
-	durability = 0.0, -- double
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	filledPercentage = 0.0, -- [read-only] float
-	immuneToDeactivation = true, -- bool
-	impenetrable = true, -- bool
-	invincible = true, -- bool
-	maxDurabilityFactor = 0.0, -- double
-	maximum = 0.0, -- double
-	rechargeTime = 0.0, -- [read-only] float
-	timeUntilRechargeAfterDepletion = 0.0, -- [read-only] float
-	timeUntilRechargeAfterHit = 0.0 -- [read-only] float
-}
-
+local Shield = {}
+Shield.createWithMaxDurability = true -- [write-only] bool
+Shield.deactivationFactor = 0.0 -- [read-only] float
+Shield.deactivationTime = 0.0 -- [read-only] float
+Shield.durability = 0.0 -- double
+Shield.entity = Entity() -- [read-only] Entity
+Shield.entityId = 0 -- [read-only] uuid
+Shield.filledPercentage = 0.0 -- [read-only] float
+Shield.immuneToDeactivation = true -- bool
+Shield.impenetrable = true -- bool
+Shield.invincible = true -- bool
+Shield.maxDurabilityFactor = 0.0 -- double
+Shield.maximum = 0.0 -- double
+Shield.rechargeTime = 0.0 -- [read-only] float
+Shield.timeUntilRechargeAfterDepletion = 0.0 -- [read-only] float
+Shield.timeUntilRechargeAfterHit = 0.0 -- [read-only] float
 -- @return nothing
 function Shield.changeDurability(amount)
 	return nil

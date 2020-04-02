@@ -1,8 +1,6 @@
 -- @return A new instance of PlanBspTree
 function PlanBspTree(plan)
-local PlanBspTree = {
-}
-
+local PlanBspTree = {}
 function PlanBspTree.getBlocksByBox(box)
 	return 0
 end

@@ -307,20 +307,15 @@ class StubGenerator:
 
                 writer.write(f'function {namespace}({constructor.arguments})\n')
 
-                writer.write(f'local {namespace} = {{\n')
+                writer.write(f'local {namespace} = {{}}\n')
 
                 if properties:
                     # Remove duplicates cleanly, then sort
                     properties = { property.name : property for property in properties }
                     properties = sorted(list(properties.values()))
 
-                    for property in properties[:-1]:
-                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
-
-                    last = properties[-1]
-                    writer.write(f'\t{last.name} = {get_default_value(last.type)} -- {last.remark}{last.type}\n')
-
-                writer.write('}\n\n')
+                    for property in properties:
+                        writer.write(f'{namespace}.{property.name} = {get_default_value(property.type)} -- {property.remark}{property.type}\n')
 
                 for function in functions[1:]:
                     writer.write(function.remarks)

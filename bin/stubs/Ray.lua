@@ -1,11 +1,9 @@
 -- @return A new instance of Ray
 function Ray(pos, size)
-local Ray = {
-	direction = vec3(), -- vec3
-	origin = vec3(), -- vec3
-	planeIntersectionThickness = 0.0 -- float
-}
-
+local Ray = {}
+Ray.direction = vec3() -- vec3
+Ray.origin = vec3() -- vec3
+Ray.planeIntersectionThickness = 0.0 -- float
 function Ray.distanceToPoint(point)
 	return 0.0
 end

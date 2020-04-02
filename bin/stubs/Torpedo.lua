@@ -1,13 +1,11 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Torpedo
 function Torpedo(id)
-local Torpedo = {
-	collisionWithParentEnabled = true, -- bool
-	firedByAIControlledPlayerShip = true, -- bool
-	intendedTargetFaction = 0, -- int
-	shootingCraft = 0 -- Uuid
-}
-
+local Torpedo = {}
+Torpedo.collisionWithParentEnabled = true -- bool
+Torpedo.firedByAIControlledPlayerShip = true -- bool
+Torpedo.intendedTargetFaction = 0 -- int
+Torpedo.shootingCraft = 0 -- Uuid
 function Torpedo.getTemplate()
 	return TorpedoTemplate()
 end

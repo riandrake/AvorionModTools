@@ -1,11 +1,9 @@
 -- @param x - y
 -- @return A new instance of dvec2
 function dvec2(x, y)
-local dvec2 = {
-	x = 0.0, -- double
-	y = 0.0 -- double
-}
-
+local dvec2 = {}
+dvec2.x = 0.0 -- double
+dvec2.y = 0.0 -- double
 function dvec2.__add(other)
 	return dvec2()
 end

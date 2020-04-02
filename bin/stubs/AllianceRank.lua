@@ -1,11 +1,9 @@
 -- This is the default constructor of AllianceRank. No further arguments are required.
 -- @return A new instance of AllianceRank
 function AllianceRank()
-local AllianceRank = {
-	level = 0, -- [read-only] int
-	name = 0 -- [read-only] char
-}
-
+local AllianceRank = {}
+AllianceRank.level = 0 -- [read-only] int
+AllianceRank.name = 0 -- [read-only] char
 function AllianceRank.getPrivileges()
 	return 0
 end

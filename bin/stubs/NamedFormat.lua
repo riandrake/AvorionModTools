@@ -1,9 +1,7 @@
 -- @return A new instance of NamedFormat
 function NamedFormat(string, MapType)
-local NamedFormat = {
-	text = "" -- [read-only] string
-}
-
+local NamedFormat = {}
+NamedFormat.text = "" -- [read-only] string
 function NamedFormat.arguments()
 	return {"", PluralForm()}
 end

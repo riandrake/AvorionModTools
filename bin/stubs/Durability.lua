@@ -1,19 +1,17 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Durability
 function Durability(id)
-local Durability = {
-	durability = 0.0, -- double
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	filledPercentage = 0.0, -- [read-only] float
-	invincible = true, -- bool
-	logoutInvincible = true, -- [read-only] bool
-	maxDurabilityFactor = 0.0, -- float
-	respawnInvincibilityTime = 0.0, -- float
-	respawnInvincible = true, -- [read-only] bool
-	setMaximum = 0.0 -- [write-only] double
-}
-
+local Durability = {}
+Durability.durability = 0.0 -- double
+Durability.entity = Entity() -- [read-only] Entity
+Durability.entityId = 0 -- [read-only] uuid
+Durability.filledPercentage = 0.0 -- [read-only] float
+Durability.invincible = true -- bool
+Durability.logoutInvincible = true -- [read-only] bool
+Durability.maxDurabilityFactor = 0.0 -- float
+Durability.respawnInvincibilityTime = 0.0 -- float
+Durability.respawnInvincible = true -- [read-only] bool
+Durability.setMaximum = 0.0 -- [write-only] double
 function Durability.getWeakness()
 	return nil, nil
 end

@@ -1,8 +1,6 @@
 -- @return A new instance of Achievements
 function Achievements()
-local Achievements = {
-}
-
+local Achievements = {}
 -- @return nothing
 function Achievements.unlockProvokedSwoks()
 	return nil

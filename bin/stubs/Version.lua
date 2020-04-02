@@ -1,14 +1,12 @@
 -- @return A new instance of Version
 function Version(majorVersion, minorVersion, patch)
-local Version = {
-	major = 0, -- int
-	minor = 0, -- int
-	patch = 0, -- int
-	revision = "", -- string
-	revisionHash = "", -- string
-	status = "" -- string
-}
-
+local Version = {}
+Version.major = 0 -- int
+Version.minor = 0 -- int
+Version.patch = 0 -- int
+Version.revision = "" -- string
+Version.revisionHash = "" -- string
+Version.status = "" -- string
 function Version.__eq(other)
 	return true
 end

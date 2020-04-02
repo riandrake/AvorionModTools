@@ -1,18 +1,16 @@
 -- This is the default constructor of BlockPlan. No further arguments are required.
 -- @return A new instance of BlockPlan
 function BlockPlan()
-local BlockPlan = {
-	accumulatingHealth = true, -- bool
-	centerOfMass = vec3(), -- [read-only] vec3
-	convex = true, -- bool
-	durability = 0.0, -- [read-only] double
-	numBlocks = 0, -- [read-only] int
-	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
-	rootIndex = nil, -- [read-only] var
-	volume = 0.0 -- [read-only] double
-}
-
+local BlockPlan = {}
+BlockPlan.accumulatingHealth = true -- bool
+BlockPlan.centerOfMass = vec3() -- [read-only] vec3
+BlockPlan.convex = true -- bool
+BlockPlan.durability = 0.0 -- [read-only] double
+BlockPlan.numBlocks = 0 -- [read-only] int
+BlockPlan.radius = 0.0 -- [read-only] float
+BlockPlan.root = BlockPlanBlock() -- [read-only] BlockPlanBlock
+BlockPlan.rootIndex = nil -- [read-only] var
+BlockPlan.volume = 0.0 -- [read-only] double
 -- Add a new block to an existing plan.
 -- @param position - The position of the new
 -- @param size - The size of the new block

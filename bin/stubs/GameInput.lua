@@ -1,11 +1,9 @@
 -- This is the default constructor of GameInput. No further arguments are required.
 -- @return A new instance of GameInput
 function GameInput()
-local GameInput = {
-	isMouseSteeringEnabled = true, -- [read-only] bool
-	isSteeringEnabled = true -- [read-only] bool
-}
-
+local GameInput = {}
+GameInput.isMouseSteeringEnabled = true -- [read-only] bool
+GameInput.isSteeringEnabled = true -- [read-only] bool
 function GameInput.getActionName(action)
 	return ""
 end

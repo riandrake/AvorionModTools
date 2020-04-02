@@ -1,38 +1,36 @@
 -- @return A new instance of InputWindow
 function InputWindow(index)
-local InputWindow = {
-	cancelButton = Button(), -- [read-only] Button
-	caption = "", -- string
-	center = vec2(), -- vec2
-	clickThrough = true, -- bool
-	closeableWithEscape = true, -- bool
-	consumeAllEvents = true, -- bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	label = Label(), -- [read-only] Label
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	moveable = true, -- bool
-	okButton = Button(), -- [read-only] Button
-	onCancelFunction = "", -- string
-	onOKFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	showCloseButton = true, -- bool
-	size = vec2(), -- vec2
-	text = "", -- [read-only] string
-	textBox = TextBox(), -- [read-only] TextBox
-	tooltip = nil, -- var
-	transparency = 0.0, -- float
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local InputWindow = {}
+InputWindow.cancelButton = Button() -- [read-only] Button
+InputWindow.caption = "" -- string
+InputWindow.center = vec2() -- vec2
+InputWindow.clickThrough = true -- bool
+InputWindow.closeableWithEscape = true -- bool
+InputWindow.consumeAllEvents = true -- bool
+InputWindow.height = 0.0 -- float
+InputWindow.index = 0 -- [read-only] int
+InputWindow.label = Label() -- [read-only] Label
+InputWindow.layer = 0 -- int
+InputWindow.localCenter = vec2() -- [read-only] vec2
+InputWindow.localPosition = vec2() -- [read-only] vec2
+InputWindow.localRect = Rect() -- [read-only] Rect
+InputWindow.lower = vec2() -- vec2
+InputWindow.mouseOver = true -- [read-only] bool
+InputWindow.moveable = true -- bool
+InputWindow.okButton = Button() -- [read-only] Button
+InputWindow.onCancelFunction = "" -- string
+InputWindow.onOKFunction = "" -- string
+InputWindow.position = vec2() -- vec2
+InputWindow.rect = Rect() -- Rect
+InputWindow.showCloseButton = true -- bool
+InputWindow.size = vec2() -- vec2
+InputWindow.text = "" -- [read-only] string
+InputWindow.textBox = TextBox() -- [read-only] TextBox
+InputWindow.tooltip = nil -- var
+InputWindow.transparency = 0.0 -- float
+InputWindow.upper = vec2() -- vec2
+InputWindow.visible = true -- bool
+InputWindow.width = 0.0 -- float
 -- @return nothing
 function InputWindow.show(caption)
 	return nil

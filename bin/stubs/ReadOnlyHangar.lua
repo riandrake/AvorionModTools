@@ -1,20 +1,18 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyHangar
 function ReadOnlyHangar(id)
-local ReadOnlyHangar = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	freeSpace = 0.0, -- [read-only] float
-	maxFighters = 0, -- [read-only] int
-	maxSquads = 0, -- [read-only] int
-	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
-	occupiedSpace = 0.0, -- [read-only] float
-	producing = true, -- [read-only] bool
-	space = 0.0 -- [read-only] float
-}
-
+local ReadOnlyHangar = {}
+ReadOnlyHangar.entity = Entity() -- [read-only] Entity
+ReadOnlyHangar.entityId = 0 -- [read-only] uuid
+ReadOnlyHangar.freeSpace = 0.0 -- [read-only] float
+ReadOnlyHangar.maxFighters = 0 -- [read-only] int
+ReadOnlyHangar.maxSquads = 0 -- [read-only] int
+ReadOnlyHangar.minFighters = 0 -- [read-only] int
+ReadOnlyHangar.numFighters = 0 -- [read-only] unsigned int
+ReadOnlyHangar.numSquads = 0 -- [read-only] unsigned int
+ReadOnlyHangar.occupiedSpace = 0.0 -- [read-only] float
+ReadOnlyHangar.producing = true -- [read-only] bool
+ReadOnlyHangar.space = 0.0 -- [read-only] float
 function ReadOnlyHangar.canLand(entity)
 	return true
 end

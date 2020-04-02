@@ -1,32 +1,30 @@
 -- @return A new instance of Hud
 function Hud()
-local Hud = {
-	buildingUIVisible = true, -- [read-only] bool
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mailWindowVisible = true, -- [read-only] bool
-	mouseOver = true, -- [read-only] bool
-	mouseOverSecondaryWindow = true, -- [read-only] bool
-	playerTradeWindowVisible = true, -- [read-only] bool
-	playerWindowVisible = true, -- [read-only] bool
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	resourcesVisible = true, -- [read-only] bool
-	shipWindowVisible = true, -- [read-only] bool
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	tutorialActive = true, -- [read-only] bool
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Hud = {}
+Hud.buildingUIVisible = true -- [read-only] bool
+Hud.center = vec2() -- vec2
+Hud.height = 0.0 -- float
+Hud.index = 0 -- [read-only] int
+Hud.layer = 0 -- int
+Hud.localCenter = vec2() -- [read-only] vec2
+Hud.localPosition = vec2() -- [read-only] vec2
+Hud.localRect = Rect() -- [read-only] Rect
+Hud.lower = vec2() -- vec2
+Hud.mailWindowVisible = true -- [read-only] bool
+Hud.mouseOver = true -- [read-only] bool
+Hud.mouseOverSecondaryWindow = true -- [read-only] bool
+Hud.playerTradeWindowVisible = true -- [read-only] bool
+Hud.playerWindowVisible = true -- [read-only] bool
+Hud.position = vec2() -- vec2
+Hud.rect = Rect() -- Rect
+Hud.resourcesVisible = true -- [read-only] bool
+Hud.shipWindowVisible = true -- [read-only] bool
+Hud.size = vec2() -- vec2
+Hud.tooltip = nil -- var
+Hud.tutorialActive = true -- [read-only] bool
+Hud.upper = vec2() -- vec2
+Hud.visible = true -- bool
+Hud.width = 0.0 -- float
 function Hud.createContainer(rect)
 	return UIContainer()
 end

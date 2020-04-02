@@ -2,21 +2,19 @@
 -- @param padding - margin
 -- @return A new instance of UIVerticalLister
 function UIVerticalLister(rect, padding, margin)
-local UIVerticalLister = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
+local UIVerticalLister = {}
+UIVerticalLister.inner = Rect() -- [read-only] Rect
+UIVerticalLister.margin = 0 -- [write-only] int
+UIVerticalLister.marginBottom = 0 -- int
+UIVerticalLister.marginLeft = 0 -- int
+UIVerticalLister.marginRight = 0 -- int
+UIVerticalLister.marginTop = 0 -- int
+UIVerticalLister.padding = 0 -- [write-only] int
+UIVerticalLister.paddingBottom = 0 -- int
+UIVerticalLister.paddingLeft = 0 -- int
+UIVerticalLister.paddingRight = 0 -- int
+UIVerticalLister.paddingTop = 0 -- int
+UIVerticalLister.rect = Rect() -- Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

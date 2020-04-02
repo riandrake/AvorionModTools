@@ -1,39 +1,37 @@
 -- @return A new instance of ListBoxEx
 function ListBoxEx(index)
-local ListBoxEx = {
-	center = vec2(), -- vec2
-	columns = 0, -- unsigned int
-	empty = true, -- [read-only] bool
-	font = 0, -- [write-only] int
-	fontSize = 0, -- int
-	headline = true, -- [write-only] bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onAddedFunction = "", -- string
-	onChangedFunction = "", -- string
-	onClearFunction = "", -- string
-	onRemoveFunction = "", -- string
-	onSelectFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	rowHeight = 0, -- int
-	rows = 0, -- [read-only] int
-	scrollPosition = 0, -- int
-	selected = 0, -- [read-only] int
-	selectedValue = nil, -- [read-only] var
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local ListBoxEx = {}
+ListBoxEx.center = vec2() -- vec2
+ListBoxEx.columns = 0 -- unsigned int
+ListBoxEx.empty = true -- [read-only] bool
+ListBoxEx.font = 0 -- [write-only] int
+ListBoxEx.fontSize = 0 -- int
+ListBoxEx.headline = true -- [write-only] bool
+ListBoxEx.height = 0.0 -- float
+ListBoxEx.index = 0 -- [read-only] int
+ListBoxEx.layer = 0 -- int
+ListBoxEx.localCenter = vec2() -- [read-only] vec2
+ListBoxEx.localPosition = vec2() -- [read-only] vec2
+ListBoxEx.localRect = Rect() -- [read-only] Rect
+ListBoxEx.lower = vec2() -- vec2
+ListBoxEx.mouseOver = true -- [read-only] bool
+ListBoxEx.onAddedFunction = "" -- string
+ListBoxEx.onChangedFunction = "" -- string
+ListBoxEx.onClearFunction = "" -- string
+ListBoxEx.onRemoveFunction = "" -- string
+ListBoxEx.onSelectFunction = "" -- string
+ListBoxEx.position = vec2() -- vec2
+ListBoxEx.rect = Rect() -- Rect
+ListBoxEx.rowHeight = 0 -- int
+ListBoxEx.rows = 0 -- [read-only] int
+ListBoxEx.scrollPosition = 0 -- int
+ListBoxEx.selected = 0 -- [read-only] int
+ListBoxEx.selectedValue = nil -- [read-only] var
+ListBoxEx.size = vec2() -- vec2
+ListBoxEx.tooltip = nil -- var
+ListBoxEx.upper = vec2() -- vec2
+ListBoxEx.visible = true -- bool
+ListBoxEx.width = 0.0 -- float
 -- @return nothing
 function ListBoxEx.addRow()
 	return nil

@@ -1,18 +1,16 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Physics
 function Physics(id)
-local Physics = {
-	centerOfMass = vec3(), -- [read-only] vec3
-	centerOfRotation = vec3(), -- [read-only] vec3
-	driftDecrease = 0.0, -- double
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	invMass = 0.0, -- [read-only] double
-	kineticEnergy = 0.0, -- [read-only] double
-	mass = 0.0, -- [read-only] double
-	rotationalEnergy = 0.0 -- [read-only] double
-}
-
+local Physics = {}
+Physics.centerOfMass = vec3() -- [read-only] vec3
+Physics.centerOfRotation = vec3() -- [read-only] vec3
+Physics.driftDecrease = 0.0 -- double
+Physics.entity = Entity() -- [read-only] Entity
+Physics.entityId = 0 -- [read-only] uuid
+Physics.invMass = 0.0 -- [read-only] double
+Physics.kineticEnergy = 0.0 -- [read-only] double
+Physics.mass = 0.0 -- [read-only] double
+Physics.rotationalEnergy = 0.0 -- [read-only] double
 -- @return nothing
 function Physics.applyGlobalForce(position, direction, size, time)
 	return nil

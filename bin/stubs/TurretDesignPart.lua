@@ -1,9 +1,7 @@
 -- This is the default constructor of TurretDesignPart. No further arguments are required.
 -- @return A new instance of TurretDesignPart
 function TurretDesignPart()
-local TurretDesignPart = {
-}
-
+local TurretDesignPart = {}
 function TurretDesignPart.getMovePlan()
 	return BlockPlan()
 end

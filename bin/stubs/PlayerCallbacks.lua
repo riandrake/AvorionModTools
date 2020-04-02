@@ -4,9 +4,7 @@
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
 function Player(playerIndex, text, channel)
-local Player = {
-}
-
+local Player = {}
 -- @callback
 -- Executed whenever on the galaxy map a mouse-up event occurs.
 -- @param button - The button that was released

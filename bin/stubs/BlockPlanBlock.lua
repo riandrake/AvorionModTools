@@ -1,33 +1,31 @@
 -- This is the default constructor of BlockPlanBlock. No further arguments are required.
 -- @return A new instance of BlockPlanBlock
 function BlockPlanBlock()
-local BlockPlanBlock = {
-	blockIndex = 0, -- int
-	box = Box(), -- Box
-	color = Color(), -- Color
-	costFactor = 0.0, -- [read-only] double
-	density = 0.0, -- [read-only] double
-	durability = 0.0, -- double
-	durabilityFactor = 0.0, -- [read-only] double
-	harvestFactor = 0.0, -- [read-only] double
-	hasAO = true, -- [read-only] bool
-	index = 0, -- [read-only] int
-	maintenance = 0.0, -- [read-only] double
-	material = Material(), -- Material
-	maxDurability = 0.0, -- double
-	moneyCostFactor = 0.0, -- [read-only] double
-	numChildren = 0, -- [read-only] int
-	orientation = Matrix(), -- Matrix
-	parent = nil, -- [read-only] var
-	processingPower = 0.0, -- [read-only] double
-	resourceCostFactor = 0.0, -- [read-only] double
-	staticMoneyCostFactor = 0.0, -- [read-only] double
-	surfaceCostFactor = 0.0, -- [read-only] double
-	valid = true, -- [read-only] bool
-	volumeCostFactor = 0.0, -- [read-only] double
-	volumeFactor = 0.0 -- [read-only] double
-}
-
+local BlockPlanBlock = {}
+BlockPlanBlock.blockIndex = 0 -- int
+BlockPlanBlock.box = Box() -- Box
+BlockPlanBlock.color = Color() -- Color
+BlockPlanBlock.costFactor = 0.0 -- [read-only] double
+BlockPlanBlock.density = 0.0 -- [read-only] double
+BlockPlanBlock.durability = 0.0 -- double
+BlockPlanBlock.durabilityFactor = 0.0 -- [read-only] double
+BlockPlanBlock.harvestFactor = 0.0 -- [read-only] double
+BlockPlanBlock.hasAO = true -- [read-only] bool
+BlockPlanBlock.index = 0 -- [read-only] int
+BlockPlanBlock.maintenance = 0.0 -- [read-only] double
+BlockPlanBlock.material = Material() -- Material
+BlockPlanBlock.maxDurability = 0.0 -- double
+BlockPlanBlock.moneyCostFactor = 0.0 -- [read-only] double
+BlockPlanBlock.numChildren = 0 -- [read-only] int
+BlockPlanBlock.orientation = Matrix() -- Matrix
+BlockPlanBlock.parent = nil -- [read-only] var
+BlockPlanBlock.processingPower = 0.0 -- [read-only] double
+BlockPlanBlock.resourceCostFactor = 0.0 -- [read-only] double
+BlockPlanBlock.staticMoneyCostFactor = 0.0 -- [read-only] double
+BlockPlanBlock.surfaceCostFactor = 0.0 -- [read-only] double
+BlockPlanBlock.valid = true -- [read-only] bool
+BlockPlanBlock.volumeCostFactor = 0.0 -- [read-only] double
+BlockPlanBlock.volumeFactor = 0.0 -- [read-only] double
 function BlockPlanBlock.getChildren()
 	return 0
 end

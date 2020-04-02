@@ -2,12 +2,10 @@
 -- @param z - Returns
 -- @param A new instance of ivec3
 function ivec3(x, y, z)
-local ivec3 = {
-	x = 0, -- int
-	y = 0, -- int
-	z = 0 -- int
-}
-
+local ivec3 = {}
+ivec3.x = 0 -- int
+ivec3.y = 0 -- int
+ivec3.z = 0 -- int
 function ivec3.__add(other)
 	return ivec3()
 end

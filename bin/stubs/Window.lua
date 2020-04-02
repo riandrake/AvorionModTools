@@ -1,31 +1,29 @@
 -- @return A new instance of Window
 function Window(index)
-local Window = {
-	caption = "", -- string
-	center = vec2(), -- vec2
-	clickThrough = true, -- bool
-	closeableWithEscape = true, -- bool
-	consumeAllEvents = true, -- bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	moveable = true, -- bool
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	showCloseButton = true, -- bool
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	transparency = 0.0, -- float
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Window = {}
+Window.caption = "" -- string
+Window.center = vec2() -- vec2
+Window.clickThrough = true -- bool
+Window.closeableWithEscape = true -- bool
+Window.consumeAllEvents = true -- bool
+Window.height = 0.0 -- float
+Window.index = 0 -- [read-only] int
+Window.layer = 0 -- int
+Window.localCenter = vec2() -- [read-only] vec2
+Window.localPosition = vec2() -- [read-only] vec2
+Window.localRect = Rect() -- [read-only] Rect
+Window.lower = vec2() -- vec2
+Window.mouseOver = true -- [read-only] bool
+Window.moveable = true -- bool
+Window.position = vec2() -- vec2
+Window.rect = Rect() -- Rect
+Window.showCloseButton = true -- bool
+Window.size = vec2() -- vec2
+Window.tooltip = nil -- var
+Window.transparency = 0.0 -- float
+Window.upper = vec2() -- vec2
+Window.visible = true -- bool
+Window.width = 0.0 -- float
 -- Inherited from UIContainer
 -- @return nothing
 function Window.clear()

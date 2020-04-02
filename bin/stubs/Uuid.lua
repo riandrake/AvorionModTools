@@ -1,12 +1,10 @@
 -- @return A new instance of Uuid
 function Uuid(uuid)
-local Uuid = {
-	isNil = true, -- [read-only] bool
-	number = 0, -- [read-only] int
-	string = "", -- [read-only] string
-	value = "" -- [read-only] string
-}
-
+local Uuid = {}
+Uuid.isNil = true -- [read-only] bool
+Uuid.number = 0 -- [read-only] int
+Uuid.string = "" -- [read-only] string
+Uuid.value = "" -- [read-only] string
 function Uuid.__eq(other)
 	return true
 end

@@ -1,32 +1,30 @@
 -- @return A new instance of Server
 function Server()
-local Server = {
-	accessMode = 0, -- [read-only] int
-	collisionDamage = 0.0, -- [read-only] float
-	description = "", -- [read-only] string
-	difficulty = 0, -- [read-only] int
-	folder = "", -- [read-only] string
-	gamePort = 0, -- [read-only] int
-	generatorThreads = 0, -- [read-only] int
-	infiniteResources = true, -- [read-only] bool
-	maxPlayers = 0, -- [read-only] int
-	name = "", -- [read-only] string
-	paused = 0.0, -- [read-only] double
-	playerToPlayerDamage = true, -- bool
-	players = 0, -- [read-only] int
-	rconPort = 0, -- [read-only] int
-	runtime = 0.0, -- [read-only] double
-	sameStartSector = true, -- [read-only] bool
-	scriptThreads = 0, -- [read-only] int
-	seed = Seed(), -- [read-only] Seed
-	sessionId = nil, -- [read-only] var
-	steamMasterPort = 0, -- [read-only] int
-	steamQueryPort = 0, -- [read-only] int
-	udpPollingPort = 0, -- [read-only] int
-	unpausedRuntime = 0.0, -- [read-only] double
-	workerThreads = 0 -- [read-only] int
-}
-
+local Server = {}
+Server.accessMode = 0 -- [read-only] int
+Server.collisionDamage = 0.0 -- [read-only] float
+Server.description = "" -- [read-only] string
+Server.difficulty = 0 -- [read-only] int
+Server.folder = "" -- [read-only] string
+Server.gamePort = 0 -- [read-only] int
+Server.generatorThreads = 0 -- [read-only] int
+Server.infiniteResources = true -- [read-only] bool
+Server.maxPlayers = 0 -- [read-only] int
+Server.name = "" -- [read-only] string
+Server.paused = 0.0 -- [read-only] double
+Server.playerToPlayerDamage = true -- bool
+Server.players = 0 -- [read-only] int
+Server.rconPort = 0 -- [read-only] int
+Server.runtime = 0.0 -- [read-only] double
+Server.sameStartSector = true -- [read-only] bool
+Server.scriptThreads = 0 -- [read-only] int
+Server.seed = Seed() -- [read-only] Seed
+Server.sessionId = nil -- [read-only] var
+Server.steamMasterPort = 0 -- [read-only] int
+Server.steamQueryPort = 0 -- [read-only] int
+Server.udpPollingPort = 0 -- [read-only] int
+Server.unpausedRuntime = 0.0 -- [read-only] double
+Server.workerThreads = 0 -- [read-only] int
 -- @return nothing
 function Server.addChatCommand(sender, command)
 	return nil

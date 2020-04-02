@@ -1,8 +1,6 @@
 -- @return A new instance of UIRenderer
 function UIRenderer()
-local UIRenderer = {
-}
-
+local UIRenderer = {}
 -- @return nothing
 function UIRenderer.display()
 	return nil

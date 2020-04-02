@@ -1,10 +1,8 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of DockingPositions
 function DockingPositions(id)
-local DockingPositions = {
-	alwaysDocked = true -- bool
-}
-
+local DockingPositions = {}
+DockingPositions.alwaysDocked = true -- bool
 -- @return nothing
 function DockingPositions.deleteRemovableObstacles()
 	return nil

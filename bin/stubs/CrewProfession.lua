@@ -1,15 +1,13 @@
 -- @return A new instance of CrewProfession
 function CrewProfession(value)
-local CrewProfession = {
-	assignable = true, -- [read-only] bool
-	color = Color(), -- [read-only] Color
-	description = "", -- [read-only] string
-	icon = "", -- [read-only] string
-	price = 0, -- [read-only] int
-	salary = 0, -- [read-only] int
-	value = 0 -- int
-}
-
+local CrewProfession = {}
+CrewProfession.assignable = true -- [read-only] bool
+CrewProfession.color = Color() -- [read-only] Color
+CrewProfession.description = "" -- [read-only] string
+CrewProfession.icon = "" -- [read-only] string
+CrewProfession.price = 0 -- [read-only] int
+CrewProfession.salary = 0 -- [read-only] int
+CrewProfession.value = 0 -- int
 function CrewProfession.name(amount)
 	return ""
 end

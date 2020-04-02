@@ -1,23 +1,21 @@
 -- @return A new instance of UsableInventoryItem
 function UsableInventoryItem(script, rarity, values)
-local UsableInventoryItem = {
-	boundFaction = 0, -- int
-	depleteOnUse = true, -- bool
-	droppable = true, -- bool
-	favorite = true, -- bool
-	icon = "", -- string
-	iconColor = Color(), -- Color
-	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-	name = "", -- string
-	price = 0, -- int
-	rarity = Rarity(), -- Rarity
-	recent = true, -- bool
-	script = "", -- string
-	stackable = true, -- bool
-	tradeable = true, -- bool
-	trash = true -- bool
-}
-
+local UsableInventoryItem = {}
+UsableInventoryItem.boundFaction = 0 -- int
+UsableInventoryItem.depleteOnUse = true -- bool
+UsableInventoryItem.droppable = true -- bool
+UsableInventoryItem.favorite = true -- bool
+UsableInventoryItem.icon = "" -- string
+UsableInventoryItem.iconColor = Color() -- Color
+UsableInventoryItem.itemType = InventoryItemType.Turret -- [read-only] InventoryItemType
+UsableInventoryItem.name = "" -- string
+UsableInventoryItem.price = 0 -- int
+UsableInventoryItem.rarity = Rarity() -- Rarity
+UsableInventoryItem.recent = true -- bool
+UsableInventoryItem.script = "" -- string
+UsableInventoryItem.stackable = true -- bool
+UsableInventoryItem.tradeable = true -- bool
+UsableInventoryItem.trash = true -- bool
 function UsableInventoryItem.__eq(other)
 	return true
 end

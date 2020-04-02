@@ -1,15 +1,13 @@
 -- This is the default constructor of Matrix. No further arguments are required.
 -- @return A new instance of Matrix
 function Matrix()
-local Matrix = {
-	look = vec3(), -- vec3
-	pos = vec3(), -- vec3
-	position = vec3(), -- vec3
-	right = vec3(), -- vec3
-	translation = vec3(), -- vec3
-	up = vec3() -- vec3
-}
-
+local Matrix = {}
+Matrix.look = vec3() -- vec3
+Matrix.pos = vec3() -- vec3
+Matrix.position = vec3() -- vec3
+Matrix.right = vec3() -- vec3
+Matrix.translation = vec3() -- vec3
+Matrix.up = vec3() -- vec3
 function Matrix.__mul(m)
 	return Matrix()
 end

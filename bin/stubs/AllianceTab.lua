@@ -1,25 +1,23 @@
 -- @return A new instance of AllianceTab
 function AllianceTab()
-local AllianceTab = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onSelectedFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local AllianceTab = {}
+AllianceTab.center = vec2() -- vec2
+AllianceTab.height = 0.0 -- float
+AllianceTab.index = 0 -- [read-only] int
+AllianceTab.layer = 0 -- int
+AllianceTab.localCenter = vec2() -- [read-only] vec2
+AllianceTab.localPosition = vec2() -- [read-only] vec2
+AllianceTab.localRect = Rect() -- [read-only] Rect
+AllianceTab.lower = vec2() -- vec2
+AllianceTab.mouseOver = true -- [read-only] bool
+AllianceTab.onSelectedFunction = "" -- string
+AllianceTab.position = vec2() -- vec2
+AllianceTab.rect = Rect() -- Rect
+AllianceTab.size = vec2() -- vec2
+AllianceTab.tooltip = nil -- var
+AllianceTab.upper = vec2() -- vec2
+AllianceTab.visible = true -- bool
+AllianceTab.width = 0.0 -- float
 -- @return nothing
 function AllianceTab.activateAllTabs()
 	return nil

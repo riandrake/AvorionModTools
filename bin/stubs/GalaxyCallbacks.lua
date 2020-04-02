@@ -2,9 +2,7 @@
 -- Executed whenever a new alliance is created on the server
 -- @param index - Index of the alliance that was created
 function Galaxy(index)
-local Galaxy = {
-}
-
+local Galaxy = {}
 -- @callback
 -- Executed whenever a new faction is created on the server
 -- @param index - Index of the faction that was created

@@ -1,17 +1,15 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ShipAI
 function ShipAI(id)
-local ShipAI = {
-	attackedEntity = 0, -- [read-only] uuid
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	flyTarget = vec3(), -- [read-only] vec3
-	isAttackingSomething = true, -- [read-only] bool
-	isBusy = true, -- [read-only] bool
-	isStuck = true, -- [read-only] bool
-	state = 0 -- [read-only] int
-}
-
+local ShipAI = {}
+ShipAI.attackedEntity = 0 -- [read-only] uuid
+ShipAI.entity = Entity() -- [read-only] Entity
+ShipAI.entityId = 0 -- [read-only] uuid
+ShipAI.flyTarget = vec3() -- [read-only] vec3
+ShipAI.isAttackingSomething = true -- [read-only] bool
+ShipAI.isBusy = true -- [read-only] bool
+ShipAI.isStuck = true -- [read-only] bool
+ShipAI.state = 0 -- [read-only] int
 function ShipAI.enemyFightersPresent()
 	return true
 end

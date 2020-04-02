@@ -1,15 +1,13 @@
 -- @return A new instance of GalaxyMap
 function GalaxyMap()
-local GalaxyMap = {
-	showAllianceInfo = true, -- bool
-	showCustomColorLayer = true, -- bool
-	showFactionLayer = true, -- bool
-	showGates = true, -- bool
-	showNotes = true, -- bool
-	showWormholes = true, -- bool
-	visible = true -- [read-only] bool
-}
-
+local GalaxyMap = {}
+GalaxyMap.showAllianceInfo = true -- bool
+GalaxyMap.showCustomColorLayer = true -- bool
+GalaxyMap.showFactionLayer = true -- bool
+GalaxyMap.showGates = true -- bool
+GalaxyMap.showNotes = true -- bool
+GalaxyMap.showWormholes = true -- bool
+GalaxyMap.visible = true -- [read-only] bool
 -- @return nothing
 function GalaxyMap.clearCustomColors()
 	return nil

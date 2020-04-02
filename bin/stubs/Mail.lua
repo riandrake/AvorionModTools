@@ -1,17 +1,15 @@
 -- This is the default constructor of Mail. No further arguments are required.
 -- @return A new instance of Mail
 function Mail()
-local Mail = {
-	empty = true, -- [read-only] bool
-	header = Format(), -- Format
-	id = "", -- string
-	money = 0, -- int
-	read = true, -- bool
-	receiver = PlayerId(), -- [write-only] PlayerId
-	sender = Format(), -- Format
-	text = Format() -- Format
-}
-
+local Mail = {}
+Mail.empty = true -- [read-only] bool
+Mail.header = Format() -- Format
+Mail.id = "" -- string
+Mail.money = 0 -- int
+Mail.read = true -- bool
+Mail.receiver = PlayerId() -- [write-only] PlayerId
+Mail.sender = Format() -- Format
+Mail.text = Format() -- Format
 -- @return nothing
 function Mail.addTurret(turret)
 	return nil

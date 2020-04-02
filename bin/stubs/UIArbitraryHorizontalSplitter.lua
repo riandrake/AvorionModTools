@@ -3,22 +3,20 @@
 -- @param splits - The y coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryHorizontalSplitter
 function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
-local UIArbitraryHorizontalSplitter = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
+local UIArbitraryHorizontalSplitter = {}
+UIArbitraryHorizontalSplitter.inner = Rect() -- [read-only] Rect
+UIArbitraryHorizontalSplitter.margin = 0 -- [write-only] int
+UIArbitraryHorizontalSplitter.marginBottom = 0 -- int
+UIArbitraryHorizontalSplitter.marginLeft = 0 -- int
+UIArbitraryHorizontalSplitter.marginRight = 0 -- int
+UIArbitraryHorizontalSplitter.marginTop = 0 -- int
+UIArbitraryHorizontalSplitter.padding = 0 -- [write-only] int
+UIArbitraryHorizontalSplitter.paddingBottom = 0 -- int
+UIArbitraryHorizontalSplitter.paddingInside = 0 -- int
+UIArbitraryHorizontalSplitter.paddingLeft = 0 -- int
+UIArbitraryHorizontalSplitter.paddingRight = 0 -- int
+UIArbitraryHorizontalSplitter.paddingTop = 0 -- int
+UIArbitraryHorizontalSplitter.rect = Rect() -- Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

@@ -1,24 +1,22 @@
 -- @return A new instance of UIContainer
 function UIContainer(index)
-local UIContainer = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local UIContainer = {}
+UIContainer.center = vec2() -- vec2
+UIContainer.height = 0.0 -- float
+UIContainer.index = 0 -- [read-only] int
+UIContainer.layer = 0 -- int
+UIContainer.localCenter = vec2() -- [read-only] vec2
+UIContainer.localPosition = vec2() -- [read-only] vec2
+UIContainer.localRect = Rect() -- [read-only] Rect
+UIContainer.lower = vec2() -- vec2
+UIContainer.mouseOver = true -- [read-only] bool
+UIContainer.position = vec2() -- vec2
+UIContainer.rect = Rect() -- Rect
+UIContainer.size = vec2() -- vec2
+UIContainer.tooltip = nil -- var
+UIContainer.upper = vec2() -- vec2
+UIContainer.visible = true -- bool
+UIContainer.width = 0.0 -- float
 -- @return nothing
 function UIContainer.clear()
 	return nil

@@ -1,10 +1,8 @@
 -- This is the default constructor of Mouse. No further arguments are required.
 -- @return A new instance of Mouse
 function Mouse()
-local Mouse = {
-	position = vec2() -- vec2
-}
-
+local Mouse = {}
+Mouse.position = vec2() -- vec2
 function Mouse.mouseDown(button)
 	return true
 end

@@ -1,39 +1,37 @@
 -- @return A new instance of SavedDesignsSelection
 function SavedDesignsSelection(index)
-local SavedDesignsSelection = {
-	center = vec2(), -- vec2
-	dragFromEnabled = true, -- [write-only] bool
-	dropIntoEnabled = true, -- [write-only] bool
-	dropIntoSelfEnabled = true, -- [write-only] bool
-	entriesHighlightable = true, -- [write-only] bool
-	entriesSelectable = true, -- [write-only] bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	isRenderingDraggedItem = true, -- [read-only] bool
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	maxHorizontalEntries = 0, -- [read-only] unsigned int
-	mouseOver = true, -- [read-only] bool
-	numEntries = 0, -- [read-only] int
-	onClickedFunction = "", -- string
-	onDeselectedFunction = "", -- string
-	onSelectedFunction = "", -- string
-	padding = 0.0, -- [write-only] float
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	selected = UserObject(), -- [read-only] UserObject
-	selectedKey = ivec2(), -- [read-only] ivec2
-	showEntriesOnly = true, -- [write-only] bool
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local SavedDesignsSelection = {}
+SavedDesignsSelection.center = vec2() -- vec2
+SavedDesignsSelection.dragFromEnabled = true -- [write-only] bool
+SavedDesignsSelection.dropIntoEnabled = true -- [write-only] bool
+SavedDesignsSelection.dropIntoSelfEnabled = true -- [write-only] bool
+SavedDesignsSelection.entriesHighlightable = true -- [write-only] bool
+SavedDesignsSelection.entriesSelectable = true -- [write-only] bool
+SavedDesignsSelection.height = 0.0 -- float
+SavedDesignsSelection.index = 0 -- [read-only] int
+SavedDesignsSelection.isRenderingDraggedItem = true -- [read-only] bool
+SavedDesignsSelection.layer = 0 -- int
+SavedDesignsSelection.localCenter = vec2() -- [read-only] vec2
+SavedDesignsSelection.localPosition = vec2() -- [read-only] vec2
+SavedDesignsSelection.localRect = Rect() -- [read-only] Rect
+SavedDesignsSelection.lower = vec2() -- vec2
+SavedDesignsSelection.maxHorizontalEntries = 0 -- [read-only] unsigned int
+SavedDesignsSelection.mouseOver = true -- [read-only] bool
+SavedDesignsSelection.numEntries = 0 -- [read-only] int
+SavedDesignsSelection.onClickedFunction = "" -- string
+SavedDesignsSelection.onDeselectedFunction = "" -- string
+SavedDesignsSelection.onSelectedFunction = "" -- string
+SavedDesignsSelection.padding = 0.0 -- [write-only] float
+SavedDesignsSelection.position = vec2() -- vec2
+SavedDesignsSelection.rect = Rect() -- Rect
+SavedDesignsSelection.selected = UserObject() -- [read-only] UserObject
+SavedDesignsSelection.selectedKey = ivec2() -- [read-only] ivec2
+SavedDesignsSelection.showEntriesOnly = true -- [write-only] bool
+SavedDesignsSelection.size = vec2() -- vec2
+SavedDesignsSelection.tooltip = nil -- var
+SavedDesignsSelection.upper = vec2() -- vec2
+SavedDesignsSelection.visible = true -- bool
+SavedDesignsSelection.width = 0.0 -- float
 function SavedDesignsSelection.getItem(key)
 	return UserObject()
 end

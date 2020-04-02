@@ -3,24 +3,22 @@
 -- @param horizontalTiles - verticalTiles
 -- @return A new instance of UIGridSplitter
 function UIGridSplitter(rect, padding, margin, horizontalTiles, verticalTiles)
-local UIGridSplitter = {
-	horizontalTiles = 0, -- int
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect(), -- Rect
-	verticalTiles = 0 -- int
-}
-
+local UIGridSplitter = {}
+UIGridSplitter.horizontalTiles = 0 -- int
+UIGridSplitter.inner = Rect() -- [read-only] Rect
+UIGridSplitter.margin = 0 -- [write-only] int
+UIGridSplitter.marginBottom = 0 -- int
+UIGridSplitter.marginLeft = 0 -- int
+UIGridSplitter.marginRight = 0 -- int
+UIGridSplitter.marginTop = 0 -- int
+UIGridSplitter.padding = 0 -- [write-only] int
+UIGridSplitter.paddingBottom = 0 -- int
+UIGridSplitter.paddingInside = 0 -- int
+UIGridSplitter.paddingLeft = 0 -- int
+UIGridSplitter.paddingRight = 0 -- int
+UIGridSplitter.paddingTop = 0 -- int
+UIGridSplitter.rect = Rect() -- Rect
+UIGridSplitter.verticalTiles = 0 -- int
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

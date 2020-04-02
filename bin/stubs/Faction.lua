@@ -1,25 +1,23 @@
 -- @return A new instance of Faction
 function Faction(index)
-local Faction = {
-	alwaysAtWar = true, -- bool
-	baseName = "", -- [read-only] string
-	homeSectorUnknown = true, -- bool
-	index = 0, -- [read-only] int
-	infiniteResources = true, -- bool
-	initialRelations = 0, -- int
-	initialRelationsToPlayer = 0, -- int
-	isAIFaction = true, -- [read-only] bool
-	isAlliance = true, -- [read-only] bool
-	isPlayer = true, -- [read-only] bool
-	money = 0, -- int
-	name = "", -- [read-only] string
-	stateForm = "", -- [read-only] string
-	staticRelationsToAI = true, -- bool
-	staticRelationsToAll = true, -- bool
-	staticRelationsToPlayers = true, -- bool
-	unformattedName = Format() -- [read-only] Format
-}
-
+local Faction = {}
+Faction.alwaysAtWar = true -- bool
+Faction.baseName = "" -- [read-only] string
+Faction.homeSectorUnknown = true -- bool
+Faction.index = 0 -- [read-only] int
+Faction.infiniteResources = true -- bool
+Faction.initialRelations = 0 -- int
+Faction.initialRelationsToPlayer = 0 -- int
+Faction.isAIFaction = true -- [read-only] bool
+Faction.isAlliance = true -- [read-only] bool
+Faction.isPlayer = true -- [read-only] bool
+Faction.money = 0 -- int
+Faction.name = "" -- [read-only] string
+Faction.stateForm = "" -- [read-only] string
+Faction.staticRelationsToAI = true -- bool
+Faction.staticRelationsToAll = true -- bool
+Faction.staticRelationsToPlayers = true -- bool
+Faction.unformattedName = Format() -- [read-only] Format
 -- @return nothing
 function Faction.addPlanStyle(name, style)
 	return nil

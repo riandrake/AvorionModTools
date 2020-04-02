@@ -2,12 +2,10 @@
 -- @param z - Returns
 -- @param A new instance of vec3
 function vec3(x, y, z)
-local vec3 = {
-	x = 0.0, -- float
-	y = 0.0, -- float
-	z = 0.0 -- float
-}
-
+local vec3 = {}
+vec3.x = 0.0 -- float
+vec3.y = 0.0 -- float
+vec3.z = 0.0 -- float
 function vec3.__add(other)
 	return vec3()
 end

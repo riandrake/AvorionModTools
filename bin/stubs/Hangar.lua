@@ -1,20 +1,18 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Hangar
 function Hangar(id)
-local Hangar = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	freeSpace = 0.0, -- [read-only] float
-	maxFighters = 0, -- [read-only] int
-	maxSquads = 0, -- [read-only] int
-	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
-	occupiedSpace = 0.0, -- [read-only] float
-	producing = true, -- [read-only] bool
-	space = 0.0 -- [read-only] float
-}
-
+local Hangar = {}
+Hangar.entity = Entity() -- [read-only] Entity
+Hangar.entityId = 0 -- [read-only] uuid
+Hangar.freeSpace = 0.0 -- [read-only] float
+Hangar.maxFighters = 0 -- [read-only] int
+Hangar.maxSquads = 0 -- [read-only] int
+Hangar.minFighters = 0 -- [read-only] int
+Hangar.numFighters = 0 -- [read-only] unsigned int
+Hangar.numSquads = 0 -- [read-only] unsigned int
+Hangar.occupiedSpace = 0.0 -- [read-only] float
+Hangar.producing = true -- [read-only] bool
+Hangar.space = 0.0 -- [read-only] float
 -- @return nothing
 function Hangar.addFighter(squad, fighter)
 	return nil

@@ -3,21 +3,19 @@
 -- @param b - Nil if a is a Rect, or a vec2 if a is a vec2
 -- @return A new instance of UIOrganizer
 function UIOrganizer(a, b)
-local UIOrganizer = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
+local UIOrganizer = {}
+UIOrganizer.inner = Rect() -- [read-only] Rect
+UIOrganizer.margin = 0 -- [write-only] int
+UIOrganizer.marginBottom = 0 -- int
+UIOrganizer.marginLeft = 0 -- int
+UIOrganizer.marginRight = 0 -- int
+UIOrganizer.marginTop = 0 -- int
+UIOrganizer.padding = 0 -- [write-only] int
+UIOrganizer.paddingBottom = 0 -- int
+UIOrganizer.paddingLeft = 0 -- int
+UIOrganizer.paddingRight = 0 -- int
+UIOrganizer.paddingTop = 0 -- int
+UIOrganizer.rect = Rect() -- Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

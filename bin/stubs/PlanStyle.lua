@@ -1,15 +1,13 @@
 -- @return A new instance of PlanStyle
 function PlanStyle()
-local PlanStyle = {
-	additionalFeatures = 0, -- int
-	balanceRotation = true, -- bool
-	forbiddenFeatures = 0, -- int
-	requiredFeatures = 0, -- int
-	scaleRecommendation = true, -- bool
-	seed = "", -- string
-	settings = nil -- var
-}
-
+local PlanStyle = {}
+PlanStyle.additionalFeatures = 0 -- int
+PlanStyle.balanceRotation = true -- bool
+PlanStyle.forbiddenFeatures = 0 -- int
+PlanStyle.requiredFeatures = 0 -- int
+PlanStyle.scaleRecommendation = true -- bool
+PlanStyle.seed = "" -- string
+PlanStyle.settings = nil -- var
 -- Adds a new stage to the style.
 -- @return nothing
 function PlanStyle.addStage(stage)

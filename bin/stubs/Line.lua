@@ -1,25 +1,23 @@
 -- @return A new instance of Line
 function Line(index)
-local Line = {
-	center = vec2(), -- vec2
-	color = Color(), -- [write-only] Color
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Line = {}
+Line.center = vec2() -- vec2
+Line.color = Color() -- [write-only] Color
+Line.height = 0.0 -- float
+Line.index = 0 -- [read-only] int
+Line.layer = 0 -- int
+Line.localCenter = vec2() -- [read-only] vec2
+Line.localPosition = vec2() -- [read-only] vec2
+Line.localRect = Rect() -- [read-only] Rect
+Line.lower = vec2() -- vec2
+Line.mouseOver = true -- [read-only] bool
+Line.position = vec2() -- vec2
+Line.rect = Rect() -- Rect
+Line.size = vec2() -- vec2
+Line.tooltip = nil -- var
+Line.upper = vec2() -- vec2
+Line.visible = true -- bool
+Line.width = 0.0 -- float
 -- Inherited from UIElement
 -- @return nothing
 function Line.hide()

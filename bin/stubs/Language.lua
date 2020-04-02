@@ -1,10 +1,8 @@
 -- @return A new instance of Language
 function Language(seed)
-local Language = {
-	apostrophes = true, -- bool
-	seed = Seed() -- [write-only] Seed
-}
-
+local Language = {}
+Language.apostrophes = true -- bool
+Language.seed = Seed() -- [write-only] Seed
 function Language.getConsonantSound()
 	return ""
 end

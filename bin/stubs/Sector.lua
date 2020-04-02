@@ -1,13 +1,11 @@
 -- @return A new instance of Sector
 function Sector()
-local Sector = {
-	name = "", -- string
-	numEntities = 0, -- [read-only] unsigned int
-	numPlayers = 0, -- [read-only] unsigned int
-	pvpDamage = true, -- bool
-	seed = Seed() -- [read-only] Seed
-}
-
+local Sector = {}
+Sector.name = "" -- string
+Sector.numEntities = 0 -- [read-only] unsigned int
+Sector.numPlayers = 0 -- [read-only] unsigned int
+Sector.pvpDamage = true -- bool
+Sector.seed = Seed() -- [read-only] Seed
 function Sector.addScript()
 	return 0
 end

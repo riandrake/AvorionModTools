@@ -1,27 +1,25 @@
 -- @return A new instance of ArrowLine
 function ArrowLine(index)
-local ArrowLine = {
-	center = vec2(), -- vec2
-	color = Color(), -- [write-only] Color
-	from = vec2(), -- [write-only] vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	to = vec2(), -- [write-only] vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local ArrowLine = {}
+ArrowLine.center = vec2() -- vec2
+ArrowLine.color = Color() -- [write-only] Color
+ArrowLine.from = vec2() -- [write-only] vec2
+ArrowLine.height = 0.0 -- float
+ArrowLine.index = 0 -- [read-only] int
+ArrowLine.layer = 0 -- int
+ArrowLine.localCenter = vec2() -- [read-only] vec2
+ArrowLine.localPosition = vec2() -- [read-only] vec2
+ArrowLine.localRect = Rect() -- [read-only] Rect
+ArrowLine.lower = vec2() -- vec2
+ArrowLine.mouseOver = true -- [read-only] bool
+ArrowLine.position = vec2() -- vec2
+ArrowLine.rect = Rect() -- Rect
+ArrowLine.size = vec2() -- vec2
+ArrowLine.to = vec2() -- [write-only] vec2
+ArrowLine.tooltip = nil -- var
+ArrowLine.upper = vec2() -- vec2
+ArrowLine.visible = true -- bool
+ArrowLine.width = 0.0 -- float
 -- Inherited from UIElement
 -- @return nothing
 function ArrowLine.hide()

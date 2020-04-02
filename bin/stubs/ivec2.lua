@@ -1,11 +1,9 @@
 -- @param x - y
 -- @return A new instance of ivec2
 function ivec2(x, y)
-local ivec2 = {
-	x = 0, -- int
-	y = 0 -- int
-}
-
+local ivec2 = {}
+ivec2.x = 0 -- int
+ivec2.y = 0 -- int
 function ivec2.__add(other)
 	return ivec2()
 end

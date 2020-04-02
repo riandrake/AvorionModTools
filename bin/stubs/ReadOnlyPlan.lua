@@ -1,23 +1,21 @@
 -- @param id - The id of the entity, must be an index of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ReadOnlyPlan
 function ReadOnlyPlan(id)
-local ReadOnlyPlan = {
-	accumulatingHealth = true, -- [read-only] bool
-	boundingBox = Box(), -- [read-only] Box
-	boundingSphere = Sphere(), -- [read-only] Sphere
-	centerOfMass = vec3(), -- [read-only] vec3
-	convex = true, -- [read-only] bool
-	durability = 0.0, -- [read-only] double
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	numBlocks = 0, -- [read-only] int
-	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
-	rootIndex = nil, -- [read-only] var
-	size = 0, -- [read-only] int
-	volume = 0.0 -- [read-only] float
-}
-
+local ReadOnlyPlan = {}
+ReadOnlyPlan.accumulatingHealth = true -- [read-only] bool
+ReadOnlyPlan.boundingBox = Box() -- [read-only] Box
+ReadOnlyPlan.boundingSphere = Sphere() -- [read-only] Sphere
+ReadOnlyPlan.centerOfMass = vec3() -- [read-only] vec3
+ReadOnlyPlan.convex = true -- [read-only] bool
+ReadOnlyPlan.durability = 0.0 -- [read-only] double
+ReadOnlyPlan.entity = Entity() -- [read-only] Entity
+ReadOnlyPlan.entityId = 0 -- [read-only] uuid
+ReadOnlyPlan.numBlocks = 0 -- [read-only] int
+ReadOnlyPlan.radius = 0.0 -- [read-only] float
+ReadOnlyPlan.root = BlockPlanBlock() -- [read-only] BlockPlanBlock
+ReadOnlyPlan.rootIndex = nil -- [read-only] var
+ReadOnlyPlan.size = 0 -- [read-only] int
+ReadOnlyPlan.volume = 0.0 -- [read-only] float
 function ReadOnlyPlan.empty()
 	return true
 end

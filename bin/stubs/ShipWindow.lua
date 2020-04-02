@@ -1,25 +1,23 @@
 -- @return A new instance of ShipWindow
 function ShipWindow()
-local ShipWindow = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onSelectedFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local ShipWindow = {}
+ShipWindow.center = vec2() -- vec2
+ShipWindow.height = 0.0 -- float
+ShipWindow.index = 0 -- [read-only] int
+ShipWindow.layer = 0 -- int
+ShipWindow.localCenter = vec2() -- [read-only] vec2
+ShipWindow.localPosition = vec2() -- [read-only] vec2
+ShipWindow.localRect = Rect() -- [read-only] Rect
+ShipWindow.lower = vec2() -- vec2
+ShipWindow.mouseOver = true -- [read-only] bool
+ShipWindow.onSelectedFunction = "" -- string
+ShipWindow.position = vec2() -- vec2
+ShipWindow.rect = Rect() -- Rect
+ShipWindow.size = vec2() -- vec2
+ShipWindow.tooltip = nil -- var
+ShipWindow.upper = vec2() -- vec2
+ShipWindow.visible = true -- bool
+ShipWindow.width = 0.0 -- float
 -- @return nothing
 function ShipWindow.activateAllTabs()
 	return nil

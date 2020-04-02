@@ -1,29 +1,27 @@
 -- @return A new instance of Picture
 function Picture(index)
-local Picture = {
-	center = vec2(), -- vec2
-	color = Color(), -- [write-only] Color
-	flipped = true, -- [write-only] bool
-	flippedX = true, -- [write-only] bool
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	isIcon = true, -- [write-only] bool
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	picture = "", -- [write-only] string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Picture = {}
+Picture.center = vec2() -- vec2
+Picture.color = Color() -- [write-only] Color
+Picture.flipped = true -- [write-only] bool
+Picture.flippedX = true -- [write-only] bool
+Picture.height = 0.0 -- float
+Picture.index = 0 -- [read-only] int
+Picture.isIcon = true -- [write-only] bool
+Picture.layer = 0 -- int
+Picture.localCenter = vec2() -- [read-only] vec2
+Picture.localPosition = vec2() -- [read-only] vec2
+Picture.localRect = Rect() -- [read-only] Rect
+Picture.lower = vec2() -- vec2
+Picture.mouseOver = true -- [read-only] bool
+Picture.picture = "" -- [write-only] string
+Picture.position = vec2() -- vec2
+Picture.rect = Rect() -- Rect
+Picture.size = vec2() -- vec2
+Picture.tooltip = nil -- var
+Picture.upper = vec2() -- vec2
+Picture.visible = true -- bool
+Picture.width = 0.0 -- float
 -- @return nothing
 function Picture.clear(color)
 	return nil

@@ -1,22 +1,20 @@
 -- This is the default constructor of VanillaInventoryItem. No further arguments are required.
 -- @return A new instance of VanillaInventoryItem
 function VanillaInventoryItem()
-local VanillaInventoryItem = {
-	boundFaction = 0, -- int
-	droppable = true, -- bool
-	favorite = true, -- bool
-	icon = "", -- string
-	iconColor = Color(), -- Color
-	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
-	name = "", -- string
-	price = 0, -- int
-	rarity = Rarity(), -- Rarity
-	recent = true, -- bool
-	stackable = true, -- bool
-	tradeable = true, -- bool
-	trash = true -- bool
-}
-
+local VanillaInventoryItem = {}
+VanillaInventoryItem.boundFaction = 0 -- int
+VanillaInventoryItem.droppable = true -- bool
+VanillaInventoryItem.favorite = true -- bool
+VanillaInventoryItem.icon = "" -- string
+VanillaInventoryItem.iconColor = Color() -- Color
+VanillaInventoryItem.itemType = InventoryItemType.Turret -- [read-only] InventoryItemType
+VanillaInventoryItem.name = "" -- string
+VanillaInventoryItem.price = 0 -- int
+VanillaInventoryItem.rarity = Rarity() -- Rarity
+VanillaInventoryItem.recent = true -- bool
+VanillaInventoryItem.stackable = true -- bool
+VanillaInventoryItem.tradeable = true -- bool
+VanillaInventoryItem.trash = true -- bool
 function VanillaInventoryItem.__eq(other)
 	return true
 end

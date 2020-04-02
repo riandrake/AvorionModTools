@@ -2,13 +2,11 @@
 -- @param z - w
 -- @return A new instance of dvec4
 function dvec4(x, y, z, w)
-local dvec4 = {
-	w = 0.0, -- double
-	x = 0.0, -- double
-	y = 0.0, -- double
-	z = 0.0 -- double
-}
-
+local dvec4 = {}
+dvec4.w = 0.0 -- double
+dvec4.x = 0.0 -- double
+dvec4.y = 0.0 -- double
+dvec4.z = 0.0 -- double
 function dvec4.__add(other)
 	return dvec4()
 end

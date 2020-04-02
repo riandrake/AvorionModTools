@@ -1,15 +1,13 @@
 -- @return A new instance of InventorySelectionItem
 function InventorySelectionItem()
-local InventorySelectionItem = {
-	amount = nil, -- var
-	border = IconBorderMode(), -- IconBorderMode
-	deleteable = true, -- bool
-	highlighted = true, -- bool
-	item = InventoryItem(), -- InventoryItem
-	readyForDeletion = true, -- bool
-	uvalue = nil -- var
-}
-
+local InventorySelectionItem = {}
+InventorySelectionItem.amount = nil -- var
+InventorySelectionItem.border = IconBorderMode() -- IconBorderMode
+InventorySelectionItem.deleteable = true -- bool
+InventorySelectionItem.highlighted = true -- bool
+InventorySelectionItem.item = InventoryItem() -- InventoryItem
+InventorySelectionItem.readyForDeletion = true -- bool
+InventorySelectionItem.uvalue = nil -- var
 setmetatable(InventorySelectionItem, {__call = function(self) return InventorySelectionItem end})
 return InventorySelectionItem
 end

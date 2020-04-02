@@ -2,13 +2,11 @@
 -- @param z - w
 -- @return A new instance of ivec4
 function ivec4(x, y, z, w)
-local ivec4 = {
-	w = 0, -- int
-	x = 0, -- int
-	y = 0, -- int
-	z = 0 -- int
-}
-
+local ivec4 = {}
+ivec4.w = 0 -- int
+ivec4.x = 0 -- int
+ivec4.y = 0 -- int
+ivec4.z = 0 -- int
 function ivec4.__add(other)
 	return ivec4()
 end

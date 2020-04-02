@@ -1,16 +1,14 @@
 -- Creates a new sound source.
 -- @return A new instance of SoundSource
 function SoundSource(soundName, position, radius)
-local SoundSource = {
-	is3D = true, -- [read-only] bool
-	loop = true, -- bool
-	maxRadius = 0.0, -- float
-	minRadius = 0.0, -- float
-	playing = true, -- [read-only] bool
-	position = vec3(), -- vec3
-	volume = 0.0 -- float
-}
-
+local SoundSource = {}
+SoundSource.is3D = true -- [read-only] bool
+SoundSource.loop = true -- bool
+SoundSource.maxRadius = 0.0 -- float
+SoundSource.minRadius = 0.0 -- float
+SoundSource.playing = true -- [read-only] bool
+SoundSource.position = vec3() -- vec3
+SoundSource.volume = 0.0 -- float
 -- @return nothing
 function SoundSource.play()
 	return nil

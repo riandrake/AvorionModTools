@@ -1,20 +1,18 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of ControlUnit
 function ControlUnit(id)
-local ControlUnit = {
-	desiredVelocity = 0.0, -- [read-only] float
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	hasPilot = true, -- [read-only] bool
-	isBoosting = true, -- [read-only] bool
-	isDrifting = true, -- [read-only] bool
-	isStrafing = true, -- [read-only] bool
-	isTurning = true, -- [read-only] bool
-	numFreeSeats = 0, -- [read-only] int
-	numOccupiedSeats = 0, -- [read-only] int
-	turningSpeedFactor = vec3() -- [read-only] vec3
-}
-
+local ControlUnit = {}
+ControlUnit.desiredVelocity = 0.0 -- [read-only] float
+ControlUnit.entity = Entity() -- [read-only] Entity
+ControlUnit.entityId = 0 -- [read-only] uuid
+ControlUnit.hasPilot = true -- [read-only] bool
+ControlUnit.isBoosting = true -- [read-only] bool
+ControlUnit.isDrifting = true -- [read-only] bool
+ControlUnit.isStrafing = true -- [read-only] bool
+ControlUnit.isTurning = true -- [read-only] bool
+ControlUnit.numFreeSeats = 0 -- [read-only] int
+ControlUnit.numOccupiedSeats = 0 -- [read-only] int
+ControlUnit.turningSpeedFactor = vec3() -- [read-only] vec3
 -- @return nothing
 function ControlUnit.addSeat()
 	return nil

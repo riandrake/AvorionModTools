@@ -2,21 +2,19 @@
 -- @param padding - margin
 -- @return A new instance of UIHorizontalLister
 function UIHorizontalLister(rect, padding, margin)
-local UIHorizontalLister = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
+local UIHorizontalLister = {}
+UIHorizontalLister.inner = Rect() -- [read-only] Rect
+UIHorizontalLister.margin = 0 -- [write-only] int
+UIHorizontalLister.marginBottom = 0 -- int
+UIHorizontalLister.marginLeft = 0 -- int
+UIHorizontalLister.marginRight = 0 -- int
+UIHorizontalLister.marginTop = 0 -- int
+UIHorizontalLister.padding = 0 -- [write-only] int
+UIHorizontalLister.paddingBottom = 0 -- int
+UIHorizontalLister.paddingLeft = 0 -- int
+UIHorizontalLister.paddingRight = 0 -- int
+UIHorizontalLister.paddingTop = 0 -- int
+UIHorizontalLister.rect = Rect() -- Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

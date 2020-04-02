@@ -3,9 +3,7 @@
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
 function Sector(entityId, state)
-local Sector = {
-}
-
+local Sector = {}
 -- @callback
 -- Executed whenever a plan of an entity is changed in the sector.
 -- @param objectIndex - The id of the entity

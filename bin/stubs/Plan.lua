@@ -1,23 +1,21 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of Plan
 function Plan(id)
-local Plan = {
-	accumulatingHealth = true, -- bool
-	boundingBox = Box(), -- [read-only] Box
-	boundingSphere = Sphere(), -- [read-only] Sphere
-	centerOfMass = vec3(), -- [read-only] vec3
-	convex = true, -- bool
-	durability = 0.0, -- [read-only] double
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0, -- [read-only] uuid
-	numBlocks = 0, -- [read-only] int
-	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
-	rootIndex = nil, -- [read-only] var
-	size = 0, -- [read-only] int
-	volume = 0.0 -- [read-only] float
-}
-
+local Plan = {}
+Plan.accumulatingHealth = true -- bool
+Plan.boundingBox = Box() -- [read-only] Box
+Plan.boundingSphere = Sphere() -- [read-only] Sphere
+Plan.centerOfMass = vec3() -- [read-only] vec3
+Plan.convex = true -- bool
+Plan.durability = 0.0 -- [read-only] double
+Plan.entity = Entity() -- [read-only] Entity
+Plan.entityId = 0 -- [read-only] uuid
+Plan.numBlocks = 0 -- [read-only] int
+Plan.radius = 0.0 -- [read-only] float
+Plan.root = BlockPlanBlock() -- [read-only] BlockPlanBlock
+Plan.rootIndex = nil -- [read-only] var
+Plan.size = 0 -- [read-only] int
+Plan.volume = 0.0 -- [read-only] float
 -- Add a new block to an existing plan.
 -- @param position - The position of the new
 -- @param size - The size of the new block

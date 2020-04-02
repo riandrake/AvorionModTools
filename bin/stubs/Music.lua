@@ -1,11 +1,9 @@
 -- @return A new instance of Music
 function Music()
-local Music = {
-	autoPlay = true, -- bool
-	currentTrack = nil, -- [read-only] var
-	isPlaying = true -- [read-only] bool
-}
-
+local Music = {}
+Music.autoPlay = true -- bool
+Music.currentTrack = nil -- [read-only] var
+Music.isPlaying = true -- [read-only] bool
 -- @return nothing
 function Music.fadeOut(time)
 	return nil

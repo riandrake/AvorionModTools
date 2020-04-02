@@ -2,12 +2,10 @@
 -- @param z - Returns
 -- @param A new instance of dvec3
 function dvec3(x, y, z)
-local dvec3 = {
-	x = 0.0, -- double
-	y = 0.0, -- double
-	z = 0.0 -- double
-}
-
+local dvec3 = {}
+dvec3.x = 0.0 -- double
+dvec3.y = 0.0 -- double
+dvec3.z = 0.0 -- double
 function dvec3.__add(other)
 	return dvec3()
 end

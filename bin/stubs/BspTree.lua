@@ -1,11 +1,9 @@
 -- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
 -- @return A new instance of BspTree
 function BspTree(id)
-local BspTree = {
-	entity = Entity(), -- [read-only] Entity
-	entityId = 0 -- [read-only] uuid
-}
-
+local BspTree = {}
+BspTree.entity = Entity() -- [read-only] Entity
+BspTree.entityId = 0 -- [read-only] uuid
 function BspTree.getBlocksByBox(box)
 	return 0
 end

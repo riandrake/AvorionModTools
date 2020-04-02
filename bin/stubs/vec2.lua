@@ -1,11 +1,9 @@
 -- @param x - y
 -- @return A new instance of vec2
 function vec2(x, y)
-local vec2 = {
-	x = 0.0, -- float
-	y = 0.0 -- float
-}
-
+local vec2 = {}
+vec2.x = 0.0 -- float
+vec2.y = 0.0 -- float
 function vec2.__add(other)
 	return vec2()
 end

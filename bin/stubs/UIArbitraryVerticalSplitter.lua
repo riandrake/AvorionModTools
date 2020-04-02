@@ -3,22 +3,20 @@
 -- @param splits - The x coordinates of the splits in pixels
 -- @return A new instance of UIArbitraryVerticalSplitter
 function UIArbitraryVerticalSplitter(rect, padding, margin, splits)
-local UIArbitraryVerticalSplitter = {
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect() -- Rect
-}
-
+local UIArbitraryVerticalSplitter = {}
+UIArbitraryVerticalSplitter.inner = Rect() -- [read-only] Rect
+UIArbitraryVerticalSplitter.margin = 0 -- [write-only] int
+UIArbitraryVerticalSplitter.marginBottom = 0 -- int
+UIArbitraryVerticalSplitter.marginLeft = 0 -- int
+UIArbitraryVerticalSplitter.marginRight = 0 -- int
+UIArbitraryVerticalSplitter.marginTop = 0 -- int
+UIArbitraryVerticalSplitter.padding = 0 -- [write-only] int
+UIArbitraryVerticalSplitter.paddingBottom = 0 -- int
+UIArbitraryVerticalSplitter.paddingInside = 0 -- int
+UIArbitraryVerticalSplitter.paddingLeft = 0 -- int
+UIArbitraryVerticalSplitter.paddingRight = 0 -- int
+UIArbitraryVerticalSplitter.paddingTop = 0 -- int
+UIArbitraryVerticalSplitter.rect = Rect() -- Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

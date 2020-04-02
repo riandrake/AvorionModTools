@@ -1,9 +1,7 @@
 -- @return A new instance of PlayerWindow
 function PlayerWindow()
-local PlayerWindow = {
-	onSelectedFunction = "" -- string
-}
-
+local PlayerWindow = {}
+PlayerWindow.onSelectedFunction = "" -- string
 -- @return nothing
 function PlayerWindow.activateAllTabs()
 	return nil

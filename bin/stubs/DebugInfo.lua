@@ -1,8 +1,6 @@
 -- @return A new instance of DebugInfo
 function DebugInfo()
-local DebugInfo = {
-}
-
+local DebugInfo = {}
 function DebugInfo.getEndingLog()
 	return ""
 end

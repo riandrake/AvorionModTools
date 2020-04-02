@@ -1,8 +1,6 @@
 -- @return A new instance of Random
 function Random(seed)
-local Random = {
-}
-
+local Random = {}
 function Random.createSeed()
 	return Seed()
 end

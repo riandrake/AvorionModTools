@@ -1,29 +1,27 @@
 -- @return A new instance of Button
 function Button(index)
-local Button = {
-	active = true, -- bool
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	icon = "", -- string
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	onPressedFunction = "", -- string
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	size = vec2(), -- vec2
-	toggleable = true, -- [write-only] bool
-	toggled = true, -- bool
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local Button = {}
+Button.active = true -- bool
+Button.center = vec2() -- vec2
+Button.height = 0.0 -- float
+Button.icon = "" -- string
+Button.index = 0 -- [read-only] int
+Button.layer = 0 -- int
+Button.localCenter = vec2() -- [read-only] vec2
+Button.localPosition = vec2() -- [read-only] vec2
+Button.localRect = Rect() -- [read-only] Rect
+Button.lower = vec2() -- vec2
+Button.mouseOver = true -- [read-only] bool
+Button.onPressedFunction = "" -- string
+Button.position = vec2() -- vec2
+Button.rect = Rect() -- Rect
+Button.size = vec2() -- vec2
+Button.toggleable = true -- [write-only] bool
+Button.toggled = true -- bool
+Button.tooltip = nil -- var
+Button.upper = vec2() -- vec2
+Button.visible = true -- bool
+Button.width = 0.0 -- float
 -- Inherited from UIElement
 -- @return nothing
 function Button.hide()

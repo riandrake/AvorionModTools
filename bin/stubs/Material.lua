@@ -1,15 +1,13 @@
 -- @return A new instance of Material
 function Material(type)
-local Material = {
-	blockColor = Color(), -- [read-only] Color
-	color = Color(), -- [read-only] Color
-	costFactor = 0.0, -- [read-only] double
-	density = 0.0, -- [read-only] double
-	name = "", -- [read-only] string
-	strengthFactor = 0.0, -- [read-only] double
-	value = 0 -- int
-}
-
+local Material = {}
+Material.blockColor = Color() -- [read-only] Color
+Material.color = Color() -- [read-only] Color
+Material.costFactor = 0.0 -- [read-only] double
+Material.density = 0.0 -- [read-only] double
+Material.name = "" -- [read-only] string
+Material.strengthFactor = 0.0 -- [read-only] double
+Material.value = 0 -- int
 function Material.__eq(other)
 	return true
 end

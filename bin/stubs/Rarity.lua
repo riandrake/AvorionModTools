@@ -1,12 +1,10 @@
 -- @return A new instance of Rarity
 function Rarity(value)
-local Rarity = {
-	color = Color(), -- [read-only] Color
-	name = "", -- [read-only] string
-	type = 0, -- int
-	value = 0 -- int
-}
-
+local Rarity = {}
+Rarity.color = Color() -- [read-only] Color
+Rarity.name = "" -- [read-only] string
+Rarity.type = 0 -- int
+Rarity.value = 0 -- int
 function Rarity.__eq(other)
 	return true
 end

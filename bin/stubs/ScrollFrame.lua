@@ -1,27 +1,25 @@
 -- @return A new instance of ScrollFrame
 function ScrollFrame(index)
-local ScrollFrame = {
-	center = vec2(), -- vec2
-	height = 0.0, -- float
-	index = 0, -- [read-only] int
-	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
-	mouseOver = true, -- [read-only] bool
-	paddingBottom = 0, -- [write-only] int
-	paddingTop = 0, -- [write-only] int
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	scrollSpeed = 0, -- [write-only] int
-	size = vec2(), -- vec2
-	tooltip = nil, -- var
-	upper = vec2(), -- vec2
-	visible = true, -- bool
-	width = 0.0 -- float
-}
-
+local ScrollFrame = {}
+ScrollFrame.center = vec2() -- vec2
+ScrollFrame.height = 0.0 -- float
+ScrollFrame.index = 0 -- [read-only] int
+ScrollFrame.layer = 0 -- int
+ScrollFrame.localCenter = vec2() -- [read-only] vec2
+ScrollFrame.localPosition = vec2() -- [read-only] vec2
+ScrollFrame.localRect = Rect() -- [read-only] Rect
+ScrollFrame.lower = vec2() -- vec2
+ScrollFrame.mouseOver = true -- [read-only] bool
+ScrollFrame.paddingBottom = 0 -- [write-only] int
+ScrollFrame.paddingTop = 0 -- [write-only] int
+ScrollFrame.position = vec2() -- vec2
+ScrollFrame.rect = Rect() -- Rect
+ScrollFrame.scrollSpeed = 0 -- [write-only] int
+ScrollFrame.size = vec2() -- vec2
+ScrollFrame.tooltip = nil -- var
+ScrollFrame.upper = vec2() -- vec2
+ScrollFrame.visible = true -- bool
+ScrollFrame.width = 0.0 -- float
 -- @return nothing
 function ScrollFrame.scroll(numSteps)
 	return nil

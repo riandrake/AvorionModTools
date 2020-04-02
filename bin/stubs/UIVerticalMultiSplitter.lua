@@ -3,24 +3,22 @@
 -- @param splits - The number of splits performed
 -- @return A new instance of UIVerticalMultiSplitter
 function UIVerticalMultiSplitter(rect, padding, margin, splits)
-local UIVerticalMultiSplitter = {
-	inner = Rect(), -- [read-only] Rect
-	left = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect(), -- Rect
-	right = Rect() -- [read-only] Rect
-}
-
+local UIVerticalMultiSplitter = {}
+UIVerticalMultiSplitter.inner = Rect() -- [read-only] Rect
+UIVerticalMultiSplitter.left = Rect() -- [read-only] Rect
+UIVerticalMultiSplitter.margin = 0 -- [write-only] int
+UIVerticalMultiSplitter.marginBottom = 0 -- int
+UIVerticalMultiSplitter.marginLeft = 0 -- int
+UIVerticalMultiSplitter.marginRight = 0 -- int
+UIVerticalMultiSplitter.marginTop = 0 -- int
+UIVerticalMultiSplitter.padding = 0 -- [write-only] int
+UIVerticalMultiSplitter.paddingBottom = 0 -- int
+UIVerticalMultiSplitter.paddingInside = 0 -- int
+UIVerticalMultiSplitter.paddingLeft = 0 -- int
+UIVerticalMultiSplitter.paddingRight = 0 -- int
+UIVerticalMultiSplitter.paddingTop = 0 -- int
+UIVerticalMultiSplitter.rect = Rect() -- Rect
+UIVerticalMultiSplitter.right = Rect() -- [read-only] Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

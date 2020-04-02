@@ -2,13 +2,11 @@
 -- @param z - w
 -- @return A new instance of vec4
 function vec4(x, y, z, w)
-local vec4 = {
-	w = 0.0, -- float
-	x = 0.0, -- float
-	y = 0.0, -- float
-	z = 0.0 -- float
-}
-
+local vec4 = {}
+vec4.w = 0.0 -- float
+vec4.x = 0.0 -- float
+vec4.y = 0.0 -- float
+vec4.z = 0.0 -- float
 function vec4.__add(other)
 	return vec4()
 end

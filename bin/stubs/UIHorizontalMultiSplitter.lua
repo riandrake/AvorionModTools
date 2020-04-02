@@ -3,24 +3,22 @@
 -- @param splits - The number of splits performed
 -- @return A new instance of UIHorizontalMultiSplitter
 function UIHorizontalMultiSplitter(rect, padding, margin, splits)
-local UIHorizontalMultiSplitter = {
-	bottom = Rect(), -- [read-only] Rect
-	inner = Rect(), -- [read-only] Rect
-	margin = 0, -- [write-only] int
-	marginBottom = 0, -- int
-	marginLeft = 0, -- int
-	marginRight = 0, -- int
-	marginTop = 0, -- int
-	padding = 0, -- [write-only] int
-	paddingBottom = 0, -- int
-	paddingInside = 0, -- int
-	paddingLeft = 0, -- int
-	paddingRight = 0, -- int
-	paddingTop = 0, -- int
-	rect = Rect(), -- Rect
-	top = Rect() -- [read-only] Rect
-}
-
+local UIHorizontalMultiSplitter = {}
+UIHorizontalMultiSplitter.bottom = Rect() -- [read-only] Rect
+UIHorizontalMultiSplitter.inner = Rect() -- [read-only] Rect
+UIHorizontalMultiSplitter.margin = 0 -- [write-only] int
+UIHorizontalMultiSplitter.marginBottom = 0 -- int
+UIHorizontalMultiSplitter.marginLeft = 0 -- int
+UIHorizontalMultiSplitter.marginRight = 0 -- int
+UIHorizontalMultiSplitter.marginTop = 0 -- int
+UIHorizontalMultiSplitter.padding = 0 -- [write-only] int
+UIHorizontalMultiSplitter.paddingBottom = 0 -- int
+UIHorizontalMultiSplitter.paddingInside = 0 -- int
+UIHorizontalMultiSplitter.paddingLeft = 0 -- int
+UIHorizontalMultiSplitter.paddingRight = 0 -- int
+UIHorizontalMultiSplitter.paddingTop = 0 -- int
+UIHorizontalMultiSplitter.rect = Rect() -- Rect
+UIHorizontalMultiSplitter.top = Rect() -- [read-only] Rect
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing

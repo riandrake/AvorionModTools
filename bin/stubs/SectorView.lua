@@ -1,21 +1,19 @@
 -- This is the default constructor of SectorView. No further arguments are required.
 -- @return A new instance of SectorView
 function SectorView()
-local SectorView = {
-	deathLocation = true, -- bool
-	factionIndex = 0, -- int
-	hasContent = true, -- [read-only] bool
-	influence = 0.0, -- float
-	manuallyTagged = true, -- bool
-	note = "", -- string
-	numAsteroids = 0, -- int
-	numShips = 0, -- int
-	numStations = 0, -- int
-	numWrecks = 0, -- int
-	timeStamp = 0.0, -- double
-	visited = true -- [read-only] bool
-}
-
+local SectorView = {}
+SectorView.deathLocation = true -- bool
+SectorView.factionIndex = 0 -- int
+SectorView.hasContent = true -- [read-only] bool
+SectorView.influence = 0.0 -- float
+SectorView.manuallyTagged = true -- bool
+SectorView.note = "" -- string
+SectorView.numAsteroids = 0 -- int
+SectorView.numShips = 0 -- int
+SectorView.numStations = 0 -- int
+SectorView.numWrecks = 0 -- int
+SectorView.timeStamp = 0.0 -- double
+SectorView.visited = true -- [read-only] bool
 function SectorView.calculateInfluence(stations)
 	return 0.0
 end

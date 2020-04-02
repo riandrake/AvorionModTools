@@ -1,10 +1,8 @@
 -- @return A new instance of Format
 function Format(text, args)
-local Format = {
-	empty = true, -- [read-only] bool
-	text = "" -- [read-only] string
-}
-
+local Format = {}
+Format.empty = true -- [read-only] bool
+Format.text = "" -- [read-only] string
 -- @return nothing
 function Format.add()
 	return nil

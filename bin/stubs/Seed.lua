@@ -1,10 +1,8 @@
 -- @return A new instance of Seed
 function Seed(_in)
-local Seed = {
-	int32 = 0, -- [read-only] int
-	value = 0.0 -- double
-}
-
+local Seed = {}
+Seed.int32 = 0 -- [read-only] int
+Seed.value = 0.0 -- double
 function Seed.__add(other)
 	return Seed()
 end

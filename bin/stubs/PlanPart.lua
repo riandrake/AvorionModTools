@@ -1,15 +1,13 @@
 -- @return A new instance of PlanPart
 function PlanPart()
-local PlanPart = {
-	allrounders = 0, -- int
-	features = 0, -- int
-	othersPaddingBox = Box(), -- Box
-	paddingBox = Box(), -- [write-only] Box
-	selfPaddingBox = Box(), -- Box
-	symmetries = nil, -- var
-	transformationFeatures = TransformationFeature.SingleRotationX -- TransformationFeature
-}
-
+local PlanPart = {}
+PlanPart.allrounders = 0 -- int
+PlanPart.features = 0 -- int
+PlanPart.othersPaddingBox = Box() -- Box
+PlanPart.paddingBox = Box() -- [write-only] Box
+PlanPart.selfPaddingBox = Box() -- Box
+PlanPart.symmetries = nil -- var
+PlanPart.transformationFeatures = TransformationFeature.SingleRotationX -- TransformationFeature
 -- Adds a new block to the part.
 -- @param parentIndex - The index of the block this one is attached to
 -- @param directionOrPosition - Direction the block is attached in. Can be a vec3 or a direction. A position must be passed as a vec3 and will be clamped so the new block and parent block touch each other. A direction can be passed as a string ("x", "-x", "px", "nx", "+x" etc.), an ivec3, or an int (-x = 0, +x = 1, -y = 2, +y = 3, -z = 4, +z = 5)
