@@ -1,59 +1,57 @@
 ---@class Turret
-function Turret(id)
+Turret = {
 
-	local Turret = {}
+	activated = true, -- bool
+	attachedPart = 0, -- int
+	automatic = true, -- bool
+	coaxial = true, -- bool
+	craftPlayerPiloted = true, -- [read-only] bool
+	damageMultiplier = 0.0, -- [read-only] float
+	favorite = true, -- bool
+	group = 0, -- int
+	horizontalRotation = true, -- [read-only] bool
+	lookingAtTarget = true, -- [read-only] bool
+	rigin = true, -- [read-only] bool
+	selected = true, -- bool
+	shootingCraft = 0, -- [read-only] uuid
+	shootingFaction = 0, -- [read-only] int
+	shotCollisionException = 0, -- [read-only] uuid
+	size = 0.0, -- [read-only] float
+	targetedObject = 0, -- [read-only] uuid
+	templateSize = 0.0, -- float
+	trash = true, -- bool
+	turningSpeed = 0.0, -- float
+	usedSlots = 0, -- int
+	verticalRotation = true, -- [read-only] bool
+	weaponsPlayerControlled = true, -- [read-only] bool
 
-	Turret.activated = true -- bool
-	Turret.attachedPart = 0 -- int
-	Turret.automatic = true -- bool
-	Turret.coaxial = true -- bool
-	Turret.craftPlayerPiloted = true -- [read-only] bool
-	Turret.damageMultiplier = 0.0 -- [read-only] float
-	Turret.favorite = true -- bool
-	Turret.group = 0 -- int
-	Turret.horizontalRotation = true -- [read-only] bool
-	Turret.lookingAtTarget = true -- [read-only] bool
-	Turret.rigin = true -- [read-only] bool
-	Turret.selected = true -- bool
-	Turret.shootingCraft = 0 -- [read-only] uuid
-	Turret.shootingFaction = 0 -- [read-only] int
-	Turret.shotCollisionException = 0 -- [read-only] uuid
-	Turret.size = 0.0 -- [read-only] float
-	Turret.targetedObject = 0 -- [read-only] uuid
-	Turret.templateSize = 0.0 -- float
-	Turret.trash = true -- bool
-	Turret.turningSpeed = 0.0 -- float
-	Turret.usedSlots = 0 -- int
-	Turret.verticalRotation = true -- [read-only] bool
-	Turret.weaponsPlayerControlled = true -- [read-only] bool
+}
 
-	-- @return nothing
-	function Turret.consumeEnergyForShot(amount)
-		return nil
-	end
+setmetatable(Turret, {__call = function(self, id) return Turret end})
 
-	function Turret.getCurrentVelocity()
-		return vec3()
-	end
+-- @return nothing
+function Turret:consumeEnergyForShot(amount)
+	return nil
+end
 
-	function Turret.getLookingPosition()
-		return Matrix()
-	end
+function Turret:getCurrentVelocity()
+	return vec3()
+end
 
-	function Turret.hasEnergyForShot(amount)
-		return true
-	end
+function Turret:getLookingPosition()
+	return Matrix()
+end
 
-	-- @return nothing
-	function Turret.setOrientation(rotationVertical, rotationHorizontal, lookingAtTarget)
-		return nil
-	end
+function Turret:hasEnergyForShot(amount)
+	return true
+end
 
-	function Turret.shootingVectorOk(ray)
-		return true
-	end
+-- @return nothing
+function Turret:setOrientation(rotationVertical, rotationHorizontal, lookingAtTarget)
+	return nil
+end
 
-	setmetatable(Turret, {__call = function(self, id) return Turret end})
-	return Turret
+function Turret:shootingVectorOk(ray)
+	return true
 end
 

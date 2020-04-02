@@ -1,12 +1,10 @@
 ---@class ReadOnlyLoot
-function ReadOnlyLoot(id)
+ReadOnlyLoot = {
 
-	local ReadOnlyLoot = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	ReadOnlyLoot.entity = Entity() -- [read-only] Entity
-	ReadOnlyLoot.entityId = 0 -- [read-only] uuid
+}
 
-	setmetatable(ReadOnlyLoot, {__call = function(self, id) return ReadOnlyLoot end})
-	return ReadOnlyLoot
-end
+setmetatable(ReadOnlyLoot, {__call = function(self, id) return ReadOnlyLoot end})
 

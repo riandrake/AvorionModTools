@@ -1,16 +1,14 @@
 ---@class ReadOnlyTurretController
-function ReadOnlyTurretController(id)
+ReadOnlyTurretController = {
 
-	local ReadOnlyTurretController = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	ReadOnlyTurretController.entity = Entity() -- [read-only] Entity
-	ReadOnlyTurretController.entityId = 0 -- [read-only] uuid
+}
 
-	function ReadOnlyTurretController.getGroupOrders(group)
-		return 0, 0
-	end
+setmetatable(ReadOnlyTurretController, {__call = function(self, id) return ReadOnlyTurretController end})
 
-	setmetatable(ReadOnlyTurretController, {__call = function(self, id) return ReadOnlyTurretController end})
-	return ReadOnlyTurretController
+function ReadOnlyTurretController:getGroupOrders(group)
+	return 0, 0
 end
 

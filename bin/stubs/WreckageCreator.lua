@@ -1,13 +1,11 @@
 ---@class WreckageCreator
-function WreckageCreator(id)
+WreckageCreator = {
 
-	local WreckageCreator = {}
+	active = true, -- [write-only] bool
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	WreckageCreator.active = true -- [write-only] bool
-	WreckageCreator.entity = Entity() -- [read-only] Entity
-	WreckageCreator.entityId = 0 -- [read-only] uuid
+}
 
-	setmetatable(WreckageCreator, {__call = function(self, id) return WreckageCreator end})
-	return WreckageCreator
-end
+setmetatable(WreckageCreator, {__call = function(self, id) return WreckageCreator end})
 

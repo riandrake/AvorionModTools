@@ -1,12 +1,10 @@
 ---@class ReadOnlyBspTree
-function ReadOnlyBspTree(id)
+ReadOnlyBspTree = {
 
-	local ReadOnlyBspTree = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	ReadOnlyBspTree.entity = Entity() -- [read-only] Entity
-	ReadOnlyBspTree.entityId = 0 -- [read-only] uuid
+}
 
-	setmetatable(ReadOnlyBspTree, {__call = function(self, id) return ReadOnlyBspTree end})
-	return ReadOnlyBspTree
-end
+setmetatable(ReadOnlyBspTree, {__call = function(self, id) return ReadOnlyBspTree end})
 

@@ -1,19 +1,17 @@
 ---@class TorpedoAI
-function TorpedoAI(id)
+TorpedoAI = {
 
-	local TorpedoAI = {}
+	desiredVelocity = 0.0, -- float
+	dotLastFrame = 0.0, -- [read-only] float
+	driftTime = 0.0, -- float
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	flightTime = 0.0, -- float
+	missedTargetCounter = 0.0, -- float
+	originalDriftTime = 0.0, -- float
+	target = 0, -- Uuid
 
-	TorpedoAI.desiredVelocity = 0.0 -- float
-	TorpedoAI.dotLastFrame = 0.0 -- [read-only] float
-	TorpedoAI.driftTime = 0.0 -- float
-	TorpedoAI.entity = Entity() -- [read-only] Entity
-	TorpedoAI.entityId = 0 -- [read-only] uuid
-	TorpedoAI.flightTime = 0.0 -- float
-	TorpedoAI.missedTargetCounter = 0.0 -- float
-	TorpedoAI.originalDriftTime = 0.0 -- float
-	TorpedoAI.target = 0 -- Uuid
+}
 
-	setmetatable(TorpedoAI, {__call = function(self, id) return TorpedoAI end})
-	return TorpedoAI
-end
+setmetatable(TorpedoAI, {__call = function(self, id) return TorpedoAI end})
 

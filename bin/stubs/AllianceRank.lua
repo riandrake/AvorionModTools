@@ -1,16 +1,14 @@
 ---@class AllianceRank
-function AllianceRank()
+AllianceRank = {
 
-	local AllianceRank = {}
+	level = 0, -- [read-only] int
+	name = 0, -- [read-only] char
 
-	AllianceRank.level = 0 -- [read-only] int
-	AllianceRank.name = 0 -- [read-only] char
+}
 
-	function AllianceRank.getPrivileges()
-		return 0
-	end
+setmetatable(AllianceRank, {__call = function(self) return AllianceRank end})
 
-	setmetatable(AllianceRank, {__call = function(self) return AllianceRank end})
-	return AllianceRank
+function AllianceRank:getPrivileges()
+	return 0
 end
 

@@ -1,13 +1,11 @@
 ---@class InteractionText
-function InteractionText(id)
+InteractionText = {
 
-	local InteractionText = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	text = "", -- string
 
-	InteractionText.entity = Entity() -- [read-only] Entity
-	InteractionText.entityId = 0 -- [read-only] uuid
-	InteractionText.text = "" -- string
+}
 
-	setmetatable(InteractionText, {__call = function(self, id) return InteractionText end})
-	return InteractionText
-end
+setmetatable(InteractionText, {__call = function(self, id) return InteractionText end})
 

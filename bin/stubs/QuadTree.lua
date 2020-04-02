@@ -1,24 +1,22 @@
 ---@class QuadTree
-function QuadTree(min, max, maxLevel)
+QuadTree = {
 
-	local QuadTree = {}
+	empty = true, -- [read-only] bool
 
-	QuadTree.empty = true -- [read-only] bool
+}
 
-	function QuadTree.get(center, radius)
-		return nil
-	end
+setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
 
-	-- @return nothing
-	function QuadTree.insert(point)
-		return nil
-	end
+function QuadTree:get(center, radius)
+	return nil
+end
 
-	function QuadTree.nearest(x, y, radius)
-		return nil, nil
-	end
+-- @return nothing
+function QuadTree:insert(point)
+	return nil
+end
 
-	setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
-	return QuadTree
+function QuadTree:nearest(x, y, radius)
+	return nil, nil
 end
 

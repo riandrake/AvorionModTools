@@ -1,11 +1,9 @@
 ---@class SystemUpgradeLoot
-function SystemUpgradeLoot(id)
+SystemUpgradeLoot = {
 
-	local SystemUpgradeLoot = {}
+	upgrade = SystemUpgradeTemplate(), -- SystemUpgradeTemplate
 
-	SystemUpgradeLoot.upgrade = SystemUpgradeTemplate() -- SystemUpgradeTemplate
+}
 
-	setmetatable(SystemUpgradeLoot, {__call = function(self, id) return SystemUpgradeLoot end})
-	return SystemUpgradeLoot
-end
+setmetatable(SystemUpgradeLoot, {__call = function(self, id) return SystemUpgradeLoot end})
 

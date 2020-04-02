@@ -1,88 +1,86 @@
 ---@class Weapon
-function Weapon()
+Weapon = {
 
-	local Weapon = {}
+	accuracy = 0.0, -- float
+	appearance = 0, -- int
+	appearanceSeed = 0, -- int
+	armed = true, -- [read-only] bool
+	banimationAcceleration = 0.0, -- float
+	banimationSpeed = 0.0, -- float
+	bauraWidth = 0.0, -- float
+	binnerColor = Color(), -- Color
+	blength = 0.0, -- float
+	blockPenetration = 0, -- int
+	bouterColor = Color(), -- Color
+	bshape = 0, -- int
+	bshapeSize = 0.0, -- float
+	bwidth = 0.0, -- float
+	civil = true, -- [read-only] bool
+	continuousBeam = true, -- bool
+	damage = 0.0, -- float
+	damageType = DamageType.Physical, -- DamageType
+	deathExplosion = true, -- bool
+	dps = 0.0, -- [read-only] float
+	explosionRadius = 0.0, -- float
+	fireDelay = 0.0, -- float
+	fireRate = 0.0, -- float
+	hullDamage = 0.0, -- [read-only] float
+	hullDamageMultiplicator = 0.0, -- float
+	hullRepair = 0.0, -- float
+	icon = "", -- string
+	impactExplosion = true, -- bool
+	impactParticles = 0, -- int
+	impactSound = 0, -- int
+	isBeam = true, -- [read-only] bool
+	isProjectile = true, -- [read-only] bool
+	localPosition = vec3(), -- vec3
+	material = Material(), -- Material
+	metalRawEfficiency = 0.0, -- float
+	metalRefinedEfficiency = 0.0, -- float
+	name = "", -- string
+	otherForce = 0.0, -- float
+	pcolor = Color(), -- Color
+	pmaximumTime = 0.0, -- float
+	position = vec3(), -- [read-only] vec3
+	prefix = "", -- string
+	pshape = 0, -- int
+	psize = 0.0, -- float
+	pvelocity = 0.0, -- float
+	rarity = Rarity(), -- Rarity
+	reach = 0.0, -- float
+	recoil = 0.0, -- float
+	seeker = true, -- bool
+	selfForce = 0.0, -- float
+	shieldDamage = 0.0, -- [read-only] float
+	shieldDamageMultiplicator = 0.0, -- float
+	shieldPenetration = 0.0, -- float
+	shieldRepair = 0.0, -- float
+	shotCreationPosition = vec3(), -- vec3
+	shotsFired = 0, -- int
+	shotsPerSecond = 0.0, -- [read-only] float
+	smaterial = Material(), -- Material
+	sound = "", -- string
+	stoneDamageMultiplicator = 0.0, -- float
+	stoneRawEfficiency = 0.0, -- float
+	stoneRefinedEfficiency = 0.0, -- float
+	tech = 0, -- int
+	timedDeath = true, -- bool
 
-	Weapon.accuracy = 0.0 -- float
-	Weapon.appearance = 0 -- int
-	Weapon.appearanceSeed = 0 -- int
-	Weapon.armed = true -- [read-only] bool
-	Weapon.banimationAcceleration = 0.0 -- float
-	Weapon.banimationSpeed = 0.0 -- float
-	Weapon.bauraWidth = 0.0 -- float
-	Weapon.binnerColor = Color() -- Color
-	Weapon.blength = 0.0 -- float
-	Weapon.blockPenetration = 0 -- int
-	Weapon.bouterColor = Color() -- Color
-	Weapon.bshape = 0 -- int
-	Weapon.bshapeSize = 0.0 -- float
-	Weapon.bwidth = 0.0 -- float
-	Weapon.civil = true -- [read-only] bool
-	Weapon.continuousBeam = true -- bool
-	Weapon.damage = 0.0 -- float
-	Weapon.damageType = DamageType.Physical -- DamageType
-	Weapon.deathExplosion = true -- bool
-	Weapon.dps = 0.0 -- [read-only] float
-	Weapon.explosionRadius = 0.0 -- float
-	Weapon.fireDelay = 0.0 -- float
-	Weapon.fireRate = 0.0 -- float
-	Weapon.hullDamage = 0.0 -- [read-only] float
-	Weapon.hullDamageMultiplicator = 0.0 -- float
-	Weapon.hullRepair = 0.0 -- float
-	Weapon.icon = "" -- string
-	Weapon.impactExplosion = true -- bool
-	Weapon.impactParticles = 0 -- int
-	Weapon.impactSound = 0 -- int
-	Weapon.isBeam = true -- [read-only] bool
-	Weapon.isProjectile = true -- [read-only] bool
-	Weapon.localPosition = vec3() -- vec3
-	Weapon.material = Material() -- Material
-	Weapon.metalRawEfficiency = 0.0 -- float
-	Weapon.metalRefinedEfficiency = 0.0 -- float
-	Weapon.name = "" -- string
-	Weapon.otherForce = 0.0 -- float
-	Weapon.pcolor = Color() -- Color
-	Weapon.pmaximumTime = 0.0 -- float
-	Weapon.position = vec3() -- [read-only] vec3
-	Weapon.prefix = "" -- string
-	Weapon.pshape = 0 -- int
-	Weapon.psize = 0.0 -- float
-	Weapon.pvelocity = 0.0 -- float
-	Weapon.rarity = Rarity() -- Rarity
-	Weapon.reach = 0.0 -- float
-	Weapon.recoil = 0.0 -- float
-	Weapon.seeker = true -- bool
-	Weapon.selfForce = 0.0 -- float
-	Weapon.shieldDamage = 0.0 -- [read-only] float
-	Weapon.shieldDamageMultiplicator = 0.0 -- float
-	Weapon.shieldPenetration = 0.0 -- float
-	Weapon.shieldRepair = 0.0 -- float
-	Weapon.shotCreationPosition = vec3() -- vec3
-	Weapon.shotsFired = 0 -- int
-	Weapon.shotsPerSecond = 0.0 -- [read-only] float
-	Weapon.smaterial = Material() -- Material
-	Weapon.sound = "" -- string
-	Weapon.stoneDamageMultiplicator = 0.0 -- float
-	Weapon.stoneRawEfficiency = 0.0 -- float
-	Weapon.stoneRefinedEfficiency = 0.0 -- float
-	Weapon.tech = 0 -- int
-	Weapon.timedDeath = true -- bool
+}
 
-	function Weapon.propertiesEqual(other)
-		return true
-	end
+setmetatable(Weapon, {__call = function(self) return Weapon end})
 
-	-- @return nothing
-	function Weapon.setBeam()
-		return nil
-	end
+function Weapon:propertiesEqual(other)
+	return true
+end
 
-	-- @return nothing
-	function Weapon.setProjectile()
-		return nil
-	end
+-- @return nothing
+function Weapon:setBeam()
+	return nil
+end
 
-	setmetatable(Weapon, {__call = function(self) return Weapon end})
-	return Weapon
+-- @return nothing
+function Weapon:setProjectile()
+	return nil
 end
 

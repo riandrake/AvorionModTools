@@ -1,44 +1,42 @@
 ---@class FighterController
-function FighterController(id)
+FighterController = {
 
-	local FighterController = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	FighterController.entity = Entity() -- [read-only] Entity
-	FighterController.entityId = 0 -- [read-only] uuid
+}
 
-	function FighterController.getDeployedFighters(squad)
-		return Entity()
-	end
+setmetatable(FighterController, {__call = function(self, id) return FighterController end})
 
-	function FighterController.getFighterStartError(squadIndex, fighterIndex)
-		return nil
-	end
+function FighterController:getDeployedFighters(squad)
+	return Entity()
+end
 
-	-- Returns a lightweight copy of the first fighter found of the type (ie. the next fighter that would be started when startFighterOfType() would be called). Lightweight copy means the FighterTemplate without the plan.
-	-- @param type - The type of fighter
-	-- @return A copy of the first fighter found to match the type, without plan
-	function FighterController.getFighterStatsOfType(type)
-		return FighterTemplate()
-	end
+function FighterController:getFighterStartError(squadIndex, fighterIndex)
+	return nil
+end
 
-	function FighterController.getFighterTypeStartError(type)
-		return nil
-	end
+-- Returns a lightweight copy of the first fighter found of the type (ie. the next fighter that would be started when startFighterOfType() would be called). Lightweight copy means the FighterTemplate without the plan.
+-- @param type - The type of fighter
+-- @return A copy of the first fighter found to match the type, without plan
+function FighterController:getFighterStatsOfType(type)
+	return FighterTemplate()
+end
 
-	-- @return nothing
-	function FighterController.setSquadOrders(squad, orders, targetId)
-		return nil
-	end
+function FighterController:getFighterTypeStartError(type)
+	return nil
+end
 
-	function FighterController.startFighter(squadIndex, fighterIndex)
-		return Entity(), 0
-	end
+-- @return nothing
+function FighterController:setSquadOrders(squad, orders, targetId)
+	return nil
+end
 
-	function FighterController.startFighterOfType(type)
-		return Entity(), 0
-	end
+function FighterController:startFighter(squadIndex, fighterIndex)
+	return Entity(), 0
+end
 
-	setmetatable(FighterController, {__call = function(self, id) return FighterController end})
-	return FighterController
+function FighterController:startFighterOfType(type)
+	return Entity(), 0
 end
 

@@ -1,31 +1,29 @@
 ---@class LaserFX
-function LaserFX(key)
+LaserFX = {
 
-	local LaserFX = {}
+	aliveTime = 0.0, -- float
+	animation = 0.0, -- float
+	animationAcceleration = 0.0, -- float
+	animationSpeed = 0.0, -- float
+	auraWidth = 0.0, -- float
+	collision = true, -- bool
+	direction = vec3(), -- vec3
+	ending = vec3(), -- vec3
+	fadeOutTime = 0.0, -- float
+	from = vec3(), -- vec3
+	innerColor = Color(), -- Color
+	length = 0.0, -- float
+	maxAliveTime = 0.0, -- float
+	offset = 0, -- int
+	origin = vec3(), -- vec3
+	outerColor = Color(), -- Color
+	randomNumber = 0, -- int
+	shape = 0, -- int
+	shapeSize = 0.0, -- float
+	to = vec3(), -- vec3
+	width = 0.0, -- float
 
-	LaserFX.aliveTime = 0.0 -- float
-	LaserFX.animation = 0.0 -- float
-	LaserFX.animationAcceleration = 0.0 -- float
-	LaserFX.animationSpeed = 0.0 -- float
-	LaserFX.auraWidth = 0.0 -- float
-	LaserFX.collision = true -- bool
-	LaserFX.direction = vec3() -- vec3
-	LaserFX.ending = vec3() -- vec3
-	LaserFX.fadeOutTime = 0.0 -- float
-	LaserFX.from = vec3() -- vec3
-	LaserFX.innerColor = Color() -- Color
-	LaserFX.length = 0.0 -- float
-	LaserFX.maxAliveTime = 0.0 -- float
-	LaserFX.offset = 0 -- int
-	LaserFX.origin = vec3() -- vec3
-	LaserFX.outerColor = Color() -- Color
-	LaserFX.randomNumber = 0 -- int
-	LaserFX.shape = 0 -- int
-	LaserFX.shapeSize = 0.0 -- float
-	LaserFX.to = vec3() -- vec3
-	LaserFX.width = 0.0 -- float
+}
 
-	setmetatable(LaserFX, {__call = function(self, key) return LaserFX end})
-	return LaserFX
-end
+setmetatable(LaserFX, {__call = function(self, key) return LaserFX end})
 

@@ -1,65 +1,63 @@
 ---@class TurretDesign
-function TurretDesign()
+TurretDesign = {
 
-	local TurretDesign = {}
+	empty = true, -- [read-only] bool
 
-	TurretDesign.empty = true -- [read-only] bool
+}
 
-	function TurretDesign.getBarrels()
-		return TurretDesignPart()
-	end
+setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
 
-	function TurretDesign.getBase()
-		return TurretDesignPart()
-	end
+function TurretDesign:getBarrels()
+	return TurretDesignPart()
+end
 
-	function TurretDesign.getBody()
-		return TurretDesignPart()
-	end
+function TurretDesign:getBase()
+	return TurretDesignPart()
+end
 
-	function TurretDesign.getMoveBarrels()
-		return TurretDesignPart()
-	end
+function TurretDesign:getBody()
+	return TurretDesignPart()
+end
 
-	function TurretDesign.getMoveBase()
-		return TurretDesignPart()
-	end
+function TurretDesign:getMoveBarrels()
+	return TurretDesignPart()
+end
 
-	function TurretDesign.getMoveBody()
-		return TurretDesignPart()
-	end
+function TurretDesign:getMoveBase()
+	return TurretDesignPart()
+end
 
-	-- @return nothing
-	function TurretDesign.setBarrels(part)
-		return nil
-	end
+function TurretDesign:getMoveBody()
+	return TurretDesignPart()
+end
 
-	-- @return nothing
-	function TurretDesign.setBase(part)
-		return nil
-	end
+-- @return nothing
+function TurretDesign:setBarrels(part)
+	return nil
+end
 
-	-- @return nothing
-	function TurretDesign.setBody(part)
-		return nil
-	end
+-- @return nothing
+function TurretDesign:setBase(part)
+	return nil
+end
 
-	-- @return nothing
-	function TurretDesign.setMoveBarrels(part)
-		return nil
-	end
+-- @return nothing
+function TurretDesign:setBody(part)
+	return nil
+end
 
-	-- @return nothing
-	function TurretDesign.setMoveBase(part)
-		return nil
-	end
+-- @return nothing
+function TurretDesign:setMoveBarrels(part)
+	return nil
+end
 
-	-- @return nothing
-	function TurretDesign.setMoveBody(part)
-		return nil
-	end
+-- @return nothing
+function TurretDesign:setMoveBase(part)
+	return nil
+end
 
-	setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
-	return TurretDesign
+-- @return nothing
+function TurretDesign:setMoveBody(part)
+	return nil
 end
 

@@ -1,34 +1,32 @@
 ---@class Format
-function Format(text, args)
+Format = {
 
-	local Format = {}
+	empty = true, -- [read-only] bool
+	text = "", -- [read-only] string
 
-	Format.empty = true -- [read-only] bool
-	Format.text = "" -- [read-only] string
+}
 
-	-- @return nothing
-	function Format.add()
-		return nil
-	end
+setmetatable(Format, {__call = function(self, text, args) return Format end})
 
-	-- @return nothing
-	function Format.clear()
-		return nil
-	end
+-- @return nothing
+function Format:add()
+	return nil
+end
 
-	function Format.evaluate()
-		return ""
-	end
+-- @return nothing
+function Format:clear()
+	return nil
+end
 
-	function Format.getArguments()
-		return PluralForm()
-	end
+function Format:evaluate()
+	return ""
+end
 
-	function Format.translated()
-		return ""
-	end
+function Format:getArguments()
+	return PluralForm()
+end
 
-	setmetatable(Format, {__call = function(self, text, args) return Format end})
-	return Format
+function Format:translated()
+	return ""
 end
 

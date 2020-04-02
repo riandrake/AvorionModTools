@@ -1,20 +1,18 @@
 ---@class Keyboard
-function Keyboard()
+Keyboard = {
+}
 
-	local Keyboard = {}
-	function Keyboard.keyDown(value)
-		return true
-	end
+setmetatable(Keyboard, {__call = function(self) return Keyboard end})
 
-	function Keyboard.keyPressed(value)
-		return true
-	end
+function Keyboard:keyDown(value)
+	return true
+end
 
-	function Keyboard.keyUp(value)
-		return true
-	end
+function Keyboard:keyPressed(value)
+	return true
+end
 
-	setmetatable(Keyboard, {__call = function(self) return Keyboard end})
-	return Keyboard
+function Keyboard:keyUp(value)
+	return true
 end
 

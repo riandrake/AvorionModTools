@@ -1,38 +1,36 @@
 ---@class TradingGood
-function TradingGood(name, plural, description, icon, price, size)
+TradingGood = {
 
-	local TradingGood = {}
+	dangerous = true, -- bool
+	description = "", -- string
+	displayDescription = "", -- [read-only] string
+	icon = "", -- string
+	illegal = true, -- bool
+	name = "", -- string
+	plural = "", -- string
+	price = 0.0, -- float
+	size = 0.0, -- float
+	stolen = true, -- bool
+	suspicious = true, -- bool
+	tags = table_t(), -- table_t
 
-	TradingGood.dangerous = true -- bool
-	TradingGood.description = "" -- string
-	TradingGood.displayDescription = "" -- [read-only] string
-	TradingGood.icon = "" -- string
-	TradingGood.illegal = true -- bool
-	TradingGood.name = "" -- string
-	TradingGood.plural = "" -- string
-	TradingGood.price = 0.0 -- float
-	TradingGood.size = 0.0 -- float
-	TradingGood.stolen = true -- bool
-	TradingGood.suspicious = true -- bool
-	TradingGood.tags = table_t() -- table_t
+}
 
-	function TradingGood.__eq(other)
-		return true
-	end
+setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
 
-	function TradingGood.__tostring()
-		return ""
-	end
+function TradingGood:__eq(other)
+	return true
+end
 
-	function TradingGood.displayName(amount)
-		return ""
-	end
+function TradingGood:__tostring()
+	return ""
+end
 
-	function TradingGood.pluralForm(amount)
-		return PluralForm()
-	end
+function TradingGood:displayName(amount)
+	return ""
+end
 
-	setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
-	return TradingGood
+function TradingGood:pluralForm(amount)
+	return PluralForm()
 end
 

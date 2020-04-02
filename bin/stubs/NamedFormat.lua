@@ -1,19 +1,17 @@
 ---@class NamedFormat
-function NamedFormat(string, MapType)
+NamedFormat = {
 
-	local NamedFormat = {}
+	text = "", -- [read-only] string
 
-	NamedFormat.text = "" -- [read-only] string
+}
 
-	function NamedFormat.arguments()
-		return {"", PluralForm()}
-	end
+setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
 
-	function NamedFormat.translated()
-		return ""
-	end
+function NamedFormat:arguments()
+	return {"", PluralForm()}
+end
 
-	setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
-	return NamedFormat
+function NamedFormat:translated()
+	return ""
 end
 

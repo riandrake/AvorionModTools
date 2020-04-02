@@ -1,49 +1,47 @@
 ---@class Random
-function Random(seed)
+Random = {
+}
 
-	local Random = {}
-	function Random.createSeed()
-		return Seed()
-	end
+setmetatable(Random, {__call = function(self, seed) return Random end})
 
-	function Random.get2DDirection()
-		return vec2()
-	end
+function Random:createSeed()
+	return Seed()
+end
 
-	function Random.getBool()
-		return true
-	end
+function Random:get2DDirection()
+	return vec2()
+end
 
-	function Random.getDirection()
-		return vec3()
-	end
+function Random:getBool()
+	return true
+end
 
-	function Random.getFloat(min, max)
-		return 0.0
-	end
+function Random:getDirection()
+	return vec3()
+end
 
-	function Random.getInt(min, max)
-		return 0
-	end
+function Random:getFloat(min, max)
+	return 0.0
+end
 
-	function Random.getValueOfDistribution()
-		return 0
-	end
+function Random:getInt(min, max)
+	return 0
+end
 
-	function Random.getVector(min, max)
-		return vec3()
-	end
+function Random:getValueOfDistribution()
+	return 0
+end
 
-	-- @return nothing
-	function Random.setSeed(seed)
-		return nil
-	end
+function Random:getVector(min, max)
+	return vec3()
+end
 
-	function Random.test(probability)
-		return true
-	end
+-- @return nothing
+function Random:setSeed(seed)
+	return nil
+end
 
-	setmetatable(Random, {__call = function(self, seed) return Random end})
-	return Random
+function Random:test(probability)
+	return true
 end
 

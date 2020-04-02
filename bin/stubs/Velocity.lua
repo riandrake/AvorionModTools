@@ -1,34 +1,32 @@
 ---@class Velocity
-function Velocity(id)
+Velocity = {
 
-	local Velocity = {}
+	axis = vec3(), -- [read-only] vec3
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	linear = 0.0, -- [read-only] double
+	linear2 = 0.0, -- [read-only] double
+	localAngular = vec3(), -- [read-only] vec3
+	rotationSpeed = 0.0, -- [read-only] float
+	velocity = dvec3(), -- dvec3
+	velocityf = vec3(), -- vec3
 
-	Velocity.axis = vec3() -- [read-only] vec3
-	Velocity.entity = Entity() -- [read-only] Entity
-	Velocity.entityId = 0 -- [read-only] uuid
-	Velocity.linear = 0.0 -- [read-only] double
-	Velocity.linear2 = 0.0 -- [read-only] double
-	Velocity.localAngular = vec3() -- [read-only] vec3
-	Velocity.rotationSpeed = 0.0 -- [read-only] float
-	Velocity.velocity = dvec3() -- dvec3
-	Velocity.velocityf = vec3() -- vec3
+}
 
-	-- @return nothing
-	function Velocity.addRotation(axis, angle)
-		return nil
-	end
+setmetatable(Velocity, {__call = function(self, id) return Velocity end})
 
-	-- @return nothing
-	function Velocity.addVelocity(delta)
-		return nil
-	end
+-- @return nothing
+function Velocity:addRotation(axis, angle)
+	return nil
+end
 
-	-- @return nothing
-	function Velocity.setAngularVelocity(axis, angle)
-		return nil
-	end
+-- @return nothing
+function Velocity:addVelocity(delta)
+	return nil
+end
 
-	setmetatable(Velocity, {__call = function(self, id) return Velocity end})
-	return Velocity
+-- @return nothing
+function Velocity:setAngularVelocity(axis, angle)
+	return nil
 end
 

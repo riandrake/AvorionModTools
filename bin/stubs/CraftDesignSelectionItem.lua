@@ -1,22 +1,20 @@
 ---@class CraftDesignSelectionItem
-function CraftDesignSelectionItem(path)
+CraftDesignSelectionItem = {
 
-	local CraftDesignSelectionItem = {}
+	deleteable = true, -- bool
+	design = CraftDesign(), -- [read-only] CraftDesign
+	hasWorkshopIcon = true, -- [read-only] bool
+	highlighted = true, -- bool
+	isLocalProject = true, -- bool
+	isOwnSubmission = true, -- bool
+	isSubscribedDesign = true, -- bool
+	path = "", -- string
+	plan = BlockPlan(), -- [read-only] BlockPlan
+	readyForDeletion = true, -- bool
+	type = SavedDesignType(), -- [read-only] SavedDesignType
+	workshopUrl = "", -- [read-only] string
 
-	CraftDesignSelectionItem.deleteable = true -- bool
-	CraftDesignSelectionItem.design = CraftDesign() -- [read-only] CraftDesign
-	CraftDesignSelectionItem.hasWorkshopIcon = true -- [read-only] bool
-	CraftDesignSelectionItem.highlighted = true -- bool
-	CraftDesignSelectionItem.isLocalProject = true -- bool
-	CraftDesignSelectionItem.isOwnSubmission = true -- bool
-	CraftDesignSelectionItem.isSubscribedDesign = true -- bool
-	CraftDesignSelectionItem.path = "" -- string
-	CraftDesignSelectionItem.plan = BlockPlan() -- [read-only] BlockPlan
-	CraftDesignSelectionItem.readyForDeletion = true -- bool
-	CraftDesignSelectionItem.type = SavedDesignType() -- [read-only] SavedDesignType
-	CraftDesignSelectionItem.workshopUrl = "" -- [read-only] string
+}
 
-	setmetatable(CraftDesignSelectionItem, {__call = function(self, path) return CraftDesignSelectionItem end})
-	return CraftDesignSelectionItem
-end
+setmetatable(CraftDesignSelectionItem, {__call = function(self, path) return CraftDesignSelectionItem end})
 

@@ -1,28 +1,26 @@
 ---@class Torpedo
-function Torpedo(id)
+Torpedo = {
 
-	local Torpedo = {}
+	collisionWithParentEnabled = true, -- bool
+	firedByAIControlledPlayerShip = true, -- bool
+	intendedTargetFaction = 0, -- int
+	shootingCraft = 0, -- Uuid
 
-	Torpedo.collisionWithParentEnabled = true -- bool
-	Torpedo.firedByAIControlledPlayerShip = true -- bool
-	Torpedo.intendedTargetFaction = 0 -- int
-	Torpedo.shootingCraft = 0 -- Uuid
+}
 
-	function Torpedo.getTemplate()
-		return TorpedoTemplate()
-	end
+setmetatable(Torpedo, {__call = function(self, id) return Torpedo end})
 
-	-- @return nothing
-	function Torpedo.setTemplate(torpedo)
-		return nil
-	end
+function Torpedo:getTemplate()
+	return TorpedoTemplate()
+end
 
-	-- @return nothing
-	function Torpedo.startDetonation()
-		return nil
-	end
+-- @return nothing
+function Torpedo:setTemplate(torpedo)
+	return nil
+end
 
-	setmetatable(Torpedo, {__call = function(self, id) return Torpedo end})
-	return Torpedo
+-- @return nothing
+function Torpedo:startDetonation()
+	return nil
 end
 

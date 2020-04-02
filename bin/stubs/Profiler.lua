@@ -1,45 +1,43 @@
 ---@class Profiler
-function Profiler(str)
+Profiler = {
 
-	local Profiler = {}
+	printedSections = 0, -- int
+	started = true, -- [read-only] bool
 
-	Profiler.printedSections = 0 -- int
-	Profiler.started = true -- [read-only] bool
+}
 
-	function Profiler.__tostring()
-		return ""
-	end
+setmetatable(Profiler, {__call = function(self, str) return Profiler end})
 
-	-- @return nothing
-	function Profiler.addSection(name, duration)
-		return nil
-	end
+function Profiler:__tostring()
+	return ""
+end
 
-	function Profiler.done()
-		return 0.0
-	end
+-- @return nothing
+function Profiler:addSection(name, duration)
+	return nil
+end
 
-	-- @return nothing
-	function Profiler.print()
-		return nil
-	end
+function Profiler:done()
+	return 0.0
+end
 
-	-- @return nothing
-	function Profiler.reenter(name)
-		return nil
-	end
+-- @return nothing
+function Profiler:print()
+	return nil
+end
 
-	-- @return nothing
-	function Profiler.reset()
-		return nil
-	end
+-- @return nothing
+function Profiler:reenter(name)
+	return nil
+end
 
-	-- @return nothing
-	function Profiler.section(name)
-		return nil
-	end
+-- @return nothing
+function Profiler:reset()
+	return nil
+end
 
-	setmetatable(Profiler, {__call = function(self, str) return Profiler end})
-	return Profiler
+-- @return nothing
+function Profiler:section(name)
+	return nil
 end
 

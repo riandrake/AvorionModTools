@@ -1,21 +1,19 @@
 ---@class CrewProfession
-function CrewProfession(value)
+CrewProfession = {
 
-	local CrewProfession = {}
+	assignable = true, -- [read-only] bool
+	color = Color(), -- [read-only] Color
+	description = "", -- [read-only] string
+	icon = "", -- [read-only] string
+	price = 0, -- [read-only] int
+	salary = 0, -- [read-only] int
+	value = 0, -- int
 
-	CrewProfession.assignable = true -- [read-only] bool
-	CrewProfession.color = Color() -- [read-only] Color
-	CrewProfession.description = "" -- [read-only] string
-	CrewProfession.icon = "" -- [read-only] string
-	CrewProfession.price = 0 -- [read-only] int
-	CrewProfession.salary = 0 -- [read-only] int
-	CrewProfession.value = 0 -- int
+}
 
-	function CrewProfession.name(amount)
-		return ""
-	end
+setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
 
-	setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
-	return CrewProfession
+function CrewProfession:name(amount)
+	return ""
 end
 

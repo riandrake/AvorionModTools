@@ -1,15 +1,13 @@
 ---@class DirectFlightPhysics
-function DirectFlightPhysics(id)
+DirectFlightPhysics = {
 
-	local DirectFlightPhysics = {}
+	drifting = true, -- bool
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	maxVelocity = 0.0, -- float
+	turningSpeed = 0.0, -- float
 
-	DirectFlightPhysics.drifting = true -- bool
-	DirectFlightPhysics.entity = Entity() -- [read-only] Entity
-	DirectFlightPhysics.entityId = 0 -- [read-only] uuid
-	DirectFlightPhysics.maxVelocity = 0.0 -- float
-	DirectFlightPhysics.turningSpeed = 0.0 -- float
+}
 
-	setmetatable(DirectFlightPhysics, {__call = function(self, id) return DirectFlightPhysics end})
-	return DirectFlightPhysics
-end
+setmetatable(DirectFlightPhysics, {__call = function(self, id) return DirectFlightPhysics end})
 

@@ -1,26 +1,24 @@
 ---@class Rarity
-function Rarity(value)
+Rarity = {
 
-	local Rarity = {}
+	color = Color(), -- [read-only] Color
+	name = "", -- [read-only] string
+	type = 0, -- int
+	value = 0, -- int
 
-	Rarity.color = Color() -- [read-only] Color
-	Rarity.name = "" -- [read-only] string
-	Rarity.type = 0 -- int
-	Rarity.value = 0 -- int
+}
 
-	function Rarity.__eq(other)
-		return true
-	end
+setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
-	function Rarity.__lt(other)
-		return true
-	end
+function Rarity:__eq(other)
+	return true
+end
 
-	function Rarity.__tostring()
-		return ""
-	end
+function Rarity:__lt(other)
+	return true
+end
 
-	setmetatable(Rarity, {__call = function(self, value) return Rarity end})
-	return Rarity
+function Rarity:__tostring()
+	return ""
 end
 

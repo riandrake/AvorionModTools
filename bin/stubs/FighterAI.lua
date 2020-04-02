@@ -1,35 +1,33 @@
 ---@class FighterAI
-function FighterAI(id)
+FighterAI = {
 
-	local FighterAI = {}
+	circling = true, -- [read-only] bool
+	clearFeedbackEachTick = true, -- bool
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	evading = true, -- [read-only] bool
+	ignoreMothershipOrders = true, -- bool
+	mothershipId = 0, -- [read-only] Uuid
+	orders = FighterOrders.Attack, -- [read-only] FighterOrders
+	reachedTarget = true, -- [read-only] bool
+	squad = 0, -- [read-only] unsigned int
+	target = 0, -- [read-only] uuid
 
-	FighterAI.circling = true -- [read-only] bool
-	FighterAI.clearFeedbackEachTick = true -- bool
-	FighterAI.entity = Entity() -- [read-only] Entity
-	FighterAI.entityId = 0 -- [read-only] uuid
-	FighterAI.evading = true -- [read-only] bool
-	FighterAI.ignoreMothershipOrders = true -- bool
-	FighterAI.mothershipId = 0 -- [read-only] Uuid
-	FighterAI.orders = FighterOrders.Attack -- [read-only] FighterOrders
-	FighterAI.reachedTarget = true -- [read-only] bool
-	FighterAI.squad = 0 -- [read-only] unsigned int
-	FighterAI.target = 0 -- [read-only] uuid
+}
 
-	-- @return nothing
-	function FighterAI.clearFeedback()
-		return nil
-	end
+setmetatable(FighterAI, {__call = function(self, id) return FighterAI end})
 
-	function FighterAI.getMothership()
-		return Entity()
-	end
+-- @return nothing
+function FighterAI:clearFeedback()
+	return nil
+end
 
-	-- @return nothing
-	function FighterAI.setOrders(orders, target)
-		return nil
-	end
+function FighterAI:getMothership()
+	return Entity()
+end
 
-	setmetatable(FighterAI, {__call = function(self, id) return FighterAI end})
-	return FighterAI
+-- @return nothing
+function FighterAI:setOrders(orders, target)
+	return nil
 end
 

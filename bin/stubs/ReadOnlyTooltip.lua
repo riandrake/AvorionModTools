@@ -1,12 +1,10 @@
 ---@class ReadOnlyTooltip
-function ReadOnlyTooltip(id)
+ReadOnlyTooltip = {
 
-	local ReadOnlyTooltip = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	ReadOnlyTooltip.entity = Entity() -- [read-only] Entity
-	ReadOnlyTooltip.entityId = 0 -- [read-only] uuid
+}
 
-	setmetatable(ReadOnlyTooltip, {__call = function(self, id) return ReadOnlyTooltip end})
-	return ReadOnlyTooltip
-end
+setmetatable(ReadOnlyTooltip, {__call = function(self, id) return ReadOnlyTooltip end})
 

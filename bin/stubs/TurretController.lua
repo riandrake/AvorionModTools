@@ -1,21 +1,19 @@
 ---@class TurretController
-function TurretController(id)
+TurretController = {
 
-	local TurretController = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	TurretController.entity = Entity() -- [read-only] Entity
-	TurretController.entityId = 0 -- [read-only] uuid
+}
 
-	function TurretController.getGroupOrders(group)
-		return 0, 0
-	end
+setmetatable(TurretController, {__call = function(self, id) return TurretController end})
 
-	-- @return nothing
-	function TurretController.setGroupFireMode(group, autoFireMode, target)
-		return nil
-	end
+function TurretController:getGroupOrders(group)
+	return 0, 0
+end
 
-	setmetatable(TurretController, {__call = function(self, id) return TurretController end})
-	return TurretController
+-- @return nothing
+function TurretController:setGroupFireMode(group, autoFireMode, target)
+	return nil
 end
 

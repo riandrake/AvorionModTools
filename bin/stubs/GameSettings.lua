@@ -1,32 +1,30 @@
 ---@class GameSettings
-function GameSettings()
+GameSettings = {
 
-	local GameSettings = {}
+	bigWreckageDespawnTime = 0.0, -- float
+	collisionDamage = 0.0, -- float
+	devMode = true, -- bool
+	difficulty = Difficulty.Lowest, -- Difficulty
+	infiniteResources = true, -- bool
+	maximumBlocksPerCraft = 0, -- int
+	maximumFightersPerSectorAndPlayer = 0, -- int
+	maximumPlayerShips = 0, -- int
+	maximumPlayerStations = 0, -- int
+	maximumVolumePerShip = 0.0, -- double
+	maximumVolumePerStation = 0.0, -- double
+	permaDestructionEnabled = true, -- [read-only] bool
+	pvpDamage = true, -- bool
+	reconstructionAllowed = true, -- [read-only] bool
+	safePlayerInput = true, -- bool
+	seed = "", -- string
+	smallWreckageDespawnTime = 0.0, -- float
 
-	GameSettings.bigWreckageDespawnTime = 0.0 -- float
-	GameSettings.collisionDamage = 0.0 -- float
-	GameSettings.devMode = true -- bool
-	GameSettings.difficulty = Difficulty.Lowest -- Difficulty
-	GameSettings.infiniteResources = true -- bool
-	GameSettings.maximumBlocksPerCraft = 0 -- int
-	GameSettings.maximumFightersPerSectorAndPlayer = 0 -- int
-	GameSettings.maximumPlayerShips = 0 -- int
-	GameSettings.maximumPlayerStations = 0 -- int
-	GameSettings.maximumVolumePerShip = 0.0 -- double
-	GameSettings.maximumVolumePerStation = 0.0 -- double
-	GameSettings.permaDestructionEnabled = true -- [read-only] bool
-	GameSettings.pvpDamage = true -- bool
-	GameSettings.reconstructionAllowed = true -- [read-only] bool
-	GameSettings.safePlayerInput = true -- bool
-	GameSettings.seed = "" -- string
-	GameSettings.smallWreckageDespawnTime = 0.0 -- float
+}
 
-	-- @return nothing
-	function GameSettings.activate()
-		return nil
-	end
+setmetatable(GameSettings, {__call = function(self) return GameSettings end})
 
-	setmetatable(GameSettings, {__call = function(self) return GameSettings end})
-	return GameSettings
+-- @return nothing
+function GameSettings:activate()
+	return nil
 end
 

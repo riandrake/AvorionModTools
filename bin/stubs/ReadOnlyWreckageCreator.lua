@@ -1,12 +1,10 @@
 ---@class ReadOnlyWreckageCreator
-function ReadOnlyWreckageCreator(id)
+ReadOnlyWreckageCreator = {
 
-	local ReadOnlyWreckageCreator = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
 
-	ReadOnlyWreckageCreator.entity = Entity() -- [read-only] Entity
-	ReadOnlyWreckageCreator.entityId = 0 -- [read-only] uuid
+}
 
-	setmetatable(ReadOnlyWreckageCreator, {__call = function(self, id) return ReadOnlyWreckageCreator end})
-	return ReadOnlyWreckageCreator
-end
+setmetatable(ReadOnlyWreckageCreator, {__call = function(self, id) return ReadOnlyWreckageCreator end})
 

@@ -1,41 +1,39 @@
 ---@class MapArrowLine
-function MapArrowLine(index)
+MapArrowLine = {
 
-	local MapArrowLine = {}
+	center = vec2(), -- vec2
+	color = Color(), -- [write-only] Color
+	from = ivec2(), -- [write-only] ivec2
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	size = vec2(), -- vec2
+	to = ivec2(), -- [write-only] ivec2
+	tooltip = nil, -- var
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0, -- float
 
-	MapArrowLine.center = vec2() -- vec2
-	MapArrowLine.color = Color() -- [write-only] Color
-	MapArrowLine.from = ivec2() -- [write-only] ivec2
-	MapArrowLine.height = 0.0 -- float
-	MapArrowLine.index = 0 -- [read-only] int
-	MapArrowLine.layer = 0 -- int
-	MapArrowLine.localCenter = vec2() -- [read-only] vec2
-	MapArrowLine.localPosition = vec2() -- [read-only] vec2
-	MapArrowLine.localRect = Rect() -- [read-only] Rect
-	MapArrowLine.lower = vec2() -- vec2
-	MapArrowLine.mouseOver = true -- [read-only] bool
-	MapArrowLine.position = vec2() -- vec2
-	MapArrowLine.rect = Rect() -- Rect
-	MapArrowLine.size = vec2() -- vec2
-	MapArrowLine.to = ivec2() -- [write-only] ivec2
-	MapArrowLine.tooltip = nil -- var
-	MapArrowLine.upper = vec2() -- vec2
-	MapArrowLine.visible = true -- bool
-	MapArrowLine.width = 0.0 -- float
+}
 
-	-- Inherited from UIElement
-	-- @return nothing
-	function MapArrowLine.hide()
-		return nil
-	end
+setmetatable(MapArrowLine, {__call = function(self, index) return MapArrowLine end})
 
-	-- Inherited from UIElement
-	-- @return nothing
-	function MapArrowLine.show()
-		return nil
-	end
+-- Inherited from UIElement
+-- @return nothing
+function MapArrowLine:hide()
+	return nil
+end
 
-	setmetatable(MapArrowLine, {__call = function(self, index) return MapArrowLine end})
-	return MapArrowLine
+-- Inherited from UIElement
+-- @return nothing
+function MapArrowLine:show()
+	return nil
 end
 

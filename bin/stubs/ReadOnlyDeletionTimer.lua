@@ -1,13 +1,11 @@
 ---@class ReadOnlyDeletionTimer
-function ReadOnlyDeletionTimer(id)
+ReadOnlyDeletionTimer = {
 
-	local ReadOnlyDeletionTimer = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	timeLeft = 0.0, -- [read-only] float
 
-	ReadOnlyDeletionTimer.entity = Entity() -- [read-only] Entity
-	ReadOnlyDeletionTimer.entityId = 0 -- [read-only] uuid
-	ReadOnlyDeletionTimer.timeLeft = 0.0 -- [read-only] float
+}
 
-	setmetatable(ReadOnlyDeletionTimer, {__call = function(self, id) return ReadOnlyDeletionTimer end})
-	return ReadOnlyDeletionTimer
-end
+setmetatable(ReadOnlyDeletionTimer, {__call = function(self, id) return ReadOnlyDeletionTimer end})
 

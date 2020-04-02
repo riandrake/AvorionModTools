@@ -1,171 +1,169 @@
 ---@class UIContainer
-function UIContainer(index)
+UIContainer = {
 
-	local UIContainer = {}
+	center = vec2(), -- vec2
+	height = 0.0, -- float
+	index = 0, -- [read-only] int
+	layer = 0, -- int
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
+	mouseOver = true, -- [read-only] bool
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	size = vec2(), -- vec2
+	tooltip = nil, -- var
+	upper = vec2(), -- vec2
+	visible = true, -- bool
+	width = 0.0, -- float
 
-	UIContainer.center = vec2() -- vec2
-	UIContainer.height = 0.0 -- float
-	UIContainer.index = 0 -- [read-only] int
-	UIContainer.layer = 0 -- int
-	UIContainer.localCenter = vec2() -- [read-only] vec2
-	UIContainer.localPosition = vec2() -- [read-only] vec2
-	UIContainer.localRect = Rect() -- [read-only] Rect
-	UIContainer.lower = vec2() -- vec2
-	UIContainer.mouseOver = true -- [read-only] bool
-	UIContainer.position = vec2() -- vec2
-	UIContainer.rect = Rect() -- Rect
-	UIContainer.size = vec2() -- vec2
-	UIContainer.tooltip = nil -- var
-	UIContainer.upper = vec2() -- vec2
-	UIContainer.visible = true -- bool
-	UIContainer.width = 0.0 -- float
+}
 
-	-- @return nothing
-	function UIContainer.clear()
-		return nil
-	end
+setmetatable(UIContainer, {__call = function(self, index) return UIContainer end})
 
-	function UIContainer.createArrowLine()
-		return ArrowLine()
-	end
+-- @return nothing
+function UIContainer:clear()
+	return nil
+end
 
-	function UIContainer.createButton(rect, caption, _function)
-		return Button()
-	end
+function UIContainer:createArrowLine()
+	return ArrowLine()
+end
 
-	function UIContainer.createCheckBox(rect, caption, onCheckedFunction)
-		return CheckBox()
-	end
+function UIContainer:createButton(rect, caption, _function)
+	return Button()
+end
 
-	function UIContainer.createComboBox(rect, onSelectedFunction)
-		return ComboBox()
-	end
+function UIContainer:createCheckBox(rect, caption, onCheckedFunction)
+	return CheckBox()
+end
 
-	function UIContainer.createContainer(rect)
-		return UIContainer()
-	end
+function UIContainer:createComboBox(rect, onSelectedFunction)
+	return ComboBox()
+end
 
-	function UIContainer.createCraftPortrait(rect)
-		return CraftPortrait()
-	end
+function UIContainer:createContainer(rect)
+	return UIContainer()
+end
 
-	function UIContainer.createFrame(rect)
-		return Frame()
-	end
+function UIContainer:createCraftPortrait(rect)
+	return CraftPortrait()
+end
 
-	function UIContainer.createInputWindow()
-		return InputWindow()
-	end
+function UIContainer:createFrame(rect)
+	return Frame()
+end
 
-	function UIContainer.createInventorySelection(rect, width)
-		return InventorySelection()
-	end
+function UIContainer:createInputWindow()
+	return InputWindow()
+end
 
-	function UIContainer.createLabel(position, caption, fontSize)
-		return Label()
-	end
+function UIContainer:createInventorySelection(rect, width)
+	return InventorySelection()
+end
 
-	function UIContainer.createLine(a, b)
-		return Line()
-	end
+function UIContainer:createLabel(position, caption, fontSize)
+	return Label()
+end
 
-	function UIContainer.createListBox(rect)
-		return ListBox()
-	end
+function UIContainer:createLine(a, b)
+	return Line()
+end
 
-	function UIContainer.createListBoxEx(rect)
-		return ListBoxEx()
-	end
+function UIContainer:createListBox(rect)
+	return ListBox()
+end
 
-	function UIContainer.createMapArrowLine()
-		return MapArrowLine()
-	end
+function UIContainer:createListBoxEx(rect)
+	return ListBoxEx()
+end
 
-	function UIContainer.createMultiLineTextBox(rect)
-		return MultiLineTextBox()
-	end
+function UIContainer:createMapArrowLine()
+	return MapArrowLine()
+end
 
-	function UIContainer.createNumbersBar(rect)
-		return NumbersBar()
-	end
+function UIContainer:createMultiLineTextBox(rect)
+	return MultiLineTextBox()
+end
 
-	function UIContainer.createPicture(rect, path)
-		return Picture()
-	end
+function UIContainer:createNumbersBar(rect)
+	return NumbersBar()
+end
 
-	function UIContainer.createPlanDisplayer(rect)
-		return PlanDisplayer()
-	end
+function UIContainer:createPicture(rect, path)
+	return Picture()
+end
 
-	function UIContainer.createProgressBar(rect, color)
-		return ProgressBar()
-	end
+function UIContainer:createPlanDisplayer(rect)
+	return PlanDisplayer()
+end
 
-	function UIContainer.createRect(rect, color)
-		return UIRect()
-	end
+function UIContainer:createProgressBar(rect, color)
+	return ProgressBar()
+end
 
-	function UIContainer.createRoundButton(rect, icon, _function)
-		return Button()
-	end
+function UIContainer:createRect(rect, color)
+	return UIRect()
+end
 
-	function UIContainer.createSavedDesignsSelection(rect, width)
-		return SavedDesignsSelection()
-	end
+function UIContainer:createRoundButton(rect, icon, _function)
+	return Button()
+end
 
-	function UIContainer.createScrollFrame(rect)
-		return ScrollFrame()
-	end
+function UIContainer:createSavedDesignsSelection(rect, width)
+	return SavedDesignsSelection()
+end
 
-	function UIContainer.createSelection(rect, width)
-		return Selection()
-	end
+function UIContainer:createScrollFrame(rect)
+	return ScrollFrame()
+end
 
-	function UIContainer.createSlider(rect, min, max, steps, caption, onValueChangedFunction)
-		return Slider()
-	end
+function UIContainer:createSelection(rect, width)
+	return Selection()
+end
 
-	function UIContainer.createStatisticsBar(rect, color)
-		return StatisticsBar()
-	end
+function UIContainer:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
+	return Slider()
+end
 
-	function UIContainer.createTabbedWindow(rect)
-		return TabbedWindow()
-	end
+function UIContainer:createStatisticsBar(rect, color)
+	return StatisticsBar()
+end
 
-	function UIContainer.createTextBox(rect, onTextChangedFunction)
-		return TextBox()
-	end
+function UIContainer:createTabbedWindow(rect)
+	return TabbedWindow()
+end
 
-	function UIContainer.createTextField(rect, text)
-		return TextField()
-	end
+function UIContainer:createTextBox(rect, onTextChangedFunction)
+	return TextBox()
+end
 
-	function UIContainer.createTree(rect)
-		return Tree()
-	end
+function UIContainer:createTextField(rect, text)
+	return TextField()
+end
 
-	function UIContainer.createValueComboBox(rect, onSelectedFunction)
-		return ValueComboBox()
-	end
+function UIContainer:createTree(rect)
+	return Tree()
+end
 
-	function UIContainer.createWindow(rect)
-		return Window()
-	end
+function UIContainer:createValueComboBox(rect, onSelectedFunction)
+	return ValueComboBox()
+end
 
-	-- Inherited from UIElement
-	-- @return nothing
-	function UIContainer.hide()
-		return nil
-	end
+function UIContainer:createWindow(rect)
+	return Window()
+end
 
-	-- Inherited from UIElement
-	-- @return nothing
-	function UIContainer.show()
-		return nil
-	end
+-- Inherited from UIElement
+-- @return nothing
+function UIContainer:hide()
+	return nil
+end
 
-	setmetatable(UIContainer, {__call = function(self, index) return UIContainer end})
-	return UIContainer
+-- Inherited from UIElement
+-- @return nothing
+function UIContainer:show()
+	return nil
 end
 

@@ -179,7 +179,7 @@ class ParsedFunction:
         prefix_len = len('callback ' if self.callback else 'function ')
         self.parse_return_value(definition[prefix_len:name_start])
 
-        namespace = namespace + '.' if namespace else ''
+        namespace = namespace + ':' if namespace else ''
         # self.definition = f'{namespace}{self.name} = function({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
         self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
 
@@ -318,8 +318,7 @@ class StubGenerator:
                 constructor = functions[0]
 
                 writer.write(f'---@class {namespace}\n')
-                writer.write(f'function {namespace}({constructor.arguments})\n\n')
-                writer.write(f'\tlocal {namespace} = {{}}\n')
+                writer.write(f'{namespace} = {{\n')
 
                 if properties:
                     # Remove duplicates cleanly, then sort
@@ -329,19 +328,18 @@ class StubGenerator:
                     writer.write(f'\n')
 
                     for property in properties:
-                        writer.write(f'\t{namespace}.{property.name} = {get_default_value(property.type)} -- {property.remark}{property.type}\n')
+                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
 
                     writer.write(f'\n')
 
-                for function in functions[1:]:
-                    writer.write(indent(function.remarks))
-                    writer.write(indent(function.definition))
+                writer.write('}\n\n')
 
                 additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(f"\tsetmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n")
-                writer.write(f'\treturn {namespace}\n')
-                writer.write('end\n\n')
+                writer.write(f"setmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n\n")
 
+                for function in functions[1:]:
+                    writer.write(function.remarks)
+                    writer.write(function.definition)
             else:
                 for function in functions:
                     writer.write(function.remarks)

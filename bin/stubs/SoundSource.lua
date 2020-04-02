@@ -1,33 +1,31 @@
 ---@class SoundSource
-function SoundSource(soundName, position, radius)
+SoundSource = {
 
-	local SoundSource = {}
+	is3D = true, -- [read-only] bool
+	loop = true, -- bool
+	maxRadius = 0.0, -- float
+	minRadius = 0.0, -- float
+	playing = true, -- [read-only] bool
+	position = vec3(), -- vec3
+	volume = 0.0, -- float
 
-	SoundSource.is3D = true -- [read-only] bool
-	SoundSource.loop = true -- bool
-	SoundSource.maxRadius = 0.0 -- float
-	SoundSource.minRadius = 0.0 -- float
-	SoundSource.playing = true -- [read-only] bool
-	SoundSource.position = vec3() -- vec3
-	SoundSource.volume = 0.0 -- float
+}
 
-	-- @return nothing
-	function SoundSource.play()
-		return nil
-	end
+setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
 
-	-- @return nothing
-	function SoundSource.stop()
-		return nil
-	end
+-- @return nothing
+function SoundSource:play()
+	return nil
+end
 
-	-- Stops the sound and frees all resources connected to it. The SoundSource object will be inaccessible after this function.
-	-- @return nothing
-	function SoundSource.terminate()
-		return nil
-	end
+-- @return nothing
+function SoundSource:stop()
+	return nil
+end
 
-	setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
-	return SoundSource
+-- Stops the sound and frees all resources connected to it. The SoundSource object will be inaccessible after this function.
+-- @return nothing
+function SoundSource:terminate()
+	return nil
 end
 

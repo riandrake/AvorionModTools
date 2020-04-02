@@ -1,13 +1,11 @@
 ---@class ReadOnlyInteractionText
-function ReadOnlyInteractionText(id)
+ReadOnlyInteractionText = {
 
-	local ReadOnlyInteractionText = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	text = "", -- [read-only] string
 
-	ReadOnlyInteractionText.entity = Entity() -- [read-only] Entity
-	ReadOnlyInteractionText.entityId = 0 -- [read-only] uuid
-	ReadOnlyInteractionText.text = "" -- [read-only] string
+}
 
-	setmetatable(ReadOnlyInteractionText, {__call = function(self, id) return ReadOnlyInteractionText end})
-	return ReadOnlyInteractionText
-end
+setmetatable(ReadOnlyInteractionText, {__call = function(self, id) return ReadOnlyInteractionText end})
 

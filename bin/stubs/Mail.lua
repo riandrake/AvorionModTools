@@ -1,49 +1,47 @@
 ---@class Mail
-function Mail()
+Mail = {
 
-	local Mail = {}
+	empty = true, -- [read-only] bool
+	header = Format(), -- Format
+	id = "", -- string
+	money = 0, -- int
+	read = true, -- bool
+	receiver = PlayerId(), -- [write-only] PlayerId
+	sender = Format(), -- Format
+	text = Format(), -- Format
 
-	Mail.empty = true -- [read-only] bool
-	Mail.header = Format() -- Format
-	Mail.id = "" -- string
-	Mail.money = 0 -- int
-	Mail.read = true -- bool
-	Mail.receiver = PlayerId() -- [write-only] PlayerId
-	Mail.sender = Format() -- Format
-	Mail.text = Format() -- Format
+}
 
-	-- @return nothing
-	function Mail.addTurret(turret)
-		return nil
-	end
+setmetatable(Mail, {__call = function(self) return Mail end})
 
-	function Mail.getItem(index)
-		return UserObject()
-	end
+-- @return nothing
+function Mail:addTurret(turret)
+	return nil
+end
 
-	function Mail.getNumItems()
-		return 0
-	end
+function Mail:getItem(index)
+	return UserObject()
+end
 
-	function Mail.getResources()
-		return 0
-	end
+function Mail:getNumItems()
+	return 0
+end
 
-	function Mail.hasAttachments()
-		return true
-	end
+function Mail:getResources()
+	return 0
+end
 
-	-- @return nothing
-	function Mail.removeItem(index)
-		return nil
-	end
+function Mail:hasAttachments()
+	return true
+end
 
-	-- @return nothing
-	function Mail.setResources()
-		return nil
-	end
+-- @return nothing
+function Mail:removeItem(index)
+	return nil
+end
 
-	setmetatable(Mail, {__call = function(self) return Mail end})
-	return Mail
+-- @return nothing
+function Mail:setResources()
+	return nil
 end
 

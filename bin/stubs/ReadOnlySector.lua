@@ -1,15 +1,13 @@
 ---@class ReadOnlySector
-function ReadOnlySector()
+ReadOnlySector = {
 
-	local ReadOnlySector = {}
+	name = "", -- [read-only] string
+	numEntities = 0, -- [read-only] unsigned int
+	numPlayers = 0, -- [read-only] unsigned int
+	pvpDamage = true, -- [read-only] bool
+	seed = Seed(), -- [read-only] Seed
 
-	ReadOnlySector.name = "" -- [read-only] string
-	ReadOnlySector.numEntities = 0 -- [read-only] unsigned int
-	ReadOnlySector.numPlayers = 0 -- [read-only] unsigned int
-	ReadOnlySector.pvpDamage = true -- [read-only] bool
-	ReadOnlySector.seed = Seed() -- [read-only] Seed
+}
 
-	setmetatable(ReadOnlySector, {__call = function(self) return ReadOnlySector end})
-	return ReadOnlySector
-end
+setmetatable(ReadOnlySector, {__call = function(self) return ReadOnlySector end})
 

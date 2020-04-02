@@ -1,22 +1,20 @@
 ---@class Rect
-function Rect(a, b, c, d)
+Rect = {
 
-	local Rect = {}
+	area = 0.0, -- [read-only] float
+	bottomLeft = vec2(), -- [read-only] vec2
+	bottomRight = vec2(), -- [read-only] vec2
+	center = vec2(), -- [read-only] vec2
+	height = 0.0, -- float
+	lower = vec2(), -- vec2
+	position = vec2(), -- vec2
+	size = vec2(), -- vec2
+	topLeft = vec2(), -- [read-only] vec2
+	topRight = vec2(), -- [read-only] vec2
+	upper = vec2(), -- vec2
+	width = 0.0, -- float
 
-	Rect.area = 0.0 -- [read-only] float
-	Rect.bottomLeft = vec2() -- [read-only] vec2
-	Rect.bottomRight = vec2() -- [read-only] vec2
-	Rect.center = vec2() -- [read-only] vec2
-	Rect.height = 0.0 -- float
-	Rect.lower = vec2() -- vec2
-	Rect.position = vec2() -- vec2
-	Rect.size = vec2() -- vec2
-	Rect.topLeft = vec2() -- [read-only] vec2
-	Rect.topRight = vec2() -- [read-only] vec2
-	Rect.upper = vec2() -- vec2
-	Rect.width = 0.0 -- float
+}
 
-	setmetatable(Rect, {__call = function(self, a, b, c, d) return Rect end})
-	return Rect
-end
+setmetatable(Rect, {__call = function(self, a, b, c, d) return Rect end})
 

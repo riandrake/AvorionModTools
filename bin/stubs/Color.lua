@@ -1,30 +1,28 @@
 ---@class Color
-function Color()
+Color = {
 
-	local Color = {}
+	a = 0.0, -- float
+	b = 0.0, -- float
+	g = 0.0, -- float
+	hue = 0.0, -- float
+	r = 0.0, -- float
+	saturation = 0.0, -- float
+	value = 0.0, -- float
 
-	Color.a = 0.0 -- float
-	Color.b = 0.0 -- float
-	Color.g = 0.0 -- float
-	Color.hue = 0.0 -- float
-	Color.r = 0.0 -- float
-	Color.saturation = 0.0 -- float
-	Color.value = 0.0 -- float
+}
 
-	function Color.__tostring()
-		return ""
-	end
+setmetatable(Color, {__call = function(self) return Color end})
 
-	-- @return nothing
-	function Color.setHSV(h, s, v)
-		return nil
-	end
+function Color:__tostring()
+	return ""
+end
 
-	function Color.toInt()
-		return 0
-	end
+-- @return nothing
+function Color:setHSV(h, s, v)
+	return nil
+end
 
-	setmetatable(Color, {__call = function(self) return Color end})
-	return Color
+function Color:toInt()
+	return 0
 end
 

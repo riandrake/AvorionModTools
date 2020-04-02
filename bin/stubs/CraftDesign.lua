@@ -1,52 +1,50 @@
 ---@class CraftDesign
-function CraftDesign()
+CraftDesign = {
 
-	local CraftDesign = {}
+	empty = true, -- [read-only] bool
+	numTurrets = nil, -- [read-only] Box getCoaxialTurretDesignBoundingBox(float
 
-	CraftDesign.empty = true -- [read-only] bool
-	CraftDesign.numTurrets = nil -- [read-only] Box getCoaxialTurretDesignBoundingBox(float
+}
 
-	function CraftDesign.getMovePlan()
-		return BlockPlan()
-	end
+setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
 
-	function CraftDesign.getMoveTurret(i)
-		return TurretDesign()
-	end
+function CraftDesign:getMovePlan()
+	return BlockPlan()
+end
 
-	function CraftDesign.getPlan()
-		return BlockPlan()
-	end
+function CraftDesign:getMoveTurret(i)
+	return TurretDesign()
+end
 
-	function CraftDesign.getTurret(i)
-		return TurretDesign()
-	end
+function CraftDesign:getPlan()
+	return BlockPlan()
+end
 
-	function CraftDesign.getTurrets()
-		return 0
-	end
+function CraftDesign:getTurret(i)
+	return TurretDesign()
+end
 
-	-- @return nothing
-	function CraftDesign.setMovePlan(plan)
-		return nil
-	end
+function CraftDesign:getTurrets()
+	return 0
+end
 
-	-- @return nothing
-	function CraftDesign.setMoveTurret(i, turret)
-		return nil
-	end
+-- @return nothing
+function CraftDesign:setMovePlan(plan)
+	return nil
+end
 
-	-- @return nothing
-	function CraftDesign.setPlan(plan)
-		return nil
-	end
+-- @return nothing
+function CraftDesign:setMoveTurret(i, turret)
+	return nil
+end
 
-	-- @return nothing
-	function CraftDesign.setTurret(i, turret)
-		return nil
-	end
+-- @return nothing
+function CraftDesign:setPlan(plan)
+	return nil
+end
 
-	setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
-	return CraftDesign
+-- @return nothing
+function CraftDesign:setTurret(i, turret)
+	return nil
 end
 

@@ -1,31 +1,29 @@
 ---@class DebugInfo
-function DebugInfo()
+DebugInfo = {
+}
 
-	local DebugInfo = {}
-	function DebugInfo.getEndingLog()
-		return ""
-	end
+setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
 
-	function DebugInfo.getStartingLog()
-		return ""
-	end
+function DebugInfo:getEndingLog()
+	return ""
+end
 
-	-- @return nothing
-	function DebugInfo.log()
-		return nil
-	end
+function DebugInfo:getStartingLog()
+	return ""
+end
 
-	-- @return nothing
-	function DebugInfo.set(key, value)
-		return nil
-	end
+-- @return nothing
+function DebugInfo:log()
+	return nil
+end
 
-	-- @return nothing
-	function DebugInfo.threadSet(key, value)
-		return nil
-	end
+-- @return nothing
+function DebugInfo:set(key, value)
+	return nil
+end
 
-	setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
-	return DebugInfo
+-- @return nothing
+function DebugInfo:threadSet(key, value)
+	return nil
 end
 

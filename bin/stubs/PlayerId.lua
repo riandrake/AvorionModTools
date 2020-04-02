@@ -1,12 +1,10 @@
 ---@class PlayerId
-function PlayerId()
+PlayerId = {
 
-	local PlayerId = {}
+	id = "", -- [read-only] string
+	name = "", -- [read-only] string
 
-	PlayerId.id = "" -- [read-only] string
-	PlayerId.name = "" -- [read-only] string
+}
 
-	setmetatable(PlayerId, {__call = function(self) return PlayerId end})
-	return PlayerId
-end
+setmetatable(PlayerId, {__call = function(self) return PlayerId end})
 

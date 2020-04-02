@@ -1,18 +1,16 @@
 ---@class DeletionTimer
-function DeletionTimer(id)
+DeletionTimer = {
 
-	local DeletionTimer = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	timeLeft = 0.0, -- float
 
-	DeletionTimer.entity = Entity() -- [read-only] Entity
-	DeletionTimer.entityId = 0 -- [read-only] uuid
-	DeletionTimer.timeLeft = 0.0 -- float
+}
 
-	-- @return nothing
-	function DeletionTimer.disable()
-		return nil
-	end
+setmetatable(DeletionTimer, {__call = function(self, id) return DeletionTimer end})
 
-	setmetatable(DeletionTimer, {__call = function(self, id) return DeletionTimer end})
-	return DeletionTimer
+-- @return nothing
+function DeletionTimer:disable()
+	return nil
 end
 

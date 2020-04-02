@@ -1,29 +1,27 @@
 ---@class EnergySystem
-function EnergySystem(id)
+EnergySystem = {
 
-	local EnergySystem = {}
+	capacity = 0.0, -- double
+	consumableEnergy = 0.0, -- [read-only] double
+	energy = 0.0, -- double
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	productionRate = 0.0, -- double
+	rechargeRate = 0.0, -- [read-only] double
+	requiredEnergy = 0.0, -- [read-only] double
+	superflousEnergy = 0.0, -- [read-only] double
 
-	EnergySystem.capacity = 0.0 -- double
-	EnergySystem.consumableEnergy = 0.0 -- [read-only] double
-	EnergySystem.energy = 0.0 -- double
-	EnergySystem.entity = Entity() -- [read-only] Entity
-	EnergySystem.entityId = 0 -- [read-only] uuid
-	EnergySystem.productionRate = 0.0 -- double
-	EnergySystem.rechargeRate = 0.0 -- [read-only] double
-	EnergySystem.requiredEnergy = 0.0 -- [read-only] double
-	EnergySystem.superflousEnergy = 0.0 -- [read-only] double
+}
 
-	-- @return nothing
-	function EnergySystem.addEnergy(amount)
-		return nil
-	end
+setmetatable(EnergySystem, {__call = function(self, id) return EnergySystem end})
 
-	-- @return nothing
-	function EnergySystem.removeEnergy(amount)
-		return nil
-	end
+-- @return nothing
+function EnergySystem:addEnergy(amount)
+	return nil
+end
 
-	setmetatable(EnergySystem, {__call = function(self, id) return EnergySystem end})
-	return EnergySystem
+-- @return nothing
+function EnergySystem:removeEnergy(amount)
+	return nil
 end
 

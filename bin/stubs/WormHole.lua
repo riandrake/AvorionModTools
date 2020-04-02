@@ -1,28 +1,26 @@
 ---@class WormHole
-function WormHole(id)
+WormHole = {
 
-	local WormHole = {}
+	color = Color(), -- Color
+	enabled = true, -- bool
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	oneWay = true, -- bool
+	passageSize = 0.0, -- float
+	simplifiedVisuals = true, -- bool
+	visible = true, -- bool
+	visualSize = 0.0, -- float
 
-	WormHole.color = Color() -- Color
-	WormHole.enabled = true -- bool
-	WormHole.entity = Entity() -- [read-only] Entity
-	WormHole.entityId = 0 -- [read-only] uuid
-	WormHole.oneWay = true -- bool
-	WormHole.passageSize = 0.0 -- float
-	WormHole.simplifiedVisuals = true -- bool
-	WormHole.visible = true -- bool
-	WormHole.visualSize = 0.0 -- float
+}
 
-	function WormHole.getTargetCoordinates()
-		return 0, 0
-	end
+setmetatable(WormHole, {__call = function(self, id) return WormHole end})
 
-	-- @return nothing
-	function WormHole.setTargetCoordinates(x, y)
-		return nil
-	end
+function WormHole:getTargetCoordinates()
+	return 0, 0
+end
 
-	setmetatable(WormHole, {__call = function(self, id) return WormHole end})
-	return WormHole
+-- @return nothing
+function WormHole:setTargetCoordinates(x, y)
+	return nil
 end
 

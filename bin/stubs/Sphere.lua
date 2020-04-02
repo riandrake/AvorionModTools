@@ -1,12 +1,10 @@
 ---@class Sphere
-function Sphere(center, radius)
+Sphere = {
 
-	local Sphere = {}
+	center = vec3(), -- vec3
+	radius = 0.0, -- float
 
-	Sphere.center = vec3() -- vec3
-	Sphere.radius = 0.0 -- float
+}
 
-	setmetatable(Sphere, {__call = function(self, center, radius) return Sphere end})
-	return Sphere
-end
+setmetatable(Sphere, {__call = function(self, center, radius) return Sphere end})
 

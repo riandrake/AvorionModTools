@@ -1,16 +1,14 @@
 ---@class EntityIcon
-function EntityIcon(id)
+EntityIcon = {
 
-	local EntityIcon = {}
+	entity = Entity(), -- [read-only] Entity
+	entityId = 0, -- [read-only] uuid
+	icon = "", -- string
+	iconColor = Color(), -- Color
+	secondaryIcon = "", -- string
+	secondaryIconColor = Color(), -- Color
 
-	EntityIcon.entity = Entity() -- [read-only] Entity
-	EntityIcon.entityId = 0 -- [read-only] uuid
-	EntityIcon.icon = "" -- string
-	EntityIcon.iconColor = Color() -- Color
-	EntityIcon.secondaryIcon = "" -- string
-	EntityIcon.secondaryIconColor = Color() -- Color
+}
 
-	setmetatable(EntityIcon, {__call = function(self, id) return EntityIcon end})
-	return EntityIcon
-end
+setmetatable(EntityIcon, {__call = function(self, id) return EntityIcon end})
 

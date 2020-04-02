@@ -1,13 +1,11 @@
 ---@class AllianceMember
-function AllianceMember()
+AllianceMember = {
 
-	local AllianceMember = {}
+	coordinates = ivec2(), -- [read-only] ivec2
+	index = 0, -- [read-only] int
+	rank = "", -- [read-only] string
 
-	AllianceMember.coordinates = ivec2() -- [read-only] ivec2
-	AllianceMember.index = 0 -- [read-only] int
-	AllianceMember.rank = "" -- [read-only] string
+}
 
-	setmetatable(AllianceMember, {__call = function(self) return AllianceMember end})
-	return AllianceMember
-end
+setmetatable(AllianceMember, {__call = function(self) return AllianceMember end})
 

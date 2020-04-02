@@ -1,30 +1,28 @@
 ---@class SystemUpgradeTemplate
-function SystemUpgradeTemplate(script, rarity, seed)
+SystemUpgradeTemplate = {
 
-	local SystemUpgradeTemplate = {}
+	favorite = true, -- bool
+	icon = "", -- [read-only] string
+	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
+	name = "", -- [read-only] string
+	price = 0, -- [read-only] int
+	rarity = Rarity(), -- Rarity
+	recent = true, -- bool
+	script = "", -- string
+	seed = Seed(), -- Seed
+	stackable = true, -- [read-only] bool
+	tooltip = UserObject(), -- [read-only] UserObject
+	trash = true, -- bool
 
-	SystemUpgradeTemplate.favorite = true -- bool
-	SystemUpgradeTemplate.icon = "" -- [read-only] string
-	SystemUpgradeTemplate.itemType = InventoryItemType.Turret -- [read-only] InventoryItemType
-	SystemUpgradeTemplate.name = "" -- [read-only] string
-	SystemUpgradeTemplate.price = 0 -- [read-only] int
-	SystemUpgradeTemplate.rarity = Rarity() -- Rarity
-	SystemUpgradeTemplate.recent = true -- bool
-	SystemUpgradeTemplate.script = "" -- string
-	SystemUpgradeTemplate.seed = Seed() -- Seed
-	SystemUpgradeTemplate.stackable = true -- [read-only] bool
-	SystemUpgradeTemplate.tooltip = UserObject() -- [read-only] UserObject
-	SystemUpgradeTemplate.trash = true -- bool
+}
 
-	function SystemUpgradeTemplate.__eq(other)
-		return true
-	end
+setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
 
-	function SystemUpgradeTemplate.getEnergy(permanent)
-		return 0.0
-	end
+function SystemUpgradeTemplate:__eq(other)
+	return true
+end
 
-	setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
-	return SystemUpgradeTemplate
+function SystemUpgradeTemplate:getEnergy(permanent)
+	return 0.0
 end
 
