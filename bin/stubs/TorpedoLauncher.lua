@@ -1,65 +1,67 @@
--- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
--- @return A new instance of TorpedoLauncher
+---@class TorpedoLauncher
 function TorpedoLauncher(id)
-local TorpedoLauncher = {}
-TorpedoLauncher.entity = Entity() -- [read-only] Entity
-TorpedoLauncher.entityId = 0 -- [read-only] uuid
-TorpedoLauncher.freeStorage = 0.0 -- [read-only] float
-TorpedoLauncher.maxShafts = 0 -- [read-only] int
-TorpedoLauncher.maximumStorage = 0.0 -- [read-only] float
-TorpedoLauncher.numShafts = 0 -- [read-only] unsigned int
-TorpedoLauncher.numTorpedoes = 0 -- [read-only] unsigned int
-TorpedoLauncher.occupiedStorage = 0.0 -- [read-only] float
-function TorpedoLauncher.addTorpedo(torpedo, shaft)
-	return true
-end
 
--- @return nothing
-function TorpedoLauncher.clear()
-	return nil
-end
+	local TorpedoLauncher = {}
 
-function TorpedoLauncher.createTorpedo(position, torpedo)
-	return Entity()
-end
+	TorpedoLauncher.entity = Entity() -- [read-only] Entity
+	TorpedoLauncher.entityId = 0 -- [read-only] uuid
+	TorpedoLauncher.freeStorage = 0.0 -- [read-only] float
+	TorpedoLauncher.maxShafts = 0 -- [read-only] int
+	TorpedoLauncher.maximumStorage = 0.0 -- [read-only] float
+	TorpedoLauncher.numShafts = 0 -- [read-only] unsigned int
+	TorpedoLauncher.numTorpedoes = 0 -- [read-only] unsigned int
+	TorpedoLauncher.occupiedStorage = 0.0 -- [read-only] float
 
-function TorpedoLauncher.getFreeSlots(shaftIndex)
-	return 0
-end
+	function TorpedoLauncher.addTorpedo(torpedo, shaft)
+		return true
+	end
 
-function TorpedoLauncher.getMaxTorpedoes(shaftIndex)
-	return 0
-end
+	-- @return nothing
+	function TorpedoLauncher.clear()
+		return nil
+	end
 
--- TODO
--- @param torpedoIndex - shaftIndex,
--- @param -1 for torpedo storage
-function TorpedoLauncher.getNumTorpedoes(shaftIndex)
-	return 0
-end
+	function TorpedoLauncher.createTorpedo(position, torpedo)
+		return Entity()
+	end
 
-function TorpedoLauncher.getShafts()
-	return 0
-end
+	function TorpedoLauncher.getFreeSlots(shaftIndex)
+		return 0
+	end
 
--- TODO
--- @param torpedoIndex - shaftIndex,
--- @param -1 for torpedo storage
-function TorpedoLauncher.getTorpedo(torpedoIndex, shaftIndex)
-	return TorpedoTemplate()
-end
+	function TorpedoLauncher.getMaxTorpedoes(shaftIndex)
+		return 0
+	end
 
--- @return nothing
-function TorpedoLauncher.moveTorpedoToShaft(shaftIndex, torpedoIndex, newShaftIndex)
-	return nil
-end
+	-- TODO
+	-- @param torpedoIndex - shaftIndex,
+	-- @param -1 for torpedo storage
+	function TorpedoLauncher.getNumTorpedoes(shaftIndex)
+		return 0
+	end
 
--- @return nothing
-function TorpedoLauncher.removeTorpedo(index, shaft)
-	return nil
-end
+	function TorpedoLauncher.getShafts()
+		return 0
+	end
 
-setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
-return TorpedoLauncher
+	-- TODO
+	-- @param torpedoIndex - shaftIndex,
+	-- @param -1 for torpedo storage
+	function TorpedoLauncher.getTorpedo(torpedoIndex, shaftIndex)
+		return TorpedoTemplate()
+	end
+
+	-- @return nothing
+	function TorpedoLauncher.moveTorpedoToShaft(shaftIndex, torpedoIndex, newShaftIndex)
+		return nil
+	end
+
+	-- @return nothing
+	function TorpedoLauncher.removeTorpedo(index, shaft)
+		return nil
+	end
+
+	setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
+	return TorpedoLauncher
 end
 

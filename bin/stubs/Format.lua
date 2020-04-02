@@ -1,31 +1,34 @@
--- @return A new instance of Format
+---@class Format
 function Format(text, args)
-local Format = {}
-Format.empty = true -- [read-only] bool
-Format.text = "" -- [read-only] string
--- @return nothing
-function Format.add()
-	return nil
-end
 
--- @return nothing
-function Format.clear()
-	return nil
-end
+	local Format = {}
 
-function Format.evaluate()
-	return ""
-end
+	Format.empty = true -- [read-only] bool
+	Format.text = "" -- [read-only] string
 
-function Format.getArguments()
-	return PluralForm()
-end
+	-- @return nothing
+	function Format.add()
+		return nil
+	end
 
-function Format.translated()
-	return ""
-end
+	-- @return nothing
+	function Format.clear()
+		return nil
+	end
 
-setmetatable(Format, {__call = function(self, text, args) return Format end})
-return Format
+	function Format.evaluate()
+		return ""
+	end
+
+	function Format.getArguments()
+		return PluralForm()
+	end
+
+	function Format.translated()
+		return ""
+	end
+
+	setmetatable(Format, {__call = function(self, text, args) return Format end})
+	return Format
 end
 

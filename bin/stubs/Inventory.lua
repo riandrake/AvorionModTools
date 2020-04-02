@@ -1,72 +1,74 @@
--- This is the default constructor of Inventory. No further arguments are required.
--- @return A new instance of Inventory
+---@class Inventory
 function Inventory()
-local Inventory = {}
-Inventory.empty = true -- [read-only] bool
-Inventory.items = 0 -- [read-only] unsigned int
-Inventory.maxSlots = 0 -- [read-only] unsigned int
-Inventory.occupiedSlots = 0 -- [read-only] unsigned int
-function Inventory.add(item, recent)
-	return 0
-end
 
-function Inventory.addAt(item, index, amount, recent)
-	return 0
-end
+	local Inventory = {}
 
-function Inventory.addOrDrop(item, recent)
-	return nil
-end
+	Inventory.empty = true -- [read-only] bool
+	Inventory.items = 0 -- [read-only] unsigned int
+	Inventory.maxSlots = 0 -- [read-only] unsigned int
+	Inventory.occupiedSlots = 0 -- [read-only] unsigned int
 
-function Inventory.amount(index)
-	return 0
-end
+	function Inventory.add(item, recent)
+		return 0
+	end
 
--- @return nothing
-function Inventory.clear()
-	return nil
-end
+	function Inventory.addAt(item, index, amount, recent)
+		return 0
+	end
 
-function Inventory.find(index)
-	return InventoryItem()
-end
+	function Inventory.addOrDrop(item, recent)
+		return nil
+	end
 
-function Inventory.getItems()
-	return 
-end
+	function Inventory.amount(index)
+		return 0
+	end
 
-function Inventory.getItemsByType(type)
-	return 
-end
+	-- @return nothing
+	function Inventory.clear()
+		return nil
+	end
 
-function Inventory.hasSlot(item)
-	return true
-end
+	function Inventory.find(index)
+		return InventoryItem()
+	end
 
--- @return nothing
-function Inventory.remove(index)
-	return nil
-end
+	function Inventory.getItems()
+		return 
+	end
 
--- @return nothing
-function Inventory.removeAll(index)
-	return nil
-end
+	function Inventory.getItemsByType(type)
+		return 
+	end
 
--- @return nothing
-function Inventory.setAmount(index, amount)
-	return nil
-end
+	function Inventory.hasSlot(item)
+		return true
+	end
 
-function Inventory.slotEmpty(index)
-	return true
-end
+	-- @return nothing
+	function Inventory.remove(index)
+		return nil
+	end
 
-function Inventory.take(index)
-	return InventoryItem()
-end
+	-- @return nothing
+	function Inventory.removeAll(index)
+		return nil
+	end
 
-setmetatable(Inventory, {__call = function(self) return Inventory end})
-return Inventory
+	-- @return nothing
+	function Inventory.setAmount(index, amount)
+		return nil
+	end
+
+	function Inventory.slotEmpty(index)
+		return true
+	end
+
+	function Inventory.take(index)
+		return InventoryItem()
+	end
+
+	setmetatable(Inventory, {__call = function(self) return Inventory end})
+	return Inventory
 end
 

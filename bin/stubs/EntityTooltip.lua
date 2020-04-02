@@ -1,20 +1,22 @@
--- @param id - The id of the entity this component belongs to, or the entity itself, must be an id of an existing entity or nil for the entity in the current script context
--- @return A new instance of EntityTooltip
+---@class EntityTooltip
 function EntityTooltip(id)
-local EntityTooltip = {}
-EntityTooltip.entity = Entity() -- [read-only] Entity
-EntityTooltip.entityId = 0 -- [read-only] uuid
--- @return nothing
-function EntityTooltip.setDisplayTooltip(i, description, str)
-	return nil
-end
 
--- @return nothing
-function EntityTooltip.setTargeterTooltip(i, str)
-	return nil
-end
+	local EntityTooltip = {}
 
-setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip end})
-return EntityTooltip
+	EntityTooltip.entity = Entity() -- [read-only] Entity
+	EntityTooltip.entityId = 0 -- [read-only] uuid
+
+	-- @return nothing
+	function EntityTooltip.setDisplayTooltip(i, description, str)
+		return nil
+	end
+
+	-- @return nothing
+	function EntityTooltip.setTargeterTooltip(i, str)
+		return nil
+	end
+
+	setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip end})
+	return EntityTooltip
 end
 

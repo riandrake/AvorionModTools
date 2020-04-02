@@ -1,60 +1,63 @@
--- @return A new instance of PlayerWindow
+---@class PlayerWindow
 function PlayerWindow()
-local PlayerWindow = {}
-PlayerWindow.onSelectedFunction = "" -- string
--- @return nothing
-function PlayerWindow.activateAllTabs()
-	return nil
-end
 
--- @return nothing
-function PlayerWindow.activateTab(tab)
-	return nil
-end
+	local PlayerWindow = {}
 
-function PlayerWindow.createTab(name, icon, description)
-	return Tab()
-end
+	PlayerWindow.onSelectedFunction = "" -- string
 
--- @return nothing
-function PlayerWindow.deactivateTab(tab)
-	return nil
-end
+	-- @return nothing
+	function PlayerWindow.activateAllTabs()
+		return nil
+	end
 
-function PlayerWindow.getActiveTab()
-	return Tab()
-end
+	-- @return nothing
+	function PlayerWindow.activateTab(tab)
+		return nil
+	end
 
-function PlayerWindow.getTab(name)
-	return Tab()
-end
+	function PlayerWindow.createTab(name, icon, description)
+		return Tab()
+	end
 
--- @return nothing
-function PlayerWindow.hide()
-	return nil
-end
+	-- @return nothing
+	function PlayerWindow.deactivateTab(tab)
+		return nil
+	end
 
--- @return nothing
-function PlayerWindow.moveTabToPosition(tab, pos)
-	return nil
-end
+	function PlayerWindow.getActiveTab()
+		return Tab()
+	end
 
--- @return nothing
-function PlayerWindow.moveTabToTheRight(tab)
-	return nil
-end
+	function PlayerWindow.getTab(name)
+		return Tab()
+	end
 
--- @return nothing
-function PlayerWindow.selectTab(val)
-	return nil
-end
+	-- @return nothing
+	function PlayerWindow.hide()
+		return nil
+	end
 
--- @return nothing
-function PlayerWindow.show()
-	return nil
-end
+	-- @return nothing
+	function PlayerWindow.moveTabToPosition(tab, pos)
+		return nil
+	end
 
-setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
-return PlayerWindow
+	-- @return nothing
+	function PlayerWindow.moveTabToTheRight(tab)
+		return nil
+	end
+
+	-- @return nothing
+	function PlayerWindow.selectTab(val)
+		return nil
+	end
+
+	-- @return nothing
+	function PlayerWindow.show()
+		return nil
+	end
+
+	setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
+	return PlayerWindow
 end
 

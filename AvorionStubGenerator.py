@@ -10,6 +10,27 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 import re
 
+
+BIN_DIR = Path('bin')
+
+
+DEFAULT_VALUES_BY_TYPE = {
+    '': 'nil',
+    'bool': 'true',
+    'string': '""',
+    'int': '0',
+    'unsigned int': '0',
+    'unsignedint': '0',
+    'float': '0.0',
+    'var': 'nil',
+    'double': '0.0',
+    'Uuid': '0',
+    'uuid': '0',
+    'char': '0',
+    'Coordinates': '0, 0',
+}
+
+
 def split_careful(s):
      parts = []
      bracket_level = 0
@@ -28,23 +49,16 @@ def split_careful(s):
      return parts
 
 
-BIN_DIR = Path('bin')
+def indent(string):
+    """ Indent a block of text """
+    lines = string.split('\n')
 
-DEFAULT_VALUES_BY_TYPE = {
-    '': 'nil',
-    'bool': 'true',
-    'string': '""',
-    'int': '0',
-    'unsigned int': '0',
-    'unsignedint': '0',
-    'float': '0.0',
-    'var': 'nil',
-    'double': '0.0',
-    'Uuid': '0',
-    'uuid': '0',
-    'char': '0',
-    'Coordinates': '0, 0',
-}
+    for idx, line in enumerate(lines):
+        if line.strip():
+            lines[idx] = '\t' + line
+    
+    return '\n'.join(lines)
+
 
 def get_default_value(type):
     """ Return a default value for a type, so inference works in lua
@@ -303,27 +317,29 @@ class StubGenerator:
                 print(namespace)
                 constructor = functions[0]
 
-                writer.write(constructor.remarks)
-
-                writer.write(f'function {namespace}({constructor.arguments})\n')
-
-                writer.write(f'local {namespace} = {{}}\n')
+                writer.write(f'---@class {namespace}\n')
+                writer.write(f'function {namespace}({constructor.arguments})\n\n')
+                writer.write(f'\tlocal {namespace} = {{}}\n')
 
                 if properties:
                     # Remove duplicates cleanly, then sort
                     properties = { property.name : property for property in properties }
                     properties = sorted(list(properties.values()))
 
+                    writer.write(f'\n')
+
                     for property in properties:
-                        writer.write(f'{namespace}.{property.name} = {get_default_value(property.type)} -- {property.remark}{property.type}\n')
+                        writer.write(f'\t{namespace}.{property.name} = {get_default_value(property.type)} -- {property.remark}{property.type}\n')
+
+                    writer.write(f'\n')
 
                 for function in functions[1:]:
-                    writer.write(function.remarks)
-                    writer.write(function.definition)
+                    writer.write(indent(function.remarks))
+                    writer.write(indent(function.definition))
 
                 additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(f"setmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n")
-                writer.write(f'return {namespace}\n')
+                writer.write(f"\tsetmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n")
+                writer.write(f'\treturn {namespace}\n')
                 writer.write('end\n\n')
 
             else:
