@@ -14,5 +14,5 @@ ReadOnlyEngine = {
 
 }
 
-setmetatable(ReadOnlyEngine, {__call = function(self) return ReadOnlyEngine end})
+setmetatable(ReadOnlyEngine, {__call = function(self, id) return ReadOnlyEngine end})
 

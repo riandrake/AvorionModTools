@@ -7,136 +7,150 @@ ModManager = {
 
 setmetatable(ModManager, {__call = function(self) return ModManager end})
 
----@type fun(folder:string)
-ModManager.addMod = function ()
+---@param folder string
+---@type fun(folder:string):any
+ModManager.addMod = function (folder)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 ModManager.disableAll = function ()
 	return nil
 end
 
----@type fun(id:string)
-ModManager.disableMod = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.disableMod = function (id)
 	return nil
 end
 
----@type fun()
+---@type fun():string
 ModManager.enableAll = function ()
+	return ""
+end
+
+---@param id string
+---@type fun(id:string):any
+ModManager.enableMod = function (id)
 	return nil
 end
 
----@type fun(id:string)
-ModManager.enableMod = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.find = function (id)
 	return nil
 end
 
----@type fun(id:string)
-ModManager.find = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.findEnabled = function (id)
 	return nil
 end
 
----@type fun(id:string)
-ModManager.findEnabled = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.forceDisable = function (id)
 	return nil
 end
 
----@type fun(id:string)
-ModManager.forceDisable = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.forceEnable = function (id)
 	return nil
 end
 
----@type fun(id:string)
-ModManager.forceEnable = function ()
-	return nil
-end
-
----@type fun()
+---@type fun():string
 ModManager.forceEnableAll = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():table_t
 ModManager.getDetectedMods = function ()
-	return nil
+	return table_t()
 end
 
----@type fun()
+---@type fun():string
 ModManager.getEnabledLoadOrder = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():string
 ModManager.getEnabledMods = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():string
 ModManager.getFullLoadOrder = function ()
-	return nil
+	return ""
 end
 
----@type fun(id:string)
-ModManager.getIncompatibleMods = function ()
-	return nil
+---@param id string
+---@type fun(id:string):string
+ModManager.getIncompatibleMods = function (id)
+	return ""
 end
 
----@type fun()
+---@type fun():string
 ModManager.getLoadOrder = function ()
-	return nil
+	return ""
 end
 
----@type fun():>
+---@type fun():table<string, number>
 ModManager.getLoadPriorities = function ()
-	return }()
+	return {"", 0}
 end
 
----@type fun(id:string)
-ModManager.getModTitle = function ()
+---@param id string
+---@type fun(id:string):any
+ModManager.getModTitle = function (id)
 	return nil
 end
 
----@type fun(file:string)
-ModManager.getModsModifyingFile = function ()
-	return nil
+---@param file string
+---@type fun(file:string):string
+ModManager.getModsModifyingFile = function (file)
+	return ""
 end
 
----@type fun()
+---@type fun():string
 ModManager.getOutdatedMods = function ()
-	return nil
+	return ""
 end
 
----@type fun():>
+---@type fun():table<string, string>
 ModManager.getProblematicMods = function ()
-	return }()
+	return {"", ""}
 end
 
----@type fun(id:string, optionalToo:boolean)
-ModManager.getRequiredMods = function ()
-	return nil
+---@param id string
+---@param optionalToo bool
+---@type fun(id:string, optionalToo:boolean):string
+ModManager.getRequiredMods = function (id, optionalToo)
+	return ""
 end
 
----@type fun(id:string, optionalToo:boolean)
-ModManager.getRequiringMods = function ()
-	return nil
+---@param id string
+---@param optionalToo bool
+---@type fun(id:string, optionalToo:boolean):string
+ModManager.getRequiringMods = function (id, optionalToo)
+	return ""
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 ModManager.refreshEnabledLoadOrder = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 ModManager.refreshLoadOrder = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 ModManager.refreshProblematicMods = function ()
 	return nil
 end

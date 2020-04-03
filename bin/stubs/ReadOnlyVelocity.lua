@@ -13,5 +13,5 @@ ReadOnlyVelocity = {
 
 }
 
-setmetatable(ReadOnlyVelocity, {__call = function(self) return ReadOnlyVelocity end})
+setmetatable(ReadOnlyVelocity, {__call = function(self, id) return ReadOnlyVelocity end})
 

@@ -7,10 +7,10 @@ DeletionTimer = {
 
 }
 
-setmetatable(DeletionTimer, {__call = function(self) return DeletionTimer end})
+setmetatable(DeletionTimer, {__call = function(self, id) return DeletionTimer end})
 
 -- @return nothing
----@type fun()
+---@type fun():any
 DeletionTimer.disable = function ()
 	return nil
 end

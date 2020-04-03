@@ -6,5 +6,5 @@ ReadOnlyPlanMesh = {
 
 }
 
-setmetatable(ReadOnlyPlanMesh, {__call = function(self) return ReadOnlyPlanMesh end})
+setmetatable(ReadOnlyPlanMesh, {__call = function(self, id) return ReadOnlyPlanMesh end})
 

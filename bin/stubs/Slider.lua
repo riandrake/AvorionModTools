@@ -33,36 +33,40 @@ Slider = {
 
 }
 
-setmetatable(Slider, {__call = function(self) return Slider end})
+setmetatable(Slider, {__call = function(self, index) return Slider end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Slider.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(inFrom:number, inTo:number)
-Slider.setRatio = function ()
+---@param inFrom float
+---@param inTo float
+---@type fun(inFrom:number, inTo:number):any
+Slider.setRatio = function (inFrom, inTo)
 	return nil
 end
 
 -- @return nothing
----@type fun(in:number)
-Slider.setSliderPositionNoCallback = function ()
+---@param in float
+---@type fun(in:number):any
+Slider.setSliderPositionNoCallback = function (_in)
 	return nil
 end
 
 -- @return nothing
----@type fun(in:number)
-Slider.setValueNoCallback = function ()
+---@param in float
+---@type fun(in:number):any
+Slider.setValueNoCallback = function (_in)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Slider.show = function ()
 	return nil
 end

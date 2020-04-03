@@ -6,5 +6,5 @@ ReadOnlyScriptUI = {
 
 }
 
-setmetatable(ReadOnlyScriptUI, {__call = function(self) return ReadOnlyScriptUI end})
+setmetatable(ReadOnlyScriptUI, {__call = function(self, id) return ReadOnlyScriptUI end})
 

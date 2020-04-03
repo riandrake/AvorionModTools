@@ -11,12 +11,12 @@ Sector = {
 
 setmetatable(Sector, {__call = function(self) return Sector end})
 
----@type fun()
+---@type fun():number
 Sector.addScript = function ()
-	return nil
+	return 0
 end
 
----@type fun()
+---@type fun():any
 Sector.addScriptOnce = function ()
 	return nil
 end
@@ -25,9 +25,11 @@ end
 -- @param factionIndex - The index of the faction to test
 -- @param id - The id of the entity to test
 -- @return A boolean indicating if the entity belongs to the faction
----@type fun(factionIndex:number, id:any)
-Sector.belongsToFaction = function ()
-	return nil
+---@param factionIndex int
+---@param id var
+---@type fun(factionIndex:number, id:any):boolean
+Sector.belongsToFaction = function (factionIndex, id)
+	return true
 end
 
 -- Broadcast a chat message to all players that are currently in the sector. Supports sending of format arguments so that the chat message can be translated on the client.
@@ -36,8 +38,12 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
----@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>)
-Sector.broadcastChatMessage = function ()
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
+Sector.broadcastChatMessage = function (sender, messageType, message, args)
 	return nil
 end
 
@@ -45,14 +51,16 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
----@type fun(callbackName:string, functionName:any)
-Sector.callbacksRegistered = function ()
-	return nil
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Sector.callbacksRegistered = function (callbackName, functionName)
+	return 0
 end
 
 -- Removes all custom values of the object
 -- @return nothing
----@type fun()
+---@type fun():any
 Sector.clearValues = function ()
 	return nil
 end
@@ -60,8 +68,9 @@ end
 -- Immediately deletes all entities in the sector that are set for deletion. Don't call this function from an entity script. Only call this if you know what you're doing.
 -- @param entity - The entity to delete
 -- @return nothing
----@type fun(entity:any)
-Sector.collectGarbage = function ()
+---@param entity var
+---@type fun(entity:any):any
+Sector.collectGarbage = function (entity)
 	return nil
 end
 
@@ -69,9 +78,11 @@ end
 -- @param entity - The entity to copy
 -- @param positoin - The new position of the copy
 -- @return The new entity
----@type fun(entity:Entity, positoin:Matrix)
-Sector.copyEntity = function ()
-	return nil
+---@param entity Entity
+---@param positoin Matrix
+---@type fun(entity:Entity, positoin:Matrix):Entity
+Sector.copyEntity = function (entity, positoin)
+	return Entity()
 end
 
 -- Convenience function to create an asteroid. Creates a new asteroid in the sector. This entity will have all components required for a default asteroid.
@@ -79,18 +90,23 @@ end
 -- @param resources - 1 if the asteroid should have mineable resources, 0 if not
 -- @param position - The position of the asteroid
 -- @return An entity representing the new asteroid
----@type fun(plan:BlockPlan, resources:boolean, position:Matrix)
-Sector.createAsteroid = function ()
-	return nil
+---@param plan BlockPlan
+---@param resources bool
+---@param position Matrix
+---@type fun(plan:BlockPlan, resources:boolean, position:Matrix):Entity
+Sector.createAsteroid = function (plan, resources, position)
+	return Entity()
 end
 
 -- Creates a new arbitrary entity in the sector
 -- @param descriptor - A descriptor representing the entity to create, this descriptor will be empty after the call since the data is moved (instead of copied) into the created entity
 -- @param arrivalType - The arrival type of the ship
 -- @return The new entity
----@type fun(descriptor:EntityDescriptor, arrivalType:any)
-Sector.createEntity = function ()
-	return nil
+---@param descriptor EntityDescriptor
+---@param arrivalType var
+---@type fun(descriptor:EntityDescriptor, arrivalType:any):Entity
+Sector.createEntity = function (descriptor, arrivalType)
+	return Entity()
 end
 
 -- Convenience function to create a default object. Creates a new default object in the sector. This object has basic components for appearance and physics simulation, such as a plan, velocity and physics
@@ -98,9 +114,12 @@ end
 -- @param position - The position of the object
 -- @param arrivalType - The arrival type of the ship
 -- @return An entity representing the new object
----@type fun(plan:BlockPlan, position:Matrix, arrivalType:any)
-Sector.createObject = function ()
-	return nil
+---@param plan BlockPlan
+---@param position Matrix
+---@param arrivalType var
+---@type fun(plan:BlockPlan, position:Matrix, arrivalType:any):Entity
+Sector.createObject = function (plan, position, arrivalType)
+	return Entity()
 end
 
 -- Convenience function to create a ship. Creates a new ship in the sector. This entity will have all components required for a default ship.
@@ -110,9 +129,14 @@ end
 -- @param position - The position of the ship
 -- @param arrivalType - The arrival type of the ship
 -- @return An entity representing the new ship
----@type fun(faction:Faction, name:string, plan:BlockPlan, position:Matrix, arrivalType:any)
-Sector.createShip = function ()
-	return nil
+---@param faction Faction
+---@param name string
+---@param plan BlockPlan
+---@param position Matrix
+---@param arrivalType var
+---@type fun(faction:Faction, name:string, plan:BlockPlan, position:Matrix, arrivalType:any):Entity
+Sector.createShip = function (faction, name, plan, position, arrivalType)
+	return Entity()
 end
 
 -- Convenience function to create a station. Creates a new station in the sector. A random name will be assigned in case of an AI station. This entity will have all components required for a default station.
@@ -122,9 +146,14 @@ end
 -- @param script - An optional script that will be used on creation of the station
 -- @param args - Arguments to the script that will be passed to its "initialize" function
 -- @return An entity representing the new station
----@type fun(faction:Faction, plan:BlockPlan, position:Matrix, script:any, args:table<number,var>)
-Sector.createStation = function ()
-	return nil
+---@param faction Faction
+---@param plan BlockPlan
+---@param position Matrix
+---@param script var
+---@param args var...
+---@type fun(faction:Faction, plan:BlockPlan, position:Matrix, script:any, args:table<number,var>):Entity
+Sector.createStation = function (faction, plan, position, script, args)
+	return Entity()
 end
 
 -- Convenience function to create a wormhole. Creates a new wormhole in the sector. This entity will have all components required for a default wormhole.
@@ -133,55 +162,78 @@ end
 -- @param color - The color of the wormhole
 -- @param size - The size of the wormhole
 -- @return An entity representing the new wormhole
----@type fun(x:number, y:number, color:Color, size:number)
-Sector.createWormHole = function ()
-	return nil
+---@param x int
+---@param y int
+---@param color Color
+---@param size float
+---@type fun(x:number, y:number, color:Color, size:number):Entity
+Sector.createWormHole = function (x, y, color, size)
+	return Entity()
 end
 
 -- Convenience function to create a wreckage. Creates a new wreckage in the sector. This entity will have all components required for a default wreckage.
 -- @param plan - The plan of the wreckage, this plan will be empty after the call since the plan is moved (instead of copied) into the created entity
 -- @param position - The position of the wreckage
 -- @return An entity representing the new wreckage
----@type fun(plan:BlockPlan, position:Matrix)
-Sector.createWreckage = function ()
-	return nil
+---@param plan BlockPlan
+---@param position Matrix
+---@type fun(plan:BlockPlan, position:Matrix):Entity
+Sector.createWreckage = function (plan, position)
+	return Entity()
 end
 
 -- Sets an entity for deletion. The entity is not deleted right away, but will be marked for deletion and will be deleted at the end of the current frame.
 -- @param entity - The entity to delete
 -- @return nothing
----@type fun(entity:Entity)
-Sector.deleteEntity = function ()
+---@param entity Entity
+---@type fun(entity:Entity):any
+Sector.deleteEntity = function (entity)
 	return nil
 end
 
 -- Sets an entity for deletion. The entity is not deleted right away, but will be marked for deletion and will be deleted at the end of the current frame. This function also creates a hyperspace animation when deleting the entity.
 -- @param entity - The entity to delete
 -- @return nothing
----@type fun(entity:Entity)
-Sector.deleteEntityJumped = function ()
+---@param entity Entity
+---@type fun(entity:Entity):any
+Sector.deleteEntityJumped = function (entity)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Sector.dropBundle = function ()
 	return nil
 end
 
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, good:TradingGood, owner:number, amount:number)
-Sector.dropCargo = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param good TradingGood
+---@param owner int
+---@param amount int
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, good:TradingGood, owner:number, amount:number):Entity
+Sector.dropCargo = function (position, reservedFor, deniedFor, good, owner, amount)
+	return Entity()
 end
 
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, amount:number)
-Sector.dropMoney = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param amount int
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, amount:number):Entity
+Sector.dropMoney = function (position, reservedFor, deniedFor, amount)
+	return Entity()
 end
 
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, material:Material, amount:number)
-Sector.dropResources = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param material Material
+---@param amount int
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, material:Material, amount:number):Entity
+Sector.dropResources = function (position, reservedFor, deniedFor, material, amount)
+	return Entity()
 end
 
 -- Drops a random turret that is appropriate for this sector. Can return nil as well, since turrets with higher slot numbers won't always be dropped so that not too much money value is dropped all the time.
@@ -189,224 +241,261 @@ end
 -- @param reservedFor - Faction the loot is reserved for, or nil
 -- @param deniedFor - Faction the loot is denied for, or nil
 -- @return The new entity, or nil
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction)
-Sector.dropSectorTurret = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction):Entity
+Sector.dropSectorTurret = function (position, reservedFor, deniedFor)
+	return Entity()
 end
 
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, desc:TurretTemplate)
-Sector.dropTurret = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param desc TurretTemplate
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, desc:TurretTemplate):Entity
+Sector.dropTurret = function (position, reservedFor, deniedFor, desc)
+	return Entity()
 end
 
----@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, upgrade:SystemUpgradeTemplate)
-Sector.dropUpgrade = function ()
-	return nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param upgrade SystemUpgradeTemplate
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, upgrade:SystemUpgradeTemplate):Entity
+Sector.dropUpgrade = function (position, reservedFor, deniedFor, upgrade)
+	return Entity()
 end
 
 -- Returns if the entity with the given id exists in the sector. This is a performance optimization for quick checks of existance. Use if you have an id (but not a constructed Entity) that you want to check for existance. If you already have an Entity constructed, use the valid() function, which is faster.
 -- @param id - The id of the entity to test
 -- @return A boolean indicating if the entity with the index exists
----@type fun(id:any)
-Sector.exists = function ()
-	return nil
+---@param id var
+---@type fun(id:any):boolean
+Sector.exists = function (id)
+	return true
 end
 
 -- Returns all allies of the given faction in the sector. Allies include ships of the same faction. Allied entities are determined as follows:  - they belong to the same faction - they belong to factions whose relations are above 70.000 - they belong to players of the same group  - they belong to players of the same alliance  - they belong to a player and his alliance
 -- @param factionIndex - The faction index of the faction whose ally ships are to be queried
 -- @return Multiple values: All detected allies in the sector
----@type fun(factionIndex:number)
-Sector.getAllies = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getAllies = function (factionIndex)
+	return Entity()
 end
 
 -- Access the x, y coordinates of the sector
 -- @return 2 return values: x, y coordinates of the sector
----@type fun():, 
+---@type fun():number, number
 Sector.getCoordinates = function ()
-	return nil, nil
+	return 0, 0
 end
 
 -- Returns all enemies of the given faction in the sector. Enemies are determined as ships of factions where relations are below -40.000
 -- @param factionIndex - The faction index of the faction whose enemy ships are to be queried
 -- @return Multiple return values: All detected enemies in the sector
----@type fun(factionIndex:number)
-Sector.getEnemies = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getEnemies = function (factionIndex)
+	return Entity()
 end
 
 -- Returns all entities in the sector
 -- @return Multiple return values: All entities in the sector
----@type fun()
+---@type fun():Entity
 Sector.getEntities = function ()
-	return nil
+	return Entity()
 end
 
 -- Returns all entities in the sector that have a specific component
 -- @param type - The desired component type (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
----@type fun(type:number)
-Sector.getEntitiesByComponent = function ()
-	return nil
+---@param type int
+---@type fun(type:number):Entity
+Sector.getEntitiesByComponent = function (type)
+	return Entity()
 end
 
 -- Returns all entities in the sector that have a specific set of components
 -- @param types - The desired set of component types (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
----@type fun(types:table<number,Type>)
-Sector.getEntitiesByComponents = function ()
-	return nil
+---@param types Type...
+---@type fun(types:table<number,Type>):Entity
+Sector.getEntitiesByComponents = function (types)
+	return Entity()
 end
 
 -- Returns all entities in the sector that belong to the given faction Complexity: O(n)
 -- @param factionIndex - The desired faction
 -- @return Multiple return values: All matching entities in the sector
----@type fun(factionIndex:number)
-Sector.getEntitiesByFaction = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getEntitiesByFaction = function (factionIndex)
+	return Entity()
 end
 
 -- Returns all entities in the sector whose bounding spheres intersect with the given sphere. Entities without a bounding sphere component will not be considered.  Complexity: O(logn)
 -- @param sphere - The intersected sphere
 -- @return Multiple return values: All matching entities in the sector
----@type fun(sphere:Sphere)
-Sector.getEntitiesByLocation = function ()
-	return nil
+---@param sphere Sphere
+---@type fun(sphere:Sphere):Entity
+Sector.getEntitiesByLocation = function (sphere)
+	return Entity()
 end
 
 -- Returns all entities in the sector that have a specific script attached to them
 -- @param script - The script that is to check for. This operation checks if the given script name is contained in the actual script name.
 -- @return Multiple return values: All matching entities in the sector
----@type fun(script:string)
-Sector.getEntitiesByScript = function ()
-	return nil
+---@param script string
+---@type fun(script:string):Entity
+Sector.getEntitiesByScript = function (script)
+	return Entity()
 end
 
 -- Returns all entities in the sector that have a specific value assigned to them. Values can be set with Entity:setValue(name, value) and read with Entity:getValue(name).
 -- @param name - The value name to check for
 -- @param value - A value to check against. If this is set, only entities will be returned whose value is equal to the passed value. If this is nil, all entities will be returned that have any value with the given name assigned.
 -- @return Multiple return values: All matching entities in the sector
----@type fun(name:string, value:any)
-Sector.getEntitiesByScriptValue = function ()
-	return nil
+---@param name string
+---@param value var
+---@type fun(name:string, value:any):Entity
+Sector.getEntitiesByScriptValue = function (name, value)
+	return Entity()
 end
 
 -- Returns all entities in the sector that have a specific type
 -- @param type - The desired entity type (See enum EntityType)
 -- @return Multiple return values: All matching entities in the sector
----@type fun(type:number)
-Sector.getEntitiesByType = function ()
-	return nil
+---@param type int
+---@type fun(type:number):Entity
+Sector.getEntitiesByType = function (type)
+	return Entity()
 end
 
 -- Find an entity by index in the sector.  Complexity: O(logn)
 -- @param index - The index of the entity as Uuid or std::string
 -- @return The entity or nil if not found
----@type fun(index:any)
-Sector.getEntity = function ()
-	return nil
+---@param index var
+---@type fun(index:any):Entity
+Sector.getEntity = function (index)
+	return Entity()
 end
 
----@type fun(factionIndex:number, name:string)
-Sector.getEntityByFactionAndName = function ()
-	return nil
+---@param factionIndex int
+---@param name string
+---@type fun(factionIndex:number, name:string):Entity
+Sector.getEntityByFactionAndName = function (factionIndex, name)
+	return Entity()
 end
 
----@type fun(faction:number)
-Sector.getNumAllies = function ()
-	return nil
+---@param faction int
+---@type fun(faction:number):number
+Sector.getNumAllies = function (faction)
+	return 0
 end
 
----@type fun(factionIndex:number)
-Sector.getNumEnemies = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Sector.getNumEnemies = function (factionIndex)
+	return 0
 end
 
----@type fun()
+---@type fun():number
 Sector.getNumEntities = function ()
-	return nil
+	return 0
 end
 
----@type fun(component:number)
-Sector.getNumEntitiesByComponent = function ()
-	return nil
+---@param component int
+---@type fun(component:number):number
+Sector.getNumEntitiesByComponent = function (component)
+	return 0
 end
 
----@type fun()
+---@type fun():number
 Sector.getNumEntitiesByComponents = function ()
-	return nil
+	return 0
 end
 
----@type fun(factionIndex:number)
-Sector.getNumEntitiesByFaction = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Sector.getNumEntitiesByFaction = function (factionIndex)
+	return 0
 end
 
----@type fun(sphere:Sphere)
-Sector.getNumEntitiesByLocation = function ()
-	return nil
+---@param sphere Sphere
+---@type fun(sphere:Sphere):number
+Sector.getNumEntitiesByLocation = function (sphere)
+	return 0
 end
 
----@type fun(scriptName:string)
-Sector.getNumEntitiesByScript = function ()
-	return nil
+---@param scriptName string
+---@type fun(scriptName:string):number
+Sector.getNumEntitiesByScript = function (scriptName)
+	return 0
 end
 
----@type fun(valueName:string, value:any)
-Sector.getNumEntitiesByScriptValue = function ()
-	return nil
+---@param valueName string
+---@param value var
+---@type fun(valueName:string, value:any):number
+Sector.getNumEntitiesByScriptValue = function (valueName, value)
+	return 0
 end
 
----@type fun(type:number)
-Sector.getNumEntitiesByType = function ()
-	return nil
+---@param type int
+---@type fun(type:number):number
+Sector.getNumEntitiesByType = function (type)
+	return 0
 end
 
 -- Returns all players that are currently in the sector
 -- @return Multiple return values: All players in the sector
----@type fun()
+---@type fun():Player
 Sector.getPlayers = function ()
-	return nil
+	return Player()
 end
 
 -- Returns all indices of all present factions
 -- @return a list of int indices of all present factions
----@type fun()
+---@type fun():number
 Sector.getPresentFactions = function ()
-	return nil
+	return 0
 end
 
----@type fun():>
+---@type fun():table<number, string>
 Sector.getScripts = function ()
-	return }()
+	return {0, ""}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
----@type fun(key:string)
-Sector.getValue = function ()
+---@param key string
+---@type fun(key:string):any
+Sector.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():>
+---@type fun():table<string, any>
 Sector.getValues = function ()
-	return }()
+	return {"", nil}
 end
 
 -- Checks if the given faction has any enemy ships or objects in the sector
 -- @param factionIndex - The index of the faction
 -- @return true if there are enemies present, false otherwise
----@type fun(factionIndex:number)
-Sector.hasEnemies = function ()
-	return nil
+---@param factionIndex int
+---@type fun(factionIndex:number):boolean
+Sector.hasEnemies = function (factionIndex)
+	return true
 end
 
----@type fun(name:string)
-Sector.hasScript = function ()
-	return nil
+---@param name string
+---@type fun(name:string):boolean
+Sector.hasScript = function (name)
+	return true
 end
 
 -- Intersects a beam in the sector, similar to the way that weapon beams are intersected. If an entity has a shield, that shield will be part of the test. If the beam would intersect with multiple entities, then the entity with its intersection point closest to the ray origin is chosen.
@@ -414,9 +503,12 @@ end
 -- @param ignoredEntity - A uuid that can be optionally set. If this was set, the entity with this ID will be ignored during the intersection.
 -- @param ignoredEntityShields - A uuid that can be optionally set. If this was set, the shields of the entity with this ID will be ignored during the intersection.
 -- @return The entity closest to the origin of the ray, that was hit (if one or more were hit), as well as the point where the ray intersects with the object (or its shield).
----@type fun(ray:Ray, ignoredEntity:nil]:[or:Uuid, ignoredEntityShields:nil]:[or:Uuid)
-Sector.intersectBeamRay = function ()
-	return nil
+---@param ray Ray
+---@param ignoredEntity Uuid
+---@param ignoredEntityShields Uuid
+---@type fun(ray:Ray, ignoredEntity:nil]:[or:Uuid, ignoredEntityShields:nil]:[or:Uuid):UserObject
+Sector.intersectBeamRay = function (ray, ignoredEntity, ignoredEntityShields)
+	return UserObject()
 end
 
 -- Invokes a function in a script of the sector. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -424,8 +516,11 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 3 The call failed because the given script was not found in the sector 4 The call failed because the given function was not found in the script
----@type fun(scriptName:any, functionName:string, arguments:table<number,var>)
-Sector.invokeFunction = function ()
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Sector.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
@@ -434,7 +529,7 @@ end
 -- @param entityId - The id of the entity
 -- @param state - The id of the new state
 ---@type fun(entityId, state)
-Sector.onAIStateChanged = function ()
+Sector.onAIStateChanged = function (entityId, state)
 	return nil
 end
 
@@ -444,7 +539,7 @@ end
 -- @param blockIndex - The index of the block
 -- @param changeFlags - The flags of the block changes
 ---@type fun(objectIndex, blockIndex, changeFlags)
-Sector.onBlockChanged = function ()
+Sector.onBlockChanged = function (objectIndex, blockIndex, changeFlags)
 	return nil
 end
 
@@ -456,7 +551,7 @@ end
 -- @param damage - The damage that was inflicted to the entity
 -- @param damageType - The type of damage
 ---@type fun(objectIndex, blockIndex, inflictorId, damage, damageType)
-Sector.onBlockDamaged = function ()
+Sector.onBlockDamaged = function (objectIndex, blockIndex, inflictorId, damage, damageType)
 	return nil
 end
 
@@ -468,7 +563,7 @@ end
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed block
 -- @param damageSource - The source of damage
 ---@type fun(objectIndex, index, block, lastDamageInflictor, damageSource)
-Sector.onBlockDestroyed = function ()
+Sector.onBlockDestroyed = function (objectIndex, index, block, lastDamageInflictor, damageSource)
 	return nil
 end
 
@@ -478,7 +573,7 @@ end
 -- @param blockIndex - The index of the healed block
 -- @param damage - The damage the entity was healed for
 ---@type fun(objectIndex, blockIndex, damage)
-Sector.onBlockHealed = function ()
+Sector.onBlockHealed = function (objectIndex, blockIndex, damage)
 	return nil
 end
 
@@ -487,7 +582,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param allBlocksChanged - A boolean that indicates whether all the blocks in the block plan have potentially changed
 ---@type fun(objectIndex, allBlocksChanged)
-Sector.onBlockPlanChanged = function ()
+Sector.onBlockPlanChanged = function (objectIndex, allBlocksChanged)
 	return nil
 end
 
@@ -497,7 +592,7 @@ end
 -- @param wasRepaired - true if the callback was fired because of a repair operation, false otherwise
 -- @param blockIndices - The indices of the added blocks, as variable arguments list
 ---@type fun(objectIndex, wasRepaired, blockIndices)
-Sector.onBlocksAdded = function ()
+Sector.onBlocksAdded = function (objectIndex, wasRepaired, blockIndices)
 	return nil
 end
 
@@ -506,7 +601,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param blockIndices - The indices of the removed blocks, as variable arguments list
 ---@type fun(objectIndex, blockIndices)
-Sector.onBlocksRemove = function ()
+Sector.onBlocksRemove = function (objectIndex, blockIndices)
 	return nil
 end
 
@@ -515,7 +610,7 @@ end
 -- @param objectIndex - The id of the entity
 -- @param blockIndices - The indices of the removed blocks, as variable arguments list
 ---@type fun(objectIndex, blockIndices)
-Sector.onBlocksRemoved = function ()
+Sector.onBlocksRemoved = function (objectIndex, blockIndices)
 	return nil
 end
 
@@ -524,7 +619,7 @@ end
 -- @param entityId - The id of the entity
 -- @param attackingFaction - The index of the attacking faction
 ---@type fun(entityId, attackingFaction)
-Sector.onBoardersDefeated = function ()
+Sector.onBoardersDefeated = function (entityId, attackingFaction)
 	return nil
 end
 
@@ -534,7 +629,7 @@ end
 -- @param attackingFaction - The index of the attacking faction
 -- @param firstLanding - True if these are the first boarders, false otherwise
 ---@type fun(entityId, attackingFaction, firstLanding)
-Sector.onBoardersLand = function ()
+Sector.onBoardersLand = function (entityId, attackingFaction, firstLanding)
 	return nil
 end
 
@@ -543,7 +638,7 @@ end
 -- @param entityId - The id of the entity
 -- @param attackingFaction - The index of the attacking faction
 ---@type fun(entityId, attackingFaction)
-Sector.onBoardingFight = function ()
+Sector.onBoardingFight = function (entityId, attackingFaction)
 	return nil
 end
 
@@ -553,7 +648,7 @@ end
 -- @param oldFactionIndex - The index of the faction that owned the entity before boarding
 -- @param newFactionIndex - The index of the attacking faction that now owns the entity
 ---@type fun(entityId, oldFactionIndex, newFactionIndex)
-Sector.onBoardingSuccessful = function ()
+Sector.onBoardingSuccessful = function (entityId, oldFactionIndex, newFactionIndex)
 	return nil
 end
 
@@ -563,7 +658,7 @@ end
 -- @param delta - The amount of cargo that changed
 -- @param good - The good that changed
 ---@type fun(objectIndex, delta, good)
-Sector.onCargoChanged = function ()
+Sector.onCargoChanged = function (objectIndex, delta, good)
 	return nil
 end
 
@@ -575,7 +670,7 @@ end
 -- @param good - The good that was inside the loot entity
 -- @param owner - The original owner of the cargo
 ---@type fun(collector, lootIndex, amount, good, owner)
-Sector.onCargoLootCollected = function ()
+Sector.onCargoLootCollected = function (collector, lootIndex, amount, good, owner)
 	return nil
 end
 
@@ -584,7 +679,7 @@ end
 -- @param objectIndexA - The index of the one colliding object
 -- @param objectIndexB - The index of the other colliding object
 ---@type fun(objectIndexA, objectIndexB)
-Sector.onCollision = function ()
+Sector.onCollision = function (objectIndexA, objectIndexB)
 	return nil
 end
 
@@ -595,7 +690,7 @@ end
 -- @param playerIndex - The index of the player that entered the seat
 -- @param firstPlayer - A bool indicating whether the craft's seats were empty before
 ---@type fun(entityId, seat, playerIndex, firstPlayer)
-Sector.onCraftSeatEntered = function ()
+Sector.onCraftSeatEntered = function (entityId, seat, playerIndex, firstPlayer)
 	return nil
 end
 
@@ -606,7 +701,7 @@ end
 -- @param playerIndex - The index of the player that left the seat
 -- @param playersRemaining - A bool indicating whether there are still players on the craft
 ---@type fun(entityId, seat, playerIndex, playersRemaining)
-Sector.onCraftSeatLeft = function ()
+Sector.onCraftSeatLeft = function (entityId, seat, playerIndex, playersRemaining)
 	return nil
 end
 
@@ -614,7 +709,7 @@ end
 -- Executed whenever the crew of a entity in the sector changes. This callback is executed *after* the crew was changed on the entity.
 -- @param index - The id of the entity
 ---@type fun(index)
-Sector.onCrewChanged = function ()
+Sector.onCrewChanged = function (index)
 	return nil
 end
 
@@ -624,7 +719,7 @@ end
 -- @param delta - The amount of crewmen that changed
 -- @param profession - The profession of the crew that changed
 ---@type fun(index, delta, profession)
-Sector.onCrewChanged = function ()
+Sector.onCrewChanged = function (index, delta, profession)
 	return nil
 end
 
@@ -633,7 +728,7 @@ end
 -- @param collector - The id of the entity that collected loot
 -- @param lootIndex - The index of the collected loot
 ---@type fun(collector, lootIndex)
-Sector.onCrewLootCollected = function ()
+Sector.onCrewLootCollected = function (collector, lootIndex)
 	return nil
 end
 
@@ -645,7 +740,7 @@ end
 -- @param damageSource - The source of damage
 -- @param damageType - The type of damage
 ---@type fun(objectIndex, amount, inflictor, damageSource, damageType)
-Sector.onDamaged = function ()
+Sector.onDamaged = function (objectIndex, amount, inflictor, damageSource, damageType)
 	return nil
 end
 
@@ -654,7 +749,7 @@ end
 -- @param index - The id of the entity that was destroyed
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed entity
 ---@type fun(index, lastDamageInflictor)
-Sector.onDestroyed = function ()
+Sector.onDestroyed = function (index, lastDamageInflictor)
 	return nil
 end
 
@@ -662,7 +757,7 @@ end
 -- Executed whenever a new entity is created in the sector
 -- @param entityId - The index of the new entity
 ---@type fun(entityId)
-Sector.onEntityCreated = function ()
+Sector.onEntityCreated = function (entityId)
 	return nil
 end
 
@@ -670,7 +765,7 @@ end
 -- Executed whenever a entity enters the sector.
 -- @param shipIndex - The index of the entity that entered the sector
 ---@type fun(shipIndex)
-Sector.onEntityEntered = function ()
+Sector.onEntityEntered = function (shipIndex)
 	return nil
 end
 
@@ -680,7 +775,7 @@ end
 -- @param x - The x coordinate of the target sector
 -- @param y - The y coordinate of the target sector
 ---@type fun(shipIndex, x, y)
-Sector.onEntityJump = function ()
+Sector.onEntityJump = function (shipIndex, x, y)
 	return nil
 end
 
@@ -691,7 +786,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param landed - A boolean whether the fighter landed or got added otherwise
 ---@type fun(entityId, squadIndex, fighterIndex, landed)
-Sector.onFighterAdded = function ()
+Sector.onFighterAdded = function (entityId, squadIndex, fighterIndex, landed)
 	return nil
 end
 
@@ -701,7 +796,7 @@ end
 -- @param squadIndex - The index of the squad
 -- @param fighterId - The id of the fighter that landed
 ---@type fun(entityId, squadIndex, fighterId)
-Sector.onFighterLanded = function ()
+Sector.onFighterLanded = function (entityId, squadIndex, fighterId)
 	return nil
 end
 
@@ -712,7 +807,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param started - A boolean whether the fighter started or got removed otherwise
 ---@type fun(entityId, squadIndex, fighterIndex, started)
-Sector.onFighterRemove = function ()
+Sector.onFighterRemove = function (entityId, squadIndex, fighterIndex, started)
 	return nil
 end
 
@@ -723,7 +818,7 @@ end
 -- @param fighterIndex - The index of the fighter in the squad
 -- @param started - A boolean whether the fighter started or got removed otherwise
 ---@type fun(entityId, squadIndex, fighterIndex, started)
-Sector.onFighterRemoved = function ()
+Sector.onFighterRemoved = function (entityId, squadIndex, fighterIndex, started)
 	return nil
 end
 
@@ -733,7 +828,7 @@ end
 -- @param squadIndex - The index of the squad
 -- @param fighterId - The id of the fighter that started
 ---@type fun(entityId, squadIndex, fighterId)
-Sector.onFighterStarted = function ()
+Sector.onFighterStarted = function (entityId, squadIndex, fighterId)
 	return nil
 end
 
@@ -743,7 +838,7 @@ end
 -- @param amount - The amount of damage that was healed
 -- @param inflictor - The id of the entity that dealt the damage
 ---@type fun(objectIndex, amount, inflictor)
-Sector.onHealed = function ()
+Sector.onHealed = function (objectIndex, amount, inflictor)
 	return nil
 end
 
@@ -755,7 +850,7 @@ end
 -- @param damage - The damage the shot dealt to the object
 -- @param location - The impact location
 ---@type fun(objectIndex, blockIndex, shooterIndex, damage, location)
-Sector.onHullHit = function ()
+Sector.onHullHit = function (objectIndex, blockIndex, shooterIndex, damage, location)
 	return nil
 end
 
@@ -764,7 +859,7 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the collected loot
 ---@type fun(collector, lootIndex)
-Sector.onLootCollected = function ()
+Sector.onLootCollected = function (collector, lootIndex)
 	return nil
 end
 
@@ -775,7 +870,7 @@ end
 -- @param materialType - The type of material contained in the loot
 -- @param value - The amount of material the loot contained
 ---@type fun(collector, lootIndex, materialType, value)
-Sector.onMaterialLootCollected = function ()
+Sector.onMaterialLootCollected = function (collector, lootIndex, materialType, value)
 	return nil
 end
 
@@ -785,7 +880,7 @@ end
 -- @param lootIndex - The index of the collected loot
 -- @param value - The amount of credits the loot contained
 ---@type fun(collector, lootIndex, value)
-Sector.onMoneyLootCollected = function ()
+Sector.onMoneyLootCollected = function (collector, lootIndex, value)
 	return nil
 end
 
@@ -793,7 +888,7 @@ end
 -- Executed whenever the plan of an entity was modified by building, meaning adding or removing blocks.
 -- @param shipIndex - The index of the ship
 ---@type fun(shipIndex)
-Sector.onPlanModifiedByBuilding = function ()
+Sector.onPlanModifiedByBuilding = function (shipIndex)
 	return nil
 end
 
@@ -802,7 +897,7 @@ end
 -- @param playerIndex - Index of the player
 -- @param sectorChangeType - The kind of sector change that is happening
 ---@type fun(playerIndex, sectorChangeType)
-Sector.onPlayerEntered = function ()
+Sector.onPlayerEntered = function (playerIndex, sectorChangeType)
 	return nil
 end
 
@@ -811,7 +906,7 @@ end
 -- @param playerIndex - Index of the player
 -- @param sectorChangeType - The kind of sector change that is happening
 ---@type fun(playerIndex, sectorChangeType)
-Sector.onPlayerLeft = function ()
+Sector.onPlayerLeft = function (playerIndex, sectorChangeType)
 	return nil
 end
 
@@ -819,7 +914,7 @@ end
 -- Executed when a sector is loaded/restored from disk. This callback is called after the "restore" callback, for both entity and sector scripts.
 -- @param time - The time since the sector has been last updated. This value can be 0 or too small after database corruptions.
 ---@type fun(time)
-Sector.onRestoredFromDisk = function ()
+Sector.onRestoredFromDisk = function (time)
 	return nil
 end
 
@@ -827,7 +922,7 @@ end
 -- Executed when a sector is generated/created for the first time for both entity and sector scripts.
 -- @param time - The time the game has been running already. This value can be 0 or too small after database corruptions.
 ---@type fun(time)
-Sector.onSectorGenerated = function ()
+Sector.onSectorGenerated = function (time)
 	return nil
 end
 
@@ -836,7 +931,7 @@ end
 -- @param entityId - The index of the entity that is to be deleted
 -- @param deletionType - The deletion type
 ---@type fun(entityId, deletionType)
-Sector.onSetForDeletion = function ()
+Sector.onSetForDeletion = function (entityId, deletionType)
 	return nil
 end
 
@@ -844,7 +939,7 @@ end
 -- Executed whenever a shield activates in the sector
 -- @param entityId - The id of the entity
 ---@type fun(entityId)
-Sector.onShieldActivate = function ()
+Sector.onShieldActivate = function (entityId)
 	return nil
 end
 
@@ -855,7 +950,7 @@ end
 -- @param damageType - The type of damage dealt
 -- @param inflictorId - The id of the entity that inflicted the damage
 ---@type fun(entityId, amount, damageType, inflictorId)
-Sector.onShieldDamaged = function ()
+Sector.onShieldDamaged = function (entityId, amount, damageType, inflictorId)
 	return nil
 end
 
@@ -863,7 +958,7 @@ end
 -- Executed whenever a shield deactivates in the sector
 -- @param entityId - The id of the entity
 ---@type fun(entityId)
-Sector.onShieldDeactivate = function ()
+Sector.onShieldDeactivate = function (entityId)
 	return nil
 end
 
@@ -872,7 +967,7 @@ end
 -- @param entityId - The id of the entity
 -- @param amount - The amount of damage healed
 ---@type fun(entityId, amount)
-Sector.onShieldHealed = function ()
+Sector.onShieldHealed = function (entityId, amount)
 	return nil
 end
 
@@ -883,7 +978,7 @@ end
 -- @param damage - The damage the shot dealt to the object
 -- @param location - The impact location
 ---@type fun(objectIndex, shooterIndex, damage, location)
-Sector.onShieldHit = function ()
+Sector.onShieldHit = function (objectIndex, shooterIndex, damage, location)
 	return nil
 end
 
@@ -891,7 +986,7 @@ end
 -- Executed whenever a new shot is created in the sector
 -- @param shotIndex - The index of the new shot
 ---@type fun(shotIndex)
-Sector.onShotCreated = function ()
+Sector.onShotCreated = function (shotIndex)
 	return nil
 end
 
@@ -899,7 +994,7 @@ end
 -- Executed whenever a shot is fired in the sector
 -- @param entityId - The index of the firing entity (weapon)
 ---@type fun(entityId)
-Sector.onShotFired = function ()
+Sector.onShotFired = function (entityId)
 	return nil
 end
 
@@ -909,7 +1004,7 @@ end
 -- @param shooterIndex - The index of the craft that fired the shot
 -- @param location - The impact location
 ---@type fun(objectIndex, shooterIndex, location)
-Sector.onShotHit = function ()
+Sector.onShotHit = function (objectIndex, shooterIndex, location)
 	return nil
 end
 
@@ -918,7 +1013,7 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 ---@type fun(entityId, index)
-Sector.onSquadAdded = function ()
+Sector.onSquadAdded = function (entityId, index)
 	return nil
 end
 
@@ -929,7 +1024,7 @@ end
 -- @param orders - The orders of the squad
 -- @param targetId - The target assigned to the fighters
 ---@type fun(entityId, squadIndex, orders, targetId)
-Sector.onSquadOrdersChanged = function ()
+Sector.onSquadOrdersChanged = function (entityId, squadIndex, orders, targetId)
 	return nil
 end
 
@@ -938,7 +1033,7 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 ---@type fun(entityId, index)
-Sector.onSquadRemove = function ()
+Sector.onSquadRemove = function (entityId, index)
 	return nil
 end
 
@@ -947,7 +1042,7 @@ end
 -- @param entityId - The id of the entity
 -- @param index - The index of the squad
 ---@type fun(entityId, index)
-Sector.onSquadRemoved = function ()
+Sector.onSquadRemoved = function (entityId, index)
 	return nil
 end
 
@@ -955,7 +1050,7 @@ end
 -- Executed whenever an entity starts firing in the sector
 -- @param entityId - The index of the firing entity (weapon)
 ---@type fun(entityId)
-Sector.onStartFiring = function ()
+Sector.onStartFiring = function (entityId)
 	return nil
 end
 
@@ -963,7 +1058,7 @@ end
 -- Executed whenever an entity stops firing in the sector
 -- @param entityId - The index of the firing entity (weapon)
 ---@type fun(entityId)
-Sector.onStopFiring = function ()
+Sector.onStopFiring = function (entityId)
 	return nil
 end
 
@@ -972,7 +1067,7 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the loot that was collected
 ---@type fun(collector, lootIndex)
-Sector.onSystemUpgradeLootCollected = function ()
+Sector.onSystemUpgradeLootCollected = function (collector, lootIndex)
 	return nil
 end
 
@@ -980,7 +1075,7 @@ end
 -- Executed whenever the systems of a ship in the sector changed. This callback is executed *after* the system was changed on the entity.
 -- @param shipIndex - The index of the ship
 ---@type fun(shipIndex)
-Sector.onSystemsChanged = function ()
+Sector.onSystemsChanged = function (shipIndex)
 	return nil
 end
 
@@ -990,7 +1085,7 @@ end
 -- @param shooterIndex - The index of the craft that fired the torpedo
 -- @param torpedoIndex - The index of the torpedo that hit the object
 ---@type fun(objectIndex, shooterIndex, torpedoIndex)
-Sector.onTorpedoHit = function ()
+Sector.onTorpedoHit = function (objectIndex, shooterIndex, torpedoIndex)
 	return nil
 end
 
@@ -1002,7 +1097,7 @@ end
 -- @param damage - The damage the torpedo dealt to the object
 -- @param torpedoIndex - The index of the torpedo that hit the object
 ---@type fun(objectIndex, blockIndex, shooterIndex, damage, torpedoIndex)
-Sector.onTorpedoHullHit = function ()
+Sector.onTorpedoHullHit = function (objectIndex, blockIndex, shooterIndex, damage, torpedoIndex)
 	return nil
 end
 
@@ -1011,7 +1106,7 @@ end
 -- @param entityId - The id of the entity
 -- @param torpedoId - The id of the launched torpedo
 ---@type fun(entityId, torpedoId)
-Sector.onTorpedoLaunched = function ()
+Sector.onTorpedoLaunched = function (entityId, torpedoId)
 	return nil
 end
 
@@ -1022,7 +1117,7 @@ end
 -- @param damage - The damage the torpedo dealt to the object
 -- @param torpedoIndex - The index of the torpedo that hit the object
 ---@type fun(objectIndex, shooterIndex, damage, torpedoIndex)
-Sector.onTorpedoShieldHit = function ()
+Sector.onTorpedoShieldHit = function (objectIndex, shooterIndex, damage, torpedoIndex)
 	return nil
 end
 
@@ -1032,7 +1127,7 @@ end
 -- @param shipIndex - The id of the entity that turret was attached to
 -- @param lastDamageInflictor - The index of the last entity that inflicted damage to the destroyed entity
 ---@type fun(turretIndex, shipIndex, lastDamageInflictor)
-Sector.onTurretDestroyed = function ()
+Sector.onTurretDestroyed = function (turretIndex, shipIndex, lastDamageInflictor)
 	return nil
 end
 
@@ -1041,7 +1136,7 @@ end
 -- @param collector - The id of the entity which collected the loot
 -- @param lootIndex - The index of the collected loot
 ---@type fun(collector, lootIndex)
-Sector.onTurretLootCollected = function ()
+Sector.onTurretLootCollected = function (collector, lootIndex)
 	return nil
 end
 
@@ -1049,30 +1144,35 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
----@type fun(callbackName:string, functionName:string)
-Sector.registerCallback = function ()
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Sector.registerCallback = function (callbackName, functionName)
+	return 0
+end
+
+-- @return nothing
+---@param script var
+---@type fun(script:any):any
+Sector.removeScript = function (script)
 	return nil
 end
 
 -- @return nothing
----@type fun(script:any)
-Sector.removeScript = function ()
+---@param entity Entity
+---@type fun(entity:Entity):any
+Sector.resendEntity = function (entity)
 	return nil
+end
+
+---@param path string
+---@type fun(path:string):string
+Sector.resolveScriptPath = function (path)
+	return ""
 end
 
 -- @return nothing
----@type fun(entity:Entity)
-Sector.resendEntity = function ()
-	return nil
-end
-
----@type fun(path:string)
-Sector.resolveScriptPath = function ()
-	return nil
-end
-
--- @return nothing
----@type fun()
+---@type fun():any
 Sector.sendCallback = function ()
 	return nil
 end
@@ -1081,14 +1181,18 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
----@type fun(key:string, value:any)
-Sector.setValue = function ()
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+Sector.setValue = function (key, value)
 	return nil
 end
 
 -- @return nothing
----@type fun(callbackName:string, functionName:string)
-Sector.unregisterCallback = function ()
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):any
+Sector.unregisterCallback = function (callbackName, functionName)
 	return nil
 end
 

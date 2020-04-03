@@ -14,5 +14,5 @@ ReadOnlyBoarding = {
 
 }
 
-setmetatable(ReadOnlyBoarding, {__call = function(self) return ReadOnlyBoarding end})
+setmetatable(ReadOnlyBoarding, {__call = function(self, id) return ReadOnlyBoarding end})
 

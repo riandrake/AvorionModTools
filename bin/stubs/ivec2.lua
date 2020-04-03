@@ -6,47 +6,54 @@ ivec2 = {
 
 }
 
-setmetatable(ivec2, {__call = function(self) return ivec2 end})
+setmetatable(ivec2, {__call = function(self, other) return ivec2 end})
 
----@type fun(other:any)
-ivec2.__div = function ()
-	return nil
+---@param other var
+---@type fun(other:any):ivec2
+ivec2.__div = function (other)
+	return ivec2()
 end
 
----@type fun(other:ivec2)
-ivec2.__eq = function ()
-	return nil
+---@param other ivec2
+---@type fun(other:ivec2):boolean
+ivec2.__eq = function (other)
+	return true
 end
 
----@type fun(other:ivec2)
-ivec2.__lt = function ()
-	return nil
+---@param other ivec2
+---@type fun(other:ivec2):boolean
+ivec2.__lt = function (other)
+	return true
 end
 
----@type fun(other:any)
-ivec2.__mul = function ()
-	return nil
+---@param other var
+---@type fun(other:any):ivec2
+ivec2.__mul = function (other)
+	return ivec2()
 end
 
----@type fun(other:any)
-ivec2.__sub = function ()
-	return nil
+---@param other var
+---@type fun(other:any):ivec2
+ivec2.__sub = function (other)
+	return ivec2()
 end
 
----@type fun()
+---@type fun():string
 ivec2.__tostring = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():ivec2
 ivec2.__unm = function ()
-	return nil
+	return ivec2()
 end
 
 -- @param x - y
 -- @return A new instance of ivec2
+---@param x var
+---@param y var
 ---@type fun(x:any, y:any)
-ivec2 = function ()
+ivec2 = function (x, y)
 	return nil
 end
 

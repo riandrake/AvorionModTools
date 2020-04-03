@@ -12,36 +12,41 @@ ReadOnlyTorpedoLauncher = {
 
 }
 
-setmetatable(ReadOnlyTorpedoLauncher, {__call = function(self) return ReadOnlyTorpedoLauncher end})
+setmetatable(ReadOnlyTorpedoLauncher, {__call = function(self, id) return ReadOnlyTorpedoLauncher end})
 
----@type fun(shaftIndex:any)
-ReadOnlyTorpedoLauncher.getFreeSlots = function ()
-	return nil
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+ReadOnlyTorpedoLauncher.getFreeSlots = function (shaftIndex)
+	return 0
 end
 
----@type fun(shaftIndex:any)
-ReadOnlyTorpedoLauncher.getMaxTorpedoes = function ()
-	return nil
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+ReadOnlyTorpedoLauncher.getMaxTorpedoes = function (shaftIndex)
+	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@type fun(shaftIndex:number)
-ReadOnlyTorpedoLauncher.getNumTorpedoes = function ()
-	return nil
+---@param shaftIndex int
+---@type fun(shaftIndex:number):number
+ReadOnlyTorpedoLauncher.getNumTorpedoes = function (shaftIndex)
+	return 0
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyTorpedoLauncher.getShafts = function ()
-	return nil
+	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@type fun(torpedoIndex:number, shaftIndex:number)
-ReadOnlyTorpedoLauncher.getTorpedo = function ()
-	return nil
+---@param torpedoIndex int
+---@param shaftIndex int
+---@type fun(torpedoIndex:number, shaftIndex:number):TorpedoTemplate
+ReadOnlyTorpedoLauncher.getTorpedo = function (torpedoIndex, shaftIndex)
+	return TorpedoTemplate()
 end
 

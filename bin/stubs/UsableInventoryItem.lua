@@ -19,43 +19,46 @@ UsableInventoryItem = {
 
 }
 
-setmetatable(UsableInventoryItem, {__call = function(self) return UsableInventoryItem end})
+setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
 
----@type fun(other:any)
-UsableInventoryItem.__eq = function ()
-	return nil
+---@param other var
+---@type fun(other:any):boolean
+UsableInventoryItem.__eq = function (other)
+	return true
 end
 
 -- Removes all custom values of the object
 -- @return nothing
----@type fun()
+---@type fun():any
 UsableInventoryItem.clearValues = function ()
 	return nil
 end
 
----@type fun()
+---@type fun():Tooltip
 UsableInventoryItem.getTooltip = function ()
-	return nil
+	return Tooltip()
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
----@type fun(key:string)
-UsableInventoryItem.getValue = function ()
+---@param key string
+---@type fun(key:string):any
+UsableInventoryItem.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():>
+---@type fun():table<string, any>
 UsableInventoryItem.getValues = function ()
-	return }()
+	return {"", nil}
 end
 
 -- @return nothing
----@type fun(tooltip:Tooltip)
-UsableInventoryItem.setTooltip = function ()
+---@param tooltip Tooltip
+---@type fun(tooltip:Tooltip):any
+UsableInventoryItem.setTooltip = function (tooltip)
 	return nil
 end
 
@@ -63,8 +66,10 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
----@type fun(key:string, value:any)
-UsableInventoryItem.setValue = function ()
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+UsableInventoryItem.setValue = function (key, value)
 	return nil
 end
 

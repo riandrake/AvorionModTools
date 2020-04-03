@@ -12,63 +12,75 @@ Matrix = {
 
 setmetatable(Matrix, {__call = function(self) return Matrix end})
 
----@type fun(m:Matrix)
-Matrix.__mul = function ()
-	return nil
+---@param m Matrix
+---@type fun(m:Matrix):Matrix
+Matrix.__mul = function (m)
+	return Matrix()
 end
 
----@type fun()
+---@type fun():Matrix
 Matrix.getInverse = function ()
-	return nil
+	return Matrix()
 end
 
----@type fun(row:number, col:number)
-Matrix.getValue = function ()
-	return nil
+---@param row int
+---@param col int
+---@type fun(row:number, col:number):number
+Matrix.getValue = function (row, col)
+	return 0.0
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Matrix.invert = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(row:number, col:number, value:number)
-Matrix.setValue = function ()
+---@param row int
+---@param col int
+---@param value float
+---@type fun(row:number, col:number, value:number):any
+Matrix.setValue = function (row, col, value)
 	return nil
 end
 
----@type fun(in:vec3)
-Matrix.transform = function ()
+---@param in vec3
+---@type fun(in:vec3):vec4
+Matrix.transform = function (_in)
+	return vec4()
+end
+
+---@param in vec3
+---@type fun(in:vec3):vec3
+Matrix.transformCoord = function (_in)
+	return vec3()
+end
+
+-- @return nothing
+---@param v vec3
+---@type fun(v:vec3):any
+Matrix.transformCoord_ip = function (v)
 	return nil
 end
 
----@type fun(in:vec3)
-Matrix.transformCoord = function ()
+---@param in vec3
+---@type fun(in:vec3):vec3
+Matrix.transformNormal = function (_in)
+	return vec3()
+end
+
+-- @return nothing
+---@param v vec3
+---@type fun(v:vec3):any
+Matrix.transformNormal_ip = function (v)
 	return nil
 end
 
 -- @return nothing
----@type fun(v:vec3)
-Matrix.transformCoord_ip = function ()
-	return nil
-end
-
----@type fun(in:vec3)
-Matrix.transformNormal = function ()
-	return nil
-end
-
--- @return nothing
----@type fun(v:vec3)
-Matrix.transformNormal_ip = function ()
-	return nil
-end
-
--- @return nothing
----@type fun(v:vec4)
-Matrix.transform_ip = function ()
+---@param v vec4
+---@type fun(v:vec4):any
+Matrix.transform_ip = function (v)
 	return nil
 end
 

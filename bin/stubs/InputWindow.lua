@@ -34,223 +34,278 @@ InputWindow = {
 
 }
 
-setmetatable(InputWindow, {__call = function(self) return InputWindow end})
+setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
 
 -- Inherited from UIContainer
 -- @return nothing
----@type fun()
+---@type fun():any
 InputWindow.clear = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
----@type fun()
+---@type fun():ArrowLine
 InputWindow.createArrowLine = function ()
-	return nil
+	return ArrowLine()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, caption:string, function:string)
-InputWindow.createButton = function ()
-	return nil
+---@param rect Rect
+---@param caption string
+---@param function string
+---@type fun(rect:Rect, caption:string, function:string):Button
+InputWindow.createButton = function (rect, caption, _function)
+	return Button()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, caption:string, onCheckedFunction:string)
-InputWindow.createCheckBox = function ()
-	return nil
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
+---@type fun(rect:Rect, caption:string, onCheckedFunction:string):CheckBox
+InputWindow.createCheckBox = function (rect, caption, onCheckedFunction)
+	return CheckBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, onSelectedFunction:string)
-InputWindow.createComboBox = function ()
-	return nil
+---@param rect Rect
+---@param onSelectedFunction string
+---@type fun(rect:Rect, onSelectedFunction:string):ComboBox
+InputWindow.createComboBox = function (rect, onSelectedFunction)
+	return ComboBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createContainer = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):UIContainer
+InputWindow.createContainer = function (rect)
+	return UIContainer()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createCraftPortrait = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):CraftPortrait
+InputWindow.createCraftPortrait = function (rect)
+	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createFrame = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):Frame
+InputWindow.createFrame = function (rect)
+	return Frame()
 end
 
 -- Inherited from UIContainer
----@type fun()
+---@type fun():InputWindow
 InputWindow.createInputWindow = function ()
-	return nil
+	return InputWindow()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, width:number)
-InputWindow.createInventorySelection = function ()
-	return nil
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):InventorySelection
+InputWindow.createInventorySelection = function (rect, width)
+	return InventorySelection()
 end
 
 -- Inherited from UIContainer
----@type fun(position:any, caption:string, fontSize:number)
-InputWindow.createLabel = function ()
-	return nil
+---@param position var
+---@param caption string
+---@param fontSize int
+---@type fun(position:any, caption:string, fontSize:number):Label
+InputWindow.createLabel = function (position, caption, fontSize)
+	return Label()
 end
 
 -- Inherited from UIContainer
----@type fun(a:vec2, b:vec2)
-InputWindow.createLine = function ()
-	return nil
+---@param a vec2
+---@param b vec2
+---@type fun(a:vec2, b:vec2):Line
+InputWindow.createLine = function (a, b)
+	return Line()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createListBox = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):ListBox
+InputWindow.createListBox = function (rect)
+	return ListBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createListBoxEx = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):ListBoxEx
+InputWindow.createListBoxEx = function (rect)
+	return ListBoxEx()
 end
 
 -- Inherited from UIContainer
----@type fun()
+---@type fun():MapArrowLine
 InputWindow.createMapArrowLine = function ()
-	return nil
+	return MapArrowLine()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createMultiLineTextBox = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):MultiLineTextBox
+InputWindow.createMultiLineTextBox = function (rect)
+	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createNumbersBar = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):NumbersBar
+InputWindow.createNumbersBar = function (rect)
+	return NumbersBar()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, path:string)
-InputWindow.createPicture = function ()
-	return nil
+---@param rect Rect
+---@param path string
+---@type fun(rect:Rect, path:string):Picture
+InputWindow.createPicture = function (rect, path)
+	return Picture()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createPlanDisplayer = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):PlanDisplayer
+InputWindow.createPlanDisplayer = function (rect)
+	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, color:Color)
-InputWindow.createProgressBar = function ()
-	return nil
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):ProgressBar
+InputWindow.createProgressBar = function (rect, color)
+	return ProgressBar()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, color:Color)
-InputWindow.createRect = function ()
-	return nil
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):UIRect
+InputWindow.createRect = function (rect, color)
+	return UIRect()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, icon:string, function:string)
-InputWindow.createRoundButton = function ()
-	return nil
+---@param rect Rect
+---@param icon string
+---@param function string
+---@type fun(rect:Rect, icon:string, function:string):Button
+InputWindow.createRoundButton = function (rect, icon, _function)
+	return Button()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, width:number)
-InputWindow.createSavedDesignsSelection = function ()
-	return nil
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):SavedDesignsSelection
+InputWindow.createSavedDesignsSelection = function (rect, width)
+	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createScrollFrame = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):ScrollFrame
+InputWindow.createScrollFrame = function (rect)
+	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, width:number)
-InputWindow.createSelection = function ()
-	return nil
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):Selection
+InputWindow.createSelection = function (rect, width)
+	return Selection()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string)
-InputWindow.createSlider = function ()
-	return nil
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
+---@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string):Slider
+InputWindow.createSlider = function (rect, min, max, steps, caption, onValueChangedFunction)
+	return Slider()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, color:Color)
-InputWindow.createStatisticsBar = function ()
-	return nil
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):StatisticsBar
+InputWindow.createStatisticsBar = function (rect, color)
+	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createTabbedWindow = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):TabbedWindow
+InputWindow.createTabbedWindow = function (rect)
+	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, onTextChangedFunction:string)
-InputWindow.createTextBox = function ()
-	return nil
+---@param rect Rect
+---@param onTextChangedFunction string
+---@type fun(rect:Rect, onTextChangedFunction:string):TextBox
+InputWindow.createTextBox = function (rect, onTextChangedFunction)
+	return TextBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, text:string)
-InputWindow.createTextField = function ()
-	return nil
+---@param rect Rect
+---@param text string
+---@type fun(rect:Rect, text:string):TextField
+InputWindow.createTextField = function (rect, text)
+	return TextField()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createTree = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):Tree
+InputWindow.createTree = function (rect)
+	return Tree()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect, onSelectedFunction:string)
-InputWindow.createValueComboBox = function ()
-	return nil
+---@param rect Rect
+---@param onSelectedFunction string
+---@type fun(rect:Rect, onSelectedFunction:string):ValueComboBox
+InputWindow.createValueComboBox = function (rect, onSelectedFunction)
+	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
----@type fun(rect:Rect)
-InputWindow.createWindow = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):Window
+InputWindow.createWindow = function (rect)
+	return Window()
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 InputWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(caption:string)
-InputWindow.show = function ()
+---@param caption string
+---@type fun(caption:string):any
+InputWindow.show = function (caption)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 InputWindow.show = function ()
 	return nil
 end

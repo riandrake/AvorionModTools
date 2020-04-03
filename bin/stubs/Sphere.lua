@@ -6,5 +6,5 @@ Sphere = {
 
 }
 
-setmetatable(Sphere, {__call = function(self) return Sphere end})
+setmetatable(Sphere, {__call = function(self, center, radius) return Sphere end})
 

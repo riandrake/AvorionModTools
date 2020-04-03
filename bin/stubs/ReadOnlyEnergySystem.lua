@@ -13,5 +13,5 @@ ReadOnlyEnergySystem = {
 
 }
 
-setmetatable(ReadOnlyEnergySystem, {__call = function(self) return ReadOnlyEnergySystem end})
+setmetatable(ReadOnlyEnergySystem, {__call = function(self, id) return ReadOnlyEnergySystem end})
 

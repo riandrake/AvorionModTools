@@ -6,5 +6,5 @@ Planet = {
 
 }
 
-setmetatable(Planet, {__call = function(self) return Planet end})
+setmetatable(Planet, {__call = function(self, index) return Planet end})
 

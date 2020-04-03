@@ -25,18 +25,18 @@ CraftPortrait = {
 
 }
 
-setmetatable(CraftPortrait, {__call = function(self) return CraftPortrait end})
+setmetatable(CraftPortrait, {__call = function(self, index) return CraftPortrait end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 CraftPortrait.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 CraftPortrait.show = function ()
 	return nil
 end

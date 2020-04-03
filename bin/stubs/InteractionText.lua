@@ -7,5 +7,5 @@ InteractionText = {
 
 }
 
-setmetatable(InteractionText, {__call = function(self) return InteractionText end})
+setmetatable(InteractionText, {__call = function(self, id) return InteractionText end})
 

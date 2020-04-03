@@ -12,5 +12,5 @@ Thrusters = {
 
 }
 
-setmetatable(Thrusters, {__call = function(self) return Thrusters end})
+setmetatable(Thrusters, {__call = function(self, id) return Thrusters end})
 

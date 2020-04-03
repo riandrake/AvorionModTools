@@ -5,15 +5,15 @@ NamedFormat = {
 
 }
 
-setmetatable(NamedFormat, {__call = function(self) return NamedFormat end})
+setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
 
----@type fun():>
+---@type fun():table<string, PluralForm>
 NamedFormat.arguments = function ()
-	return }()
+	return {"", PluralForm()}
 end
 
----@type fun()
+---@type fun():string
 NamedFormat.translated = function ()
-	return nil
+	return ""
 end
 

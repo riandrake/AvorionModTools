@@ -19,11 +19,12 @@ CargoBay = {
 
 }
 
-setmetatable(CargoBay, {__call = function(self) return CargoBay end})
+setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
 
 -- @return nothing
----@type fun(other:CargoBay)
-CargoBay.add = function ()
+---@param other CargoBay
+---@type fun(other:CargoBay):any
+CargoBay.add = function (other)
 	return nil
 end
 
@@ -31,13 +32,15 @@ end
 -- @param good - TradingGood that is to be added.
 -- @param amount - The amount of cargo that should be added.
 -- @return nothing
----@type fun(good:TradingGood, amount:number)
-CargoBay.addCargo = function ()
+---@param good TradingGood
+---@param amount int
+---@type fun(good:TradingGood, amount:number):any
+CargoBay.addCargo = function (good, amount)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 CargoBay.clear = function ()
 	return nil
 end
@@ -45,48 +48,55 @@ end
 -- Destroys cargo. The destruction distribution is generally equal over all goods.
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
----@type fun(volume:number)
-CargoBay.destroyCargo = function ()
+---@param volume float
+---@type fun(volume:number):any
+CargoBay.destroyCargo = function (volume)
 	return nil
 end
 
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
----@type fun(name:string):>
-CargoBay.findCargos = function ()
-	return }()
+---@param name string
+---@type fun(name:string):table<TradingGood, number>
+CargoBay.findCargos = function (name)
+	return {TradingGood(), 0}
 end
 
----@type fun(n:number:unsigned):, 
-CargoBay.getCargo = function ()
-	return nil, nil
+---@param n unsigned
+---@type fun(n:number:unsigned):TradingGood, number
+CargoBay.getCargo = function (n)
+	return TradingGood(), 0
 end
 
----@type fun():>
+---@type fun():table<TradingGood, number>
 CargoBay.getCargos = function ()
-	return }()
+	return {TradingGood(), 0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
----@type fun(name:any)
-CargoBay.getNumCargos = function ()
-	return nil
+---@param name var
+---@type fun(name:any):number
+CargoBay.getNumCargos = function (name)
+	return 0
 end
 
----@type fun(goods:any)
-CargoBay.getSummary = function ()
-	return nil
+---@param goods var
+---@type fun(goods:any):string
+CargoBay.getSummary = function (goods)
+	return ""
 end
 
 -- Removes cargo from the entity. When given a TradingGood, an exact check for that good will be performed. When given a string, only a name check will be performed, and which cargo will be removed first is undefined if there are multiple goods with the same name. An example would be Energy Cells vs. Stolen Energy Cells. The 'name' property is the same, but the 'stolen' property is different.
 -- @param good - Either a TradingGood or a string with the name of a good.
 -- @param amount - The amount of cargo that should be removed. If this is more than there is on the ship, all specified cargo will be removed.
 -- @return nothing
----@type fun(good:any, amount:number)
-CargoBay.removeCargo = function ()
+---@param good var
+---@param amount int
+---@type fun(good:any, amount:number):any
+CargoBay.removeCargo = function (good, amount)
 	return nil
 end
 

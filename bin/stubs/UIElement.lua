@@ -20,16 +20,16 @@ UIElement = {
 
 }
 
-setmetatable(UIElement, {__call = function(self) return UIElement end})
+setmetatable(UIElement, {__call = function(self, index) return UIElement end})
 
 -- @return nothing
----@type fun()
+---@type fun():any
 UIElement.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 UIElement.show = function ()
 	return nil
 end

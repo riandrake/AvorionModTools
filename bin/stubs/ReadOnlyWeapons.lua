@@ -62,5 +62,5 @@ ReadOnlyWeapons = {
 
 }
 
-setmetatable(ReadOnlyWeapons, {__call = function(self) return ReadOnlyWeapons end})
+setmetatable(ReadOnlyWeapons, {__call = function(self, id) return ReadOnlyWeapons end})
 

@@ -79,7 +79,7 @@ def split_careful(s):
                 bracket_level += 1
             elif c == "}":
                 bracket_level -= 1
-                current.append(c)
+            current.append(c)
     return parts
 
 

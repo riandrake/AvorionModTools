@@ -14,36 +14,37 @@ Boarding = {
 
 }
 
-setmetatable(Boarding, {__call = function(self) return Boarding end})
+setmetatable(Boarding, {__call = function(self, id) return Boarding end})
 
 -- @return nothing
----@type fun(attackingFaction:number)
-Boarding.applyBoardingSuccessful = function ()
+---@param attackingFaction int
+---@type fun(attackingFaction:number):any
+Boarding.applyBoardingSuccessful = function (attackingFaction)
 	return nil
 end
 
----@type fun()
+---@type fun():number
 Boarding.getBoarderHealth = function ()
-	return nil
+	return 0.0
 end
 
----@type fun()
+---@type fun():number
 Boarding.getBoarderPower = function ()
-	return nil
+	return 0.0
 end
 
----@type fun():>
+---@type fun():table<number, number>
 Boarding.getBoarders = function ()
-	return }()
+	return {0, 0}
 end
 
----@type fun()
+---@type fun():number
 Boarding.getDefenderHealth = function ()
-	return nil
+	return 0.0
 end
 
----@type fun()
+---@type fun():number
 Boarding.getDefenderPower = function ()
-	return nil
+	return 0.0
 end
 

@@ -8,20 +8,22 @@ Rarity = {
 
 }
 
-setmetatable(Rarity, {__call = function(self) return Rarity end})
+setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
----@type fun(other:Rarity)
-Rarity.__eq = function ()
-	return nil
+---@param other Rarity
+---@type fun(other:Rarity):boolean
+Rarity.__eq = function (other)
+	return true
 end
 
----@type fun(other:Rarity)
-Rarity.__lt = function ()
-	return nil
+---@param other Rarity
+---@type fun(other:Rarity):boolean
+Rarity.__lt = function (other)
+	return true
 end
 
----@type fun()
+---@type fun():string
 Rarity.__tostring = function ()
-	return nil
+	return ""
 end
 

@@ -9,20 +9,23 @@ ReadOnlyShipSystem = {
 
 }
 
-setmetatable(ReadOnlyShipSystem, {__call = function(self) return ReadOnlyShipSystem end})
+setmetatable(ReadOnlyShipSystem, {__call = function(self, id) return ReadOnlyShipSystem end})
 
----@type fun(index:number:unsigned)
-ReadOnlyShipSystem.getUpgrade = function ()
-	return nil
+---@param index unsigned
+---@type fun(index:number:unsigned):SystemUpgradeTemplate
+ReadOnlyShipSystem.getUpgrade = function (index)
+	return SystemUpgradeTemplate()
 end
 
----@type fun(slot:number:unsigned)
-ReadOnlyShipSystem.getVolumeForSlot = function ()
-	return nil
+---@param slot unsigned
+---@type fun(slot:number:unsigned):number
+ReadOnlyShipSystem.getVolumeForSlot = function (slot)
+	return 0.0
 end
 
----@type fun(slot:number:unsigned)
-ReadOnlyShipSystem.isPermanent = function ()
-	return nil
+---@param slot unsigned
+---@type fun(slot:number:unsigned):boolean
+ReadOnlyShipSystem.isPermanent = function (slot)
+	return true
 end
 

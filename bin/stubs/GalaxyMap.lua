@@ -14,85 +14,97 @@ GalaxyMap = {
 setmetatable(GalaxyMap, {__call = function(self) return GalaxyMap end})
 
 -- @return nothing
----@type fun()
+---@type fun():any
 GalaxyMap.clearCustomColors = function ()
 	return nil
 end
 
----@type fun()
+---@type fun():UIContainer
 GalaxyMap.createContainer = function ()
-	return nil
+	return UIContainer()
 end
 
----@type fun(rect:Rect)
-GalaxyMap.createWindow = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):Window
+GalaxyMap.createWindow = function (rect)
+	return Window()
 end
 
----@type fun(coordinates:vec2):, 
-GalaxyMap.getCoordinatesAtScreenPosition = function ()
-	return nil, nil
+---@param coordinates vec2
+---@type fun(coordinates:vec2):number, number
+GalaxyMap.getCoordinatesAtScreenPosition = function (coordinates)
+	return 0, 0
 end
 
----@type fun(coordinates:ivec2):, 
-GalaxyMap.getCoordinatesScreenPosition = function ()
-	return nil, nil
+---@param coordinates ivec2
+---@type fun(coordinates:ivec2):number, number
+GalaxyMap.getCoordinatesScreenPosition = function (coordinates)
+	return 0.0, 0.0
 end
 
----@type fun():, 
+---@type fun():number, number
 GalaxyMap.getHoveredCoordinates = function ()
-	return nil, nil
+	return 0, 0
 end
 
----@type fun():, 
+---@type fun():number, number
 GalaxyMap.getSelectedCoordinates = function ()
-	return nil, nil
+	return 0, 0
 end
 
----@type fun():, 
+---@type fun():number, number
 GalaxyMap.getSelectedCoordinatesScreenPosition = function ()
-	return nil, nil
+	return 0.0, 0.0
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 GalaxyMap.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(x:number, y:number)
-GalaxyMap.lookAt = function ()
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+GalaxyMap.lookAt = function (x, y)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 GalaxyMap.resetTransitArea = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 GalaxyMap.setCustomColors = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(x:number, y:number)
-GalaxyMap.setSelectedCoordinates = function ()
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+GalaxyMap.setSelectedCoordinates = function (x, y)
 	return nil
 end
 
 -- @return nothing
----@type fun(center:ivec2, radius:number, canPassBlocked:boolean)
-GalaxyMap.setTransitArea = function ()
+---@param center ivec2
+---@param radius float
+---@param canPassBlocked bool
+---@type fun(center:ivec2, radius:number, canPassBlocked:boolean):any
+GalaxyMap.setTransitArea = function (center, radius, canPassBlocked)
 	return nil
 end
 
 -- @return nothing
----@type fun(x:number, y:number)
-GalaxyMap.show = function ()
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+GalaxyMap.show = function (x, y)
 	return nil
 end
 

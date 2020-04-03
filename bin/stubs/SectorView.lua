@@ -18,84 +18,90 @@ SectorView = {
 
 setmetatable(SectorView, {__call = function(self) return SectorView end})
 
----@type fun(stations:number)
-SectorView.calculateInfluence = function ()
-	return nil
+---@param stations int
+---@type fun(stations:number):number
+SectorView.calculateInfluence = function (stations)
+	return 0.0
 end
 
----@type fun():, 
+---@type fun():number, number
 SectorView.getCoordinates = function ()
-	return nil, nil
+	return 0, 0
 end
 
----@type fun():>
+---@type fun():table<number, number>
 SectorView.getCraftsByFaction = function ()
-	return }()
+	return {0, 0}
 end
 
----@type fun()
+---@type fun():ivec2
 SectorView.getGateDestinations = function ()
-	return nil
+	return ivec2()
 end
 
----@type fun():>
+---@type fun():table<number, number>
 SectorView.getShipsByFaction = function ()
-	return }()
+	return {0, 0}
 end
 
----@type fun()
+---@type fun():NamedFormat
 SectorView.getStationTitles = function ()
-	return nil
+	return NamedFormat()
 end
 
----@type fun():>
+---@type fun():table<number, number>
 SectorView.getStationsByFaction = function ()
-	return }()
+	return {0, 0}
 end
 
----@type fun()
+---@type fun():ivec2
 SectorView.getWormHoleDestinations = function ()
+	return ivec2()
+end
+
+-- @return nothing
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+SectorView.setCoordinates = function (x, y)
 	return nil
 end
 
 -- @return nothing
----@type fun(x:number, y:number)
-SectorView.setCoordinates = function ()
+---@param in int_map_type
+---@type fun(in:int_map_type):any
+SectorView.setCraftsByFaction = function (_in)
 	return nil
 end
 
 -- @return nothing
----@type fun(in:int_map_type)
-SectorView.setCraftsByFaction = function ()
-	return nil
-end
-
--- @return nothing
----@type fun()
+---@type fun():any
 SectorView.setGateDestinations = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(in:int_map_type)
-SectorView.setShipsByFaction = function ()
+---@param in int_map_type
+---@type fun(in:int_map_type):any
+SectorView.setShipsByFaction = function (_in)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 SectorView.setStationTitles = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun(in:int_map_type)
-SectorView.setStationsByFaction = function ()
+---@param in int_map_type
+---@type fun(in:int_map_type):any
+SectorView.setStationsByFaction = function (_in)
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 SectorView.setWormHoleDestinations = function ()
 	return nil
 end

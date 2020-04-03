@@ -16,25 +16,28 @@ TradingGood = {
 
 }
 
-setmetatable(TradingGood, {__call = function(self) return TradingGood end})
+setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
 
----@type fun(other:TradingGood)
-TradingGood.__eq = function ()
-	return nil
+---@param other TradingGood
+---@type fun(other:TradingGood):boolean
+TradingGood.__eq = function (other)
+	return true
 end
 
----@type fun()
+---@type fun():string
 TradingGood.__tostring = function ()
-	return nil
+	return ""
 end
 
----@type fun(amount:number)
-TradingGood.displayName = function ()
-	return nil
+---@param amount int
+---@type fun(amount:number):string
+TradingGood.displayName = function (amount)
+	return ""
 end
 
----@type fun(amount:number)
-TradingGood.pluralForm = function ()
-	return nil
+---@param amount int
+---@type fun(amount:number):PluralForm
+TradingGood.pluralForm = function (amount)
+	return PluralForm()
 end
 

@@ -12,64 +12,78 @@ TorpedoLauncher = {
 
 }
 
-setmetatable(TorpedoLauncher, {__call = function(self) return TorpedoLauncher end})
+setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
 
----@type fun(torpedo:TorpedoTemplate, shaft:any)
-TorpedoLauncher.addTorpedo = function ()
-	return nil
+---@param torpedo TorpedoTemplate
+---@param shaft var
+---@type fun(torpedo:TorpedoTemplate, shaft:any):boolean
+TorpedoLauncher.addTorpedo = function (torpedo, shaft)
+	return true
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 TorpedoLauncher.clear = function ()
 	return nil
 end
 
----@type fun(position:Box, torpedo:TorpedoTemplate)
-TorpedoLauncher.createTorpedo = function ()
-	return nil
+---@param position Box
+---@param torpedo TorpedoTemplate
+---@type fun(position:Box, torpedo:TorpedoTemplate):Entity
+TorpedoLauncher.createTorpedo = function (position, torpedo)
+	return Entity()
 end
 
----@type fun(shaftIndex:any)
-TorpedoLauncher.getFreeSlots = function ()
-	return nil
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+TorpedoLauncher.getFreeSlots = function (shaftIndex)
+	return 0
 end
 
----@type fun(shaftIndex:any)
-TorpedoLauncher.getMaxTorpedoes = function ()
-	return nil
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+TorpedoLauncher.getMaxTorpedoes = function (shaftIndex)
+	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@type fun(shaftIndex:number)
-TorpedoLauncher.getNumTorpedoes = function ()
-	return nil
+---@param shaftIndex int
+---@type fun(shaftIndex:number):number
+TorpedoLauncher.getNumTorpedoes = function (shaftIndex)
+	return 0
 end
 
----@type fun()
+---@type fun():number
 TorpedoLauncher.getShafts = function ()
-	return nil
+	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@type fun(torpedoIndex:number, shaftIndex:number)
-TorpedoLauncher.getTorpedo = function ()
+---@param torpedoIndex int
+---@param shaftIndex int
+---@type fun(torpedoIndex:number, shaftIndex:number):TorpedoTemplate
+TorpedoLauncher.getTorpedo = function (torpedoIndex, shaftIndex)
+	return TorpedoTemplate()
+end
+
+-- @return nothing
+---@param shaftIndex var
+---@param torpedoIndex int
+---@param newShaftIndex var
+---@type fun(shaftIndex:any, torpedoIndex:number, newShaftIndex:any):any
+TorpedoLauncher.moveTorpedoToShaft = function (shaftIndex, torpedoIndex, newShaftIndex)
 	return nil
 end
 
 -- @return nothing
----@type fun(shaftIndex:any, torpedoIndex:number, newShaftIndex:any)
-TorpedoLauncher.moveTorpedoToShaft = function ()
-	return nil
-end
-
--- @return nothing
----@type fun(index:number, shaft:any)
-TorpedoLauncher.removeTorpedo = function ()
+---@param index int
+---@param shaft var
+---@type fun(index:number, shaft:any):any
+TorpedoLauncher.removeTorpedo = function (index, shaft)
 	return nil
 end
 

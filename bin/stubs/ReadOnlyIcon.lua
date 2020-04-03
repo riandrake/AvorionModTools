@@ -10,5 +10,5 @@ ReadOnlyIcon = {
 
 }
 
-setmetatable(ReadOnlyIcon, {__call = function(self) return ReadOnlyIcon end})
+setmetatable(ReadOnlyIcon, {__call = function(self, id) return ReadOnlyIcon end})
 

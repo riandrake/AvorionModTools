@@ -6,5 +6,5 @@ ReadOnlyTooltip = {
 
 }
 
-setmetatable(ReadOnlyTooltip, {__call = function(self) return ReadOnlyTooltip end})
+setmetatable(ReadOnlyTooltip, {__call = function(self, id) return ReadOnlyTooltip end})
 

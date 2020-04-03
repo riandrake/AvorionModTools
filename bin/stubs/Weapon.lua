@@ -70,19 +70,20 @@ Weapon = {
 
 setmetatable(Weapon, {__call = function(self) return Weapon end})
 
----@type fun(other:Weapon)
-Weapon.propertiesEqual = function ()
-	return nil
+---@param other Weapon
+---@type fun(other:Weapon):boolean
+Weapon.propertiesEqual = function (other)
+	return true
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Weapon.setBeam = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Weapon.setProjectile = function ()
 	return nil
 end

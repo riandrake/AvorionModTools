@@ -25,60 +25,60 @@ MultiLineTextBox = {
 
 }
 
-setmetatable(MultiLineTextBox, {__call = function(self) return MultiLineTextBox end})
+setmetatable(MultiLineTextBox, {__call = function(self, index) return MultiLineTextBox end})
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.clear = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorDown = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorLeft = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorLeftCtrl = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorRight = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorRightCtrl = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.moveCursorUp = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 MultiLineTextBox.show = function ()
 	return nil
 end

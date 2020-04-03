@@ -6,50 +6,57 @@ Seed = {
 
 }
 
-setmetatable(Seed, {__call = function(self) return Seed end})
+setmetatable(Seed, {__call = function(self, _in) return Seed end})
 
----@type fun(other:number)
-Seed.__add = function ()
+---@param other int
+---@type fun(other:number):Seed
+Seed.__add = function (other)
+	return Seed()
+end
+
+---@param other int
+---@type fun(other:number):Seed
+Seed.__div = function (other)
+	return Seed()
+end
+
+---@param other Seed
+---@type fun(other:Seed):any
+Seed.__eq = function (other)
 	return nil
 end
 
----@type fun(other:number)
-Seed.__div = function ()
+---@param other Seed
+---@type fun(other:Seed):any
+Seed.__le = function (other)
 	return nil
 end
 
----@type fun(other:Seed)
-Seed.__eq = function ()
+---@param other Seed
+---@type fun(other:Seed):any
+Seed.__lt = function (other)
 	return nil
 end
 
----@type fun(other:Seed)
-Seed.__le = function ()
-	return nil
+---@param other int
+---@type fun(other:number):Seed
+Seed.__mul = function (other)
+	return Seed()
 end
 
----@type fun(other:Seed)
-Seed.__lt = function ()
-	return nil
+---@param other int
+---@type fun(other:number):Seed
+Seed.__sub = function (other)
+	return Seed()
 end
 
----@type fun(other:number)
-Seed.__mul = function ()
-	return nil
-end
-
----@type fun(other:number)
-Seed.__sub = function ()
-	return nil
-end
-
----@type fun()
+---@type fun():string
 Seed.__tostring = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():Seed
 Seed.__unm = function ()
-	return nil
+	return Seed()
 end
 

@@ -18,82 +18,89 @@ ReadOnlyPlan = {
 
 }
 
-setmetatable(ReadOnlyPlan, {__call = function(self) return ReadOnlyPlan end})
+setmetatable(ReadOnlyPlan, {__call = function(self, id) return ReadOnlyPlan end})
 
----@type fun()
+---@type fun():boolean
 ReadOnlyPlan.empty = function ()
-	return nil
+	return true
 end
 
----@type fun(index:number)
-ReadOnlyPlan.exists = function ()
-	return nil
+---@param index int
+---@type fun(index:number):boolean
+ReadOnlyPlan.exists = function (index)
+	return true
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
----@type fun()
+---@type fun():BlockPlan
 ReadOnlyPlan.get = function ()
-	return nil
+	return BlockPlan()
 end
 
----@type fun(index:number)
-ReadOnlyPlan.getBlock = function ()
-	return nil
+---@param index int
+---@type fun(index:number):BlockPlanBlock
+ReadOnlyPlan.getBlock = function (index)
+	return BlockPlanBlock()
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyPlan.getBlockIndices = function ()
-	return nil
+	return 0
 end
 
----@type fun(index:number)
-ReadOnlyPlan.getBlocksByType = function ()
-	return nil
+---@param index int
+---@type fun(index:number):number
+ReadOnlyPlan.getBlocksByType = function (index)
+	return 0
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyPlan.getMoneyValue = function ()
+	return 0.0
+end
+
+---@param n int
+---@type fun(n:number):BlockPlanBlock
+ReadOnlyPlan.getNthBlock = function (n)
+	return BlockPlanBlock()
+end
+
+---@param n int
+---@type fun(n:number):any
+ReadOnlyPlan.getNthIndex = function (n)
 	return nil
 end
 
----@type fun(n:number)
-ReadOnlyPlan.getNthBlock = function ()
-	return nil
+---@param blockIndex int
+---@type fun(blockIndex:number):number
+ReadOnlyPlan.getNumBlocks = function (blockIndex)
+	return 0
 end
 
----@type fun(n:number)
-ReadOnlyPlan.getNthIndex = function ()
-	return nil
+---@param index int
+---@type fun(index:number):number
+ReadOnlyPlan.getRemoved = function (index)
+	return 0
 end
 
----@type fun(blockIndex:number)
-ReadOnlyPlan.getNumBlocks = function ()
-	return nil
-end
-
----@type fun(index:number)
-ReadOnlyPlan.getRemoved = function ()
-	return nil
-end
-
----@type fun()
+---@type fun():number
 ReadOnlyPlan.getResourceValue = function ()
-	return nil
+	return 0.0
 end
 
----@type fun()
+---@type fun():BlockStatistics
 ReadOnlyPlan.getStats = function ()
-	return nil
+	return BlockStatistics()
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyPlan.getUndamagedMoneyValue = function ()
-	return nil
+	return 0.0
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyPlan.getUndamagedResourceValue = function ()
-	return nil
+	return 0.0
 end
 

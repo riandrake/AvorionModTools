@@ -16,5 +16,5 @@ Rect = {
 
 }
 
-setmetatable(Rect, {__call = function(self) return Rect end})
+setmetatable(Rect, {__call = function(self, a, b, c, d) return Rect end})
 

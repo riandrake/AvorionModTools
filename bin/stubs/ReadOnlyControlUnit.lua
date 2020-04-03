@@ -15,110 +15,131 @@ ReadOnlyControlUnit = {
 
 }
 
-setmetatable(ReadOnlyControlUnit, {__call = function(self) return ReadOnlyControlUnit end})
+setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
 
 ---@type fun()
 ReadOnlyControlUnit.getActiveWeapons = function ()
 	return 
 end
 
----@type fun(seatIndex:number)
-ReadOnlyControlUnit.getAimedPositionBySeat = function ()
-	return nil
+---@param seatIndex int
+---@type fun(seatIndex:number):vec3
+ReadOnlyControlUnit.getAimedPositionBySeat = function (seatIndex)
+	return vec3()
 end
 
----@type fun(weaponGroup:number)
-ReadOnlyControlUnit.getAimedPositionByWeaponGroup = function ()
-	return nil
+---@param weaponGroup int
+---@type fun(weaponGroup:number):vec3
+ReadOnlyControlUnit.getAimedPositionByWeaponGroup = function (weaponGroup)
+	return vec3()
 end
 
----@type fun()
+---@type fun():vec3
 ReadOnlyControlUnit.getAimedPositions = function ()
-	return nil
+	return vec3()
 end
 
----@type fun()
+---@type fun():number
 ReadOnlyControlUnit.getAllControlActions = function ()
-	return nil
+	return 0
 end
 
----@type fun(seat:number)
-ReadOnlyControlUnit.getControlActions = function ()
-	return nil
+---@param seat int
+---@type fun(seat:number):number
+ReadOnlyControlUnit.getControlActions = function (seat)
+	return 0
 end
 
----@type fun(weaponGroup:number)
-ReadOnlyControlUnit.getControlActionsByWeaponGroup = function ()
-	return nil
+---@param weaponGroup int
+---@type fun(weaponGroup:number):number
+ReadOnlyControlUnit.getControlActionsByWeaponGroup = function (weaponGroup)
+	return 0
 end
 
----@type fun()
+---@type fun():vec3
 ReadOnlyControlUnit.getFlownToLocation = function ()
-	return nil
+	return vec3()
 end
 
----@type fun(dot:number, cross:number)
-ReadOnlyControlUnit.getRotationFactor = function ()
-	return nil
+---@param dot float
+---@param cross float
+---@type fun(dot:number, cross:number):number
+ReadOnlyControlUnit.getRotationFactor = function (dot, cross)
+	return 0.0
 end
 
----@type fun(weaponGroup:number)
-ReadOnlyControlUnit.getSeatByWeaponGroup = function ()
-	return nil
+---@param weaponGroup int
+---@type fun(weaponGroup:number):number
+ReadOnlyControlUnit.getSeatByWeaponGroup = function (weaponGroup)
+	return 0
 end
 
----@type fun()
+---@type fun():ControlUnitSeat
 ReadOnlyControlUnit.getSeats = function ()
-	return nil
+	return ControlUnitSeat()
 end
 
----@type fun(seat:number)
-ReadOnlyControlUnit.getSelectedObject = function ()
-	return nil
+---@param seat int
+---@type fun(seat:number):Entity
+ReadOnlyControlUnit.getSelectedObject = function (seat)
+	return Entity()
 end
 
----@type fun(seat:number)
-ReadOnlyControlUnit.getSelectedObjectId = function ()
-	return nil
+---@param seat int
+---@type fun(seat:number):Uuid
+ReadOnlyControlUnit.getSelectedObjectId = function (seat)
+	return 0
 end
 
----@type fun()
+---@type fun():Uuid
 ReadOnlyControlUnit.getSelectedObjectIds = function ()
-	return nil
+	return 0
 end
 
----@type fun(seat:number)
-ReadOnlyControlUnit.isFiring = function ()
-	return nil
+---@param seat int
+---@type fun(seat:number):boolean
+ReadOnlyControlUnit.isFiring = function (seat)
+	return true
 end
 
----@type fun(seat:number)
-ReadOnlyControlUnit.isFiringTorpedoes = function ()
-	return nil
+---@param seat int
+---@type fun(seat:number):boolean
+ReadOnlyControlUnit.isFiringTorpedoes = function (seat)
+	return true
 end
 
----@type fun(playerIndex:number)
-ReadOnlyControlUnit.isPlayerAPilot = function ()
-	return nil
+---@param playerIndex int
+---@type fun(playerIndex:number):boolean
+ReadOnlyControlUnit.isPlayerAPilot = function (playerIndex)
+	return true
 end
 
----@type fun(playerIndex:number, squad:number)
-ReadOnlyControlUnit.mayControlSquad = function ()
-	return nil
+---@param playerIndex int
+---@param squad int
+---@type fun(playerIndex:number, squad:number):boolean
+ReadOnlyControlUnit.mayControlSquad = function (playerIndex, squad)
+	return true
 end
 
----@type fun(playerIndex:number, group:number)
-ReadOnlyControlUnit.mayControlWeaponGroup = function ()
-	return nil
+---@param playerIndex int
+---@param group int
+---@type fun(playerIndex:number, group:number):boolean
+ReadOnlyControlUnit.mayControlWeaponGroup = function (playerIndex, group)
+	return true
 end
 
----@type fun(playerIndex:number)
-ReadOnlyControlUnit.maySteer = function ()
-	return nil
+---@param playerIndex int
+---@type fun(playerIndex:number):boolean
+ReadOnlyControlUnit.maySteer = function (playerIndex)
+	return true
 end
 
----@type fun(brake:number, axis:vec3, from:vec3, to:vec3)
-ReadOnlyControlUnit.rotatingNecessary = function ()
-	return nil
+---@param brake float
+---@param axis vec3
+---@param from vec3
+---@param to vec3
+---@type fun(brake:number, axis:vec3, from:vec3, to:vec3):boolean
+ReadOnlyControlUnit.rotatingNecessary = function (brake, axis, from, to)
+	return true
 end
 

@@ -11,20 +11,22 @@ Material = {
 
 }
 
-setmetatable(Material, {__call = function(self) return Material end})
+setmetatable(Material, {__call = function(self, type) return Material end})
 
----@type fun(other:Material)
-Material.__eq = function ()
-	return nil
+---@param other Material
+---@type fun(other:Material):boolean
+Material.__eq = function (other)
+	return true
 end
 
----@type fun(other:Material)
-Material.__lt = function ()
-	return nil
+---@param other Material
+---@type fun(other:Material):boolean
+Material.__lt = function (other)
+	return true
 end
 
----@type fun()
+---@type fun():string
 Material.__tostring = function ()
-	return nil
+	return ""
 end
 

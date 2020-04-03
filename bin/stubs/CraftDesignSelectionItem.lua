@@ -16,5 +16,5 @@ CraftDesignSelectionItem = {
 
 }
 
-setmetatable(CraftDesignSelectionItem, {__call = function(self) return CraftDesignSelectionItem end})
+setmetatable(CraftDesignSelectionItem, {__call = function(self, path) return CraftDesignSelectionItem end})
 

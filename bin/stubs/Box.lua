@@ -10,5 +10,5 @@ Box = {
 
 }
 
-setmetatable(Box, {__call = function(self) return Box end})
+setmetatable(Box, {__call = function(self, pos, size) return Box end})
 

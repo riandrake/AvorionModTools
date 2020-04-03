@@ -13,8 +13,8 @@ Relation = {
 
 setmetatable(Relation, {__call = function(self) return Relation end})
 
----@type fun()
+---@type fun():stdvector
 Relation.getSegments = function ()
-	return nil
+	return stdvector()
 end
 

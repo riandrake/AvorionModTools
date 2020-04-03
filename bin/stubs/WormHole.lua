@@ -13,16 +13,18 @@ WormHole = {
 
 }
 
-setmetatable(WormHole, {__call = function(self) return WormHole end})
+setmetatable(WormHole, {__call = function(self, id) return WormHole end})
 
----@type fun():, 
+---@type fun():number, number
 WormHole.getTargetCoordinates = function ()
-	return nil, nil
+	return 0, 0
 end
 
 -- @return nothing
----@type fun(x:number, y:number)
-WormHole.setTargetCoordinates = function ()
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+WormHole.setTargetCoordinates = function (x, y)
 	return nil
 end
 

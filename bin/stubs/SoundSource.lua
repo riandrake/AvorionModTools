@@ -11,23 +11,23 @@ SoundSource = {
 
 }
 
-setmetatable(SoundSource, {__call = function(self) return SoundSource end})
+setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
 
 -- @return nothing
----@type fun()
+---@type fun():any
 SoundSource.play = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 SoundSource.stop = function ()
 	return nil
 end
 
 -- Stops the sound and frees all resources connected to it. The SoundSource object will be inaccessible after this function.
 -- @return nothing
----@type fun()
+---@type fun():any
 SoundSource.terminate = function ()
 	return nil
 end

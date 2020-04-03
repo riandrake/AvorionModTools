@@ -30,35 +30,39 @@ Hud = {
 
 setmetatable(Hud, {__call = function(self) return Hud end})
 
----@type fun(rect:Rect)
-Hud.createContainer = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):UIContainer
+Hud.createContainer = function (rect)
+	return UIContainer()
 end
 
----@type fun(rect:Rect)
-Hud.createWindow = function ()
-	return nil
+---@param rect Rect
+---@type fun(rect:Rect):Window
+Hud.createWindow = function (rect)
+	return Window()
 end
 
 -- Displays a prioritized hint with the given text. The hint won't have a 'Don't show again' field, and it will override all other hints while its active. Hint will be removed when no more objects can be highlighted (which will only happen in case of passing ids of entities that then are deleted or destroyed), or when it's overridden by another call to 'displayHint', or when the player clicks on the 'X', or when the script that did the call was deleted.
 -- @param text - Text that will be shown in the hint. Passing "" will disable the hint.
 -- @param highlights - Objects that should be highlighted. Can be any number of vec3, Rect, ids (string, Uuid) or Entity. Passing 0 objects will disable the hint.
 -- @return nothing
----@type fun(text:string, highlights:table<number,var>)
-Hud.displayHint = function ()
+---@param text string
+---@param highlights var...
+---@type fun(text:string, highlights:table<number,var>):any
+Hud.displayHint = function (text, highlights)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Hud.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Hud.show = function ()
 	return nil
 end

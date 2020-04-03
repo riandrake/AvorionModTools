@@ -7,48 +7,56 @@ vec3 = {
 
 }
 
-setmetatable(vec3, {__call = function(self) return vec3 end})
+setmetatable(vec3, {__call = function(self, other) return vec3 end})
 
----@type fun(other:any)
-vec3.__div = function ()
-	return nil
+---@param other var
+---@type fun(other:any):vec3
+vec3.__div = function (other)
+	return vec3()
 end
 
----@type fun(other:vec3)
-vec3.__eq = function ()
-	return nil
+---@param other vec3
+---@type fun(other:vec3):boolean
+vec3.__eq = function (other)
+	return true
 end
 
----@type fun(other:vec3)
-vec3.__lt = function ()
-	return nil
+---@param other vec3
+---@type fun(other:vec3):boolean
+vec3.__lt = function (other)
+	return true
 end
 
----@type fun(other:any)
-vec3.__mul = function ()
-	return nil
+---@param other var
+---@type fun(other:any):vec3
+vec3.__mul = function (other)
+	return vec3()
 end
 
----@type fun(other:any)
-vec3.__sub = function ()
-	return nil
+---@param other var
+---@type fun(other:any):vec3
+vec3.__sub = function (other)
+	return vec3()
 end
 
----@type fun()
+---@type fun():string
 vec3.__tostring = function ()
-	return nil
+	return ""
 end
 
----@type fun()
+---@type fun():vec3
 vec3.__unm = function ()
-	return nil
+	return vec3()
 end
 
 -- @param x - y
 -- @param z - Returns
 -- @param A new instance of vec3
+---@param x var
+---@param y var
+---@param z var
 ---@type fun(x:any, y:any, z:any)
-vec3 = function ()
+vec3 = function (x, y, z)
 	return nil
 end
 

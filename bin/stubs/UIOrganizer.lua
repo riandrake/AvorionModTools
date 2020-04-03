@@ -16,150 +16,168 @@ UIOrganizer = {
 
 }
 
-setmetatable(UIOrganizer, {__call = function(self) return UIOrganizer end})
+setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getBottomLeftRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getBottomLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
----@type fun(rect:Rect)
-UIOrganizer.getBottomRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):Rect
+UIOrganizer.getBottomRect = function (rect)
+	return Rect()
+end
+
+-- Aligns the given rect to a specific side
+-- @param rect - The given rect
+-- @return nothing
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getBottomRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getBottomRightRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getCenterRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getCenterRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getLeftRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getRightRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getTopLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getTopLeftRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getTopRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getTopRect = function ()
-	return nil
-end
-
--- Aligns the given rect to a specific side
--- @param rect - The given rect
--- @return nothing
----@type fun(rect:Rect)
-UIOrganizer.getTopRightRect = function ()
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIOrganizer.getTopRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementBottom = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottom = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementBottomLeft = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottomLeft = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementBottomRight = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottomRight = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementCenter = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementCenter = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementLeft = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementLeft = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementRight = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementRight = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementTop = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTop = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementTopLeft = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTopLeft = function (element)
+	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@type fun(element:UIElement)
-UIOrganizer.placeElementTopRight = function ()
-	return nil
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTopRight = function (element)
+	return UIElement()
 end
 
 -- @param left - margin on the left side
@@ -167,8 +185,12 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
----@type fun(left:number, right:number, top:number, bottom:number)
-UIOrganizer.setMargin = function ()
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIOrganizer.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -177,8 +199,12 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
----@type fun(left:number, right:number, top:number, bottom:number)
-UIOrganizer.setPadding = function ()
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIOrganizer.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

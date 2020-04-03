@@ -7,5 +7,5 @@ ReadOnlyInteractionText = {
 
 }
 
-setmetatable(ReadOnlyInteractionText, {__call = function(self) return ReadOnlyInteractionText end})
+setmetatable(ReadOnlyInteractionText, {__call = function(self, id) return ReadOnlyInteractionText end})
 

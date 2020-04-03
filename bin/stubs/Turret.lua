@@ -27,37 +27,43 @@ Turret = {
 
 }
 
-setmetatable(Turret, {__call = function(self) return Turret end})
+setmetatable(Turret, {__call = function(self, id) return Turret end})
 
 -- @return nothing
----@type fun(amount:number)
-Turret.consumeEnergyForShot = function ()
+---@param amount double
+---@type fun(amount:number):any
+Turret.consumeEnergyForShot = function (amount)
 	return nil
 end
 
----@type fun()
+---@type fun():vec3
 Turret.getCurrentVelocity = function ()
-	return nil
+	return vec3()
 end
 
----@type fun()
+---@type fun():Matrix
 Turret.getLookingPosition = function ()
-	return nil
+	return Matrix()
 end
 
----@type fun(amount:number)
-Turret.hasEnergyForShot = function ()
-	return nil
+---@param amount double
+---@type fun(amount:number):boolean
+Turret.hasEnergyForShot = function (amount)
+	return true
 end
 
 -- @return nothing
----@type fun(rotationVertical:number, rotationHorizontal:number, lookingAtTarget:boolean)
-Turret.setOrientation = function ()
+---@param rotationVertical float
+---@param rotationHorizontal float
+---@param lookingAtTarget bool
+---@type fun(rotationVertical:number, rotationHorizontal:number, lookingAtTarget:boolean):any
+Turret.setOrientation = function (rotationVertical, rotationHorizontal, lookingAtTarget)
 	return nil
 end
 
----@type fun(ray:any)
-Turret.shootingVectorOk = function ()
-	return nil
+---@param ray var
+---@type fun(ray:any):boolean
+Turret.shootingVectorOk = function (ray)
+	return true
 end
 

@@ -32,72 +32,72 @@ Label = {
 
 }
 
-setmetatable(Label, {__call = function(self) return Label end})
+setmetatable(Label, {__call = function(self, index) return Label end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setBottomAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setBottomLeftAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setBottomRightAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setCenterAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setLeftAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setRightAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setTopAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setTopLeftAligned = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.setTopRightAligned = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun()
+---@type fun():any
 Label.show = function ()
 	return nil
 end
