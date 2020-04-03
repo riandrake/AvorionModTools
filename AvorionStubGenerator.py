@@ -60,31 +60,31 @@ def indent(string):
     return '\n'.join(lines)
 
 
-def get_default_value(type):
+def get_default_value(in_type):
     """ Return a default value for a type, so inference works in lua
     """
-    type = type.strip()
+    in_type = in_type.strip()
 
-    if '{' in type:
-        between = type[1:-1]
+    if '{' in in_type:
+        between = in_type[1:-1]
         between_args = [subarg for subarg in split_careful(between) if subarg.strip()]
         return '{' + ', '.join((get_default_value(arg) for arg in between_args)) + '}'
 
     # Assume these are enums that need collapsing
-    type = type.replace('::', '')
+    in_type = in_type.replace('::', '')
 
     global DEFAULT_VALUES_BY_TYPE
-    if type not in DEFAULT_VALUES_BY_TYPE:
+    if in_type not in DEFAULT_VALUES_BY_TYPE:
 
         for weird in ('=', ' '):
-            if weird in type:
-                print(f'Weird type: "{type}"')
+            if weird in in_type:
+                print(f'Weird type: "{in_type}"')
                 return 'nil'
 
         #print('New type: ', type)
-        DEFAULT_VALUES_BY_TYPE[type] = type + '()'
+        DEFAULT_VALUES_BY_TYPE[in_type] = in_type + '()'
 
-    return DEFAULT_VALUES_BY_TYPE[type]
+    return DEFAULT_VALUES_BY_TYPE[in_type]
 
 
 class StubGeneratorError(Exception):
@@ -101,16 +101,16 @@ class ParsedProperty:
     def __lt__(self, other):
         return self.name < other.name
 
-    def parse_property(self, property, namespace):
+    def parse_property(self, in_property, namespace):
         """ Parse a property from documentation """
-        tag_begin = property.find('[')
+        tag_begin = in_property.find('[')
         if tag_begin != -1:
-            self.remark = property[tag_begin:property.rfind(']') + 1] + ' '
-            property = property[:tag_begin]
+            self.remark = in_property[tag_begin:in_property.rfind(']') + 1] + ' '
+            in_property = in_property[:tag_begin]
         else:
             self.remark = ''
         
-        words = property.split()[1:]
+        words = in_property.split()[1:]
         self.name = words[-1]
         self.type = ' '.join(words[:-1]).strip().replace('\n', '')
 
@@ -128,6 +128,7 @@ class ParsedFunction:
     callback: bool
     return_value: str
     arguments: str
+    params: str
 
     def parse_return_value(self, return_value):
         """ Parse a return value for defaults """
@@ -153,10 +154,14 @@ class ParsedFunction:
 
         args = definition[start_bracket+1:end_bracket] 
         args = split_careful(args)
+        arg_types = []
 
         for idx, arg in enumerate(args):
             if split := arg.split():
                 arg = split[-1]
+                if len(split) > 1:
+                    arg_types.append('---@param ' + arg + ' ' + split[0] + '\n')
+
             
             arg = arg.strip()
 
@@ -171,6 +176,7 @@ class ParsedFunction:
         
         args = [arg.strip() for arg in args if arg.strip()]
         self.arguments = ', '.join(args)
+        self.params = ''.join(arg_types)
 
         name_start = definition.rfind(' ', 0, start_bracket)
 
