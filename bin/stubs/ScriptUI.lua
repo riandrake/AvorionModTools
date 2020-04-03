@@ -13,12 +13,14 @@ setmetatable(ScriptUI, {__call = function(self, id) return ScriptUI end})
 -- @param function - The function that will be called when the dialog option is selected.
 ---@param text string
 ---@param function string
-function ScriptUI:addDialogOption(text, _function)
+---@type fun(text:string, function:string):number
+ScriptUI.addDialogOption = function (text, _function)
 	return 0
 end
 
 ---@param rect Rect
-function ScriptUI:createWindow(rect)
+---@type fun(rect:Rect):Window
+ScriptUI.createWindow = function (rect)
 	return Window()
 end
 
@@ -28,26 +30,30 @@ end
 -- @return nothing
 ---@param dialog Dialog
 ---@param closeable var
-function ScriptUI:interactShowDialog(dialog, closeable)
+---@type fun(dialog:Dialog, closeable:any):any
+ScriptUI.interactShowDialog = function (dialog, closeable)
 	return nil
 end
 
 -- @return nothing
 ---@param caption string
 ---@param function string
-function ScriptUI:registerInteraction(caption, _function)
+---@type fun(caption:string, function:string):any
+ScriptUI.registerInteraction = function (caption, _function)
 	return nil
 end
 
 -- @return nothing
 ---@param window Window
 ---@param caption string
-function ScriptUI:registerWindow(window, caption)
+---@type fun(window:Window, caption:string):any
+ScriptUI.registerWindow = function (window, caption)
 	return nil
 end
 
 -- @return nothing
-function ScriptUI:restartInteraction()
+---@type fun():any
+ScriptUI.restartInteraction = function ()
 	return nil
 end
 
@@ -56,7 +62,8 @@ end
 -- @param closeable - A value indicating if the dialog can be closed with the Escape key. Disable only with caution! Your dialog must be able to be terminated through every possible answer-way or the player can get stuck. Can be omitted, default is 1.
 ---@param dialog Dialog
 ---@param closeable var
-function ScriptUI:showDialog(dialog, closeable)
+---@type fun(dialog:Dialog, closeable:any):boolean
+ScriptUI.showDialog = function (dialog, closeable)
 	return true
 end
 
@@ -66,18 +73,21 @@ end
 -- @return nothing
 ---@param acceptCallback string
 ---@param rejectCallback string
-function ScriptUI:startHailing(acceptCallback, rejectCallback)
+---@type fun(acceptCallback:string, rejectCallback:string):any
+ScriptUI.startHailing = function (acceptCallback, rejectCallback)
 	return nil
 end
 
 -- Stop the current hailing.
 -- @return nothing
-function ScriptUI:stopHailing()
+---@type fun():any
+ScriptUI.stopHailing = function ()
 	return nil
 end
 
 -- @return nothing
-function ScriptUI:stopInteraction()
+---@type fun():any
+ScriptUI.stopInteraction = function ()
 	return nil
 end
 

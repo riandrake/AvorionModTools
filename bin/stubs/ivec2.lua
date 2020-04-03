@@ -9,40 +9,48 @@ ivec2 = {
 setmetatable(ivec2, {__call = function(self, x, y) return ivec2 end})
 
 ---@param other var
-function ivec2:__add(other)
+---@type fun(other:any):ivec2
+ivec2.__add = function (other)
 	return ivec2()
 end
 
 ---@param other var
-function ivec2:__div(other)
+---@type fun(other:any):ivec2
+ivec2.__div = function (other)
 	return ivec2()
 end
 
 ---@param other ivec2
-function ivec2:__eq(other)
+---@type fun(other:ivec2):boolean
+ivec2.__eq = function (other)
 	return true
 end
 
 ---@param other ivec2
-function ivec2:__lt(other)
+---@type fun(other:ivec2):boolean
+ivec2.__lt = function (other)
 	return true
 end
 
 ---@param other var
-function ivec2:__mul(other)
+---@type fun(other:any):ivec2
+ivec2.__mul = function (other)
 	return ivec2()
 end
 
 ---@param other var
-function ivec2:__sub(other)
+---@type fun(other:any):ivec2
+ivec2.__sub = function (other)
 	return ivec2()
 end
 
-function ivec2:__tostring()
+---@type fun():string
+ivec2.__tostring = function ()
 	return ""
 end
 
-function ivec2:__unm()
+---@type fun():ivec2
+ivec2.__unm = function ()
 	return ivec2()
 end
 

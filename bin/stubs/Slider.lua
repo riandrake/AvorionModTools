@@ -38,31 +38,36 @@ setmetatable(Slider, {__call = function(self, index) return Slider end})
 -- @return nothing
 ---@param inFrom float
 ---@param inTo float
-function Slider:setRatio(inFrom, inTo)
+---@type fun(inFrom:number, inTo:number):any
+Slider.setRatio = function (inFrom, inTo)
 	return nil
 end
 
 -- @return nothing
 ---@param in float
-function Slider:setSliderPositionNoCallback(_in)
+---@type fun(in:number):any
+Slider.setSliderPositionNoCallback = function (_in)
 	return nil
 end
 
 -- @return nothing
 ---@param in float
-function Slider:setValueNoCallback(_in)
+---@type fun(in:number):any
+Slider.setValueNoCallback = function (_in)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Slider:hide()
+---@type fun():any
+Slider.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Slider:show()
+---@type fun():any
+Slider.show = function ()
 	return nil
 end
 

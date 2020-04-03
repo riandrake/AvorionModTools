@@ -12,14 +12,16 @@ setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip en
 ---@param i int
 ---@param description string
 ---@param str string
-function EntityTooltip:setDisplayTooltip(i, description, str)
+---@type fun(i:number, description:string, str:string):any
+EntityTooltip.setDisplayTooltip = function (i, description, str)
 	return nil
 end
 
 -- @return nothing
 ---@param i int
 ---@param str string
-function EntityTooltip:setTargeterTooltip(i, str)
+---@type fun(i:number, str:string):any
+EntityTooltip.setTargeterTooltip = function (i, str)
 	return nil
 end
 

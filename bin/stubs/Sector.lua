@@ -11,11 +11,13 @@ Sector = {
 
 setmetatable(Sector, {__call = function(self) return Sector end})
 
-function Sector:addScript()
+---@type fun():number
+Sector.addScript = function ()
 	return 0
 end
 
-function Sector:addScriptOnce()
+---@type fun():any
+Sector.addScriptOnce = function ()
 	return nil
 end
 
@@ -25,7 +27,8 @@ end
 -- @return A boolean indicating if the entity belongs to the faction
 ---@param factionIndex int
 ---@param id var
-function Sector:belongsToFaction(factionIndex, id)
+---@type fun(factionIndex:number, id:any):boolean
+Sector.belongsToFaction = function (factionIndex, id)
 	return true
 end
 
@@ -39,7 +42,8 @@ end
 ---@param messageType int
 ---@param message string
 ---@param args PluralForm...
-function Sector:broadcastChatMessage(sender, messageType, message, args)
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
+Sector.broadcastChatMessage = function (sender, messageType, message, args)
 	return nil
 end
 
@@ -49,13 +53,15 @@ end
 -- @return The amount of functions registered to the callback
 ---@param callbackName string
 ---@param functionName var
-function Sector:callbacksRegistered(callbackName, functionName)
+---@type fun(callbackName:string, functionName:any):number
+Sector.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 -- Removes all custom values of the object
 -- @return nothing
-function Sector:clearValues()
+---@type fun():any
+Sector.clearValues = function ()
 	return nil
 end
 
@@ -63,7 +69,8 @@ end
 -- @param entity - The entity to delete
 -- @return nothing
 ---@param entity var
-function Sector:collectGarbage(entity)
+---@type fun(entity:any):any
+Sector.collectGarbage = function (entity)
 	return nil
 end
 
@@ -73,7 +80,8 @@ end
 -- @return The new entity
 ---@param entity Entity
 ---@param positoin Matrix
-function Sector:copyEntity(entity, positoin)
+---@type fun(entity:Entity, positoin:Matrix):Entity
+Sector.copyEntity = function (entity, positoin)
 	return Entity()
 end
 
@@ -85,7 +93,8 @@ end
 ---@param plan BlockPlan
 ---@param resources bool
 ---@param position Matrix
-function Sector:createAsteroid(plan, resources, position)
+---@type fun(plan:BlockPlan, resources:boolean, position:Matrix):Entity
+Sector.createAsteroid = function (plan, resources, position)
 	return Entity()
 end
 
@@ -95,7 +104,8 @@ end
 -- @return The new entity
 ---@param descriptor EntityDescriptor
 ---@param arrivalType var
-function Sector:createEntity(descriptor, arrivalType)
+---@type fun(descriptor:EntityDescriptor, arrivalType:any):Entity
+Sector.createEntity = function (descriptor, arrivalType)
 	return Entity()
 end
 
@@ -107,7 +117,8 @@ end
 ---@param plan BlockPlan
 ---@param position Matrix
 ---@param arrivalType var
-function Sector:createObject(plan, position, arrivalType)
+---@type fun(plan:BlockPlan, position:Matrix, arrivalType:any):Entity
+Sector.createObject = function (plan, position, arrivalType)
 	return Entity()
 end
 
@@ -123,7 +134,8 @@ end
 ---@param plan BlockPlan
 ---@param position Matrix
 ---@param arrivalType var
-function Sector:createShip(faction, name, plan, position, arrivalType)
+---@type fun(faction:Faction, name:string, plan:BlockPlan, position:Matrix, arrivalType:any):Entity
+Sector.createShip = function (faction, name, plan, position, arrivalType)
 	return Entity()
 end
 
@@ -139,7 +151,8 @@ end
 ---@param position Matrix
 ---@param script var
 ---@param args var...
-function Sector:createStation(faction, plan, position, script, args)
+---@type fun(faction:Faction, plan:BlockPlan, position:Matrix, script:any, args:table<number,var>):Entity
+Sector.createStation = function (faction, plan, position, script, args)
 	return Entity()
 end
 
@@ -153,7 +166,8 @@ end
 ---@param y int
 ---@param color Color
 ---@param size float
-function Sector:createWormHole(x, y, color, size)
+---@type fun(x:number, y:number, color:Color, size:number):Entity
+Sector.createWormHole = function (x, y, color, size)
 	return Entity()
 end
 
@@ -163,7 +177,8 @@ end
 -- @return An entity representing the new wreckage
 ---@param plan BlockPlan
 ---@param position Matrix
-function Sector:createWreckage(plan, position)
+---@type fun(plan:BlockPlan, position:Matrix):Entity
+Sector.createWreckage = function (plan, position)
 	return Entity()
 end
 
@@ -171,7 +186,8 @@ end
 -- @param entity - The entity to delete
 -- @return nothing
 ---@param entity Entity
-function Sector:deleteEntity(entity)
+---@type fun(entity:Entity):any
+Sector.deleteEntity = function (entity)
 	return nil
 end
 
@@ -179,12 +195,14 @@ end
 -- @param entity - The entity to delete
 -- @return nothing
 ---@param entity Entity
-function Sector:deleteEntityJumped(entity)
+---@type fun(entity:Entity):any
+Sector.deleteEntityJumped = function (entity)
 	return nil
 end
 
 -- @return nothing
-function Sector:dropBundle()
+---@type fun():any
+Sector.dropBundle = function ()
 	return nil
 end
 
@@ -194,7 +212,8 @@ end
 ---@param good TradingGood
 ---@param owner int
 ---@param amount int
-function Sector:dropCargo(position, reservedFor, deniedFor, good, owner, amount)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, good:TradingGood, owner:number, amount:number):Entity
+Sector.dropCargo = function (position, reservedFor, deniedFor, good, owner, amount)
 	return Entity()
 end
 
@@ -202,7 +221,8 @@ end
 ---@param reservedFor Faction
 ---@param deniedFor Faction
 ---@param amount int
-function Sector:dropMoney(position, reservedFor, deniedFor, amount)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, amount:number):Entity
+Sector.dropMoney = function (position, reservedFor, deniedFor, amount)
 	return Entity()
 end
 
@@ -211,7 +231,8 @@ end
 ---@param deniedFor Faction
 ---@param material Material
 ---@param amount int
-function Sector:dropResources(position, reservedFor, deniedFor, material, amount)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, material:Material, amount:number):Entity
+Sector.dropResources = function (position, reservedFor, deniedFor, material, amount)
 	return Entity()
 end
 
@@ -223,7 +244,8 @@ end
 ---@param position vec3
 ---@param reservedFor Faction
 ---@param deniedFor Faction
-function Sector:dropSectorTurret(position, reservedFor, deniedFor)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction):Entity
+Sector.dropSectorTurret = function (position, reservedFor, deniedFor)
 	return Entity()
 end
 
@@ -231,7 +253,8 @@ end
 ---@param reservedFor Faction
 ---@param deniedFor Faction
 ---@param desc TurretTemplate
-function Sector:dropTurret(position, reservedFor, deniedFor, desc)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, desc:TurretTemplate):Entity
+Sector.dropTurret = function (position, reservedFor, deniedFor, desc)
 	return Entity()
 end
 
@@ -239,7 +262,8 @@ end
 ---@param reservedFor Faction
 ---@param deniedFor Faction
 ---@param upgrade SystemUpgradeTemplate
-function Sector:dropUpgrade(position, reservedFor, deniedFor, upgrade)
+---@type fun(position:vec3, reservedFor:nil]:[or:Faction, deniedFor:nil]:[or:Faction, upgrade:SystemUpgradeTemplate):Entity
+Sector.dropUpgrade = function (position, reservedFor, deniedFor, upgrade)
 	return Entity()
 end
 
@@ -247,7 +271,8 @@ end
 -- @param id - The id of the entity to test
 -- @return A boolean indicating if the entity with the index exists
 ---@param id var
-function Sector:exists(id)
+---@type fun(id:any):boolean
+Sector.exists = function (id)
 	return true
 end
 
@@ -255,13 +280,15 @@ end
 -- @param factionIndex - The faction index of the faction whose ally ships are to be queried
 -- @return Multiple values: All detected allies in the sector
 ---@param factionIndex int
-function Sector:getAllies(factionIndex)
+---@type fun(factionIndex:number):Entity
+Sector.getAllies = function (factionIndex)
 	return Entity()
 end
 
 -- Access the x, y coordinates of the sector
 -- @return 2 return values: x, y coordinates of the sector
-function Sector:getCoordinates()
+---@type fun():number, number
+Sector.getCoordinates = function ()
 	return 0, 0
 end
 
@@ -269,13 +296,15 @@ end
 -- @param factionIndex - The faction index of the faction whose enemy ships are to be queried
 -- @return Multiple return values: All detected enemies in the sector
 ---@param factionIndex int
-function Sector:getEnemies(factionIndex)
+---@type fun(factionIndex:number):Entity
+Sector.getEnemies = function (factionIndex)
 	return Entity()
 end
 
 -- Returns all entities in the sector
 -- @return Multiple return values: All entities in the sector
-function Sector:getEntities()
+---@type fun():Entity
+Sector.getEntities = function ()
 	return Entity()
 end
 
@@ -283,7 +312,8 @@ end
 -- @param type - The desired component type (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
 ---@param type int
-function Sector:getEntitiesByComponent(type)
+---@type fun(type:number):Entity
+Sector.getEntitiesByComponent = function (type)
 	return Entity()
 end
 
@@ -291,7 +321,8 @@ end
 -- @param types - The desired set of component types (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
 ---@param types Type...
-function Sector:getEntitiesByComponents(types)
+---@type fun(types:table<number,Type>):Entity
+Sector.getEntitiesByComponents = function (types)
 	return Entity()
 end
 
@@ -299,7 +330,8 @@ end
 -- @param factionIndex - The desired faction
 -- @return Multiple return values: All matching entities in the sector
 ---@param factionIndex int
-function Sector:getEntitiesByFaction(factionIndex)
+---@type fun(factionIndex:number):Entity
+Sector.getEntitiesByFaction = function (factionIndex)
 	return Entity()
 end
 
@@ -307,7 +339,8 @@ end
 -- @param sphere - The intersected sphere
 -- @return Multiple return values: All matching entities in the sector
 ---@param sphere Sphere
-function Sector:getEntitiesByLocation(sphere)
+---@type fun(sphere:Sphere):Entity
+Sector.getEntitiesByLocation = function (sphere)
 	return Entity()
 end
 
@@ -315,7 +348,8 @@ end
 -- @param script - The script that is to check for. This operation checks if the given script name is contained in the actual script name.
 -- @return Multiple return values: All matching entities in the sector
 ---@param script string
-function Sector:getEntitiesByScript(script)
+---@type fun(script:string):Entity
+Sector.getEntitiesByScript = function (script)
 	return Entity()
 end
 
@@ -325,7 +359,8 @@ end
 -- @return Multiple return values: All matching entities in the sector
 ---@param name string
 ---@param value var
-function Sector:getEntitiesByScriptValue(name, value)
+---@type fun(name:string, value:any):Entity
+Sector.getEntitiesByScriptValue = function (name, value)
 	return Entity()
 end
 
@@ -333,7 +368,8 @@ end
 -- @param type - The desired entity type (See enum EntityType)
 -- @return Multiple return values: All matching entities in the sector
 ---@param type int
-function Sector:getEntitiesByType(type)
+---@type fun(type:number):Entity
+Sector.getEntitiesByType = function (type)
 	return Entity()
 end
 
@@ -341,78 +377,93 @@ end
 -- @param index - The index of the entity as Uuid or std::string
 -- @return The entity or nil if not found
 ---@param index var
-function Sector:getEntity(index)
+---@type fun(index:any):Entity
+Sector.getEntity = function (index)
 	return Entity()
 end
 
 ---@param factionIndex int
 ---@param name string
-function Sector:getEntityByFactionAndName(factionIndex, name)
+---@type fun(factionIndex:number, name:string):Entity
+Sector.getEntityByFactionAndName = function (factionIndex, name)
 	return Entity()
 end
 
 ---@param faction int
-function Sector:getNumAllies(faction)
+---@type fun(faction:number):number
+Sector.getNumAllies = function (faction)
 	return 0
 end
 
 ---@param factionIndex int
-function Sector:getNumEnemies(factionIndex)
+---@type fun(factionIndex:number):number
+Sector.getNumEnemies = function (factionIndex)
 	return 0
 end
 
-function Sector:getNumEntities()
+---@type fun():number
+Sector.getNumEntities = function ()
 	return 0
 end
 
 ---@param component int
-function Sector:getNumEntitiesByComponent(component)
+---@type fun(component:number):number
+Sector.getNumEntitiesByComponent = function (component)
 	return 0
 end
 
-function Sector:getNumEntitiesByComponents()
+---@type fun():number
+Sector.getNumEntitiesByComponents = function ()
 	return 0
 end
 
 ---@param factionIndex int
-function Sector:getNumEntitiesByFaction(factionIndex)
+---@type fun(factionIndex:number):number
+Sector.getNumEntitiesByFaction = function (factionIndex)
 	return 0
 end
 
 ---@param sphere Sphere
-function Sector:getNumEntitiesByLocation(sphere)
+---@type fun(sphere:Sphere):number
+Sector.getNumEntitiesByLocation = function (sphere)
 	return 0
 end
 
 ---@param scriptName string
-function Sector:getNumEntitiesByScript(scriptName)
+---@type fun(scriptName:string):number
+Sector.getNumEntitiesByScript = function (scriptName)
 	return 0
 end
 
 ---@param valueName string
 ---@param value var
-function Sector:getNumEntitiesByScriptValue(valueName, value)
+---@type fun(valueName:string, value:any):number
+Sector.getNumEntitiesByScriptValue = function (valueName, value)
 	return 0
 end
 
 ---@param type int
-function Sector:getNumEntitiesByType(type)
+---@type fun(type:number):number
+Sector.getNumEntitiesByType = function (type)
 	return 0
 end
 
 -- Returns all players that are currently in the sector
 -- @return Multiple return values: All players in the sector
-function Sector:getPlayers()
+---@type fun():Player
+Sector.getPlayers = function ()
 	return Player()
 end
 
 -- Returns all indices of all present factions
 -- @return a list of int indices of all present factions
-function Sector:getPresentFactions()
+---@type fun():number
+Sector.getPresentFactions = function ()
 	return 0
 end
 
-function Sector:getScripts()
+---@type fun():table<number, string>
+Sector.getScripts = function ()
 	return {0, ""}
 end
 
@@ -420,13 +471,15 @@ end
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
-function Sector:getValue(key)
+---@type fun(key:string):any
+Sector.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
-function Sector:getValues()
+---@type fun():table<string, any>
+Sector.getValues = function ()
 	return {"", nil}
 end
 
@@ -434,12 +487,14 @@ end
 -- @param factionIndex - The index of the faction
 -- @return true if there are enemies present, false otherwise
 ---@param factionIndex int
-function Sector:hasEnemies(factionIndex)
+---@type fun(factionIndex:number):boolean
+Sector.hasEnemies = function (factionIndex)
 	return true
 end
 
 ---@param name string
-function Sector:hasScript(name)
+---@type fun(name:string):boolean
+Sector.hasScript = function (name)
 	return true
 end
 
@@ -451,7 +506,8 @@ end
 ---@param ray Ray
 ---@param ignoredEntity Uuid
 ---@param ignoredEntityShields Uuid
-function Sector:intersectBeamRay(ray, ignoredEntity, ignoredEntityShields)
+---@type fun(ray:Ray, ignoredEntity:nil]:[or:Uuid, ignoredEntityShields:nil]:[or:Uuid):UserObject
+Sector.intersectBeamRay = function (ray, ignoredEntity, ignoredEntityShields)
 	return UserObject()
 end
 
@@ -463,7 +519,8 @@ end
 ---@param scriptName var
 ---@param functionName string
 ---@param arguments var...
-function Sector:invokeFunction(scriptName, functionName, arguments)
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Sector.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
@@ -473,29 +530,34 @@ end
 -- @return 0 on success, 1 if the registration failed
 ---@param callbackName string
 ---@param functionName string
-function Sector:registerCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):number
+Sector.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
 ---@param script var
-function Sector:removeScript(script)
+---@type fun(script:any):any
+Sector.removeScript = function (script)
 	return nil
 end
 
 -- @return nothing
 ---@param entity Entity
-function Sector:resendEntity(entity)
+---@type fun(entity:Entity):any
+Sector.resendEntity = function (entity)
 	return nil
 end
 
 ---@param path string
-function Sector:resolveScriptPath(path)
+---@type fun(path:string):string
+Sector.resolveScriptPath = function (path)
 	return ""
 end
 
 -- @return nothing
-function Sector:sendCallback()
+---@type fun():any
+Sector.sendCallback = function ()
 	return nil
 end
 
@@ -505,14 +567,16 @@ end
 -- @return nothing
 ---@param key string
 ---@param value var
-function Sector:setValue(key, value)
+---@type fun(key:string, value:any):any
+Sector.setValue = function (key, value)
 	return nil
 end
 
 -- @return nothing
 ---@param callbackName string
 ---@param functionName string
-function Sector:unregisterCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):any
+Sector.unregisterCallback = function (callbackName, functionName)
 	return nil
 end
 

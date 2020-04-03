@@ -7,11 +7,13 @@ NamedFormat = {
 
 setmetatable(NamedFormat, {__call = function(self, string, MapType) return NamedFormat end})
 
-function NamedFormat:arguments()
+---@type fun():table<string, PluralForm>
+NamedFormat.arguments = function ()
 	return {"", PluralForm()}
 end
 
-function NamedFormat:translated()
+---@type fun():string
+NamedFormat.translated = function ()
 	return ""
 end
 

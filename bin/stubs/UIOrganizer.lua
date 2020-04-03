@@ -22,7 +22,8 @@ setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end}
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getBottomLeftRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getBottomLeftRect = function (rect)
 	return nil
 end
 
@@ -30,7 +31,8 @@ end
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
 ---@param rect Rect
-function UIOrganizer:getBottomRect(rect)
+---@type fun(rect:Rect):Rect
+UIOrganizer.getBottomRect = function (rect)
 	return Rect()
 end
 
@@ -38,7 +40,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getBottomRightRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getBottomRightRect = function (rect)
 	return nil
 end
 
@@ -46,7 +49,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getCenterRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getCenterRect = function (rect)
 	return nil
 end
 
@@ -54,7 +58,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getLeftRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getLeftRect = function (rect)
 	return nil
 end
 
@@ -62,7 +67,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getRightRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getRightRect = function (rect)
 	return nil
 end
 
@@ -70,7 +76,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getTopLeftRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getTopLeftRect = function (rect)
 	return nil
 end
 
@@ -78,7 +85,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getTopRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getTopRect = function (rect)
 	return nil
 end
 
@@ -86,7 +94,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIOrganizer:getTopRightRect(rect)
+---@type fun(rect:Rect):any
+UIOrganizer.getTopRightRect = function (rect)
 	return nil
 end
 
@@ -94,7 +103,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementBottom(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottom = function (element)
 	return UIElement()
 end
 
@@ -102,7 +112,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementBottomLeft(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottomLeft = function (element)
 	return UIElement()
 end
 
@@ -110,7 +121,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementBottomRight(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementBottomRight = function (element)
 	return UIElement()
 end
 
@@ -118,7 +130,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementCenter(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementCenter = function (element)
 	return UIElement()
 end
 
@@ -126,7 +139,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementLeft(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementLeft = function (element)
 	return UIElement()
 end
 
@@ -134,7 +148,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementRight(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementRight = function (element)
 	return UIElement()
 end
 
@@ -142,7 +157,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementTop(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTop = function (element)
 	return UIElement()
 end
 
@@ -150,7 +166,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementTopLeft(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTopLeft = function (element)
 	return UIElement()
 end
 
@@ -158,7 +175,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIOrganizer:placeElementTopRight(element)
+---@type fun(element:UIElement):UIElement
+UIOrganizer.placeElementTopRight = function (element)
 	return UIElement()
 end
 
@@ -171,7 +189,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIOrganizer:setMargin(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIOrganizer.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -184,7 +203,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIOrganizer:setPadding(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIOrganizer.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

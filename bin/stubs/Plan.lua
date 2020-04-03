@@ -38,14 +38,16 @@ setmetatable(Plan, {__call = function(self, id) return Plan end})
 ---@param material Material
 ---@param orientation Matrix
 ---@param blockIndex int
-function Plan:addBlock(position, size, parentIndex, index, color, material, orientation, blockIndex)
+---@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number):number
+Plan.addBlock = function (position, size, parentIndex, index, color, material, orientation, blockIndex)
 	return 0
 end
 
 ---@param parentIndex int
 ---@param other BlockPlan
 ---@param otherBlock int
-function Plan:addPlan(parentIndex, other, otherBlock)
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number):number
+Plan.addPlan = function (parentIndex, other, otherBlock)
 	return 0
 end
 
@@ -53,7 +55,8 @@ end
 ---@param other BlockPlan
 ---@param otherBlock int
 ---@param delta vec3
-function Plan:addPlanDisplaced(parentIndex, other, otherBlock, delta)
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3):number
+Plan.addPlanDisplaced = function (parentIndex, other, otherBlock, delta)
 	return 0
 end
 
@@ -64,93 +67,112 @@ end
 ---@param inflictingEntity Uuid
 ---@param damageSource var
 ---@param damageType var
-function Plan:damage(damage, block, location, inflictingEntity, damageSource, damageType)
+---@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid, damageSource:any, damageType:any):any
+Plan.damage = function (damage, block, location, inflictingEntity, damageSource, damageType)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
-function Plan:deleteSubTree(index)
+---@type fun(index:number):any
+Plan.deleteSubTree = function (index)
 	return nil
 end
 
 -- @return nothing
-function Plan:destroy()
+---@type fun():any
+Plan.destroy = function ()
 	return nil
 end
 
-function Plan:empty()
+---@type fun():boolean
+Plan.empty = function ()
 	return true
 end
 
 ---@param index int
-function Plan:exists(index)
+---@type fun(index:number):boolean
+Plan.exists = function (index)
 	return true
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
-function Plan:get()
+---@type fun():BlockPlan
+Plan.get = function ()
 	return BlockPlan()
 end
 
 ---@param index int
-function Plan:getBlock(index)
+---@type fun(index:number):BlockPlanBlock
+Plan.getBlock = function (index)
 	return BlockPlanBlock()
 end
 
-function Plan:getBlockIndices()
+---@type fun():number
+Plan.getBlockIndices = function ()
 	return 0
 end
 
 ---@param index int
-function Plan:getBlocksByType(index)
+---@type fun(index:number):number
+Plan.getBlocksByType = function (index)
 	return 0
 end
 
-function Plan:getMoneyValue()
+---@type fun():number
+Plan.getMoneyValue = function ()
 	return 0.0
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks.
 -- @return The plan of the entity
-function Plan:getMove()
+---@type fun():BlockPlan
+Plan.getMove = function ()
 	return BlockPlan()
 end
 
 ---@param n int
-function Plan:getNthBlock(n)
+---@type fun(n:number):BlockPlanBlock
+Plan.getNthBlock = function (n)
 	return BlockPlanBlock()
 end
 
 ---@param n int
-function Plan:getNthIndex(n)
+---@type fun(n:number):any
+Plan.getNthIndex = function (n)
 	return nil
 end
 
 ---@param blockIndex int
-function Plan:getNumBlocks(blockIndex)
+---@type fun(blockIndex:number):number
+Plan.getNumBlocks = function (blockIndex)
 	return 0
 end
 
 ---@param index int
-function Plan:getRemoved(index)
+---@type fun(index:number):number
+Plan.getRemoved = function (index)
 	return 0
 end
 
-function Plan:getResourceValue()
+---@type fun():number
+Plan.getResourceValue = function ()
 	return 0.0
 end
 
-function Plan:getStats()
+---@type fun():BlockStatistics
+Plan.getStats = function ()
 	return BlockStatistics()
 end
 
-function Plan:getUndamagedMoneyValue()
+---@type fun():number
+Plan.getUndamagedMoneyValue = function ()
 	return 0.0
 end
 
-function Plan:getUndamagedResourceValue()
+---@type fun():number
+Plan.getUndamagedResourceValue = function ()
 	return 0.0
 end
 
@@ -159,7 +181,8 @@ end
 ---@param block int
 ---@param location vec3
 ---@param inflictingEntity Uuid
-function Plan:heal(damage, block, location, inflictingEntity)
+---@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid):any
+Plan.heal = function (damage, block, location, inflictingEntity)
 	return nil
 end
 
@@ -167,13 +190,15 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
-function Plan:move(plan)
+---@type fun(plan:BlockPlan):any
+Plan.move = function (plan)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
-function Plan:removeBlock(index)
+---@type fun(index:number):any
+Plan.removeBlock = function (index)
 	return nil
 end
 
@@ -181,33 +206,38 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
-function Plan:set(plan)
+---@type fun(plan:BlockPlan):any
+Plan.set = function (plan)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
 ---@param color Color
-function Plan:setBlockColor(index, color)
+---@type fun(index:number, color:Color):any
+Plan.setBlockColor = function (index, color)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
 ---@param type int
-function Plan:setBlockType(index, type)
+---@type fun(index:number, type:number):any
+Plan.setBlockType = function (index, type)
 	return nil
 end
 
 -- @return nothing
 ---@param color Color
-function Plan:setColor(color)
+---@type fun(color:Color):any
+Plan.setColor = function (color)
 	return nil
 end
 
 -- @return nothing
 ---@param material Material
-function Plan:setMaterial(material)
+---@type fun(material:Material):any
+Plan.setMaterial = function (material)
 	return nil
 end
 

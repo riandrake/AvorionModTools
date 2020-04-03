@@ -20,72 +20,87 @@ ReadOnlyPlan = {
 
 setmetatable(ReadOnlyPlan, {__call = function(self, id) return ReadOnlyPlan end})
 
-function ReadOnlyPlan:empty()
+---@type fun():boolean
+ReadOnlyPlan.empty = function ()
 	return true
 end
 
 ---@param index int
-function ReadOnlyPlan:exists(index)
+---@type fun(index:number):boolean
+ReadOnlyPlan.exists = function (index)
 	return true
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
-function ReadOnlyPlan:get()
+---@type fun():BlockPlan
+ReadOnlyPlan.get = function ()
 	return BlockPlan()
 end
 
 ---@param index int
-function ReadOnlyPlan:getBlock(index)
+---@type fun(index:number):BlockPlanBlock
+ReadOnlyPlan.getBlock = function (index)
 	return BlockPlanBlock()
 end
 
-function ReadOnlyPlan:getBlockIndices()
+---@type fun():number
+ReadOnlyPlan.getBlockIndices = function ()
 	return 0
 end
 
 ---@param index int
-function ReadOnlyPlan:getBlocksByType(index)
+---@type fun(index:number):number
+ReadOnlyPlan.getBlocksByType = function (index)
 	return 0
 end
 
-function ReadOnlyPlan:getMoneyValue()
+---@type fun():number
+ReadOnlyPlan.getMoneyValue = function ()
 	return 0.0
 end
 
 ---@param n int
-function ReadOnlyPlan:getNthBlock(n)
+---@type fun(n:number):BlockPlanBlock
+ReadOnlyPlan.getNthBlock = function (n)
 	return BlockPlanBlock()
 end
 
 ---@param n int
-function ReadOnlyPlan:getNthIndex(n)
+---@type fun(n:number):any
+ReadOnlyPlan.getNthIndex = function (n)
 	return nil
 end
 
 ---@param blockIndex int
-function ReadOnlyPlan:getNumBlocks(blockIndex)
+---@type fun(blockIndex:number):number
+ReadOnlyPlan.getNumBlocks = function (blockIndex)
 	return 0
 end
 
 ---@param index int
-function ReadOnlyPlan:getRemoved(index)
+---@type fun(index:number):number
+ReadOnlyPlan.getRemoved = function (index)
 	return 0
 end
 
-function ReadOnlyPlan:getResourceValue()
+---@type fun():number
+ReadOnlyPlan.getResourceValue = function ()
 	return 0.0
 end
 
-function ReadOnlyPlan:getStats()
+---@type fun():BlockStatistics
+ReadOnlyPlan.getStats = function ()
 	return BlockStatistics()
 end
 
-function ReadOnlyPlan:getUndamagedMoneyValue()
+---@type fun():number
+ReadOnlyPlan.getUndamagedMoneyValue = function ()
 	return 0.0
 end
 
-function ReadOnlyPlan:getUndamagedResourceValue()
+---@type fun():number
+ReadOnlyPlan.getUndamagedResourceValue = function ()
 	return 0.0
 end
 

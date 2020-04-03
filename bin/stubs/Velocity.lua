@@ -18,20 +18,23 @@ setmetatable(Velocity, {__call = function(self, id) return Velocity end})
 -- @return nothing
 ---@param axis vec3
 ---@param angle float
-function Velocity:addRotation(axis, angle)
+---@type fun(axis:vec3, angle:number):any
+Velocity.addRotation = function (axis, angle)
 	return nil
 end
 
 -- @return nothing
 ---@param delta vec3
-function Velocity:addVelocity(delta)
+---@type fun(delta:vec3):any
+Velocity.addVelocity = function (delta)
 	return nil
 end
 
 -- @return nothing
 ---@param axis vec3
 ---@param angle float
-function Velocity:setAngularVelocity(axis, angle)
+---@type fun(axis:vec3, angle:number):any
+Velocity.setAngularVelocity = function (axis, angle)
 	return nil
 end
 

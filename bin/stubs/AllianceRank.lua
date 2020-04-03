@@ -8,7 +8,8 @@ AllianceRank = {
 
 setmetatable(AllianceRank, {__call = function(self) return AllianceRank end})
 
-function AllianceRank:getPrivileges()
+---@type fun():number
+AllianceRank.getPrivileges = function ()
 	return 0
 end
 

@@ -33,14 +33,16 @@ setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
 ---@param material Material
 ---@param orientation Matrix
 ---@param blockIndex int
-function BlockPlan:addBlock(position, size, parentIndex, index, color, material, orientation, blockIndex)
+---@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number):number
+BlockPlan.addBlock = function (position, size, parentIndex, index, color, material, orientation, blockIndex)
 	return 0
 end
 
 ---@param parentIndex int
 ---@param other BlockPlan
 ---@param otherBlock int
-function BlockPlan:addPlan(parentIndex, other, otherBlock)
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number):any
+BlockPlan.addPlan = function (parentIndex, other, otherBlock)
 	return nil
 end
 
@@ -48,38 +50,45 @@ end
 ---@param other BlockPlan
 ---@param otherBlock int
 ---@param delta vec3
-function BlockPlan:addPlanDisplaced(parentIndex, other, otherBlock, delta)
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3):any
+BlockPlan.addPlanDisplaced = function (parentIndex, other, otherBlock, delta)
 	return nil
 end
 
 -- @return nothing
-function BlockPlan:center()
+---@type fun():any
+BlockPlan.center = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param index int
-function BlockPlan:deleteSubTree(index)
+---@type fun(index:number):any
+BlockPlan.deleteSubTree = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param displacement vec3
-function BlockPlan:displace(displacement)
+---@type fun(displacement:vec3):any
+BlockPlan.displace = function (displacement)
 	return nil
 end
 
 ---@param blockIndex int
-function BlockPlan:divide(blockIndex)
+---@type fun(blockIndex:number):BlockPlan
+BlockPlan.divide = function (blockIndex)
 	return BlockPlan()
 end
 
-function BlockPlan:empty()
+---@type fun():boolean
+BlockPlan.empty = function ()
 	return true
 end
 
 ---@param index int
-function BlockPlan:exists(index)
+---@type fun(index:number):boolean
+BlockPlan.exists = function (index)
 	return true
 end
 
@@ -87,66 +96,80 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
-function BlockPlan:forceMaterial(material)
+---@type fun(material:Material):any
+BlockPlan.forceMaterial = function (material)
 	return nil
 end
 
 ---@param index int
-function BlockPlan:getBlock(index)
+---@type fun(index:number):BlockPlanBlock
+BlockPlan.getBlock = function (index)
 	return BlockPlanBlock()
 end
 
-function BlockPlan:getBlockIndices()
+---@type fun():number
+BlockPlan.getBlockIndices = function ()
 	return 0
 end
 
-function BlockPlan:getBoundingBox()
+---@type fun():Box
+BlockPlan.getBoundingBox = function ()
 	return Box()
 end
 
-function BlockPlan:getBoundingSphere()
+---@type fun():Sphere
+BlockPlan.getBoundingSphere = function ()
 	return Sphere()
 end
 
-function BlockPlan:getMoneyValue()
+---@type fun():number
+BlockPlan.getMoneyValue = function ()
 	return 0.0
 end
 
 ---@param n int
-function BlockPlan:getNthBlock(n)
+---@type fun(n:number):BlockPlanBlock
+BlockPlan.getNthBlock = function (n)
 	return BlockPlanBlock()
 end
 
 ---@param n int
-function BlockPlan:getNthIndex(n)
+---@type fun(n:number):any
+BlockPlan.getNthIndex = function (n)
 	return nil
 end
 
-function BlockPlan:getResourceValue()
+---@type fun():number
+BlockPlan.getResourceValue = function ()
 	return 0.0
 end
 
-function BlockPlan:getStats()
+---@type fun():BlockStatistics
+BlockPlan.getStats = function ()
 	return BlockStatistics()
 end
 
-function BlockPlan:getUndamagedMoneyValue()
+---@type fun():number
+BlockPlan.getUndamagedMoneyValue = function ()
 	return 0.0
 end
 
-function BlockPlan:getUndamagedResourceValue()
+---@type fun():number
+BlockPlan.getUndamagedResourceValue = function ()
 	return 0.0
 end
 
 -- @return nothing
 ---@param axis vec3
 ---@param mirrorCenter vec3
-function BlockPlan:mirror(axis, mirrorCenter)
+---@type fun(axis:vec3, mirrorCenter:vec3):any
+BlockPlan.mirror = function (axis, mirrorCenter)
 	return nil
 end
 
 ---@param other BlockPlan
-function BlockPlan:propertiesEqual(other)
+---@type fun(other:BlockPlan):boolean
+BlockPlan.propertiesEqual = function (other)
 	return true
 end
 
@@ -154,45 +177,52 @@ end
 -- @param index - The index of the block that is to be removed
 -- @return nothing
 ---@param index int
-function BlockPlan:removeBlock(index)
+---@type fun(index:number):any
+BlockPlan.removeBlock = function (index)
 	return nil
 end
 
 -- @return nothing
-function BlockPlan:resetDurability()
+---@type fun():any
+BlockPlan.resetDurability = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param axis vec3
 ---@param dir int
-function BlockPlan:rotate(axis, dir)
+---@type fun(axis:vec3, dir:number):any
+BlockPlan.rotate = function (axis, dir)
 	return nil
 end
 
 -- @return nothing
 ---@param factor vec3
-function BlockPlan:scale(factor)
+---@type fun(factor:vec3):any
+BlockPlan.scale = function (factor)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
 ---@param color Color
-function BlockPlan:setBlockColor(index, color)
+---@type fun(index:number, color:Color):any
+BlockPlan.setBlockColor = function (index, color)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
 ---@param blockTypeIndex int
-function BlockPlan:setBlockType(index, blockTypeIndex)
+---@type fun(index:number, blockTypeIndex:number):any
+BlockPlan.setBlockType = function (index, blockTypeIndex)
 	return nil
 end
 
 -- @return nothing
 ---@param color Color
-function BlockPlan:setColor(color)
+---@type fun(color:Color):any
+BlockPlan.setColor = function (color)
 	return nil
 end
 
@@ -200,7 +230,8 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
-function BlockPlan:setMaterial(material)
+---@type fun(material:Material):any
+BlockPlan.setMaterial = function (material)
 	return nil
 end
 
@@ -208,7 +239,8 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
-function BlockPlan:setMaterialTier(material)
+---@type fun(material:Material):any
+BlockPlan.setMaterialTier = function (material)
 	return nil
 end
 

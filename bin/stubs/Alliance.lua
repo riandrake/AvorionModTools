@@ -29,29 +29,34 @@ setmetatable(Alliance, {__call = function(self, index) return Alliance end})
 
 -- @return nothing
 ---@param view SectorView
-function Alliance:addKnownSector(view)
+---@type fun(view:SectorView):any
+Alliance.addKnownSector = function (view)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
 ---@param lowerName string
-function Alliance:addRank(name, lowerName)
+---@type fun(name:string, lowerName:string):any
+Alliance.addRank = function (name, lowerName)
 	return nil
 end
 
 -- @return nothing
 ---@param rank string
 ---@param privilege int
-function Alliance:addRankPrivilege(rank, privilege)
+---@type fun(rank:string, privilege:number):any
+Alliance.addRankPrivilege = function (rank, privilege)
 	return nil
 end
 
-function Alliance:addScript()
+---@type fun():any
+Alliance.addScript = function ()
 	return nil
 end
 
-function Alliance:addScriptOnce()
+---@type fun():any
+Alliance.addScriptOnce = function ()
 	return nil
 end
 
@@ -61,191 +66,229 @@ end
 -- @return The amount of functions registered to the callback
 ---@param callbackName string
 ---@param functionName var
-function Alliance:callbacksRegistered(callbackName, functionName)
+---@type fun(callbackName:string, functionName:any):number
+Alliance.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 ---@param playerIndex int
-function Alliance:contains(playerIndex)
+---@type fun(playerIndex:number):boolean
+Alliance.contains = function (playerIndex)
 	return true
 end
 
 ---@param x int
 ---@param y int
-function Alliance:getKnownSector(x, y)
+---@type fun(x:number, y:number):SectorView
+Alliance.getKnownSector = function (x, y)
 	return SectorView()
 end
 
-function Alliance:getKnownSectorCoordinates()
+---@type fun():ivec2
+Alliance.getKnownSectorCoordinates = function ()
 	return ivec2()
 end
 
-function Alliance:getKnownSectors()
+---@type fun():SectorView
+Alliance.getKnownSectors = function ()
 	return SectorView()
 end
 
 ---@param factionIndex int
-function Alliance:getKnownSectorsOfFaction(factionIndex)
+---@type fun(factionIndex:number):SectorView
+Alliance.getKnownSectorsOfFaction = function (factionIndex)
 	return SectorView()
 end
 
 ---@param factionIndex int
-function Alliance:getKnownSectorsWithFaction(factionIndex)
+---@type fun(factionIndex:number):SectorView
+Alliance.getKnownSectorsWithFaction = function (factionIndex)
 	return SectorView()
 end
 
 ---@param playerIndex int
-function Alliance:getMemberLocation(playerIndex)
+---@type fun(playerIndex:number):number, number
+Alliance.getMemberLocation = function (playerIndex)
 	return 0, 0
 end
 
 ---@param playerIndex int
-function Alliance:getMemberRank(playerIndex)
+---@type fun(playerIndex:number):AllianceRank
+Alliance.getMemberRank = function (playerIndex)
 	return AllianceRank()
 end
 
-function Alliance:getMembers()
-	return {0, Member()}
+---@type fun():table<number, AllianceMember>
+Alliance.getMembers = function ()
+	return {0, AllianceMember()}
 end
 
 ---@param x int
 ---@param y int
-function Alliance:getNamesOfShipsInSector(x, y)
+---@type fun(x:number, y:number):string
+Alliance.getNamesOfShipsInSector = function (x, y)
 	return ""
 end
 
-function Alliance:getNewMemberRank()
+---@type fun():string
+Alliance.getNewMemberRank = function ()
 	return ""
 end
 
 ---@param name string
-function Alliance:getRank(name)
+---@type fun(name:string):AllianceRank
+Alliance.getRank = function (name)
 	return AllianceRank()
 end
 
-function Alliance:getScripts()
+---@type fun():table<number, string>
+Alliance.getScripts = function ()
 	return {0, ""}
 end
 
 ---@param name string
-function Alliance:getShipBoundingBox(name)
+---@type fun(name:string):Box
+Alliance.getShipBoundingBox = function (name)
 	return Box()
 end
 
 ---@param name string
-function Alliance:getShipCanPassRifts(name)
+---@type fun(name:string):boolean
+Alliance.getShipCanPassRifts = function (name)
 	return true
 end
 
 ---@param name string
-function Alliance:getShipCargo(name)
+---@type fun(name:string):CargoBay
+Alliance.getShipCargo = function (name)
 	return CargoBay()
 end
 
 ---@param name string
-function Alliance:getShipCargos(name)
+---@type fun(name:string):table<TradingGood, number>
+Alliance.getShipCargos = function (name)
 	return {TradingGood(), 0}
 end
 
 ---@param name string
-function Alliance:getShipCrew(name)
+---@type fun(name:string):Crew
+Alliance.getShipCrew = function (name)
 	return Crew()
 end
 
 ---@param name string
-function Alliance:getShipDestroyed(name)
+---@type fun(name:string):boolean
+Alliance.getShipDestroyed = function (name)
 	return true
 end
 
 ---@param name string
-function Alliance:getShipHyperspaceReach(name)
+---@type fun(name:string):number
+Alliance.getShipHyperspaceReach = function (name)
 	return 0.0
 end
 
-function Alliance:getShipNames()
+---@type fun():string
+Alliance.getShipNames = function ()
 	return ""
 end
 
 ---@param name string
-function Alliance:getShipOrderInfo(name)
+---@type fun(name:string):string
+Alliance.getShipOrderInfo = function (name)
 	return ""
 end
 
 ---@param name string
-function Alliance:getShipPayment(name)
+---@type fun(name:string):number
+Alliance.getShipPayment = function (name)
 	return 0.0
 end
 
 ---@param name string
-function Alliance:getShipPaymentTime(name)
+---@type fun(name:string):number
+Alliance.getShipPaymentTime = function (name)
 	return 0.0
 end
 
 ---@param name string
-function Alliance:getShipPlan(name)
+---@type fun(name:string):BlockPlan
+Alliance.getShipPlan = function (name)
 	return BlockPlan()
 end
 
 ---@param name string
-function Alliance:getShipPosition(name)
+---@type fun(name:string):number, number
+Alliance.getShipPosition = function (name)
 	return 0, 0
 end
 
 ---@param name string
-function Alliance:getShipReconstructionValue(name)
+---@type fun(name:string):number
+Alliance.getShipReconstructionValue = function (name)
 	return 0.0
 end
 
 ---@param name string
-function Alliance:getShipStatus(name)
+---@type fun(name:string):LocalizationNamedFormat
+Alliance.getShipStatus = function (name)
 	return LocalizationNamedFormat()
 end
 
 ---@param name string
-function Alliance:getShipSystems(name)
+---@type fun(name:string):ShipInfoUpgrade
+Alliance.getShipSystems = function (name)
 	return ShipInfoUpgrade()
 end
 
 ---@param name string
-function Alliance:getShipType(name)
+---@type fun(name:string):number
+Alliance.getShipType = function (name)
 	return 0
 end
 
 ---@param playerIndex int
 ---@param privilege int
-function Alliance:hasPrivilege(playerIndex, privilege)
+---@type fun(playerIndex:number, privilege:number):boolean
+Alliance.hasPrivilege = function (playerIndex, privilege)
 	return true
 end
 
 ---@param name string
-function Alliance:hasScript(name)
+---@type fun(name:string):any
+Alliance.hasScript = function (name)
 	return nil
 end
 
-function Alliance:invokeFunction()
+---@type fun():any
+Alliance.invokeFunction = function ()
 	return nil
 end
 
 ---@param x int
 ---@param y int
-function Alliance:knowsSector(x, y)
+---@type fun(x:number, y:number):boolean
+Alliance.knowsSector = function (x, y)
 	return true
 end
 
 -- @return nothing
 ---@param name string
 ---@param lowerName string
-function Alliance:moveRank(name, lowerName)
+---@type fun(name:string, lowerName:string):any
+Alliance.moveRank = function (name, lowerName)
 	return nil
 end
 
 ---@param name string
-function Alliance:ownsShip(name)
+---@type fun(name:string):boolean
+Alliance.ownsShip = function (name)
 	return true
 end
 
 ---@param rank string
-function Alliance:rankExists(rank)
+---@type fun(rank:string):boolean
+Alliance.rankExists = function (rank)
 	return true
 end
 
@@ -255,56 +298,65 @@ end
 -- @return nothing
 ---@param callbackName string
 ---@param functionName string
-function Alliance:registerCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):any
+Alliance.registerCallback = function (callbackName, functionName)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
-function Alliance:removeDestroyedShipInfo(name)
+---@type fun(name:string):any
+Alliance.removeDestroyedShipInfo = function (name)
 	return nil
 end
 
 -- @return nothing
 ---@param x int
 ---@param y int
-function Alliance:removeKnownSector(x, y)
+---@type fun(x:number, y:number):any
+Alliance.removeKnownSector = function (x, y)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
-function Alliance:removeRank(name)
+---@type fun(name:string):any
+Alliance.removeRank = function (name)
 	return nil
 end
 
 -- @return nothing
 ---@param rankName string
 ---@param privilege int
-function Alliance:removeRankPrivilege(rankName, privilege)
+---@type fun(rankName:string, privilege:number):any
+Alliance.removeRankPrivilege = function (rankName, privilege)
 	return nil
 end
 
 -- @return nothing
 ---@param script var
-function Alliance:removeScript(script)
+---@type fun(script:any):any
+Alliance.removeScript = function (script)
 	return nil
 end
 
 ---@param path string
-function Alliance:resolveScriptPath(path)
+---@type fun(path:string):any
+Alliance.resolveScriptPath = function (path)
 	return nil
 end
 
 ---@param name string
 ---@param position Matrix
 ---@param withMalus bool
-function Alliance:restoreCraft(name, position, withMalus)
+---@type fun(name:string, position:Matrix, withMalus:boolean):Entity
+Alliance.restoreCraft = function (name, position, withMalus)
 	return Entity()
 end
 
 -- @return nothing
-function Alliance:sendCallback()
+---@type fun():any
+Alliance.sendCallback = function ()
 	return nil
 end
 
@@ -318,58 +370,67 @@ end
 ---@param messageType int
 ---@param message string
 ---@param args PluralForm...
-function Alliance:sendChatMessage(sender, messageType, message, args)
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
+Alliance.sendChatMessage = function (sender, messageType, message, args)
 	return nil
 end
 
 -- @return nothing
 ---@param playerIndex int
 ---@param rank string
-function Alliance:setMemberRank(playerIndex, rank)
+---@type fun(playerIndex:number, rank:string):any
+Alliance.setMemberRank = function (playerIndex, rank)
 	return nil
 end
 
 -- @return nothing
 ---@param rank string
-function Alliance:setNewMemberRank(rank)
+---@type fun(rank:string):any
+Alliance.setNewMemberRank = function (rank)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
 ---@param value bool
-function Alliance:setShipDestroyed(name, value)
+---@type fun(name:string, value:boolean):any
+Alliance.setShipDestroyed = function (name, value)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
 ---@param value var
-function Alliance:setShipOrderInfo(name, value)
+---@type fun(name:string, value:any):any
+Alliance.setShipOrderInfo = function (name, value)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
 ---@param value double
-function Alliance:setShipReconstructionValue(name, value)
+---@type fun(name:string, value:number):any
+Alliance.setShipReconstructionValue = function (name, value)
 	return nil
 end
 
 -- @return nothing
-function Alliance:unregisterCallback(string, string)
+---@type fun(string, string):any
+Alliance.unregisterCallback = function (string, string)
 	return nil
 end
 
 -- @return nothing
 ---@param view SectorView
-function Alliance:updateKnownSector(view)
+---@type fun(view:SectorView):any
+Alliance.updateKnownSector = function (view)
 	return nil
 end
 
 -- @return nothing
 ---@param view SectorView
-function Alliance:updateKnownSectorPreserveNote(view)
+---@type fun(view:SectorView):any
+Alliance.updateKnownSectorPreserveNote = function (view)
 	return nil
 end
 
@@ -377,85 +438,100 @@ end
 -- @return nothing
 ---@param name string
 ---@param style PlanStyle
-function Alliance:addPlanStyle(name, style)
+---@type fun(name:string, style:PlanStyle):any
+Alliance.addPlanStyle = function (name, style)
 	return nil
 end
 
 -- Inherited from Faction [Server]
-function Alliance:canPay()
+---@type fun():boolean, string, table<number, string>
+Alliance.canPay = function ()
 	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 ---@param money int
-function Alliance:canPayMoney(money)
+---@type fun(money:number):boolean, string, table<number, string>
+Alliance.canPayMoney = function (money)
 	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
 ---@param material Material
 ---@param amount int
-function Alliance:canPayResource(material, amount)
+---@type fun(material:Material, amount:number):boolean, string, table<number, string>
+Alliance.canPayResource = function (material, amount)
 	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object Inherited from Faction [Server]
 -- @return nothing
-function Alliance:clearValues()
+---@type fun():any
+Alliance.clearValues = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getAllRelations()
+---@type fun():Relation
+Alliance.getAllRelations = function ()
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getHomeSectorCoordinates()
+---@type fun():number, number
+Alliance.getHomeSectorCoordinates = function ()
 	return 0, 0
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getInventory()
+---@type fun():Inventory
+Alliance.getInventory = function ()
 	return Inventory()
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getLanguage()
+---@type fun():Language
+Alliance.getLanguage = function ()
 	return Language()
 end
 
 -- Inherited from Faction [Server]
 ---@param name string
-function Alliance:getPlanStyle(name)
+---@type fun(name:string):PlanStyle
+Alliance.getPlanStyle = function (name)
 	return PlanStyle()
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getPlanStyleNames()
+---@type fun():string
+Alliance.getPlanStyleNames = function ()
 	return ""
 end
 
 -- Inherited from Faction [Server]
 ---@param factionIndex int
-function Alliance:getRelation(factionIndex)
+---@type fun(factionIndex:number):Relation
+Alliance.getRelation = function (factionIndex)
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
 ---@param factionIndex int
-function Alliance:getRelations(factionIndex)
+---@type fun(factionIndex:number):number
+Alliance.getRelations = function (factionIndex)
 	return 0
 end
 
 -- Inherited from Faction [Server]
 ---@param factionIndex int
-function Alliance:getRelationStatus(factionIndex)
+---@type fun(factionIndex:number):number
+Alliance.getRelationStatus = function (factionIndex)
 	return 0
 end
 
 -- Inherited from Faction [Server]
-function Alliance:getResources()
+---@type fun():Resources
+Alliance.getResources = function ()
 	return Resources()
 end
 
@@ -463,13 +539,15 @@ end
 -- @param trait - The name of the trait
 -- @return The trait value associated with the key
 ---@param trait string
-function Alliance:getTrait(trait)
+---@type fun(trait:string):number
+Alliance.getTrait = function (trait)
 	return 0.0
 end
 
 -- Retrieves all key-value trait pairs of the faction Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
-function Alliance:getTraits()
+---@type fun():table<string, number>
+Alliance.getTraits = function ()
 	return {"", 0.0}
 end
 
@@ -477,25 +555,29 @@ end
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
-function Alliance:getValue(key)
+---@type fun(key:string):any
+Alliance.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
-function Alliance:getValues()
+---@type fun():table<string, any>
+Alliance.getValues = function ()
 	return {"", nil}
 end
 
 -- Inherited from Faction [Server]
 ---@param factionIndex int
-function Alliance:hasStaticRelationsToFaction(factionIndex)
+---@type fun(factionIndex:number):boolean
+Alliance.hasStaticRelationsToFaction = function (factionIndex)
 	return true
 end
 
 -- Inherited from Faction [Server]
 ---@param factionIndex int
-function Alliance:knowsFaction(factionIndex)
+---@type fun(factionIndex:number):boolean
+Alliance.knowsFaction = function (factionIndex)
 	return true
 end
 
@@ -507,7 +589,8 @@ end
 ---@param description string
 ---@param material Material
 ---@param amount int
-function Alliance:payResource(description, material, amount)
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Alliance.payResource = function (description, material, amount)
 	return nil
 end
 
@@ -519,7 +602,8 @@ end
 ---@param description string
 ---@param money int
 ---@param args int...
-function Alliance:payWithoutNotify(description, money, args)
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Alliance.payWithoutNotify = function (description, money, args)
 	return nil
 end
 
@@ -531,7 +615,8 @@ end
 ---@param description string
 ---@param material Material
 ---@param amount int
-function Alliance:receiveResource(description, material, amount)
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Alliance.receiveResource = function (description, material, amount)
 	return nil
 end
 
@@ -543,19 +628,22 @@ end
 ---@param description string
 ---@param money int
 ---@param args int...
-function Alliance:receiveWithoutNotify(description, money, args)
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Alliance.receiveWithoutNotify = function (description, money, args)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Alliance:sendCallback()
+---@type fun():any
+Alliance.sendCallback = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Alliance:sendChatMessage()
+---@type fun():any
+Alliance.sendChatMessage = function ()
 	return nil
 end
 
@@ -563,13 +651,15 @@ end
 -- @return nothing
 ---@param x int
 ---@param y int
-function Alliance:setHomeSectorCoordinates(x, y)
+---@type fun(x:number, y:number):any
+Alliance.setHomeSectorCoordinates = function (x, y)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Alliance:setResources()
+---@type fun():any
+Alliance.setResources = function ()
 	return nil
 end
 
@@ -577,7 +667,8 @@ end
 -- @return nothing
 ---@param factionIndex int
 ---@param in bool
-function Alliance:setStaticRelationsToFaction(factionIndex, _in)
+---@type fun(factionIndex:number, in:boolean):any
+Alliance.setStaticRelationsToFaction = function (factionIndex, _in)
 	return nil
 end
 
@@ -587,7 +678,8 @@ end
 -- @return nothing
 ---@param trait string
 ---@param value float
-function Alliance:setTrait(trait, value)
+---@type fun(trait:string, value:number):any
+Alliance.setTrait = function (trait, value)
 	return nil
 end
 
@@ -597,7 +689,8 @@ end
 -- @return nothing
 ---@param key string
 ---@param value var
-function Alliance:setValue(key, value)
+---@type fun(key:string, value:any):any
+Alliance.setValue = function (key, value)
 	return nil
 end
 

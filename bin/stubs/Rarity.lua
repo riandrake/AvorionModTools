@@ -11,16 +11,19 @@ Rarity = {
 setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
 ---@param other Rarity
-function Rarity:__eq(other)
+---@type fun(other:Rarity):boolean
+Rarity.__eq = function (other)
 	return true
 end
 
 ---@param other Rarity
-function Rarity:__lt(other)
+---@type fun(other:Rarity):boolean
+Rarity.__lt = function (other)
 	return true
 end
 
-function Rarity:__tostring()
+---@type fun():string
+Rarity.__tostring = function ()
 	return ""
 end
 

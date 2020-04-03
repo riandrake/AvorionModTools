@@ -8,7 +8,8 @@ setmetatable(Alliance, {__call = function(self, autoPayCrews) return Alliance en
 -- Called whenever the home sector of the alliance changes
 -- @param x - The x coordinate of the new home sector
 -- @param y - The y coordinate of the new home sector
-function Alliance:onHomeSectorChanged(x, y)
+---@type fun(x, y)
+Alliance.onHomeSectorChanged = function (x, y)
 	return nil
 end
 
@@ -19,7 +20,8 @@ end
 -- @param amount - Amount of items in the slot
 -- @param amountBefore - Amount of items in the slot before the change
 -- @param tagsChanged - Boolean indicating if the tags of the item changed
-function Alliance:onItemAdded(item, index, amount, amountBefore, tagsChanged)
+---@type fun(item, index, amount, amountBefore, tagsChanged)
+Alliance.onItemAdded = function (item, index, amount, amountBefore, tagsChanged)
 	return nil
 end
 
@@ -29,7 +31,8 @@ end
 -- @param index - Index of the inventory item
 -- @param amount - Amount of items in the slot
 -- @param amountBefore - Amount of items in the slot before the change
-function Alliance:onItemChanged(item, index, amount, amountBefore)
+---@type fun(item, index, amount, amountBefore)
+Alliance.onItemChanged = function (item, index, amount, amountBefore)
 	return nil
 end
 
@@ -38,7 +41,8 @@ end
 -- @param item - The inventory item
 -- @param index - Index of the inventory item
 -- @param amount - Amount of items in the slot
-function Alliance:onItemPropertiesChanged(item, index, amount)
+---@type fun(item, index, amount)
+Alliance.onItemPropertiesChanged = function (item, index, amount)
 	return nil
 end
 
@@ -48,7 +52,8 @@ end
 -- @param index - Index of the inventory item
 -- @param amount - Amount of items in the slot
 -- @param amountBefore - Amount of items in the slot before the change
-function Alliance:onItemRemoved(item, index, amount, amountBefore)
+---@type fun(item, index, amount, amountBefore)
+Alliance.onItemRemoved = function (item, index, amount, amountBefore)
 	return nil
 end
 
@@ -56,7 +61,8 @@ end
 -- Called whenever a new tracked sector is added to the alliance database
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
-function Alliance:onKnownSectorAdded(x, y)
+---@type fun(x, y)
+Alliance.onKnownSectorAdded = function (x, y)
 	return nil
 end
 
@@ -64,7 +70,8 @@ end
 -- Called whenever a tracked sector was removed from the alliance database
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
-function Alliance:onKnownSectorRemoved(x, y)
+---@type fun(x, y)
+Alliance.onKnownSectorRemoved = function (x, y)
 	return nil
 end
 
@@ -72,14 +79,16 @@ end
 -- Called whenever a tracked sector is updated in the alliance database
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
-function Alliance:onKnownSectorUpdated(x, y)
+---@type fun(x, y)
+Alliance.onKnownSectorUpdated = function (x, y)
 	return nil
 end
 
 -- @callback
 -- Called whenever the leader of the alliance was changed
 -- @param index - The player index of the new leader
-function Alliance:onLeaderChanged(index)
+---@type fun(index)
+Alliance.onLeaderChanged = function (index)
 	return nil
 end
 
@@ -87,35 +96,40 @@ end
 -- Called whenever a member is changed in the alliance
 -- @param index - The player index of the member
 -- @param rank - The rank of the member
-function Alliance:onMemberChanged(index, rank)
+---@type fun(index, rank)
+Alliance.onMemberChanged = function (index, rank)
 	return nil
 end
 
 -- @callback
 -- Called whenever a member leaves the alliance
 -- @param index - The player index of the ex-member
-function Alliance:onMemberLeft(index)
+---@type fun(index)
+Alliance.onMemberLeft = function (index)
 	return nil
 end
 
 -- @callback
 -- Called whenever the message of the day was changed
 -- @param motd - The new message of the day
-function Alliance:onMessageOfTheDayChanged(motd)
+---@type fun(motd)
+Alliance.onMessageOfTheDayChanged = function (motd)
 	return nil
 end
 
 -- @callback
 -- Called whenever the name of the alliance changes
 -- @param newName - The new name of the alliance
-function Alliance:onNameChanged(newName)
+---@type fun(newName)
+Alliance.onNameChanged = function (newName)
 	return nil
 end
 
 -- @callback
 -- Called whenever the newbie rank was changed
 -- @param name - The name of the new newbie rank
-function Alliance:onNewbieRankChanged(name)
+---@type fun(name)
+Alliance.onNewbieRankChanged = function (name)
 	return nil
 end
 
@@ -123,7 +137,8 @@ end
 -- Called whenever a new member joins the alliance
 -- @param index - The player index of the new member
 -- @param rank - The rank of the new member
-function Alliance:onNewMember(index, rank)
+---@type fun(index, rank)
+Alliance.onNewMember = function (index, rank)
 	return nil
 end
 
@@ -133,7 +148,8 @@ end
 -- @param icon - The icon of the rank
 -- @param level - The level of the rank
 -- @param privileges - The privileges of the rank, as a table with privileges as keys
-function Alliance:onNewRank(name, icon, level, privileges)
+---@type fun(name, icon, level, privileges)
+Alliance.onNewRank = function (name, icon, level, privileges)
 	return nil
 end
 
@@ -143,14 +159,16 @@ end
 -- @param icon - The icon of the rank
 -- @param level - The level of the rank
 -- @param privileges - The privileges of the rank, as a table with privileges as keys
-function Alliance:onRankChanged(name, icon, level, privileges)
+---@type fun(name, icon, level, privileges)
+Alliance.onRankChanged = function (name, icon, level, privileges)
 	return nil
 end
 
 -- @callback
 -- Called whenever a rank was removed
 -- @param name - The name of the removed rank
-function Alliance:onRankRemoved(name)
+---@type fun(name)
+Alliance.onRankRemoved = function (name)
 	return nil
 end
 
@@ -160,7 +178,8 @@ end
 -- @param level - The level of the relation
 -- @param levelBefore - The level of the relation before the change
 -- @param notify - A boolean indicating whether or not the alliance should be notified about the change
-function Alliance:onRelationChanged(index, level, levelBefore, notify)
+---@type fun(index, level, levelBefore, notify)
+Alliance.onRelationChanged = function (index, level, levelBefore, notify)
 	return nil
 end
 
@@ -170,7 +189,8 @@ end
 -- @param level - The level of the relation
 -- @param levelBefore - The level of the relation before the change
 -- @param notify - A boolean indicating whether or not the alliance should be notified about the change
-function Alliance:onRelationLevelChanged(index, level, levelBefore, notify)
+---@type fun(index, level, levelBefore, notify)
+Alliance.onRelationLevelChanged = function (index, level, levelBefore, notify)
 	return nil
 end
 
@@ -180,7 +200,8 @@ end
 -- @param status - The status of the relations
 -- @param statusBefore - The status of the relation before the change
 -- @param notify - A boolean indicating whether or not the alliance should be notified about the change
-function Alliance:onRelationStatusChanged(index, status, statusBefore, notify)
+---@type fun(index, status, statusBefore, notify)
+Alliance.onRelationStatusChanged = function (index, status, statusBefore, notify)
 	return nil
 end
 
@@ -190,21 +211,24 @@ end
 -- @param resources - The amount of resources the alliance owns, as table
 -- @param infinite - True if the alliance has infinite resources, false otherwise
 -- @param notify - A boolean indicating whether or not the alliance should be visually notified in some way that the resources changed
-function Alliance:onResourcesChanged(money, resources, infinite, notify)
+---@type fun(money, resources, infinite, notify)
+Alliance.onResourcesChanged = function (money, resources, infinite, notify)
 	return nil
 end
 
 -- @callback
 -- Called whenever the cargo of a ShipInfo changes
 -- @param name - The name of the ship
-function Alliance:onShipCargoUpdated(name)
+---@type fun(name)
+Alliance.onShipCargoUpdated = function (name)
 	return nil
 end
 
 -- @callback
 -- Called whenever the crew of a ShipInfo changes
 -- @param name - The name of the ship
-function Alliance:onShipCrewUpdated(name)
+---@type fun(name)
+Alliance.onShipCrewUpdated = function (name)
 	return nil
 end
 
@@ -212,7 +236,8 @@ end
 -- Called whenever the "destroyed" status of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param destroyed - A bool containing the "destroyed" status
-function Alliance:onShipDestroyedUpdated(name, destroyed)
+---@type fun(name, destroyed)
+Alliance.onShipDestroyedUpdated = function (name, destroyed)
 	return nil
 end
 
@@ -221,28 +246,32 @@ end
 -- @param name - The name of the ship
 -- @param reach - The new reach of the ship
 -- @param canPassRifts - A boolean indicating whether the ship can jump across rifts
-function Alliance:onShipHyperspacePropertiesUpdated(name, reach, canPassRifts)
+---@type fun(name, reach, canPassRifts)
+Alliance.onShipHyperspacePropertiesUpdated = function (name, reach, canPassRifts)
 	return nil
 end
 
 -- @callback
 -- Called whenever a ShipInfo is added to the alliance
 -- @param name - The name of the new ship
-function Alliance:onShipInfoAdded(name)
+---@type fun(name)
+Alliance.onShipInfoAdded = function (name)
 	return nil
 end
 
 -- @callback
 -- Called whenever a ShipInfo is removed from the alliance
 -- @param name - The name of the ship
-function Alliance:onShipInfoRemoved(name)
+---@type fun(name)
+Alliance.onShipInfoRemoved = function (name)
 	return nil
 end
 
 -- @callback
 -- Called whenever a ShipInfo is updated in some way
 -- @param name - The name of the ship
-function Alliance:onShipInfoUpdated(name)
+---@type fun(name)
+Alliance.onShipInfoUpdated = function (name)
 	return nil
 end
 
@@ -250,7 +279,8 @@ end
 -- Called whenever the name of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param newName - The new name of the ship
-function Alliance:onShipNameUpdated(name, newName)
+---@type fun(name, newName)
+Alliance.onShipNameUpdated = function (name, newName)
 	return nil
 end
 
@@ -258,7 +288,8 @@ end
 -- Called whenever the order info of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param orderInfo - The order info of the ship
-function Alliance:onShipOrderInfoUpdated(name, orderInfo)
+---@type fun(name, orderInfo)
+Alliance.onShipOrderInfoUpdated = function (name, orderInfo)
 	return nil
 end
 
@@ -266,14 +297,16 @@ end
 -- Called whenever the payday of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param time - The payday of the ship
-function Alliance:onShipPayDayUpdated(name, time)
+---@type fun(name, time)
+Alliance.onShipPayDayUpdated = function (name, time)
 	return nil
 end
 
 -- @callback
 -- Called whenever the plan of a ShipInfo changes
 -- @param name - The name of the ship
-function Alliance:onShipPlanUpdated(name)
+---@type fun(name)
+Alliance.onShipPlanUpdated = function (name)
 	return nil
 end
 
@@ -282,7 +315,8 @@ end
 -- @param name - The name of the ship
 -- @param x - The new x coordinate of the ship
 -- @param y - The new y coordinate of the ship
-function Alliance:onShipPositionUpdated(name, x, y)
+---@type fun(name, x, y)
+Alliance.onShipPositionUpdated = function (name, x, y)
 	return nil
 end
 
@@ -290,7 +324,8 @@ end
 -- Called whenever the reconstruction value of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param value - The value of the ship
-function Alliance:onShipReconstructionValueUpdated(name, value)
+---@type fun(name, value)
+Alliance.onShipReconstructionValueUpdated = function (name, value)
 	return nil
 end
 
@@ -299,14 +334,16 @@ end
 -- @param name - The name of the ship
 -- @param status - The status info text of the ship
 -- @param args - A table holding the status info localization arguments
-function Alliance:onShipStatusUpdated(name, status, args)
+---@type fun(name, status, args)
+Alliance.onShipStatusUpdated = function (name, status, args)
 	return nil
 end
 
 -- @callback
 -- Called whenever the title of a ShipInfo changes
 -- @param name - The name of the ship
-function Alliance:onShipTitleUpdated(name)
+---@type fun(name)
+Alliance.onShipTitleUpdated = function (name)
 	return nil
 end
 
@@ -314,14 +351,16 @@ end
 -- Called whenever the entity type of a ShipInfo changes
 -- @param name - The name of the ship
 -- @param type - The new entity type of the ship
-function Alliance:onShipTypeUpdated(name, type)
+---@type fun(name, type)
+Alliance.onShipTypeUpdated = function (name, type)
 	return nil
 end
 
 -- @callback
 -- Called whenever the state form of the alliance changes
 -- @param newForm - The new state form of the alliance
-function Alliance:onStateFormChanged(newForm)
+---@type fun(newForm)
+Alliance.onStateFormChanged = function (newForm)
 	return nil
 end
 
@@ -329,7 +368,8 @@ end
 -- Called whenever a "personality" trait of the alliance changes
 -- @param trait - The name of the trait that was changed
 -- @param value - The value of the new trait, from -1 to 1
-function Alliance:onTraitChanged(trait, value)
+---@type fun(trait, value)
+Alliance.onTraitChanged = function (trait, value)
 	return nil
 end
 

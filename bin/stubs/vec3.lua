@@ -10,40 +10,48 @@ vec3 = {
 setmetatable(vec3, {__call = function(self, x, y, z) return vec3 end})
 
 ---@param other var
-function vec3:__add(other)
+---@type fun(other:any):vec3
+vec3.__add = function (other)
 	return vec3()
 end
 
 ---@param other var
-function vec3:__div(other)
+---@type fun(other:any):vec3
+vec3.__div = function (other)
 	return vec3()
 end
 
 ---@param other vec3
-function vec3:__eq(other)
+---@type fun(other:vec3):boolean
+vec3.__eq = function (other)
 	return true
 end
 
 ---@param other vec3
-function vec3:__lt(other)
+---@type fun(other:vec3):boolean
+vec3.__lt = function (other)
 	return true
 end
 
 ---@param other var
-function vec3:__mul(other)
+---@type fun(other:any):vec3
+vec3.__mul = function (other)
 	return vec3()
 end
 
 ---@param other var
-function vec3:__sub(other)
+---@type fun(other:any):vec3
+vec3.__sub = function (other)
 	return vec3()
 end
 
-function vec3:__tostring()
+---@type fun():string
+vec3.__tostring = function ()
 	return ""
 end
 
-function vec3:__unm()
+---@type fun():vec3
+vec3.__unm = function ()
 	return vec3()
 end
 

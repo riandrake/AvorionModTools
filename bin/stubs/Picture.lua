@@ -29,24 +29,28 @@ setmetatable(Picture, {__call = function(self, index) return Picture end})
 
 -- @return nothing
 ---@param color Color
-function Picture:clear(color)
+---@type fun(color:Color):any
+Picture.clear = function (color)
 	return nil
 end
 
 -- @return nothing
-function Picture:fitIntoRect()
-	return nil
-end
-
--- Inherited from UIElement
--- @return nothing
-function Picture:hide()
+---@type fun():any
+Picture.fitIntoRect = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Picture:show()
+---@type fun():any
+Picture.hide = function ()
+	return nil
+end
+
+-- Inherited from UIElement
+-- @return nothing
+---@type fun():any
+Picture.show = function ()
 	return nil
 end
 

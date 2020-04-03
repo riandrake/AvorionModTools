@@ -9,24 +9,29 @@ Format = {
 setmetatable(Format, {__call = function(self, text, args) return Format end})
 
 -- @return nothing
-function Format:add()
+---@type fun():any
+Format.add = function ()
 	return nil
 end
 
 -- @return nothing
-function Format:clear()
+---@type fun():any
+Format.clear = function ()
 	return nil
 end
 
-function Format:evaluate()
+---@type fun():string
+Format.evaluate = function ()
 	return ""
 end
 
-function Format:getArguments()
+---@type fun():PluralForm
+Format.getArguments = function ()
 	return PluralForm()
 end
 
-function Format:translated()
+---@type fun():string
+Format.translated = function ()
 	return ""
 end
 

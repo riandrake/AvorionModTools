@@ -25,16 +25,19 @@ setmetatable(ReadOnlyCargoBay, {__call = function(self, id) return ReadOnlyCargo
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 ---@param name string
-function ReadOnlyCargoBay:findCargos(name)
+---@type fun(name:string):table<TradingGood, number>
+ReadOnlyCargoBay.findCargos = function (name)
 	return {TradingGood(), 0}
 end
 
 ---@param n unsigned
-function ReadOnlyCargoBay:getCargo(n)
+---@type fun(n:number:unsigned):TradingGood, number
+ReadOnlyCargoBay.getCargo = function (n)
 	return TradingGood(), 0
 end
 
-function ReadOnlyCargoBay:getCargos()
+---@type fun():table<TradingGood, number>
+ReadOnlyCargoBay.getCargos = function ()
 	return {TradingGood(), 0}
 end
 
@@ -42,12 +45,14 @@ end
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
 ---@param name var
-function ReadOnlyCargoBay:getNumCargos(name)
+---@type fun(name:any):number
+ReadOnlyCargoBay.getNumCargos = function (name)
 	return 0
 end
 
 ---@param goods var
-function ReadOnlyCargoBay:getSummary(goods)
+---@type fun(goods:any):string
+ReadOnlyCargoBay.getSummary = function (goods)
 	return ""
 end
 

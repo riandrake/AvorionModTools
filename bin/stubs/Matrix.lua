@@ -13,22 +13,26 @@ Matrix = {
 setmetatable(Matrix, {__call = function(self) return Matrix end})
 
 ---@param m Matrix
-function Matrix:__mul(m)
+---@type fun(m:Matrix):Matrix
+Matrix.__mul = function (m)
 	return Matrix()
 end
 
-function Matrix:getInverse()
+---@type fun():Matrix
+Matrix.getInverse = function ()
 	return Matrix()
 end
 
 ---@param row int
 ---@param col int
-function Matrix:getValue(row, col)
+---@type fun(row:number, col:number):number
+Matrix.getValue = function (row, col)
 	return 0.0
 end
 
 -- @return nothing
-function Matrix:invert()
+---@type fun():any
+Matrix.invert = function ()
 	return nil
 end
 
@@ -36,40 +40,47 @@ end
 ---@param row int
 ---@param col int
 ---@param value float
-function Matrix:setValue(row, col, value)
+---@type fun(row:number, col:number, value:number):any
+Matrix.setValue = function (row, col, value)
 	return nil
 end
 
 ---@param in vec3
-function Matrix:transform(_in)
+---@type fun(in:vec3):vec4
+Matrix.transform = function (_in)
 	return vec4()
 end
 
 -- @return nothing
 ---@param v vec4
-function Matrix:transform_ip(v)
+---@type fun(v:vec4):any
+Matrix.transform_ip = function (v)
 	return nil
 end
 
 ---@param in vec3
-function Matrix:transformCoord(_in)
+---@type fun(in:vec3):vec3
+Matrix.transformCoord = function (_in)
 	return vec3()
 end
 
 -- @return nothing
 ---@param v vec3
-function Matrix:transformCoord_ip(v)
+---@type fun(v:vec3):any
+Matrix.transformCoord_ip = function (v)
 	return nil
 end
 
 ---@param in vec3
-function Matrix:transformNormal(_in)
+---@type fun(in:vec3):vec3
+Matrix.transformNormal = function (_in)
 	return vec3()
 end
 
 -- @return nothing
 ---@param v vec3
-function Matrix:transformNormal_ip(v)
+---@type fun(v:vec3):any
+Matrix.transformNormal_ip = function (v)
 	return nil
 end
 

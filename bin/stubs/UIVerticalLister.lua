@@ -22,7 +22,8 @@ setmetatable(UIVerticalLister, {__call = function(self, rect, padding, margin) r
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getBottomLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getBottomLeftRect = function (rect)
 	return nil
 end
 
@@ -30,7 +31,8 @@ end
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
 ---@param rect Rect
-function UIVerticalLister:getBottomRect(rect)
+---@type fun(rect:Rect):Rect
+UIVerticalLister.getBottomRect = function (rect)
 	return Rect()
 end
 
@@ -38,7 +40,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getBottomRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getBottomRightRect = function (rect)
 	return nil
 end
 
@@ -46,7 +49,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getCenterRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getCenterRect = function (rect)
 	return nil
 end
 
@@ -54,7 +58,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getLeftRect = function (rect)
 	return nil
 end
 
@@ -62,7 +67,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getRightRect = function (rect)
 	return nil
 end
 
@@ -70,7 +76,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getTopLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getTopLeftRect = function (rect)
 	return nil
 end
 
@@ -78,7 +85,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getTopRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getTopRect = function (rect)
 	return nil
 end
 
@@ -86,7 +94,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalLister:getTopRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalLister.getTopRightRect = function (rect)
 	return nil
 end
 
@@ -94,11 +103,13 @@ end
 -- @param vec - The size of the rect to test for
 -- @return true if there's enough space, false if not
 ---@param vec float
-function UIVerticalLister:hasEnoughSpace(vec)
+---@type fun(vec:number):any
+UIVerticalLister.hasEnoughSpace = function (vec)
 	return nil
 end
 
-function UIVerticalLister:nextQuadraticRect()
+---@type fun():Rect
+UIVerticalLister.nextQuadraticRect = function ()
 	return Rect()
 end
 
@@ -106,7 +117,8 @@ end
 -- @param height - The height of the rect
 -- @return The Rect
 ---@param height float
-function UIVerticalLister:nextRect(height)
+---@type fun(height:number):Rect
+UIVerticalLister.nextRect = function (height)
 	return Rect()
 end
 
@@ -114,7 +126,8 @@ end
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
 ---@param vec vec2
-function UIVerticalLister:placeCenter(vec)
+---@type fun(vec:vec2):UIElement
+UIVerticalLister.placeCenter = function (vec)
 	return UIElement()
 end
 
@@ -122,7 +135,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementBottom(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementBottom = function (element)
 	return UIElement()
 end
 
@@ -130,7 +144,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementBottomLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementBottomLeft = function (element)
 	return UIElement()
 end
 
@@ -138,7 +153,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementBottomRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementBottomRight = function (element)
 	return UIElement()
 end
 
@@ -146,7 +162,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementCenter(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementCenter = function (element)
 	return UIElement()
 end
 
@@ -154,7 +171,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementLeft = function (element)
 	return UIElement()
 end
 
@@ -162,7 +180,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementRight = function (element)
 	return UIElement()
 end
 
@@ -170,7 +189,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementTop(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementTop = function (element)
 	return UIElement()
 end
 
@@ -178,7 +198,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementTopLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementTopLeft = function (element)
 	return UIElement()
 end
 
@@ -186,7 +207,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalLister:placeElementTopRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalLister.placeElementTopRight = function (element)
 	return UIElement()
 end
 
@@ -194,7 +216,8 @@ end
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
 ---@param vec vec2
-function UIVerticalLister:placeLeft(vec)
+---@type fun(vec:vec2):UIElement
+UIVerticalLister.placeLeft = function (vec)
 	return UIElement()
 end
 
@@ -202,7 +225,8 @@ end
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
 ---@param vec vec2
-function UIVerticalLister:placeRight(vec)
+---@type fun(vec:vec2):UIElement
+UIVerticalLister.placeRight = function (vec)
 	return UIElement()
 end
 
@@ -215,7 +239,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIVerticalLister:setMargin(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIVerticalLister.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -228,7 +253,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIVerticalLister:setPadding(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIVerticalLister.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

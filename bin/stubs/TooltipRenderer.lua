@@ -5,12 +5,14 @@ TooltipRenderer = {
 setmetatable(TooltipRenderer, {__call = function(self, tooltip) return TooltipRenderer end})
 
 -- @return nothing
-function TooltipRenderer:draw(vec2)
+---@type fun(vec2):any
+TooltipRenderer.draw = function (vec2)
 	return nil
 end
 
 -- @return nothing
-function TooltipRenderer:drawMouseTooltip(vec2)
+---@type fun(vec2):any
+TooltipRenderer.drawMouseTooltip = function (vec2)
 	return nil
 end
 

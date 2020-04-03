@@ -26,72 +26,87 @@ setmetatable(Faction, {__call = function(self, index) return Faction end})
 -- @return nothing
 ---@param name string
 ---@param style PlanStyle
-function Faction:addPlanStyle(name, style)
+---@type fun(name:string, style:PlanStyle):any
+Faction.addPlanStyle = function (name, style)
 	return nil
 end
 
-function Faction:canPay()
+---@type fun():boolean, string, table<number, string>
+Faction.canPay = function ()
 	return true, "", {0, ""}
 end
 
 ---@param money int
-function Faction:canPayMoney(money)
+---@type fun(money:number):boolean, string, table<number, string>
+Faction.canPayMoney = function (money)
 	return true, "", {0, ""}
 end
 
 ---@param material Material
 ---@param amount int
-function Faction:canPayResource(material, amount)
+---@type fun(material:Material, amount:number):boolean, string, table<number, string>
+Faction.canPayResource = function (material, amount)
 	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object
 -- @return nothing
-function Faction:clearValues()
+---@type fun():any
+Faction.clearValues = function ()
 	return nil
 end
 
-function Faction:getAllRelations()
+---@type fun():Relation
+Faction.getAllRelations = function ()
 	return Relation()
 end
 
-function Faction:getHomeSectorCoordinates()
+---@type fun():number, number
+Faction.getHomeSectorCoordinates = function ()
 	return 0, 0
 end
 
-function Faction:getInventory()
+---@type fun():Inventory
+Faction.getInventory = function ()
 	return Inventory()
 end
 
-function Faction:getLanguage()
+---@type fun():Language
+Faction.getLanguage = function ()
 	return Language()
 end
 
 ---@param name string
-function Faction:getPlanStyle(name)
+---@type fun(name:string):PlanStyle
+Faction.getPlanStyle = function (name)
 	return PlanStyle()
 end
 
-function Faction:getPlanStyleNames()
+---@type fun():string
+Faction.getPlanStyleNames = function ()
 	return ""
 end
 
 ---@param factionIndex int
-function Faction:getRelation(factionIndex)
+---@type fun(factionIndex:number):Relation
+Faction.getRelation = function (factionIndex)
 	return Relation()
 end
 
 ---@param factionIndex int
-function Faction:getRelations(factionIndex)
+---@type fun(factionIndex:number):number
+Faction.getRelations = function (factionIndex)
 	return 0
 end
 
 ---@param factionIndex int
-function Faction:getRelationStatus(factionIndex)
+---@type fun(factionIndex:number):number
+Faction.getRelationStatus = function (factionIndex)
 	return 0
 end
 
-function Faction:getResources()
+---@type fun():Resources
+Faction.getResources = function ()
 	return Resources()
 end
 
@@ -99,13 +114,15 @@ end
 -- @param trait - The name of the trait
 -- @return The trait value associated with the key
 ---@param trait string
-function Faction:getTrait(trait)
+---@type fun(trait:string):number
+Faction.getTrait = function (trait)
 	return 0.0
 end
 
 -- Retrieves all key-value trait pairs of the faction
 -- @return A table containing all custom key-value pairs
-function Faction:getTraits()
+---@type fun():table<string, number>
+Faction.getTraits = function ()
 	return {"", 0.0}
 end
 
@@ -113,23 +130,27 @@ end
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
-function Faction:getValue(key)
+---@type fun(key:string):any
+Faction.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values
 -- @return A table containing all custom key-value pairs
-function Faction:getValues()
+---@type fun():table<string, any>
+Faction.getValues = function ()
 	return {"", nil}
 end
 
 ---@param factionIndex int
-function Faction:hasStaticRelationsToFaction(factionIndex)
+---@type fun(factionIndex:number):boolean
+Faction.hasStaticRelationsToFaction = function (factionIndex)
 	return true
 end
 
 ---@param factionIndex int
-function Faction:knowsFaction(factionIndex)
+---@type fun(factionIndex:number):boolean
+Faction.knowsFaction = function (factionIndex)
 	return true
 end
 
@@ -141,7 +162,8 @@ end
 ---@param description string
 ---@param material Material
 ---@param amount int
-function Faction:payResource(description, material, amount)
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Faction.payResource = function (description, material, amount)
 	return nil
 end
 
@@ -153,7 +175,8 @@ end
 ---@param description string
 ---@param money int
 ---@param args int...
-function Faction:payWithoutNotify(description, money, args)
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Faction.payWithoutNotify = function (description, money, args)
 	return nil
 end
 
@@ -165,7 +188,8 @@ end
 ---@param description string
 ---@param material Material
 ---@param amount int
-function Faction:receiveResource(description, material, amount)
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Faction.receiveResource = function (description, material, amount)
 	return nil
 end
 
@@ -177,36 +201,42 @@ end
 ---@param description string
 ---@param money int
 ---@param args int...
-function Faction:receiveWithoutNotify(description, money, args)
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Faction.receiveWithoutNotify = function (description, money, args)
 	return nil
 end
 
 -- @return nothing
-function Faction:sendCallback()
+---@type fun():any
+Faction.sendCallback = function ()
 	return nil
 end
 
 -- @return nothing
-function Faction:sendChatMessage()
+---@type fun():any
+Faction.sendChatMessage = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param x int
 ---@param y int
-function Faction:setHomeSectorCoordinates(x, y)
+---@type fun(x:number, y:number):any
+Faction.setHomeSectorCoordinates = function (x, y)
 	return nil
 end
 
 -- @return nothing
-function Faction:setResources()
+---@type fun():any
+Faction.setResources = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param factionIndex int
 ---@param in bool
-function Faction:setStaticRelationsToFaction(factionIndex, _in)
+---@type fun(factionIndex:number, in:boolean):any
+Faction.setStaticRelationsToFaction = function (factionIndex, _in)
 	return nil
 end
 
@@ -216,7 +246,8 @@ end
 -- @return nothing
 ---@param trait string
 ---@param value float
-function Faction:setTrait(trait, value)
+---@type fun(trait:string, value:number):any
+Faction.setTrait = function (trait, value)
 	return nil
 end
 
@@ -226,7 +257,8 @@ end
 -- @return nothing
 ---@param key string
 ---@param value var
-function Faction:setValue(key, value)
+---@type fun(key:string, value:any):any
+Faction.setValue = function (key, value)
 	return nil
 end
 

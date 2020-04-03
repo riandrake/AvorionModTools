@@ -23,7 +23,8 @@ setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
 
 -- @return nothing
 ---@param other CargoBay
-function CargoBay:add(other)
+---@type fun(other:CargoBay):any
+CargoBay.add = function (other)
 	return nil
 end
 
@@ -33,12 +34,14 @@ end
 -- @return nothing
 ---@param good TradingGood
 ---@param amount int
-function CargoBay:addCargo(good, amount)
+---@type fun(good:TradingGood, amount:number):any
+CargoBay.addCargo = function (good, amount)
 	return nil
 end
 
 -- @return nothing
-function CargoBay:clear()
+---@type fun():any
+CargoBay.clear = function ()
 	return nil
 end
 
@@ -46,7 +49,8 @@ end
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
 ---@param volume float
-function CargoBay:destroyCargo(volume)
+---@type fun(volume:number):any
+CargoBay.destroyCargo = function (volume)
 	return nil
 end
 
@@ -54,16 +58,19 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 ---@param name string
-function CargoBay:findCargos(name)
+---@type fun(name:string):table<TradingGood, number>
+CargoBay.findCargos = function (name)
 	return {TradingGood(), 0}
 end
 
 ---@param n unsigned
-function CargoBay:getCargo(n)
+---@type fun(n:number:unsigned):TradingGood, number
+CargoBay.getCargo = function (n)
 	return TradingGood(), 0
 end
 
-function CargoBay:getCargos()
+---@type fun():table<TradingGood, number>
+CargoBay.getCargos = function ()
 	return {TradingGood(), 0}
 end
 
@@ -71,12 +78,14 @@ end
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
 ---@param name var
-function CargoBay:getNumCargos(name)
+---@type fun(name:any):number
+CargoBay.getNumCargos = function (name)
 	return 0
 end
 
 ---@param goods var
-function CargoBay:getSummary(goods)
+---@type fun(goods:any):string
+CargoBay.getSummary = function (goods)
 	return ""
 end
 
@@ -86,7 +95,8 @@ end
 -- @return nothing
 ---@param good var
 ---@param amount int
-function CargoBay:removeCargo(good, amount)
+---@type fun(good:any, amount:number):any
+CargoBay.removeCargo = function (good, amount)
 	return nil
 end
 

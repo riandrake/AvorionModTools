@@ -26,13 +26,15 @@ setmetatable(ProgressBar, {__call = function(self, index) return ProgressBar end
 
 -- Inherited from UIElement
 -- @return nothing
-function ProgressBar:hide()
+---@type fun():any
+ProgressBar.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ProgressBar:show()
+---@type fun():any
+ProgressBar.show = function ()
 	return nil
 end
 

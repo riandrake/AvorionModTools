@@ -37,49 +37,58 @@ TextBox = {
 setmetatable(TextBox, {__call = function(self, index) return TextBox end})
 
 -- @return nothing
-function TextBox:clear()
+---@type fun():any
+TextBox.clear = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:forbidInvalidFilenameChars()
+---@type fun():any
+TextBox.forbidInvalidFilenameChars = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:moveCursorLeft()
+---@type fun():any
+TextBox.moveCursorLeft = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:moveCursorLeftCtrl()
+---@type fun():any
+TextBox.moveCursorLeftCtrl = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:moveCursorRight()
+---@type fun():any
+TextBox.moveCursorRight = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:moveCursorRightCtrl()
+---@type fun():any
+TextBox.moveCursorRightCtrl = function ()
 	return nil
 end
 
 -- @return nothing
-function TextBox:resetFrameColor()
+---@type fun():any
+TextBox.resetFrameColor = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function TextBox:hide()
+---@type fun():any
+TextBox.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function TextBox:show()
+---@type fun():any
+TextBox.show = function ()
 	return nil
 end
 

@@ -31,12 +31,14 @@ Hud = {
 setmetatable(Hud, {__call = function(self) return Hud end})
 
 ---@param rect Rect
-function Hud:createContainer(rect)
+---@type fun(rect:Rect):UIContainer
+Hud.createContainer = function (rect)
 	return UIContainer()
 end
 
 ---@param rect Rect
-function Hud:createWindow(rect)
+---@type fun(rect:Rect):Window
+Hud.createWindow = function (rect)
 	return Window()
 end
 
@@ -46,19 +48,22 @@ end
 -- @return nothing
 ---@param text string
 ---@param highlights var...
-function Hud:displayHint(text, highlights)
+---@type fun(text:string, highlights:table<number,var>):any
+Hud.displayHint = function (text, highlights)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Hud:hide()
+---@type fun():any
+Hud.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Hud:show()
+---@type fun():any
+Hud.show = function ()
 	return nil
 end
 

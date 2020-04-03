@@ -23,12 +23,14 @@ UIElement = {
 setmetatable(UIElement, {__call = function(self, index) return UIElement end})
 
 -- @return nothing
-function UIElement:hide()
+---@type fun():any
+UIElement.hide = function ()
 	return nil
 end
 
 -- @return nothing
-function UIElement:show()
+---@type fun():any
+UIElement.show = function ()
 	return nil
 end
 

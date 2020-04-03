@@ -25,7 +25,8 @@ setmetatable(UIVerticalMultiSplitter, {__call = function(self, rect, padding, ma
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getBottomLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getBottomLeftRect = function (rect)
 	return nil
 end
 
@@ -33,7 +34,8 @@ end
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
 ---@param rect Rect
-function UIVerticalMultiSplitter:getBottomRect(rect)
+---@type fun(rect:Rect):Rect
+UIVerticalMultiSplitter.getBottomRect = function (rect)
 	return Rect()
 end
 
@@ -41,7 +43,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getBottomRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getBottomRightRect = function (rect)
 	return nil
 end
 
@@ -49,7 +52,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getCenterRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getCenterRect = function (rect)
 	return nil
 end
 
@@ -57,7 +61,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getLeftRect = function (rect)
 	return nil
 end
 
@@ -65,7 +70,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getRightRect = function (rect)
 	return nil
 end
 
@@ -73,7 +79,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getTopLeftRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getTopLeftRect = function (rect)
 	return nil
 end
 
@@ -81,7 +88,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getTopRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getTopRect = function (rect)
 	return nil
 end
 
@@ -89,7 +97,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
-function UIVerticalMultiSplitter:getTopRightRect(rect)
+---@type fun(rect:Rect):any
+UIVerticalMultiSplitter.getTopRightRect = function (rect)
 	return nil
 end
 
@@ -97,7 +106,8 @@ end
 -- @param index - The index of the retrieved rect, from 0 to splits
 -- @return A new rect, size was determined by splitting
 ---@param index int
-function UIVerticalMultiSplitter:partition(index)
+---@type fun(index:number):Rect
+UIVerticalMultiSplitter.partition = function (index)
 	return Rect()
 end
 
@@ -105,7 +115,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementBottom(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementBottom = function (element)
 	return UIElement()
 end
 
@@ -113,7 +124,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementBottomLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementBottomLeft = function (element)
 	return UIElement()
 end
 
@@ -121,7 +133,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementBottomRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementBottomRight = function (element)
 	return UIElement()
 end
 
@@ -129,7 +142,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementCenter(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementCenter = function (element)
 	return UIElement()
 end
 
@@ -137,7 +151,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementLeft = function (element)
 	return UIElement()
 end
 
@@ -145,7 +160,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementRight = function (element)
 	return UIElement()
 end
 
@@ -153,7 +169,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementTop(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementTop = function (element)
 	return UIElement()
 end
 
@@ -161,7 +178,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementTopLeft(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementTopLeft = function (element)
 	return UIElement()
 end
 
@@ -169,7 +187,8 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
-function UIVerticalMultiSplitter:placeElementTopRight(element)
+---@type fun(element:UIElement):UIElement
+UIVerticalMultiSplitter.placeElementTopRight = function (element)
 	return UIElement()
 end
 
@@ -182,7 +201,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIVerticalMultiSplitter:setMargin(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIVerticalMultiSplitter.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -195,7 +215,8 @@ end
 ---@param right int
 ---@param top int
 ---@param bottom int
-function UIVerticalMultiSplitter:setPadding(left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIVerticalMultiSplitter.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

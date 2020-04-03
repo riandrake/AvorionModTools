@@ -14,7 +14,8 @@ CrewProfession = {
 setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
 
 ---@param amount var
-function CrewProfession:name(amount)
+---@type fun(amount:any):string
+CrewProfession.name = function (amount)
 	return ""
 end
 

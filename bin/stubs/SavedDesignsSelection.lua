@@ -38,59 +38,70 @@ SavedDesignsSelection = {
 setmetatable(SavedDesignsSelection, {__call = function(self, index) return SavedDesignsSelection end})
 
 ---@param key ivec2
-function SavedDesignsSelection:getItem(key)
+---@type fun(key:ivec2):UserObject
+SavedDesignsSelection.getItem = function (key)
 	return UserObject()
 end
 
-function SavedDesignsSelection:getItems()
+---@type fun():table<ivec2, UserObject>
+SavedDesignsSelection.getItems = function ()
 	return {ivec2(), UserObject()}
 end
 
-function SavedDesignsSelection:getMouseOveredKey()
+---@type fun():ivec2
+SavedDesignsSelection.getMouseOveredKey = function ()
 	return ivec2()
 end
 
 ---@param x int
 ---@param y int
-function SavedDesignsSelection:getRect(x, y)
+---@type fun(x:number, y:number):number, Rect
+SavedDesignsSelection.getRect = function (x, y)
 	return 0, Rect()
 end
 
 -- @return nothing
-function SavedDesignsSelection:refreshCurrentFolder()
+---@type fun():any
+SavedDesignsSelection.refreshCurrentFolder = function ()
 	return nil
 end
 
 -- @return nothing
-function SavedDesignsSelection:refreshTopLevelFolder()
-	return nil
-end
-
--- @return nothing
----@param pos ivec2
-function SavedDesignsSelection:select(pos)
+---@type fun():any
+SavedDesignsSelection.refreshTopLevelFolder = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param pos ivec2
-function SavedDesignsSelection:selectNoCallback(pos)
+---@type fun(pos:ivec2):any
+SavedDesignsSelection.select = function (pos)
 	return nil
 end
 
 -- @return nothing
-function SavedDesignsSelection:unselect()
+---@param pos ivec2
+---@type fun(pos:ivec2):any
+SavedDesignsSelection.selectNoCallback = function (pos)
+	return nil
+end
+
+-- @return nothing
+---@type fun():any
+SavedDesignsSelection.unselect = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
 -- @return nothing
-function SavedDesignsSelection:clear()
+---@type fun():any
+SavedDesignsSelection.clear = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
-function SavedDesignsSelection:createArrowLine()
+---@type fun():ArrowLine
+SavedDesignsSelection.createArrowLine = function ()
 	return ArrowLine()
 end
 
@@ -98,7 +109,8 @@ end
 ---@param rect Rect
 ---@param caption string
 ---@param function string
-function SavedDesignsSelection:createButton(rect, caption, _function)
+---@type fun(rect:Rect, caption:string, function:string):Button
+SavedDesignsSelection.createButton = function (rect, caption, _function)
 	return Button()
 end
 
@@ -106,44 +118,51 @@ end
 ---@param rect Rect
 ---@param caption string
 ---@param onCheckedFunction string
-function SavedDesignsSelection:createCheckBox(rect, caption, onCheckedFunction)
+---@type fun(rect:Rect, caption:string, onCheckedFunction:string):CheckBox
+SavedDesignsSelection.createCheckBox = function (rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onSelectedFunction string
-function SavedDesignsSelection:createComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ComboBox
+SavedDesignsSelection.createComboBox = function (rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createContainer(rect)
+---@type fun(rect:Rect):UIContainer
+SavedDesignsSelection.createContainer = function (rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createCraftPortrait(rect)
+---@type fun(rect:Rect):CraftPortrait
+SavedDesignsSelection.createCraftPortrait = function (rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createFrame(rect)
+---@type fun(rect:Rect):Frame
+SavedDesignsSelection.createFrame = function (rect)
 	return Frame()
 end
 
 -- Inherited from UIContainer
-function SavedDesignsSelection:createInputWindow()
+---@type fun():InputWindow
+SavedDesignsSelection.createInputWindow = function ()
 	return InputWindow()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function SavedDesignsSelection:createInventorySelection(rect, width)
+---@type fun(rect:Rect, width:number):InventorySelection
+SavedDesignsSelection.createInventorySelection = function (rect, width)
 	return InventorySelection()
 end
 
@@ -151,70 +170,81 @@ end
 ---@param position var
 ---@param caption string
 ---@param fontSize int
-function SavedDesignsSelection:createLabel(position, caption, fontSize)
+---@type fun(position:any, caption:string, fontSize:number):Label
+SavedDesignsSelection.createLabel = function (position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
 ---@param a vec2
 ---@param b vec2
-function SavedDesignsSelection:createLine(a, b)
+---@type fun(a:vec2, b:vec2):Line
+SavedDesignsSelection.createLine = function (a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createListBox(rect)
+---@type fun(rect:Rect):ListBox
+SavedDesignsSelection.createListBox = function (rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createListBoxEx(rect)
+---@type fun(rect:Rect):ListBoxEx
+SavedDesignsSelection.createListBoxEx = function (rect)
 	return ListBoxEx()
 end
 
 -- Inherited from UIContainer
-function SavedDesignsSelection:createMapArrowLine()
+---@type fun():MapArrowLine
+SavedDesignsSelection.createMapArrowLine = function ()
 	return MapArrowLine()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createMultiLineTextBox(rect)
+---@type fun(rect:Rect):MultiLineTextBox
+SavedDesignsSelection.createMultiLineTextBox = function (rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createNumbersBar(rect)
+---@type fun(rect:Rect):NumbersBar
+SavedDesignsSelection.createNumbersBar = function (rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param path string
-function SavedDesignsSelection:createPicture(rect, path)
+---@type fun(rect:Rect, path:string):Picture
+SavedDesignsSelection.createPicture = function (rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createPlanDisplayer(rect)
+---@type fun(rect:Rect):PlanDisplayer
+SavedDesignsSelection.createPlanDisplayer = function (rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function SavedDesignsSelection:createProgressBar(rect, color)
+---@type fun(rect:Rect, color:Color):ProgressBar
+SavedDesignsSelection.createProgressBar = function (rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function SavedDesignsSelection:createRect(rect, color)
+---@type fun(rect:Rect, color:Color):UIRect
+SavedDesignsSelection.createRect = function (rect, color)
 	return UIRect()
 end
 
@@ -222,27 +252,31 @@ end
 ---@param rect Rect
 ---@param icon string
 ---@param function string
-function SavedDesignsSelection:createRoundButton(rect, icon, _function)
+---@type fun(rect:Rect, icon:string, function:string):Button
+SavedDesignsSelection.createRoundButton = function (rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function SavedDesignsSelection:createSavedDesignsSelection(rect, width)
+---@type fun(rect:Rect, width:number):SavedDesignsSelection
+SavedDesignsSelection.createSavedDesignsSelection = function (rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createScrollFrame(rect)
+---@type fun(rect:Rect):ScrollFrame
+SavedDesignsSelection.createScrollFrame = function (rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function SavedDesignsSelection:createSelection(rect, width)
+---@type fun(rect:Rect, width:number):Selection
+SavedDesignsSelection.createSelection = function (rect, width)
 	return Selection()
 end
 
@@ -253,65 +287,75 @@ end
 ---@param steps int
 ---@param caption string
 ---@param onValueChangedFunction string
-function SavedDesignsSelection:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
+---@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string):Slider
+SavedDesignsSelection.createSlider = function (rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function SavedDesignsSelection:createStatisticsBar(rect, color)
+---@type fun(rect:Rect, color:Color):StatisticsBar
+SavedDesignsSelection.createStatisticsBar = function (rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createTabbedWindow(rect)
+---@type fun(rect:Rect):TabbedWindow
+SavedDesignsSelection.createTabbedWindow = function (rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onTextChangedFunction string
-function SavedDesignsSelection:createTextBox(rect, onTextChangedFunction)
+---@type fun(rect:Rect, onTextChangedFunction:string):TextBox
+SavedDesignsSelection.createTextBox = function (rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param text string
-function SavedDesignsSelection:createTextField(rect, text)
+---@type fun(rect:Rect, text:string):TextField
+SavedDesignsSelection.createTextField = function (rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createTree(rect)
+---@type fun(rect:Rect):Tree
+SavedDesignsSelection.createTree = function (rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onSelectedFunction string
-function SavedDesignsSelection:createValueComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ValueComboBox
+SavedDesignsSelection.createValueComboBox = function (rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function SavedDesignsSelection:createWindow(rect)
+---@type fun(rect:Rect):Window
+SavedDesignsSelection.createWindow = function (rect)
 	return Window()
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function SavedDesignsSelection:hide()
+---@type fun():any
+SavedDesignsSelection.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function SavedDesignsSelection:show()
+---@type fun():any
+SavedDesignsSelection.show = function ()
 	return nil
 end
 

@@ -12,7 +12,8 @@ setmetatable(Inventory, {__call = function(self) return Inventory end})
 
 ---@param item InventoryItem
 ---@param recent var
-function Inventory:add(item, recent)
+---@type fun(item:InventoryItem, recent:any):number
+Inventory.add = function (item, recent)
 	return 0
 end
 
@@ -20,71 +21,84 @@ end
 ---@param index unsigned
 ---@param amount unsigned
 ---@param recent var
-function Inventory:addAt(item, index, amount, recent)
+---@type fun(item:InventoryItem, index:number:unsigned, amount:number:unsigned, recent:any):number
+Inventory.addAt = function (item, index, amount, recent)
 	return 0
 end
 
 ---@param item InventoryItem
 ---@param recent var
-function Inventory:addOrDrop(item, recent)
+---@type fun(item:InventoryItem, recent:any):any
+Inventory.addOrDrop = function (item, recent)
 	return nil
 end
 
 ---@param index unsigned
-function Inventory:amount(index)
+---@type fun(index:number:unsigned):number
+Inventory.amount = function (index)
 	return 0
 end
 
 -- @return nothing
-function Inventory:clear()
+---@type fun():any
+Inventory.clear = function ()
 	return nil
 end
 
 ---@param index unsigned
-function Inventory:find(index)
+---@type fun(index:number:unsigned):InventoryItem
+Inventory.find = function (index)
 	return InventoryItem()
 end
 
-function Inventory:getItems()
+---@type fun()
+Inventory.getItems = function ()
 	return 
 end
 
 ---@param type InventoryItemType
-function Inventory:getItemsByType(type)
+---@type fun(type:InventoryItemType)
+Inventory.getItemsByType = function (type)
 	return 
 end
 
 ---@param item InventoryItem
-function Inventory:hasSlot(item)
+---@type fun(item:InventoryItem):boolean
+Inventory.hasSlot = function (item)
 	return true
 end
 
 -- @return nothing
 ---@param index unsigned
-function Inventory:remove(index)
+---@type fun(index:number:unsigned):any
+Inventory.remove = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param index unsigned
-function Inventory:removeAll(index)
+---@type fun(index:number:unsigned):any
+Inventory.removeAll = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param index unsigned
 ---@param amount unsigned
-function Inventory:setAmount(index, amount)
+---@type fun(index:number:unsigned, amount:number:unsigned):any
+Inventory.setAmount = function (index, amount)
 	return nil
 end
 
 ---@param index unsigned
-function Inventory:slotEmpty(index)
+---@type fun(index:number:unsigned):boolean
+Inventory.slotEmpty = function (index)
 	return true
 end
 
 ---@param index unsigned
-function Inventory:take(index)
+---@type fun(index:number:unsigned):InventoryItem
+Inventory.take = function (index)
 	return InventoryItem()
 end
 

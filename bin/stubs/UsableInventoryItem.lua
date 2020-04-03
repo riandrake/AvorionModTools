@@ -22,17 +22,20 @@ UsableInventoryItem = {
 setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
 
 ---@param other var
-function UsableInventoryItem:__eq(other)
+---@type fun(other:any):boolean
+UsableInventoryItem.__eq = function (other)
 	return true
 end
 
 -- Removes all custom values of the object
 -- @return nothing
-function UsableInventoryItem:clearValues()
+---@type fun():any
+UsableInventoryItem.clearValues = function ()
 	return nil
 end
 
-function UsableInventoryItem:getTooltip()
+---@type fun():Tooltip
+UsableInventoryItem.getTooltip = function ()
 	return Tooltip()
 end
 
@@ -40,19 +43,22 @@ end
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
-function UsableInventoryItem:getValue(key)
+---@type fun(key:string):any
+UsableInventoryItem.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
-function UsableInventoryItem:getValues()
+---@type fun():table<string, any>
+UsableInventoryItem.getValues = function ()
 	return {"", nil}
 end
 
 -- @return nothing
 ---@param tooltip Tooltip
-function UsableInventoryItem:setTooltip(tooltip)
+---@type fun(tooltip:Tooltip):any
+UsableInventoryItem.setTooltip = function (tooltip)
 	return nil
 end
 
@@ -62,7 +68,8 @@ end
 -- @return nothing
 ---@param key string
 ---@param value var
-function UsableInventoryItem:setValue(key, value)
+---@type fun(key:string, value:any):any
+UsableInventoryItem.setValue = function (key, value)
 	return nil
 end
 

@@ -11,22 +11,26 @@ Timer = {
 setmetatable(Timer, {__call = function(self) return Timer end})
 
 -- @return nothing
-function Timer:reset()
+---@type fun():any
+Timer.reset = function ()
 	return nil
 end
 
 -- @return nothing
-function Timer:restart()
+---@type fun():any
+Timer.restart = function ()
 	return nil
 end
 
 -- @return nothing
-function Timer:start()
+---@type fun():any
+Timer.start = function ()
 	return nil
 end
 
 -- @return nothing
-function Timer:stop()
+---@type fun():any
+Timer.stop = function ()
 	return nil
 end
 

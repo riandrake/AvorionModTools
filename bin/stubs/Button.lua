@@ -29,13 +29,15 @@ setmetatable(Button, {__call = function(self, index) return Button end})
 
 -- Inherited from UIElement
 -- @return nothing
-function Button:hide()
+---@type fun():any
+Button.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Button:show()
+---@type fun():any
+Button.show = function ()
 	return nil
 end
 

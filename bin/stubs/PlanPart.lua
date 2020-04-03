@@ -27,7 +27,8 @@ setmetatable(PlanPart, {__call = function(self) return PlanPart end})
 ---@param size vec3
 ---@param color var
 ---@param orientation Matrix
-function PlanPart:block(parentIndex, directionOrPosition, blockType, size, color, orientation)
+---@type fun(parentIndex:number, directionOrPosition:any, blockType:number, size:nil]:[or:vec3, color:any, orientation:nil]:[or:Matrix):number
+PlanPart.block = function (parentIndex, directionOrPosition, blockType, size, color, orientation)
 	return 0
 end
 
@@ -39,7 +40,8 @@ end
 ---@param blockIndex int
 ---@param direction var
 ---@param flags table_t
-function PlanPart:connector(blockIndex, direction, flags)
+---@type fun(blockIndex:number, direction:any, flags:table_t):any
+PlanPart.connector = function (blockIndex, direction, flags)
 	return nil
 end
 
@@ -49,7 +51,8 @@ end
 -- @return nothing
 ---@param blockIndex int
 ---@param direction var
-function PlanPart:erase(blockIndex, direction)
+---@type fun(blockIndex:number, direction:any):any
+PlanPart.erase = function (blockIndex, direction)
 	return nil
 end
 
@@ -57,7 +60,8 @@ end
 -- @param index - The index of the block
 -- @return BlockPlanBlock The block, or nil if not found
 ---@param index int
-function PlanPart:getBlock(index)
+---@type fun(index:number):BlockPlanBlock
+PlanPart.getBlock = function (index)
 	return BlockPlanBlock()
 end
 
@@ -65,12 +69,14 @@ end
 -- @param types - The types of the blocks
 -- @return A table containing the found blocks.
 ---@param types int...
-function PlanPart:getBlocks(types)
+---@type fun(types:table<number,int>):number
+PlanPart.getBlocks = function (types)
 	return 0
 end
 
 -- @return Returns a table with all connectors of the part
-function PlanPart:getConnectors()
+---@type fun():table_t
+PlanPart.getConnectors = function ()
 	return table_t()
 end
 
@@ -78,7 +84,8 @@ end
 -- @param blocks - An array-style table containing all block indices that are to be merged
 -- @return multiple return values: All block indices that remain of the blocks passed into the function
 ---@param blocks int...
-function PlanPart:merge(blocks)
+---@type fun(blocks:table<number,int>):number
+PlanPart.merge = function (blocks)
 	return 0
 end
 
@@ -86,7 +93,8 @@ end
 -- @param axis - Direction around which axis the part should be rotated. A direction can be passed as a string ("x", "-x", "px", "nx", "+x" etc.), an ivec3, or an int (-x = 0, +x = 1, -y = 2, +y = 3, -z = 4, +z = 5)
 -- @return nothing
 ---@param axis var
-function PlanPart:mirror(axis)
+---@type fun(axis:any):any
+PlanPart.mirror = function (axis)
 	return nil
 end
 
@@ -100,7 +108,8 @@ end
 ---@param x var
 ---@param y var
 ---@param z var
-function PlanPart:resize(blockIndex, x, y, z)
+---@type fun(blockIndex:number, x:any, y:any, z:any):any
+PlanPart.resize = function (blockIndex, x, y, z)
 	return nil
 end
 
@@ -110,7 +119,8 @@ end
 -- @return nothing
 ---@param axis var
 ---@param times int
-function PlanPart:rotate(axis, times)
+---@type fun(axis:any, times:number):any
+PlanPart.rotate = function (axis, times)
 	return nil
 end
 
@@ -118,7 +128,8 @@ end
 -- @param factor - vec3 containing the scale factors
 -- @return nothing
 ---@param factor vec3
-function PlanPart:scale(factor)
+---@type fun(factor:vec3):any
+PlanPart.scale = function (factor)
 	return nil
 end
 
@@ -130,7 +141,8 @@ end
 ---@param blockIndex int
 ---@param direction var
 ---@param flags table_t
-function PlanPart:setConnectorFlags(blockIndex, direction, flags)
+---@type fun(blockIndex:number, direction:any, flags:table_t):any
+PlanPart.setConnectorFlags = function (blockIndex, direction, flags)
 	return nil
 end
 
@@ -138,7 +150,8 @@ end
 -- @param plan - The used plan
 -- @return nothing
 ---@param plan BlockPlan
-function PlanPart:setPlan(plan)
+---@type fun(plan:BlockPlan):any
+PlanPart.setPlan = function (plan)
 	return nil
 end
 
@@ -148,7 +161,8 @@ end
 -- @return nothing
 ---@param blockIndex int
 ---@param flags table_t
-function PlanPart:transform(blockIndex, flags)
+---@type fun(blockIndex:number, flags:table_t):any
+PlanPart.transform = function (blockIndex, flags)
 	return nil
 end
 

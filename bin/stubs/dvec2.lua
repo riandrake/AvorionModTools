@@ -9,40 +9,48 @@ dvec2 = {
 setmetatable(dvec2, {__call = function(self, x, y) return dvec2 end})
 
 ---@param other var
-function dvec2:__add(other)
+---@type fun(other:any):dvec2
+dvec2.__add = function (other)
 	return dvec2()
 end
 
 ---@param other var
-function dvec2:__div(other)
+---@type fun(other:any):dvec2
+dvec2.__div = function (other)
 	return dvec2()
 end
 
 ---@param other dvec2
-function dvec2:__eq(other)
+---@type fun(other:dvec2):boolean
+dvec2.__eq = function (other)
 	return true
 end
 
 ---@param other dvec2
-function dvec2:__lt(other)
+---@type fun(other:dvec2):boolean
+dvec2.__lt = function (other)
 	return true
 end
 
 ---@param other var
-function dvec2:__mul(other)
+---@type fun(other:any):dvec2
+dvec2.__mul = function (other)
 	return dvec2()
 end
 
 ---@param other var
-function dvec2:__sub(other)
+---@type fun(other:any):dvec2
+dvec2.__sub = function (other)
 	return dvec2()
 end
 
-function dvec2:__tostring()
+---@type fun():string
+dvec2.__tostring = function ()
 	return ""
 end
 
-function dvec2:__unm()
+---@type fun():dvec2
+dvec2.__unm = function ()
 	return dvec2()
 end
 

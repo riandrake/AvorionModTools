@@ -74,52 +74,62 @@ InventoryTurret = {
 setmetatable(InventoryTurret, {__call = function(self, other) return InventoryTurret end})
 
 ---@param other var
-function InventoryTurret:__eq(other)
+---@type fun(other:any):boolean
+InventoryTurret.__eq = function (other)
 	return true
 end
 
 -- @return nothing
 ---@param str string
 ---@param value string
-function InventoryTurret:addDescription(str, value)
+---@type fun(str:string, value:string):any
+InventoryTurret.addDescription = function (str, value)
 	return nil
 end
 
 -- @return nothing
 ---@param weapon var
-function InventoryTurret:addWeapon(weapon)
+---@type fun(weapon:any):any
+InventoryTurret.addWeapon = function (weapon)
 	return nil
 end
 
 -- @return nothing
-function InventoryTurret:clearDescriptions()
+---@type fun():any
+InventoryTurret.clearDescriptions = function ()
 	return nil
 end
 
 -- @return nothing
-function InventoryTurret:clearWeapons()
+---@type fun():any
+InventoryTurret.clearWeapons = function ()
 	return nil
 end
 
-function InventoryTurret:getCrew()
+---@type fun():Crew
+InventoryTurret.getCrew = function ()
 	return Crew()
 end
 
-function InventoryTurret:getDescriptions()
+---@type fun():table<string, string>
+InventoryTurret.getDescriptions = function ()
 	return {"", ""}
 end
 
 -- Returns all weapons of the object
-function InventoryTurret:getWeapons()
+---@type fun():Weapon
+InventoryTurret.getWeapons = function ()
 	return Weapon()
 end
 
-function InventoryTurret:template()
+---@type fun():TurretTemplate
+InventoryTurret.template = function ()
 	return TurretTemplate()
 end
 
 -- @return nothing
-function InventoryTurret:updateStaticStats()
+---@type fun():any
+InventoryTurret.updateStaticStats = function ()
 	return nil
 end
 

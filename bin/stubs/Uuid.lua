@@ -11,31 +11,37 @@ Uuid = {
 setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
 
 ---@param other var
-function Uuid:__eq(other)
+---@type fun(other:any):boolean
+Uuid.__eq = function (other)
 	return true
 end
 
 ---@param other var
-function Uuid:__le(other)
+---@type fun(other:any):boolean
+Uuid.__le = function (other)
 	return true
 end
 
 ---@param other var
-function Uuid:__lt(other)
+---@type fun(other:any):boolean
+Uuid.__lt = function (other)
 	return true
 end
 
-function Uuid:__tostring()
+---@type fun():string
+Uuid.__tostring = function ()
 	return ""
 end
 
 -- @return nothing
-function Uuid:reset()
+---@type fun():any
+Uuid.reset = function ()
 	return nil
 end
 
 -- @return nothing
-function Uuid:toRandom()
+---@type fun():any
+Uuid.toRandom = function ()
 	return nil
 end
 

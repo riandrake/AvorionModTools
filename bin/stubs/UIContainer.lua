@@ -23,140 +23,165 @@ UIContainer = {
 setmetatable(UIContainer, {__call = function(self, index) return UIContainer end})
 
 -- @return nothing
-function UIContainer:clear()
+---@type fun():any
+UIContainer.clear = function ()
 	return nil
 end
 
-function UIContainer:createArrowLine()
+---@type fun():ArrowLine
+UIContainer.createArrowLine = function ()
 	return ArrowLine()
 end
 
 ---@param rect Rect
 ---@param caption string
 ---@param function string
-function UIContainer:createButton(rect, caption, _function)
+---@type fun(rect:Rect, caption:string, function:string):Button
+UIContainer.createButton = function (rect, caption, _function)
 	return Button()
 end
 
 ---@param rect Rect
 ---@param caption string
 ---@param onCheckedFunction string
-function UIContainer:createCheckBox(rect, caption, onCheckedFunction)
+---@type fun(rect:Rect, caption:string, onCheckedFunction:string):CheckBox
+UIContainer.createCheckBox = function (rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 ---@param rect Rect
 ---@param onSelectedFunction string
-function UIContainer:createComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ComboBox
+UIContainer.createComboBox = function (rect, onSelectedFunction)
 	return ComboBox()
 end
 
 ---@param rect Rect
-function UIContainer:createContainer(rect)
+---@type fun(rect:Rect):UIContainer
+UIContainer.createContainer = function (rect)
 	return UIContainer()
 end
 
 ---@param rect Rect
-function UIContainer:createCraftPortrait(rect)
+---@type fun(rect:Rect):CraftPortrait
+UIContainer.createCraftPortrait = function (rect)
 	return CraftPortrait()
 end
 
 ---@param rect Rect
-function UIContainer:createFrame(rect)
+---@type fun(rect:Rect):Frame
+UIContainer.createFrame = function (rect)
 	return Frame()
 end
 
-function UIContainer:createInputWindow()
+---@type fun():InputWindow
+UIContainer.createInputWindow = function ()
 	return InputWindow()
 end
 
 ---@param rect Rect
 ---@param width int
-function UIContainer:createInventorySelection(rect, width)
+---@type fun(rect:Rect, width:number):InventorySelection
+UIContainer.createInventorySelection = function (rect, width)
 	return InventorySelection()
 end
 
 ---@param position var
 ---@param caption string
 ---@param fontSize int
-function UIContainer:createLabel(position, caption, fontSize)
+---@type fun(position:any, caption:string, fontSize:number):Label
+UIContainer.createLabel = function (position, caption, fontSize)
 	return Label()
 end
 
 ---@param a vec2
 ---@param b vec2
-function UIContainer:createLine(a, b)
+---@type fun(a:vec2, b:vec2):Line
+UIContainer.createLine = function (a, b)
 	return Line()
 end
 
 ---@param rect Rect
-function UIContainer:createListBox(rect)
+---@type fun(rect:Rect):ListBox
+UIContainer.createListBox = function (rect)
 	return ListBox()
 end
 
 ---@param rect Rect
-function UIContainer:createListBoxEx(rect)
+---@type fun(rect:Rect):ListBoxEx
+UIContainer.createListBoxEx = function (rect)
 	return ListBoxEx()
 end
 
-function UIContainer:createMapArrowLine()
+---@type fun():MapArrowLine
+UIContainer.createMapArrowLine = function ()
 	return MapArrowLine()
 end
 
 ---@param rect Rect
-function UIContainer:createMultiLineTextBox(rect)
+---@type fun(rect:Rect):MultiLineTextBox
+UIContainer.createMultiLineTextBox = function (rect)
 	return MultiLineTextBox()
 end
 
 ---@param rect Rect
-function UIContainer:createNumbersBar(rect)
+---@type fun(rect:Rect):NumbersBar
+UIContainer.createNumbersBar = function (rect)
 	return NumbersBar()
 end
 
 ---@param rect Rect
 ---@param path string
-function UIContainer:createPicture(rect, path)
+---@type fun(rect:Rect, path:string):Picture
+UIContainer.createPicture = function (rect, path)
 	return Picture()
 end
 
 ---@param rect Rect
-function UIContainer:createPlanDisplayer(rect)
+---@type fun(rect:Rect):PlanDisplayer
+UIContainer.createPlanDisplayer = function (rect)
 	return PlanDisplayer()
 end
 
 ---@param rect Rect
 ---@param color Color
-function UIContainer:createProgressBar(rect, color)
+---@type fun(rect:Rect, color:Color):ProgressBar
+UIContainer.createProgressBar = function (rect, color)
 	return ProgressBar()
 end
 
 ---@param rect Rect
 ---@param color Color
-function UIContainer:createRect(rect, color)
+---@type fun(rect:Rect, color:Color):UIRect
+UIContainer.createRect = function (rect, color)
 	return UIRect()
 end
 
 ---@param rect Rect
 ---@param icon string
 ---@param function string
-function UIContainer:createRoundButton(rect, icon, _function)
+---@type fun(rect:Rect, icon:string, function:string):Button
+UIContainer.createRoundButton = function (rect, icon, _function)
 	return Button()
 end
 
 ---@param rect Rect
 ---@param width int
-function UIContainer:createSavedDesignsSelection(rect, width)
+---@type fun(rect:Rect, width:number):SavedDesignsSelection
+UIContainer.createSavedDesignsSelection = function (rect, width)
 	return SavedDesignsSelection()
 end
 
 ---@param rect Rect
-function UIContainer:createScrollFrame(rect)
+---@type fun(rect:Rect):ScrollFrame
+UIContainer.createScrollFrame = function (rect)
 	return ScrollFrame()
 end
 
 ---@param rect Rect
 ---@param width int
-function UIContainer:createSelection(rect, width)
+---@type fun(rect:Rect, width:number):Selection
+UIContainer.createSelection = function (rect, width)
 	return Selection()
 end
 
@@ -166,58 +191,68 @@ end
 ---@param steps int
 ---@param caption string
 ---@param onValueChangedFunction string
-function UIContainer:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
+---@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string):Slider
+UIContainer.createSlider = function (rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 ---@param rect Rect
 ---@param color Color
-function UIContainer:createStatisticsBar(rect, color)
+---@type fun(rect:Rect, color:Color):StatisticsBar
+UIContainer.createStatisticsBar = function (rect, color)
 	return StatisticsBar()
 end
 
 ---@param rect Rect
-function UIContainer:createTabbedWindow(rect)
+---@type fun(rect:Rect):TabbedWindow
+UIContainer.createTabbedWindow = function (rect)
 	return TabbedWindow()
 end
 
 ---@param rect Rect
 ---@param onTextChangedFunction string
-function UIContainer:createTextBox(rect, onTextChangedFunction)
+---@type fun(rect:Rect, onTextChangedFunction:string):TextBox
+UIContainer.createTextBox = function (rect, onTextChangedFunction)
 	return TextBox()
 end
 
 ---@param rect Rect
 ---@param text string
-function UIContainer:createTextField(rect, text)
+---@type fun(rect:Rect, text:string):TextField
+UIContainer.createTextField = function (rect, text)
 	return TextField()
 end
 
 ---@param rect Rect
-function UIContainer:createTree(rect)
+---@type fun(rect:Rect):Tree
+UIContainer.createTree = function (rect)
 	return Tree()
 end
 
 ---@param rect Rect
 ---@param onSelectedFunction string
-function UIContainer:createValueComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ValueComboBox
+UIContainer.createValueComboBox = function (rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 ---@param rect Rect
-function UIContainer:createWindow(rect)
+---@type fun(rect:Rect):Window
+UIContainer.createWindow = function (rect)
 	return Window()
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function UIContainer:hide()
+---@type fun():any
+UIContainer.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function UIContainer:show()
+---@type fun():any
+UIContainer.show = function ()
 	return nil
 end
 

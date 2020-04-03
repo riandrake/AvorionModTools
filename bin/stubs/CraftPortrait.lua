@@ -29,13 +29,15 @@ setmetatable(CraftPortrait, {__call = function(self, index) return CraftPortrait
 
 -- Inherited from UIElement
 -- @return nothing
-function CraftPortrait:hide()
+---@type fun():any
+CraftPortrait.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function CraftPortrait:show()
+---@type fun():any
+CraftPortrait.show = function ()
 	return nil
 end
 

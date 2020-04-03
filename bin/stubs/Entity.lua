@@ -84,7 +84,8 @@ setmetatable(Entity, {__call = function(self, id) return Entity end})
 -- @return key that can be used to access the multiplier
 ---@param type int
 ---@param value float
-function Entity:addAbsoluteBias(type, value)
+---@type fun(type:number, value:number):any
+Entity.addAbsoluteBias = function (type, value)
 	return nil
 end
 
@@ -94,7 +95,8 @@ end
 -- @return key that can be used to access the multiplier
 ---@param type int
 ---@param factor float
-function Entity:addBaseMultiplier(type, factor)
+---@type fun(type:number, factor:number):any
+Entity.addBaseMultiplier = function (type, factor)
 	return nil
 end
 
@@ -104,14 +106,16 @@ end
 -- @return nothing
 ---@param good TradingGood
 ---@param amount int
-function Entity:addCargo(good, amount)
+---@type fun(good:TradingGood, amount:number):any
+Entity.addCargo = function (good, amount)
 	return nil
 end
 
 -- @return nothing
 ---@param number int
 ---@param crewman CrewMan
-function Entity:addCrew(number, crewman)
+---@type fun(number:number, crewman:CrewMan):any
+Entity.addCrew = function (number, crewman)
 	return nil
 end
 
@@ -123,7 +127,8 @@ end
 ---@param type int
 ---@param key int
 ---@param value float
-function Entity:addKeyedAbsoluteBias(type, key, value)
+---@type fun(type:number, key:number, value:number):any
+Entity.addKeyedAbsoluteBias = function (type, key, value)
 	return nil
 end
 
@@ -135,7 +140,8 @@ end
 ---@param type int
 ---@param key int
 ---@param value float
-function Entity:addKeyedBaseMultiplier(type, key, value)
+---@type fun(type:number, key:number, value:number):any
+Entity.addKeyedBaseMultiplier = function (type, key, value)
 	return nil
 end
 
@@ -147,7 +153,8 @@ end
 ---@param type int
 ---@param key int
 ---@param value float
-function Entity:addKeyedMultiplier(type, key, value)
+---@type fun(type:number, key:number, value:number):any
+Entity.addKeyedMultiplier = function (type, key, value)
 	return nil
 end
 
@@ -159,7 +166,8 @@ end
 ---@param type int
 ---@param key int
 ---@param value float
-function Entity:addKeyedMultiplyableBias(type, key, value)
+---@type fun(type:number, key:number, value:number):any
+Entity.addKeyedMultiplyableBias = function (type, key, value)
 	return nil
 end
 
@@ -169,7 +177,8 @@ end
 -- @return key that can be used to access the multiplier
 ---@param type int
 ---@param factor float
-function Entity:addMultiplier(type, factor)
+---@type fun(type:number, factor:number):any
+Entity.addMultiplier = function (type, factor)
 	return nil
 end
 
@@ -179,7 +188,8 @@ end
 -- @return key that can be used to access the multiplier
 ---@param type int
 ---@param value float
-function Entity:addMultiplyableBias(type, value)
+---@type fun(type:number, value:number):any
+Entity.addMultiplyableBias = function (type, value)
 	return nil
 end
 
@@ -189,24 +199,28 @@ end
 -- @return 0 on success, 1 if the entity could not be found
 ---@param scriptPath string
 ---@param arguments var...
-function Entity:addScript(scriptPath, arguments)
+---@type fun(scriptPath:string, arguments:table<number,var>):any
+Entity.addScript = function (scriptPath, arguments)
 	return nil
 end
 
-function Entity:addScriptOnce()
+---@type fun():any
+Entity.addScriptOnce = function ()
 	return nil
 end
 
 ---@param turret TurretTemplate
 ---@param position Matrix
 ---@param part int
-function Entity:addTurret(turret, position, part)
+---@type fun(turret:TurretTemplate, position:Matrix, part:number):Uuid
+Entity.addTurret = function (turret, position, part)
 	return 0
 end
 
 -- @return nothing
 ---@param time float
-function Entity:blockHyperspace(time)
+---@type fun(time:number):any
+Entity.blockHyperspace = function (time)
 	return nil
 end
 
@@ -216,21 +230,24 @@ end
 -- @return The amount of functions registered to the callback
 ---@param callbackName string
 ---@param functionName var
-function Entity:callbacksRegistered(callbackName, functionName)
+---@type fun(callbackName:string, functionName:any):number
+Entity.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 ---@param number int
 ---@param profession int
 ---@param change bool
-function Entity:canAddCrew(number, profession, change)
+---@type fun(number:number, profession:number, change:boolean):any, any, table<number, string>
+Entity.canAddCrew = function (number, profession, change)
 	return nil, nil, {0, ""}
 end
 
 -- @return nothing
 ---@param number int
 ---@param profession int
-function Entity:changeCrew(number, profession)
+---@type fun(number:number, profession:number):any
+Entity.changeCrew = function (number, profession)
 	return nil
 end
 
@@ -238,18 +255,21 @@ end
 -- @param delta - Returns
 -- @param nothing
 ---@param delta double
-function Entity:changeShield(delta)
+---@type fun(delta:number):any
+Entity.changeShield = function (delta)
 	return nil
 end
 
 -- @return nothing
-function Entity:clearCargoBay()
+---@type fun():any
+Entity.clearCargoBay = function ()
 	return nil
 end
 
 -- Removes all custom values of the object
 -- @return nothing
-function Entity:clearValues()
+---@type fun():any
+Entity.clearValues = function ()
 	return nil
 end
 
@@ -262,7 +282,8 @@ end
 ---@param inflictorId Uuid
 ---@param damageSource var
 ---@param damageType var
-function Entity:damageShield(amount, location, inflictorId, damageSource, damageType)
+---@type fun(amount:number, location:vec3, inflictorId:Uuid, damageSource:any, damageType:any):any
+Entity.damageShield = function (amount, location, inflictorId, damageSource, damageType)
 	return nil
 end
 
@@ -274,7 +295,8 @@ end
 ---@param inflictorId Uuid
 ---@param damageSource var
 ---@param damageType var
-function Entity:destroy(inflictorId, damageSource, damageType)
+---@type fun(inflictorId:Uuid, damageSource:any, damageType:any):any
+Entity.destroy = function (inflictorId, damageSource, damageType)
 	return nil
 end
 
@@ -286,7 +308,8 @@ end
 ---@param index int
 ---@param inflictorId Uuid
 ---@param damageSource var
-function Entity:destroyBlock(index, inflictorId, damageSource)
+---@type fun(index:number, inflictorId:Uuid, damageSource:any):any
+Entity.destroyBlock = function (index, inflictorId, damageSource)
 	return nil
 end
 
@@ -294,13 +317,15 @@ end
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
 ---@param volume float
-function Entity:destroyCargo(volume)
+---@type fun(volume:number):any
+Entity.destroyCargo = function (volume)
 	return nil
 end
 
 -- @return nothing
 ---@param time float
-function Entity:distortHyperspace(time)
+---@type fun(time:number):any
+Entity.distortHyperspace = function (time)
 	return nil
 end
 
@@ -308,33 +333,40 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 ---@param name string
-function Entity:findCargos(name)
+---@type fun(name:string):table<TradingGood, number>
+Entity.findCargos = function (name)
 	return {TradingGood(), 0}
 end
 
 ---@param seat int
-function Entity:getAimedPositionBySeat(seat)
+---@type fun(seat:number):vec3
+Entity.getAimedPositionBySeat = function (seat)
 	return vec3()
 end
 
-function Entity:getAimedPositions()
+---@type fun():vec3
+Entity.getAimedPositions = function ()
 	return vec3()
 end
 
-function Entity:getAllowedArbitraryTurrets()
+---@type fun():any
+Entity.getAllowedArbitraryTurrets = function ()
 	return nil
 end
 
-function Entity:getAllowedArmedTurrets()
+---@type fun():any
+Entity.getAllowedArmedTurrets = function ()
 	return nil
 end
 
-function Entity:getAllowedUnarmedTurrets()
+---@type fun():any
+Entity.getAllowedUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the Index of the block that the turret is build on
-function Entity:getAttachedBlockIndex()
+---@type fun():any
+Entity.getAttachedBlockIndex = function ()
 	return nil
 end
 
@@ -343,22 +375,26 @@ end
 -- @param value - the value, that might be changed by bonuses
 ---@param type int
 ---@param value float
-function Entity:getBoostedValue(type, value)
+---@type fun(type:number, value:number):any
+Entity.getBoostedValue = function (type, value)
 	return nil
 end
 
 -- Returns Bounding Box for entity, use this if you need exact Bounding Box, e.g. for collision detection when entities are close to each other.
-function Entity:getBoundingBox()
+---@type fun():Box
+Entity.getBoundingBox = function ()
 	return Box()
 end
 
 -- Returns Bounding Sphere for entity. Much faster than Bounding Box, but not as accurate. Use this if you need to check often.
-function Entity:getBoundingSphere()
+---@type fun():Sphere
+Entity.getBoundingSphere = function ()
 	return Sphere()
 end
 
 ---@param n unsigned
-function Entity:getCargo(n)
+---@type fun(n:number:unsigned):TradingGood, number
+Entity.getCargo = function (n)
 	return TradingGood(), 0
 end
 
@@ -366,167 +402,202 @@ end
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
 ---@param name var
-function Entity:getCargoAmount(name)
+---@type fun(name:any):any
+Entity.getCargoAmount = function (name)
 	return nil
 end
 
-function Entity:getCargos()
+---@type fun():table<TradingGood, number>
+Entity.getCargos = function ()
 	return {TradingGood(), 0}
 end
 
 ---@param profession int
-function Entity:getCrewMembers(profession)
+---@type fun(profession:number):any
+Entity.getCrewMembers = function (profession)
 	return nil
 end
 
 -- Lists all players and alliances that contributed damage to the entity
 -- @return Indices of all players and alliances that contributed damage to the entity
-function Entity:getDamageContributorPlayerFactions()
+---@type fun():number
+Entity.getDamageContributorPlayerFactions = function ()
 	return 0
 end
 
 -- Lists all players that contributed damage to the entity
 -- @return Indices of all players that contributed damage to the entity
-function Entity:getDamageContributorPlayers()
+---@type fun():number
+Entity.getDamageContributorPlayers = function ()
 	return 0
 end
 
 -- Lists all factions that contributed damage to the entity
 -- @return Indices of all factions that contributed damage to the entity
-function Entity:getDamageContributors()
+---@type fun():number
+Entity.getDamageContributors = function ()
 	return 0
 end
 
 -- Lists all docking positions that the entity has
 -- @return A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock.
-function Entity:getDockingPositions()
+---@type fun():vec3
+Entity.getDockingPositions = function ()
 	return vec3()
 end
 
-function Entity:getFreeArbitraryTurrets()
+---@type fun():any
+Entity.getFreeArbitraryTurrets = function ()
 	return nil
 end
 
-function Entity:getFreeArmedTurrets()
+---@type fun():any
+Entity.getFreeArmedTurrets = function ()
 	return nil
 end
 
-function Entity:getFreeUnarmedTurrets()
+---@type fun():any
+Entity.getFreeUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
-function Entity:getFullPlanCopy()
+---@type fun():BlockPlan
+Entity.getFullPlanCopy = function ()
 	return BlockPlan()
 end
 
-function Entity:getLowestMineableMaterial()
+---@type fun():Material
+Entity.getLowestMineableMaterial = function ()
 	return Material()
 end
 
-function Entity:getMalusFactor()
+---@type fun():any, any
+Entity.getMalusFactor = function ()
 	return nil, nil
 end
 
-function Entity:getMineableMaterial()
+---@type fun():Material
+Entity.getMineableMaterial = function ()
 	return Material()
 end
 
-function Entity:getMineableResources()
+---@type fun():number
+Entity.getMineableResources = function ()
 	return 0
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks.
 -- @return The plan of the entity
-function Entity:getMovePlan()
+---@type fun():BlockPlan
+Entity.getMovePlan = function ()
 	return BlockPlan()
 end
 
 ---@param other Entity
-function Entity:getNearestDistance(other)
+---@type fun(other:Entity):any
+Entity.getNearestDistance = function (other)
 	return nil
 end
 
-function Entity:getNumArmedTurrets()
+---@type fun():any
+Entity.getNumArmedTurrets = function ()
 	return nil
 end
 
-function Entity:getNumUnarmedTurrets()
+---@type fun():any
+Entity.getNumUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns Indices of piloting players
 -- @return multiple return values: indices of players
-function Entity:getPilotIndices()
+---@type fun():number
+Entity.getPilotIndices = function ()
 	return 0
 end
 
-function Entity:getPlanMoneyValue()
+---@type fun():any
+Entity.getPlanMoneyValue = function ()
 	return nil
 end
 
-function Entity:getPlanResourceValue()
+---@type fun():number
+Entity.getPlanResourceValue = function ()
 	return 0.0
 end
 
 ---@param radius float
-function Entity:getRandomDockingPosition(radius)
+---@type fun(radius:number):vec3
+Entity.getRandomDockingPosition = function (radius)
 	return vec3()
 end
 
-function Entity:getScripts()
+---@type fun():table<number, string>
+Entity.getScripts = function ()
 	return {0, ""}
 end
 
 -- Retrieves the arguments to a title
-function Entity:getTitleArguments()
+---@type fun():table<string, string>
+Entity.getTitleArguments = function ()
 	return {"", ""}
 end
 
 -- Retrieves the title as NamedFormat
-function Entity:getTitleFormat()
+---@type fun():NamedFormat
+Entity.getTitleFormat = function ()
 	return NamedFormat()
 end
 
 ---@param index int
-function Entity:getTurret(index)
+---@type fun(index:number):Entity
+Entity.getTurret = function (index)
 	return Entity()
 end
 
 ---@param turret TurretTemplate
 ---@param number int
-function Entity:getTurretPositions(turret, number)
+---@type fun(turret:TurretTemplate, number:number):Matrix, number
+Entity.getTurretPositions = function (turret, number)
 	return Matrix(), 0
 end
 
 ---@param turret TurretTemplate
 ---@param number int
-function Entity:getTurretPositionsLineOfSight(turret, number)
+---@type fun(turret:TurretTemplate, number:number):Matrix, number
+Entity.getTurretPositionsLineOfSight = function (turret, number)
 	return Matrix(), 0
 end
 
-function Entity:getTurrets()
+---@type fun():Entity
+Entity.getTurrets = function ()
 	return Entity()
 end
 
-function Entity:getTurretSize()
+---@type fun():any
+Entity.getTurretSize = function ()
 	return nil
 end
 
-function Entity:getTurretTemplateSize()
+---@type fun():any
+Entity.getTurretTemplateSize = function ()
 	return nil
 end
 
-function Entity:getTurretTurningSpeed()
+---@type fun():any
+Entity.getTurretTurningSpeed = function ()
 	return nil
 end
 
-function Entity:getUndamagedPlanMoneyValue()
+---@type fun():any
+Entity.getUndamagedPlanMoneyValue = function ()
 	return nil
 end
 
-function Entity:getUndamagedPlanResourceValue()
+---@type fun():number
+Entity.getUndamagedPlanResourceValue = function ()
 	return 0.0
 end
 
@@ -534,27 +605,32 @@ end
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
-function Entity:getValue(key)
+---@type fun(key:string):any
+Entity.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
-function Entity:getValues()
+---@type fun():table<string, any>
+Entity.getValues = function ()
 	return {"", nil}
 end
 
-function Entity:getWormholeComponent()
+---@type fun():WormHole
+Entity.getWormholeComponent = function ()
 	return WormHole()
 end
 
 ---@param type int
-function Entity:hasComponent(type)
+---@type fun(type:number):boolean
+Entity.hasComponent = function (type)
 	return true
 end
 
 ---@param name string
-function Entity:hasScript(name)
+---@type fun(name:string):any
+Entity.hasScript = function (name)
 	return nil
 end
 
@@ -568,7 +644,8 @@ end
 ---@param index int
 ---@param location vec3
 ---@param inflictorID Uuid
-function Entity:heal(damage, index, location, inflictorID)
+---@type fun(damage:number, index:number, location:vec3, inflictorID:Uuid):any
+Entity.heal = function (damage, index, location, inflictorID)
 	return nil
 end
 
@@ -576,11 +653,13 @@ end
 -- @param delta - Returns
 -- @param nothing
 ---@param delta double
-function Entity:healShield(delta)
+---@type fun(delta:number):any
+Entity.healShield = function (delta)
 	return nil
 end
 
-function Entity:hyperspaceBlocked()
+---@type fun():any
+Entity.hyperspaceBlocked = function ()
 	return nil
 end
 
@@ -598,7 +677,8 @@ end
 ---@param index int
 ---@param location vec3
 ---@param inflictorId Uuid
-function Entity:inflictDamage(damage, damageSource, damageType, index, location, inflictorId)
+---@type fun(damage:number, damageSource:any, damageType:any, index:number, location:vec3, inflictorId:Uuid):any
+Entity.inflictDamage = function (damage, damageSource, damageType, index, location, inflictorId)
 	return nil
 end
 
@@ -610,22 +690,26 @@ end
 ---@param scriptName var
 ---@param functionName string
 ---@param arguments var...
-function Entity:invokeFunction(scriptName, functionName, arguments)
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Entity.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
 ---@param entity Entity
-function Entity:isCollectable(entity)
+---@type fun(entity:Entity):any
+Entity.isCollectable = function (entity)
 	return nil
 end
 
 ---@param other Entity
-function Entity:isDocked(other)
+---@type fun(other:Entity):boolean
+Entity.isDocked = function (other)
 	return true
 end
 
 ---@param point vec3
-function Entity:isInsideShield(point)
+---@type fun(point:vec3):any
+Entity.isInsideShield = function (point)
 	return nil
 end
 
@@ -633,18 +717,21 @@ end
 ---@param fromY int
 ---@param toX int
 ---@param toY int
-function Entity:isJumpRouteValid(fromX, fromY, toX, toY)
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean, any
+Entity.isJumpRouteValid = function (fromX, fromY, toX, toY)
 	return true, nil
 end
 
-function Entity:isManned()
+---@type fun():any
+Entity.isManned = function ()
 	return nil
 end
 
 -- Tests if the maximum number of turrets of this kind is not reached
 -- @param ScriptTurretTemplate - the template of the turret to be placed
 ---@param ScriptTurretTemplate TurretTemplate
-function Entity:isTurretAllowed(ScriptTurretTemplate)
+---@type fun(ScriptTurretTemplate:TurretTemplate):any
+Entity.isTurretAllowed = function (ScriptTurretTemplate)
 	return nil
 end
 
@@ -654,14 +741,16 @@ end
 -- @return Returns an error code: -1 The entity doesn't have a hyperspace drive. 0 The entity can jump. 1 The hyperspace drive needs to recharge. 2 The target sector is too far away. 3 The entity is facing the wrong direction. 4 The hyperspace drive is being jammed.
 ---@param x int
 ---@param y int
-function Entity:jumpPossible(x, y)
+---@type fun(x:number, y:number):number
+Entity.jumpPossible = function (x, y)
 	return 0
 end
 
 -- Teleports entity by vector
 -- @return nothing
 ---@param delta vec3
-function Entity:moveBy(delta)
+---@type fun(delta:vec3):any
+Entity.moveBy = function (delta)
 	return nil
 end
 
@@ -671,7 +760,8 @@ end
 -- @return 0 on success, 1 if the registration failed
 ---@param callbackName string
 ---@param functionName string
-function Entity:registerCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):number
+Entity.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
@@ -679,7 +769,8 @@ end
 -- @param key - Location of the bonus
 -- @return nothing
 ---@param key int
-function Entity:removeBonus(key)
+---@type fun(key:number):any
+Entity.removeBonus = function (key)
 	return nil
 end
 
@@ -689,29 +780,34 @@ end
 -- @return nothing
 ---@param good var
 ---@param amount int
-function Entity:removeCargo(good, amount)
+---@type fun(good:any, amount:number):any
+Entity.removeCargo = function (good, amount)
 	return nil
 end
 
 -- @return nothing
 ---@param number int
 ---@param crewman CrewMan
-function Entity:removeCrew(number, crewman)
+---@type fun(number:number, crewman:CrewMan):any
+Entity.removeCrew = function (number, crewman)
 	return nil
 end
 
 -- @return nothing
 ---@param script var
-function Entity:removeScript(script)
+---@type fun(script:any):any
+Entity.removeScript = function (script)
 	return nil
 end
 
 ---@param path string
-function Entity:resolveScriptPath(path)
+---@type fun(path:string):any
+Entity.resolveScriptPath = function (path)
 	return nil
 end
 
-function Entity:sendCallback()
+---@type fun():boolean
+Entity.sendCallback = function ()
 	return true
 end
 
@@ -719,33 +815,38 @@ end
 -- @param bool - Returns
 -- @param nothing
 ---@param bool bool
-function Entity:setAccumulatingBlockHealth(bool)
+---@type fun(bool:boolean):any
+Entity.setAccumulatingBlockHealth = function (bool)
 	return nil
 end
 
 -- @return nothing
 ---@param seat int
 ---@param in vec3
-function Entity:setAimedPosition(seat, _in)
+---@type fun(seat:number, in:vec3):any
+Entity.setAimedPosition = function (seat, _in)
 	return nil
 end
 
 -- @return nothing
 ---@param in int
-function Entity:setAttachedBlockIndex(_in)
+---@type fun(in:number):any
+Entity.setAttachedBlockIndex = function (_in)
 	return nil
 end
 
 -- @return nothing
 ---@param in float
 ---@param reason int
-function Entity:setMalusFactor(_in, reason)
+---@type fun(in:number, reason:number):any
+Entity.setMalusFactor = function (_in, reason)
 	return nil
 end
 
 -- @return nothing
 ---@param in bool
-function Entity:setManned(_in)
+---@type fun(in:boolean):any
+Entity.setManned = function (_in)
 	return nil
 end
 
@@ -753,7 +854,8 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
-function Entity:setMovePlan(plan)
+---@type fun(plan:BlockPlan):any
+Entity.setMovePlan = function (plan)
 	return nil
 end
 
@@ -761,7 +863,8 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
-function Entity:setPlan(plan)
+---@type fun(plan:BlockPlan):any
+Entity.setPlan = function (plan)
 	return nil
 end
 
@@ -769,7 +872,8 @@ end
 -- @param title - a string that will be used as title, can be a format string for easier translation.
 ---@param title string
 ---@param arguments string_pair...
-function Entity:setTitle(title, arguments)
+---@type fun(title:string, arguments:table<number,string_pair>):any
+Entity.setTitle = function (title, arguments)
 	return nil
 end
 
@@ -777,19 +881,22 @@ end
 -- @param arguments - Set the string arguments as vector of string_pair.
 -- @return nothing
 ---@param arguments string_pair...
-function Entity:setTitleArguments(arguments)
+---@type fun(arguments:table<number,string_pair>):any
+Entity.setTitleArguments = function (arguments)
 	return nil
 end
 
 -- @return nothing
 ---@param in float
-function Entity:setTurretSize(_in)
+---@type fun(in:number):any
+Entity.setTurretSize = function (_in)
 	return nil
 end
 
 -- @return nothing
 ---@param in float
-function Entity:setTurretTurningSpeed(_in)
+---@type fun(in:number):any
+Entity.setTurretTurningSpeed = function (_in)
 	return nil
 end
 
@@ -799,7 +906,8 @@ end
 -- @return nothing
 ---@param key string
 ---@param value var
-function Entity:setValue(key, value)
+---@type fun(key:string, value:any):any
+Entity.setValue = function (key, value)
 	return nil
 end
 
@@ -807,19 +915,22 @@ end
 -- @param location - the location to fly to (in global coordinates) Paired with setting desiredVelocity to 0, this can be used to rotate the ship to a given direction.
 -- @return nothing
 ---@param location vec3
-function Entity:singleFlyToLocationTick(location)
+---@type fun(location:vec3):any
+Entity.singleFlyToLocationTick = function (location)
 	return nil
 end
 
 ---@param callbackName string
 ---@param functionName string
-function Entity:unregisterCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):number
+Entity.unregisterCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
 ---@param time var
-function Entity:waitUntilAsyncWorkFinished(time)
+---@type fun(time:any):any
+Entity.waitUntilAsyncWorkFinished = function (time)
 	return nil
 end
 

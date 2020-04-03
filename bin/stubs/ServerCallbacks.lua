@@ -7,14 +7,16 @@ setmetatable(Server, {__call = function(self, playerIndex, text, channel) return
 -- @callback
 -- Executed whenever a player was logged in
 -- @param playerIndex - The index of the player who logged in
-function Server:onPlayerLogIn(playerIndex)
+---@type fun(playerIndex)
+Server.onPlayerLogIn = function (playerIndex)
 	return nil
 end
 
 -- @callback
 -- Executed whenever a player was logged off
 -- @param playerIndex - The index of the player who logged off
-function Server:onPlayerLogOff(playerIndex)
+---@type fun(playerIndex)
+Server.onPlayerLogOff = function (playerIndex)
 	return nil
 end
 

@@ -9,13 +9,15 @@ FighterController = {
 setmetatable(FighterController, {__call = function(self, id) return FighterController end})
 
 ---@param squad var
-function FighterController:getDeployedFighters(squad)
+---@type fun(squad:any):Entity
+FighterController.getDeployedFighters = function (squad)
 	return Entity()
 end
 
 ---@param squadIndex unsigned
 ---@param fighterIndex var
-function FighterController:getFighterStartError(squadIndex, fighterIndex)
+---@type fun(squadIndex:number:unsigned, fighterIndex:any):any
+FighterController.getFighterStartError = function (squadIndex, fighterIndex)
 	return nil
 end
 
@@ -23,12 +25,14 @@ end
 -- @param type - The type of fighter
 -- @return A copy of the first fighter found to match the type, without plan
 ---@param type FighterType
-function FighterController:getFighterStatsOfType(type)
+---@type fun(type:FighterType):FighterTemplate
+FighterController.getFighterStatsOfType = function (type)
 	return FighterTemplate()
 end
 
 ---@param type FighterType
-function FighterController:getFighterTypeStartError(type)
+---@type fun(type:FighterType):any
+FighterController.getFighterTypeStartError = function (type)
 	return nil
 end
 
@@ -36,18 +40,21 @@ end
 ---@param squad unsigned
 ---@param orders FighterOrders
 ---@param targetId Uuid
-function FighterController:setSquadOrders(squad, orders, targetId)
+---@type fun(squad:number:unsigned, orders:FighterOrders, targetId:Uuid):any
+FighterController.setSquadOrders = function (squad, orders, targetId)
 	return nil
 end
 
 ---@param squadIndex unsigned
 ---@param fighterIndex var
-function FighterController:startFighter(squadIndex, fighterIndex)
+---@type fun(squadIndex:number:unsigned, fighterIndex:any):Entity, number
+FighterController.startFighter = function (squadIndex, fighterIndex)
 	return Entity(), 0
 end
 
 ---@param type FighterType
-function FighterController:startFighterOfType(type)
+---@type fun(type:FighterType):Entity, number
+FighterController.startFighterOfType = function (type)
 	return Entity(), 0
 end
 

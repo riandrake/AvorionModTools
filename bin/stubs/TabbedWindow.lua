@@ -24,75 +24,88 @@ TabbedWindow = {
 setmetatable(TabbedWindow, {__call = function(self, index) return TabbedWindow end})
 
 -- @return nothing
-function TabbedWindow:activateAllTabs()
+---@type fun():any
+TabbedWindow.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
-function TabbedWindow:activateTab(tab)
+---@type fun(tab:Tab):any
+TabbedWindow.activateTab = function (tab)
 	return nil
 end
 
 ---@param name string
 ---@param icon string
 ---@param description string
-function TabbedWindow:createTab(name, icon, description)
+---@type fun(name:string, icon:string, description:string):Tab
+TabbedWindow.createTab = function (name, icon, description)
 	return Tab()
 end
 
 -- @return nothing
 ---@param tab Tab
-function TabbedWindow:deactivateTab(tab)
+---@type fun(tab:Tab):any
+TabbedWindow.deactivateTab = function (tab)
 	return nil
 end
 
-function TabbedWindow:getActiveTab()
+---@type fun():Tab
+TabbedWindow.getActiveTab = function ()
 	return Tab()
 end
 
 ---@param name string
-function TabbedWindow:getTab(name)
+---@type fun(name:string):Tab
+TabbedWindow.getTab = function (name)
 	return Tab()
 end
 
 -- @return nothing
-function TabbedWindow:hide()
+---@type fun():any
+TabbedWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
 ---@param pos int
-function TabbedWindow:moveTabToPosition(tab, pos)
+---@type fun(tab:Tab, pos:number):any
+TabbedWindow.moveTabToPosition = function (tab, pos)
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
-function TabbedWindow:moveTabToTheRight(tab)
+---@type fun(tab:Tab):any
+TabbedWindow.moveTabToTheRight = function (tab)
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
-function TabbedWindow:selectTab(tab)
+---@type fun(tab:Tab):any
+TabbedWindow.selectTab = function (tab)
 	return nil
 end
 
 -- @return nothing
-function TabbedWindow:show()
+---@type fun():any
+TabbedWindow.show = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
 -- @return nothing
-function TabbedWindow:clear()
+---@type fun():any
+TabbedWindow.clear = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
-function TabbedWindow:createArrowLine()
+---@type fun():ArrowLine
+TabbedWindow.createArrowLine = function ()
 	return ArrowLine()
 end
 
@@ -100,7 +113,8 @@ end
 ---@param rect Rect
 ---@param caption string
 ---@param function string
-function TabbedWindow:createButton(rect, caption, _function)
+---@type fun(rect:Rect, caption:string, function:string):Button
+TabbedWindow.createButton = function (rect, caption, _function)
 	return Button()
 end
 
@@ -108,44 +122,51 @@ end
 ---@param rect Rect
 ---@param caption string
 ---@param onCheckedFunction string
-function TabbedWindow:createCheckBox(rect, caption, onCheckedFunction)
+---@type fun(rect:Rect, caption:string, onCheckedFunction:string):CheckBox
+TabbedWindow.createCheckBox = function (rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onSelectedFunction string
-function TabbedWindow:createComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ComboBox
+TabbedWindow.createComboBox = function (rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createContainer(rect)
+---@type fun(rect:Rect):UIContainer
+TabbedWindow.createContainer = function (rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createCraftPortrait(rect)
+---@type fun(rect:Rect):CraftPortrait
+TabbedWindow.createCraftPortrait = function (rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createFrame(rect)
+---@type fun(rect:Rect):Frame
+TabbedWindow.createFrame = function (rect)
 	return Frame()
 end
 
 -- Inherited from UIContainer
-function TabbedWindow:createInputWindow()
+---@type fun():InputWindow
+TabbedWindow.createInputWindow = function ()
 	return InputWindow()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function TabbedWindow:createInventorySelection(rect, width)
+---@type fun(rect:Rect, width:number):InventorySelection
+TabbedWindow.createInventorySelection = function (rect, width)
 	return InventorySelection()
 end
 
@@ -153,70 +174,81 @@ end
 ---@param position var
 ---@param caption string
 ---@param fontSize int
-function TabbedWindow:createLabel(position, caption, fontSize)
+---@type fun(position:any, caption:string, fontSize:number):Label
+TabbedWindow.createLabel = function (position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
 ---@param a vec2
 ---@param b vec2
-function TabbedWindow:createLine(a, b)
+---@type fun(a:vec2, b:vec2):Line
+TabbedWindow.createLine = function (a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createListBox(rect)
+---@type fun(rect:Rect):ListBox
+TabbedWindow.createListBox = function (rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createListBoxEx(rect)
+---@type fun(rect:Rect):ListBoxEx
+TabbedWindow.createListBoxEx = function (rect)
 	return ListBoxEx()
 end
 
 -- Inherited from UIContainer
-function TabbedWindow:createMapArrowLine()
+---@type fun():MapArrowLine
+TabbedWindow.createMapArrowLine = function ()
 	return MapArrowLine()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createMultiLineTextBox(rect)
+---@type fun(rect:Rect):MultiLineTextBox
+TabbedWindow.createMultiLineTextBox = function (rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createNumbersBar(rect)
+---@type fun(rect:Rect):NumbersBar
+TabbedWindow.createNumbersBar = function (rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param path string
-function TabbedWindow:createPicture(rect, path)
+---@type fun(rect:Rect, path:string):Picture
+TabbedWindow.createPicture = function (rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createPlanDisplayer(rect)
+---@type fun(rect:Rect):PlanDisplayer
+TabbedWindow.createPlanDisplayer = function (rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function TabbedWindow:createProgressBar(rect, color)
+---@type fun(rect:Rect, color:Color):ProgressBar
+TabbedWindow.createProgressBar = function (rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function TabbedWindow:createRect(rect, color)
+---@type fun(rect:Rect, color:Color):UIRect
+TabbedWindow.createRect = function (rect, color)
 	return UIRect()
 end
 
@@ -224,27 +256,31 @@ end
 ---@param rect Rect
 ---@param icon string
 ---@param function string
-function TabbedWindow:createRoundButton(rect, icon, _function)
+---@type fun(rect:Rect, icon:string, function:string):Button
+TabbedWindow.createRoundButton = function (rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function TabbedWindow:createSavedDesignsSelection(rect, width)
+---@type fun(rect:Rect, width:number):SavedDesignsSelection
+TabbedWindow.createSavedDesignsSelection = function (rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createScrollFrame(rect)
+---@type fun(rect:Rect):ScrollFrame
+TabbedWindow.createScrollFrame = function (rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param width int
-function TabbedWindow:createSelection(rect, width)
+---@type fun(rect:Rect, width:number):Selection
+TabbedWindow.createSelection = function (rect, width)
 	return Selection()
 end
 
@@ -255,65 +291,75 @@ end
 ---@param steps int
 ---@param caption string
 ---@param onValueChangedFunction string
-function TabbedWindow:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
+---@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string):Slider
+TabbedWindow.createSlider = function (rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param color Color
-function TabbedWindow:createStatisticsBar(rect, color)
+---@type fun(rect:Rect, color:Color):StatisticsBar
+TabbedWindow.createStatisticsBar = function (rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createTabbedWindow(rect)
+---@type fun(rect:Rect):TabbedWindow
+TabbedWindow.createTabbedWindow = function (rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onTextChangedFunction string
-function TabbedWindow:createTextBox(rect, onTextChangedFunction)
+---@type fun(rect:Rect, onTextChangedFunction:string):TextBox
+TabbedWindow.createTextBox = function (rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param text string
-function TabbedWindow:createTextField(rect, text)
+---@type fun(rect:Rect, text:string):TextField
+TabbedWindow.createTextField = function (rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createTree(rect)
+---@type fun(rect:Rect):Tree
+TabbedWindow.createTree = function (rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
 ---@param onSelectedFunction string
-function TabbedWindow:createValueComboBox(rect, onSelectedFunction)
+---@type fun(rect:Rect, onSelectedFunction:string):ValueComboBox
+TabbedWindow.createValueComboBox = function (rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
 ---@param rect Rect
-function TabbedWindow:createWindow(rect)
+---@type fun(rect:Rect):Window
+TabbedWindow.createWindow = function (rect)
 	return Window()
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function TabbedWindow:hide()
+---@type fun():any
+TabbedWindow.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function TabbedWindow:show()
+---@type fun():any
+TabbedWindow.show = function ()
 	return nil
 end
 

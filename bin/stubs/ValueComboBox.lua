@@ -32,46 +32,54 @@ setmetatable(ValueComboBox, {__call = function(self, index) return ValueComboBox
 ---@param value var
 ---@param entry string
 ---@param color var
-function ValueComboBox:addEntry(value, entry, color)
+---@type fun(value:any, entry:string, color:any):any
+ValueComboBox.addEntry = function (value, entry, color)
 	return nil
 end
 
 -- @return nothing
-function ValueComboBox:clear()
+---@type fun():any
+ValueComboBox.clear = function ()
 	return nil
 end
 
 ---@param index int
-function ValueComboBox:getEntry(index)
+---@type fun(index:number):string
+ValueComboBox.getEntry = function (index)
 	return ""
 end
 
 ---@param index int
-function ValueComboBox:getValue(index)
+---@type fun(index:number):any
+ValueComboBox.getValue = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param in int
-function ValueComboBox:setSelectedIndexNoCallback(_in)
+---@type fun(in:number):any
+ValueComboBox.setSelectedIndexNoCallback = function (_in)
 	return nil
 end
 
 -- @return nothing
 ---@param value var
-function ValueComboBox:setSelectedValueNoCallback(value)
+---@type fun(value:any):any
+ValueComboBox.setSelectedValueNoCallback = function (value)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ValueComboBox:hide()
+---@type fun():any
+ValueComboBox.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ValueComboBox:show()
+---@type fun():any
+ValueComboBox.show = function ()
 	return nil
 end
 

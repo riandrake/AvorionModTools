@@ -17,100 +17,120 @@ ReadOnlyControlUnit = {
 
 setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
 
-function ReadOnlyControlUnit:getActiveWeapons()
+---@type fun()
+ReadOnlyControlUnit.getActiveWeapons = function ()
 	return 
 end
 
 ---@param seatIndex int
-function ReadOnlyControlUnit:getAimedPositionBySeat(seatIndex)
+---@type fun(seatIndex:number):vec3
+ReadOnlyControlUnit.getAimedPositionBySeat = function (seatIndex)
 	return vec3()
 end
 
 ---@param weaponGroup int
-function ReadOnlyControlUnit:getAimedPositionByWeaponGroup(weaponGroup)
+---@type fun(weaponGroup:number):vec3
+ReadOnlyControlUnit.getAimedPositionByWeaponGroup = function (weaponGroup)
 	return vec3()
 end
 
-function ReadOnlyControlUnit:getAimedPositions()
+---@type fun():vec3
+ReadOnlyControlUnit.getAimedPositions = function ()
 	return vec3()
 end
 
-function ReadOnlyControlUnit:getAllControlActions()
+---@type fun():number
+ReadOnlyControlUnit.getAllControlActions = function ()
 	return 0
 end
 
 ---@param seat int
-function ReadOnlyControlUnit:getControlActions(seat)
+---@type fun(seat:number):number
+ReadOnlyControlUnit.getControlActions = function (seat)
 	return 0
 end
 
 ---@param weaponGroup int
-function ReadOnlyControlUnit:getControlActionsByWeaponGroup(weaponGroup)
+---@type fun(weaponGroup:number):number
+ReadOnlyControlUnit.getControlActionsByWeaponGroup = function (weaponGroup)
 	return 0
 end
 
-function ReadOnlyControlUnit:getFlownToLocation()
+---@type fun():vec3
+ReadOnlyControlUnit.getFlownToLocation = function ()
 	return vec3()
 end
 
 ---@param dot float
 ---@param cross float
-function ReadOnlyControlUnit:getRotationFactor(dot, cross)
+---@type fun(dot:number, cross:number):number
+ReadOnlyControlUnit.getRotationFactor = function (dot, cross)
 	return 0.0
 end
 
 ---@param weaponGroup int
-function ReadOnlyControlUnit:getSeatByWeaponGroup(weaponGroup)
+---@type fun(weaponGroup:number):number
+ReadOnlyControlUnit.getSeatByWeaponGroup = function (weaponGroup)
 	return 0
 end
 
-function ReadOnlyControlUnit:getSeats()
+---@type fun():ControlUnitSeat
+ReadOnlyControlUnit.getSeats = function ()
 	return ControlUnitSeat()
 end
 
 ---@param seat int
-function ReadOnlyControlUnit:getSelectedObject(seat)
+---@type fun(seat:number):Entity
+ReadOnlyControlUnit.getSelectedObject = function (seat)
 	return Entity()
 end
 
 ---@param seat int
-function ReadOnlyControlUnit:getSelectedObjectId(seat)
+---@type fun(seat:number):Uuid
+ReadOnlyControlUnit.getSelectedObjectId = function (seat)
 	return 0
 end
 
-function ReadOnlyControlUnit:getSelectedObjectIds()
+---@type fun():Uuid
+ReadOnlyControlUnit.getSelectedObjectIds = function ()
 	return 0
 end
 
 ---@param seat int
-function ReadOnlyControlUnit:isFiring(seat)
+---@type fun(seat:number):boolean
+ReadOnlyControlUnit.isFiring = function (seat)
 	return true
 end
 
 ---@param seat int
-function ReadOnlyControlUnit:isFiringTorpedoes(seat)
+---@type fun(seat:number):boolean
+ReadOnlyControlUnit.isFiringTorpedoes = function (seat)
 	return true
 end
 
 ---@param playerIndex int
-function ReadOnlyControlUnit:isPlayerAPilot(playerIndex)
+---@type fun(playerIndex:number):boolean
+ReadOnlyControlUnit.isPlayerAPilot = function (playerIndex)
 	return true
 end
 
 ---@param playerIndex int
 ---@param squad int
-function ReadOnlyControlUnit:mayControlSquad(playerIndex, squad)
+---@type fun(playerIndex:number, squad:number):boolean
+ReadOnlyControlUnit.mayControlSquad = function (playerIndex, squad)
 	return true
 end
 
 ---@param playerIndex int
 ---@param group int
-function ReadOnlyControlUnit:mayControlWeaponGroup(playerIndex, group)
+---@type fun(playerIndex:number, group:number):boolean
+ReadOnlyControlUnit.mayControlWeaponGroup = function (playerIndex, group)
 	return true
 end
 
 ---@param playerIndex int
-function ReadOnlyControlUnit:maySteer(playerIndex)
+---@type fun(playerIndex:number):boolean
+ReadOnlyControlUnit.maySteer = function (playerIndex)
 	return true
 end
 
@@ -118,7 +138,8 @@ end
 ---@param axis vec3
 ---@param from vec3
 ---@param to vec3
-function ReadOnlyControlUnit:rotatingNecessary(brake, axis, from, to)
+---@type fun(brake:number, axis:vec3, from:vec3, to:vec3):boolean
+ReadOnlyControlUnit.rotatingNecessary = function (brake, axis, from, to)
 	return true
 end
 

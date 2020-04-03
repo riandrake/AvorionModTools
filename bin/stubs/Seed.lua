@@ -9,45 +9,54 @@ Seed = {
 setmetatable(Seed, {__call = function(self, _in) return Seed end})
 
 ---@param other int
-function Seed:__add(other)
+---@type fun(other:number):Seed
+Seed.__add = function (other)
 	return Seed()
 end
 
 ---@param other int
-function Seed:__div(other)
+---@type fun(other:number):Seed
+Seed.__div = function (other)
 	return Seed()
 end
 
 ---@param other Seed
-function Seed:__eq(other)
+---@type fun(other:Seed):any
+Seed.__eq = function (other)
 	return nil
 end
 
 ---@param other Seed
-function Seed:__le(other)
+---@type fun(other:Seed):any
+Seed.__le = function (other)
 	return nil
 end
 
 ---@param other Seed
-function Seed:__lt(other)
+---@type fun(other:Seed):any
+Seed.__lt = function (other)
 	return nil
 end
 
 ---@param other int
-function Seed:__mul(other)
+---@type fun(other:number):Seed
+Seed.__mul = function (other)
 	return Seed()
 end
 
 ---@param other int
-function Seed:__sub(other)
+---@type fun(other:number):Seed
+Seed.__sub = function (other)
 	return Seed()
 end
 
-function Seed:__tostring()
+---@type fun():string
+Seed.__tostring = function ()
 	return ""
 end
 
-function Seed:__unm()
+---@type fun():Seed
+Seed.__unm = function ()
 	return Seed()
 end
 

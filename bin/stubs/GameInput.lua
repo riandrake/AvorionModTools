@@ -9,51 +9,61 @@ GameInput = {
 setmetatable(GameInput, {__call = function(self) return GameInput end})
 
 ---@param action GameInput::Action
-function GameInput:getActionName(action)
+---@type fun(action:GameInputAction):string
+GameInput.getActionName = function (action)
 	return ""
 end
 
 ---@param action GameInput::Action
 ---@param primary var
-function GameInput:getKeyName(action, primary)
+---@type fun(action:GameInputAction, primary:any):string
+GameInput.getKeyName = function (action, primary)
 	return ""
 end
 
-function GameInput:getMouseSteeringEnabled()
+---@type fun():boolean
+GameInput.getMouseSteeringEnabled = function ()
 	return true
 end
 
-function GameInput:getShowMouse()
-	return true
-end
-
----@param action GameInput::Action
-function GameInput:keyDown(action)
-	return true
-end
-
----@param action GameInput::Action
-function GameInput:keyHeld(action)
+---@type fun():boolean
+GameInput.getShowMouse = function ()
 	return true
 end
 
 ---@param action GameInput::Action
-function GameInput:keyPressed(action)
+---@type fun(action:GameInputAction):boolean
+GameInput.keyDown = function (action)
 	return true
 end
 
 ---@param action GameInput::Action
-function GameInput:keyUp(action)
+---@type fun(action:GameInputAction):boolean
+GameInput.keyHeld = function (action)
 	return true
 end
 
 ---@param action GameInput::Action
-function GameInput:keyUpHeld(action)
+---@type fun(action:GameInputAction):boolean
+GameInput.keyPressed = function (action)
 	return true
 end
 
 ---@param action GameInput::Action
-function GameInput:keyUpNotHeld(action)
+---@type fun(action:GameInputAction):boolean
+GameInput.keyUp = function (action)
+	return true
+end
+
+---@param action GameInput::Action
+---@type fun(action:GameInputAction):boolean
+GameInput.keyUpHeld = function (action)
+	return true
+end
+
+---@param action GameInput::Action
+---@type fun(action:GameInputAction):boolean
+GameInput.keyUpNotHeld = function (action)
 	return true
 end
 

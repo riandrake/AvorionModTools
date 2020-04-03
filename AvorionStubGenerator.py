@@ -28,6 +28,24 @@ DEFAULT_VALUES_BY_TYPE = {
     'uuid': '0',
     'char': '0',
     'Coordinates': '0, 0',
+    'Member': 'AllianceMember()'
+}
+
+RAW_DEFAULT_VALUES_BY_TYPE = {
+    '': '',
+    'bool': 'boolean',
+    'string': 'string',
+    'int': 'number',
+    'unsigned int': 'number',
+    'unsignedint': 'number',
+    'float': 'number',
+    'var': 'any',
+    'double': 'number',
+    'uuid': 'Uuid',
+    'Coordinates': 'number, number',
+    'Member': 'AllianceMember',
+    'string or Format [optional]': 'string|Format',  # These are not fixing the issue
+    'string or Format': 'string|Format'
 }
 
 
@@ -86,6 +104,42 @@ def get_default_value(in_type):
 
     return DEFAULT_VALUES_BY_TYPE[in_type]
 
+def get_raw_default_value(in_type):
+    in_type = in_type.strip()
+
+    if '{' in in_type:
+        between = in_type[1:-1]
+        between_args = [subarg for subarg in split_careful(between) if subarg.strip()]
+        return '{' + ', '.join((get_raw_default_value(arg) for arg in between_args)) + '}'
+
+    # Assume these are enums that need collapsing
+    in_type = in_type.replace('::', '')
+
+    # Fix ... meaning table of type
+    in_type = f'table<number,{in_type}>' if in_type.find('...') > 0 else in_type
+    in_type = in_type.replace('...', '')
+
+    global RAW_DEFAULT_VALUES_BY_TYPE
+    if in_type not in RAW_DEFAULT_VALUES_BY_TYPE:
+
+        for weird in ('=', ' '):
+            if weird in in_type:
+                print(f'Weird type: "{in_type}"')
+                return 'nil'
+
+        #print('New type: ', type)
+        RAW_DEFAULT_VALUES_BY_TYPE[in_type] = in_type
+
+    return RAW_DEFAULT_VALUES_BY_TYPE[in_type]
+
+def flip_args(arg):
+    if ' ' in arg:
+        arg = arg.split()
+        arg.reverse()
+        if len(arg) > 1:
+            arg[1] = get_raw_default_value(arg[1])
+        arg = ':'.join(arg)
+    return arg
 
 class StubGeneratorError(Exception):
     pass
@@ -127,6 +181,7 @@ class ParsedFunction:
     remarks: str
     callback: bool
     return_value: str
+    raw_return_value: str
     arguments: str
     params: str
 
@@ -139,6 +194,12 @@ class ParsedFunction:
         return_value = return_value.replace('>', '}')
 
         return_values = split_careful(return_value)
+
+        raw_return_values = return_values.copy()
+        for idx, type in enumerate(raw_return_values):
+            raw_return_values[idx] = get_raw_default_value(type)
+
+        self.raw_return_value = ', '.join(raw_return_values)
 
         for idx, type in enumerate(return_values):
             return_values[idx] = get_default_value(type)
@@ -186,8 +247,25 @@ class ParsedFunction:
         self.parse_return_value(definition[prefix_len:name_start])
 
         namespace = namespace + ':' if namespace else ''
+
+        param_type = self.raw_return_value
+        param_type = param_type.replace('{', 'table<')
+        param_type = param_type.replace('}', '>')
+
+        param_args = definition[start_bracket + 1:end_bracket]
+        if ',' in param_args:
+            param_args = param_args.split(', ')
+            for idx, arg in enumerate(param_args):
+                param_args[idx] = flip_args(arg)
+            param_args = ', '.join(param_args)
+        else:
+            param_args = flip_args(param_args)
+
+        param_type = f'---@type fun({param_args}){":"+param_type if param_type else ""}\n'
+
         # self.definition = f'{namespace}{self.name} = function({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
-        self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
+        #self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
+        self.definition = param_type + f'{namespace.replace(":",".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """

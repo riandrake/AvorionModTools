@@ -27,13 +27,15 @@ setmetatable(MapArrowLine, {__call = function(self, index) return MapArrowLine e
 
 -- Inherited from UIElement
 -- @return nothing
-function MapArrowLine:hide()
+---@type fun():any
+MapArrowLine.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function MapArrowLine:show()
+---@type fun():any
+MapArrowLine.show = function ()
 	return nil
 end
 

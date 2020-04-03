@@ -28,20 +28,24 @@ setmetatable(Tree, {__call = function(self, index) return Tree end})
 ---@param caption string
 ---@param onSelected var
 ---@param hasContent var
-function Tree:add(parent, caption, onSelected, hasContent)
+---@type fun(parent:any, caption:string, onSelected:any, hasContent:any):number
+Tree.add = function (parent, caption, onSelected, hasContent)
 	return 0
 end
 
 -- @return nothing
-function Tree:clear()
+---@type fun():any
+Tree.clear = function ()
 	return nil
 end
 
-function Tree:selectNext()
+---@type fun():number
+Tree.selectNext = function ()
 	return 0
 end
 
-function Tree:selectPrevious()
+---@type fun():number
+Tree.selectPrevious = function ()
 	return 0
 end
 
@@ -49,19 +53,22 @@ end
 ---@param level int
 ---@param height int
 ---@param fontSize int
-function Tree:setLevelStyle(level, height, fontSize)
+---@type fun(level:number, height:number, fontSize:number):any
+Tree.setLevelStyle = function (level, height, fontSize)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Tree:hide()
+---@type fun():any
+Tree.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Tree:show()
+---@type fun():any
+Tree.show = function ()
 	return nil
 end
 

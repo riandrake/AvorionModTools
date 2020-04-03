@@ -38,70 +38,82 @@ ListBoxEx = {
 setmetatable(ListBoxEx, {__call = function(self, index) return ListBoxEx end})
 
 -- @return nothing
-function ListBoxEx:addRow()
+---@type fun():any
+ListBoxEx.addRow = function ()
 	return nil
 end
 
 -- @return nothing
-function ListBoxEx:clampScrollPosition()
+---@type fun():any
+ListBoxEx.clampScrollPosition = function ()
 	return nil
 end
 
 -- @return nothing
-function ListBoxEx:clear()
+---@type fun():any
+ListBoxEx.clear = function ()
 	return nil
 end
 
 -- @return nothing
-function ListBoxEx:deselect()
+---@type fun():any
+ListBoxEx.deselect = function ()
 	return nil
 end
 
 ---@param index unsigned
-function ListBoxEx:getColumnWidth(index)
+---@type fun(index:number:unsigned):number
+ListBoxEx.getColumnWidth = function (index)
 	return 0
 end
 
 ---@param column unsigned
 ---@param row unsigned
-function ListBoxEx:getEntry(column, row)
+---@type fun(column:number:unsigned, row:number:unsigned):string, boolean, boolean, Color
+ListBoxEx.getEntry = function (column, row)
 	return "", true, true, Color()
 end
 
 -- @return nothing
 ---@param index int
-function ListBoxEx:removeRow(index)
+---@type fun(index:number):any
+ListBoxEx.removeRow = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
-function ListBoxEx:select(index)
+---@type fun(index:number):any
+ListBoxEx.select = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param index int
-function ListBoxEx:selectNoCallback(index)
+---@type fun(index:number):any
+ListBoxEx.selectNoCallback = function (index)
 	return nil
 end
 
 -- @return nothing
 ---@param value var
-function ListBoxEx:selectValue(value)
+---@type fun(value:any):any
+ListBoxEx.selectValue = function (value)
 	return nil
 end
 
 -- @return nothing
 ---@param value var
-function ListBoxEx:selectValueNoCallback(value)
+---@type fun(value:any):any
+ListBoxEx.selectValueNoCallback = function (value)
 	return nil
 end
 
 -- @return nothing
 ---@param index unsigned
 ---@param width int
-function ListBoxEx:setColumnWidth(index, width)
+---@type fun(index:number:unsigned, width:number):any
+ListBoxEx.setColumnWidth = function (index, width)
 	return nil
 end
 
@@ -112,7 +124,8 @@ end
 ---@param bold bool
 ---@param italic bool
 ---@param color Color
-function ListBoxEx:setEntry(column, row, text, bold, italic, color)
+---@type fun(column:number:unsigned, row:number:unsigned, text:string, bold:boolean, italic:boolean, color:Color):any
+ListBoxEx.setEntry = function (column, row, text, bold, italic, color)
 	return nil
 end
 
@@ -120,7 +133,8 @@ end
 ---@param column unsigned
 ---@param row unsigned
 ---@param type int
-function ListBoxEx:setEntryType(column, row, type)
+---@type fun(column:number:unsigned, row:number:unsigned, type:number):any
+ListBoxEx.setEntryType = function (column, row, type)
 	return nil
 end
 
@@ -128,19 +142,22 @@ end
 ---@param column unsigned
 ---@param row unsigned
 ---@param value var
-function ListBoxEx:setEntryValue(column, row, value)
+---@type fun(column:number:unsigned, row:number:unsigned, value:any):any
+ListBoxEx.setEntryValue = function (column, row, value)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ListBoxEx:hide()
+---@type fun():any
+ListBoxEx.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ListBoxEx:show()
+---@type fun():any
+ListBoxEx.show = function ()
 	return nil
 end
 
