@@ -26,11 +26,16 @@ StatisticsBar = {
 setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
 
 -- @return nothing
+---@param minRange float
+---@param maxRange float
 function StatisticsBar:setRange(minRange, maxRange)
 	return nil
 end
 
 -- @return nothing
+---@param value float
+---@param name string
+---@param color Color
 function StatisticsBar:setValue(value, name, color)
 	return nil
 end

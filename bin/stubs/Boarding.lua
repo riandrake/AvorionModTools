@@ -17,6 +17,7 @@ Boarding = {
 setmetatable(Boarding, {__call = function(self, id) return Boarding end})
 
 -- @return nothing
+---@param attackingFaction int
 function Boarding:applyBoardingSuccessful(attackingFaction)
 	return nil
 end

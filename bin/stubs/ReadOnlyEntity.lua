@@ -78,6 +78,9 @@ ReadOnlyEntity = {
 
 setmetatable(ReadOnlyEntity, {__call = function(self, id) return ReadOnlyEntity end})
 
+---@param number int
+---@param profession int
+---@param change bool
 function ReadOnlyEntity:canAddCrew(number, profession, change)
 	return nil, nil, {0, ""}
 end
@@ -85,10 +88,12 @@ end
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
+---@param name string
 function ReadOnlyEntity:findCargos(name)
 	return {TradingGood(), 0}
 end
 
+---@param seat int
 function ReadOnlyEntity:getAimedPositionBySeat(seat)
 	return vec3()
 end
@@ -117,6 +122,8 @@ end
 -- Returns value with included bonus, in case a bonus exists. Returns Nil if no bonuses at all, returns value if no bonuses for this stat exist.
 -- @param type - type of bonus stat, e.g. acceleration, higher level crew
 -- @param value - the value, that might be changed by bonuses
+---@param type int
+---@param value float
 function ReadOnlyEntity:getBoostedValue(type, value)
 	return nil
 end
@@ -131,6 +138,7 @@ function ReadOnlyEntity:getBoundingSphere()
 	return Sphere()
 end
 
+---@param n unsigned
 function ReadOnlyEntity:getCargo(n)
 	return TradingGood(), 0
 end
@@ -138,6 +146,7 @@ end
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
+---@param name var
 function ReadOnlyEntity:getCargoAmount(name)
 	return nil
 end
@@ -146,6 +155,7 @@ function ReadOnlyEntity:getCargos()
 	return {TradingGood(), 0}
 end
 
+---@param profession int
 function ReadOnlyEntity:getCrewMembers(profession)
 	return nil
 end
@@ -208,6 +218,7 @@ function ReadOnlyEntity:getMineableResources()
 	return 0
 end
 
+---@param other Entity
 function ReadOnlyEntity:getNearestDistance(other)
 	return nil
 end
@@ -248,6 +259,7 @@ function ReadOnlyEntity:getTitleFormat()
 	return NamedFormat()
 end
 
+---@param index int
 function ReadOnlyEntity:getTurret(index)
 	return Entity()
 end
@@ -279,6 +291,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function ReadOnlyEntity:getValue(key)
 	return nil
 end
@@ -289,10 +302,12 @@ function ReadOnlyEntity:getValues()
 	return {"", nil}
 end
 
+---@param type int
 function ReadOnlyEntity:hasComponent(type)
 	return true
 end
 
+---@param name string
 function ReadOnlyEntity:hasScript(name)
 	return nil
 end
@@ -301,18 +316,25 @@ function ReadOnlyEntity:hyperspaceBlocked()
 	return nil
 end
 
+---@param entity Entity
 function ReadOnlyEntity:isCollectable(entity)
 	return nil
 end
 
+---@param other Entity
 function ReadOnlyEntity:isDocked(other)
 	return true
 end
 
+---@param point vec3
 function ReadOnlyEntity:isInsideShield(point)
 	return nil
 end
 
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
 function ReadOnlyEntity:isJumpRouteValid(fromX, fromY, toX, toY)
 	return true, nil
 end
@@ -323,6 +345,7 @@ end
 
 -- Tests if the maximum number of turrets of this kind is not reached
 -- @param ScriptTurretTemplate - the template of the turret to be placed
+---@param ScriptTurretTemplate TurretTemplate
 function ReadOnlyEntity:isTurretAllowed(ScriptTurretTemplate)
 	return nil
 end
@@ -331,10 +354,13 @@ end
 -- @param x - The x-coordinates of the target sector
 -- @param y - The y-coordinates of the target sector
 -- @return Returns an error code: -1 The entity doesn't have a hyperspace drive. 0 The entity can jump. 1 The hyperspace drive needs to recharge. 2 The target sector is too far away. 3 The entity is facing the wrong direction. 4 The hyperspace drive is being jammed.
+---@param x int
+---@param y int
 function ReadOnlyEntity:jumpPossible(x, y)
 	return 0
 end
 
+---@param path string
 function ReadOnlyEntity:resolveScriptPath(path)
 	return nil
 end

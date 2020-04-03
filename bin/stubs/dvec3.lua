@@ -9,26 +9,32 @@ dvec3 = {
 
 setmetatable(dvec3, {__call = function(self, x, y, z) return dvec3 end})
 
+---@param other var
 function dvec3:__add(other)
 	return dvec3()
 end
 
+---@param other var
 function dvec3:__div(other)
 	return dvec3()
 end
 
+---@param other dvec3
 function dvec3:__eq(other)
 	return true
 end
 
+---@param other dvec3
 function dvec3:__lt(other)
 	return true
 end
 
+---@param other var
 function dvec3:__mul(other)
 	return dvec3()
 end
 
+---@param other var
 function dvec3:__sub(other)
 	return dvec3()
 end

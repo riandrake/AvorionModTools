@@ -18,11 +18,15 @@ function DebugInfo:log()
 end
 
 -- @return nothing
+---@param key string
+---@param value string
 function DebugInfo:set(key, value)
 	return nil
 end
 
 -- @return nothing
+---@param key string
+---@param value string
 function DebugInfo:threadSet(key, value)
 	return nil
 end

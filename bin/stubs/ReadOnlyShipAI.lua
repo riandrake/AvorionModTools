@@ -18,6 +18,7 @@ function ReadOnlyShipAI:enemyFightersPresent()
 	return true
 end
 
+---@param countCivilEnemies var
 function ReadOnlyShipAI:enemyShipsPresent(countCivilEnemies)
 	return true
 end
@@ -42,14 +43,17 @@ function ReadOnlyShipAI:getRegisteredFriendFactions()
 	return 0
 end
 
+---@param other Entity
 function ReadOnlyShipAI:isEnemy(other)
 	return true
 end
 
+---@param other Entity
 function ReadOnlyShipAI:isRegisteredEnemy(other)
 	return true
 end
 
+---@param other Entity
 function ReadOnlyShipAI:isRegisteredFriend(other)
 	return true
 end

@@ -76,11 +76,14 @@ FighterTemplate = {
 setmetatable(FighterTemplate, {__call = function(self) return FighterTemplate end})
 
 -- @return nothing
+---@param str string
+---@param value string
 function FighterTemplate:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
+---@param weapon var
 function FighterTemplate:addWeapon(weapon)
 	return nil
 end

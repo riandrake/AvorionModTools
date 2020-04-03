@@ -18,6 +18,9 @@ function Color:__tostring()
 end
 
 -- @return nothing
+---@param h float
+---@param s float
+---@param v float
 function Color:setHSV(h, s, v)
 	return nil
 end

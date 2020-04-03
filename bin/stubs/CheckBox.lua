@@ -31,6 +31,7 @@ CheckBox = {
 setmetatable(CheckBox, {__call = function(self, index) return CheckBox end})
 
 -- @return nothing
+---@param in bool
 function CheckBox:setCheckedNoCallback(_in)
 	return nil
 end

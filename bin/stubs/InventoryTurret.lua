@@ -73,16 +73,20 @@ InventoryTurret = {
 
 setmetatable(InventoryTurret, {__call = function(self, other) return InventoryTurret end})
 
+---@param other var
 function InventoryTurret:__eq(other)
 	return true
 end
 
 -- @return nothing
+---@param str string
+---@param value string
 function InventoryTurret:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
+---@param weapon var
 function InventoryTurret:addWeapon(weapon)
 	return nil
 end

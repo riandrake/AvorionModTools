@@ -29,6 +29,9 @@ ValueComboBox = {
 setmetatable(ValueComboBox, {__call = function(self, index) return ValueComboBox end})
 
 -- @return nothing
+---@param value var
+---@param entry string
+---@param color var
 function ValueComboBox:addEntry(value, entry, color)
 	return nil
 end
@@ -38,20 +41,24 @@ function ValueComboBox:clear()
 	return nil
 end
 
+---@param index int
 function ValueComboBox:getEntry(index)
 	return ""
 end
 
+---@param index int
 function ValueComboBox:getValue(index)
 	return nil
 end
 
 -- @return nothing
+---@param in int
 function ValueComboBox:setSelectedIndexNoCallback(_in)
 	return nil
 end
 
 -- @return nothing
+---@param value var
 function ValueComboBox:setSelectedValueNoCallback(value)
 	return nil
 end

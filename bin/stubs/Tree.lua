@@ -24,6 +24,10 @@ Tree = {
 
 setmetatable(Tree, {__call = function(self, index) return Tree end})
 
+---@param parent var
+---@param caption string
+---@param onSelected var
+---@param hasContent var
 function Tree:add(parent, caption, onSelected, hasContent)
 	return 0
 end
@@ -42,6 +46,9 @@ function Tree:selectPrevious()
 end
 
 -- @return nothing
+---@param level int
+---@param height int
+---@param fontSize int
 function Tree:setLevelStyle(level, height, fontSize)
 	return nil
 end

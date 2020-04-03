@@ -15,6 +15,7 @@ function Torpedo:getTemplate()
 end
 
 -- @return nothing
+---@param torpedo TorpedoTemplate
 function Torpedo:setTemplate(torpedo)
 	return nil
 end

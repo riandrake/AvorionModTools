@@ -25,14 +25,29 @@ setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
 -- @param orientation - The orientation of the new block
 -- @param blockIndex - The type of the new block, must be a valid block type. See enum BlockType
 -- @return Returns the index of the new block on success, nil otherwise.
+---@param position vec3
+---@param size vec3
+---@param parentIndex int
+---@param index int
+---@param color Color
+---@param material Material
+---@param orientation Matrix
+---@param blockIndex int
 function BlockPlan:addBlock(position, size, parentIndex, index, color, material, orientation, blockIndex)
 	return 0
 end
 
+---@param parentIndex int
+---@param other BlockPlan
+---@param otherBlock int
 function BlockPlan:addPlan(parentIndex, other, otherBlock)
 	return nil
 end
 
+---@param parentIndex int
+---@param other BlockPlan
+---@param otherBlock int
+---@param delta vec3
 function BlockPlan:addPlanDisplaced(parentIndex, other, otherBlock, delta)
 	return nil
 end
@@ -43,15 +58,18 @@ function BlockPlan:center()
 end
 
 -- @return nothing
+---@param index int
 function BlockPlan:deleteSubTree(index)
 	return nil
 end
 
 -- @return nothing
+---@param displacement vec3
 function BlockPlan:displace(displacement)
 	return nil
 end
 
+---@param blockIndex int
 function BlockPlan:divide(blockIndex)
 	return BlockPlan()
 end
@@ -60,6 +78,7 @@ function BlockPlan:empty()
 	return true
 end
 
+---@param index int
 function BlockPlan:exists(index)
 	return true
 end
@@ -67,10 +86,12 @@ end
 -- Changes the material of all blocks to the given material. Blocks with an invalid block type for the material get changed to blank hull.
 -- @param material - The new material
 -- @return nothing
+---@param material Material
 function BlockPlan:forceMaterial(material)
 	return nil
 end
 
+---@param index int
 function BlockPlan:getBlock(index)
 	return BlockPlanBlock()
 end
@@ -91,10 +112,12 @@ function BlockPlan:getMoneyValue()
 	return 0.0
 end
 
+---@param n int
 function BlockPlan:getNthBlock(n)
 	return BlockPlanBlock()
 end
 
+---@param n int
 function BlockPlan:getNthIndex(n)
 	return nil
 end
@@ -116,10 +139,13 @@ function BlockPlan:getUndamagedResourceValue()
 end
 
 -- @return nothing
+---@param axis vec3
+---@param mirrorCenter vec3
 function BlockPlan:mirror(axis, mirrorCenter)
 	return nil
 end
 
+---@param other BlockPlan
 function BlockPlan:propertiesEqual(other)
 	return true
 end
@@ -127,6 +153,7 @@ end
 -- Removes a block from the plan. This function will try to reassign parents where possible to ensure that the tree doesn't break in positions where blocks still intersect with each other.
 -- @param index - The index of the block that is to be removed
 -- @return nothing
+---@param index int
 function BlockPlan:removeBlock(index)
 	return nil
 end
@@ -137,26 +164,34 @@ function BlockPlan:resetDurability()
 end
 
 -- @return nothing
+---@param axis vec3
+---@param dir int
 function BlockPlan:rotate(axis, dir)
 	return nil
 end
 
 -- @return nothing
+---@param factor vec3
 function BlockPlan:scale(factor)
 	return nil
 end
 
 -- @return nothing
+---@param index int
+---@param color Color
 function BlockPlan:setBlockColor(index, color)
 	return nil
 end
 
 -- @return nothing
+---@param index int
+---@param blockTypeIndex int
 function BlockPlan:setBlockType(index, blockTypeIndex)
 	return nil
 end
 
 -- @return nothing
+---@param color Color
 function BlockPlan:setColor(color)
 	return nil
 end
@@ -164,6 +199,7 @@ end
 -- Changes the material of all blocks to the given material if the new combination of block type and material is allowed. Blocks that don't exist in the given material are left unchanged.
 -- @param material - The new material
 -- @return nothing
+---@param material Material
 function BlockPlan:setMaterial(material)
 	return nil
 end
@@ -171,6 +207,7 @@ end
 -- Changes the material of all blocks to the given material if the new combination of block type and material is allowed. The remaining blocks get changed to either the highest allowed material below the given one or the lowest one above.
 -- @param material - The new material
 -- @return nothing
+---@param material Material
 function BlockPlan:setMaterialTier(material)
 	return nil
 end

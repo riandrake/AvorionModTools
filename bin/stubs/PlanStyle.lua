@@ -15,6 +15,7 @@ setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
 
 -- Adds a new stage to the style.
 -- @return nothing
+---@param stage PlanGenerationStage
 function PlanStyle:addStage(stage)
 	return nil
 end
@@ -33,6 +34,8 @@ end
 
 -- Replaces a stage in the style.
 -- @return nothing
+---@param index int
+---@param stage PlanGenerationStage
 function PlanStyle:setStage(index, stage)
 	return nil
 end

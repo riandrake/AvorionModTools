@@ -73,16 +73,20 @@ TurretTemplate = {
 
 setmetatable(TurretTemplate, {__call = function(self, other) return TurretTemplate end})
 
+---@param other var
 function TurretTemplate:__eq(other)
 	return true
 end
 
 -- @return nothing
+---@param str string
+---@param value string
 function TurretTemplate:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
+---@param weapon var
 function TurretTemplate:addWeapon(weapon)
 	return nil
 end

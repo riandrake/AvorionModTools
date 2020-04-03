@@ -82,6 +82,8 @@ setmetatable(Entity, {__call = function(self, id) return Entity end})
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param value - Bias added to base stats.
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param value float
 function Entity:addAbsoluteBias(type, value)
 	return nil
 end
@@ -90,6 +92,8 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param factor - Factor that is used as Multiplier
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param factor float
 function Entity:addBaseMultiplier(type, factor)
 	return nil
 end
@@ -98,11 +102,15 @@ end
 -- @param good - TradingGood that is to be added.
 -- @param amount - The amount of cargo that should be added.
 -- @return nothing
+---@param good TradingGood
+---@param amount int
 function Entity:addCargo(good, amount)
 	return nil
 end
 
 -- @return nothing
+---@param number int
+---@param crewman CrewMan
 function Entity:addCrew(number, crewman)
 	return nil
 end
@@ -112,6 +120,9 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param key int
+---@param value float
 function Entity:addKeyedAbsoluteBias(type, key, value)
 	return nil
 end
@@ -121,6 +132,9 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param key int
+---@param value float
 function Entity:addKeyedBaseMultiplier(type, key, value)
 	return nil
 end
@@ -130,6 +144,9 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param key int
+---@param value float
 function Entity:addKeyedMultiplier(type, key, value)
 	return nil
 end
@@ -139,6 +156,9 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param key int
+---@param value float
 function Entity:addKeyedMultiplyableBias(type, key, value)
 	return nil
 end
@@ -147,6 +167,8 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param factor - Factor that is used as Multiplier
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param factor float
 function Entity:addMultiplier(type, factor)
 	return nil
 end
@@ -155,6 +177,8 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param value - Bias added to base stats.
 -- @return key that can be used to access the multiplier
+---@param type int
+---@param value float
 function Entity:addMultiplyableBias(type, value)
 	return nil
 end
@@ -163,6 +187,8 @@ end
 -- @param scriptPath - The path of the script that should be added
 -- @param arguments - An arbitrary number of arguments that will be given to the 'initialize' function of the added script
 -- @return 0 on success, 1 if the entity could not be found
+---@param scriptPath string
+---@param arguments var...
 function Entity:addScript(scriptPath, arguments)
 	return nil
 end
@@ -171,11 +197,15 @@ function Entity:addScriptOnce()
 	return nil
 end
 
+---@param turret TurretTemplate
+---@param position Matrix
+---@param part int
 function Entity:addTurret(turret, position, part)
 	return 0
 end
 
 -- @return nothing
+---@param time float
 function Entity:blockHyperspace(time)
 	return nil
 end
@@ -184,15 +214,22 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
+---@param callbackName string
+---@param functionName var
 function Entity:callbacksRegistered(callbackName, functionName)
 	return 0
 end
 
+---@param number int
+---@param profession int
+---@param change bool
 function Entity:canAddCrew(number, profession, change)
 	return nil, nil, {0, ""}
 end
 
 -- @return nothing
+---@param number int
+---@param profession int
 function Entity:changeCrew(number, profession)
 	return nil
 end
@@ -200,6 +237,7 @@ end
 -- Adds delta to shield durability
 -- @param delta - Returns
 -- @param nothing
+---@param delta double
 function Entity:changeShield(delta)
 	return nil
 end
@@ -219,6 +257,11 @@ end
 -- @param delta - location
 -- @param inflictorId - Returns
 -- @param nothing
+---@param amount double
+---@param location vec3
+---@param inflictorId Uuid
+---@param damageSource var
+---@param damageType var
 function Entity:damageShield(amount, location, inflictorId, damageSource, damageType)
 	return nil
 end
@@ -228,6 +271,9 @@ end
 -- @param damageSource - Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary. *
 -- @param damageType - Type of damage received. Damage can be of type Physical, Energy, Electric, Plasma, AntiMatter or Fragments.
 -- @return nothing
+---@param inflictorId Uuid
+---@param damageSource var
+---@param damageType var
 function Entity:destroy(inflictorId, damageSource, damageType)
 	return nil
 end
@@ -237,6 +283,9 @@ end
 -- @param inflictorId - Index of the entity that destroys the block
 -- @param damageSource - Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary.
 -- @return nothing
+---@param index int
+---@param inflictorId Uuid
+---@param damageSource var
 function Entity:destroyBlock(index, inflictorId, damageSource)
 	return nil
 end
@@ -244,11 +293,13 @@ end
 -- Destroys cargo. The destruction distribution is generally equal over all goods.
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
+---@param volume float
 function Entity:destroyCargo(volume)
 	return nil
 end
 
 -- @return nothing
+---@param time float
 function Entity:distortHyperspace(time)
 	return nil
 end
@@ -256,10 +307,12 @@ end
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
+---@param name string
 function Entity:findCargos(name)
 	return {TradingGood(), 0}
 end
 
+---@param seat int
 function Entity:getAimedPositionBySeat(seat)
 	return vec3()
 end
@@ -288,6 +341,8 @@ end
 -- Returns value with included bonus, in case a bonus exists. Returns Nil if no bonuses at all, returns value if no bonuses for this stat exist.
 -- @param type - type of bonus stat, e.g. acceleration, higher level crew
 -- @param value - the value, that might be changed by bonuses
+---@param type int
+---@param value float
 function Entity:getBoostedValue(type, value)
 	return nil
 end
@@ -302,6 +357,7 @@ function Entity:getBoundingSphere()
 	return Sphere()
 end
 
+---@param n unsigned
 function Entity:getCargo(n)
 	return TradingGood(), 0
 end
@@ -309,6 +365,7 @@ end
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
+---@param name var
 function Entity:getCargoAmount(name)
 	return nil
 end
@@ -317,6 +374,7 @@ function Entity:getCargos()
 	return {TradingGood(), 0}
 end
 
+---@param profession int
 function Entity:getCrewMembers(profession)
 	return nil
 end
@@ -385,6 +443,7 @@ function Entity:getMovePlan()
 	return BlockPlan()
 end
 
+---@param other Entity
 function Entity:getNearestDistance(other)
 	return nil
 end
@@ -411,6 +470,7 @@ function Entity:getPlanResourceValue()
 	return 0.0
 end
 
+---@param radius float
 function Entity:getRandomDockingPosition(radius)
 	return vec3()
 end
@@ -429,14 +489,19 @@ function Entity:getTitleFormat()
 	return NamedFormat()
 end
 
+---@param index int
 function Entity:getTurret(index)
 	return Entity()
 end
 
+---@param turret TurretTemplate
+---@param number int
 function Entity:getTurretPositions(turret, number)
 	return Matrix(), 0
 end
 
+---@param turret TurretTemplate
+---@param number int
 function Entity:getTurretPositionsLineOfSight(turret, number)
 	return Matrix(), 0
 end
@@ -468,6 +533,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function Entity:getValue(key)
 	return nil
 end
@@ -482,10 +548,12 @@ function Entity:getWormholeComponent()
 	return WormHole()
 end
 
+---@param type int
 function Entity:hasComponent(type)
 	return true
 end
 
+---@param name string
 function Entity:hasScript(name)
 	return nil
 end
@@ -496,6 +564,10 @@ end
 -- @param location - vector containing the hit point, if unknown/unnecessary use empty vector
 -- @param inflictorID - Index of the entity that heals
 -- @return nothing
+---@param damage float
+---@param index int
+---@param location vec3
+---@param inflictorID Uuid
 function Entity:heal(damage, index, location, inflictorID)
 	return nil
 end
@@ -503,6 +575,7 @@ end
 -- Increases shield durability by delta
 -- @param delta - Returns
 -- @param nothing
+---@param delta double
 function Entity:healShield(delta)
 	return nil
 end
@@ -519,6 +592,12 @@ end
 -- @param location - vector containing the hit point, if unknown / unnecessary use empty vector
 -- @param inflictorId - Index of the entity that caused the damage
 -- @return nothing
+---@param damage float
+---@param damageSource var
+---@param damageType var
+---@param index int
+---@param location vec3
+---@param inflictorId Uuid
 function Entity:inflictDamage(damage, damageSource, damageType, index, location, inflictorId)
 	return nil
 end
@@ -528,22 +607,32 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 1 The call failed because the entity with the specified index does not exist or has no Scripts component 2 The call failed because it came from another sector than the entity is in 3 The call failed because the given script was not found in the entity 4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
 function Entity:invokeFunction(scriptName, functionName, arguments)
 	return nil
 end
 
+---@param entity Entity
 function Entity:isCollectable(entity)
 	return nil
 end
 
+---@param other Entity
 function Entity:isDocked(other)
 	return true
 end
 
+---@param point vec3
 function Entity:isInsideShield(point)
 	return nil
 end
 
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
 function Entity:isJumpRouteValid(fromX, fromY, toX, toY)
 	return true, nil
 end
@@ -554,6 +643,7 @@ end
 
 -- Tests if the maximum number of turrets of this kind is not reached
 -- @param ScriptTurretTemplate - the template of the turret to be placed
+---@param ScriptTurretTemplate TurretTemplate
 function Entity:isTurretAllowed(ScriptTurretTemplate)
 	return nil
 end
@@ -562,12 +652,15 @@ end
 -- @param x - The x-coordinates of the target sector
 -- @param y - The y-coordinates of the target sector
 -- @return Returns an error code: -1 The entity doesn't have a hyperspace drive. 0 The entity can jump. 1 The hyperspace drive needs to recharge. 2 The target sector is too far away. 3 The entity is facing the wrong direction. 4 The hyperspace drive is being jammed.
+---@param x int
+---@param y int
 function Entity:jumpPossible(x, y)
 	return 0
 end
 
 -- Teleports entity by vector
 -- @return nothing
+---@param delta vec3
 function Entity:moveBy(delta)
 	return nil
 end
@@ -576,6 +669,8 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
+---@param callbackName string
+---@param functionName string
 function Entity:registerCallback(callbackName, functionName)
 	return 0
 end
@@ -583,6 +678,7 @@ end
 -- Deletes bonus
 -- @param key - Location of the bonus
 -- @return nothing
+---@param key int
 function Entity:removeBonus(key)
 	return nil
 end
@@ -591,20 +687,26 @@ end
 -- @param good - Either a TradingGood or a string with the name of a good.
 -- @param amount - The amount of cargo that should be removed. If this is more than there is on the ship, all specified cargo will be removed.
 -- @return nothing
+---@param good var
+---@param amount int
 function Entity:removeCargo(good, amount)
 	return nil
 end
 
 -- @return nothing
+---@param number int
+---@param crewman CrewMan
 function Entity:removeCrew(number, crewman)
 	return nil
 end
 
 -- @return nothing
+---@param script var
 function Entity:removeScript(script)
 	return nil
 end
 
+---@param path string
 function Entity:resolveScriptPath(path)
 	return nil
 end
@@ -616,26 +718,33 @@ end
 -- If AccumulatingBlockHealth is true, a block needs to take as much damage as would be necessary to destroy all his children before it itself is destroyed. If it is set to false, the entity's blocks will have only their own durability. Set it to false if you want your entity to easily break apart, e.g. for wreckages.
 -- @param bool - Returns
 -- @param nothing
+---@param bool bool
 function Entity:setAccumulatingBlockHealth(bool)
 	return nil
 end
 
 -- @return nothing
+---@param seat int
+---@param in vec3
 function Entity:setAimedPosition(seat, _in)
 	return nil
 end
 
 -- @return nothing
+---@param in int
 function Entity:setAttachedBlockIndex(_in)
 	return nil
 end
 
 -- @return nothing
+---@param in float
+---@param reason int
 function Entity:setMalusFactor(_in, reason)
 	return nil
 end
 
 -- @return nothing
+---@param in bool
 function Entity:setManned(_in)
 	return nil
 end
@@ -643,6 +752,7 @@ end
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This moves all the data out of the plan that is used as the first argument. The content of the plan given as argument is then undefined, but still valid. It might be empty, it might contain the previous plan. This operation is independent of the size of the plan, use it when you have to set large plans with lots of blocks.
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
+---@param plan BlockPlan
 function Entity:setMovePlan(plan)
 	return nil
 end
@@ -650,12 +760,15 @@ end
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This copies the entire plan that is given as argument, keep that in mind when setting plans with large block counts.
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
+---@param plan BlockPlan
 function Entity:setPlan(plan)
 	return nil
 end
 
 -- Sets the title that can be used as title in menus
 -- @param title - a string that will be used as title, can be a format string for easier translation.
+---@param title string
+---@param arguments string_pair...
 function Entity:setTitle(title, arguments)
 	return nil
 end
@@ -663,16 +776,19 @@ end
 -- Sets the arguments to a title
 -- @param arguments - Set the string arguments as vector of string_pair.
 -- @return nothing
+---@param arguments string_pair...
 function Entity:setTitleArguments(arguments)
 	return nil
 end
 
 -- @return nothing
+---@param in float
 function Entity:setTurretSize(_in)
 	return nil
 end
 
 -- @return nothing
+---@param in float
 function Entity:setTurretTurningSpeed(_in)
 	return nil
 end
@@ -681,6 +797,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function Entity:setValue(key, value)
 	return nil
 end
@@ -688,15 +806,19 @@ end
 -- Tells the ship to fly to given location, directly and without pathfinding.
 -- @param location - the location to fly to (in global coordinates) Paired with setting desiredVelocity to 0, this can be used to rotate the ship to a given direction.
 -- @return nothing
+---@param location vec3
 function Entity:singleFlyToLocationTick(location)
 	return nil
 end
 
+---@param callbackName string
+---@param functionName string
 function Entity:unregisterCallback(callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
+---@param time var
 function Entity:waitUntilAsyncWorkFinished(time)
 	return nil
 end

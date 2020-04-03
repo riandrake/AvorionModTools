@@ -28,16 +28,21 @@ Alliance = {
 setmetatable(Alliance, {__call = function(self, index) return Alliance end})
 
 -- @return nothing
+---@param view SectorView
 function Alliance:addKnownSector(view)
 	return nil
 end
 
 -- @return nothing
+---@param name string
+---@param lowerName string
 function Alliance:addRank(name, lowerName)
 	return nil
 end
 
 -- @return nothing
+---@param rank string
+---@param privilege int
 function Alliance:addRankPrivilege(rank, privilege)
 	return nil
 end
@@ -54,14 +59,19 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
+---@param callbackName string
+---@param functionName var
 function Alliance:callbacksRegistered(callbackName, functionName)
 	return 0
 end
 
+---@param playerIndex int
 function Alliance:contains(playerIndex)
 	return true
 end
 
+---@param x int
+---@param y int
 function Alliance:getKnownSector(x, y)
 	return SectorView()
 end
@@ -74,18 +84,22 @@ function Alliance:getKnownSectors()
 	return SectorView()
 end
 
+---@param factionIndex int
 function Alliance:getKnownSectorsOfFaction(factionIndex)
 	return SectorView()
 end
 
+---@param factionIndex int
 function Alliance:getKnownSectorsWithFaction(factionIndex)
 	return SectorView()
 end
 
+---@param playerIndex int
 function Alliance:getMemberLocation(playerIndex)
 	return 0, 0
 end
 
+---@param playerIndex int
 function Alliance:getMemberRank(playerIndex)
 	return AllianceRank()
 end
@@ -94,6 +108,8 @@ function Alliance:getMembers()
 	return {0, Member()}
 end
 
+---@param x int
+---@param y int
 function Alliance:getNamesOfShipsInSector(x, y)
 	return ""
 end
@@ -102,6 +118,7 @@ function Alliance:getNewMemberRank()
 	return ""
 end
 
+---@param name string
 function Alliance:getRank(name)
 	return AllianceRank()
 end
@@ -110,30 +127,37 @@ function Alliance:getScripts()
 	return {0, ""}
 end
 
+---@param name string
 function Alliance:getShipBoundingBox(name)
 	return Box()
 end
 
+---@param name string
 function Alliance:getShipCanPassRifts(name)
 	return true
 end
 
+---@param name string
 function Alliance:getShipCargo(name)
 	return CargoBay()
 end
 
+---@param name string
 function Alliance:getShipCargos(name)
 	return {TradingGood(), 0}
 end
 
+---@param name string
 function Alliance:getShipCrew(name)
 	return Crew()
 end
 
+---@param name string
 function Alliance:getShipDestroyed(name)
 	return true
 end
 
+---@param name string
 function Alliance:getShipHyperspaceReach(name)
 	return 0.0
 end
@@ -142,46 +166,58 @@ function Alliance:getShipNames()
 	return ""
 end
 
+---@param name string
 function Alliance:getShipOrderInfo(name)
 	return ""
 end
 
+---@param name string
 function Alliance:getShipPayment(name)
 	return 0.0
 end
 
+---@param name string
 function Alliance:getShipPaymentTime(name)
 	return 0.0
 end
 
+---@param name string
 function Alliance:getShipPlan(name)
 	return BlockPlan()
 end
 
+---@param name string
 function Alliance:getShipPosition(name)
 	return 0, 0
 end
 
+---@param name string
 function Alliance:getShipReconstructionValue(name)
 	return 0.0
 end
 
+---@param name string
 function Alliance:getShipStatus(name)
 	return LocalizationNamedFormat()
 end
 
+---@param name string
 function Alliance:getShipSystems(name)
 	return ShipInfoUpgrade()
 end
 
+---@param name string
 function Alliance:getShipType(name)
 	return 0
 end
 
+---@param playerIndex int
+---@param privilege int
 function Alliance:hasPrivilege(playerIndex, privilege)
 	return true
 end
 
+---@param name string
 function Alliance:hasScript(name)
 	return nil
 end
@@ -190,19 +226,25 @@ function Alliance:invokeFunction()
 	return nil
 end
 
+---@param x int
+---@param y int
 function Alliance:knowsSector(x, y)
 	return true
 end
 
 -- @return nothing
+---@param name string
+---@param lowerName string
 function Alliance:moveRank(name, lowerName)
 	return nil
 end
 
+---@param name string
 function Alliance:ownsShip(name)
 	return true
 end
 
+---@param rank string
 function Alliance:rankExists(rank)
 	return true
 end
@@ -211,39 +253,52 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return nothing
+---@param callbackName string
+---@param functionName string
 function Alliance:registerCallback(callbackName, functionName)
 	return nil
 end
 
 -- @return nothing
+---@param name string
 function Alliance:removeDestroyedShipInfo(name)
 	return nil
 end
 
 -- @return nothing
+---@param x int
+---@param y int
 function Alliance:removeKnownSector(x, y)
 	return nil
 end
 
 -- @return nothing
+---@param name string
 function Alliance:removeRank(name)
 	return nil
 end
 
 -- @return nothing
+---@param rankName string
+---@param privilege int
 function Alliance:removeRankPrivilege(rankName, privilege)
 	return nil
 end
 
 -- @return nothing
+---@param script var
 function Alliance:removeScript(script)
 	return nil
 end
 
+---@param path string
 function Alliance:resolveScriptPath(path)
 	return nil
 end
 
+---@param name string
+---@param position Matrix
+---@param withMalus bool
 function Alliance:restoreCraft(name, position, withMalus)
 	return Entity()
 end
@@ -259,31 +314,44 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
 function Alliance:sendChatMessage(sender, messageType, message, args)
 	return nil
 end
 
 -- @return nothing
+---@param playerIndex int
+---@param rank string
 function Alliance:setMemberRank(playerIndex, rank)
 	return nil
 end
 
 -- @return nothing
+---@param rank string
 function Alliance:setNewMemberRank(rank)
 	return nil
 end
 
 -- @return nothing
+---@param name string
+---@param value bool
 function Alliance:setShipDestroyed(name, value)
 	return nil
 end
 
 -- @return nothing
+---@param name string
+---@param value var
 function Alliance:setShipOrderInfo(name, value)
 	return nil
 end
 
 -- @return nothing
+---@param name string
+---@param value double
 function Alliance:setShipReconstructionValue(name, value)
 	return nil
 end
@@ -294,17 +362,21 @@ function Alliance:unregisterCallback(string, string)
 end
 
 -- @return nothing
+---@param view SectorView
 function Alliance:updateKnownSector(view)
 	return nil
 end
 
 -- @return nothing
+---@param view SectorView
 function Alliance:updateKnownSectorPreserveNote(view)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
+---@param name string
+---@param style PlanStyle
 function Alliance:addPlanStyle(name, style)
 	return nil
 end
@@ -315,11 +387,14 @@ function Alliance:canPay()
 end
 
 -- Inherited from Faction [Server]
+---@param money int
 function Alliance:canPayMoney(money)
 	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
+---@param material Material
+---@param amount int
 function Alliance:canPayResource(material, amount)
 	return true, "", {0, ""}
 end
@@ -351,6 +426,7 @@ function Alliance:getLanguage()
 end
 
 -- Inherited from Faction [Server]
+---@param name string
 function Alliance:getPlanStyle(name)
 	return PlanStyle()
 end
@@ -361,16 +437,19 @@ function Alliance:getPlanStyleNames()
 end
 
 -- Inherited from Faction [Server]
+---@param factionIndex int
 function Alliance:getRelation(factionIndex)
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
+---@param factionIndex int
 function Alliance:getRelations(factionIndex)
 	return 0
 end
 
 -- Inherited from Faction [Server]
+---@param factionIndex int
 function Alliance:getRelationStatus(factionIndex)
 	return 0
 end
@@ -383,6 +462,7 @@ end
 -- Retrieves a trait value associated with a key Inherited from Faction [Server]
 -- @param trait - The name of the trait
 -- @return The trait value associated with the key
+---@param trait string
 function Alliance:getTrait(trait)
 	return 0.0
 end
@@ -396,6 +476,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key Inherited from Faction [Server]
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function Alliance:getValue(key)
 	return nil
 end
@@ -407,11 +488,13 @@ function Alliance:getValues()
 end
 
 -- Inherited from Faction [Server]
+---@param factionIndex int
 function Alliance:hasStaticRelationsToFaction(factionIndex)
 	return true
 end
 
 -- Inherited from Faction [Server]
+---@param factionIndex int
 function Alliance:knowsFaction(factionIndex)
 	return true
 end
@@ -421,6 +504,9 @@ end
 -- @param material - The kind of material that will be removed from the faction
 -- @param amount - Amount that will be removed from the faction
 -- @return nothing
+---@param description string
+---@param material Material
+---@param amount int
 function Alliance:payResource(description, material, amount)
 	return nil
 end
@@ -430,6 +516,9 @@ end
 -- @param money - Money that will be removed from the faction
 -- @param args - A list of resources, starting with iron, that will be removed from the faction
 -- @return nothing
+---@param description string
+---@param money int
+---@param args int...
 function Alliance:payWithoutNotify(description, money, args)
 	return nil
 end
@@ -439,6 +528,9 @@ end
 -- @param material - The kind of material that will be given to the faction
 -- @param amount - Amount that will be given to the faction
 -- @return nothing
+---@param description string
+---@param material Material
+---@param amount int
 function Alliance:receiveResource(description, material, amount)
 	return nil
 end
@@ -448,6 +540,9 @@ end
 -- @param money - Money that will be given to the faction
 -- @param args - A list of resources, starting with iron, that will be given to the faction
 -- @return nothing
+---@param description string
+---@param money int
+---@param args int...
 function Alliance:receiveWithoutNotify(description, money, args)
 	return nil
 end
@@ -466,6 +561,8 @@ end
 
 -- Inherited from Faction [Server]
 -- @return nothing
+---@param x int
+---@param y int
 function Alliance:setHomeSectorCoordinates(x, y)
 	return nil
 end
@@ -478,6 +575,8 @@ end
 
 -- Inherited from Faction [Server]
 -- @return nothing
+---@param factionIndex int
+---@param in bool
 function Alliance:setStaticRelationsToFaction(factionIndex, _in)
 	return nil
 end
@@ -486,6 +585,8 @@ end
 -- @param trait - The name of the trait
 -- @param value - The value of the trait, should be between -1 and 1
 -- @return nothing
+---@param trait string
+---@param value float
 function Alliance:setTrait(trait, value)
 	return nil
 end
@@ -494,6 +595,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function Alliance:setValue(key, value)
 	return nil
 end

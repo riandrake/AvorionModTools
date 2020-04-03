@@ -29,15 +29,20 @@ function AllianceTab:activateAllTabs()
 end
 
 -- @return nothing
+---@param tab Tab
 function AllianceTab:activateTab(tab)
 	return nil
 end
 
+---@param name string
+---@param icon string
+---@param description string
 function AllianceTab:createTab(name, icon, description)
 	return Tab()
 end
 
 -- @return nothing
+---@param tab Tab
 function AllianceTab:deactivateTab(tab)
 	return nil
 end
@@ -46,21 +51,26 @@ function AllianceTab:getActiveTab()
 	return Tab()
 end
 
+---@param name string
 function AllianceTab:getTab(name)
 	return Tab()
 end
 
 -- @return nothing
+---@param tab Tab
+---@param pos int
 function AllianceTab:moveTabToPosition(tab, pos)
 	return nil
 end
 
 -- @return nothing
+---@param tab Tab
 function AllianceTab:moveTabToTheRight(tab)
 	return nil
 end
 
 -- @return nothing
+---@param val var
 function AllianceTab:selectTab(val)
 	return nil
 end

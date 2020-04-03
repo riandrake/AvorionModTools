@@ -8,26 +8,32 @@ vec2 = {
 
 setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
 
+---@param other var
 function vec2:__add(other)
 	return vec2()
 end
 
+---@param other var
 function vec2:__div(other)
 	return vec2()
 end
 
+---@param other vec2
 function vec2:__eq(other)
 	return true
 end
 
+---@param other vec2
 function vec2:__lt(other)
 	return true
 end
 
+---@param other var
 function vec2:__mul(other)
 	return vec2()
 end
 
+---@param other var
 function vec2:__sub(other)
 	return vec2()
 end

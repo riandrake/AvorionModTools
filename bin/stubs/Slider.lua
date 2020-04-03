@@ -36,16 +36,20 @@ Slider = {
 setmetatable(Slider, {__call = function(self, index) return Slider end})
 
 -- @return nothing
+---@param inFrom float
+---@param inTo float
 function Slider:setRatio(inFrom, inTo)
 	return nil
 end
 
 -- @return nothing
+---@param in float
 function Slider:setSliderPositionNoCallback(_in)
 	return nil
 end
 
 -- @return nothing
+---@param in float
 function Slider:setValueNoCallback(_in)
 	return nil
 end

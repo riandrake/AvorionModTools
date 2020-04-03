@@ -31,6 +31,8 @@ Server = {
 setmetatable(Server, {__call = function(self) return Server end})
 
 -- @return nothing
+---@param sender Player
+---@param command string
 function Server:addChatCommand(sender, command)
 	return nil
 end
@@ -41,6 +43,10 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
 function Server:broadcastChatMessage(sender, messageType, message, args)
 	return nil
 end
@@ -49,6 +55,8 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback. -1 if an error occurred.
+---@param callbackName string
+---@param functionName var
 function Server:callbacksRegistered(callbackName, functionName)
 	return 0
 end
@@ -72,6 +80,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function Server:getValue(key)
 	return nil
 end
@@ -86,10 +95,12 @@ function Server:getWhiteList()
 	return ""
 end
 
+---@param player Player
 function Server:hasAdminPrivileges(player)
 	return true
 end
 
+---@param playerIndex int
 function Server:isOnline(playerIndex)
 	return true
 end
@@ -98,21 +109,26 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
+---@param callbackName string
+---@param functionName string
 function Server:registerCallback(callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
+---@param ip string
 function Server:removeBlacklistedIp(ip)
 	return nil
 end
 
 -- @return nothing
+---@param name string
 function Server:removeBlacklistedName(name)
 	return nil
 end
 
 -- @return nothing
+---@param name string
 function Server:removeWhitelistedName(name)
 	return nil
 end
@@ -131,6 +147,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function Server:setValue(key, value)
 	return nil
 end
@@ -140,6 +158,8 @@ function Server:stop()
 	return nil
 end
 
+---@param callbackName string
+---@param functionName string
 function Server:unregisterCallback(callbackName, functionName)
 	return 0
 end

@@ -15,10 +15,12 @@ Mail = {
 setmetatable(Mail, {__call = function(self) return Mail end})
 
 -- @return nothing
+---@param turret TurretTemplate
 function Mail:addTurret(turret)
 	return nil
 end
 
+---@param index unsigned
 function Mail:getItem(index)
 	return UserObject()
 end
@@ -36,6 +38,7 @@ function Mail:hasAttachments()
 end
 
 -- @return nothing
+---@param index unsigned
 function Mail:removeItem(index)
 	return nil
 end

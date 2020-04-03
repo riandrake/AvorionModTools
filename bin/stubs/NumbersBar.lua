@@ -23,6 +23,9 @@ NumbersBar = {
 setmetatable(NumbersBar, {__call = function(self, index) return NumbersBar end})
 
 -- @return nothing
+---@param num float
+---@param name string
+---@param color Color
 function NumbersBar:addEntry(num, name, color)
 	return nil
 end
@@ -33,6 +36,8 @@ function NumbersBar:clear()
 end
 
 -- @return nothing
+---@param minRange float
+---@param maxRange float
 function NumbersBar:setRange(minRange, maxRange)
 	return nil
 end

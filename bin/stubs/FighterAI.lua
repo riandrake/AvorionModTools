@@ -27,6 +27,8 @@ function FighterAI:getMothership()
 end
 
 -- @return nothing
+---@param orders FighterOrders
+---@param target Uuid
 function FighterAI:setOrders(orders, target)
 	return nil
 end

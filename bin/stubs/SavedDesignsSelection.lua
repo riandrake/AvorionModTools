@@ -37,6 +37,7 @@ SavedDesignsSelection = {
 
 setmetatable(SavedDesignsSelection, {__call = function(self, index) return SavedDesignsSelection end})
 
+---@param key ivec2
 function SavedDesignsSelection:getItem(key)
 	return UserObject()
 end
@@ -49,6 +50,8 @@ function SavedDesignsSelection:getMouseOveredKey()
 	return ivec2()
 end
 
+---@param x int
+---@param y int
 function SavedDesignsSelection:getRect(x, y)
 	return 0, Rect()
 end
@@ -64,11 +67,13 @@ function SavedDesignsSelection:refreshTopLevelFolder()
 end
 
 -- @return nothing
+---@param pos ivec2
 function SavedDesignsSelection:select(pos)
 	return nil
 end
 
 -- @return nothing
+---@param pos ivec2
 function SavedDesignsSelection:selectNoCallback(pos)
 	return nil
 end
@@ -90,31 +95,42 @@ function SavedDesignsSelection:createArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param function string
 function SavedDesignsSelection:createButton(rect, caption, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
 function SavedDesignsSelection:createCheckBox(rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function SavedDesignsSelection:createComboBox(rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createContainer(rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createCraftPortrait(rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createFrame(rect)
 	return Frame()
 end
@@ -125,26 +141,35 @@ function SavedDesignsSelection:createInputWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function SavedDesignsSelection:createInventorySelection(rect, width)
 	return InventorySelection()
 end
 
 -- Inherited from UIContainer
+---@param position var
+---@param caption string
+---@param fontSize int
 function SavedDesignsSelection:createLabel(position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
+---@param a vec2
+---@param b vec2
 function SavedDesignsSelection:createLine(a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createListBox(rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createListBoxEx(rect)
 	return ListBoxEx()
 end
@@ -155,91 +180,125 @@ function SavedDesignsSelection:createMapArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createMultiLineTextBox(rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createNumbersBar(rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param path string
 function SavedDesignsSelection:createPicture(rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createPlanDisplayer(rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function SavedDesignsSelection:createProgressBar(rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function SavedDesignsSelection:createRect(rect, color)
 	return UIRect()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param icon string
+---@param function string
 function SavedDesignsSelection:createRoundButton(rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function SavedDesignsSelection:createSavedDesignsSelection(rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createScrollFrame(rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function SavedDesignsSelection:createSelection(rect, width)
 	return Selection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
 function SavedDesignsSelection:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function SavedDesignsSelection:createStatisticsBar(rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createTabbedWindow(rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onTextChangedFunction string
 function SavedDesignsSelection:createTextBox(rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param text string
 function SavedDesignsSelection:createTextField(rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createTree(rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function SavedDesignsSelection:createValueComboBox(rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function SavedDesignsSelection:createWindow(rect)
 	return Window()
 end

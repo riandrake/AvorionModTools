@@ -16,21 +16,33 @@ Physics = {
 setmetatable(Physics, {__call = function(self, id) return Physics end})
 
 -- @return nothing
+---@param position vec3
+---@param direction vec3
+---@param size float
+---@param time float
 function Physics:applyGlobalForce(position, direction, size, time)
 	return nil
 end
 
 -- @return nothing
+---@param position dvec3
+---@param direction vec3
+---@param size float
 function Physics:applyImpulse(position, direction, size)
 	return nil
 end
 
 -- @return nothing
+---@param position vec3
+---@param force vec3
+---@param size float
+---@param time float
 function Physics:applyLocalForce(position, force, size, time)
 	return nil
 end
 
 -- @return nothing
+---@param timeStep double
 function Physics:lerpPositions(timeStep)
 	return nil
 end

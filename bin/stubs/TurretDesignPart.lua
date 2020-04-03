@@ -17,16 +17,19 @@ function TurretDesignPart:getPosition()
 end
 
 -- @return nothing
+---@param plan BlockPlan
 function TurretDesignPart:setMovePlan(plan)
 	return nil
 end
 
 -- @return nothing
+---@param plan BlockPlan
 function TurretDesignPart:setPlan(plan)
 	return nil
 end
 
 -- @return nothing
+---@param in vec3
 function TurretDesignPart:setPosition(_in)
 	return nil
 end

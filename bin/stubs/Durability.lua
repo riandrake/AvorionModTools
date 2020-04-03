@@ -21,11 +21,17 @@ function Durability:getWeakness()
 end
 
 -- @return nothing
+---@param amount double
+---@param inflictorId Uuid
 function Durability:healDamage(amount, inflictorId)
 	return nil
 end
 
 -- @return nothing
+---@param amount double
+---@param damageSource DamageSource
+---@param damageType DamageType
+---@param inflictorId Uuid
 function Durability:inflictDamage(amount, damageSource, damageType, inflictorId)
 	return nil
 end
@@ -41,6 +47,8 @@ function Durability:resetWeakness()
 end
 
 -- @return nothing
+---@param damageType DamageType
+---@param factor float
 function Durability:setWeakness(damageType, factor)
 	return nil
 end

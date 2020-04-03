@@ -18,10 +18,12 @@ SystemUpgradeTemplate = {
 
 setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
 
+---@param other var
 function SystemUpgradeTemplate:__eq(other)
 	return true
 end
 
+---@param permanent bool
 function SystemUpgradeTemplate:getEnergy(permanent)
 	return 0.0
 end

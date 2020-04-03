@@ -65,11 +65,14 @@ Weapons = {
 setmetatable(Weapons, {__call = function(self, id) return Weapons end})
 
 -- @return nothing
+---@param str string
+---@param value string
 function Weapons:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
+---@param weapon var
 function Weapons:addWeapon(weapon)
 	return nil
 end

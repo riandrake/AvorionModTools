@@ -30,6 +30,7 @@ Turret = {
 setmetatable(Turret, {__call = function(self, id) return Turret end})
 
 -- @return nothing
+---@param amount double
 function Turret:consumeEnergyForShot(amount)
 	return nil
 end
@@ -42,15 +43,20 @@ function Turret:getLookingPosition()
 	return Matrix()
 end
 
+---@param amount double
 function Turret:hasEnergyForShot(amount)
 	return true
 end
 
 -- @return nothing
+---@param rotationVertical float
+---@param rotationHorizontal float
+---@param lookingAtTarget bool
 function Turret:setOrientation(rotationVertical, rotationHorizontal, lookingAtTarget)
 	return nil
 end
 
+---@param ray var
 function Turret:shootingVectorOk(ray)
 	return true
 end

@@ -18,6 +18,7 @@ SectorView = {
 
 setmetatable(SectorView, {__call = function(self) return SectorView end})
 
+---@param stations int
 function SectorView:calculateInfluence(stations)
 	return 0.0
 end
@@ -51,11 +52,14 @@ function SectorView:getWormHoleDestinations()
 end
 
 -- @return nothing
+---@param x int
+---@param y int
 function SectorView:setCoordinates(x, y)
 	return nil
 end
 
 -- @return nothing
+---@param in int_map_type
 function SectorView:setCraftsByFaction(_in)
 	return nil
 end
@@ -66,11 +70,13 @@ function SectorView:setGateDestinations()
 end
 
 -- @return nothing
+---@param in int_map_type
 function SectorView:setShipsByFaction(_in)
 	return nil
 end
 
 -- @return nothing
+---@param in int_map_type
 function SectorView:setStationsByFaction(_in)
 	return nil
 end

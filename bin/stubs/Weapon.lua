@@ -70,6 +70,7 @@ Weapon = {
 
 setmetatable(Weapon, {__call = function(self) return Weapon end})
 
+---@param other Weapon
 function Weapon:propertiesEqual(other)
 	return true
 end

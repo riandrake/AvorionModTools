@@ -49,11 +49,14 @@ InventorySelection = {
 setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
 
 -- @return nothing
+---@param item var
+---@param pos var
 function InventorySelection:add(item, pos)
 	return nil
 end
 
 -- @return nothing
+---@param pos var
 function InventorySelection:addEmpty(pos)
 	return nil
 end
@@ -68,6 +71,7 @@ function InventorySelection:fill()
 	return nil
 end
 
+---@param key ivec2
 function InventorySelection:getItem(key)
 	return UserObject()
 end
@@ -80,21 +84,26 @@ function InventorySelection:getMouseOveredKey()
 	return ivec2()
 end
 
+---@param x int
+---@param y int
 function InventorySelection:getRect(x, y)
 	return 0, Rect()
 end
 
 -- @return nothing
+---@param key ivec2
 function InventorySelection:remove(key)
 	return nil
 end
 
 -- @return nothing
+---@param pos ivec2
 function InventorySelection:select(pos)
 	return nil
 end
 
 -- @return nothing
+---@param pos ivec2
 function InventorySelection:selectNoCallback(pos)
 	return nil
 end
@@ -105,6 +114,8 @@ function InventorySelection:unselect()
 end
 
 -- @return nothing
+---@param factionIndex int
+---@param index unsigned
 function InventorySelection:update(factionIndex, index)
 	return nil
 end
@@ -121,31 +132,42 @@ function InventorySelection:createArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param function string
 function InventorySelection:createButton(rect, caption, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
 function InventorySelection:createCheckBox(rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function InventorySelection:createComboBox(rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createContainer(rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createCraftPortrait(rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createFrame(rect)
 	return Frame()
 end
@@ -156,26 +178,35 @@ function InventorySelection:createInputWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InventorySelection:createInventorySelection(rect, width)
 	return InventorySelection()
 end
 
 -- Inherited from UIContainer
+---@param position var
+---@param caption string
+---@param fontSize int
 function InventorySelection:createLabel(position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
+---@param a vec2
+---@param b vec2
 function InventorySelection:createLine(a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createListBox(rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createListBoxEx(rect)
 	return ListBoxEx()
 end
@@ -186,91 +217,125 @@ function InventorySelection:createMapArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createMultiLineTextBox(rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createNumbersBar(rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param path string
 function InventorySelection:createPicture(rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createPlanDisplayer(rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InventorySelection:createProgressBar(rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InventorySelection:createRect(rect, color)
 	return UIRect()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param icon string
+---@param function string
 function InventorySelection:createRoundButton(rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InventorySelection:createSavedDesignsSelection(rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createScrollFrame(rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InventorySelection:createSelection(rect, width)
 	return Selection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
 function InventorySelection:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InventorySelection:createStatisticsBar(rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createTabbedWindow(rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onTextChangedFunction string
 function InventorySelection:createTextBox(rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param text string
 function InventorySelection:createTextField(rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createTree(rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function InventorySelection:createValueComboBox(rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InventorySelection:createWindow(rect)
 	return Window()
 end

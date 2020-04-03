@@ -30,6 +30,8 @@ PlanDisplayer = {
 setmetatable(PlanDisplayer, {__call = function(self, index) return PlanDisplayer end})
 
 -- @return nothing
+---@param broken BlockPlan
+---@param intact BlockPlan
 function PlanDisplayer:setPlans(broken, intact)
 	return nil
 end

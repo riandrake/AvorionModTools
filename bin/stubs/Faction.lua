@@ -24,6 +24,8 @@ Faction = {
 setmetatable(Faction, {__call = function(self, index) return Faction end})
 
 -- @return nothing
+---@param name string
+---@param style PlanStyle
 function Faction:addPlanStyle(name, style)
 	return nil
 end
@@ -32,10 +34,13 @@ function Faction:canPay()
 	return true, "", {0, ""}
 end
 
+---@param money int
 function Faction:canPayMoney(money)
 	return true, "", {0, ""}
 end
 
+---@param material Material
+---@param amount int
 function Faction:canPayResource(material, amount)
 	return true, "", {0, ""}
 end
@@ -62,6 +67,7 @@ function Faction:getLanguage()
 	return Language()
 end
 
+---@param name string
 function Faction:getPlanStyle(name)
 	return PlanStyle()
 end
@@ -70,14 +76,17 @@ function Faction:getPlanStyleNames()
 	return ""
 end
 
+---@param factionIndex int
 function Faction:getRelation(factionIndex)
 	return Relation()
 end
 
+---@param factionIndex int
 function Faction:getRelations(factionIndex)
 	return 0
 end
 
+---@param factionIndex int
 function Faction:getRelationStatus(factionIndex)
 	return 0
 end
@@ -89,6 +98,7 @@ end
 -- Retrieves a trait value associated with a key
 -- @param trait - The name of the trait
 -- @return The trait value associated with the key
+---@param trait string
 function Faction:getTrait(trait)
 	return 0.0
 end
@@ -102,6 +112,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function Faction:getValue(key)
 	return nil
 end
@@ -112,10 +123,12 @@ function Faction:getValues()
 	return {"", nil}
 end
 
+---@param factionIndex int
 function Faction:hasStaticRelationsToFaction(factionIndex)
 	return true
 end
 
+---@param factionIndex int
 function Faction:knowsFaction(factionIndex)
 	return true
 end
@@ -125,6 +138,9 @@ end
 -- @param material - The kind of material that will be removed from the faction
 -- @param amount - Amount that will be removed from the faction
 -- @return nothing
+---@param description string
+---@param material Material
+---@param amount int
 function Faction:payResource(description, material, amount)
 	return nil
 end
@@ -134,6 +150,9 @@ end
 -- @param money - Money that will be removed from the faction
 -- @param args - A list of resources, starting with iron, that will be removed from the faction
 -- @return nothing
+---@param description string
+---@param money int
+---@param args int...
 function Faction:payWithoutNotify(description, money, args)
 	return nil
 end
@@ -143,6 +162,9 @@ end
 -- @param material - The kind of material that will be given to the faction
 -- @param amount - Amount that will be given to the faction
 -- @return nothing
+---@param description string
+---@param material Material
+---@param amount int
 function Faction:receiveResource(description, material, amount)
 	return nil
 end
@@ -152,6 +174,9 @@ end
 -- @param money - Money that will be given to the faction
 -- @param args - A list of resources, starting with iron, that will be given to the faction
 -- @return nothing
+---@param description string
+---@param money int
+---@param args int...
 function Faction:receiveWithoutNotify(description, money, args)
 	return nil
 end
@@ -167,6 +192,8 @@ function Faction:sendChatMessage()
 end
 
 -- @return nothing
+---@param x int
+---@param y int
 function Faction:setHomeSectorCoordinates(x, y)
 	return nil
 end
@@ -177,6 +204,8 @@ function Faction:setResources()
 end
 
 -- @return nothing
+---@param factionIndex int
+---@param in bool
 function Faction:setStaticRelationsToFaction(factionIndex, _in)
 	return nil
 end
@@ -185,6 +214,8 @@ end
 -- @param trait - The name of the trait
 -- @param value - The value of the trait, should be between -1 and 1
 -- @return nothing
+---@param trait string
+---@param value float
 function Faction:setTrait(trait, value)
 	return nil
 end
@@ -193,6 +224,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function Faction:setValue(key, value)
 	return nil
 end

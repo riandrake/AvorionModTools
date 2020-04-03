@@ -22,6 +22,7 @@ setmetatable(UIArbitraryVerticalSplitter, {__call = function(self, rect, padding
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getBottomLeftRect(rect)
 	return nil
 end
@@ -29,6 +30,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getBottomRect(rect)
 	return Rect()
 end
@@ -36,6 +38,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getBottomRightRect(rect)
 	return nil
 end
@@ -43,6 +46,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getCenterRect(rect)
 	return nil
 end
@@ -50,6 +54,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getLeftRect(rect)
 	return nil
 end
@@ -57,6 +62,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getRightRect(rect)
 	return nil
 end
@@ -64,6 +70,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getTopLeftRect(rect)
 	return nil
 end
@@ -71,6 +78,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getTopRect(rect)
 	return nil
 end
@@ -78,6 +86,7 @@ end
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
+---@param rect Rect
 function UIArbitraryVerticalSplitter:getTopRightRect(rect)
 	return nil
 end
@@ -85,6 +94,7 @@ end
 -- Retrieves one of the new created rects
 -- @param index - The index of the retrieved rect, from 0 to splits
 -- @return A new rect, size was determined by splitting
+---@param index int
 function UIArbitraryVerticalSplitter:partition(index)
 	return Rect()
 end
@@ -92,6 +102,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementBottom(element)
 	return UIElement()
 end
@@ -99,6 +110,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementBottomLeft(element)
 	return UIElement()
 end
@@ -106,6 +118,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementBottomRight(element)
 	return UIElement()
 end
@@ -113,6 +126,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementCenter(element)
 	return UIElement()
 end
@@ -120,6 +134,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementLeft(element)
 	return UIElement()
 end
@@ -127,6 +142,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementRight(element)
 	return UIElement()
 end
@@ -134,6 +150,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementTop(element)
 	return UIElement()
 end
@@ -141,6 +158,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementTopLeft(element)
 	return UIElement()
 end
@@ -148,6 +166,7 @@ end
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
+---@param element UIElement
 function UIArbitraryVerticalSplitter:placeElementTopRight(element)
 	return UIElement()
 end
@@ -157,6 +176,10 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
 function UIArbitraryVerticalSplitter:setMargin(left, right, top, bottom)
 	return nil
 end
@@ -166,6 +189,10 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
 function UIArbitraryVerticalSplitter:setPadding(left, right, top, bottom)
 	return nil
 end

@@ -13,10 +13,12 @@ Material = {
 
 setmetatable(Material, {__call = function(self, type) return Material end})
 
+---@param other Material
 function Material:__eq(other)
 	return true
 end
 
+---@param other Material
 function Material:__lt(other)
 	return true
 end

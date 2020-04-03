@@ -37,6 +37,8 @@ ListBox = {
 setmetatable(ListBox, {__call = function(self, index) return ListBox end})
 
 -- @return nothing
+---@param str string
+---@param value var
 function ListBox:addEntry(str, value)
 	return nil
 end
@@ -56,6 +58,7 @@ function ListBox:deselect()
 	return nil
 end
 
+---@param row unsigned
 function ListBox:getEntry(row)
 	return "", true, true, Color()
 end
@@ -65,41 +68,55 @@ function ListBox:getSelectedEntry()
 end
 
 -- @return nothing
+---@param index int
 function ListBox:removeEntry(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ListBox:select(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ListBox:selectNoCallback(index)
 	return nil
 end
 
 -- @return nothing
+---@param value var
 function ListBox:selectValue(value)
 	return nil
 end
 
 -- @return nothing
+---@param value var
 function ListBox:selectValueNoCallback(value)
 	return nil
 end
 
 -- @return nothing
+---@param row unsigned
+---@param text string
+---@param bold bool
+---@param italic bool
+---@param color Color
 function ListBox:setEntry(row, text, bold, italic, color)
 	return nil
 end
 
 -- @return nothing
+---@param row unsigned
+---@param type int
 function ListBox:setEntryType(row, type)
 	return nil
 end
 
 -- @return nothing
+---@param row unsigned
+---@param value var
 function ListBox:setEntryValue(row, value)
 	return nil
 end

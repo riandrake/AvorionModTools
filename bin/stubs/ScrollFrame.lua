@@ -26,6 +26,7 @@ ScrollFrame = {
 setmetatable(ScrollFrame, {__call = function(self, index) return ScrollFrame end})
 
 -- @return nothing
+---@param numSteps int
 function ScrollFrame:scroll(numSteps)
 	return nil
 end
@@ -42,31 +43,42 @@ function ScrollFrame:createArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param function string
 function ScrollFrame:createButton(rect, caption, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
 function ScrollFrame:createCheckBox(rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function ScrollFrame:createComboBox(rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createContainer(rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createCraftPortrait(rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createFrame(rect)
 	return Frame()
 end
@@ -77,26 +89,35 @@ function ScrollFrame:createInputWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function ScrollFrame:createInventorySelection(rect, width)
 	return InventorySelection()
 end
 
 -- Inherited from UIContainer
+---@param position var
+---@param caption string
+---@param fontSize int
 function ScrollFrame:createLabel(position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
+---@param a vec2
+---@param b vec2
 function ScrollFrame:createLine(a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createListBox(rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createListBoxEx(rect)
 	return ListBoxEx()
 end
@@ -107,91 +128,125 @@ function ScrollFrame:createMapArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createMultiLineTextBox(rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createNumbersBar(rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param path string
 function ScrollFrame:createPicture(rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createPlanDisplayer(rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function ScrollFrame:createProgressBar(rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function ScrollFrame:createRect(rect, color)
 	return UIRect()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param icon string
+---@param function string
 function ScrollFrame:createRoundButton(rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function ScrollFrame:createSavedDesignsSelection(rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createScrollFrame(rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function ScrollFrame:createSelection(rect, width)
 	return Selection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
 function ScrollFrame:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function ScrollFrame:createStatisticsBar(rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createTabbedWindow(rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onTextChangedFunction string
 function ScrollFrame:createTextBox(rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param text string
 function ScrollFrame:createTextField(rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createTree(rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function ScrollFrame:createValueComboBox(rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function ScrollFrame:createWindow(rect)
 	return Window()
 end

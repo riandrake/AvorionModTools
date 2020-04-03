@@ -37,6 +37,7 @@ InputWindow = {
 setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
 
 -- @return nothing
+---@param caption string
 function InputWindow:show(caption)
 	return nil
 end
@@ -53,31 +54,42 @@ function InputWindow:createArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param function string
 function InputWindow:createButton(rect, caption, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
 function InputWindow:createCheckBox(rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function InputWindow:createComboBox(rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createContainer(rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createCraftPortrait(rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createFrame(rect)
 	return Frame()
 end
@@ -88,26 +100,35 @@ function InputWindow:createInputWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InputWindow:createInventorySelection(rect, width)
 	return InventorySelection()
 end
 
 -- Inherited from UIContainer
+---@param position var
+---@param caption string
+---@param fontSize int
 function InputWindow:createLabel(position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
+---@param a vec2
+---@param b vec2
 function InputWindow:createLine(a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createListBox(rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createListBoxEx(rect)
 	return ListBoxEx()
 end
@@ -118,91 +139,125 @@ function InputWindow:createMapArrowLine()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createMultiLineTextBox(rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createNumbersBar(rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param path string
 function InputWindow:createPicture(rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createPlanDisplayer(rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InputWindow:createProgressBar(rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InputWindow:createRect(rect, color)
 	return UIRect()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param icon string
+---@param function string
 function InputWindow:createRoundButton(rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InputWindow:createSavedDesignsSelection(rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createScrollFrame(rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param width int
 function InputWindow:createSelection(rect, width)
 	return Selection()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
 function InputWindow:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param color Color
 function InputWindow:createStatisticsBar(rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createTabbedWindow(rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onTextChangedFunction string
 function InputWindow:createTextBox(rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param text string
 function InputWindow:createTextField(rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createTree(rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
+---@param onSelectedFunction string
 function InputWindow:createValueComboBox(rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
+---@param rect Rect
 function InputWindow:createWindow(rect)
 	return Window()
 end

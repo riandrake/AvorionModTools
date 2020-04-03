@@ -28,6 +28,7 @@ Picture = {
 setmetatable(Picture, {__call = function(self, index) return Picture end})
 
 -- @return nothing
+---@param color Color
 function Picture:clear(color)
 	return nil
 end

@@ -29,6 +29,8 @@ ComboBox = {
 setmetatable(ComboBox, {__call = function(self, index) return ComboBox end})
 
 -- @return nothing
+---@param entry string
+---@param color var
 function ComboBox:addEntry(entry, color)
 	return nil
 end
@@ -38,11 +40,13 @@ function ComboBox:clear()
 	return nil
 end
 
+---@param index int
 function ComboBox:getEntry(index)
 	return ""
 end
 
 -- @return nothing
+---@param in int
 function ComboBox:setSelectedIndexNoCallback(_in)
 	return nil
 end

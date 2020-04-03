@@ -13,6 +13,8 @@ function Profiler:__tostring()
 end
 
 -- @return nothing
+---@param name string
+---@param duration double
 function Profiler:addSection(name, duration)
 	return nil
 end
@@ -27,6 +29,7 @@ function Profiler:print()
 end
 
 -- @return nothing
+---@param name string
 function Profiler:reenter(name)
 	return nil
 end
@@ -37,6 +40,7 @@ function Profiler:reset()
 end
 
 -- @return nothing
+---@param name string
 function Profiler:section(name)
 	return nil
 end

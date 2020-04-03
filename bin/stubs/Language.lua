@@ -32,6 +32,7 @@ function Language:getSyllable()
 	return ""
 end
 
+---@param numSyllables int
 function Language:getSyllableCombination(numSyllables)
 	return ""
 end

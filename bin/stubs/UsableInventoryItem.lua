@@ -21,6 +21,7 @@ UsableInventoryItem = {
 
 setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
 
+---@param other var
 function UsableInventoryItem:__eq(other)
 	return true
 end
@@ -38,6 +39,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function UsableInventoryItem:getValue(key)
 	return nil
 end
@@ -49,6 +51,7 @@ function UsableInventoryItem:getValues()
 end
 
 -- @return nothing
+---@param tooltip Tooltip
 function UsableInventoryItem:setTooltip(tooltip)
 	return nil
 end
@@ -57,6 +60,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function UsableInventoryItem:setValue(key, value)
 	return nil
 end

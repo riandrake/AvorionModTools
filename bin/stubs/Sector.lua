@@ -23,6 +23,8 @@ end
 -- @param factionIndex - The index of the faction to test
 -- @param id - The id of the entity to test
 -- @return A boolean indicating if the entity belongs to the faction
+---@param factionIndex int
+---@param id var
 function Sector:belongsToFaction(factionIndex, id)
 	return true
 end
@@ -33,6 +35,10 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
 function Sector:broadcastChatMessage(sender, messageType, message, args)
 	return nil
 end
@@ -41,6 +47,8 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
+---@param callbackName string
+---@param functionName var
 function Sector:callbacksRegistered(callbackName, functionName)
 	return 0
 end
@@ -54,6 +62,7 @@ end
 -- Immediately deletes all entities in the sector that are set for deletion. Don't call this function from an entity script. Only call this if you know what you're doing.
 -- @param entity - The entity to delete
 -- @return nothing
+---@param entity var
 function Sector:collectGarbage(entity)
 	return nil
 end
@@ -62,6 +71,8 @@ end
 -- @param entity - The entity to copy
 -- @param positoin - The new position of the copy
 -- @return The new entity
+---@param entity Entity
+---@param positoin Matrix
 function Sector:copyEntity(entity, positoin)
 	return Entity()
 end
@@ -71,6 +82,9 @@ end
 -- @param resources - 1 if the asteroid should have mineable resources, 0 if not
 -- @param position - The position of the asteroid
 -- @return An entity representing the new asteroid
+---@param plan BlockPlan
+---@param resources bool
+---@param position Matrix
 function Sector:createAsteroid(plan, resources, position)
 	return Entity()
 end
@@ -79,6 +93,8 @@ end
 -- @param descriptor - A descriptor representing the entity to create, this descriptor will be empty after the call since the data is moved (instead of copied) into the created entity
 -- @param arrivalType - The arrival type of the ship
 -- @return The new entity
+---@param descriptor EntityDescriptor
+---@param arrivalType var
 function Sector:createEntity(descriptor, arrivalType)
 	return Entity()
 end
@@ -88,6 +104,9 @@ end
 -- @param position - The position of the object
 -- @param arrivalType - The arrival type of the ship
 -- @return An entity representing the new object
+---@param plan BlockPlan
+---@param position Matrix
+---@param arrivalType var
 function Sector:createObject(plan, position, arrivalType)
 	return Entity()
 end
@@ -99,6 +118,11 @@ end
 -- @param position - The position of the ship
 -- @param arrivalType - The arrival type of the ship
 -- @return An entity representing the new ship
+---@param faction Faction
+---@param name string
+---@param plan BlockPlan
+---@param position Matrix
+---@param arrivalType var
 function Sector:createShip(faction, name, plan, position, arrivalType)
 	return Entity()
 end
@@ -110,6 +134,11 @@ end
 -- @param script - An optional script that will be used on creation of the station
 -- @param args - Arguments to the script that will be passed to its "initialize" function
 -- @return An entity representing the new station
+---@param faction Faction
+---@param plan BlockPlan
+---@param position Matrix
+---@param script var
+---@param args var...
 function Sector:createStation(faction, plan, position, script, args)
 	return Entity()
 end
@@ -120,6 +149,10 @@ end
 -- @param color - The color of the wormhole
 -- @param size - The size of the wormhole
 -- @return An entity representing the new wormhole
+---@param x int
+---@param y int
+---@param color Color
+---@param size float
 function Sector:createWormHole(x, y, color, size)
 	return Entity()
 end
@@ -128,6 +161,8 @@ end
 -- @param plan - The plan of the wreckage, this plan will be empty after the call since the plan is moved (instead of copied) into the created entity
 -- @param position - The position of the wreckage
 -- @return An entity representing the new wreckage
+---@param plan BlockPlan
+---@param position Matrix
 function Sector:createWreckage(plan, position)
 	return Entity()
 end
@@ -135,6 +170,7 @@ end
 -- Sets an entity for deletion. The entity is not deleted right away, but will be marked for deletion and will be deleted at the end of the current frame.
 -- @param entity - The entity to delete
 -- @return nothing
+---@param entity Entity
 function Sector:deleteEntity(entity)
 	return nil
 end
@@ -142,6 +178,7 @@ end
 -- Sets an entity for deletion. The entity is not deleted right away, but will be marked for deletion and will be deleted at the end of the current frame. This function also creates a hyperspace animation when deleting the entity.
 -- @param entity - The entity to delete
 -- @return nothing
+---@param entity Entity
 function Sector:deleteEntityJumped(entity)
 	return nil
 end
@@ -151,14 +188,29 @@ function Sector:dropBundle()
 	return nil
 end
 
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param good TradingGood
+---@param owner int
+---@param amount int
 function Sector:dropCargo(position, reservedFor, deniedFor, good, owner, amount)
 	return Entity()
 end
 
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param amount int
 function Sector:dropMoney(position, reservedFor, deniedFor, amount)
 	return Entity()
 end
 
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param material Material
+---@param amount int
 function Sector:dropResources(position, reservedFor, deniedFor, material, amount)
 	return Entity()
 end
@@ -168,14 +220,25 @@ end
 -- @param reservedFor - Faction the loot is reserved for, or nil
 -- @param deniedFor - Faction the loot is denied for, or nil
 -- @return The new entity, or nil
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
 function Sector:dropSectorTurret(position, reservedFor, deniedFor)
 	return Entity()
 end
 
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param desc TurretTemplate
 function Sector:dropTurret(position, reservedFor, deniedFor, desc)
 	return Entity()
 end
 
+---@param position vec3
+---@param reservedFor Faction
+---@param deniedFor Faction
+---@param upgrade SystemUpgradeTemplate
 function Sector:dropUpgrade(position, reservedFor, deniedFor, upgrade)
 	return Entity()
 end
@@ -183,6 +246,7 @@ end
 -- Returns if the entity with the given id exists in the sector. This is a performance optimization for quick checks of existance. Use if you have an id (but not a constructed Entity) that you want to check for existance. If you already have an Entity constructed, use the valid() function, which is faster.
 -- @param id - The id of the entity to test
 -- @return A boolean indicating if the entity with the index exists
+---@param id var
 function Sector:exists(id)
 	return true
 end
@@ -190,6 +254,7 @@ end
 -- Returns all allies of the given faction in the sector. Allies include ships of the same faction. Allied entities are determined as follows:  - they belong to the same faction - they belong to factions whose relations are above 70.000 - they belong to players of the same group  - they belong to players of the same alliance  - they belong to a player and his alliance
 -- @param factionIndex - The faction index of the faction whose ally ships are to be queried
 -- @return Multiple values: All detected allies in the sector
+---@param factionIndex int
 function Sector:getAllies(factionIndex)
 	return Entity()
 end
@@ -203,6 +268,7 @@ end
 -- Returns all enemies of the given faction in the sector. Enemies are determined as ships of factions where relations are below -40.000
 -- @param factionIndex - The faction index of the faction whose enemy ships are to be queried
 -- @return Multiple return values: All detected enemies in the sector
+---@param factionIndex int
 function Sector:getEnemies(factionIndex)
 	return Entity()
 end
@@ -216,6 +282,7 @@ end
 -- Returns all entities in the sector that have a specific component
 -- @param type - The desired component type (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
+---@param type int
 function Sector:getEntitiesByComponent(type)
 	return Entity()
 end
@@ -223,6 +290,7 @@ end
 -- Returns all entities in the sector that have a specific set of components
 -- @param types - The desired set of component types (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
+---@param types Type...
 function Sector:getEntitiesByComponents(types)
 	return Entity()
 end
@@ -230,6 +298,7 @@ end
 -- Returns all entities in the sector that belong to the given faction Complexity: O(n)
 -- @param factionIndex - The desired faction
 -- @return Multiple return values: All matching entities in the sector
+---@param factionIndex int
 function Sector:getEntitiesByFaction(factionIndex)
 	return Entity()
 end
@@ -237,6 +306,7 @@ end
 -- Returns all entities in the sector whose bounding spheres intersect with the given sphere. Entities without a bounding sphere component will not be considered.  Complexity: O(logn)
 -- @param sphere - The intersected sphere
 -- @return Multiple return values: All matching entities in the sector
+---@param sphere Sphere
 function Sector:getEntitiesByLocation(sphere)
 	return Entity()
 end
@@ -244,6 +314,7 @@ end
 -- Returns all entities in the sector that have a specific script attached to them
 -- @param script - The script that is to check for. This operation checks if the given script name is contained in the actual script name.
 -- @return Multiple return values: All matching entities in the sector
+---@param script string
 function Sector:getEntitiesByScript(script)
 	return Entity()
 end
@@ -252,6 +323,8 @@ end
 -- @param name - The value name to check for
 -- @param value - A value to check against. If this is set, only entities will be returned whose value is equal to the passed value. If this is nil, all entities will be returned that have any value with the given name assigned.
 -- @return Multiple return values: All matching entities in the sector
+---@param name string
+---@param value var
 function Sector:getEntitiesByScriptValue(name, value)
 	return Entity()
 end
@@ -259,6 +332,7 @@ end
 -- Returns all entities in the sector that have a specific type
 -- @param type - The desired entity type (See enum EntityType)
 -- @return Multiple return values: All matching entities in the sector
+---@param type int
 function Sector:getEntitiesByType(type)
 	return Entity()
 end
@@ -266,18 +340,23 @@ end
 -- Find an entity by index in the sector.  Complexity: O(logn)
 -- @param index - The index of the entity as Uuid or std::string
 -- @return The entity or nil if not found
+---@param index var
 function Sector:getEntity(index)
 	return Entity()
 end
 
+---@param factionIndex int
+---@param name string
 function Sector:getEntityByFactionAndName(factionIndex, name)
 	return Entity()
 end
 
+---@param faction int
 function Sector:getNumAllies(faction)
 	return 0
 end
 
+---@param factionIndex int
 function Sector:getNumEnemies(factionIndex)
 	return 0
 end
@@ -286,6 +365,7 @@ function Sector:getNumEntities()
 	return 0
 end
 
+---@param component int
 function Sector:getNumEntitiesByComponent(component)
 	return 0
 end
@@ -294,22 +374,28 @@ function Sector:getNumEntitiesByComponents()
 	return 0
 end
 
+---@param factionIndex int
 function Sector:getNumEntitiesByFaction(factionIndex)
 	return 0
 end
 
+---@param sphere Sphere
 function Sector:getNumEntitiesByLocation(sphere)
 	return 0
 end
 
+---@param scriptName string
 function Sector:getNumEntitiesByScript(scriptName)
 	return 0
 end
 
+---@param valueName string
+---@param value var
 function Sector:getNumEntitiesByScriptValue(valueName, value)
 	return 0
 end
 
+---@param type int
 function Sector:getNumEntitiesByType(type)
 	return 0
 end
@@ -333,6 +419,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function Sector:getValue(key)
 	return nil
 end
@@ -346,10 +433,12 @@ end
 -- Checks if the given faction has any enemy ships or objects in the sector
 -- @param factionIndex - The index of the faction
 -- @return true if there are enemies present, false otherwise
+---@param factionIndex int
 function Sector:hasEnemies(factionIndex)
 	return true
 end
 
+---@param name string
 function Sector:hasScript(name)
 	return true
 end
@@ -359,6 +448,9 @@ end
 -- @param ignoredEntity - A uuid that can be optionally set. If this was set, the entity with this ID will be ignored during the intersection.
 -- @param ignoredEntityShields - A uuid that can be optionally set. If this was set, the shields of the entity with this ID will be ignored during the intersection.
 -- @return The entity closest to the origin of the ray, that was hit (if one or more were hit), as well as the point where the ray intersects with the object (or its shield).
+---@param ray Ray
+---@param ignoredEntity Uuid
+---@param ignoredEntityShields Uuid
 function Sector:intersectBeamRay(ray, ignoredEntity, ignoredEntityShields)
 	return UserObject()
 end
@@ -368,6 +460,9 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 3 The call failed because the given script was not found in the sector 4 The call failed because the given function was not found in the script
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
 function Sector:invokeFunction(scriptName, functionName, arguments)
 	return nil
 end
@@ -376,20 +471,25 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
+---@param callbackName string
+---@param functionName string
 function Sector:registerCallback(callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
+---@param script var
 function Sector:removeScript(script)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function Sector:resendEntity(entity)
 	return nil
 end
 
+---@param path string
 function Sector:resolveScriptPath(path)
 	return ""
 end
@@ -403,11 +503,15 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function Sector:setValue(key, value)
 	return nil
 end
 
 -- @return nothing
+---@param callbackName string
+---@param functionName string
 function Sector:unregisterCallback(callbackName, functionName)
 	return nil
 end

@@ -29,15 +29,20 @@ function ShipWindow:activateAllTabs()
 end
 
 -- @return nothing
+---@param tab Tab
 function ShipWindow:activateTab(tab)
 	return nil
 end
 
+---@param name string
+---@param icon string
+---@param description string
 function ShipWindow:createTab(name, icon, description)
 	return Tab()
 end
 
 -- @return nothing
+---@param tab Tab
 function ShipWindow:deactivateTab(tab)
 	return nil
 end
@@ -46,6 +51,7 @@ function ShipWindow:getActiveTab()
 	return Tab()
 end
 
+---@param name string
 function ShipWindow:getTab(name)
 	return Tab()
 end
@@ -56,16 +62,20 @@ function ShipWindow:hide()
 end
 
 -- @return nothing
+---@param tab Tab
 function ShipWindow:moveTabToTheRight(tab)
 	return nil
 end
 
 -- @return nothing
+---@param tab Tab
+---@param pos int
 function ShipWindow:moveTabToTheRight(tab, pos)
 	return nil
 end
 
 -- @return nothing
+---@param val var
 function ShipWindow:selectTab(val)
 	return nil
 end

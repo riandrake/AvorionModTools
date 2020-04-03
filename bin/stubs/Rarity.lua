@@ -10,10 +10,12 @@ Rarity = {
 
 setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
+---@param other Rarity
 function Rarity:__eq(other)
 	return true
 end
 
+---@param other Rarity
 function Rarity:__lt(other)
 	return true
 end

@@ -57,55 +57,77 @@ function ListBoxEx:deselect()
 	return nil
 end
 
+---@param index unsigned
 function ListBoxEx:getColumnWidth(index)
 	return 0
 end
 
+---@param column unsigned
+---@param row unsigned
 function ListBoxEx:getEntry(column, row)
 	return "", true, true, Color()
 end
 
 -- @return nothing
+---@param index int
 function ListBoxEx:removeRow(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ListBoxEx:select(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ListBoxEx:selectNoCallback(index)
 	return nil
 end
 
 -- @return nothing
+---@param value var
 function ListBoxEx:selectValue(value)
 	return nil
 end
 
 -- @return nothing
+---@param value var
 function ListBoxEx:selectValueNoCallback(value)
 	return nil
 end
 
 -- @return nothing
+---@param index unsigned
+---@param width int
 function ListBoxEx:setColumnWidth(index, width)
 	return nil
 end
 
 -- @return nothing
+---@param column unsigned
+---@param row unsigned
+---@param text string
+---@param bold bool
+---@param italic bool
+---@param color Color
 function ListBoxEx:setEntry(column, row, text, bold, italic, color)
 	return nil
 end
 
 -- @return nothing
+---@param column unsigned
+---@param row unsigned
+---@param type int
 function ListBoxEx:setEntryType(column, row, type)
 	return nil
 end
 
 -- @return nothing
+---@param column unsigned
+---@param row unsigned
+---@param value var
 function ListBoxEx:setEntryValue(column, row, value)
 	return nil
 end

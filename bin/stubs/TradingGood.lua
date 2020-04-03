@@ -18,6 +18,7 @@ TradingGood = {
 
 setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
 
+---@param other TradingGood
 function TradingGood:__eq(other)
 	return true
 end
@@ -26,10 +27,12 @@ function TradingGood:__tostring()
 	return ""
 end
 
+---@param amount int
 function TradingGood:displayName(amount)
 	return ""
 end
 
+---@param amount int
 function TradingGood:pluralForm(amount)
 	return PluralForm()
 end

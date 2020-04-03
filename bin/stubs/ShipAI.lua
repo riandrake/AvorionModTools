@@ -18,6 +18,7 @@ function ShipAI:enemyFightersPresent()
 	return true
 end
 
+---@param countCivilEnemies var
 function ShipAI:enemyShipsPresent(countCivilEnemies)
 	return true
 end
@@ -54,83 +55,105 @@ function ShipAI:getRegisteredFriendFactions()
 	return 0
 end
 
+---@param other Entity
 function ShipAI:isEnemy(other)
 	return true
 end
 
+---@param countCivilEnemies var
 function ShipAI:isEnemyPresent(countCivilEnemies)
 	return true
 end
 
+---@param other Entity
 function ShipAI:isRegisteredEnemy(other)
 	return true
 end
 
+---@param other Entity
 function ShipAI:isRegisteredFriend(other)
 	return true
 end
 
 -- @return nothing
+---@param index Uuid
 function ShipAI:registerEnemyEntity(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ShipAI:registerEnemyFaction(index)
 	return nil
 end
 
 -- @return nothing
+---@param index Uuid
 function ShipAI:registerFriendEntity(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ShipAI:registerFriendFaction(index)
 	return nil
 end
 
 -- @return nothing
+---@param attackCivilShips var
+---@param canFinish var
 function ShipAI:setAggressive(attackCivilShips, canFinish)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setAttack(entity)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setBoard(entity)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setEscort(entity)
 	return nil
 end
 
 -- @return nothing
+---@param location vec3
+---@param arrivalRadius float
+---@param collisionException var
 function ShipAI:setFly(location, arrivalRadius, collisionException)
 	return nil
 end
 
 -- @return nothing
+---@param location vec3
+---@param arrivalRadius float
+---@param avoidCollisions var
 function ShipAI:setFlyLinear(location, arrivalRadius, avoidCollisions)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setFollow(entity)
 	return nil
 end
 
 -- @return nothing
+---@param location vec3
 function ShipAI:setGuard(location)
 	return nil
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setHarvest(entity)
 	return nil
 end
@@ -141,6 +164,8 @@ function ShipAI:setIdle()
 end
 
 -- @return nothing
+---@param x int
+---@param y int
 function ShipAI:setJump(x, y)
 	return nil
 end
@@ -151,11 +176,13 @@ function ShipAI:setPassive()
 end
 
 -- @return nothing
+---@param in bool
 function ShipAI:setPassiveShooting(_in)
 	return nil
 end
 
 -- @return nothing
+---@param location vec3
 function ShipAI:setPassiveTurning(location)
 	return nil
 end
@@ -166,12 +193,15 @@ function ShipAI:setRepair()
 end
 
 -- @return nothing
+---@param entity Entity
 function ShipAI:setRepairTarget(entity)
 	return nil
 end
 
 -- Sets the status that will be set in the ship info and other places (eg. ships/fleet tab)
 -- @param status - a string that will be used as status, can be a format string for easier translation.
+---@param status string
+---@param arguments string_pair...
 function ShipAI:setStatus(status, arguments)
 	return nil
 end
@@ -182,21 +212,25 @@ function ShipAI:stop()
 end
 
 -- @return nothing
+---@param index Uuid
 function ShipAI:unregisterEnemyEntity(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ShipAI:unregisterEnemyFaction(index)
 	return nil
 end
 
 -- @return nothing
+---@param index Uuid
 function ShipAI:unregisterFriendEntity(index)
 	return nil
 end
 
 -- @return nothing
+---@param index int
 function ShipAI:unregisterFriendFaction(index)
 	return nil
 end

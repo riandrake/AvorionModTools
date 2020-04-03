@@ -41,11 +41,14 @@ Selection = {
 setmetatable(Selection, {__call = function(self, index) return Selection end})
 
 -- @return nothing
+---@param item var
+---@param pos var
 function Selection:add(item, pos)
 	return nil
 end
 
 -- @return nothing
+---@param pos var
 function Selection:addEmpty(pos)
 	return nil
 end
@@ -55,6 +58,7 @@ function Selection:clear()
 	return nil
 end
 
+---@param key ivec2
 function Selection:getItem(key)
 	return UserObject()
 end
@@ -67,21 +71,26 @@ function Selection:getMouseOveredKey()
 	return ivec2()
 end
 
+---@param x int
+---@param y int
 function Selection:getRect(x, y)
 	return 0, Rect()
 end
 
 -- @return nothing
+---@param key ivec2
 function Selection:remove(key)
 	return nil
 end
 
 -- @return nothing
+---@param pos ivec2
 function Selection:select(pos)
 	return nil
 end
 
 -- @return nothing
+---@param pos ivec2
 function Selection:selectNoCallback(pos)
 	return nil
 end

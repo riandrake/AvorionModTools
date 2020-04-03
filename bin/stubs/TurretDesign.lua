@@ -32,31 +32,37 @@ function TurretDesign:getMoveBody()
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setBarrels(part)
 	return nil
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setBase(part)
 	return nil
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setBody(part)
 	return nil
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setMoveBarrels(part)
 	return nil
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setMoveBase(part)
 	return nil
 end
 
 -- @return nothing
+---@param part TurretDesignPart
 function TurretDesign:setMoveBody(part)
 	return nil
 end

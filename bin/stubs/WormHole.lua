@@ -20,6 +20,8 @@ function WormHole:getTargetCoordinates()
 end
 
 -- @return nothing
+---@param x int
+---@param y int
 function WormHole:setTargetCoordinates(x, y)
 	return nil
 end

@@ -19,6 +19,7 @@ VanillaInventoryItem = {
 
 setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
 
+---@param other var
 function VanillaInventoryItem:__eq(other)
 	return true
 end
@@ -36,6 +37,7 @@ end
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
+---@param key string
 function VanillaInventoryItem:getValue(key)
 	return nil
 end
@@ -47,6 +49,7 @@ function VanillaInventoryItem:getValues()
 end
 
 -- @return nothing
+---@param tooltip Tooltip
 function VanillaInventoryItem:setTooltip(tooltip)
 	return nil
 end
@@ -55,6 +58,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
+---@param key string
+---@param value var
 function VanillaInventoryItem:setValue(key, value)
 	return nil
 end

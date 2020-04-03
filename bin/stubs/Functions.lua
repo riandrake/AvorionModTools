@@ -1,5 +1,10 @@
 -- This function is only available on the client.
 -- @return nothing
+---@param type string
+---@param uuid Uuid
+---@param text string
+---@param icon string
+---@param color var
 function addShipProblem(type, uuid, text, icon, color)
 	return nil
 end
@@ -21,6 +26,9 @@ function AsteroidDescriptor()
 end
 
 -- @return nothing
+---@param callbackFunction string
+---@param code string
+---@param arguments var...
 function async(callbackFunction, code, arguments)
 	return nil
 end
@@ -30,6 +38,9 @@ end
 -- @param code - The code that will be executed. Has to contain a function run(...). The run() function will be given the arguments that are passed after this parameter.
 -- @param arguments - The arguments that will be passed to the run() function.
 -- @return nothing
+---@param callbackFunction string
+---@param code string
+---@param arguments var...
 function async(callbackFunction, code, arguments)
 	return nil
 end
@@ -39,6 +50,9 @@ end
 -- @param code - The code that will be executed. Has to contain a function run(...). The run() function will be given the arguments that are passed after this parameter.
 -- @param arguments - The arguments that will be passed to the run() function
 -- @return nothing
+---@param callbackFunction string
+---@param code string
+---@param arguments var...
 function async(callbackFunction, code, arguments)
 	return nil
 end
@@ -47,6 +61,8 @@ end
 -- @param functionName - The name of the scripting function that is to be executed
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
+---@param functionName string
+---@param arguments var...
 function broadcastInvokeClientFunction(functionName, arguments)
 	return nil
 end
@@ -63,14 +79,22 @@ function checkWriteSecureFilename(string)
 	return true
 end
 
+---@param a float
+---@param r float
+---@param g float
+---@param b float
 function ColorARGB(a, r, g, b)
 	return Color()
 end
 
+---@param h float
+---@param s float
+---@param v float
 function ColorHSV(h, s, v)
 	return Color()
 end
 
+---@param i int
 function ColorInt(i)
 	return Color()
 end
@@ -79,6 +103,9 @@ function ColorPalette()
 	return Color()
 end
 
+---@param r float
+---@param g float
+---@param b float
 function ColorRGB(r, g, b)
 	return Color()
 end
@@ -86,6 +113,7 @@ end
 -- Copies the given Object
 -- @param value - A non-POD, non-table object
 -- @return A true copy of the given object
+---@param value var
 function copy(value)
 	return UserObject()
 end
@@ -93,6 +121,7 @@ end
 -- Creates a new directory, including all required parent directories. Security-specific behavior: Creating directories is only possible in the moddata/ subdirectory of the Avorion settings folder.
 -- @param directory - Path to the directory to create
 -- @return A system error code indicating if the operation was successful
+---@param directory string
 function createDirectory(directory)
 	return nil
 end
@@ -100,10 +129,12 @@ end
 -- Inserts dots into a large number to create an easily human readable money string. Example: 10000000 will become 10.000.000
 -- @param number - The large number
 -- @return A string containing the readable number
+---@param number double
 function createMonetaryString(number)
 	return ""
 end
 
+---@param turret Entity
 function CreateTemplateFromTurret(turret)
 	return TurretTemplate()
 end
@@ -120,6 +151,8 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The cross product of the vectors
+---@param a var
+---@param b var
 function cross(a, b)
 	return nil
 end
@@ -129,6 +162,9 @@ end
 -- @param function - The function that is to be executed once the time has passed as a string
 -- @param args... - Arguments that will be passed to the callback function
 -- @return true if the callback was registered, false otherwise
+---@param time double
+---@param function string
+---@param args var...
 function deferredCallback(time, _function, args)
 	return true
 end
@@ -136,6 +172,7 @@ end
 -- Deletes a file. Error codes behave the same way as rmdir(). Security-specific behavior: Removing files is only possible in the moddata/ subdirectory of the Avorion settings folder.
 -- @param file - Path to the file to delete
 -- @return A system error code indicating if the operation was successful
+---@param file string
 function deleteFile(file)
 	return nil
 end
@@ -145,12 +182,17 @@ end
 -- @param sender - The sender that will be displayed for the chat message
 -- @param type - The type of chat message, 0 = Normal, 1 = Error, 2 = Warning, 3 = Info
 -- @return nothing
+---@param message string
+---@param sender string
+---@param type int
 function displayChatMessage(message, sender, type)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param bigText string
+---@param smallText string
 function displayMissionAccomplishedText(bigText, smallText)
 	return nil
 end
@@ -159,6 +201,8 @@ end
 -- @param entity - The entity next to which the speech bubble should appear
 -- @param text - The text that will be displayed in the speech bubble
 -- @return nothing
+---@param entity Entity
+---@param text string
 function displaySpeechBubble(entity, text)
 	return nil
 end
@@ -167,6 +211,8 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The linear distance between the vectors
+---@param a var
+---@param b var
 function distance(a, b)
 	return nil
 end
@@ -175,6 +221,8 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The squared linear distance between the vectors
+---@param a var
+---@param b var
 function distance2(a, b)
 	return nil
 end
@@ -183,6 +231,8 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The dot product between the two vectors
+---@param a var
+---@param b var
 function dot(a, b)
 	return nil
 end
@@ -191,30 +241,41 @@ end
 -- @param rect - The rect that is to be drawn
 -- @param color - The color of the rect
 -- @return nothing
+---@param rect Rect
+---@param color Color
 function drawBorder(rect, color)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param box Box
+---@param matrix Matrix
+---@param color Color
 function drawDebugBox(box, matrix, color)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param a vec3
+---@param b vec3
+---@param color Color
 function drawDebugLine(a, b, color)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param sphere Sphere
+---@param color Color
 function drawDebugSphere(sphere, color)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param fighter FighterTemplate
 function drawFighterTooltip(fighter)
 	return nil
 end
@@ -223,6 +284,8 @@ end
 -- @param rect - The rect that is to be drawn
 -- @param color - The color of the rect
 -- @return nothing
+---@param rect Rect
+---@param color Color
 function drawRect(rect, color)
 	return nil
 end
@@ -237,6 +300,14 @@ end
 -- @param italic - Use 1 if the text should be italic, 0 otherwise
 -- @param style - The style of the text, 0 is default style, 1 is shadowed, 2 is outlined
 -- @return nothing
+---@param text string
+---@param px int
+---@param py int
+---@param color Color
+---@param size int
+---@param bold int
+---@param italic int
+---@param style int
 function drawText(text, px, py, color, size, bold, italic, style)
 	return nil
 end
@@ -252,12 +323,22 @@ end
 -- @param italic - Use 1 if the text should be italic, 0 otherwise
 -- @param style - The style of the text, 0 is default style, 1 is shadowed, 2 is outlined
 -- @return nothing
+---@param text string
+---@param rect Rect
+---@param horizontalAlignment int
+---@param verticalAlignment int
+---@param color Color
+---@param size int
+---@param bold int
+---@param italic int
+---@param style int
 function drawTextRect(text, rect, horizontalAlignment, verticalAlignment, color, size, bold, italic, style)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param turret TurretTemplate
 function drawTurretTooltip(turret)
 	return nil
 end
@@ -269,6 +350,7 @@ end
 -- Prints errors to the console. In the ingame console, server output will be printed in magenta, client output will be printed in darkish red.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
+---@param args var...
 function eprint(args)
 	return nil
 end
@@ -285,6 +367,12 @@ function GameVersion()
 	return Version()
 end
 
+---@param style PlanStyle
+---@param seed Seed
+---@param volume float
+---@param maxBlocks int
+---@param scaleToFit var
+---@param material Material
 function GeneratePlanFromStyle(style, seed, volume, maxBlocks, scaleToFit, material)
 	return BlockPlan()
 end
@@ -298,12 +386,14 @@ end
 -- Retrieves a global variable. These variables are shared over the entire process.
 -- @param name - The name of the global variable
 -- @return The queried variable, or nil if non-existant
+---@param name string
 function getGlobal(name)
 	return nil
 end
 
 -- @param singular - The english string
 -- @return The translated string, or, if no translation exists, the english string, with comment removed
+---@param singular string
 function GetLocalizedString(singular)
 	return ""
 end
@@ -330,6 +420,7 @@ end
 -- Rounds a large number and adds a suffix such as k or M. For example, 10.000 will become 10k.
 -- @param number - The number to make readable
 -- @return A string containing the rounded number and the suffix
+---@param number double
 function getReadableValue(number)
 	return 0.0, ""
 end
@@ -370,6 +461,9 @@ end
 -- @param functionName - The name of the scripting function that is to be executed
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
+---@param player Player
+---@param functionName string
+---@param arguments var...
 function invokeClientFunction(player, functionName, arguments)
 	return nil
 end
@@ -383,6 +477,13 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
+---@param x int
+---@param y int
+---@param printErrors bool
+---@param entityId var
+---@param scriptName string
+---@param functionName string
+---@param arguments var...
 function invokeEntityFunction(x, y, printErrors, entityId, scriptName, functionName, arguments)
 	return 0
 end
@@ -396,6 +497,13 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function.
 -- @return nothing
+---@param x int
+---@param y int
+---@param errorMessage string
+---@param entityId var
+---@param scriptName string
+---@param functionName string
+---@param arguments var...
 function invokeEntityFunction(x, y, errorMessage, entityId, scriptName, functionName, arguments)
 	return nil
 end
@@ -407,6 +515,11 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the player wasn't logged in, 0 otherwise.
+---@param factionIndex int
+---@param printErrors bool
+---@param scriptName string
+---@param functionName string
+---@param arguments var...
 function invokeFactionFunction(factionIndex, printErrors, scriptName, functionName, arguments)
 	return 0
 end
@@ -419,6 +532,12 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function.
 -- @return nothing
+---@param x int
+---@param y int
+---@param errorMessage var
+---@param scriptName string
+---@param functionName string
+---@param arguments var...
 function invokeSectorFunction(x, y, errorMessage, scriptName, functionName, arguments)
 	return nil
 end
@@ -431,6 +550,12 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
+---@param x int
+---@param y int
+---@param printErrors bool
+---@param scriptName string
+---@param functionName string
+---@param arguments var...
 function invokeSectorFunction(x, y, printErrors, scriptName, functionName, arguments)
 	return 0
 end
@@ -439,10 +564,13 @@ end
 -- @param functionName - The name of the scripting function that is to be executed
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
+---@param functionName string
+---@param arguments var...
 function invokeServerFunction(functionName, arguments)
 	return nil
 end
 
+---@param i int
 function IsValidMaterial(i)
 	return true
 end
@@ -450,6 +578,7 @@ end
 -- Calculates the length of a vector
 -- @param vec - the vector
 -- @return The length of the vector
+---@param vec var
 function length(vec)
 	return nil
 end
@@ -457,6 +586,7 @@ end
 -- Calculates the squared length of a vector
 -- @param vec - the vector
 -- @return The squared length of the vector
+---@param vec var
 function length2(vec)
 	return nil
 end
@@ -464,18 +594,24 @@ end
 -- Lists all files in a directory. Security-specific behavior: Listing files of directories is only possible in the moddata/ subdirectory of the Avorion settings folder.
 -- @param directory - Path to the directory to remove
 -- @return A list of files
+---@param directory string
 function listFilesOfDirectory(directory)
 	return ""
 end
 
+---@param file string
 function LoadPlanFromFile(file)
 	return BlockPlan()
 end
 
+---@param path string
 function LoadTurretDesignFromFile(path)
 	return TurretDesign()
 end
 
+---@param eye vec3
+---@param at vec3
+---@param up vec3
 function lookAt(eye, at, up)
 	return Matrix()
 end
@@ -484,30 +620,46 @@ function LowestRarity()
 	return Rarity()
 end
 
+---@param x int
+---@param y int
+---@param seed int
 function makeFastHash(x, y, seed)
 	return 0
 end
 
+---@param values var...
 function makeHash(values)
 	return 0
 end
 
+---@param values var...
 function makeHash64(values)
 	return 0.0
 end
 
+---@param look vec3
+---@param up vec3
 function MatrixLookUp(look, up)
 	return Matrix()
 end
 
+---@param look vec3
+---@param up vec3
+---@param pos vec3
 function MatrixLookUpPosition(look, up, pos)
 	return Matrix()
 end
 
+---@param look vec3
+---@param up vec3
+---@param right vec3
 function MatrixLookUpRight(look, up, right)
 	return Matrix()
 end
 
+---@param yaw float
+---@param pitch float
+---@param roll float
 function MatrixYawPitchRoll(yaw, pitch, roll)
 	return Matrix()
 end
@@ -525,12 +677,14 @@ end
 -- Normalizes a given vector. This function creates a new normalized vector, the given vector is not changed.
 -- @param vec - the vector to normalize
 -- @return The normalized result of the given vector
+---@param vec var
 function normalize(vec)
 	return nil
 end
 
 -- Normalizes a given vector. This function normalizes the vector in place.
 -- @param vec - the vector to normalize
+---@param vec var
 function normalize_ip(vec)
 	return nil
 end
@@ -571,18 +725,31 @@ function onServer()
 	return true
 end
 
+---@param fov float
+---@param aspect float
+---@param nearClip float
+---@param farClip float
 function perspective(fov, aspect, nearClip, farClip)
 	return Matrix()
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param soundName string
+---@param type int
+---@param position vec3
+---@param radius float
+---@param volume float
+---@param entity Entity
 function play3DSound(soundName, type, position, radius, volume, entity)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param soundName string
+---@param type int
+---@param volume float
 function playSound(soundName, type, volume)
 	return nil
 end
@@ -590,6 +757,9 @@ end
 -- @param singular - The english singular string, will be used directly and no numbers will be formatted into it
 -- @param plural - The english plural string, may contain a ${i} variable that will be replaced by the number
 -- @param number - The number that is to be displayed
+---@param singular string
+---@param plural string
+---@param number int
 function plural_t(singular, plural, number)
 	return ""
 end
@@ -598,6 +768,10 @@ end
 -- @param plural - The english plural string, may contain a ${i} variable that will be replaced by the number
 -- @param context - The context that is to be shown in the .po file
 -- @param number - The number that is to be displayed
+---@param singular string
+---@param plural string
+---@param context string
+---@param number int
 function plural_with_context_t(singular, plural, context, number)
 	return ""
 end
@@ -605,6 +779,7 @@ end
 -- Prints to the console. In the ingame console, server output will be printed in cyan, client output will be printed in grey.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
+---@param args var...
 function print(args)
 	return nil
 end
@@ -612,17 +787,24 @@ end
 -- Similar to print, but prints to the log file.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
+---@param args var...
 function printlog(args)
 	return nil
 end
 
 -- This function is only available on the client.
+---@param p vec3
 function projectPoint(p)
 	return vec3()
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param entityId Uuid
+---@param healthColor var
+---@param shieldColor var
+---@param track var
+---@param name var
 function registerBoss(entityId, healthColor, shieldColor, track, name)
 	return nil
 end
@@ -630,12 +812,15 @@ end
 -- Removes an empty directory. Error codes behave the same way as rmdir(). Security-specific behavior: Removing directories is only possible in the moddata/ subdirectory of the Avorion settings folder.
 -- @param directory - Path to the directory to remove
 -- @return A system error code indicating if the operation was successful
+---@param directory string
 function removeDirectory(directory)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param type string
+---@param uuid Uuid
 function removeShipProblem(type, uuid)
 	return nil
 end
@@ -643,6 +828,7 @@ end
 -- Sends an error report to avorion.net, including DebugInfo and StackTrace
 -- @param string - containing the error that happened
 -- @return nothing
+---@param string string
 function reportError(string)
 	return nil
 end
@@ -651,6 +837,9 @@ function ResourceLootDescriptor()
 	return EntityDescriptor()
 end
 
+---@param in Matrix
+---@param angle float
+---@param axis vec3
 function rotate(_in, angle, axis)
 	return Matrix()
 end
@@ -660,6 +849,9 @@ end
 -- @param func - Name of the function to call
 -- @param params - Parameters that will be passed to the function
 -- @return An int indicating if the call succeeded, followed by the return values of the called function
+---@param script string
+---@param func string
+---@param params var...
 function run(script, func, params)
 	return nil
 end
@@ -669,6 +861,9 @@ end
 -- @param func - Name of the function to call
 -- @param params - Parameters that will be passed to the function
 -- @return An int indicating if the call succeeded, followed by the return values of the called function
+---@param script string
+---@param func string
+---@param params var...
 function run(script, func, params)
 	return nil
 end
@@ -682,6 +877,13 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
+---@param x int
+---@param y int
+---@param printErrors bool
+---@param entityId var
+---@param code string
+---@param functionName string
+---@param arguments var...
 function runEntityCode(x, y, printErrors, entityId, code, functionName, arguments)
 	return 0
 end
@@ -693,6 +895,11 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the player wasn't logged in, 0 otherwise.
+---@param factionIndex int
+---@param printErrors bool
+---@param code string
+---@param functionName string
+---@param arguments var...
 function runFactionCode(factionIndex, printErrors, code, functionName, arguments)
 	return 0
 end
@@ -705,10 +912,18 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
+---@param x int
+---@param y int
+---@param printErrors bool
+---@param code string
+---@param functionName string
+---@param arguments var...
 function runSectorCode(x, y, printErrors, code, functionName, arguments)
 	return 0
 end
 
+---@param in Matrix
+---@param size vec3
 function scale(_in, size)
 	return Matrix()
 end
@@ -719,22 +934,33 @@ function scriptPath()
 	return ""
 end
 
+---@param x int
+---@param y int
 function SectorSeed(x, y)
 	return Seed()
 end
 
+---@param str string
 function SeedStr(str)
 	return Seed()
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param id Uuid
+---@param health var
+---@param maxHealth var
+---@param shield var
+---@param maxShield var
 function setBossHealth(id, health, maxHealth, shield, maxShield)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param id Uuid
+---@param health var
+---@param shield var
 function setBossHealthColor(id, health, shield)
 	return nil
 end
@@ -743,6 +969,8 @@ end
 -- @param name - The name of the global variable
 -- @param value - The value of the global variable. POD datatypes only. Nil deletes the variable.
 -- @return nothing
+---@param name string
+---@param value var
 function setGlobal(name, value)
 	return nil
 end
@@ -765,6 +993,7 @@ end
 
 -- sleeps for the given time
 -- @return nothing
+---@param seconds float
 function sleep(seconds)
 	return nil
 end
@@ -787,10 +1016,13 @@ function TorpedoDescriptor()
 	return EntityDescriptor()
 end
 
+---@param in Matrix
+---@param pos vec3
 function translate(_in, pos)
 	return Matrix()
 end
 
+---@param in string
 function trim(_in)
 	return ""
 end
@@ -805,6 +1037,7 @@ end
 
 -- This function is only available on the client.
 -- @return nothing
+---@param entityId Uuid
 function unregisterBoss(entityId)
 	return nil
 end
@@ -812,6 +1045,7 @@ end
 -- Checks if the given object is valid. Some objects can become invalid, for example when an entity is deleted the instances of the Entity in the scripts will become invalid.
 -- @param value - A non-POD, non-table object
 -- @return A boolean indicating whether the object is valid. Returns false when given nil.
+---@param value var
 function valid(value)
 	return true
 end
@@ -827,6 +1061,7 @@ end
 -- Similar to print, but prints to the user trace stream. This trace stream can be enabled by passing "-t user" to the command line arguments of client or server.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
+---@param args var...
 function writeTrace(args)
 	return nil
 end

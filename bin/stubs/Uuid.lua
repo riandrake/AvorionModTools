@@ -10,14 +10,17 @@ Uuid = {
 
 setmetatable(Uuid, {__call = function(self, uuid) return Uuid end})
 
+---@param other var
 function Uuid:__eq(other)
 	return true
 end
 
+---@param other var
 function Uuid:__le(other)
 	return true
 end
 
+---@param other var
 function Uuid:__lt(other)
 	return true
 end

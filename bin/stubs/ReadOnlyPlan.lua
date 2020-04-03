@@ -24,6 +24,7 @@ function ReadOnlyPlan:empty()
 	return true
 end
 
+---@param index int
 function ReadOnlyPlan:exists(index)
 	return true
 end
@@ -34,6 +35,7 @@ function ReadOnlyPlan:get()
 	return BlockPlan()
 end
 
+---@param index int
 function ReadOnlyPlan:getBlock(index)
 	return BlockPlanBlock()
 end
@@ -42,6 +44,7 @@ function ReadOnlyPlan:getBlockIndices()
 	return 0
 end
 
+---@param index int
 function ReadOnlyPlan:getBlocksByType(index)
 	return 0
 end
@@ -50,18 +53,22 @@ function ReadOnlyPlan:getMoneyValue()
 	return 0.0
 end
 
+---@param n int
 function ReadOnlyPlan:getNthBlock(n)
 	return BlockPlanBlock()
 end
 
+---@param n int
 function ReadOnlyPlan:getNthIndex(n)
 	return nil
 end
 
+---@param blockIndex int
 function ReadOnlyPlan:getNumBlocks(blockIndex)
 	return 0
 end
 
+---@param index int
 function ReadOnlyPlan:getRemoved(index)
 	return 0
 end
