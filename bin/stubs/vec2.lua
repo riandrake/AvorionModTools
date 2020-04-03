@@ -6,51 +6,47 @@ vec2 = {
 
 }
 
-setmetatable(vec2, {__call = function(self, x, y) return vec2 end})
+setmetatable(vec2, {__call = function(self) return vec2 end})
 
----@param other var
----@type fun(other:any):vec2
-vec2.__add = function (other)
-	return vec2()
+---@type fun(other:any)
+vec2.__div = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec2
-vec2.__div = function (other)
-	return vec2()
+---@type fun(other:vec2)
+vec2.__eq = function ()
+	return nil
 end
 
----@param other vec2
----@type fun(other:vec2):boolean
-vec2.__eq = function (other)
-	return true
+---@type fun(other:vec2)
+vec2.__lt = function ()
+	return nil
 end
 
----@param other vec2
----@type fun(other:vec2):boolean
-vec2.__lt = function (other)
-	return true
+---@type fun(other:any)
+vec2.__mul = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec2
-vec2.__mul = function (other)
-	return vec2()
+---@type fun(other:any)
+vec2.__sub = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec2
-vec2.__sub = function (other)
-	return vec2()
-end
-
----@type fun():string
+---@type fun()
 vec2.__tostring = function ()
-	return ""
+	return nil
 end
 
----@type fun():vec2
+---@type fun()
 vec2.__unm = function ()
-	return vec2()
+	return nil
+end
+
+-- @param x - y
+-- @return A new instance of vec2
+---@type fun(x:any, y:any)
+vec2 = function ()
+	return nil
 end
 

@@ -13,5 +13,5 @@ TorpedoAI = {
 
 }
 
-setmetatable(TorpedoAI, {__call = function(self, id) return TorpedoAI end})
+setmetatable(TorpedoAI, {__call = function(self) return TorpedoAI end})
 

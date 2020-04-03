@@ -9,67 +9,55 @@ ShipSystem = {
 
 }
 
-setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
+setmetatable(ShipSystem, {__call = function(self) return ShipSystem end})
 
----@param upgrade SystemUpgradeTemplate
----@param permanent bool
----@type fun(upgrade:SystemUpgradeTemplate, permanent:boolean):number
-ShipSystem.addUpgrade = function (upgrade, permanent)
-	return 0
+---@type fun(upgrade:SystemUpgradeTemplate, permanent:boolean)
+ShipSystem.addUpgrade = function ()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipSystem.clear = function ()
 	return nil
 end
 
----@param index unsigned
----@type fun(index:number:unsigned):SystemUpgradeTemplate
-ShipSystem.getUpgrade = function (index)
-	return SystemUpgradeTemplate()
+---@type fun(index:number:unsigned)
+ShipSystem.getUpgrade = function ()
+	return nil
 end
 
----@param slot unsigned
----@type fun(slot:number:unsigned):number
-ShipSystem.getVolumeForSlot = function (slot)
-	return 0.0
+---@type fun(slot:number:unsigned)
+ShipSystem.getVolumeForSlot = function ()
+	return nil
 end
 
----@param slot unsigned
----@type fun(slot:number:unsigned):boolean
-ShipSystem.isPermanent = function (slot)
-	return true
-end
-
--- @return nothing
----@param slot unsigned
----@type fun(slot:number:unsigned):any
-ShipSystem.removeUpgrade = function (slot)
+---@type fun(slot:number:unsigned)
+ShipSystem.isPermanent = function ()
 	return nil
 end
 
 -- @return nothing
----@param in unsigned
----@type fun(in:number:unsigned):any
-ShipSystem.setNumSlots = function (_in)
+---@type fun(slot:number:unsigned)
+ShipSystem.removeUpgrade = function ()
 	return nil
 end
 
 -- @return nothing
----@param upgrade SystemUpgradeTemplate
----@param slot unsigned
----@param permanent bool
----@type fun(upgrade:SystemUpgradeTemplate, slot:number:unsigned, permanent:boolean):any
-ShipSystem.setUpgrade = function (upgrade, slot, permanent)
+---@type fun(in:number:unsigned)
+ShipSystem.setNumSlots = function ()
 	return nil
 end
 
 -- @return nothing
----@param slotA unsigned
----@param slotB unsigned
----@type fun(slotA:number:unsigned, slotB:number:unsigned):any
-ShipSystem.swap = function (slotA, slotB)
+---@type fun(upgrade:SystemUpgradeTemplate, slot:number:unsigned, permanent:boolean)
+ShipSystem.setUpgrade = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(slotA:number:unsigned, slotB:number:unsigned)
+ShipSystem.swap = function ()
 	return nil
 end
 

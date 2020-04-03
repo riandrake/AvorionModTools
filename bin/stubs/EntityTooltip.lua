@@ -6,22 +6,17 @@ EntityTooltip = {
 
 }
 
-setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip end})
+setmetatable(EntityTooltip, {__call = function(self) return EntityTooltip end})
 
 -- @return nothing
----@param i int
----@param description string
----@param str string
----@type fun(i:number, description:string, str:string):any
-EntityTooltip.setDisplayTooltip = function (i, description, str)
+---@type fun(i:number, description:string, str:string)
+EntityTooltip.setDisplayTooltip = function ()
 	return nil
 end
 
 -- @return nothing
----@param i int
----@param str string
----@type fun(i:number, str:string):any
-EntityTooltip.setTargeterTooltip = function (i, str)
+---@type fun(i:number, str:string)
+EntityTooltip.setTargeterTooltip = function ()
 	return nil
 end
 

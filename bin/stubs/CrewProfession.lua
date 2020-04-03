@@ -11,11 +11,10 @@ CrewProfession = {
 
 }
 
-setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
+setmetatable(CrewProfession, {__call = function(self) return CrewProfession end})
 
----@param amount var
----@type fun(amount:any):string
-CrewProfession.name = function (amount)
-	return ""
+---@type fun(amount:any)
+CrewProfession.name = function ()
+	return nil
 end
 

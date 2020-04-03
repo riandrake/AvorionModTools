@@ -6,11 +6,10 @@ ReadOnlyFighterController = {
 
 }
 
-setmetatable(ReadOnlyFighterController, {__call = function(self, id) return ReadOnlyFighterController end})
+setmetatable(ReadOnlyFighterController, {__call = function(self) return ReadOnlyFighterController end})
 
----@param squad var
----@type fun(squad:any):Entity
-ReadOnlyFighterController.getDeployedFighters = function (squad)
-	return Entity()
+---@type fun(squad:any)
+ReadOnlyFighterController.getDeployedFighters = function ()
+	return nil
 end
 

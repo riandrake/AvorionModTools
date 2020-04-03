@@ -25,18 +25,18 @@ Button = {
 
 }
 
-setmetatable(Button, {__call = function(self, index) return Button end})
+setmetatable(Button, {__call = function(self) return Button end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Button.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Button.show = function ()
 	return nil
 end

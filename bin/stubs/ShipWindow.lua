@@ -24,88 +24,78 @@ ShipWindow = {
 setmetatable(ShipWindow, {__call = function(self) return ShipWindow end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipWindow.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-ShipWindow.activateTab = function (tab)
+---@type fun(tab:Tab)
+ShipWindow.activateTab = function ()
 	return nil
 end
 
----@param name string
----@param icon string
----@param description string
----@type fun(name:string, icon:string, description:string):Tab
-ShipWindow.createTab = function (name, icon, description)
-	return Tab()
+---@type fun(name:string, icon:string, description:string)
+ShipWindow.createTab = function ()
+	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-ShipWindow.deactivateTab = function (tab)
+---@type fun(tab:Tab)
+ShipWindow.deactivateTab = function ()
 	return nil
 end
 
----@type fun():Tab
+---@type fun()
 ShipWindow.getActiveTab = function ()
-	return Tab()
+	return nil
 end
 
----@param name string
----@type fun(name:string):Tab
-ShipWindow.getTab = function (name)
-	return Tab()
+---@type fun(name:string)
+ShipWindow.getTab = function ()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
+ShipWindow.hide = function ()
+	return nil
+end
+
+-- Inherited from UIElement
+-- @return nothing
+---@type fun()
 ShipWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-ShipWindow.moveTabToTheRight = function (tab)
+---@type fun(tab:Tab)
+ShipWindow.moveTabToTheRight = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@param pos int
----@type fun(tab:Tab, pos:number):any
-ShipWindow.moveTabToTheRight = function (tab, pos)
+---@type fun(tab:Tab, pos:number)
+ShipWindow.moveTabToTheRight = function ()
 	return nil
 end
 
 -- @return nothing
----@param val var
----@type fun(val:any):any
-ShipWindow.selectTab = function (val)
+---@type fun(val:any)
+ShipWindow.selectTab = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipWindow.show = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
-ShipWindow.hide = function ()
-	return nil
-end
-
--- Inherited from UIElement
--- @return nothing
----@type fun():any
+---@type fun()
 ShipWindow.show = function ()
 	return nil
 end

@@ -6,73 +6,72 @@ Language = {
 
 }
 
-setmetatable(Language, {__call = function(self, seed) return Language end})
+setmetatable(Language, {__call = function(self) return Language end})
 
----@type fun():string
+---@type fun()
 Language.getConsonantSound = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getConsonantSounds = function ()
-	return ""
+	return nil
 end
 
----@type fun():string, string
+---@type fun():, 
 Language.getFactionName = function ()
-	return "", ""
+	return nil, nil
 end
 
----@type fun():string
+---@type fun()
 Language.getGeneratedWords = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getName = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getSyllable = function ()
-	return ""
+	return nil
 end
 
----@param numSyllables int
----@type fun(numSyllables:number):string
-Language.getSyllableCombination = function (numSyllables)
-	return ""
+---@type fun(numSyllables:number)
+Language.getSyllableCombination = function ()
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getVocalSound = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getVocalSounds = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Language.getWord = function ()
-	return ""
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Language.setConsonantSounds = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Language.setGeneratedWords = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Language.setVocalSounds = function ()
 	return nil
 end

@@ -7,51 +7,48 @@ ivec3 = {
 
 }
 
-setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
+setmetatable(ivec3, {__call = function(self) return ivec3 end})
 
----@param other var
----@type fun(other:any):ivec3
-ivec3.__add = function (other)
-	return ivec3()
+---@type fun(other:any)
+ivec3.__div = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):ivec3
-ivec3.__div = function (other)
-	return ivec3()
+---@type fun(other:ivec3)
+ivec3.__eq = function ()
+	return nil
 end
 
----@param other ivec3
----@type fun(other:ivec3):boolean
-ivec3.__eq = function (other)
-	return true
+---@type fun(other:ivec3)
+ivec3.__lt = function ()
+	return nil
 end
 
----@param other ivec3
----@type fun(other:ivec3):boolean
-ivec3.__lt = function (other)
-	return true
+---@type fun(other:any)
+ivec3.__mul = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):ivec3
-ivec3.__mul = function (other)
-	return ivec3()
+---@type fun(other:any)
+ivec3.__sub = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):ivec3
-ivec3.__sub = function (other)
-	return ivec3()
-end
-
----@type fun():string
+---@type fun()
 ivec3.__tostring = function ()
-	return ""
+	return nil
 end
 
----@type fun():ivec3
+---@type fun()
 ivec3.__unm = function ()
-	return ivec3()
+	return nil
+end
+
+-- @param x - y
+-- @param z - Returns
+-- @param A new instance of ivec3
+---@type fun(x:any, y:any, z:any)
+ivec3 = function ()
+	return nil
 end
 

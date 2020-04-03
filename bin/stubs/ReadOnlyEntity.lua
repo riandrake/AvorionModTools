@@ -76,53 +76,48 @@ ReadOnlyEntity = {
 
 }
 
-setmetatable(ReadOnlyEntity, {__call = function(self, id) return ReadOnlyEntity end})
+setmetatable(ReadOnlyEntity, {__call = function(self) return ReadOnlyEntity end})
 
----@param number int
----@param profession int
----@param change bool
----@type fun(number:number, profession:number, change:boolean):any, any, table<number, string>
-ReadOnlyEntity.canAddCrew = function (number, profession, change)
-	return nil, nil, {0, ""}
+---@type fun(number:number, profession:number, change:boolean):, , >
+ReadOnlyEntity.canAddCrew = function ()
+	return nil, nil, }()
 end
 
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
----@param name string
----@type fun(name:string):table<TradingGood, number>
-ReadOnlyEntity.findCargos = function (name)
-	return {TradingGood(), 0}
+---@type fun(name:string):>
+ReadOnlyEntity.findCargos = function ()
+	return }()
 end
 
----@param seat int
----@type fun(seat:number):vec3
-ReadOnlyEntity.getAimedPositionBySeat = function (seat)
-	return vec3()
+---@type fun(seat:number)
+ReadOnlyEntity.getAimedPositionBySeat = function ()
+	return nil
 end
 
----@type fun():vec3
+---@type fun()
 ReadOnlyEntity.getAimedPositions = function ()
-	return vec3()
+	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getAllowedArbitraryTurrets = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getAllowedArmedTurrets = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getAllowedUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the Index of the block that the turret is build on
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getAttachedBlockIndex = function ()
 	return nil
 end
@@ -130,277 +125,259 @@ end
 -- Returns value with included bonus, in case a bonus exists. Returns Nil if no bonuses at all, returns value if no bonuses for this stat exist.
 -- @param type - type of bonus stat, e.g. acceleration, higher level crew
 -- @param value - the value, that might be changed by bonuses
----@param type int
----@param value float
----@type fun(type:number, value:number):any
-ReadOnlyEntity.getBoostedValue = function (type, value)
+---@type fun(type:number, value:number)
+ReadOnlyEntity.getBoostedValue = function ()
 	return nil
 end
 
 -- Returns Bounding Box for entity, use this if you need exact Bounding Box, e.g. for collision detection when entities are close to each other.
----@type fun():Box
+---@type fun()
 ReadOnlyEntity.getBoundingBox = function ()
-	return Box()
+	return nil
 end
 
 -- Returns Bounding Sphere for entity. Much faster than Bounding Box, but not as accurate. Use this if you need to check often.
----@type fun():Sphere
+---@type fun()
 ReadOnlyEntity.getBoundingSphere = function ()
-	return Sphere()
+	return nil
 end
 
----@param n unsigned
----@type fun(n:number:unsigned):TradingGood, number
-ReadOnlyEntity.getCargo = function (n)
-	return TradingGood(), 0
+---@type fun(n:number:unsigned):, 
+ReadOnlyEntity.getCargo = function ()
+	return nil, nil
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
----@param name var
----@type fun(name:any):any
-ReadOnlyEntity.getCargoAmount = function (name)
+---@type fun(name:any)
+ReadOnlyEntity.getCargoAmount = function ()
 	return nil
 end
 
----@type fun():table<TradingGood, number>
+---@type fun():>
 ReadOnlyEntity.getCargos = function ()
-	return {TradingGood(), 0}
+	return }()
 end
 
----@param profession int
----@type fun(profession:number):any
-ReadOnlyEntity.getCrewMembers = function (profession)
+---@type fun(profession:number)
+ReadOnlyEntity.getCrewMembers = function ()
 	return nil
 end
 
 -- Lists all players and alliances that contributed damage to the entity
 -- @return Indices of all players and alliances that contributed damage to the entity
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getDamageContributorPlayerFactions = function ()
-	return 0
+	return nil
 end
 
 -- Lists all players that contributed damage to the entity
 -- @return Indices of all players that contributed damage to the entity
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getDamageContributorPlayers = function ()
-	return 0
+	return nil
 end
 
 -- Lists all factions that contributed damage to the entity
 -- @return Indices of all factions that contributed damage to the entity
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getDamageContributors = function ()
-	return 0
+	return nil
 end
 
 -- Lists all docking positions that the entity has
 -- @return A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock.
----@type fun():vec3
+---@type fun()
 ReadOnlyEntity.getDockingPositions = function ()
-	return vec3()
+	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getFreeArbitraryTurrets = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getFreeArmedTurrets = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getFreeUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
----@type fun():BlockPlan
+---@type fun()
 ReadOnlyEntity.getFullPlanCopy = function ()
-	return BlockPlan()
+	return nil
 end
 
----@type fun():Material
+---@type fun()
 ReadOnlyEntity.getLowestMineableMaterial = function ()
-	return Material()
+	return nil
 end
 
----@type fun():any, any
+---@type fun():, 
 ReadOnlyEntity.getMalusFactor = function ()
 	return nil, nil
 end
 
----@type fun():Material
+---@type fun()
 ReadOnlyEntity.getMineableMaterial = function ()
-	return Material()
-end
-
----@type fun():number
-ReadOnlyEntity.getMineableResources = function ()
-	return 0
-end
-
----@param other Entity
----@type fun(other:Entity):any
-ReadOnlyEntity.getNearestDistance = function (other)
 	return nil
 end
 
----@type fun():any
+---@type fun()
+ReadOnlyEntity.getMineableResources = function ()
+	return nil
+end
+
+---@type fun(other:Entity)
+ReadOnlyEntity.getNearestDistance = function ()
+	return nil
+end
+
+---@type fun()
 ReadOnlyEntity.getNumArmedTurrets = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getNumUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns Indices of piloting players
 -- @return multiple return values: indices of players
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getPilotIndices = function ()
-	return 0
+	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getPlanMoneyValue = function ()
 	return nil
 end
 
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getPlanResourceValue = function ()
-	return 0.0
+	return nil
 end
 
----@type fun():table<number, string>
+---@type fun():>
 ReadOnlyEntity.getScripts = function ()
-	return {0, ""}
+	return }()
 end
 
 -- Retrieves the arguments to a title
----@type fun():table<string, string>
+---@type fun():>
 ReadOnlyEntity.getTitleArguments = function ()
-	return {"", ""}
+	return }()
 end
 
 -- Retrieves the title as NamedFormat
----@type fun():NamedFormat
+---@type fun()
 ReadOnlyEntity.getTitleFormat = function ()
-	return NamedFormat()
+	return nil
 end
 
----@param index int
----@type fun(index:number):Entity
-ReadOnlyEntity.getTurret = function (index)
-	return Entity()
+---@type fun(index:number)
+ReadOnlyEntity.getTurret = function ()
+	return nil
 end
 
----@type fun():Entity
-ReadOnlyEntity.getTurrets = function ()
-	return Entity()
-end
-
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getTurretSize = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getTurretTemplateSize = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
 ReadOnlyEntity.getTurretTurningSpeed = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun()
+ReadOnlyEntity.getTurrets = function ()
+	return nil
+end
+
+---@type fun()
 ReadOnlyEntity.getUndamagedPlanMoneyValue = function ()
 	return nil
 end
 
----@type fun():number
+---@type fun()
 ReadOnlyEntity.getUndamagedPlanResourceValue = function ()
-	return 0.0
+	return nil
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
----@param key string
----@type fun(key:string):any
-ReadOnlyEntity.getValue = function (key)
+---@type fun(key:string)
+ReadOnlyEntity.getValue = function ()
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():table<string, any>
+---@type fun():>
 ReadOnlyEntity.getValues = function ()
-	return {"", nil}
+	return }()
 end
 
----@param type int
----@type fun(type:number):boolean
-ReadOnlyEntity.hasComponent = function (type)
-	return true
-end
-
----@param name string
----@type fun(name:string):any
-ReadOnlyEntity.hasScript = function (name)
+---@type fun(type:number)
+ReadOnlyEntity.hasComponent = function ()
 	return nil
 end
 
----@type fun():any
+---@type fun(name:string)
+ReadOnlyEntity.hasScript = function ()
+	return nil
+end
+
+---@type fun()
 ReadOnlyEntity.hyperspaceBlocked = function ()
 	return nil
 end
 
----@param entity Entity
----@type fun(entity:Entity):any
-ReadOnlyEntity.isCollectable = function (entity)
+---@type fun(entity:Entity)
+ReadOnlyEntity.isCollectable = function ()
 	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyEntity.isDocked = function (other)
-	return true
-end
-
----@param point vec3
----@type fun(point:vec3):any
-ReadOnlyEntity.isInsideShield = function (point)
+---@type fun(other:Entity)
+ReadOnlyEntity.isDocked = function ()
 	return nil
 end
 
----@param fromX int
----@param fromY int
----@param toX int
----@param toY int
----@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean, any
-ReadOnlyEntity.isJumpRouteValid = function (fromX, fromY, toX, toY)
-	return true, nil
+---@type fun(point:vec3)
+ReadOnlyEntity.isInsideShield = function ()
+	return nil
 end
 
----@type fun():any
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):, 
+ReadOnlyEntity.isJumpRouteValid = function ()
+	return nil, nil
+end
+
+---@type fun()
 ReadOnlyEntity.isManned = function ()
 	return nil
 end
 
 -- Tests if the maximum number of turrets of this kind is not reached
 -- @param ScriptTurretTemplate - the template of the turret to be placed
----@param ScriptTurretTemplate TurretTemplate
----@type fun(ScriptTurretTemplate:TurretTemplate):any
-ReadOnlyEntity.isTurretAllowed = function (ScriptTurretTemplate)
+---@type fun(ScriptTurretTemplate:TurretTemplate)
+ReadOnlyEntity.isTurretAllowed = function ()
 	return nil
 end
 
@@ -408,16 +385,13 @@ end
 -- @param x - The x-coordinates of the target sector
 -- @param y - The y-coordinates of the target sector
 -- @return Returns an error code: -1 The entity doesn't have a hyperspace drive. 0 The entity can jump. 1 The hyperspace drive needs to recharge. 2 The target sector is too far away. 3 The entity is facing the wrong direction. 4 The hyperspace drive is being jammed.
----@param x int
----@param y int
----@type fun(x:number, y:number):number
-ReadOnlyEntity.jumpPossible = function (x, y)
-	return 0
+---@type fun(x:number, y:number)
+ReadOnlyEntity.jumpPossible = function ()
+	return nil
 end
 
----@param path string
----@type fun(path:string):any
-ReadOnlyEntity.resolveScriptPath = function (path)
+---@type fun(path:string)
+ReadOnlyEntity.resolveScriptPath = function ()
 	return nil
 end
 

@@ -21,18 +21,18 @@ UIRect = {
 
 }
 
-setmetatable(UIRect, {__call = function(self, index) return UIRect end})
+setmetatable(UIRect, {__call = function(self) return UIRect end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 UIRect.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 UIRect.show = function ()
 	return nil
 end

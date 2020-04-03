@@ -9,5 +9,5 @@ TurretAI = {
 
 }
 
-setmetatable(TurretAI, {__call = function(self, id) return TurretAI end})
+setmetatable(TurretAI, {__call = function(self) return TurretAI end})
 

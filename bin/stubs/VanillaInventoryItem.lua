@@ -19,44 +19,41 @@ VanillaInventoryItem = {
 
 setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
 
----@param other var
----@type fun(other:any):boolean
-VanillaInventoryItem.__eq = function (other)
-	return true
+---@type fun(other:any)
+VanillaInventoryItem.__eq = function ()
+	return nil
 end
 
 -- Removes all custom values of the object
 -- @return nothing
----@type fun():any
+---@type fun()
 VanillaInventoryItem.clearValues = function ()
 	return nil
 end
 
----@type fun():Tooltip
+---@type fun()
 VanillaInventoryItem.getTooltip = function ()
-	return Tooltip()
+	return nil
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
----@param key string
----@type fun(key:string):any
-VanillaInventoryItem.getValue = function (key)
+---@type fun(key:string)
+VanillaInventoryItem.getValue = function ()
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():table<string, any>
+---@type fun():>
 VanillaInventoryItem.getValues = function ()
-	return {"", nil}
+	return }()
 end
 
 -- @return nothing
----@param tooltip Tooltip
----@type fun(tooltip:Tooltip):any
-VanillaInventoryItem.setTooltip = function (tooltip)
+---@type fun(tooltip:Tooltip)
+VanillaInventoryItem.setTooltip = function ()
 	return nil
 end
 
@@ -64,10 +61,8 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
----@param key string
----@param value var
----@type fun(key:string, value:any):any
-VanillaInventoryItem.setValue = function (key, value)
+---@type fun(key:string, value:any)
+VanillaInventoryItem.setValue = function ()
 	return nil
 end
 

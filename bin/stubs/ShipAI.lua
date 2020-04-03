@@ -12,266 +12,232 @@ ShipAI = {
 
 }
 
-setmetatable(ShipAI, {__call = function(self, id) return ShipAI end})
+setmetatable(ShipAI, {__call = function(self) return ShipAI end})
 
----@type fun():boolean
+---@type fun()
 ShipAI.enemyFightersPresent = function ()
-	return true
+	return nil
 end
 
----@param countCivilEnemies var
----@type fun(countCivilEnemies:any):boolean
-ShipAI.enemyShipsPresent = function (countCivilEnemies)
-	return true
+---@type fun(countCivilEnemies:any)
+ShipAI.enemyShipsPresent = function ()
+	return nil
 end
 
----@type fun():Entity
+---@type fun()
 ShipAI.getEnemies = function ()
-	return Entity()
+	return nil
 end
 
----@type fun():Entity
+---@type fun()
 ShipAI.getEnemyFighters = function ()
-	return Entity()
+	return nil
 end
 
----@type fun():Entity
+---@type fun()
 ShipAI.getEnemyShips = function ()
-	return Entity()
+	return nil
 end
 
----@type fun():Entity
+---@type fun()
 ShipAI.getNearestEnemy = function ()
-	return Entity()
+	return nil
 end
 
----@type fun():Uuid
+---@type fun()
 ShipAI.getRegisteredEnemyEntities = function ()
-	return 0
+	return nil
 end
 
----@type fun():number
+---@type fun()
 ShipAI.getRegisteredEnemyFactions = function ()
-	return 0
+	return nil
 end
 
----@type fun():Uuid
+---@type fun()
 ShipAI.getRegisteredFriendEntities = function ()
-	return 0
+	return nil
 end
 
----@type fun():number
+---@type fun()
 ShipAI.getRegisteredFriendFactions = function ()
-	return 0
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ShipAI.isEnemy = function (other)
-	return true
+---@type fun(other:Entity)
+ShipAI.isEnemy = function ()
+	return nil
 end
 
----@param countCivilEnemies var
----@type fun(countCivilEnemies:any):boolean
-ShipAI.isEnemyPresent = function (countCivilEnemies)
-	return true
+---@type fun(countCivilEnemies:any)
+ShipAI.isEnemyPresent = function ()
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ShipAI.isRegisteredEnemy = function (other)
-	return true
+---@type fun(other:Entity)
+ShipAI.isRegisteredEnemy = function ()
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ShipAI.isRegisteredFriend = function (other)
-	return true
-end
-
--- @return nothing
----@param index Uuid
----@type fun(index:Uuid):any
-ShipAI.registerEnemyEntity = function (index)
+---@type fun(other:Entity)
+ShipAI.isRegisteredFriend = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-ShipAI.registerEnemyFaction = function (index)
+---@type fun(index:Uuid)
+ShipAI.registerEnemyEntity = function ()
 	return nil
 end
 
 -- @return nothing
----@param index Uuid
----@type fun(index:Uuid):any
-ShipAI.registerFriendEntity = function (index)
+---@type fun(index:number)
+ShipAI.registerEnemyFaction = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-ShipAI.registerFriendFaction = function (index)
+---@type fun(index:Uuid)
+ShipAI.registerFriendEntity = function ()
 	return nil
 end
 
 -- @return nothing
----@param attackCivilShips var
----@param canFinish var
----@type fun(attackCivilShips:any, canFinish:any):any
-ShipAI.setAggressive = function (attackCivilShips, canFinish)
+---@type fun(index:number)
+ShipAI.registerFriendFaction = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setAttack = function (entity)
+---@type fun(attackCivilShips:any, canFinish:any)
+ShipAI.setAggressive = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setBoard = function (entity)
+---@type fun(entity:Entity)
+ShipAI.setAttack = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setEscort = function (entity)
+---@type fun(entity:Entity)
+ShipAI.setBoard = function ()
 	return nil
 end
 
 -- @return nothing
----@param location vec3
----@param arrivalRadius float
----@param collisionException var
----@type fun(location:vec3, arrivalRadius:number, collisionException:any):any
-ShipAI.setFly = function (location, arrivalRadius, collisionException)
+---@type fun(entity:Entity)
+ShipAI.setEscort = function ()
 	return nil
 end
 
 -- @return nothing
----@param location vec3
----@param arrivalRadius float
----@param avoidCollisions var
----@type fun(location:vec3, arrivalRadius:number, avoidCollisions:any):any
-ShipAI.setFlyLinear = function (location, arrivalRadius, avoidCollisions)
+---@type fun(location:vec3, arrivalRadius:number, collisionException:any)
+ShipAI.setFly = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setFollow = function (entity)
+---@type fun(location:vec3, arrivalRadius:number, avoidCollisions:any)
+ShipAI.setFlyLinear = function ()
 	return nil
 end
 
 -- @return nothing
----@param location vec3
----@type fun(location:vec3):any
-ShipAI.setGuard = function (location)
+---@type fun(entity:Entity)
+ShipAI.setFollow = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setHarvest = function (entity)
+---@type fun(location:vec3)
+ShipAI.setGuard = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun(entity:Entity)
+ShipAI.setHarvest = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun()
 ShipAI.setIdle = function ()
 	return nil
 end
 
 -- @return nothing
----@param x int
----@param y int
----@type fun(x:number, y:number):any
-ShipAI.setJump = function (x, y)
+---@type fun(x:number, y:number)
+ShipAI.setJump = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipAI.setPassive = function ()
 	return nil
 end
 
 -- @return nothing
----@param in bool
----@type fun(in:boolean):any
-ShipAI.setPassiveShooting = function (_in)
+---@type fun(in:boolean)
+ShipAI.setPassiveShooting = function ()
 	return nil
 end
 
 -- @return nothing
----@param location vec3
----@type fun(location:vec3):any
-ShipAI.setPassiveTurning = function (location)
+---@type fun(location:vec3)
+ShipAI.setPassiveTurning = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipAI.setRepair = function ()
 	return nil
 end
 
 -- @return nothing
----@param entity Entity
----@type fun(entity:Entity):any
-ShipAI.setRepairTarget = function (entity)
+---@type fun(entity:Entity)
+ShipAI.setRepairTarget = function ()
 	return nil
 end
 
 -- Sets the status that will be set in the ship info and other places (eg. ships/fleet tab)
 -- @param status - a string that will be used as status, can be a format string for easier translation.
----@param status string
----@param arguments string_pair...
----@type fun(status:string, arguments:table<number,string_pair>):any
-ShipAI.setStatus = function (status, arguments)
+---@type fun(status:string, arguments:table<number,string_pair>)
+ShipAI.setStatus = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ShipAI.stop = function ()
 	return nil
 end
 
 -- @return nothing
----@param index Uuid
----@type fun(index:Uuid):any
-ShipAI.unregisterEnemyEntity = function (index)
+---@type fun(index:Uuid)
+ShipAI.unregisterEnemyEntity = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-ShipAI.unregisterEnemyFaction = function (index)
+---@type fun(index:number)
+ShipAI.unregisterEnemyFaction = function ()
 	return nil
 end
 
 -- @return nothing
----@param index Uuid
----@type fun(index:Uuid):any
-ShipAI.unregisterFriendEntity = function (index)
+---@type fun(index:Uuid)
+ShipAI.unregisterFriendEntity = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-ShipAI.unregisterFriendFaction = function (index)
+---@type fun(index:number)
+ShipAI.unregisterFriendFaction = function ()
 	return nil
 end
 

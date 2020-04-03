@@ -26,59 +26,52 @@ ValueComboBox = {
 
 }
 
-setmetatable(ValueComboBox, {__call = function(self, index) return ValueComboBox end})
+setmetatable(ValueComboBox, {__call = function(self) return ValueComboBox end})
 
 -- @return nothing
----@param value var
----@param entry string
----@param color var
----@type fun(value:any, entry:string, color:any):any
-ValueComboBox.addEntry = function (value, entry, color)
+---@type fun(value:any, entry:string, color:any)
+ValueComboBox.addEntry = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ValueComboBox.clear = function ()
 	return nil
 end
 
----@param index int
----@type fun(index:number):string
-ValueComboBox.getEntry = function (index)
-	return ""
-end
-
----@param index int
----@type fun(index:number):any
-ValueComboBox.getValue = function (index)
+---@type fun(index:number)
+ValueComboBox.getEntry = function ()
 	return nil
 end
 
--- @return nothing
----@param in int
----@type fun(in:number):any
-ValueComboBox.setSelectedIndexNoCallback = function (_in)
-	return nil
-end
-
--- @return nothing
----@param value var
----@type fun(value:any):any
-ValueComboBox.setSelectedValueNoCallback = function (value)
+---@type fun(index:number)
+ValueComboBox.getValue = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ValueComboBox.hide = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun(in:number)
+ValueComboBox.setSelectedIndexNoCallback = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(value:any)
+ValueComboBox.setSelectedValueNoCallback = function ()
+	return nil
+end
+
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ValueComboBox.show = function ()
 	return nil
 end

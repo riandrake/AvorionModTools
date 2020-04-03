@@ -4,21 +4,18 @@ Keyboard = {
 
 setmetatable(Keyboard, {__call = function(self) return Keyboard end})
 
----@param value var
----@type fun(value:any):boolean
-Keyboard.keyDown = function (value)
-	return true
+---@type fun(value:any)
+Keyboard.keyDown = function ()
+	return nil
 end
 
----@param value var
----@type fun(value:any):boolean
-Keyboard.keyPressed = function (value)
-	return true
+---@type fun(value:any)
+Keyboard.keyPressed = function ()
+	return nil
 end
 
----@param value var
----@type fun(value:any):boolean
-Keyboard.keyUp = function (value)
-	return true
+---@type fun(value:any)
+Keyboard.keyUp = function ()
+	return nil
 end
 

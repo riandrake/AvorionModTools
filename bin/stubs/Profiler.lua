@@ -6,49 +6,45 @@ Profiler = {
 
 }
 
-setmetatable(Profiler, {__call = function(self, str) return Profiler end})
+setmetatable(Profiler, {__call = function(self) return Profiler end})
 
----@type fun():string
+---@type fun()
 Profiler.__tostring = function ()
-	return ""
-end
-
--- @return nothing
----@param name string
----@param duration double
----@type fun(name:string, duration:number):any
-Profiler.addSection = function (name, duration)
 	return nil
 end
 
----@type fun():number
+-- @return nothing
+---@type fun(name:string, duration:number)
+Profiler.addSection = function ()
+	return nil
+end
+
+---@type fun()
 Profiler.done = function ()
-	return 0.0
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Profiler.print = function ()
 	return nil
 end
 
 -- @return nothing
----@param name string
----@type fun(name:string):any
-Profiler.reenter = function (name)
+---@type fun(name:string)
+Profiler.reenter = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Profiler.reset = function ()
 	return nil
 end
 
 -- @return nothing
----@param name string
----@type fun(name:string):any
-Profiler.section = function (name)
+---@type fun(name:string)
+Profiler.section = function ()
 	return nil
 end
 

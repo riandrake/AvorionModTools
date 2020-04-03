@@ -4,35 +4,31 @@ DebugInfo = {
 
 setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
 
----@type fun():string
+---@type fun()
 DebugInfo.getEndingLog = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 DebugInfo.getStartingLog = function ()
-	return ""
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 DebugInfo.log = function ()
 	return nil
 end
 
 -- @return nothing
----@param key string
----@param value string
----@type fun(key:string, value:string):any
-DebugInfo.set = function (key, value)
+---@type fun(key:string, value:string)
+DebugInfo.set = function ()
 	return nil
 end
 
 -- @return nothing
----@param key string
----@param value string
----@type fun(key:string, value:string):any
-DebugInfo.threadSet = function (key, value)
+---@type fun(key:string, value:string)
+DebugInfo.threadSet = function ()
 	return nil
 end
 

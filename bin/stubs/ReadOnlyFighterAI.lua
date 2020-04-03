@@ -15,5 +15,5 @@ ReadOnlyFighterAI = {
 
 }
 
-setmetatable(ReadOnlyFighterAI, {__call = function(self, id) return ReadOnlyFighterAI end})
+setmetatable(ReadOnlyFighterAI, {__call = function(self) return ReadOnlyFighterAI end})
 

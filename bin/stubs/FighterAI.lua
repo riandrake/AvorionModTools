@@ -15,24 +15,22 @@ FighterAI = {
 
 }
 
-setmetatable(FighterAI, {__call = function(self, id) return FighterAI end})
+setmetatable(FighterAI, {__call = function(self) return FighterAI end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 FighterAI.clearFeedback = function ()
 	return nil
 end
 
----@type fun():Entity
+---@type fun()
 FighterAI.getMothership = function ()
-	return Entity()
+	return nil
 end
 
 -- @return nothing
----@param orders FighterOrders
----@param target Uuid
----@type fun(orders:FighterOrders, target:Uuid):any
-FighterAI.setOrders = function (orders, target)
+---@type fun(orders:FighterOrders, target:Uuid)
+FighterAI.setOrders = function ()
 	return nil
 end
 

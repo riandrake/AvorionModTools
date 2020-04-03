@@ -21,18 +21,18 @@ Frame = {
 
 }
 
-setmetatable(Frame, {__call = function(self, index) return Frame end})
+setmetatable(Frame, {__call = function(self) return Frame end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Frame.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Frame.show = function ()
 	return nil
 end

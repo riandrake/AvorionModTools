@@ -7,51 +7,48 @@ dvec3 = {
 
 }
 
-setmetatable(dvec3, {__call = function(self, x, y, z) return dvec3 end})
+setmetatable(dvec3, {__call = function(self) return dvec3 end})
 
----@param other var
----@type fun(other:any):dvec3
-dvec3.__add = function (other)
-	return dvec3()
+---@type fun(other:any)
+dvec3.__div = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec3
-dvec3.__div = function (other)
-	return dvec3()
+---@type fun(other:dvec3)
+dvec3.__eq = function ()
+	return nil
 end
 
----@param other dvec3
----@type fun(other:dvec3):boolean
-dvec3.__eq = function (other)
-	return true
+---@type fun(other:dvec3)
+dvec3.__lt = function ()
+	return nil
 end
 
----@param other dvec3
----@type fun(other:dvec3):boolean
-dvec3.__lt = function (other)
-	return true
+---@type fun(other:any)
+dvec3.__mul = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec3
-dvec3.__mul = function (other)
-	return dvec3()
+---@type fun(other:any)
+dvec3.__sub = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec3
-dvec3.__sub = function (other)
-	return dvec3()
-end
-
----@type fun():string
+---@type fun()
 dvec3.__tostring = function ()
-	return ""
+	return nil
 end
 
----@type fun():dvec3
+---@type fun()
 dvec3.__unm = function ()
-	return dvec3()
+	return nil
+end
+
+-- @param x - y
+-- @param z - Returns
+-- @param A new instance of dvec3
+---@type fun(x:any, y:any, z:any)
+dvec3 = function ()
+	return nil
 end
 

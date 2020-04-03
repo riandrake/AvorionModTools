@@ -11,10 +11,10 @@ CraftDesignSelectionItem = {
 	path = "", -- string
 	plan = BlockPlan(), -- [read-only] BlockPlan
 	readyForDeletion = true, -- bool
-	type = SavedDesignType(), -- [read-only] SavedDesignType
+	type = SavedDesignType.Unknown, -- [read-only] SavedDesignType
 	workshopUrl = "", -- [read-only] string
 
 }
 
-setmetatable(CraftDesignSelectionItem, {__call = function(self, path) return CraftDesignSelectionItem end})
+setmetatable(CraftDesignSelectionItem, {__call = function(self) return CraftDesignSelectionItem end})
 

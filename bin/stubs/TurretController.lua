@@ -6,20 +6,16 @@ TurretController = {
 
 }
 
-setmetatable(TurretController, {__call = function(self, id) return TurretController end})
+setmetatable(TurretController, {__call = function(self) return TurretController end})
 
----@param group int
----@type fun(group:number):number, Uuid
-TurretController.getGroupOrders = function (group)
-	return 0, 0
+---@type fun(group:number):, 
+TurretController.getGroupOrders = function ()
+	return nil, nil
 end
 
 -- @return nothing
----@param group int
----@param autoFireMode int
----@param target Uuid
----@type fun(group:number, autoFireMode:number, target:Uuid):any
-TurretController.setGroupFireMode = function (group, autoFireMode, target)
+---@type fun(group:number, autoFireMode:number, target:Uuid)
+TurretController.setGroupFireMode = function ()
 	return nil
 end
 

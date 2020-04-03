@@ -8,74 +8,64 @@ PlayerWindow = {
 setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 PlayerWindow.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-PlayerWindow.activateTab = function (tab)
+---@type fun(tab:Tab)
+PlayerWindow.activateTab = function ()
 	return nil
 end
 
----@param name string
----@param icon string
----@param description string
----@type fun(name:string, icon:string, description:string):Tab
-PlayerWindow.createTab = function (name, icon, description)
-	return Tab()
+---@type fun(name:string, icon:string, description:string)
+PlayerWindow.createTab = function ()
+	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-PlayerWindow.deactivateTab = function (tab)
+---@type fun(tab:Tab)
+PlayerWindow.deactivateTab = function ()
 	return nil
 end
 
----@type fun():Tab
+---@type fun()
 PlayerWindow.getActiveTab = function ()
-	return Tab()
+	return nil
 end
 
----@param name string
----@type fun(name:string):Tab
-PlayerWindow.getTab = function (name)
-	return Tab()
+---@type fun(name:string)
+PlayerWindow.getTab = function ()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 PlayerWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@param pos int
----@type fun(tab:Tab, pos:number):any
-PlayerWindow.moveTabToPosition = function (tab, pos)
+---@type fun(tab:Tab, pos:number)
+PlayerWindow.moveTabToPosition = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-PlayerWindow.moveTabToTheRight = function (tab)
+---@type fun(tab:Tab)
+PlayerWindow.moveTabToTheRight = function ()
 	return nil
 end
 
 -- @return nothing
----@param val var
----@type fun(val:any):any
-PlayerWindow.selectTab = function (val)
+---@type fun(val:any)
+PlayerWindow.selectTab = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 PlayerWindow.show = function ()
 	return nil
 end

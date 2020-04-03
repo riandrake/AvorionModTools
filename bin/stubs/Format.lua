@@ -6,32 +6,32 @@ Format = {
 
 }
 
-setmetatable(Format, {__call = function(self, text, args) return Format end})
+setmetatable(Format, {__call = function(self) return Format end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Format.add = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Format.clear = function ()
 	return nil
 end
 
----@type fun():string
+---@type fun()
 Format.evaluate = function ()
-	return ""
+	return nil
 end
 
----@type fun():PluralForm
+---@type fun()
 Format.getArguments = function ()
-	return PluralForm()
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Format.translated = function ()
-	return ""
+	return nil
 end
 

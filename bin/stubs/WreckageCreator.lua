@@ -7,5 +7,5 @@ WreckageCreator = {
 
 }
 
-setmetatable(WreckageCreator, {__call = function(self, id) return WreckageCreator end})
+setmetatable(WreckageCreator, {__call = function(self) return WreckageCreator end})
 

@@ -13,5 +13,5 @@ ReadOnlyTorpedoAI = {
 
 }
 
-setmetatable(ReadOnlyTorpedoAI, {__call = function(self, id) return ReadOnlyTorpedoAI end})
+setmetatable(ReadOnlyTorpedoAI, {__call = function(self) return ReadOnlyTorpedoAI end})
 

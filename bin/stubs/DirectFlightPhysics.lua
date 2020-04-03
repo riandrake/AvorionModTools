@@ -9,5 +9,5 @@ DirectFlightPhysics = {
 
 }
 
-setmetatable(DirectFlightPhysics, {__call = function(self, id) return DirectFlightPhysics end})
+setmetatable(DirectFlightPhysics, {__call = function(self) return DirectFlightPhysics end})
 

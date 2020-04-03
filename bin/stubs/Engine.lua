@@ -14,5 +14,5 @@ Engine = {
 
 }
 
-setmetatable(Engine, {__call = function(self, id) return Engine end})
+setmetatable(Engine, {__call = function(self) return Engine end})
 

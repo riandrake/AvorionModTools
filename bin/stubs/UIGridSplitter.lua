@@ -19,86 +19,77 @@ UIGridSplitter = {
 
 }
 
-setmetatable(UIGridSplitter, {__call = function(self, rect, padding, margin, horizontalTiles, verticalTiles) return UIGridSplitter end})
+setmetatable(UIGridSplitter, {__call = function(self) return UIGridSplitter end})
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getBottomLeftRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getBottomLeftRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
----@param rect Rect
----@type fun(rect:Rect):Rect
-UIGridSplitter.getBottomRect = function (rect)
-	return Rect()
-end
-
--- Aligns the given rect to a specific side
--- @param rect - The given rect
--- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getBottomRightRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getBottomRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getCenterRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getBottomRightRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getLeftRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getCenterRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getRightRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getLeftRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getTopLeftRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getRightRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getTopRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getTopLeftRect = function ()
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
----@param rect Rect
----@type fun(rect:Rect):any
-UIGridSplitter.getTopRightRect = function (rect)
+---@type fun(rect:Rect)
+UIGridSplitter.getTopRect = function ()
+	return nil
+end
+
+-- Aligns the given rect to a specific side
+-- @param rect - The given rect
+-- @return nothing
+---@type fun(rect:Rect)
+UIGridSplitter.getTopRightRect = function ()
 	return nil
 end
 
@@ -106,92 +97,81 @@ end
 -- @param x - The x index of the retrieved rect, starting at 0
 -- @param y - The y index of the retrieved rect, starting at 0
 -- @return A new rect, size was determined by splitting
----@param x int
----@param y var
----@type fun(x:number, y:any):Rect
-UIGridSplitter.partition = function (x, y)
-	return Rect()
+---@type fun(x:number, y:any)
+UIGridSplitter.partition = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementBottom = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementBottom = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementBottomLeft = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementBottomLeft = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementBottomRight = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementBottomRight = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementCenter = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementCenter = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementLeft = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementLeft = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementRight = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementRight = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementTop = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementTop = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementTopLeft = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementTopLeft = function ()
+	return nil
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
----@param element UIElement
----@type fun(element:UIElement):UIElement
-UIGridSplitter.placeElementTopRight = function (element)
-	return UIElement()
+---@type fun(element:UIElement)
+UIGridSplitter.placeElementTopRight = function ()
+	return nil
 end
 
 -- @param left - margin on the left side
@@ -199,12 +179,8 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
----@param left int
----@param right int
----@param top int
----@param bottom int
----@type fun(left:number, right:number, top:number, bottom:number):any
-UIGridSplitter.setMargin = function (left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number)
+UIGridSplitter.setMargin = function ()
 	return nil
 end
 
@@ -213,12 +189,8 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
----@param left int
----@param right int
----@param top int
----@param bottom int
----@type fun(left:number, right:number, top:number, bottom:number):any
-UIGridSplitter.setPadding = function (left, right, top, bottom)
+---@type fun(left:number, right:number, top:number, bottom:number)
+UIGridSplitter.setPadding = function ()
 	return nil
 end
 

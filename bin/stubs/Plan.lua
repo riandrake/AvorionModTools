@@ -18,7 +18,7 @@ Plan = {
 
 }
 
-setmetatable(Plan, {__call = function(self, id) return Plan end})
+setmetatable(Plan, {__call = function(self) return Plan end})
 
 -- Add a new block to an existing plan.
 -- @param position - The position of the new
@@ -30,214 +30,172 @@ setmetatable(Plan, {__call = function(self, id) return Plan end})
 -- @param orientation - The orientation of the new block
 -- @param blockIndex - The type of the new block, must be a valid block type. See enum BlockType
 -- @return Returns the index of the new block on success, nil otherwise.
----@param position vec3
----@param size vec3
----@param parentIndex int
----@param index int
----@param color Color
----@param material Material
----@param orientation Matrix
----@param blockIndex int
----@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number):number
-Plan.addBlock = function (position, size, parentIndex, index, color, material, orientation, blockIndex)
-	return 0
+---@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number)
+Plan.addBlock = function ()
+	return nil
 end
 
----@param parentIndex int
----@param other BlockPlan
----@param otherBlock int
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number):number
-Plan.addPlan = function (parentIndex, other, otherBlock)
-	return 0
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number)
+Plan.addPlan = function ()
+	return nil
 end
 
----@param parentIndex int
----@param other BlockPlan
----@param otherBlock int
----@param delta vec3
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3):number
-Plan.addPlanDisplaced = function (parentIndex, other, otherBlock, delta)
-	return 0
-end
-
--- @return nothing
----@param damage float
----@param block int
----@param location vec3
----@param inflictingEntity Uuid
----@param damageSource var
----@param damageType var
----@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid, damageSource:any, damageType:any):any
-Plan.damage = function (damage, block, location, inflictingEntity, damageSource, damageType)
+---@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3)
+Plan.addPlanDisplaced = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-Plan.deleteSubTree = function (index)
+---@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid, damageSource:any, damageType:any)
+Plan.damage = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun(index:number)
+Plan.deleteSubTree = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun()
 Plan.destroy = function ()
 	return nil
 end
 
----@type fun():boolean
+---@type fun()
 Plan.empty = function ()
-	return true
+	return nil
 end
 
----@param index int
----@type fun(index:number):boolean
-Plan.exists = function (index)
-	return true
+---@type fun(index:number)
+Plan.exists = function ()
+	return nil
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
----@type fun():BlockPlan
+---@type fun()
 Plan.get = function ()
-	return BlockPlan()
+	return nil
 end
 
----@param index int
----@type fun(index:number):BlockPlanBlock
-Plan.getBlock = function (index)
-	return BlockPlanBlock()
+---@type fun(index:number)
+Plan.getBlock = function ()
+	return nil
 end
 
----@type fun():number
+---@type fun()
 Plan.getBlockIndices = function ()
-	return 0
+	return nil
 end
 
----@param index int
----@type fun(index:number):number
-Plan.getBlocksByType = function (index)
-	return 0
+---@type fun(index:number)
+Plan.getBlocksByType = function ()
+	return nil
 end
 
----@type fun():number
+---@type fun()
 Plan.getMoneyValue = function ()
-	return 0.0
+	return nil
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks.
 -- @return The plan of the entity
----@type fun():BlockPlan
+---@type fun()
 Plan.getMove = function ()
-	return BlockPlan()
-end
-
----@param n int
----@type fun(n:number):BlockPlanBlock
-Plan.getNthBlock = function (n)
-	return BlockPlanBlock()
-end
-
----@param n int
----@type fun(n:number):any
-Plan.getNthIndex = function (n)
 	return nil
 end
 
----@param blockIndex int
----@type fun(blockIndex:number):number
-Plan.getNumBlocks = function (blockIndex)
-	return 0
+---@type fun(n:number)
+Plan.getNthBlock = function ()
+	return nil
 end
 
----@param index int
----@type fun(index:number):number
-Plan.getRemoved = function (index)
-	return 0
+---@type fun(n:number)
+Plan.getNthIndex = function ()
+	return nil
 end
 
----@type fun():number
+---@type fun(blockIndex:number)
+Plan.getNumBlocks = function ()
+	return nil
+end
+
+---@type fun(index:number)
+Plan.getRemoved = function ()
+	return nil
+end
+
+---@type fun()
 Plan.getResourceValue = function ()
-	return 0.0
+	return nil
 end
 
----@type fun():BlockStatistics
+---@type fun()
 Plan.getStats = function ()
-	return BlockStatistics()
+	return nil
 end
 
----@type fun():number
+---@type fun()
 Plan.getUndamagedMoneyValue = function ()
-	return 0.0
+	return nil
 end
 
----@type fun():number
+---@type fun()
 Plan.getUndamagedResourceValue = function ()
-	return 0.0
+	return nil
 end
 
 -- @return nothing
----@param damage float
----@param block int
----@param location vec3
----@param inflictingEntity Uuid
----@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid):any
-Plan.heal = function (damage, block, location, inflictingEntity)
+---@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid)
+Plan.heal = function ()
 	return nil
 end
 
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This moves all the data out of the plan that is used as the first argument. The content of the plan given as argument is then undefined, but still valid. It might be empty, it might contain the previous plan. This operation is independent of the size of the plan, use it when you have to set large plans with lots of blocks.
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
----@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-Plan.move = function (plan)
+---@type fun(plan:BlockPlan)
+Plan.move = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-Plan.removeBlock = function (index)
+---@type fun(index:number)
+Plan.removeBlock = function ()
 	return nil
 end
 
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This copies the entire plan that is given as argument, keep that in mind when setting plans with large block counts.
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
----@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-Plan.set = function (plan)
+---@type fun(plan:BlockPlan)
+Plan.set = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@param color Color
----@type fun(index:number, color:Color):any
-Plan.setBlockColor = function (index, color)
+---@type fun(index:number, color:Color)
+Plan.setBlockColor = function ()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@param type int
----@type fun(index:number, type:number):any
-Plan.setBlockType = function (index, type)
+---@type fun(index:number, type:number)
+Plan.setBlockType = function ()
 	return nil
 end
 
 -- @return nothing
----@param color Color
----@type fun(color:Color):any
-Plan.setColor = function (color)
+---@type fun(color:Color)
+Plan.setColor = function ()
 	return nil
 end
 
 -- @return nothing
----@param material Material
----@type fun(material:Material):any
-Plan.setMaterial = function (material)
+---@type fun(material:Material)
+Plan.setMaterial = function ()
 	return nil
 end
 

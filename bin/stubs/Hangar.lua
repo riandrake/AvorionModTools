@@ -15,153 +15,124 @@ Hangar = {
 
 }
 
-setmetatable(Hangar, {__call = function(self, id) return Hangar end})
+setmetatable(Hangar, {__call = function(self) return Hangar end})
 
 -- @return nothing
----@param squad unsigned
----@param fighter FighterTemplate
----@type fun(squad:number:unsigned, fighter:FighterTemplate):any
-Hangar.addFighter = function (squad, fighter)
+---@type fun(squad:number:unsigned, fighter:FighterTemplate)
+Hangar.addFighter = function ()
 	return nil
 end
 
----@param name string
----@type fun(name:string):number
-Hangar.addSquad = function (name)
-	return 0
+---@type fun(name:string)
+Hangar.addSquad = function ()
+	return nil
 end
 
----@param entity Entity
----@type fun(entity:Entity):boolean
-Hangar.canLand = function (entity)
-	return true
+---@type fun(entity:Entity)
+Hangar.canLand = function ()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Hangar.clear = function ()
 	return nil
 end
 
----@param fighter FighterTemplate
----@param squadIndex unsigned
----@type fun(fighter:FighterTemplate, squadIndex:number:unsigned):boolean
-Hangar.fighterTypeMatchesSquad = function (fighter, squadIndex)
-	return true
-end
-
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):FighterTemplate
-Hangar.getBlueprint = function (squadIndex)
-	return FighterTemplate()
-end
-
----@param squadIndex unsigned
----@param fighterIndex unsigned
----@type fun(squadIndex:number:unsigned, fighterIndex:number:unsigned):FighterTemplate
-Hangar.getFighter = function (squadIndex, fighterIndex)
-	return FighterTemplate()
-end
-
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):Material
-Hangar.getHighestMaterialInSquadMainCategory = function (squadIndex)
-	return Material()
-end
-
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):number
-Hangar.getSquadFighters = function (squadIndex)
-	return 0
-end
-
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):any
-Hangar.getSquadFighterType = function (squadIndex)
+---@type fun(fighter:FighterTemplate, squadIndex:number:unsigned)
+Hangar.fighterTypeMatchesSquad = function ()
 	return nil
 end
 
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):number
-Hangar.getSquadFreeSlots = function (squadIndex)
-	return 0
+---@type fun(squadIndex:number:unsigned)
+Hangar.getBlueprint = function ()
+	return nil
 end
 
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):boolean
-Hangar.getSquadHasRawMinersOrSalvagers = function (squadIndex)
-	return true
+---@type fun(squadIndex:number:unsigned, fighterIndex:number:unsigned)
+Hangar.getFighter = function ()
+	return nil
+end
+
+---@type fun(squadIndex:number:unsigned)
+Hangar.getHighestMaterialInSquadMainCategory = function ()
+	return nil
+end
+
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadFighterType = function ()
+	return nil
+end
+
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadFighters = function ()
+	return nil
+end
+
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadFreeSlots = function ()
+	return nil
+end
+
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadHasRawMinersOrSalvagers = function ()
+	return nil
 end
 
 -- Returns the weapon type that most fighters of this squad are equipped with. Use this to determine if an AI controlled ship can use this squad to mine or salvage. In case mulitple weapon types are equally present a random one is returned.
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):any
-Hangar.getSquadMainWeaponCategory = function (squadIndex)
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadMainWeaponCategory = function ()
 	return nil
 end
 
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):number
-Hangar.getSquadMaxFighters = function (squadIndex)
-	return 0
-end
-
----@param squadIndex unsigned
----@type fun(squadIndex:number:unsigned):any
-Hangar.getSquadName = function (squadIndex)
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadMaxFighters = function ()
 	return nil
 end
 
----@type fun():number
+---@type fun(squadIndex:number:unsigned)
+Hangar.getSquadName = function ()
+	return nil
+end
+
+---@type fun()
 Hangar.getSquads = function ()
-	return 0
-end
-
--- @return nothing
----@param squadIndex unsigned
----@param fighterIndex unsigned
----@param newSquadIndex unsigned
----@type fun(squadIndex:number:unsigned, fighterIndex:number:unsigned, newSquadIndex:number:unsigned):any
-Hangar.moveFighterToSquad = function (squadIndex, fighterIndex, newSquadIndex)
 	return nil
 end
 
 -- @return nothing
----@param squadIndex unsigned
----@param newSquadIndex unsigned
----@type fun(squadIndex:number:unsigned, newSquadIndex:number:unsigned):any
-Hangar.moveSquad = function (squadIndex, newSquadIndex)
+---@type fun(squadIndex:number:unsigned, fighterIndex:number:unsigned, newSquadIndex:number:unsigned)
+Hangar.moveFighterToSquad = function ()
 	return nil
 end
 
 -- @return nothing
----@param index unsigned
----@param squad unsigned
----@type fun(index:number:unsigned, squad:number:unsigned):any
-Hangar.removeFighter = function (index, squad)
+---@type fun(squadIndex:number:unsigned, newSquadIndex:number:unsigned)
+Hangar.moveSquad = function ()
 	return nil
 end
 
 -- @return nothing
----@param index unsigned
----@type fun(index:number:unsigned):any
-Hangar.removeSquad = function (index)
+---@type fun(index:number:unsigned, squad:number:unsigned)
+Hangar.removeFighter = function ()
 	return nil
 end
 
 -- @return nothing
----@param squad unsigned
----@param fighter FighterTemplate
----@type fun(squad:number:unsigned, fighter:nil]:[or:FighterTemplate):any
-Hangar.setBlueprint = function (squad, fighter)
+---@type fun(index:number:unsigned)
+Hangar.removeSquad = function ()
 	return nil
 end
 
 -- @return nothing
----@param index unsigned
----@param newName string
----@type fun(index:number:unsigned, newName:string):any
-Hangar.setSquadName = function (index, newName)
+---@type fun(squad:number:unsigned, fighter:nil]:[or:FighterTemplate)
+Hangar.setBlueprint = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(index:number:unsigned, newName:string)
+Hangar.setSquadName = function ()
 	return nil
 end
 

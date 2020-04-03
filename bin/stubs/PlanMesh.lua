@@ -6,27 +6,23 @@ PlanMesh = {
 
 }
 
-setmetatable(PlanMesh, {__call = function(self, id) return PlanMesh end})
+setmetatable(PlanMesh, {__call = function(self) return PlanMesh end})
 
 -- @return nothing
----@param shading int
----@param material int
----@type fun(shading:number, material:number):any
-PlanMesh.disableMesh = function (shading, material)
+---@type fun(shading:number, material:number)
+PlanMesh.disableMesh = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 PlanMesh.enableAll = function ()
 	return nil
 end
 
 -- @return nothing
----@param shading int
----@param material int
----@type fun(shading:number, material:number):any
-PlanMesh.enableMesh = function (shading, material)
+---@type fun(shading:number, material:number)
+PlanMesh.enableMesh = function ()
 	return nil
 end
 

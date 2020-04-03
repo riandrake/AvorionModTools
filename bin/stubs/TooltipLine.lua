@@ -23,5 +23,5 @@ TooltipLine = {
 
 }
 
-setmetatable(TooltipLine, {__call = function(self, height, fontSize) return TooltipLine end})
+setmetatable(TooltipLine, {__call = function(self) return TooltipLine end})
 

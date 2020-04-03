@@ -11,7 +11,19 @@ from bs4 import BeautifulSoup
 import re
 
 
+class StubGeneratorError(Exception):
+    """ Custom Exception Class """
+    pass
+
+
+# GLOBALS
 BIN_DIR = Path('bin')
+HTML_DIR = BIN_DIR / 'html'
+STUBS_DIR = BIN_DIR / 'stubs'
+
+
+if not STUBS_DIR.exists():
+    STUBS_DIR.mkdir()
 
 
 DEFAULT_VALUES_BY_TYPE = {
@@ -50,25 +62,33 @@ RAW_DEFAULT_VALUES_BY_TYPE = {
 
 
 def split_careful(s):
-     parts = []
-     bracket_level = 0
-     current = []
-     # trick to remove special-case of trailing chars
-     for c in (s + ","):
-         if c == "," and bracket_level == 0:
-             parts.append("".join(current))
-             current = []
-         else:
-             if c == "{":
-                 bracket_level += 1
-             elif c == "}":
-                 bracket_level -= 1
-             current.append(c)
-     return parts
+    """
+    :param s: input string
+    :return: a comma-delimited argument list, with exceptions for commas found within brackets
+    """
+    parts = []
+    current = []
+    bracket_level = 0
+    # trick to remove special-case of trailing chars
+    for c in (s + ","):
+        if c == "," and bracket_level == 0:
+            parts.append("".join(current))
+            current = []
+        else:
+            if c == "{":
+                bracket_level += 1
+            elif c == "}":
+                bracket_level -= 1
+                current.append(c)
+    return parts
 
 
 def indent(string):
-    """ Indent a block of text """
+    """
+    :param string: a block of text
+    :return: the same block of text, indented
+    """
+
     lines = string.split('\n')
 
     for idx, line in enumerate(lines):
@@ -79,7 +99,9 @@ def indent(string):
 
 
 def get_default_value(in_type):
-    """ Return a default value for a type, so inference works in lua
+    """
+    :param in_type: the lua type, as a string
+    :return: the default value placeholder assigned to this type
     """
     in_type = in_type.strip()
 
@@ -99,12 +121,16 @@ def get_default_value(in_type):
                 print(f'Weird type: "{in_type}"')
                 return 'nil'
 
-        #print('New type: ', type)
         DEFAULT_VALUES_BY_TYPE[in_type] = in_type + '()'
 
     return DEFAULT_VALUES_BY_TYPE[in_type]
 
+
 def get_raw_default_value(in_type):
+    """
+    :param in_type: the lua type, as a string
+    :return: the raw default value placeholder assigned to this type
+    """
     in_type = in_type.strip()
 
     if '{' in in_type:
@@ -127,10 +153,10 @@ def get_raw_default_value(in_type):
                 print(f'Weird type: "{in_type}"')
                 return 'nil'
 
-        #print('New type: ', type)
         RAW_DEFAULT_VALUES_BY_TYPE[in_type] = in_type
 
     return RAW_DEFAULT_VALUES_BY_TYPE[in_type]
+
 
 def flip_args(arg):
     if ' ' in arg:
@@ -140,9 +166,6 @@ def flip_args(arg):
             arg[1] = get_raw_default_value(arg[1])
         arg = ':'.join(arg)
     return arg
-
-class StubGeneratorError(Exception):
-    pass
 
 
 @dataclass(init=False)
@@ -155,7 +178,7 @@ class ParsedProperty:
     def __lt__(self, other):
         return self.name < other.name
 
-    def parse_property(self, in_property, namespace):
+    def parse_property(self, in_property):
         """ Parse a property from documentation """
         tag_begin = in_property.find('[')
         if tag_begin != -1:
@@ -172,7 +195,6 @@ class ParsedProperty:
             self.type = self.type.replace(strip, '')
 
 
-
 @dataclass(init=False)
 class ParsedFunction:
     """ Function parser from Avorion documentation """
@@ -185,6 +207,9 @@ class ParsedFunction:
     arguments: str
     params: str
 
+    def __lt__(self, other):
+        return self.name < other.name
+
     def parse_return_value(self, return_value):
         """ Parse a return value for defaults """
         for strip in ('...', 'static ', 'const '):
@@ -196,13 +221,13 @@ class ParsedFunction:
         return_values = split_careful(return_value)
 
         raw_return_values = return_values.copy()
-        for idx, type in enumerate(raw_return_values):
-            raw_return_values[idx] = get_raw_default_value(type)
+        for idx, _type in enumerate(raw_return_values):
+            raw_return_values[idx] = get_raw_default_value(_type)
 
         self.raw_return_value = ', '.join(raw_return_values)
 
-        for idx, type in enumerate(return_values):
-            return_values[idx] = get_default_value(type)
+        for idx, _type in enumerate(return_values):
+            return_values[idx] = get_default_value(_type)
 
         self.return_value = ', '.join(return_values)
 
@@ -223,7 +248,6 @@ class ParsedFunction:
                 if len(split) > 1:
                     arg_types.append('---@param ' + arg + ' ' + split[0] + '\n')
 
-            
             arg = arg.strip()
 
             # Fix reserved keywords by prepending them with an underscore
@@ -263,8 +287,6 @@ class ParsedFunction:
 
         param_type = f'---@type fun({param_args}){":"+param_type if param_type else ""}\n'
 
-        # self.definition = f'{namespace}{self.name} = function({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
-        #self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
         self.definition = param_type + f'{namespace.replace(":",".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
@@ -297,6 +319,79 @@ class ParsedFunction:
             remark = next(iterator, None)
 
 
+@dataclass
+class NamespaceDefinition:
+    """ Collection of functions and properties under a single namespace """
+    namespace: str
+    functions: list
+    properties: list
+    enums: map
+
+    def merge(self, functions, properties, enums):
+        """ Merge new namespace with existing namespace """
+        self.functions += functions
+        self.properties += properties
+
+        for k, v in enums.items():
+            assert(k not in self.enums)
+            self.enums[k] = v
+
+    def write(self):
+        """ Write a single namespace to file
+        """
+        filename = f'{self.namespace if self.namespace else "Globals"}.lua'
+
+        with open(STUBS_DIR / filename, 'w') as writer:
+            if self.enums:
+                for enum, values in self.enums.items():
+                    writer.write(f'{enum} = {{\n')
+
+                    for idx, value in enumerate(values[:-1]):
+                        writer.write(f'\t{value} = {idx},\n')
+
+                    idx = idx + 1
+                    writer.write(f'\t{values[idx]} = {idx}\n')
+                    writer.write('}\n\n')
+
+            if self.functions:
+                self.functions.sort()
+
+            if self.namespace is not None:
+                constructor = self.functions[0]
+
+                writer.write(f'---@class {self.namespace}\n')
+                writer.write(f'{self.namespace} = {{\n')
+
+                if self.properties:
+                    # Remove duplicates cleanly, then sort
+                    temp_map = {p.name: p for p in self.properties}
+                    self.properties = sorted(list(temp_map.values()))
+
+                    writer.write(f'\n')
+
+                    for p in self.properties:
+                        writer.write(
+                            f'\t{p.name} = {get_default_value(p.type)}, -- {p.remark}{p.type}\n')
+
+                    writer.write(f'\n')
+
+                writer.write('}\n\n')
+
+                additional_args = f', {constructor.arguments}' if constructor.arguments else ''
+                writer.write(
+                    f"setmetatable({self.namespace}, {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
+
+                for function in self.functions[1:]:
+                    writer.write(function.remarks)
+                    writer.write(function.params)
+                    writer.write(function.definition)
+            else:
+                for function in self.functions:
+                    writer.write(function.remarks)
+                    writer.write(function.params)
+                    writer.write(function.definition)
+
+
 class StubGenerator:
     """ Program class """
     def __init__(self):
@@ -304,14 +399,14 @@ class StubGenerator:
         if not html_dir.exists():
             raise StubGeneratorError('HTML directory does not exist!')
 
+        self.namespaces = {}
         self.files = [file for file in html_dir.glob('*.html')]
+
         if not self.files:
             raise StubGeneratorError('No HTML files found in directory!')
 
     def generate_stub(self, file):
         """ Generates a stub lua file based on html documentation """
-        #print('Processing: ' + file.name)
-
         if not file.suffix == '.html':
             raise StubGeneratorError('parse_definitions expected an HTML file')
 
@@ -319,10 +414,6 @@ class StubGenerator:
 
         soup = BeautifulSoup(text, 'html.parser')
         code_containers = soup.findAll("div", {"class": "codecontainer"})
-
-        stubs = BIN_DIR / 'stubs'
-        if not stubs.exists():
-            stubs.mkdir()
 
         lines = []
         for code in code_containers[1:]:
@@ -347,7 +438,7 @@ class StubGenerator:
 
         for line in lines:
             if line.startswith('--'):
-                continue # ignore this line, it's just pseudocode
+                continue  # ignore this line, it's just pseudo-code
             
             if not properties and line.startswith('property '):
 
@@ -357,9 +448,9 @@ class StubGenerator:
                     namespace = functions[0].name
 
                 properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
-                for idx, property in enumerate(properties):
+                for idx, p in enumerate(properties):
                     parsed = ParsedProperty()
-                    parsed.parse_property(property, namespace)
+                    parsed.parse_property(p)
                     properties[idx] = parsed
 
             elif line.startswith('function ') or line.startswith('callback '):
@@ -383,56 +474,17 @@ class StubGenerator:
                 #print('Unhandled:', line, file.name)
                 pass
 
-        luaName = re.sub(r'\W+', '', file.name).replace('html', '.lua')
-        with open((stubs / luaName), 'w') as writer:
-            if enums:
-                for enum, values in enums.items():
-                    writer.write(f'{enum} = {{\n')
+        if namespace not in self.namespaces:
+            self.namespaces[namespace] = NamespaceDefinition(namespace, functions, properties, enums)
+        else:
+            self.namespaces[namespace].merge(functions, properties, enums)
 
-                    for idx, value in enumerate(values[:-1]):
-                        writer.write(f'\t{value} = {idx},\n')
+        return
 
-                    idx = idx + 1
-                    writer.write(f'\t{values[idx]} = {idx}\n')
-
-                    writer.write('}\n\n')
-
-            if namespace:
-                print(namespace)
-                constructor = functions[0]
-
-                writer.write(f'---@class {namespace}\n')
-                writer.write(f'{namespace} = {{\n')
-
-                if properties:
-                    # Remove duplicates cleanly, then sort
-                    properties = { property.name : property for property in properties }
-                    properties = sorted(list(properties.values()))
-
-                    writer.write(f'\n')
-
-                    for property in properties:
-                        writer.write(f'\t{property.name} = {get_default_value(property.type)}, -- {property.remark}{property.type}\n')
-
-                    writer.write(f'\n')
-
-                writer.write('}\n\n')
-
-                additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(f"setmetatable({namespace}, {{__call = function(self{additional_args}) return {namespace} end}})\n\n")
-
-                for function in functions[1:]:
-                    writer.write(function.remarks)
-                    writer.write(function.params)
-                    writer.write(function.definition)
-            else:
-                for function in functions:
-                    writer.write(function.remarks)
-                    writer.write(function.params)
-                    writer.write(function.definition)
-
-        
-        return 0
+    def write_all(self):
+        """ Write all namespace definitions to stub files """
+        for definition in self.namespaces.values():
+            definition.write()
 
     def run(self):
         """ Program entrypoint """
@@ -448,6 +500,8 @@ class StubGenerator:
                 continue
 
             self.generate_stub(file)
+
+        self.write_all()
         print('Finished.')
 
 

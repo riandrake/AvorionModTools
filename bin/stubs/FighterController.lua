@@ -6,55 +6,44 @@ FighterController = {
 
 }
 
-setmetatable(FighterController, {__call = function(self, id) return FighterController end})
+setmetatable(FighterController, {__call = function(self) return FighterController end})
 
----@param squad var
----@type fun(squad:any):Entity
-FighterController.getDeployedFighters = function (squad)
-	return Entity()
+---@type fun(squad:any)
+FighterController.getDeployedFighters = function ()
+	return nil
 end
 
----@param squadIndex unsigned
----@param fighterIndex var
----@type fun(squadIndex:number:unsigned, fighterIndex:any):any
-FighterController.getFighterStartError = function (squadIndex, fighterIndex)
+---@type fun(squadIndex:number:unsigned, fighterIndex:any)
+FighterController.getFighterStartError = function ()
 	return nil
 end
 
 -- Returns a lightweight copy of the first fighter found of the type (ie. the next fighter that would be started when startFighterOfType() would be called). Lightweight copy means the FighterTemplate without the plan.
 -- @param type - The type of fighter
 -- @return A copy of the first fighter found to match the type, without plan
----@param type FighterType
----@type fun(type:FighterType):FighterTemplate
-FighterController.getFighterStatsOfType = function (type)
-	return FighterTemplate()
+---@type fun(type:FighterType)
+FighterController.getFighterStatsOfType = function ()
+	return nil
 end
 
----@param type FighterType
----@type fun(type:FighterType):any
-FighterController.getFighterTypeStartError = function (type)
+---@type fun(type:FighterType)
+FighterController.getFighterTypeStartError = function ()
 	return nil
 end
 
 -- @return nothing
----@param squad unsigned
----@param orders FighterOrders
----@param targetId Uuid
----@type fun(squad:number:unsigned, orders:FighterOrders, targetId:Uuid):any
-FighterController.setSquadOrders = function (squad, orders, targetId)
+---@type fun(squad:number:unsigned, orders:FighterOrders, targetId:Uuid)
+FighterController.setSquadOrders = function ()
 	return nil
 end
 
----@param squadIndex unsigned
----@param fighterIndex var
----@type fun(squadIndex:number:unsigned, fighterIndex:any):Entity, number
-FighterController.startFighter = function (squadIndex, fighterIndex)
-	return Entity(), 0
+---@type fun(squadIndex:number:unsigned, fighterIndex:any):, 
+FighterController.startFighter = function ()
+	return nil, nil
 end
 
----@param type FighterType
----@type fun(type:FighterType):Entity, number
-FighterController.startFighterOfType = function (type)
-	return Entity(), 0
+---@type fun(type:FighterType):, 
+FighterController.startFighterOfType = function ()
+	return nil, nil
 end
 

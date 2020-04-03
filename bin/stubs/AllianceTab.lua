@@ -24,76 +24,66 @@ AllianceTab = {
 setmetatable(AllianceTab, {__call = function(self) return AllianceTab end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 AllianceTab.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-AllianceTab.activateTab = function (tab)
+---@type fun(tab:Tab)
+AllianceTab.activateTab = function ()
 	return nil
 end
 
----@param name string
----@param icon string
----@param description string
----@type fun(name:string, icon:string, description:string):Tab
-AllianceTab.createTab = function (name, icon, description)
-	return Tab()
+---@type fun(name:string, icon:string, description:string)
+AllianceTab.createTab = function ()
+	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-AllianceTab.deactivateTab = function (tab)
+---@type fun(tab:Tab)
+AllianceTab.deactivateTab = function ()
 	return nil
 end
 
----@type fun():Tab
+---@type fun()
 AllianceTab.getActiveTab = function ()
-	return Tab()
-end
-
----@param name string
----@type fun(name:string):Tab
-AllianceTab.getTab = function (name)
-	return Tab()
-end
-
--- @return nothing
----@param tab Tab
----@param pos int
----@type fun(tab:Tab, pos:number):any
-AllianceTab.moveTabToPosition = function (tab, pos)
 	return nil
 end
 
--- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-AllianceTab.moveTabToTheRight = function (tab)
-	return nil
-end
-
--- @return nothing
----@param val var
----@type fun(val:any):any
-AllianceTab.selectTab = function (val)
+---@type fun(name:string)
+AllianceTab.getTab = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 AllianceTab.hide = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun(tab:Tab, pos:number)
+AllianceTab.moveTabToPosition = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(tab:Tab)
+AllianceTab.moveTabToTheRight = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(val:any)
+AllianceTab.selectTab = function ()
+	return nil
+end
+
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 AllianceTab.show = function ()
 	return nil
 end

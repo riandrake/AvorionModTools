@@ -76,45 +76,42 @@ FighterTemplate = {
 setmetatable(FighterTemplate, {__call = function(self) return FighterTemplate end})
 
 -- @return nothing
----@param str string
----@param value string
----@type fun(str:string, value:string):any
-FighterTemplate.addDescription = function (str, value)
+---@type fun(str:string, value:string)
+FighterTemplate.addDescription = function ()
 	return nil
 end
 
 -- @return nothing
----@param weapon var
----@type fun(weapon:any):any
-FighterTemplate.addWeapon = function (weapon)
+---@type fun(weapon:any)
+FighterTemplate.addWeapon = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 FighterTemplate.clearDescriptions = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 FighterTemplate.clearWeapons = function ()
 	return nil
 end
 
----@type fun():table<string, string>
+---@type fun():>
 FighterTemplate.getDescriptions = function ()
-	return {"", ""}
+	return }()
 end
 
 -- Returns all weapons of the object
----@type fun():Weapon
+---@type fun()
 FighterTemplate.getWeapons = function ()
-	return Weapon()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 FighterTemplate.updateStaticStats = function ()
 	return nil
 end

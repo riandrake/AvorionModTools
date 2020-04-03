@@ -7,5 +7,5 @@ EntityTransferrer = {
 
 }
 
-setmetatable(EntityTransferrer, {__call = function(self, id) return EntityTransferrer end})
+setmetatable(EntityTransferrer, {__call = function(self) return EntityTransferrer end})
 

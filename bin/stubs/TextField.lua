@@ -26,18 +26,18 @@ TextField = {
 
 }
 
-setmetatable(TextField, {__call = function(self, index) return TextField end})
+setmetatable(TextField, {__call = function(self) return TextField end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 TextField.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 TextField.show = function ()
 	return nil
 end

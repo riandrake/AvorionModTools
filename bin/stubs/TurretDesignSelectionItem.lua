@@ -16,10 +16,10 @@ TurretDesignSelectionItem = {
 
 }
 
-setmetatable(TurretDesignSelectionItem, {__call = function(self, path) return TurretDesignSelectionItem end})
+setmetatable(TurretDesignSelectionItem, {__call = function(self) return TurretDesignSelectionItem end})
 
 -- @return nothing
----@type fun():any
+---@type fun()
 TurretDesignSelectionItem.refreshTexture = function ()
 	return nil
 end

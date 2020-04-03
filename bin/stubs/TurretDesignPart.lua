@@ -4,39 +4,36 @@ TurretDesignPart = {
 
 setmetatable(TurretDesignPart, {__call = function(self) return TurretDesignPart end})
 
----@type fun():BlockPlan
+---@type fun()
 TurretDesignPart.getMovePlan = function ()
-	return BlockPlan()
+	return nil
 end
 
----@type fun():BlockPlan
+---@type fun()
 TurretDesignPart.getPlan = function ()
-	return BlockPlan()
+	return nil
 end
 
----@type fun():vec3
+---@type fun()
 TurretDesignPart.getPosition = function ()
-	return vec3()
-end
-
--- @return nothing
----@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-TurretDesignPart.setMovePlan = function (plan)
 	return nil
 end
 
 -- @return nothing
----@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-TurretDesignPart.setPlan = function (plan)
+---@type fun(plan:BlockPlan)
+TurretDesignPart.setMovePlan = function ()
 	return nil
 end
 
 -- @return nothing
----@param in vec3
----@type fun(in:vec3):any
-TurretDesignPart.setPosition = function (_in)
+---@type fun(plan:BlockPlan)
+TurretDesignPart.setPlan = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(in:vec3)
+TurretDesignPart.setPosition = function ()
 	return nil
 end
 

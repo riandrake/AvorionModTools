@@ -23,18 +23,18 @@ ArrowLine = {
 
 }
 
-setmetatable(ArrowLine, {__call = function(self, index) return ArrowLine end})
+setmetatable(ArrowLine, {__call = function(self) return ArrowLine end})
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ArrowLine.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ArrowLine.show = function ()
 	return nil
 end

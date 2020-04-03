@@ -20,41 +20,36 @@ NumbersBar = {
 
 }
 
-setmetatable(NumbersBar, {__call = function(self, index) return NumbersBar end})
+setmetatable(NumbersBar, {__call = function(self) return NumbersBar end})
 
 -- @return nothing
----@param num float
----@param name string
----@param color Color
----@type fun(num:number, name:string, color:Color):any
-NumbersBar.addEntry = function (num, name, color)
+---@type fun(num:number, name:string, color:Color)
+NumbersBar.addEntry = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 NumbersBar.clear = function ()
 	return nil
 end
 
--- @return nothing
----@param minRange float
----@param maxRange float
----@type fun(minRange:number, maxRange:number):any
-NumbersBar.setRange = function (minRange, maxRange)
-	return nil
-end
-
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 NumbersBar.hide = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun(minRange:number, maxRange:number)
+NumbersBar.setRange = function ()
+	return nil
+end
+
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 NumbersBar.show = function ()
 	return nil
 end

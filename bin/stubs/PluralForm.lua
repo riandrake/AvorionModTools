@@ -9,5 +9,5 @@ PluralForm = {
 
 }
 
-setmetatable(PluralForm, {__call = function(self, singular, plural, contextOrAmount, amount) return PluralForm end})
+setmetatable(PluralForm, {__call = function(self) return PluralForm end})
 

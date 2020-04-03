@@ -12,59 +12,55 @@ ReadOnlyShipAI = {
 
 }
 
-setmetatable(ReadOnlyShipAI, {__call = function(self, id) return ReadOnlyShipAI end})
+setmetatable(ReadOnlyShipAI, {__call = function(self) return ReadOnlyShipAI end})
 
----@type fun():boolean
+---@type fun()
 ReadOnlyShipAI.enemyFightersPresent = function ()
-	return true
+	return nil
 end
 
----@param countCivilEnemies var
----@type fun(countCivilEnemies:any):boolean
-ReadOnlyShipAI.enemyShipsPresent = function (countCivilEnemies)
-	return true
+---@type fun(countCivilEnemies:any)
+ReadOnlyShipAI.enemyShipsPresent = function ()
+	return nil
 end
 
----@type fun():Entity
+---@type fun()
 ReadOnlyShipAI.getEnemies = function ()
-	return Entity()
+	return nil
 end
 
----@type fun():Uuid
+---@type fun()
 ReadOnlyShipAI.getRegisteredEnemyEntities = function ()
-	return 0
+	return nil
 end
 
----@type fun():number
+---@type fun()
 ReadOnlyShipAI.getRegisteredEnemyFactions = function ()
-	return 0
+	return nil
 end
 
----@type fun():Uuid
+---@type fun()
 ReadOnlyShipAI.getRegisteredFriendEntities = function ()
-	return 0
+	return nil
 end
 
----@type fun():number
+---@type fun()
 ReadOnlyShipAI.getRegisteredFriendFactions = function ()
-	return 0
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isEnemy = function (other)
-	return true
+---@type fun(other:Entity)
+ReadOnlyShipAI.isEnemy = function ()
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isRegisteredEnemy = function (other)
-	return true
+---@type fun(other:Entity)
+ReadOnlyShipAI.isRegisteredEnemy = function ()
+	return nil
 end
 
----@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isRegisteredFriend = function (other)
-	return true
+---@type fun(other:Entity)
+ReadOnlyShipAI.isRegisteredFriend = function ()
+	return nil
 end
 

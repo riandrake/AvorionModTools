@@ -7,5 +7,5 @@ CrewMan = {
 
 }
 
-setmetatable(CrewMan, {__call = function(self, profession, specialist, level) return CrewMan end})
+setmetatable(CrewMan, {__call = function(self) return CrewMan end})
 

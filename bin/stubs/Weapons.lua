@@ -62,48 +62,45 @@ Weapons = {
 
 }
 
-setmetatable(Weapons, {__call = function(self, id) return Weapons end})
+setmetatable(Weapons, {__call = function(self) return Weapons end})
 
 -- @return nothing
----@param str string
----@param value string
----@type fun(str:string, value:string):any
-Weapons.addDescription = function (str, value)
+---@type fun(str:string, value:string)
+Weapons.addDescription = function ()
 	return nil
 end
 
 -- @return nothing
----@param weapon var
----@type fun(weapon:any):any
-Weapons.addWeapon = function (weapon)
+---@type fun(weapon:any)
+Weapons.addWeapon = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Weapons.clearDescriptions = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Weapons.clearWeapons = function ()
 	return nil
 end
 
----@type fun():table<string, string>
+---@type fun():>
 Weapons.getDescriptions = function ()
-	return {"", ""}
+	return }()
 end
 
 -- Returns all weapons of the object
----@type fun():Weapon
+---@type fun()
 Weapons.getWeapons = function ()
-	return Weapon()
+	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Weapons.updateStaticStats = function ()
 	return nil
 end

@@ -38,90 +38,81 @@ Selection = {
 
 }
 
-setmetatable(Selection, {__call = function(self, index) return Selection end})
+setmetatable(Selection, {__call = function(self) return Selection end})
 
 -- @return nothing
----@param item var
----@param pos var
----@type fun(item:any, pos:any):any
-Selection.add = function (item, pos)
+---@type fun(item:any, pos:any)
+Selection.add = function ()
 	return nil
 end
 
 -- @return nothing
----@param pos var
----@type fun(pos:any):any
-Selection.addEmpty = function (pos)
+---@type fun(pos:any)
+Selection.addEmpty = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Selection.clear = function ()
 	return nil
 end
 
----@param key ivec2
----@type fun(key:ivec2):UserObject
-Selection.getItem = function (key)
-	return UserObject()
+---@type fun(key:ivec2)
+Selection.getItem = function ()
+	return nil
 end
 
----@type fun():table<ivec2, UserObject>
+---@type fun():>
 Selection.getItems = function ()
-	return {ivec2(), UserObject()}
+	return }()
 end
 
----@type fun():ivec2
+---@type fun()
 Selection.getMouseOveredKey = function ()
-	return ivec2()
-end
-
----@param x int
----@param y int
----@type fun(x:number, y:number):number, Rect
-Selection.getRect = function (x, y)
-	return 0, Rect()
-end
-
--- @return nothing
----@param key ivec2
----@type fun(key:ivec2):any
-Selection.remove = function (key)
 	return nil
 end
 
--- @return nothing
----@param pos ivec2
----@type fun(pos:ivec2):any
-Selection.select = function (pos)
-	return nil
-end
-
--- @return nothing
----@param pos ivec2
----@type fun(pos:ivec2):any
-Selection.selectNoCallback = function (pos)
-	return nil
-end
-
--- @return nothing
----@type fun():any
-Selection.unselect = function ()
-	return nil
+---@type fun(x:number, y:number):, 
+Selection.getRect = function ()
+	return nil, nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Selection.hide = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun(key:ivec2)
+Selection.remove = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(pos:ivec2)
+Selection.select = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(pos:ivec2)
+Selection.selectNoCallback = function ()
+	return nil
+end
+
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 Selection.show = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun()
+Selection.unselect = function ()
 	return nil
 end
 

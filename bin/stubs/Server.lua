@@ -31,10 +31,8 @@ Server = {
 setmetatable(Server, {__call = function(self) return Server end})
 
 -- @return nothing
----@param sender Player
----@param command string
----@type fun(sender:Player, command:string):any
-Server.addChatCommand = function (sender, command)
+---@type fun(sender:Player, command:string)
+Server.addChatCommand = function ()
 	return nil
 end
 
@@ -44,12 +42,8 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
----@param sender var
----@param messageType int
----@param message string
----@param args PluralForm...
----@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
-Server.broadcastChatMessage = function (sender, messageType, message, args)
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>)
+Server.broadcastChatMessage = function ()
 	return nil
 end
 
@@ -57,106 +51,122 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback. -1 if an error occurred.
----@param callbackName string
----@param functionName var
----@type fun(callbackName:string, functionName:any):number
-Server.callbacksRegistered = function (callbackName, functionName)
-	return 0
+---@type fun(callbackName:string, functionName:any)
+Server.callbacksRegistered = function ()
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Server.getBlackList = function ()
-	return ""
+	return nil
 end
 
----@type fun():string
+---@type fun()
 Server.getIpBlackList = function ()
-	return ""
+	return nil
 end
 
----@type fun():Player
+---@type fun()
 Server.getOnlinePlayers = function ()
-	return Player()
+	return nil
 end
 
----@type fun():Player
+---@type fun()
 Server.getPlayers = function ()
-	return Player()
+	return nil
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
----@param key string
----@type fun(key:string):any
-Server.getValue = function (key)
+---@type fun(key:string)
+Server.getValue = function ()
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():table<string, any>
+---@type fun():>
 Server.getValues = function ()
-	return {"", nil}
+	return }()
 end
 
----@type fun():string
+---@type fun()
 Server.getWhiteList = function ()
-	return ""
+	return nil
 end
 
----@param player Player
----@type fun(player:Player):boolean
-Server.hasAdminPrivileges = function (player)
-	return true
+---@type fun(player:Player)
+Server.hasAdminPrivileges = function ()
+	return nil
 end
 
----@param playerIndex int
----@type fun(playerIndex:number):boolean
-Server.isOnline = function (playerIndex)
-	return true
+---@type fun(playerIndex:number)
+Server.isOnline = function ()
+	return nil
+end
+
+-- @callback
+-- Executed whenever the player sent a chat message to the server. Only called if the chat message is valid and the player doesn't have a chat ban.
+-- @param playerIndex - Index of the player
+-- @param text - The text content of the chat message
+-- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
+---@type fun(playerIndex, text, channel)
+Server.onChatMessage = function ()
+	return nil
+end
+
+-- @callback
+-- Executed whenever a player was logged in
+-- @param playerIndex - The index of the player who logged in
+---@type fun(playerIndex)
+Server.onPlayerLogIn = function ()
+	return nil
+end
+
+-- @callback
+-- Executed whenever a player was logged off
+-- @param playerIndex - The index of the player who logged off
+---@type fun(playerIndex)
+Server.onPlayerLogOff = function ()
+	return nil
 end
 
 -- Register a callback in the server. The callback may arrive with a delay. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
----@param callbackName string
----@param functionName string
----@type fun(callbackName:string, functionName:string):number
-Server.registerCallback = function (callbackName, functionName)
-	return 0
-end
-
--- @return nothing
----@param ip string
----@type fun(ip:string):any
-Server.removeBlacklistedIp = function (ip)
+---@type fun(callbackName:string, functionName:string)
+Server.registerCallback = function ()
 	return nil
 end
 
 -- @return nothing
----@param name string
----@type fun(name:string):any
-Server.removeBlacklistedName = function (name)
+---@type fun(ip:string)
+Server.removeBlacklistedIp = function ()
 	return nil
 end
 
 -- @return nothing
----@param name string
----@type fun(name:string):any
-Server.removeWhitelistedName = function (name)
+---@type fun(name:string)
+Server.removeBlacklistedName = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun(name:string)
+Server.removeWhitelistedName = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun()
 Server.save = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Server.sendCallback = function ()
 	return nil
 end
@@ -165,23 +175,19 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
----@param key string
----@param value var
----@type fun(key:string, value:any):any
-Server.setValue = function (key, value)
+---@type fun(key:string, value:any)
+Server.setValue = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 Server.stop = function ()
 	return nil
 end
 
----@param callbackName string
----@param functionName string
----@type fun(callbackName:string, functionName:string):number
-Server.unregisterCallback = function (callbackName, functionName)
-	return 0
+---@type fun(callbackName:string, functionName:string)
+Server.unregisterCallback = function ()
+	return nil
 end
 

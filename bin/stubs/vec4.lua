@@ -8,51 +8,48 @@ vec4 = {
 
 }
 
-setmetatable(vec4, {__call = function(self, x, y, z, w) return vec4 end})
+setmetatable(vec4, {__call = function(self) return vec4 end})
 
----@param other var
----@type fun(other:any):vec4
-vec4.__add = function (other)
-	return vec4()
+---@type fun(other:any)
+vec4.__div = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec4
-vec4.__div = function (other)
-	return vec4()
+---@type fun(other:vec4)
+vec4.__eq = function ()
+	return nil
 end
 
----@param other vec4
----@type fun(other:vec4):boolean
-vec4.__eq = function (other)
-	return true
+---@type fun(other:vec4)
+vec4.__lt = function ()
+	return nil
 end
 
----@param other vec4
----@type fun(other:vec4):boolean
-vec4.__lt = function (other)
-	return true
+---@type fun(other:any)
+vec4.__mul = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec4
-vec4.__mul = function (other)
-	return vec4()
+---@type fun(other:any)
+vec4.__sub = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):vec4
-vec4.__sub = function (other)
-	return vec4()
-end
-
----@type fun():string
+---@type fun()
 vec4.__tostring = function ()
-	return ""
+	return nil
 end
 
----@type fun():vec4
+---@type fun()
 vec4.__unm = function ()
-	return vec4()
+	return nil
+end
+
+-- @param x - y
+-- @param z - w
+-- @return A new instance of vec4
+---@type fun(x:any, y:any, z:any, w:any)
+vec4 = function ()
+	return nil
 end
 

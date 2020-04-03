@@ -34,117 +34,100 @@ ListBox = {
 
 }
 
-setmetatable(ListBox, {__call = function(self, index) return ListBox end})
+setmetatable(ListBox, {__call = function(self) return ListBox end})
 
 -- @return nothing
----@param str string
----@param value var
----@type fun(str:string, value:any):any
-ListBox.addEntry = function (str, value)
+---@type fun(str:string, value:any)
+ListBox.addEntry = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ListBox.clampScrollPosition = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ListBox.clear = function ()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
+---@type fun()
 ListBox.deselect = function ()
 	return nil
 end
 
----@param row unsigned
----@type fun(row:number:unsigned):string, boolean, boolean, Color
-ListBox.getEntry = function (row)
-	return "", true, true, Color()
+---@type fun(row:number:unsigned):, , , 
+ListBox.getEntry = function ()
+	return nil, nil, nil, nil
 end
 
----@type fun():string, boolean, boolean, Color
+---@type fun():, , , 
 ListBox.getSelectedEntry = function ()
-	return "", true, true, Color()
-end
-
--- @return nothing
----@param index int
----@type fun(index:number):any
-ListBox.removeEntry = function (index)
-	return nil
-end
-
--- @return nothing
----@param index int
----@type fun(index:number):any
-ListBox.select = function (index)
-	return nil
-end
-
--- @return nothing
----@param index int
----@type fun(index:number):any
-ListBox.selectNoCallback = function (index)
-	return nil
-end
-
--- @return nothing
----@param value var
----@type fun(value:any):any
-ListBox.selectValue = function (value)
-	return nil
-end
-
--- @return nothing
----@param value var
----@type fun(value:any):any
-ListBox.selectValueNoCallback = function (value)
-	return nil
-end
-
--- @return nothing
----@param row unsigned
----@param text string
----@param bold bool
----@param italic bool
----@param color Color
----@type fun(row:number:unsigned, text:string, bold:boolean, italic:boolean, color:Color):any
-ListBox.setEntry = function (row, text, bold, italic, color)
-	return nil
-end
-
--- @return nothing
----@param row unsigned
----@param type int
----@type fun(row:number:unsigned, type:number):any
-ListBox.setEntryType = function (row, type)
-	return nil
-end
-
--- @return nothing
----@param row unsigned
----@param value var
----@type fun(row:number:unsigned, value:any):any
-ListBox.setEntryValue = function (row, value)
-	return nil
+	return nil, nil, nil, nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ListBox.hide = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun(index:number)
+ListBox.removeEntry = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(index:number)
+ListBox.select = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(index:number)
+ListBox.selectNoCallback = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(value:any)
+ListBox.selectValue = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(value:any)
+ListBox.selectValueNoCallback = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(row:number:unsigned, text:string, bold:boolean, italic:boolean, color:Color)
+ListBox.setEntry = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(row:number:unsigned, type:number)
+ListBox.setEntryType = function ()
+	return nil
+end
+
+-- @return nothing
+---@type fun(row:number:unsigned, value:any)
+ListBox.setEntryValue = function ()
+	return nil
+end
+
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
+---@type fun()
 ListBox.show = function ()
 	return nil
 end

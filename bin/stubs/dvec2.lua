@@ -6,51 +6,47 @@ dvec2 = {
 
 }
 
-setmetatable(dvec2, {__call = function(self, x, y) return dvec2 end})
+setmetatable(dvec2, {__call = function(self) return dvec2 end})
 
----@param other var
----@type fun(other:any):dvec2
-dvec2.__add = function (other)
-	return dvec2()
+---@type fun(other:any)
+dvec2.__div = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec2
-dvec2.__div = function (other)
-	return dvec2()
+---@type fun(other:dvec2)
+dvec2.__eq = function ()
+	return nil
 end
 
----@param other dvec2
----@type fun(other:dvec2):boolean
-dvec2.__eq = function (other)
-	return true
+---@type fun(other:dvec2)
+dvec2.__lt = function ()
+	return nil
 end
 
----@param other dvec2
----@type fun(other:dvec2):boolean
-dvec2.__lt = function (other)
-	return true
+---@type fun(other:any)
+dvec2.__mul = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec2
-dvec2.__mul = function (other)
-	return dvec2()
+---@type fun(other:any)
+dvec2.__sub = function ()
+	return nil
 end
 
----@param other var
----@type fun(other:any):dvec2
-dvec2.__sub = function (other)
-	return dvec2()
-end
-
----@type fun():string
+---@type fun()
 dvec2.__tostring = function ()
-	return ""
+	return nil
 end
 
----@type fun():dvec2
+---@type fun()
 dvec2.__unm = function ()
-	return dvec2()
+	return nil
+end
+
+-- @param x - y
+-- @return A new instance of dvec2
+---@type fun(x:any, y:any)
+dvec2 = function ()
+	return nil
 end
 
