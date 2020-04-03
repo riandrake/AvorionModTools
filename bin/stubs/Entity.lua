@@ -960,16 +960,6 @@ Entity.onCraftSeatLeft = function (entityId, seat, playerIndex, playersRemaining
 end
 
 -- @callback
--- Executed whenever the crew of an entity in the sector changes. This callback is executed *after* the crew was changed on the entity.
--- @param index - The id of the entity
--- @param delta - The amount of crewmen that changed
--- @param profession - The profession of the crew that changed
----@type fun(index, delta, profession)
-Entity.onCrewChanged = function (index, delta, profession)
-	return nil
-end
-
--- @callback
 -- Executed whenever the crew of the entity changes. This callback is executed *after* the crew was changed on the entity.
 -- @param index - The id of the entity
 ---@type fun(index)

@@ -323,14 +323,25 @@ class ParsedFunction:
 class NamespaceDefinition:
     """ Collection of functions and properties under a single namespace """
     namespace: str
-    functions: list
-    properties: list
+    functions: map
+    properties: map
     enums: map
 
     def merge(self, functions, properties, enums):
         """ Merge new namespace with existing namespace """
-        self.functions += functions
-        self.properties += properties
+        for k, v in functions.items():
+            if k not in self.functions:
+                self.functions[k] = v
+            else:
+                print(f'Overload detected: {k}')
+                self.functions[k] += v
+
+        for k, v in properties.items():
+            if k not in self.properties:
+                self.properties[k] = v
+            else:
+                print(f'Overload detected: {k}')
+                self.properties[k] += v
 
         for k, v in enums.items():
             assert(k not in self.enums)
@@ -340,6 +351,9 @@ class NamespaceDefinition:
         """ Write a single namespace to file
         """
         filename = f'{self.namespace if self.namespace else "Globals"}.lua'
+
+        functions = sorted(self.functions.values())
+        properties = sorted(self.properties.values())
 
         with open(STUBS_DIR / filename, 'w') as writer:
             if self.enums:
@@ -353,23 +367,19 @@ class NamespaceDefinition:
                     writer.write(f'\t{values[idx]} = {idx}\n')
                     writer.write('}\n\n')
 
-            if self.functions:
-                self.functions.sort()
-
             if self.namespace is not None:
-                constructor = self.functions[0]
+                constructor = functions[0][0]
 
                 writer.write(f'---@class {self.namespace}\n')
                 writer.write(f'{self.namespace} = {{\n')
 
-                if self.properties:
+                if properties:
                     # Remove duplicates cleanly, then sort
-                    temp_map = {p.name: p for p in self.properties}
-                    self.properties = sorted(list(temp_map.values()))
-
                     writer.write(f'\n')
 
-                    for p in self.properties:
+                    # TODO: address overloads
+                    for overloads in properties:
+                        p = overloads[0]
                         writer.write(
                             f'\t{p.name} = {get_default_value(p.type)}, -- {p.remark}{p.type}\n')
 
@@ -381,15 +391,19 @@ class NamespaceDefinition:
                 writer.write(
                     f"setmetatable({self.namespace}, {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
 
-                for function in self.functions[1:]:
-                    writer.write(function.remarks)
-                    writer.write(function.params)
-                    writer.write(function.definition)
+                for function_overloads in functions[1:]:
+                    # TODO: address overloads
+                    for function in function_overloads:
+                        writer.write(function.remarks)
+                        writer.write(function.params)
+                        writer.write(function.definition)
             else:
-                for function in self.functions:
-                    writer.write(function.remarks)
-                    writer.write(function.params)
-                    writer.write(function.definition)
+                for function_overloads in functions[1:]:
+                    # TODO: address overloads
+                    for function in function_overloads:
+                        writer.write(function.remarks)
+                        writer.write(function.params)
+                        writer.write(function.definition)
 
 
 class StubGenerator:
@@ -426,8 +440,8 @@ class StubGenerator:
             if text:
                 lines.append(text)
         
-        properties = []
-        functions = []
+        properties = {}
+        functions = {}
         enums = {}
 
         namespace = None
@@ -443,15 +457,14 @@ class StubGenerator:
             if not properties and line.startswith('property '):
 
                 # If there's a function before some properties, it's definitely the namespace
-                if namespace is None and len(functions):
-                    assert(len(functions) == 1)
-                    namespace = functions[0].name
+                if namespace is None and functions:
+                    namespace = next(iter(functions.keys()))
 
-                properties = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
-                for idx, p in enumerate(properties):
+                lines = [line.strip() for line in line.split('\n') if line.strip().startswith('property ')]
+                for idx, p in enumerate(lines):
                     parsed = ParsedProperty()
                     parsed.parse_property(p)
-                    properties[idx] = parsed
+                    properties[parsed.name] = [parsed]
 
             elif line.startswith('function ') or line.startswith('callback '):
                 function = [line.strip() for line in line.split('\n') if line.strip()]
@@ -461,18 +474,17 @@ class StubGenerator:
 
                 # If the first function is capitalized, it's definitely a namespace
                 # Could still be a namespace otherwise, see other check above
-                if namespace is None and len(functions) == 0 and parsed.name[0].upper() == parsed.name[0]:
+                if namespace is None and not functions and parsed.name[0].upper() == parsed.name[0]:
                     namespace = parsed.name
 
-                functions.append(parsed)
+                functions[parsed.name] = [parsed]
             elif line.startswith('enum '):
                 values = [line.strip() for line in line.split('\n') if line.strip()]
                 name = values[0].split()[-1]
                 enums[name] = [value for value in values if ' ' not in value]
                 DEFAULT_VALUES_BY_TYPE[name] = f'{name}.{enums[name][0]}'
             else:
-                #print('Unhandled:', line, file.name)
-                pass
+                pass  # unhandled
 
         if namespace not in self.namespaces:
             self.namespaces[namespace] = NamespaceDefinition(namespace, functions, properties, enums)

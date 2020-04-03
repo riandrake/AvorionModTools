@@ -240,7 +240,7 @@ The amount of functions registered to the callback
 <div id="changeFactionRelations" class="codecontainer">
 <div id="changeFactionRelations" class="function">
 <p>
-<span class="keyword">function var</span> changeFactionRelations(<a href="Faction.html">Faction</a> <span class="parameter">a</span>, <a href="Faction.html">Faction</a> <span class="parameter">b</span>, <span class="type">int</span> <span class="parameter">delta</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
+<span class="keyword">function var</span> changeFactionRelations(<span class="type">Faction</span> <span class="parameter">a</span>, <span class="type">Faction</span> <span class="parameter">b</span>, <span class="type">int</span> <span class="parameter">delta</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
 </p>
 </div>
 <div id="changeFactionRelations" class="">
@@ -256,7 +256,7 @@ nothing
 <div id="createFaction" class="codecontainer">
 <div id="createFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> createFaction(<span class="type">string</span> <span class="parameter">name</span>, <span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+<span class="keyword">function Faction</span> createFaction(<span class="type">string</span> <span class="parameter">name</span>, <span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
 </p>
 </div>
 <div id="createFaction" class="">
@@ -284,7 +284,7 @@ The new faction, or, if already existing, the existing faction
 <div id="createRandomFaction" class="codecontainer">
 <div id="createRandomFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> createRandomFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+<span class="keyword">function Faction</span> createRandomFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
 </p>
 </div>
 <div id="createRandomFaction" class="">
@@ -310,7 +310,7 @@ The new faction
 <div id="findFaction" class="codecontainer">
 <div id="findFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> findFaction(<span class="type">var</span> <span class="parameter">identifier</span>) <br/>
+<span class="keyword">function Faction</span> findFaction(<span class="type">var</span> <span class="parameter">identifier</span>) <br/>
 </p>
 </div>
 <div id="findFaction" class="">
@@ -334,7 +334,7 @@ The faction if found, or nil
 <div id="getControllingFaction" class="codecontainer">
 <div id="getControllingFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> getControllingFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+<span class="keyword">function Faction</span> getControllingFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
 </p>
 </div>
 <div id="getControllingFaction" class="">
@@ -360,7 +360,7 @@ The faction, or nil if the sector's controller is unknown
 <div id="getFactionRelations" class="codecontainer">
 <div id="getFactionRelations" class="function">
 <p>
-<span class="keyword">function int</span> getFactionRelations(<a href="Faction.html">Faction</a> <span class="parameter">a</span>, <a href="Faction.html">Faction</a> <span class="parameter">b</span>) <br/>
+<span class="keyword">function int</span> getFactionRelations(<span class="type">Faction</span> <span class="parameter">a</span>, <span class="type">Faction</span> <span class="parameter">b</span>) <br/>
 </p>
 </div>
 <div id="getFactionRelations" class="">
@@ -370,7 +370,7 @@ The faction, or nil if the sector's controller is unknown
 <div id="getFactionRelationStatus" class="codecontainer">
 <div id="getFactionRelationStatus" class="function">
 <p>
-<span class="keyword">function RelationStatus</span> getFactionRelationStatus(<a href="Faction.html">Faction</a> <span class="parameter">a</span>, <a href="Faction.html">Faction</a> <span class="parameter">b</span>) <br/>
+<span class="keyword">function RelationStatus</span> getFactionRelationStatus(<span class="type">Faction</span> <span class="parameter">a</span>, <span class="type">Faction</span> <span class="parameter">b</span>) <br/>
 </p>
 </div>
 <div id="getFactionRelationStatus" class="">
@@ -399,7 +399,7 @@ Returns a table containing all loaded sectors. Returned table has format {{x = 1
 <div id="getLocalFaction" class="codecontainer">
 <div id="getLocalFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> getLocalFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+<span class="keyword">function Faction</span> getLocalFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
 </p>
 </div>
 <div id="getLocalFaction" class="">
@@ -453,7 +453,7 @@ A table<int, vec2> containing faction indices and corresponding home sector
 <div id="getNearestFaction" class="codecontainer">
 <div id="getNearestFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> getNearestFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+<span class="keyword">function Faction</span> getNearestFaction(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
 </p>
 </div>
 <div id="getNearestFaction" class="">
@@ -489,7 +489,7 @@ The (new) faction, or nil if the sector is in no man's land
 <div id="getPirateFaction" class="codecontainer">
 <div id="getPirateFaction" class="function">
 <p>
-<span class="keyword">function <a href="Faction.html">Faction</a></span> getPirateFaction(<span class="type">int</span> <span class="parameter">level</span>) <br/>
+<span class="keyword">function Faction</span> getPirateFaction(<span class="type">int</span> <span class="parameter">level</span>) <br/>
 </p>
 </div>
 <div id="getPirateFaction" class="">
@@ -809,7 +809,7 @@ nothing
 <div id="setFactionRelations" class="codecontainer">
 <div id="setFactionRelations" class="function">
 <p>
-<span class="keyword">function var</span> setFactionRelations(<a href="Faction.html">Faction</a> <span class="parameter">a</span>, <a href="Faction.html">Faction</a> <span class="parameter">b</span>, <span class="type">int</span> <span class="parameter">level</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
+<span class="keyword">function var</span> setFactionRelations(<span class="type">Faction</span> <span class="parameter">a</span>, <span class="type">Faction</span> <span class="parameter">b</span>, <span class="type">int</span> <span class="parameter">level</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
 </p>
 </div>
 <div id="setFactionRelations" class="">
@@ -825,7 +825,7 @@ nothing
 <div id="setFactionRelationStatus" class="codecontainer">
 <div id="setFactionRelationStatus" class="function">
 <p>
-<span class="keyword">function var</span> setFactionRelationStatus(<a href="Faction.html">Faction</a> <span class="parameter">a</span>, <a href="Faction.html">Faction</a> <span class="parameter">b</span>, <span class="type">RelationStatus</span> <span class="parameter">status</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
+<span class="keyword">function var</span> setFactionRelationStatus(<span class="type">Faction</span> <span class="parameter">a</span>, <span class="type">Faction</span> <span class="parameter">b</span>, <span class="type">RelationStatus</span> <span class="parameter">status</span>, <span class="type">var</span> <span class="parameter">notifyA</span>, <span class="type">var</span> <span class="parameter">notifyB</span>) <br/>
 </p>
 </div>
 <div id="setFactionRelationStatus" class="">

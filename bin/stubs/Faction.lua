@@ -1,22 +1,31 @@
 ---@class Faction
 Faction = {
 
+	alwaysAtWar = true, -- [read-only] bool
 	alwaysAtWar = true, -- bool
 	baseName = "", -- [read-only] string
+	homeSectorUnknown = true, -- [read-only] bool
 	homeSectorUnknown = true, -- bool
+	index = 0, -- [read-only] int
 	index = 0, -- [read-only] int
 	infiniteResources = true, -- bool
 	initialRelations = 0, -- int
 	initialRelationsToPlayer = 0, -- int
 	isAIFaction = true, -- [read-only] bool
+	isAIFaction = true, -- [read-only] bool
+	isAlliance = true, -- [read-only] bool
 	isAlliance = true, -- [read-only] bool
 	isPlayer = true, -- [read-only] bool
+	isPlayer = true, -- [read-only] bool
 	money = 0, -- int
+	name = "", -- [read-only] string
 	name = "", -- [read-only] string
 	stateForm = "", -- [read-only] string
 	staticRelationsToAI = true, -- bool
 	staticRelationsToAll = true, -- bool
 	staticRelationsToPlayers = true, -- bool
+	translatedName = "", -- [read-only] string
+	unformattedName = Format(), -- [read-only] Format
 	unformattedName = Format(), -- [read-only] Format
 
 }
@@ -66,6 +75,11 @@ Faction.getHomeSectorCoordinates = function ()
 	return 0, 0
 end
 
+---@type fun():number, number
+Faction.getHomeSectorCoordinates = function ()
+	return 0, 0
+end
+
 ---@type fun():Inventory
 Faction.getInventory = function ()
 	return Inventory()
@@ -93,10 +107,22 @@ Faction.getRelation = function (factionIndex)
 	return Relation()
 end
 
+---@param other int
+---@type fun(other:number):any
+Faction.getRelationStatus = function (other)
+	return nil
+end
+
 ---@param factionIndex int
 ---@type fun(factionIndex:number):number
 Faction.getRelationStatus = function (factionIndex)
 	return 0
+end
+
+---@param other int
+---@type fun(other:number):any
+Faction.getRelations = function (other)
+	return nil
 end
 
 ---@param factionIndex int
@@ -117,6 +143,22 @@ end
 ---@type fun(trait:string):number
 Faction.getTrait = function (trait)
 	return 0.0
+end
+
+-- Retrieves a trait value associated with a key
+-- @param trait - The name of the trait
+-- @return The trait value associated with the key
+---@param trait string
+---@type fun(trait:string):number
+Faction.getTrait = function (trait)
+	return 0.0
+end
+
+-- Retrieves all key-value trait pairs of the faction
+-- @return A table containing all custom key-value pairs
+---@type fun():table<string, number>
+Faction.getTraits = function ()
+	return {"", 0.0}
 end
 
 -- Retrieves all key-value trait pairs of the faction

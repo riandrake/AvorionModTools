@@ -2,29 +2,46 @@
 Player = {
 
 	alliance = Alliance(), -- [read-only] Alliance
+	alliance = Alliance(), -- [read-only] Alliance
+	allianceIndex = nil, -- [read-only] var
 	allianceIndex = nil, -- [read-only] var
 	alwaysAtWar = true, -- bool
 	baseName = "", -- [read-only] string
 	craft = Entity(), -- Entity
+	craft = Entity(), -- Entity
+	craftFaction = UserObject(), -- [read-only] UserObject
 	craftFaction = Faction(), -- [read-only] Faction
+	craftIndex = 0, -- Uuid
 	craftIndex = 0, -- Uuid
 	homeSectorUnknown = true, -- bool
 	id = PlayerId(), -- [read-only] PlayerId
 	index = 0, -- [read-only] int
+	index = 0, -- [read-only] int
+	infiniteResources = true, -- bool
 	infiniteResources = true, -- bool
 	initialRelations = 0, -- int
 	initialRelationsToPlayer = 0, -- int
 	isAIFaction = true, -- [read-only] bool
+	isAIFaction = true, -- [read-only] bool
+	isAlliance = true, -- [read-only] bool
 	isAlliance = true, -- [read-only] bool
 	isPlayer = true, -- [read-only] bool
+	isPlayer = true, -- [read-only] bool
 	maxNumMails = 0, -- [read-only] unsigned int
+	maxNumMails = 0, -- [read-only] unsigned int
+	money = 0, -- [read-only] int
 	money = 0, -- int
+	name = nil, -- [read-only] var
 	name = "", -- [read-only] string
 	numCrafts = 0, -- [read-only] unsigned int
 	numMails = 0, -- [read-only] unsigned int
+	numMails = 0, -- [read-only] unsigned int
+	numShips = 0, -- [read-only] unsigned int
 	numShips = 0, -- [read-only] int
 	numStations = 0, -- [read-only] int
 	playtime = 0, -- [read-only] unsigned int
+	selectedObject = Entity(), -- Entity
+	state = PlayerStateType.Fly, -- [read-only] PlayerStateType
 	stateForm = "", -- [read-only] string
 	staticRelationsToAI = true, -- bool
 	staticRelationsToAll = true, -- bool
@@ -33,7 +50,14 @@ Player = {
 
 }
 
-setmetatable(Player, {__call = function(self, index) return Player end})
+setmetatable(Player, {__call = function(self) return Player end})
+
+-- @return nothing
+---@param item var
+---@type fun(item:any):any
+Player.addComparisonItem = function (item)
+	return nil
+end
 
 -- @return nothing
 ---@param view SectorView
@@ -67,6 +91,23 @@ Player.addScriptOnce = function ()
 	return nil
 end
 
+---@param entity Entity
+---@type fun(entity:Entity):boolean, string
+Player.buildingAllowed = function (entity)
+	return true, ""
+end
+
+-- Check how many functions are registered to a callback from the current script VM.
+-- @param callbackName - The name of the callback
+-- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
+-- @return The amount of functions registered to the callback
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Player.callbacksRegistered = function (callbackName, functionName)
+	return 0
+end
+
 -- Check how many functions are registered to a callback from the current script VM.
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
@@ -76,6 +117,11 @@ end
 ---@type fun(callbackName:string, functionName:any):number
 Player.callbacksRegistered = function (callbackName, functionName)
 	return 0
+end
+
+---@type fun():boolean, string, table<number, string>
+Player.canPay = function ()
+	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
@@ -113,16 +159,31 @@ Player.clearValues = function ()
 	return nil
 end
 
--- Inherited from Faction [Server]
 ---@type fun():Relation
 Player.getAllRelations = function ()
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
+---@type fun():Relation
+Player.getAllRelations = function ()
+	return Relation()
+end
+
 ---@type fun():number, number
 Player.getHomeSectorCoordinates = function ()
 	return 0, 0
+end
+
+-- Inherited from Faction [Server]
+---@type fun():number, number
+Player.getHomeSectorCoordinates = function ()
+	return 0, 0
+end
+
+---@type fun():Inventory
+Player.getInventory = function ()
+	return Inventory()
 end
 
 -- Inherited from Faction [Server]
@@ -138,6 +199,18 @@ Player.getKnownSector = function (x, y)
 	return SectorView()
 end
 
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):SectorView
+Player.getKnownSector = function (x, y)
+	return SectorView()
+end
+
+---@type fun():ivec2
+Player.getKnownSectorCoordinates = function ()
+	return ivec2()
+end
+
 ---@type fun():ivec2
 Player.getKnownSectorCoordinates = function ()
 	return ivec2()
@@ -148,9 +221,26 @@ Player.getKnownSectors = function ()
 	return SectorView()
 end
 
+---@type fun():SectorView
+Player.getKnownSectors = function ()
+	return SectorView()
+end
+
 ---@param factionIndex int
 ---@type fun(factionIndex:number):SectorView
 Player.getKnownSectorsOfFaction = function (factionIndex)
+	return SectorView()
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):SectorView
+Player.getKnownSectorsOfFaction = function (factionIndex)
+	return SectorView()
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):SectorView
+Player.getKnownSectorsWithFaction = function (factionIndex)
 	return SectorView()
 end
 
@@ -166,11 +256,30 @@ Player.getMail = function (index)
 	return Mail()
 end
 
+---@param index unsigned
+---@type fun(index:number:unsigned):Mail
+Player.getMail = function (index)
+	return Mail()
+end
+
 ---@param x int
 ---@param y int
 ---@type fun(x:number, y:number):string
 Player.getNamesOfShipsInSector = function (x, y)
 	return ""
+end
+
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):string
+Player.getNamesOfShipsInSector = function (x, y)
+	return ""
+end
+
+---@param name string
+---@type fun(name:string):PlanStyle
+Player.getPlanStyle = function (name)
+	return PlanStyle()
 end
 
 -- Inherited from Faction [Server]
@@ -180,10 +289,21 @@ Player.getPlanStyle = function (name)
 	return PlanStyle()
 end
 
+---@type fun():string
+Player.getPlanStyleNames = function ()
+	return ""
+end
+
 -- Inherited from Faction [Server]
 ---@type fun():string
 Player.getPlanStyleNames = function ()
 	return ""
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):Relation
+Player.getRelation = function (factionIndex)
+	return Relation()
 end
 
 -- Inherited from Faction [Server]
@@ -193,7 +313,6 @@ Player.getRelation = function (factionIndex)
 	return Relation()
 end
 
--- Inherited from Faction [Server]
 ---@param factionIndex int
 ---@type fun(factionIndex:number):number
 Player.getRelationStatus = function (factionIndex)
@@ -203,7 +322,25 @@ end
 -- Inherited from Faction [Server]
 ---@param factionIndex int
 ---@type fun(factionIndex:number):number
+Player.getRelationStatus = function (factionIndex)
+	return 0
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):number
 Player.getRelations = function (factionIndex)
+	return 0
+end
+
+-- Inherited from Faction [Server]
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Player.getRelations = function (factionIndex)
+	return 0
+end
+
+---@type fun():number
+Player.getResources = function ()
 	return 0
 end
 
@@ -216,6 +353,16 @@ end
 ---@type fun():number, number
 Player.getRespawnSectorCoordinates = function ()
 	return 0, 0
+end
+
+---@type fun():number, number
+Player.getRespawnSectorCoordinates = function ()
+	return 0, 0
+end
+
+---@type fun():table<number, string>
+Player.getScripts = function ()
+	return {0, ""}
 end
 
 ---@type fun():table<number, string>
@@ -235,9 +382,27 @@ Player.getShipBoundingBox = function (name)
 end
 
 ---@param name string
+---@type fun(name:string):Box
+Player.getShipBoundingBox = function (name)
+	return Box()
+end
+
+---@param name string
 ---@type fun(name:string):boolean
 Player.getShipCanPassRifts = function (name)
 	return true
+end
+
+---@param name string
+---@type fun(name:string):boolean
+Player.getShipCanPassRifts = function (name)
+	return true
+end
+
+---@param name string
+---@type fun(name:string):string
+Player.getShipCargo = function (name)
+	return ""
 end
 
 ---@param name string
@@ -253,9 +418,21 @@ Player.getShipCargos = function (name)
 end
 
 ---@param name string
+---@type fun(name:string):table<TradingGood, number>
+Player.getShipCargos = function (name)
+	return {TradingGood(), 0}
+end
+
+---@param name string
 ---@type fun(name:string):Crew
 Player.getShipCrew = function (name)
 	return Crew()
+end
+
+---@param name string
+---@type fun(name:string):any
+Player.getShipDestroyed = function (name)
+	return nil
 end
 
 ---@param name string
@@ -270,9 +447,26 @@ Player.getShipHyperspaceReach = function (name)
 	return 0.0
 end
 
+---@param name string
+---@type fun(name:string):number
+Player.getShipHyperspaceReach = function (name)
+	return 0.0
+end
+
 ---@type fun():string
 Player.getShipNames = function ()
 	return ""
+end
+
+---@type fun():string
+Player.getShipNames = function ()
+	return ""
+end
+
+---@param name string
+---@type fun(name:string):any
+Player.getShipOrderInfo = function (name)
+	return nil
 end
 
 ---@param name string
@@ -289,8 +483,26 @@ end
 
 ---@param name string
 ---@type fun(name:string):number
+Player.getShipPayment = function (name)
+	return 0.0
+end
+
+---@param name string
+---@type fun(name:string):number
 Player.getShipPaymentTime = function (name)
 	return 0.0
+end
+
+---@param name string
+---@type fun(name:string):number
+Player.getShipPaymentTime = function (name)
+	return 0.0
+end
+
+---@param name string
+---@type fun(name:string):BlockPlan
+Player.getShipPlan = function (name)
+	return BlockPlan()
 end
 
 ---@param name string
@@ -306,9 +518,27 @@ Player.getShipPosition = function (name)
 end
 
 ---@param name string
+---@type fun(name:string):number, number
+Player.getShipPosition = function (name)
+	return 0, 0
+end
+
+---@param name string
 ---@type fun(name:string):number
 Player.getShipReconstructionValue = function (name)
 	return 0.0
+end
+
+---@param name string
+---@type fun(name:string):number
+Player.getShipReconstructionValue = function (name)
+	return 0.0
+end
+
+---@param name string
+---@type fun(name:string):string
+Player.getShipStatus = function (name)
+	return ""
 end
 
 ---@param name string
@@ -318,9 +548,21 @@ Player.getShipStatus = function (name)
 end
 
 ---@param name string
+---@type fun(name:string):pair
+Player.getShipSystems = function (name)
+	return pair()
+end
+
+---@param name string
 ---@type fun(name:string):ShipInfoUpgrade
 Player.getShipSystems = function (name)
 	return ShipInfoUpgrade()
+end
+
+---@param name string
+---@type fun(name:string):number
+Player.getShipType = function (name)
+	return 0
 end
 
 ---@param name string
@@ -345,6 +587,12 @@ Player.getTraits = function ()
 	return {"", 0.0}
 end
 
+---@param name string
+---@type fun(name:string):any
+Player.getValue = function (name)
+	return nil
+end
+
 -- Retrieves a custom value saved in the entity with the given key Inherited from Faction [Server]
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
@@ -362,6 +610,12 @@ Player.getValues = function ()
 end
 
 ---@param name string
+---@type fun(name:string):boolean
+Player.hasScript = function (name)
+	return true
+end
+
+---@param name string
 ---@type fun(name:string):any
 Player.hasScript = function (name)
 	return nil
@@ -372,6 +626,19 @@ end
 ---@type fun(factionIndex:number):boolean
 Player.hasStaticRelationsToFaction = function (factionIndex)
 	return true
+end
+
+-- Invokes a function in a script of the player. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
+-- @param scriptName - The name of the script containing the function
+-- @param functionName - The name of the function that will be executed
+-- @param arguments - An arbitrary list of arguments that will be given to the invoked function. Only numbers, strings and nil are supported here.
+-- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found in the player. 4 The call failed because the given function was not found in the script.  5 The call failed because the script's state has errors and is invalid
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Player.invokeFunction = function (scriptName, functionName, arguments)
+	return nil
 end
 
 -- Invokes a function in a script of the player. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -387,10 +654,23 @@ Player.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
+---@param factionIndex int
+---@type fun(factionIndex:number):boolean
+Player.knowsFaction = function (factionIndex)
+	return true
+end
+
 -- Inherited from Faction [Server]
 ---@param factionIndex int
 ---@type fun(factionIndex:number):boolean
 Player.knowsFaction = function (factionIndex)
+	return true
+end
+
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):boolean
+Player.knowsSector = function (x, y)
 	return true
 end
 
@@ -516,6 +796,16 @@ Player.onHyperspaceRestrictionTimeChanged = function (time)
 end
 
 -- @callback
+-- Executed whenever the number of items in a particular item slot in the player's inventory increases or a new item was added.
+-- @param playerIndex - Index of the item
+-- @param amount - The new amount of this item
+-- @param amountBefore - The amount of this item before the change
+---@type fun(playerIndex, amount, amountBefore)
+Player.onItemAdded = function (playerIndex, amount, amountBefore)
+	return nil
+end
+
+-- @callback
 -- Called whenever an item in the player inventory is added
 -- @param item - The inventory item
 -- @param index - Index of the inventory item
@@ -528,12 +818,12 @@ Player.onItemAdded = function (item, index, amount, amountBefore, tagsChanged)
 end
 
 -- @callback
--- Executed whenever the number of items in a particular item slot in the player's inventory increases or a new item was added.
--- @param playerIndex - Index of the item
+-- Executed whenever the number of items in a particular item slot in the player's inventory changes.
+-- @param playerIndex - Index of the player
 -- @param amount - The new amount of this item
 -- @param amountBefore - The amount of this item before the change
 ---@type fun(playerIndex, amount, amountBefore)
-Player.onItemAdded = function (playerIndex, amount, amountBefore)
+Player.onItemChanged = function (playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -549,22 +839,22 @@ Player.onItemChanged = function (item, index, amount, amountBefore)
 end
 
 -- @callback
--- Executed whenever the number of items in a particular item slot in the player's inventory changes.
--- @param playerIndex - Index of the player
--- @param amount - The new amount of this item
--- @param amountBefore - The amount of this item before the change
----@type fun(playerIndex, amount, amountBefore)
-Player.onItemChanged = function (playerIndex, amount, amountBefore)
-	return nil
-end
-
--- @callback
 -- Called whenever an item in the player inventory changes properties
 -- @param item - The inventory item
 -- @param index - Index of the inventory item
 -- @param amount - Amount of items in the slot
 ---@type fun(item, index, amount)
 Player.onItemPropertiesChanged = function (item, index, amount)
+	return nil
+end
+
+-- @callback
+-- Executed whenever the number of items in a particular item slot in the player's inventory decreases or the item was removed.
+-- @param playerIndex - Index of the player
+-- @param amount - The new amount of this item
+-- @param amountBefore - The amount of this item before the change
+---@type fun(playerIndex, amount, amountBefore)
+Player.onItemRemoved = function (playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -576,16 +866,6 @@ end
 -- @param amountBefore - Amount of items in the slot before the change
 ---@type fun(item, index, amount, amountBefore)
 Player.onItemRemoved = function (item, index, amount, amountBefore)
-	return nil
-end
-
--- @callback
--- Executed whenever the number of items in a particular item slot in the player's inventory decreases or the item was removed.
--- @param playerIndex - Index of the player
--- @param amount - The new amount of this item
--- @param amountBefore - The amount of this item before the change
----@type fun(playerIndex, amount, amountBefore)
-Player.onItemRemoved = function (playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -625,19 +905,19 @@ Player.onMailAdded = function (mail)
 end
 
 -- @callback
--- Executed whenever a mail was cleared
--- @param mailIndex - The index of the cleared mail
----@type fun(mailIndex)
-Player.onMailCleared = function (mailIndex)
-	return nil
-end
-
--- @callback
 -- Executed whenever the player takes the contents of a mail
 -- @param playerIndex - Index of the player
 -- @param mailIndex - Index of the cleared mail
 ---@type fun(playerIndex, mailIndex)
 Player.onMailCleared = function (playerIndex, mailIndex)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a mail was cleared
+-- @param mailIndex - The index of the cleared mail
+---@type fun(mailIndex)
+Player.onMailCleared = function (mailIndex)
 	return nil
 end
 
@@ -650,19 +930,19 @@ Player.onMailDeleted = function (playerIndex)
 end
 
 -- @callback
--- Executed whenever a mail was read
--- @param mailIndex - The index of the read mail
----@type fun(mailIndex)
-Player.onMailRead = function (mailIndex)
-	return nil
-end
-
--- @callback
 -- Executed whenever the player reads a mail
 -- @param playerIndex - Index of the player
 -- @param mailIndex - Index of the read mail
 ---@type fun(playerIndex, mailIndex)
 Player.onMailRead = function (playerIndex, mailIndex)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a mail was read
+-- @param mailIndex - The index of the read mail
+---@type fun(mailIndex)
+Player.onMailRead = function (mailIndex)
 	return nil
 end
 
@@ -780,6 +1060,16 @@ Player.onRelationChanged = function (index, level, levelBefore, notify)
 end
 
 -- @callback
+-- Executed whenever the relations of the player to another faction changes.
+-- @param playerIndex - Index of the player
+-- @param factionIndex - Index of the other faction
+-- @param relations - The new relations of the player to the other faction
+---@type fun(playerIndex, factionIndex, relations)
+Player.onRelationLevelChanged = function (playerIndex, factionIndex, relations)
+	return nil
+end
+
+-- @callback
 -- Called whenever relation levels of the player to another faction change
 -- @param index - The index of the other faction
 -- @param level - The level of the relation
@@ -791,12 +1081,12 @@ Player.onRelationLevelChanged = function (index, level, levelBefore, notify)
 end
 
 -- @callback
--- Executed whenever the relations of the player to another faction changes.
+-- Executed whenever the relation status of the player to another faction changes.
 -- @param playerIndex - Index of the player
 -- @param factionIndex - Index of the other faction
--- @param relations - The new relations of the player to the other faction
----@type fun(playerIndex, factionIndex, relations)
-Player.onRelationLevelChanged = function (playerIndex, factionIndex, relations)
+-- @param status - The new relation status of the player to the other faction
+---@type fun(playerIndex, factionIndex, status)
+Player.onRelationStatusChanged = function (playerIndex, factionIndex, status)
 	return nil
 end
 
@@ -812,12 +1102,10 @@ Player.onRelationStatusChanged = function (index, status, statusBefore, notify)
 end
 
 -- @callback
--- Executed whenever the relation status of the player to another faction changes.
+-- Executed whenever the money or resources of the player change
 -- @param playerIndex - Index of the player
--- @param factionIndex - Index of the other faction
--- @param status - The new relation status of the player to the other faction
----@type fun(playerIndex, factionIndex, status)
-Player.onRelationStatusChanged = function (playerIndex, factionIndex, status)
+---@type fun(playerIndex)
+Player.onResourcesChanged = function (playerIndex)
 	return nil
 end
 
@@ -829,22 +1117,6 @@ end
 -- @param notify - A boolean indicating whether or not the player should be visually notified in some way that the resources changed
 ---@type fun(money, resources, infinite, notify)
 Player.onResourcesChanged = function (money, resources, infinite, notify)
-	return nil
-end
-
--- @callback
--- Executed whenever the money or resources of the player change
--- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onResourcesChanged = function (playerIndex)
-	return nil
-end
-
--- @callback
--- Executed whenever the money or resources of the player change
--- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onResourcesChanged = function (playerIndex)
 	return nil
 end
 
@@ -1100,6 +1372,12 @@ Player.ownsShip = function (name)
 	return true
 end
 
+---@param name string
+---@type fun(name:string):boolean
+Player.ownsShip = function (name)
+	return true
+end
+
 -- Makes the faction pay a certain amount of resources. If the faction can't pay, the respective resource will be set to 0. This function accepts a string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. Inherited from Faction [Server]
 -- @param description - A description for the transaction. Can either be a string or a Format.
 -- @param material - The kind of material that will be removed from the faction
@@ -1156,6 +1434,17 @@ end
 ---@param args int...
 ---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
 Player.receiveWithoutNotify = function (description, money, args)
+	return nil
+end
+
+-- Register a callback in the player. The callback will be removed when the sector is changed or the receiver, if it's an entity, is destroyed. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.
+-- @param callbackName - The name of the callback
+-- @param functionName - The name of the function that will be executed in the script when the callback happens
+-- @return nothing
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):any
+Player.registerCallback = function (callbackName, functionName)
 	return nil
 end
 
@@ -1226,18 +1515,11 @@ Player.sendCallback = function ()
 	return nil
 end
 
--- Send a chat message to the player. Supports sending of format arguments so that the message can be translated on the client.
--- @param sender - The sender that will be displayed for the chat message
--- @param messageType - The type of chat message, 0 = Normal, 1 = Error, 2 = Warning, 3 = Info
--- @param message - The message that will be sent
--- @param args - The format arguments that will be sent
 -- @return nothing
----@param sender var
----@param messageType int
----@param message string
----@param args PluralForm...
----@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
-Player.sendChatMessage = function (sender, messageType, message, args)
+---@param content var
+---@param channel var
+---@type fun(content:any, channel:any):any
+Player.sendChatMessage = function (content, channel)
 	return nil
 end
 
@@ -1324,6 +1606,30 @@ end
 ---@param value var
 ---@type fun(key:string, value:any):any
 Player.setValue = function (key, value)
+	return nil
+end
+
+-- @return nothing
+---@param entity Entity
+---@type fun(entity:Entity):any
+Player.startBuilding = function (entity)
+	return nil
+end
+
+-- @return nothing
+---@param entity Entity
+---@param scriptName string
+---@param optionIndex int
+---@type fun(entity:Entity, scriptName:string, optionIndex:number):any
+Player.startInteracting = function (entity, scriptName, optionIndex)
+	return nil
+end
+
+-- @return nothing
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):any
+Player.unregisterCallback = function (callbackName, functionName)
 	return nil
 end
 

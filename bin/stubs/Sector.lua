@@ -6,6 +6,7 @@ Sector = {
 	numPlayers = 0, -- [read-only] unsigned int
 	pvpDamage = true, -- bool
 	seed = Seed(), -- [read-only] Seed
+	seed = Seed(), -- [read-only] Seed
 
 }
 
@@ -45,6 +46,17 @@ end
 ---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
 Sector.broadcastChatMessage = function (sender, messageType, message, args)
 	return nil
+end
+
+-- Check how many functions are registered to a callback from the current script VM.
+-- @param callbackName - The name of the callback
+-- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
+-- @return The amount of functions registered to the callback
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Sector.callbacksRegistered = function (callbackName, functionName)
+	return 0
 end
 
 -- Check how many functions are registered to a callback from the current script VM.
@@ -98,6 +110,25 @@ Sector.createAsteroid = function (plan, resources, position)
 	return Entity()
 end
 
+-- @return nothing
+---@param pos vec3
+---@param size float
+---@param color Color
+---@param lifeSpan float
+---@type fun(pos:vec3, size:number, color:Color, lifeSpan:number):any
+Sector.createDust = function (pos, size, color, lifeSpan)
+	return nil
+end
+
+-- @return nothing
+---@param pos vec3
+---@param size float
+---@param color Color
+---@type fun(pos:vec3, size:number, color:Color):any
+Sector.createDustExplosion = function (pos, size, color)
+	return nil
+end
+
 -- Creates a new arbitrary entity in the sector
 -- @param descriptor - A descriptor representing the entity to create, this descriptor will be empty after the call since the data is moved (instead of copied) into the created entity
 -- @param arrivalType - The arrival type of the ship
@@ -107,6 +138,43 @@ end
 ---@type fun(descriptor:EntityDescriptor, arrivalType:any):Entity
 Sector.createEntity = function (descriptor, arrivalType)
 	return Entity()
+end
+
+-- @return nothing
+---@param pos vec3
+---@param size float
+---@param silent bool
+---@type fun(pos:vec3, size:number, silent:boolean):any
+Sector.createExplosion = function (pos, size, silent)
+	return nil
+end
+
+-- @return nothing
+---@param pos vec3
+---@param size float
+---@param color Color
+---@type fun(pos:vec3, size:number, color:Color):any
+Sector.createGlow = function (pos, size, color)
+	return nil
+end
+
+-- @return nothing
+---@param entity Entity
+---@param direction vec3
+---@param color Color
+---@param intensity var
+---@type fun(entity:Entity, direction:nil]:[or:vec3, color:nil]:[or:Color, intensity:any):any
+Sector.createHyperspaceAnimation = function (entity, direction, color, intensity)
+	return nil
+end
+
+---@param from vec3
+---@param to vec3
+---@param color Color
+---@param width float
+---@type fun(from:vec3, to:vec3, color:Color, width:number):LaserFX
+Sector.createLaser = function (from, to, color, width)
+	return LaserFX()
 end
 
 -- Convenience function to create a default object. Creates a new default object in the sector. This object has basic components for appearance and physics simulation, such as a plan, velocity and physics
@@ -137,6 +205,19 @@ end
 ---@type fun(faction:Faction, name:string, plan:BlockPlan, position:Matrix, arrivalType:any):Entity
 Sector.createShip = function (faction, name, plan, position, arrivalType)
 	return Entity()
+end
+
+-- @return nothing
+---@param pos vec3
+---@param v vec3
+---@param size float
+---@param aliveTime float
+---@param color Color
+---@param slowDownFactor float
+---@param entity Entity
+---@type fun(pos:vec3, v:vec3, size:number, aliveTime:number, color:Color, slowDownFactor:number, entity:nil]:[or:Entity):any
+Sector.createSpark = function (pos, v, size, aliveTime, color, slowDownFactor, entity)
+	return nil
 end
 
 -- Convenience function to create a station. Creates a new station in the sector. A random name will be assigned in case of an AI station. This entity will have all components required for a default station.
@@ -285,6 +366,20 @@ Sector.getAllies = function (factionIndex)
 	return Entity()
 end
 
+-- Returns all allies of the given faction in the sector. Allies include ships of the same faction. Allied entities are determined as follows:  - they belong to the same faction - they belong to factions whose relations are above 70.000 - they belong to players of the same group  - they belong to players of the same alliance  - they belong to a player and his alliance
+-- @param factionIndex - The faction index of the faction whose ally ships are to be queried
+-- @return Multiple values: All detected allies in the sector
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getAllies = function (factionIndex)
+	return Entity()
+end
+
+---@type fun():number, number
+Sector.getCoordinates = function ()
+	return 0, 0
+end
+
 -- Access the x, y coordinates of the sector
 -- @return 2 return values: x, y coordinates of the sector
 ---@type fun():number, number
@@ -301,10 +396,30 @@ Sector.getEnemies = function (factionIndex)
 	return Entity()
 end
 
+-- Returns all enemies of the given faction in the sector. Enemies are determined as ships of factions where relations are below -40.000
+-- @param factionIndex - The faction index of the faction whose enemy ships are to be queried
+-- @return Multiple return values: All detected enemies in the sector
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getEnemies = function (factionIndex)
+	return Entity()
+end
+
+---@type fun():Entity
+Sector.getEntities = function ()
+	return Entity()
+end
+
 -- Returns all entities in the sector
 -- @return Multiple return values: All entities in the sector
 ---@type fun():Entity
 Sector.getEntities = function ()
+	return Entity()
+end
+
+---@param component int
+---@type fun(component:number):Entity
+Sector.getEntitiesByComponent = function (component)
 	return Entity()
 end
 
@@ -326,6 +441,21 @@ Sector.getEntitiesByComponents = function (types)
 	return Entity()
 end
 
+-- Returns all entities in the sector that have a specific set of components
+-- @param types - The desired set of component types (See enum ComponentType)
+-- @return Multiple return values: All matching entities in the sector
+---@param types Type...
+---@type fun(types:table<number,Type>):Entity
+Sector.getEntitiesByComponents = function (types)
+	return Entity()
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):Entity
+Sector.getEntitiesByFaction = function (factionIndex)
+	return Entity()
+end
+
 -- Returns all entities in the sector that belong to the given faction Complexity: O(n)
 -- @param factionIndex - The desired faction
 -- @return Multiple return values: All matching entities in the sector
@@ -335,12 +465,24 @@ Sector.getEntitiesByFaction = function (factionIndex)
 	return Entity()
 end
 
+---@param sphere Sphere
+---@type fun(sphere:Sphere):Entity
+Sector.getEntitiesByLocation = function (sphere)
+	return Entity()
+end
+
 -- Returns all entities in the sector whose bounding spheres intersect with the given sphere. Entities without a bounding sphere component will not be considered.  Complexity: O(logn)
 -- @param sphere - The intersected sphere
 -- @return Multiple return values: All matching entities in the sector
 ---@param sphere Sphere
 ---@type fun(sphere:Sphere):Entity
 Sector.getEntitiesByLocation = function (sphere)
+	return Entity()
+end
+
+---@param scriptName string
+---@type fun(scriptName:string):Entity
+Sector.getEntitiesByScript = function (scriptName)
 	return Entity()
 end
 
@@ -364,12 +506,35 @@ Sector.getEntitiesByScriptValue = function (name, value)
 	return Entity()
 end
 
+-- Returns all entities in the sector that have a specific value assigned to them. Values can be set with Entity:setValue(name, value) and read with Entity:getValue(name).
+-- @param name - The value name to check for
+-- @param value - A value to check against. If this is set, only entities will be returned whose value is equal to the passed value. If this is nil, all entities will be returned that have any value with the given name assigned.
+-- @return Multiple return values: All matching entities in the sector
+---@param name string
+---@param value var
+---@type fun(name:string, value:any):Entity
+Sector.getEntitiesByScriptValue = function (name, value)
+	return Entity()
+end
+
+---@param type int
+---@type fun(type:number):Entity
+Sector.getEntitiesByType = function (type)
+	return Entity()
+end
+
 -- Returns all entities in the sector that have a specific type
 -- @param type - The desired entity type (See enum EntityType)
 -- @return Multiple return values: All matching entities in the sector
 ---@param type int
 ---@type fun(type:number):Entity
 Sector.getEntitiesByType = function (type)
+	return Entity()
+end
+
+---@param id var
+---@type fun(id:any):Entity
+Sector.getEntity = function (id)
 	return Entity()
 end
 
@@ -389,9 +554,28 @@ Sector.getEntityByFactionAndName = function (factionIndex, name)
 	return Entity()
 end
 
+---@param factionIndex int
+---@param name string
+---@type fun(factionIndex:number, name:string):Entity
+Sector.getEntityByFactionAndName = function (factionIndex, name)
+	return Entity()
+end
+
 ---@param faction int
 ---@type fun(faction:number):number
 Sector.getNumAllies = function (faction)
+	return 0
+end
+
+---@param faction int
+---@type fun(faction:number):number
+Sector.getNumAllies = function (faction)
+	return 0
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Sector.getNumEnemies = function (factionIndex)
 	return 0
 end
 
@@ -406,6 +590,17 @@ Sector.getNumEntities = function ()
 	return 0
 end
 
+---@type fun():number
+Sector.getNumEntities = function ()
+	return 0
+end
+
+---@param component int
+---@type fun(component:number):number
+Sector.getNumEntitiesByComponent = function (component)
+	return 0
+end
+
 ---@param component int
 ---@type fun(component:number):number
 Sector.getNumEntitiesByComponent = function (component)
@@ -414,6 +609,17 @@ end
 
 ---@type fun():number
 Sector.getNumEntitiesByComponents = function ()
+	return 0
+end
+
+---@type fun():number
+Sector.getNumEntitiesByComponents = function ()
+	return 0
+end
+
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Sector.getNumEntitiesByFaction = function (factionIndex)
 	return 0
 end
 
@@ -429,6 +635,18 @@ Sector.getNumEntitiesByLocation = function (sphere)
 	return 0
 end
 
+---@param sphere Sphere
+---@type fun(sphere:Sphere):number
+Sector.getNumEntitiesByLocation = function (sphere)
+	return 0
+end
+
+---@param scriptName string
+---@type fun(scriptName:string):number
+Sector.getNumEntitiesByScript = function (scriptName)
+	return 0
+end
+
 ---@param scriptName string
 ---@type fun(scriptName:string):number
 Sector.getNumEntitiesByScript = function (scriptName)
@@ -439,6 +657,12 @@ end
 ---@param value var
 ---@type fun(valueName:string, value:any):number
 Sector.getNumEntitiesByScriptValue = function (valueName, value)
+	return 0
+end
+
+---@param type int
+---@type fun(type:number):number
+Sector.getNumEntitiesByType = function (type)
 	return 0
 end
 
@@ -462,9 +686,22 @@ Sector.getPresentFactions = function ()
 	return 0
 end
 
+-- Returns all indices of all present factions
+-- @return a list of int indices of all present factions
+---@type fun():number
+Sector.getPresentFactions = function ()
+	return 0
+end
+
 ---@type fun():table<number, string>
 Sector.getScripts = function ()
 	return {0, ""}
+end
+
+---@param name string
+---@type fun(name:string):any
+Sector.getValue = function (name)
+	return nil
 end
 
 -- Retrieves a custom value saved in the entity with the given key
@@ -509,6 +746,19 @@ end
 ---@type fun(ray:Ray, ignoredEntity:nil]:[or:Uuid, ignoredEntityShields:nil]:[or:Uuid):UserObject
 Sector.intersectBeamRay = function (ray, ignoredEntity, ignoredEntityShields)
 	return UserObject()
+end
+
+-- Invokes a function in a script of the sector. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
+-- @param scriptName - The name or index of the script containing the function
+-- @param functionName - The name of the function that will be executed
+-- @param arguments - An arbitrary list of arguments that will be given to the invoked function
+-- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Sector.invokeFunction = function (scriptName, functionName, arguments)
+	return nil
 end
 
 -- Invokes a function in a script of the sector. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -702,14 +952,6 @@ end
 -- @param playersRemaining - A bool indicating whether there are still players on the craft
 ---@type fun(entityId, seat, playerIndex, playersRemaining)
 Sector.onCraftSeatLeft = function (entityId, seat, playerIndex, playersRemaining)
-	return nil
-end
-
--- @callback
--- Executed whenever the crew of a entity in the sector changes. This callback is executed *after* the crew was changed on the entity.
--- @param index - The id of the entity
----@type fun(index)
-Sector.onCrewChanged = function (index)
 	return nil
 end
 
@@ -1140,6 +1382,17 @@ Sector.onTurretLootCollected = function (collector, lootIndex)
 	return nil
 end
 
+-- Register a callback in the sector. The callback receiver has to be inside the sector for the registration to succeed. The callback will be removed if the receiver leaves the sector or gets destroyed, or when a hyperspace jump happens. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.
+-- @param callbackName - The name of the callback
+-- @param functionName - The name of the function that will be executed in the script when the callback happens
+-- @return 0 on success, 1 if the registration failed
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Sector.registerCallback = function (callbackName, functionName)
+	return 0
+end
+
 -- Register a callback in the sector. The callback receiver has to be inside the sector for the registration to succeed. The callback will be removed if the receiver leaves the sector or gets destroyed, or the sector gets unloaded. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
@@ -1149,6 +1402,13 @@ end
 ---@type fun(callbackName:string, functionName:string):number
 Sector.registerCallback = function (callbackName, functionName)
 	return 0
+end
+
+-- @return nothing
+---@param laser LaserFX
+---@type fun(laser:LaserFX):any
+Sector.removeLaser = function (laser)
+	return nil
 end
 
 -- @return nothing
@@ -1177,6 +1437,12 @@ Sector.sendCallback = function ()
 	return nil
 end
 
+-- @return nothing
+---@type fun():any
+Sector.sendCallback = function ()
+	return nil
+end
+
 -- Sets a custom value
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
@@ -1185,6 +1451,14 @@ end
 ---@param value var
 ---@type fun(key:string, value:any):any
 Sector.setValue = function (key, value)
+	return nil
+end
+
+-- @return nothing
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):any
+Sector.unregisterCallback = function (callbackName, functionName)
 	return nil
 end
 

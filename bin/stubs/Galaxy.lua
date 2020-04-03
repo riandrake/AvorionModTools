@@ -72,6 +72,12 @@ Galaxy.createRandomFaction = function (x, y)
 	return Faction()
 end
 
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.factionExists = function (index)
+	return true
+end
+
 -- Looks for a faction with the given name or index. This will not trigger the creation of a new faction. Finding players by name with this method is not possible, since player names can change via Steam. This function returns the correct concrete type of the faction, ie. Faction, Player or Alliance.
 -- @param identifier - A string or int, describing the name or index of the faction, respectively
 -- @return The faction if found, or nil
@@ -79,6 +85,17 @@ end
 ---@type fun(identifier:any):Faction
 Galaxy.findFaction = function (identifier)
 	return Faction()
+end
+
+-- Does a lookup on the faction map and retrieves the faction CURRENTLY controlling the sector. The faction is determined by the influence of sectors around the sector to check. As sectors are generated while players are exploring, influence over sectors is also only generated while players are exploring. It's very possible that as long as not all sectors near the tested sector have been discovered, the influence is not yet determined nor final. Keep in mind that if the player hasn't explored enough on the client yet, this faction might not yet be known or exist on the client.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction index, or nil if the sector's controller is unknown
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getControllingFaction = function (x, y)
+	return nil
 end
 
 -- Does a lookup on the faction map and retrieves the faction controlling the sector. The faction is determined by the influence of sectors around the sector to check. As sectors are generated while players are exploring, influence over sectors is also only generated while players are exploring. It's very possible that as long as not all sectors near the tested sector have been discovered, the influence is not yet determined nor final.
@@ -113,6 +130,17 @@ Galaxy.getLoadedSectors = function ()
 	return table_t()
 end
 
+-- Does a lookup on the faction map and retrieves the faction controlling the given sector by default.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction's index, or nil if the sector is in no man's land
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getLocalFaction = function (x, y)
+	return nil
+end
+
 -- Does a lookup on the faction map and retrieves the faction controlling the given sector. This may trigger a creation of a faction that does not yet exist.
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
@@ -137,6 +165,17 @@ Galaxy.getMapHomeSectors = function (x, y, radius)
 	return {0, vec2()}
 end
 
+-- Does a lookup on the faction map and retrieves the nearest faction to the given sector. Distance is calculated from the factions' home sector. Keep in mind that if the player hasn't explored enough on the client yet, this faction might not yet exist on the client.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction index
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getNearestFaction = function (x, y)
+	return nil
+end
+
 -- Does a lookup on the faction map and retrieves the nearest faction to the given sector. Distance is calculated by the factions' home sector. This may trigger a creation of a faction that does not yet exist.
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
@@ -157,6 +196,23 @@ end
 ---@type fun(level:number):Faction
 Galaxy.getPirateFaction = function (level)
 	return Faction()
+end
+
+-- Getter for the player's current craft's faction. Returns the player if the craft is owned by himself, or the alliance if the player is flying an alliance ship.
+-- @return The faction that the player's craft belongs to
+---@type fun():UserObject
+Galaxy.getPlayerCraftFaction = function ()
+	return UserObject()
+end
+
+---@type fun():number
+Galaxy.getPlayerIndices = function ()
+	return 0
+end
+
+---@type fun():table<number, string>
+Galaxy.getPlayerNames = function ()
+	return {0, ""}
 end
 
 ---@type fun():string
@@ -207,6 +263,20 @@ end
 ---@param index int
 ---@type fun(index:number):boolean
 Galaxy.isMapFaction = function (index)
+	return true
+end
+
+-- Checks if the jump between two sectors is unobstructed by rifts
+-- @param fromX - The x coordinate of the first sector
+-- @param fromY - The y coordinate of the first sector
+-- @param toX - The x coordinate of the second sector
+-- @param toY - The y coordinate of the second sector
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean
+Galaxy.jumpRouteUnobstructed = function (fromX, fromY, toX, toY)
 	return true
 end
 

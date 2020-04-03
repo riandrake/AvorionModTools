@@ -296,13 +296,6 @@ InputWindow.hide = function ()
 	return nil
 end
 
--- @return nothing
----@param caption string
----@type fun(caption:string):any
-InputWindow.show = function (caption)
-	return nil
-end
-
 -- Inherited from UIElement
 -- @return nothing
 ---@type fun():any

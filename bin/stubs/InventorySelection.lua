@@ -63,12 +63,6 @@ InventorySelection.addEmpty = function (pos)
 	return nil
 end
 
--- @return nothing
----@type fun():any
-InventorySelection.clear = function ()
-	return nil
-end
-
 -- Inherited from UIContainer
 -- @return nothing
 ---@type fun():any

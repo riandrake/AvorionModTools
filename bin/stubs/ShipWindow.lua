@@ -62,23 +62,10 @@ ShipWindow.getTab = function (name)
 	return Tab()
 end
 
--- @return nothing
----@type fun():any
-ShipWindow.hide = function ()
-	return nil
-end
-
 -- Inherited from UIElement
 -- @return nothing
 ---@type fun():any
 ShipWindow.hide = function ()
-	return nil
-end
-
--- @return nothing
----@param tab Tab
----@type fun(tab:Tab):any
-ShipWindow.moveTabToTheRight = function (tab)
 	return nil
 end
 
@@ -94,12 +81,6 @@ end
 ---@param val var
 ---@type fun(val:any):any
 ShipWindow.selectTab = function (val)
-	return nil
-end
-
--- @return nothing
----@type fun():any
-ShipWindow.show = function ()
 	return nil
 end
 

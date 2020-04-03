@@ -1050,11 +1050,6 @@ WeaponCategory = {
 }
 
 ---@type fun():EntityDescriptor
-AsteroidDescriptor = function ()
-	return EntityDescriptor()
-end
-
----@type fun():EntityDescriptor
 CargoLootDescriptor = function ()
 	return EntityDescriptor()
 end
@@ -1317,28 +1312,6 @@ end
 ---@type fun():number
 appTimeMs = function ()
 	return 0.0
-end
-
--- @return nothing
----@param callbackFunction string
----@param code string
----@param arguments var...
----@type fun(callbackFunction:string, code:string, arguments:table<number,var>):any
-async = function (callbackFunction, code, arguments)
-	return nil
-end
-
--- Starts an async call that will be executed in a separate thread. Once finished, the given callback function will be called with the values returned by the run() function, which is required to be in the code to run. During the running of this function, only players and factions can be accessed, other objects like sector and entities can't be accessed. This function is only available on the client.
--- @param callbackFunction - The function in the current script that will be called once the asynchronous execution is finished
--- @param code - The code that will be executed. Has to contain a function run(...). The run() function will be given the arguments that are passed after this parameter.
--- @param arguments - The arguments that will be passed to the run() function.
--- @return nothing
----@param callbackFunction string
----@param code string
----@param arguments var...
----@type fun(callbackFunction:string, code:string, arguments:table<number,var>):any
-async = function (callbackFunction, code, arguments)
-	return nil
 end
 
 -- Starts an asynchronous call that will be executed in a separate thread. Once finished, the given callback function will be called with the values returned by the run() function, which is required to be in the code to run. During the running of this function, only server, galaxy, players and factions can be accessed, other objects like sector and entities can't be accessed. The amount of threads in the thread pool responsible for running these async calls can be configured in the server.ini file. This function is only available on the server.
@@ -1681,16 +1654,6 @@ getEnergy = function (seed, rarity, permanent)
 	return nil
 end
 
--- Used to gather the energy requirements of a system upgrade. The returned value must be in Watts.
--- @param seed - The seed of the upgrade
--- @param rarity - The rarity of the upgrade
--- @param permanent - A bool indicating whether or not the upgrade was installed permanently
--- @return The amount of currently required energy, in Watts.
----@type fun(seed, rarity, permanent)
-getEnergy = function (seed, rarity, permanent)
-	return nil
-end
-
 -- Retrieves a global variable. These variables are shared over the entire process.
 -- @param name - The name of the global variable
 -- @return The queried variable, or nil if non-existant
@@ -1747,12 +1710,6 @@ end
 ---@type fun():Entity
 getParentEntity = function ()
 	return Entity()
-end
-
--- This function is only available on the server.
----@type fun():Faction
-getParentFaction = function ()
-	return Faction()
 end
 
 -- This function is only available on the client.
@@ -1884,27 +1841,6 @@ invokeClientFunction = function (player, functionName, arguments)
 	return nil
 end
 
--- Invokes a function of a script on an entity in an arbitrary sector, during its update step. Use this function to call functions on entities that are in other sectors than the current script. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. The function will not be run immediately, but it might take up to one update tick until it is run. Therefore, return values of the executed functions will not be retrieved. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target entity or the script or the script function exists in the sector. If it doesn't this call will silently fail. To get an error message printed out on failure as to why it failed, pass 'true' to the 'printErrors' parameter.  Example invocations:  invokeEntityFunction(x, y, dbgBool, {faction = player.index, name = "The Executor"}, "myscript.lua", "myfunction", arg1, arg2, arg3)  invokeEntityFunction(x, y, dbgBool, craftId, "myscript.lua", "myfunction", arg1, arg2, arg3)  invokeEntityFunction(x, y, dbgBool, "3d477214-4b7d-4fd0-9114-18b8cafa5a91", "myscript.lua", "myfunction", arg1, arg2, arg3) This function is only available on the server.
--- @param x - The x-coordinate of the target sector
--- @param y - The y-coordinate of the target sector
--- @param printErrors - A bool indicating whether or not an error message should be printed on failure
--- @param entityId - The Uuid of the entity whose script will be called. Can also be a uuid string. A table containing a faction index and craft name can also be passed, such as {faction = 1338, name = "MyAwesomeShip"}
--- @param scriptName - The name of the called script
--- @param functionName - The name of the called function
--- @param arguments - The arguments that will be passed to the function
--- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
----@param x int
----@param y int
----@param printErrors bool
----@param entityId var
----@param scriptName string
----@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, printErrors:boolean, entityId:any, scriptName:string, functionName:string, arguments:table<number,var>):number
-invokeEntityFunction = function (x, y, printErrors, entityId, scriptName, functionName, arguments)
-	return 0
-end
-
 -- Invokes a function on the server of a script on an entity in an arbitrary sector, during its update step. Return values of the remotely executed function cannot be retrieved. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target entity or the script or the script function exists in the sector. If it doesn't this call will silently fail.  Example invocations:  invokeEntityFunction(x, y, error, {faction = player.index, name = "The Executor"}, "myscript.lua", "myfunction", arg1, arg2, arg3)  invokeEntityFunction(x, y, error, craftId, "myscript.lua", "myfunction", arg1, arg2, arg3)  invokeEntityFunction(x, y, error, "3d477214-4b7d-4fd0-9114-18b8cafa5a91", "myscript.lua", "myfunction", arg1, arg2, arg3) This function is only available on the client.
 -- @param x - The x-coordinate of the target sector
 -- @param y - The y-coordinate of the target sector
@@ -1941,25 +1877,6 @@ end
 ---@type fun(factionIndex:number, printErrors:boolean, scriptName:string, functionName:string, arguments:table<number,var>):number
 invokeFactionFunction = function (factionIndex, printErrors, scriptName, functionName, arguments)
 	return 0
-end
-
--- Invokes a function on the server on a script of a sector, during its update step. Return values of the remotely executed function cannot be retrieved. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target script or function exists in the sector. If it doesn't this call will silently fail. This function is only available on the client.
--- @param x - The x-coordinate of the target sector
--- @param y - The y-coordinate of the target sector
--- @param errorMessage - If not nil, the error message that is sent back in case the target sector isn't loaded
--- @param scriptName - The name of the called script
--- @param functionName - The name of the called function
--- @param arguments - The arguments that will be passed to the function.
--- @return nothing
----@param x int
----@param y int
----@param errorMessage var
----@param scriptName string
----@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, errorMessage:any, scriptName:string, functionName:string, arguments:table<number,var>):any
-invokeSectorFunction = function (x, y, errorMessage, scriptName, functionName, arguments)
-	return nil
 end
 
 -- Invokes a function on a script of a sector, during its update step. Use this function to call functions on sectors other than the sector of the current script. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. The function will not be run immediately, but it might take up to one update tick until it is run. Therefore, return values of the executed functions will not be retrieved. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target script or function exists in the sector. If it doesn't this call will silently fail. To get an error message printed out on failure as to why it failed, pass 'true' to the 'printErrors' parameter.  This function is only available on the server.
@@ -2074,19 +1991,6 @@ normalize_ip = function (vec)
 	return nil
 end
 
--- This function is only available on the server.
----@type fun():boolean
-onClient = function ()
-	return true
-end
-
--- A function to find out in a script, whether it's currently executed on the client. This function is only available on the client.
--- @return true when called on the client, false otherwise
----@type fun():boolean
-onClient = function ()
-	return true
-end
-
 -- @return nothing
 ---@type fun():any
 onClient = function ()
@@ -2191,18 +2095,6 @@ end
 ---@type fun()
 onSectorChanged = function ()
 	return nil
-end
-
--- @return nothing
----@type fun():any
-onServer = function ()
-	return nil
-end
-
--- This function is only available on the server.
----@type fun():boolean
-onServer = function ()
-	return true
 end
 
 -- A function to find out in a script, whether it's currently executed on the server. This function is only available on the client.
@@ -2405,19 +2297,6 @@ end
 ---@type fun(in:Matrix, angle:number, axis:vec3):Matrix
 rotate = function (_in, angle, axis)
 	return Matrix()
-end
-
--- Loads a script into a separate, temporary VM and runs a single function in it. The script will be run in the same context as the script calling this function. When the script has a namespace defined, only functions within that namespace can be called. The first return value is an int indicating if the call succeeded, followed by any return values of the invoked function. 0 = success, 1 = invalid script path, 2 = error during script loading, 3 = error during execution This function is only available on the client.
--- @param script - Name of the script to load
--- @param func - Name of the function to call
--- @param params - Parameters that will be passed to the function
--- @return An int indicating if the call succeeded, followed by the return values of the called function
----@param script string
----@param func string
----@param params var...
----@type fun(script:string, func:string, params:table<number,var>):any
-run = function (script, func, params)
-	return nil
 end
 
 -- Loads a script into a separate, temporary VM and runs a single function in it. The script will be run in the same context as the script calling this function. When the script has a namespace defined, only functions within that namespace can be called. The first return value is an int indicating if the call succeeded, followed by any return values of the invoked function. 0 = success, 1 = invalid script path, 2 = error during script loading, 3 = error during execution This function is only available on the server.
