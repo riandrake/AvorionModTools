@@ -2,19 +2,22 @@
 -- @param playerIndex - The index of the player executing the command. nil if the command was issued over RCON interface or console.
 -- @param ... - The list of string arguments given
 -- @return 3 values: An int indicating whether or not the command was successfully executed (0: no success, otherwise: success), a response message, an error message
-function execute(playerIndex)
+---@type fun(playerIndex, ...)
+execute = function (playerIndex)
 	return nil
 end
 
 -- Gathers the description text of a script command. Server Function: This function is only called on the server.
 -- @return A string containing the short description text for the command
-function getDescription()
+---@type fun()
+getDescription = function ()
 	return nil
 end
 
 -- Gathers the help text of a script command. Server Function: This function is only called on the server.
 -- @return A string containing the help text for the command
-function getHelp()
+---@type fun()
+getHelp = function ()
 	return nil
 end
 

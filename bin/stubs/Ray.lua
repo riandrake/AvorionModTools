@@ -9,16 +9,24 @@ Ray = {
 
 setmetatable(Ray, {__call = function(self, pos, size) return Ray end})
 
-function Ray:distanceToPoint(point)
+---@param point vec3
+---@type fun(point:vec3):number
+Ray.distanceToPoint = function (point)
 	return 0.0
 end
 
-function Ray:distanceToPoint2(point)
+---@param point vec3
+---@type fun(point:vec3):number
+Ray.distanceToPoint2 = function (point)
 	return 0.0
 end
 
 -- @return nothing
-function Ray:findClosestPoints(other, a, b)
+---@param other Ray
+---@param a vec3
+---@param b vec3
+---@type fun(other:Ray, a:vec3, b:vec3):any
+Ray.findClosestPoints = function (other, a, b)
 	return nil
 end
 

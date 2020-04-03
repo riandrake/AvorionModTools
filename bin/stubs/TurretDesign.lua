@@ -7,57 +7,75 @@ TurretDesign = {
 
 setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
 
-function TurretDesign:getBarrels()
+---@type fun():TurretDesignPart
+TurretDesign.getBarrels = function ()
 	return TurretDesignPart()
 end
 
-function TurretDesign:getBase()
+---@type fun():TurretDesignPart
+TurretDesign.getBase = function ()
 	return TurretDesignPart()
 end
 
-function TurretDesign:getBody()
+---@type fun():TurretDesignPart
+TurretDesign.getBody = function ()
 	return TurretDesignPart()
 end
 
-function TurretDesign:getMoveBarrels()
+---@type fun():TurretDesignPart
+TurretDesign.getMoveBarrels = function ()
 	return TurretDesignPart()
 end
 
-function TurretDesign:getMoveBase()
+---@type fun():TurretDesignPart
+TurretDesign.getMoveBase = function ()
 	return TurretDesignPart()
 end
 
-function TurretDesign:getMoveBody()
+---@type fun():TurretDesignPart
+TurretDesign.getMoveBody = function ()
 	return TurretDesignPart()
 end
 
 -- @return nothing
-function TurretDesign:setBarrels(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setBarrels = function (part)
 	return nil
 end
 
 -- @return nothing
-function TurretDesign:setBase(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setBase = function (part)
 	return nil
 end
 
 -- @return nothing
-function TurretDesign:setBody(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setBody = function (part)
 	return nil
 end
 
 -- @return nothing
-function TurretDesign:setMoveBarrels(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setMoveBarrels = function (part)
 	return nil
 end
 
 -- @return nothing
-function TurretDesign:setMoveBase(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setMoveBase = function (part)
 	return nil
 end
 
 -- @return nothing
-function TurretDesign:setMoveBody(part)
+---@param part TurretDesignPart
+---@type fun(part:TurretDesignPart):any
+TurretDesign.setMoveBody = function (part)
 	return nil
 end
 

@@ -8,35 +8,53 @@ FighterController = {
 
 setmetatable(FighterController, {__call = function(self, id) return FighterController end})
 
-function FighterController:getDeployedFighters(squad)
+---@param squad var
+---@type fun(squad:any):Entity
+FighterController.getDeployedFighters = function (squad)
 	return Entity()
 end
 
-function FighterController:getFighterStartError(squadIndex, fighterIndex)
+---@param squadIndex unsigned
+---@param fighterIndex var
+---@type fun(squadIndex:number:unsigned, fighterIndex:any):any
+FighterController.getFighterStartError = function (squadIndex, fighterIndex)
 	return nil
 end
 
 -- Returns a lightweight copy of the first fighter found of the type (ie. the next fighter that would be started when startFighterOfType() would be called). Lightweight copy means the FighterTemplate without the plan.
 -- @param type - The type of fighter
 -- @return A copy of the first fighter found to match the type, without plan
-function FighterController:getFighterStatsOfType(type)
+---@param type FighterType
+---@type fun(type:FighterType):FighterTemplate
+FighterController.getFighterStatsOfType = function (type)
 	return FighterTemplate()
 end
 
-function FighterController:getFighterTypeStartError(type)
+---@param type FighterType
+---@type fun(type:FighterType):any
+FighterController.getFighterTypeStartError = function (type)
 	return nil
 end
 
 -- @return nothing
-function FighterController:setSquadOrders(squad, orders, targetId)
+---@param squad unsigned
+---@param orders FighterOrders
+---@param targetId Uuid
+---@type fun(squad:number:unsigned, orders:FighterOrders, targetId:Uuid):any
+FighterController.setSquadOrders = function (squad, orders, targetId)
 	return nil
 end
 
-function FighterController:startFighter(squadIndex, fighterIndex)
+---@param squadIndex unsigned
+---@param fighterIndex var
+---@type fun(squadIndex:number:unsigned, fighterIndex:any):Entity, number
+FighterController.startFighter = function (squadIndex, fighterIndex)
 	return Entity(), 0
 end
 
-function FighterController:startFighterOfType(type)
+---@param type FighterType
+---@type fun(type:FighterType):Entity, number
+FighterController.startFighterOfType = function (type)
 	return Entity(), 0
 end
 

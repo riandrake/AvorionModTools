@@ -24,7 +24,8 @@ GameSettings = {
 setmetatable(GameSettings, {__call = function(self) return GameSettings end})
 
 -- @return nothing
-function GameSettings:activate()
+---@type fun():any
+GameSettings.activate = function ()
 	return nil
 end
 

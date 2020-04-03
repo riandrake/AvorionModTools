@@ -9,7 +9,9 @@ Loot = {
 setmetatable(Loot, {__call = function(self, id) return Loot end})
 
 -- @return nothing
-function Loot:insert(item)
+---@param item InventoryItem
+---@type fun(item:InventoryItem):any
+Loot.insert = function (item)
 	return nil
 end
 

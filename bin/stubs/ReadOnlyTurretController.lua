@@ -8,7 +8,9 @@ ReadOnlyTurretController = {
 
 setmetatable(ReadOnlyTurretController, {__call = function(self, id) return ReadOnlyTurretController end})
 
-function ReadOnlyTurretController:getGroupOrders(group)
+---@param group int
+---@type fun(group:number):number, Uuid
+ReadOnlyTurretController.getGroupOrders = function (group)
 	return 0, 0
 end
 

@@ -25,13 +25,15 @@ setmetatable(Line, {__call = function(self, index) return Line end})
 
 -- Inherited from UIElement
 -- @return nothing
-function Line:hide()
+---@type fun():any
+Line.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Line:show()
+---@type fun():any
+Line.show = function ()
 	return nil
 end
 

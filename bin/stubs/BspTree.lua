@@ -8,31 +8,52 @@ BspTree = {
 
 setmetatable(BspTree, {__call = function(self, id) return BspTree end})
 
-function BspTree:getBlocksByBox(box)
+---@param box Box
+---@type fun(box:Box):number
+BspTree.getBlocksByBox = function (box)
 	return 0
 end
 
-function BspTree:getBlocksByOrientedBox(box, boxOrientation)
+---@param box Box
+---@param boxOrientation Matrix
+---@type fun(box:Box, boxOrientation:Matrix):number
+BspTree.getBlocksByOrientedBox = function (box, boxOrientation)
 	return 0
 end
 
-function BspTree:getBlocksByRay(ray, t0, t1)
+---@param ray Ray
+---@param t0 float
+---@param t1 float
+---@type fun(ray:Ray, t0:number, t1:number):number
+BspTree.getBlocksByRay = function (ray, t0, t1)
 	return 0
 end
 
-function BspTree:getBlocksBySphere(sphere)
+---@param sphere Sphere
+---@type fun(sphere:Sphere):number
+BspTree.getBlocksBySphere = function (sphere)
 	return 0
 end
 
-function BspTree:intersectRay(ray, t0, t1)
+---@param ray Ray
+---@param t0 float
+---@param t1 float
+---@type fun(ray:Ray, t0:number, t1:number):any, vec3
+BspTree.intersectRay = function (ray, t0, t1)
 	return nil, vec3()
 end
 
-function BspTree:intersectsBox(box, exceptionIndex)
+---@param box Box
+---@param exceptionIndex var
+---@type fun(box:Box, exceptionIndex:any):boolean
+BspTree.intersectsBox = function (box, exceptionIndex)
 	return true
 end
 
-function BspTree:intersectsSphere(sphere, exceptionIndex)
+---@param sphere Sphere
+---@param exceptionIndex var
+---@type fun(sphere:Sphere, exceptionIndex:any):boolean
+BspTree.intersectsSphere = function (sphere, exceptionIndex)
 	return true
 end
 

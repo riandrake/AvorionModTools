@@ -14,29 +14,39 @@ ReadOnlyTorpedoLauncher = {
 
 setmetatable(ReadOnlyTorpedoLauncher, {__call = function(self, id) return ReadOnlyTorpedoLauncher end})
 
-function ReadOnlyTorpedoLauncher:getFreeSlots(shaftIndex)
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+ReadOnlyTorpedoLauncher.getFreeSlots = function (shaftIndex)
 	return 0
 end
 
-function ReadOnlyTorpedoLauncher:getMaxTorpedoes(shaftIndex)
-	return 0
-end
-
--- TODO
--- @param torpedoIndex - shaftIndex,
--- @param -1 for torpedo storage
-function ReadOnlyTorpedoLauncher:getNumTorpedoes(shaftIndex)
-	return 0
-end
-
-function ReadOnlyTorpedoLauncher:getShafts()
+---@param shaftIndex var
+---@type fun(shaftIndex:any):number
+ReadOnlyTorpedoLauncher.getMaxTorpedoes = function (shaftIndex)
 	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
-function ReadOnlyTorpedoLauncher:getTorpedo(torpedoIndex, shaftIndex)
+---@param shaftIndex int
+---@type fun(shaftIndex:number):number
+ReadOnlyTorpedoLauncher.getNumTorpedoes = function (shaftIndex)
+	return 0
+end
+
+---@type fun():number
+ReadOnlyTorpedoLauncher.getShafts = function ()
+	return 0
+end
+
+-- TODO
+-- @param torpedoIndex - shaftIndex,
+-- @param -1 for torpedo storage
+---@param torpedoIndex int
+---@param shaftIndex int
+---@type fun(torpedoIndex:number, shaftIndex:number):TorpedoTemplate
+ReadOnlyTorpedoLauncher.getTorpedo = function (torpedoIndex, shaftIndex)
 	return TorpedoTemplate()
 end
 

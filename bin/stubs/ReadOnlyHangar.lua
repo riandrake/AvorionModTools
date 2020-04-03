@@ -17,56 +17,83 @@ ReadOnlyHangar = {
 
 setmetatable(ReadOnlyHangar, {__call = function(self, id) return ReadOnlyHangar end})
 
-function ReadOnlyHangar:canLand(entity)
+---@param entity Entity
+---@type fun(entity:Entity):boolean
+ReadOnlyHangar.canLand = function (entity)
 	return true
 end
 
-function ReadOnlyHangar:fighterTypeMatchesSquad(fighter, squadIndex)
+---@param fighter FighterTemplate
+---@param squadIndex unsigned
+---@type fun(fighter:FighterTemplate, squadIndex:number:unsigned):boolean
+ReadOnlyHangar.fighterTypeMatchesSquad = function (fighter, squadIndex)
 	return true
 end
 
-function ReadOnlyHangar:getBlueprint(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):FighterTemplate
+ReadOnlyHangar.getBlueprint = function (squadIndex)
 	return FighterTemplate()
 end
 
-function ReadOnlyHangar:getFighter(squadIndex, fighterIndex)
+---@param squadIndex unsigned
+---@param fighterIndex unsigned
+---@type fun(squadIndex:number:unsigned, fighterIndex:number:unsigned):FighterTemplate
+ReadOnlyHangar.getFighter = function (squadIndex, fighterIndex)
 	return FighterTemplate()
 end
 
-function ReadOnlyHangar:getHighestMaterialInSquadMainCategory(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):Material
+ReadOnlyHangar.getHighestMaterialInSquadMainCategory = function (squadIndex)
 	return Material()
 end
 
-function ReadOnlyHangar:getSquadFighters(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):number
+ReadOnlyHangar.getSquadFighters = function (squadIndex)
 	return 0
 end
 
-function ReadOnlyHangar:getSquadFighterType(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):any
+ReadOnlyHangar.getSquadFighterType = function (squadIndex)
 	return nil
 end
 
-function ReadOnlyHangar:getSquadFreeSlots(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):number
+ReadOnlyHangar.getSquadFreeSlots = function (squadIndex)
 	return 0
 end
 
-function ReadOnlyHangar:getSquadHasRawMinersOrSalvagers(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):boolean
+ReadOnlyHangar.getSquadHasRawMinersOrSalvagers = function (squadIndex)
 	return true
 end
 
 -- Returns the weapon type that most fighters of this squad are equipped with. Use this to determine if an AI controlled ship can use this squad to mine or salvage. In case mulitple weapon types are equally present a random one is returned.
-function ReadOnlyHangar:getSquadMainWeaponCategory(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):any
+ReadOnlyHangar.getSquadMainWeaponCategory = function (squadIndex)
 	return nil
 end
 
-function ReadOnlyHangar:getSquadMaxFighters(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):number
+ReadOnlyHangar.getSquadMaxFighters = function (squadIndex)
 	return 0
 end
 
-function ReadOnlyHangar:getSquadName(squadIndex)
+---@param squadIndex unsigned
+---@type fun(squadIndex:number:unsigned):any
+ReadOnlyHangar.getSquadName = function (squadIndex)
 	return nil
 end
 
-function ReadOnlyHangar:getSquads()
+---@type fun():number
+ReadOnlyHangar.getSquads = function ()
 	return 0
 end
 

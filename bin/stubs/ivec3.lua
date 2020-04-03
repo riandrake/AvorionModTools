@@ -9,35 +9,49 @@ ivec3 = {
 
 setmetatable(ivec3, {__call = function(self, x, y, z) return ivec3 end})
 
-function ivec3:__add(other)
+---@param other var
+---@type fun(other:any):ivec3
+ivec3.__add = function (other)
 	return ivec3()
 end
 
-function ivec3:__div(other)
+---@param other var
+---@type fun(other:any):ivec3
+ivec3.__div = function (other)
 	return ivec3()
 end
 
-function ivec3:__eq(other)
+---@param other ivec3
+---@type fun(other:ivec3):boolean
+ivec3.__eq = function (other)
 	return true
 end
 
-function ivec3:__lt(other)
+---@param other ivec3
+---@type fun(other:ivec3):boolean
+ivec3.__lt = function (other)
 	return true
 end
 
-function ivec3:__mul(other)
+---@param other var
+---@type fun(other:any):ivec3
+ivec3.__mul = function (other)
 	return ivec3()
 end
 
-function ivec3:__sub(other)
+---@param other var
+---@type fun(other:any):ivec3
+ivec3.__sub = function (other)
 	return ivec3()
 end
 
-function ivec3:__tostring()
+---@type fun():string
+ivec3.__tostring = function ()
 	return ""
 end
 
-function ivec3:__unm()
+---@type fun():ivec3
+ivec3.__unm = function ()
 	return ivec3()
 end
 

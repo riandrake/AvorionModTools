@@ -22,63 +22,93 @@ Shield = {
 setmetatable(Shield, {__call = function(self, id) return Shield end})
 
 -- @return nothing
-function Shield:changeDurability(amount)
+---@param amount double
+---@type fun(amount:number):any
+Shield.changeDurability = function (amount)
 	return nil
 end
 
 -- Returns max durability of the shield
 -- @param withUpgrades - if true, upgrade effects will be included in the result
-function Shield:getMaxDurability(withUpgrades)
+---@param withUpgrades bool
+---@type fun(withUpgrades:boolean):number
+Shield.getMaxDurability = function (withUpgrades)
 	return 0.0
 end
 
-function Shield:getResistance()
+---@type fun():any, any
+Shield.getResistance = function ()
 	return nil, nil
 end
 
 -- @return nothing
-function Shield:healDamage(amount)
+---@param amount double
+---@type fun(amount:number):any
+Shield.healDamage = function (amount)
 	return nil
 end
 
 -- @return nothing
-function Shield:inflictDamage(amount, damageSource, damageType, location, inflictorId)
+---@param amount double
+---@param damageSource var
+---@param damageType var
+---@param location vec3
+---@param inflictorId Uuid
+---@type fun(amount:number, damageSource:any, damageType:any, location:vec3, inflictorId:Uuid):any
+Shield.inflictDamage = function (amount, damageSource, damageType, location, inflictorId)
 	return nil
 end
 
-function Shield:intersectGlobalRay(ray, location)
+---@param ray Ray
+---@param location vec3
+---@type fun(ray:Ray, location:vec3):pair
+Shield.intersectGlobalRay = function (ray, location)
 	return pair()
 end
 
-function Shield:intersectGlobalSphere(sphere)
+---@param sphere Sphere
+---@type fun(sphere:Sphere):boolean
+Shield.intersectGlobalSphere = function (sphere)
 	return true
 end
 
-function Shield:intersectLocalRay(ray, location)
+---@param ray Ray
+---@param location vec3
+---@type fun(ray:Ray, location:vec3):pair
+Shield.intersectLocalRay = function (ray, location)
 	return pair()
 end
 
-function Shield:intersectLocalSphere(sphere)
+---@param sphere Sphere
+---@type fun(sphere:Sphere):boolean
+Shield.intersectLocalSphere = function (sphere)
 	return true
 end
 
 -- Returns whether entity has a shield, the durability is above 0 and it isn't currently deactivated
-function Shield:isActive()
+---@type fun():boolean
+Shield.isActive = function ()
 	return true
 end
 
 -- Check if the given point is inside the shield's outer boundaries
-function Shield:isInside(point)
+---@param point vec3
+---@type fun(point:vec3):boolean
+Shield.isInside = function (point)
 	return true
 end
 
 -- @return nothing
-function Shield:resetResistance()
+---@type fun():any
+Shield.resetResistance = function ()
 	return nil
 end
 
 -- @return nothing
-function Shield:setResistance(damageType, factor)
+---@param damageType var
+---@param factor float
+---@type fun(damageType:any, factor:number):any
+Shield.setResistance = function (damageType, factor)
 	return nil
 end
 

@@ -29,33 +29,43 @@ ComboBox = {
 setmetatable(ComboBox, {__call = function(self, index) return ComboBox end})
 
 -- @return nothing
-function ComboBox:addEntry(entry, color)
+---@param entry string
+---@param color var
+---@type fun(entry:string, color:any):any
+ComboBox.addEntry = function (entry, color)
 	return nil
 end
 
 -- @return nothing
-function ComboBox:clear()
+---@type fun():any
+ComboBox.clear = function ()
 	return nil
 end
 
-function ComboBox:getEntry(index)
+---@param index int
+---@type fun(index:number):string
+ComboBox.getEntry = function (index)
 	return ""
 end
 
 -- @return nothing
-function ComboBox:setSelectedIndexNoCallback(_in)
+---@param in int
+---@type fun(in:number):any
+ComboBox.setSelectedIndexNoCallback = function (_in)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ComboBox:hide()
+---@type fun():any
+ComboBox.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ComboBox:show()
+---@type fun():any
+ComboBox.show = function ()
 	return nil
 end
 

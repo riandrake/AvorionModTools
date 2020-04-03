@@ -26,24 +26,33 @@ StatisticsBar = {
 setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
 
 -- @return nothing
-function StatisticsBar:setRange(minRange, maxRange)
+---@param minRange float
+---@param maxRange float
+---@type fun(minRange:number, maxRange:number):any
+StatisticsBar.setRange = function (minRange, maxRange)
 	return nil
 end
 
 -- @return nothing
-function StatisticsBar:setValue(value, name, color)
+---@param value float
+---@param name string
+---@param color Color
+---@type fun(value:number, name:string, color:Color):any
+StatisticsBar.setValue = function (value, name, color)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function StatisticsBar:hide()
+---@type fun():any
+StatisticsBar.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function StatisticsBar:show()
+---@type fun():any
+StatisticsBar.show = function ()
 	return nil
 end
 

@@ -25,13 +25,15 @@ setmetatable(Frame, {__call = function(self, index) return Frame end})
 
 -- Inherited from UIElement
 -- @return nothing
-function Frame:hide()
+---@type fun():any
+Frame.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Frame:show()
+---@type fun():any
+Frame.show = function ()
 	return nil
 end
 

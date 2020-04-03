@@ -30,11 +30,15 @@ Hud = {
 
 setmetatable(Hud, {__call = function(self) return Hud end})
 
-function Hud:createContainer(rect)
+---@param rect Rect
+---@type fun(rect:Rect):UIContainer
+Hud.createContainer = function (rect)
 	return UIContainer()
 end
 
-function Hud:createWindow(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Window
+Hud.createWindow = function (rect)
 	return Window()
 end
 
@@ -42,19 +46,24 @@ end
 -- @param text - Text that will be shown in the hint. Passing "" will disable the hint.
 -- @param highlights - Objects that should be highlighted. Can be any number of vec3, Rect, ids (string, Uuid) or Entity. Passing 0 objects will disable the hint.
 -- @return nothing
-function Hud:displayHint(text, highlights)
+---@param text string
+---@param highlights var...
+---@type fun(text:string, highlights:table<number,var>):any
+Hud.displayHint = function (text, highlights)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Hud:hide()
+---@type fun():any
+Hud.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function Hud:show()
+---@type fun():any
+Hud.show = function ()
 	return nil
 end
 

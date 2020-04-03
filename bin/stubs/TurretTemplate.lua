@@ -73,45 +73,58 @@ TurretTemplate = {
 
 setmetatable(TurretTemplate, {__call = function(self, other) return TurretTemplate end})
 
-function TurretTemplate:__eq(other)
+---@param other var
+---@type fun(other:any):boolean
+TurretTemplate.__eq = function (other)
 	return true
 end
 
 -- @return nothing
-function TurretTemplate:addDescription(str, value)
+---@param str string
+---@param value string
+---@type fun(str:string, value:string):any
+TurretTemplate.addDescription = function (str, value)
 	return nil
 end
 
 -- @return nothing
-function TurretTemplate:addWeapon(weapon)
+---@param weapon var
+---@type fun(weapon:any):any
+TurretTemplate.addWeapon = function (weapon)
 	return nil
 end
 
 -- @return nothing
-function TurretTemplate:clearDescriptions()
+---@type fun():any
+TurretTemplate.clearDescriptions = function ()
 	return nil
 end
 
 -- @return nothing
-function TurretTemplate:clearWeapons()
+---@type fun():any
+TurretTemplate.clearWeapons = function ()
 	return nil
 end
 
-function TurretTemplate:getCrew()
+---@type fun():Crew
+TurretTemplate.getCrew = function ()
 	return Crew()
 end
 
-function TurretTemplate:getDescriptions()
+---@type fun():table<string, string>
+TurretTemplate.getDescriptions = function ()
 	return {"", ""}
 end
 
 -- Returns all weapons of the object
-function TurretTemplate:getWeapons()
+---@type fun():Weapon
+TurretTemplate.getWeapons = function ()
 	return Weapon()
 end
 
 -- @return nothing
-function TurretTemplate:updateStaticStats()
+---@type fun():any
+TurretTemplate.updateStaticStats = function ()
 	return nil
 end
 

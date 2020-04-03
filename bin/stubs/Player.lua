@@ -36,19 +36,25 @@ Player = {
 setmetatable(Player, {__call = function(self, index) return Player end})
 
 -- @return nothing
-function Player:addKnownSector(view)
+---@param view SectorView
+---@type fun(view:SectorView):any
+Player.addKnownSector = function (view)
 	return nil
 end
 
-function Player:addMail(mail)
+---@param mail Mail
+---@type fun(mail:Mail):number
+Player.addMail = function (mail)
 	return 0
 end
 
-function Player:addScript()
+---@type fun():any
+Player.addScript = function ()
 	return nil
 end
 
-function Player:addScriptOnce()
+---@type fun():any
+Player.addScriptOnce = function ()
 	return nil
 end
 
@@ -56,120 +62,175 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback. -1 if an error occurred
-function Player:callbacksRegistered(callbackName, functionName)
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Player.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
-function Player:clearMail(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):any
+Player.clearMail = function (index)
 	return nil
 end
 
-function Player:getKnownSector(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):SectorView
+Player.getKnownSector = function (x, y)
 	return SectorView()
 end
 
-function Player:getKnownSectorCoordinates()
+---@type fun():ivec2
+Player.getKnownSectorCoordinates = function ()
 	return ivec2()
 end
 
-function Player:getKnownSectors()
+---@type fun():SectorView
+Player.getKnownSectors = function ()
 	return SectorView()
 end
 
-function Player:getKnownSectorsOfFaction(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):SectorView
+Player.getKnownSectorsOfFaction = function (factionIndex)
 	return SectorView()
 end
 
-function Player:getMail(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):Mail
+Player.getMail = function (index)
 	return Mail()
 end
 
-function Player:getNamesOfShipsInSector(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):string
+Player.getNamesOfShipsInSector = function (x, y)
 	return ""
 end
 
-function Player:getRespawnSectorCoordinates()
+---@type fun():number, number
+Player.getRespawnSectorCoordinates = function ()
 	return 0, 0
 end
 
-function Player:getScripts()
+---@type fun():table<number, string>
+Player.getScripts = function ()
 	return {0, ""}
 end
 
-function Player:getSectorCoordinates()
+---@type fun():number, number
+Player.getSectorCoordinates = function ()
 	return 0, 0
 end
 
-function Player:getShipBoundingBox(name)
+---@param name string
+---@type fun(name:string):Box
+Player.getShipBoundingBox = function (name)
 	return Box()
 end
 
-function Player:getShipCanPassRifts(name)
+---@param name string
+---@type fun(name:string):boolean
+Player.getShipCanPassRifts = function (name)
 	return true
 end
 
-function Player:getShipCargo(name)
+---@param name string
+---@type fun(name:string):CargoBay
+Player.getShipCargo = function (name)
 	return CargoBay()
 end
 
-function Player:getShipCargos(name)
+---@param name string
+---@type fun(name:string):table<TradingGood, number>
+Player.getShipCargos = function (name)
 	return {TradingGood(), 0}
 end
 
-function Player:getShipCrew(name)
+---@param name string
+---@type fun(name:string):Crew
+Player.getShipCrew = function (name)
 	return Crew()
 end
 
-function Player:getShipDestroyed(name)
+---@param name string
+---@type fun(name:string):boolean
+Player.getShipDestroyed = function (name)
 	return true
 end
 
-function Player:getShipHyperspaceReach(name)
+---@param name string
+---@type fun(name:string):number
+Player.getShipHyperspaceReach = function (name)
 	return 0.0
 end
 
-function Player:getShipNames()
+---@type fun():string
+Player.getShipNames = function ()
 	return ""
 end
 
-function Player:getShipOrderInfo(name)
+---@param name string
+---@type fun(name:string):string
+Player.getShipOrderInfo = function (name)
 	return ""
 end
 
-function Player:getShipPayment(name)
+---@param name string
+---@type fun(name:string):number
+Player.getShipPayment = function (name)
 	return 0.0
 end
 
-function Player:getShipPaymentTime(name)
+---@param name string
+---@type fun(name:string):number
+Player.getShipPaymentTime = function (name)
 	return 0.0
 end
 
-function Player:getShipPlan(name)
+---@param name string
+---@type fun(name:string):BlockPlan
+Player.getShipPlan = function (name)
 	return BlockPlan()
 end
 
-function Player:getShipPosition(name)
+---@param name string
+---@type fun(name:string):number, number
+Player.getShipPosition = function (name)
 	return 0, 0
 end
 
-function Player:getShipReconstructionValue(name)
+---@param name string
+---@type fun(name:string):number
+Player.getShipReconstructionValue = function (name)
 	return 0.0
 end
 
-function Player:getShipStatus(name)
+---@param name string
+---@type fun(name:string):LocalizationNamedFormat
+Player.getShipStatus = function (name)
 	return LocalizationNamedFormat()
 end
 
-function Player:getShipSystems(name)
+---@param name string
+---@type fun(name:string):ShipInfoUpgrade
+Player.getShipSystems = function (name)
 	return ShipInfoUpgrade()
 end
 
-function Player:getShipType(name)
+---@param name string
+---@type fun(name:string):number
+Player.getShipType = function (name)
 	return 0
 end
 
-function Player:hasScript(name)
+---@param name string
+---@type fun(name:string):any
+Player.hasScript = function (name)
 	return nil
 end
 
@@ -178,20 +239,31 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
-function Player:invokeFunction(scriptName, functionName, arguments)
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Player.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
-function Player:knowsSector(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):boolean
+Player.knowsSector = function (x, y)
 	return true
 end
 
-function Player:ownsShip(name)
+---@param name string
+---@type fun(name:string):boolean
+Player.ownsShip = function (name)
 	return true
 end
 
 -- @return nothing
-function Player:readMail(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):any
+Player.readMail = function (index)
 	return nil
 end
 
@@ -199,40 +271,59 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
-function Player:registerCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Player.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
-function Player:removeDestroyedShipInfo(name)
+---@param name string
+---@type fun(name:string):any
+Player.removeDestroyedShipInfo = function (name)
 	return nil
 end
 
 -- @return nothing
-function Player:removeKnownSector(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Player.removeKnownSector = function (x, y)
 	return nil
 end
 
 -- @return nothing
-function Player:removeMail(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):any
+Player.removeMail = function (index)
 	return nil
 end
 
 -- @return nothing
-function Player:removeScript(script)
+---@param script var
+---@type fun(script:any):any
+Player.removeScript = function (script)
 	return nil
 end
 
-function Player:resolveScriptPath(path)
+---@param path string
+---@type fun(path:string):any
+Player.resolveScriptPath = function (path)
 	return nil
 end
 
-function Player:restoreCraft(name, position, withMalus)
+---@param name string
+---@param position Matrix
+---@param withMalus bool
+---@type fun(name:string, position:Matrix, withMalus:boolean):Entity
+Player.restoreCraft = function (name, position, withMalus)
 	return Entity()
 end
 
 -- @return nothing
-function Player:sendCallback()
+---@type fun():any
+Player.sendCallback = function ()
 	return nil
 end
 
@@ -242,159 +333,220 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
-function Player:sendChatMessage(sender, messageType, message, args)
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
+Player.sendChatMessage = function (sender, messageType, message, args)
 	return nil
 end
 
 -- @return nothing
-function Player:setRespawnSectorCoordinates(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Player.setRespawnSectorCoordinates = function (x, y)
 	return nil
 end
 
 -- @return nothing
-function Player:setShipDestroyed(name, destroyed)
+---@param name string
+---@param destroyed bool
+---@type fun(name:string, destroyed:boolean):any
+Player.setShipDestroyed = function (name, destroyed)
 	return nil
 end
 
 -- @return nothing
-function Player:setShipOrderInfo(name, value)
+---@param name string
+---@param value var
+---@type fun(name:string, value:any):any
+Player.setShipOrderInfo = function (name, value)
 	return nil
 end
 
 -- @return nothing
-function Player:setShipReconstructionValue(name, value)
+---@param name string
+---@param value double
+---@type fun(name:string, value:number):any
+Player.setShipReconstructionValue = function (name, value)
 	return nil
 end
 
-function Player:unregisterCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Player.unregisterCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
-function Player:updateKnownSector(view)
+---@param view SectorView
+---@type fun(view:SectorView):any
+Player.updateKnownSector = function (view)
 	return nil
 end
 
 -- @return nothing
-function Player:updateKnownSectorPreserveNote(view)
+---@param view SectorView
+---@type fun(view:SectorView):any
+Player.updateKnownSectorPreserveNote = function (view)
 	return nil
 end
 
 -- @return nothing
-function Player:updateMail(mail, index)
+---@param mail Mail
+---@param index unsigned
+---@type fun(mail:Mail, index:number:unsigned):any
+Player.updateMail = function (mail, index)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:addPlanStyle(name, style)
+---@param name string
+---@param style PlanStyle
+---@type fun(name:string, style:PlanStyle):any
+Player.addPlanStyle = function (name, style)
 	return nil
 end
 
 -- Inherited from Faction [Server]
-function Player:canPay()
+---@type fun():boolean, string, table<number, string>
+Player.canPay = function ()
 	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
-function Player:canPayMoney(money)
+---@param money int
+---@type fun(money:number):boolean, string, table<number, string>
+Player.canPayMoney = function (money)
 	return true, "", {0, ""}
 end
 
 -- Inherited from Faction [Server]
-function Player:canPayResource(material, amount)
+---@param material Material
+---@param amount int
+---@type fun(material:Material, amount:number):boolean, string, table<number, string>
+Player.canPayResource = function (material, amount)
 	return true, "", {0, ""}
 end
 
 -- Removes all custom values of the object Inherited from Faction [Server]
 -- @return nothing
-function Player:clearValues()
+---@type fun():any
+Player.clearValues = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
-function Player:getAllRelations()
+---@type fun():Relation
+Player.getAllRelations = function ()
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
-function Player:getHomeSectorCoordinates()
+---@type fun():number, number
+Player.getHomeSectorCoordinates = function ()
 	return 0, 0
 end
 
 -- Inherited from Faction [Server]
-function Player:getInventory()
+---@type fun():Inventory
+Player.getInventory = function ()
 	return Inventory()
 end
 
 -- Inherited from Faction [Server]
-function Player:getLanguage()
+---@type fun():Language
+Player.getLanguage = function ()
 	return Language()
 end
 
 -- Inherited from Faction [Server]
-function Player:getPlanStyle(name)
+---@param name string
+---@type fun(name:string):PlanStyle
+Player.getPlanStyle = function (name)
 	return PlanStyle()
 end
 
 -- Inherited from Faction [Server]
-function Player:getPlanStyleNames()
+---@type fun():string
+Player.getPlanStyleNames = function ()
 	return ""
 end
 
 -- Inherited from Faction [Server]
-function Player:getRelation(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):Relation
+Player.getRelation = function (factionIndex)
 	return Relation()
 end
 
 -- Inherited from Faction [Server]
-function Player:getRelations(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Player.getRelations = function (factionIndex)
 	return 0
 end
 
 -- Inherited from Faction [Server]
-function Player:getRelationStatus(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):number
+Player.getRelationStatus = function (factionIndex)
 	return 0
 end
 
 -- Inherited from Faction [Server]
-function Player:getResources()
+---@type fun():Resources
+Player.getResources = function ()
 	return Resources()
 end
 
 -- Retrieves a trait value associated with a key Inherited from Faction [Server]
 -- @param trait - The name of the trait
 -- @return The trait value associated with the key
-function Player:getTrait(trait)
+---@param trait string
+---@type fun(trait:string):number
+Player.getTrait = function (trait)
 	return 0.0
 end
 
 -- Retrieves all key-value trait pairs of the faction Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
-function Player:getTraits()
+---@type fun():table<string, number>
+Player.getTraits = function ()
 	return {"", 0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key Inherited from Faction [Server]
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
-function Player:getValue(key)
+---@param key string
+---@type fun(key:string):any
+Player.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values Inherited from Faction [Server]
 -- @return A table containing all custom key-value pairs
-function Player:getValues()
+---@type fun():table<string, any>
+Player.getValues = function ()
 	return {"", nil}
 end
 
 -- Inherited from Faction [Server]
-function Player:hasStaticRelationsToFaction(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):boolean
+Player.hasStaticRelationsToFaction = function (factionIndex)
 	return true
 end
 
 -- Inherited from Faction [Server]
-function Player:knowsFaction(factionIndex)
+---@param factionIndex int
+---@type fun(factionIndex:number):boolean
+Player.knowsFaction = function (factionIndex)
 	return true
 end
 
@@ -403,7 +555,11 @@ end
 -- @param material - The kind of material that will be removed from the faction
 -- @param amount - Amount that will be removed from the faction
 -- @return nothing
-function Player:payResource(description, material, amount)
+---@param description string
+---@param material Material
+---@param amount int
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Player.payResource = function (description, material, amount)
 	return nil
 end
 
@@ -412,7 +568,11 @@ end
 -- @param money - Money that will be removed from the faction
 -- @param args - A list of resources, starting with iron, that will be removed from the faction
 -- @return nothing
-function Player:payWithoutNotify(description, money, args)
+---@param description string
+---@param money int
+---@param args int...
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Player.payWithoutNotify = function (description, money, args)
 	return nil
 end
 
@@ -421,7 +581,11 @@ end
 -- @param material - The kind of material that will be given to the faction
 -- @param amount - Amount that will be given to the faction
 -- @return nothing
-function Player:receiveResource(description, material, amount)
+---@param description string
+---@param material Material
+---@param amount int
+---@type fun(description:Format:or:string, material:Material, amount:number):any
+Player.receiveResource = function (description, material, amount)
 	return nil
 end
 
@@ -430,37 +594,50 @@ end
 -- @param money - Money that will be given to the faction
 -- @param args - A list of resources, starting with iron, that will be given to the faction
 -- @return nothing
-function Player:receiveWithoutNotify(description, money, args)
+---@param description string
+---@param money int
+---@param args int...
+---@type fun(description:Format:or:string, money:number, args:table<number,int>):any
+Player.receiveWithoutNotify = function (description, money, args)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:sendCallback()
+---@type fun():any
+Player.sendCallback = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:sendChatMessage()
+---@type fun():any
+Player.sendChatMessage = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:setHomeSectorCoordinates(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Player.setHomeSectorCoordinates = function (x, y)
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:setResources()
+---@type fun():any
+Player.setResources = function ()
 	return nil
 end
 
 -- Inherited from Faction [Server]
 -- @return nothing
-function Player:setStaticRelationsToFaction(factionIndex, _in)
+---@param factionIndex int
+---@param in bool
+---@type fun(factionIndex:number, in:boolean):any
+Player.setStaticRelationsToFaction = function (factionIndex, _in)
 	return nil
 end
 
@@ -468,7 +645,10 @@ end
 -- @param trait - The name of the trait
 -- @param value - The value of the trait, should be between -1 and 1
 -- @return nothing
-function Player:setTrait(trait, value)
+---@param trait string
+---@param value float
+---@type fun(trait:string, value:number):any
+Player.setTrait = function (trait, value)
 	return nil
 end
 
@@ -476,7 +656,10 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
-function Player:setValue(key, value)
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+Player.setValue = function (key, value)
 	return nil
 end
 

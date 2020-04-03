@@ -37,82 +37,115 @@ ListBox = {
 setmetatable(ListBox, {__call = function(self, index) return ListBox end})
 
 -- @return nothing
-function ListBox:addEntry(str, value)
+---@param str string
+---@param value var
+---@type fun(str:string, value:any):any
+ListBox.addEntry = function (str, value)
 	return nil
 end
 
 -- @return nothing
-function ListBox:clampScrollPosition()
+---@type fun():any
+ListBox.clampScrollPosition = function ()
 	return nil
 end
 
 -- @return nothing
-function ListBox:clear()
+---@type fun():any
+ListBox.clear = function ()
 	return nil
 end
 
 -- @return nothing
-function ListBox:deselect()
+---@type fun():any
+ListBox.deselect = function ()
 	return nil
 end
 
-function ListBox:getEntry(row)
+---@param row unsigned
+---@type fun(row:number:unsigned):string, boolean, boolean, Color
+ListBox.getEntry = function (row)
 	return "", true, true, Color()
 end
 
-function ListBox:getSelectedEntry()
+---@type fun():string, boolean, boolean, Color
+ListBox.getSelectedEntry = function ()
 	return "", true, true, Color()
 end
 
 -- @return nothing
-function ListBox:removeEntry(index)
+---@param index int
+---@type fun(index:number):any
+ListBox.removeEntry = function (index)
 	return nil
 end
 
 -- @return nothing
-function ListBox:select(index)
+---@param index int
+---@type fun(index:number):any
+ListBox.select = function (index)
 	return nil
 end
 
 -- @return nothing
-function ListBox:selectNoCallback(index)
+---@param index int
+---@type fun(index:number):any
+ListBox.selectNoCallback = function (index)
 	return nil
 end
 
 -- @return nothing
-function ListBox:selectValue(value)
+---@param value var
+---@type fun(value:any):any
+ListBox.selectValue = function (value)
 	return nil
 end
 
 -- @return nothing
-function ListBox:selectValueNoCallback(value)
+---@param value var
+---@type fun(value:any):any
+ListBox.selectValueNoCallback = function (value)
 	return nil
 end
 
 -- @return nothing
-function ListBox:setEntry(row, text, bold, italic, color)
+---@param row unsigned
+---@param text string
+---@param bold bool
+---@param italic bool
+---@param color Color
+---@type fun(row:number:unsigned, text:string, bold:boolean, italic:boolean, color:Color):any
+ListBox.setEntry = function (row, text, bold, italic, color)
 	return nil
 end
 
 -- @return nothing
-function ListBox:setEntryType(row, type)
+---@param row unsigned
+---@param type int
+---@type fun(row:number:unsigned, type:number):any
+ListBox.setEntryType = function (row, type)
 	return nil
 end
 
 -- @return nothing
-function ListBox:setEntryValue(row, value)
+---@param row unsigned
+---@param value var
+---@type fun(row:number:unsigned, value:any):any
+ListBox.setEntryValue = function (row, value)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ListBox:hide()
+---@type fun():any
+ListBox.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function ListBox:show()
+---@type fun():any
+ListBox.show = function ()
 	return nil
 end
 

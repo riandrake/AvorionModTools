@@ -8,54 +8,75 @@ PlayerWindow = {
 setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
 
 -- @return nothing
-function PlayerWindow:activateAllTabs()
+---@type fun():any
+PlayerWindow.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
-function PlayerWindow:activateTab(tab)
+---@param tab Tab
+---@type fun(tab:Tab):any
+PlayerWindow.activateTab = function (tab)
 	return nil
 end
 
-function PlayerWindow:createTab(name, icon, description)
+---@param name string
+---@param icon string
+---@param description string
+---@type fun(name:string, icon:string, description:string):Tab
+PlayerWindow.createTab = function (name, icon, description)
 	return Tab()
 end
 
 -- @return nothing
-function PlayerWindow:deactivateTab(tab)
+---@param tab Tab
+---@type fun(tab:Tab):any
+PlayerWindow.deactivateTab = function (tab)
 	return nil
 end
 
-function PlayerWindow:getActiveTab()
+---@type fun():Tab
+PlayerWindow.getActiveTab = function ()
 	return Tab()
 end
 
-function PlayerWindow:getTab(name)
+---@param name string
+---@type fun(name:string):Tab
+PlayerWindow.getTab = function (name)
 	return Tab()
 end
 
 -- @return nothing
-function PlayerWindow:hide()
+---@type fun():any
+PlayerWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
-function PlayerWindow:moveTabToPosition(tab, pos)
+---@param tab Tab
+---@param pos int
+---@type fun(tab:Tab, pos:number):any
+PlayerWindow.moveTabToPosition = function (tab, pos)
 	return nil
 end
 
 -- @return nothing
-function PlayerWindow:moveTabToTheRight(tab)
+---@param tab Tab
+---@type fun(tab:Tab):any
+PlayerWindow.moveTabToTheRight = function (tab)
 	return nil
 end
 
 -- @return nothing
-function PlayerWindow:selectTab(val)
+---@param val var
+---@type fun(val:any):any
+PlayerWindow.selectTab = function (val)
 	return nil
 end
 
 -- @return nothing
-function PlayerWindow:show()
+---@type fun():any
+PlayerWindow.show = function ()
 	return nil
 end
 

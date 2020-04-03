@@ -31,19 +31,23 @@ CheckBox = {
 setmetatable(CheckBox, {__call = function(self, index) return CheckBox end})
 
 -- @return nothing
-function CheckBox:setCheckedNoCallback(_in)
+---@param in bool
+---@type fun(in:boolean):any
+CheckBox.setCheckedNoCallback = function (_in)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function CheckBox:hide()
+---@type fun():any
+CheckBox.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function CheckBox:show()
+---@type fun():any
+CheckBox.show = function ()
 	return nil
 end
 

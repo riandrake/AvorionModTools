@@ -21,35 +21,44 @@ UsableInventoryItem = {
 
 setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
 
-function UsableInventoryItem:__eq(other)
+---@param other var
+---@type fun(other:any):boolean
+UsableInventoryItem.__eq = function (other)
 	return true
 end
 
 -- Removes all custom values of the object
 -- @return nothing
-function UsableInventoryItem:clearValues()
+---@type fun():any
+UsableInventoryItem.clearValues = function ()
 	return nil
 end
 
-function UsableInventoryItem:getTooltip()
+---@type fun():Tooltip
+UsableInventoryItem.getTooltip = function ()
 	return Tooltip()
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
-function UsableInventoryItem:getValue(key)
+---@param key string
+---@type fun(key:string):any
+UsableInventoryItem.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
-function UsableInventoryItem:getValues()
+---@type fun():table<string, any>
+UsableInventoryItem.getValues = function ()
 	return {"", nil}
 end
 
 -- @return nothing
-function UsableInventoryItem:setTooltip(tooltip)
+---@param tooltip Tooltip
+---@type fun(tooltip:Tooltip):any
+UsableInventoryItem.setTooltip = function (tooltip)
 	return nil
 end
 
@@ -57,7 +66,10 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
-function UsableInventoryItem:setValue(key, value)
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+UsableInventoryItem.setValue = function (key, value)
 	return nil
 end
 

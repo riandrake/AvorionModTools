@@ -10,17 +10,21 @@ Torpedo = {
 
 setmetatable(Torpedo, {__call = function(self, id) return Torpedo end})
 
-function Torpedo:getTemplate()
+---@type fun():TorpedoTemplate
+Torpedo.getTemplate = function ()
 	return TorpedoTemplate()
 end
 
 -- @return nothing
-function Torpedo:setTemplate(torpedo)
+---@param torpedo TorpedoTemplate
+---@type fun(torpedo:TorpedoTemplate):any
+Torpedo.setTemplate = function (torpedo)
 	return nil
 end
 
 -- @return nothing
-function Torpedo:startDetonation()
+---@type fun():any
+Torpedo.startDetonation = function ()
 	return nil
 end
 

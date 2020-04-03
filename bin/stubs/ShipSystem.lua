@@ -11,44 +11,65 @@ ShipSystem = {
 
 setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
 
-function ShipSystem:addUpgrade(upgrade, permanent)
+---@param upgrade SystemUpgradeTemplate
+---@param permanent bool
+---@type fun(upgrade:SystemUpgradeTemplate, permanent:boolean):number
+ShipSystem.addUpgrade = function (upgrade, permanent)
 	return 0
 end
 
 -- @return nothing
-function ShipSystem:clear()
+---@type fun():any
+ShipSystem.clear = function ()
 	return nil
 end
 
-function ShipSystem:getUpgrade(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):SystemUpgradeTemplate
+ShipSystem.getUpgrade = function (index)
 	return SystemUpgradeTemplate()
 end
 
-function ShipSystem:getVolumeForSlot(slot)
+---@param slot unsigned
+---@type fun(slot:number:unsigned):number
+ShipSystem.getVolumeForSlot = function (slot)
 	return 0.0
 end
 
-function ShipSystem:isPermanent(slot)
+---@param slot unsigned
+---@type fun(slot:number:unsigned):boolean
+ShipSystem.isPermanent = function (slot)
 	return true
 end
 
 -- @return nothing
-function ShipSystem:removeUpgrade(slot)
+---@param slot unsigned
+---@type fun(slot:number:unsigned):any
+ShipSystem.removeUpgrade = function (slot)
 	return nil
 end
 
 -- @return nothing
-function ShipSystem:setNumSlots(_in)
+---@param in unsigned
+---@type fun(in:number:unsigned):any
+ShipSystem.setNumSlots = function (_in)
 	return nil
 end
 
 -- @return nothing
-function ShipSystem:setUpgrade(upgrade, slot, permanent)
+---@param upgrade SystemUpgradeTemplate
+---@param slot unsigned
+---@param permanent bool
+---@type fun(upgrade:SystemUpgradeTemplate, slot:number:unsigned, permanent:boolean):any
+ShipSystem.setUpgrade = function (upgrade, slot, permanent)
 	return nil
 end
 
 -- @return nothing
-function ShipSystem:swap(slotA, slotB)
+---@param slotA unsigned
+---@param slotB unsigned
+---@type fun(slotA:number:unsigned, slotB:number:unsigned):any
+ShipSystem.swap = function (slotA, slotB)
 	return nil
 end
 

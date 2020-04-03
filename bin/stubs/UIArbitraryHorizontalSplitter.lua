@@ -22,133 +22,171 @@ setmetatable(UIArbitraryHorizontalSplitter, {__call = function(self, rect, paddi
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getBottomLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getBottomLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
-function UIArbitraryHorizontalSplitter:getBottomRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Rect
+UIArbitraryHorizontalSplitter.getBottomRect = function (rect)
 	return Rect()
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getBottomRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getBottomRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getCenterRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getCenterRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getTopLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getTopLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getTopRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getTopRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIArbitraryHorizontalSplitter:getTopRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIArbitraryHorizontalSplitter.getTopRightRect = function (rect)
 	return nil
 end
 
 -- Retrieves one of the new created rects
 -- @param index - The index of the retrieved rect, from 0 to splits
 -- @return A new rect, size was determined by splitting
-function UIArbitraryHorizontalSplitter:partition(index)
+---@param index int
+---@type fun(index:number):Rect
+UIArbitraryHorizontalSplitter.partition = function (index)
 	return Rect()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementBottom(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementBottom = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementBottomLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementBottomLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementBottomRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementBottomRight = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementCenter(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementCenter = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementRight = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementTop(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementTop = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementTopLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementTopLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIArbitraryHorizontalSplitter:placeElementTopRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIArbitraryHorizontalSplitter.placeElementTopRight = function (element)
 	return UIElement()
 end
 
@@ -157,7 +195,12 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
-function UIArbitraryHorizontalSplitter:setMargin(left, right, top, bottom)
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIArbitraryHorizontalSplitter.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -166,7 +209,12 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
-function UIArbitraryHorizontalSplitter:setPadding(left, right, top, bottom)
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIArbitraryHorizontalSplitter.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

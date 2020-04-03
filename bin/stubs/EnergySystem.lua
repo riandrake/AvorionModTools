@@ -16,12 +16,16 @@ EnergySystem = {
 setmetatable(EnergySystem, {__call = function(self, id) return EnergySystem end})
 
 -- @return nothing
-function EnergySystem:addEnergy(amount)
+---@param amount double
+---@type fun(amount:number):any
+EnergySystem.addEnergy = function (amount)
 	return nil
 end
 
 -- @return nothing
-function EnergySystem:removeEnergy(amount)
+---@param amount double
+---@type fun(amount:number):any
+EnergySystem.removeEnergy = function (amount)
 	return nil
 end
 

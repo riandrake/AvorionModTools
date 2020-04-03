@@ -13,15 +13,20 @@ Material = {
 
 setmetatable(Material, {__call = function(self, type) return Material end})
 
-function Material:__eq(other)
+---@param other Material
+---@type fun(other:Material):boolean
+Material.__eq = function (other)
 	return true
 end
 
-function Material:__lt(other)
+---@param other Material
+---@type fun(other:Material):boolean
+Material.__lt = function (other)
 	return true
 end
 
-function Material:__tostring()
+---@type fun():string
+Material.__tostring = function ()
 	return ""
 end
 

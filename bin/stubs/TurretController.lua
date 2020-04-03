@@ -8,12 +8,18 @@ TurretController = {
 
 setmetatable(TurretController, {__call = function(self, id) return TurretController end})
 
-function TurretController:getGroupOrders(group)
+---@param group int
+---@type fun(group:number):number, Uuid
+TurretController.getGroupOrders = function (group)
 	return 0, 0
 end
 
 -- @return nothing
-function TurretController:setGroupFireMode(group, autoFireMode, target)
+---@param group int
+---@param autoFireMode int
+---@param target Uuid
+---@type fun(group:number, autoFireMode:number, target:Uuid):any
+TurretController.setGroupFireMode = function (group, autoFireMode, target)
 	return nil
 end
 

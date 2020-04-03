@@ -23,52 +23,75 @@ Crew = {
 setmetatable(Crew, {__call = function(self) return Crew end})
 
 -- @return nothing
-function Crew:add(amount, crewman)
+---@param amount int
+---@param crewman CrewMan
+---@type fun(amount:number, crewman:CrewMan):any
+Crew.add = function (amount, crewman)
 	return nil
 end
 
-function Crew:buildMinimumCrew(plan)
+---@param plan BlockPlan
+---@type fun(plan:nil]:[or:BlockPlan):Crew
+Crew.buildMinimumCrew = function (plan)
 	return Crew()
 end
 
 -- @return nothing
-function Crew:changeEmployment(amount, profession)
+---@param amount int
+---@param profession int
+---@type fun(amount:number, profession:number):any
+Crew.changeEmployment = function (amount, profession)
 	return nil
 end
 
 -- @return nothing
-function Crew:clear()
+---@type fun():any
+Crew.clear = function ()
 	return nil
 end
 
-function Crew:getMembers()
+---@type fun():table<CrewMan, number>
+Crew.getMembers = function ()
 	return {CrewMan(), 0}
 end
 
-function Crew:getMembersByProfession(profession)
+---@param profession int
+---@type fun(profession:number):number
+Crew.getMembersByProfession = function (profession)
 	return 0
 end
 
-function Crew:getNumMembers(crewman)
+---@param crewman CrewMan
+---@type fun(crewman:CrewMan):number
+Crew.getNumMembers = function (crewman)
 	return 0
 end
 
-function Crew:getWorkforce()
+---@type fun():table<CrewProfession, number>
+Crew.getWorkforce = function ()
 	return {CrewProfession(), 0.0}
 end
 
 -- @return nothing
-function Crew:kill(num)
+---@param num int
+---@type fun(num:number):any
+Crew.kill = function (num)
 	return nil
 end
 
 -- @return nothing
-function Crew:remove(amount, crewman)
+---@param amount int
+---@param crewman CrewMan
+---@type fun(amount:number, crewman:CrewMan):any
+Crew.remove = function (amount, crewman)
 	return nil
 end
 
 -- @return nothing
-function Crew:removeByProfession(amount, crewProfessionType)
+---@param amount int
+---@param crewProfessionType int
+---@type fun(amount:number, crewProfessionType:number):any
+Crew.removeByProfession = function (amount, crewProfessionType)
 	return nil
 end
 

@@ -13,7 +13,9 @@ ReadOnlyOwner = {
 
 setmetatable(ReadOnlyOwner, {__call = function(self, id) return ReadOnlyOwner end})
 
-function ReadOnlyOwner:getRelationValue(otherFactionIndex)
+---@param otherFactionIndex int
+---@type fun(otherFactionIndex:number):number
+ReadOnlyOwner.getRelationValue = function (otherFactionIndex)
 	return 0
 end
 

@@ -79,21 +79,28 @@ EntityDescriptor = {
 setmetatable(EntityDescriptor, {__call = function(self) return EntityDescriptor end})
 
 -- @return nothing
-function EntityDescriptor:addComponent(type)
+---@param type Type
+---@type fun(type:Type):any
+EntityDescriptor.addComponent = function (type)
 	return nil
 end
 
 -- @return nothing
-function EntityDescriptor:addComponents()
+---@type fun():any
+EntityDescriptor.addComponents = function ()
 	return nil
 end
 
-function EntityDescriptor:getComponent(type)
+---@param type Type
+---@type fun(type:Type):UserObject
+EntityDescriptor.getComponent = function (type)
 	return UserObject()
 end
 
 -- @return nothing
-function EntityDescriptor:removeComponent(type)
+---@param type Type
+---@type fun(type:Type):any
+EntityDescriptor.removeComponent = function (type)
 	return nil
 end
 
@@ -101,7 +108,10 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param value - Bias added to base stats.
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addAbsoluteBias(type, value)
+---@param type int
+---@param value float
+---@type fun(type:number, value:number):any
+EntityDescriptor.addAbsoluteBias = function (type, value)
 	return nil
 end
 
@@ -109,7 +119,10 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param factor - Factor that is used as Multiplier
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addBaseMultiplier(type, factor)
+---@param type int
+---@param factor float
+---@type fun(type:number, factor:number):any
+EntityDescriptor.addBaseMultiplier = function (type, factor)
 	return nil
 end
 
@@ -117,13 +130,19 @@ end
 -- @param good - TradingGood that is to be added.
 -- @param amount - The amount of cargo that should be added.
 -- @return nothing
-function EntityDescriptor:addCargo(good, amount)
+---@param good TradingGood
+---@param amount int
+---@type fun(good:TradingGood, amount:number):any
+EntityDescriptor.addCargo = function (good, amount)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:addCrew(number, crewman)
+---@param number int
+---@param crewman CrewMan
+---@type fun(number:number, crewman:CrewMan):any
+EntityDescriptor.addCrew = function (number, crewman)
 	return nil
 end
 
@@ -132,7 +151,11 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addKeyedAbsoluteBias(type, key, value)
+---@param type int
+---@param key int
+---@param value float
+---@type fun(type:number, key:number, value:number):any
+EntityDescriptor.addKeyedAbsoluteBias = function (type, key, value)
 	return nil
 end
 
@@ -141,7 +164,11 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addKeyedBaseMultiplier(type, key, value)
+---@param type int
+---@param key int
+---@param value float
+---@type fun(type:number, key:number, value:number):any
+EntityDescriptor.addKeyedBaseMultiplier = function (type, key, value)
 	return nil
 end
 
@@ -150,7 +177,11 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addKeyedMultiplier(type, key, value)
+---@param type int
+---@param key int
+---@param value float
+---@type fun(type:number, key:number, value:number):any
+EntityDescriptor.addKeyedMultiplier = function (type, key, value)
 	return nil
 end
 
@@ -159,7 +190,11 @@ end
 -- @param key - Location of the bonus that will be changed
 -- @param value - New value
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addKeyedMultiplyableBias(type, key, value)
+---@param type int
+---@param key int
+---@param value float
+---@type fun(type:number, key:number, value:number):any
+EntityDescriptor.addKeyedMultiplyableBias = function (type, key, value)
 	return nil
 end
 
@@ -167,7 +202,10 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param factor - Factor that is used as Multiplier
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addMultiplier(type, factor)
+---@param type int
+---@param factor float
+---@type fun(type:number, factor:number):any
+EntityDescriptor.addMultiplier = function (type, factor)
 	return nil
 end
 
@@ -175,7 +213,10 @@ end
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew
 -- @param value - Bias added to base stats.
 -- @return key that can be used to access the multiplier
-function EntityDescriptor:addMultiplyableBias(type, value)
+---@param type int
+---@param value float
+---@type fun(type:number, value:number):any
+EntityDescriptor.addMultiplyableBias = function (type, value)
 	return nil
 end
 
@@ -183,23 +224,33 @@ end
 -- @param scriptPath - The path of the script that should be added
 -- @param arguments - An arbitrary number of arguments that will be given to the 'initialize' function of the added script
 -- @return 0 on success, 1 if the entity could not be found
-function EntityDescriptor:addScript(scriptPath, arguments)
+---@param scriptPath string
+---@param arguments var...
+---@type fun(scriptPath:string, arguments:table<number,var>):any
+EntityDescriptor.addScript = function (scriptPath, arguments)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:addScriptOnce()
+---@type fun():any
+EntityDescriptor.addScriptOnce = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:addTurret(turret, position, part)
+---@param turret TurretTemplate
+---@param position Matrix
+---@param part int
+---@type fun(turret:TurretTemplate, position:Matrix, part:number):Uuid
+EntityDescriptor.addTurret = function (turret, position, part)
 	return 0
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:blockHyperspace(time)
+---@param time float
+---@type fun(time:number):any
+EntityDescriptor.blockHyperspace = function (time)
 	return nil
 end
 
@@ -207,37 +258,51 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
-function EntityDescriptor:callbacksRegistered(callbackName, functionName)
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+EntityDescriptor.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 -- Inherited from Entity
-function EntityDescriptor:canAddCrew(number, profession, change)
+---@param number int
+---@param profession int
+---@param change bool
+---@type fun(number:number, profession:number, change:boolean):any, any, table<number, string>
+EntityDescriptor.canAddCrew = function (number, profession, change)
 	return nil, nil, {0, ""}
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:changeCrew(number, profession)
+---@param number int
+---@param profession int
+---@type fun(number:number, profession:number):any
+EntityDescriptor.changeCrew = function (number, profession)
 	return nil
 end
 
 -- Adds delta to shield durability Inherited from Entity
 -- @param delta - Returns
 -- @param nothing
-function EntityDescriptor:changeShield(delta)
+---@param delta double
+---@type fun(delta:number):any
+EntityDescriptor.changeShield = function (delta)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:clearCargoBay()
+---@type fun():any
+EntityDescriptor.clearCargoBay = function ()
 	return nil
 end
 
 -- Removes all custom values of the object Inherited from Entity
 -- @return nothing
-function EntityDescriptor:clearValues()
+---@type fun():any
+EntityDescriptor.clearValues = function ()
 	return nil
 end
 
@@ -245,7 +310,13 @@ end
 -- @param delta - location
 -- @param inflictorId - Returns
 -- @param nothing
-function EntityDescriptor:damageShield(amount, location, inflictorId, damageSource, damageType)
+---@param amount double
+---@param location vec3
+---@param inflictorId Uuid
+---@param damageSource var
+---@param damageType var
+---@type fun(amount:number, location:vec3, inflictorId:Uuid, damageSource:any, damageType:any):any
+EntityDescriptor.damageShield = function (amount, location, inflictorId, damageSource, damageType)
 	return nil
 end
 
@@ -254,7 +325,11 @@ end
 -- @param damageSource - Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary. *
 -- @param damageType - Type of damage received. Damage can be of type Physical, Energy, Electric, Plasma, AntiMatter or Fragments.
 -- @return nothing
-function EntityDescriptor:destroy(inflictorId, damageSource, damageType)
+---@param inflictorId Uuid
+---@param damageSource var
+---@param damageType var
+---@type fun(inflictorId:Uuid, damageSource:any, damageType:any):any
+EntityDescriptor.destroy = function (inflictorId, damageSource, damageType)
 	return nil
 end
 
@@ -263,291 +338,367 @@ end
 -- @param inflictorId - Index of the entity that destroys the block
 -- @param damageSource - Source of damage. Can be Weaponry, Collision, Decay, Torpedo or Arbitrary.
 -- @return nothing
-function EntityDescriptor:destroyBlock(index, inflictorId, damageSource)
+---@param index int
+---@param inflictorId Uuid
+---@param damageSource var
+---@type fun(index:number, inflictorId:Uuid, damageSource:any):any
+EntityDescriptor.destroyBlock = function (index, inflictorId, damageSource)
 	return nil
 end
 
 -- Destroys cargo. The destruction distribution is generally equal over all goods. Inherited from Entity
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
-function EntityDescriptor:destroyCargo(volume)
+---@param volume float
+---@type fun(volume:number):any
+EntityDescriptor.destroyCargo = function (volume)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:distortHyperspace(time)
+---@param time float
+---@type fun(time:number):any
+EntityDescriptor.distortHyperspace = function (time)
 	return nil
 end
 
 -- Finds all cargos with the given name. Inherited from Entity
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
-function EntityDescriptor:findCargos(name)
+---@param name string
+---@type fun(name:string):table<TradingGood, number>
+EntityDescriptor.findCargos = function (name)
 	return {TradingGood(), 0}
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getAimedPositionBySeat(seat)
+---@param seat int
+---@type fun(seat:number):vec3
+EntityDescriptor.getAimedPositionBySeat = function (seat)
 	return vec3()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getAimedPositions()
+---@type fun():vec3
+EntityDescriptor.getAimedPositions = function ()
 	return vec3()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getAllowedArbitraryTurrets()
+---@type fun():any
+EntityDescriptor.getAllowedArbitraryTurrets = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getAllowedArmedTurrets()
+---@type fun():any
+EntityDescriptor.getAllowedArmedTurrets = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getAllowedUnarmedTurrets()
+---@type fun():any
+EntityDescriptor.getAllowedUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the Index of the block that the turret is build on Inherited from Entity
-function EntityDescriptor:getAttachedBlockIndex()
+---@type fun():any
+EntityDescriptor.getAttachedBlockIndex = function ()
 	return nil
 end
 
 -- Returns value with included bonus, in case a bonus exists. Returns Nil if no bonuses at all, returns value if no bonuses for this stat exist. Inherited from Entity
 -- @param type - type of bonus stat, e.g. acceleration, higher level crew
 -- @param value - the value, that might be changed by bonuses
-function EntityDescriptor:getBoostedValue(type, value)
+---@param type int
+---@param value float
+---@type fun(type:number, value:number):any
+EntityDescriptor.getBoostedValue = function (type, value)
 	return nil
 end
 
 -- Returns Bounding Box for entity, use this if you need exact Bounding Box, e.g. for collision detection when entities are close to each other. Inherited from Entity
-function EntityDescriptor:getBoundingBox()
+---@type fun():Box
+EntityDescriptor.getBoundingBox = function ()
 	return Box()
 end
 
 -- Returns Bounding Sphere for entity. Much faster than Bounding Box, but not as accurate. Use this if you need to check often. Inherited from Entity
-function EntityDescriptor:getBoundingSphere()
+---@type fun():Sphere
+EntityDescriptor.getBoundingSphere = function ()
 	return Sphere()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getCargo(n)
+---@param n unsigned
+---@type fun(n:number:unsigned):TradingGood, number
+EntityDescriptor.getCargo = function (n)
 	return TradingGood(), 0
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good. Inherited from Entity
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
-function EntityDescriptor:getCargoAmount(name)
+---@param name var
+---@type fun(name:any):any
+EntityDescriptor.getCargoAmount = function (name)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getCargos()
+---@type fun():table<TradingGood, number>
+EntityDescriptor.getCargos = function ()
 	return {TradingGood(), 0}
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getCrewMembers(profession)
+---@param profession int
+---@type fun(profession:number):any
+EntityDescriptor.getCrewMembers = function (profession)
 	return nil
 end
 
 -- Lists all players and alliances that contributed damage to the entity Inherited from Entity
 -- @return Indices of all players and alliances that contributed damage to the entity
-function EntityDescriptor:getDamageContributorPlayerFactions()
+---@type fun():number
+EntityDescriptor.getDamageContributorPlayerFactions = function ()
 	return 0
 end
 
 -- Lists all players that contributed damage to the entity Inherited from Entity
 -- @return Indices of all players that contributed damage to the entity
-function EntityDescriptor:getDamageContributorPlayers()
+---@type fun():number
+EntityDescriptor.getDamageContributorPlayers = function ()
 	return 0
 end
 
 -- Lists all factions that contributed damage to the entity Inherited from Entity
 -- @return Indices of all factions that contributed damage to the entity
-function EntityDescriptor:getDamageContributors()
+---@type fun():number
+EntityDescriptor.getDamageContributors = function ()
 	return 0
 end
 
 -- Lists all docking positions that the entity has Inherited from Entity
 -- @return A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock.
-function EntityDescriptor:getDockingPositions()
+---@type fun():vec3
+EntityDescriptor.getDockingPositions = function ()
 	return vec3()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getFreeArbitraryTurrets()
+---@type fun():any
+EntityDescriptor.getFreeArbitraryTurrets = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getFreeArmedTurrets()
+---@type fun():any
+EntityDescriptor.getFreeArmedTurrets = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getFreeUnarmedTurrets()
+---@type fun():any
+EntityDescriptor.getFreeUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts. Inherited from Entity
 -- @return A copy of the plan of the entity
-function EntityDescriptor:getFullPlanCopy()
+---@type fun():BlockPlan
+EntityDescriptor.getFullPlanCopy = function ()
 	return BlockPlan()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getLowestMineableMaterial()
+---@type fun():Material
+EntityDescriptor.getLowestMineableMaterial = function ()
 	return Material()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getMalusFactor()
+---@type fun():any, any
+EntityDescriptor.getMalusFactor = function ()
 	return nil, nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getMineableMaterial()
+---@type fun():Material
+EntityDescriptor.getMineableMaterial = function ()
 	return Material()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getMineableResources()
+---@type fun():number
+EntityDescriptor.getMineableResources = function ()
 	return 0
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks. Inherited from Entity
 -- @return The plan of the entity
-function EntityDescriptor:getMovePlan()
+---@type fun():BlockPlan
+EntityDescriptor.getMovePlan = function ()
 	return BlockPlan()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getNearestDistance(other)
+---@param other Entity
+---@type fun(other:Entity):any
+EntityDescriptor.getNearestDistance = function (other)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getNumArmedTurrets()
+---@type fun():any
+EntityDescriptor.getNumArmedTurrets = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getNumUnarmedTurrets()
+---@type fun():any
+EntityDescriptor.getNumUnarmedTurrets = function ()
 	return nil
 end
 
 -- Returns Indices of piloting players Inherited from Entity
 -- @return multiple return values: indices of players
-function EntityDescriptor:getPilotIndices()
+---@type fun():number
+EntityDescriptor.getPilotIndices = function ()
 	return 0
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getPlanMoneyValue()
+---@type fun():any
+EntityDescriptor.getPlanMoneyValue = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getPlanResourceValue()
+---@type fun():number
+EntityDescriptor.getPlanResourceValue = function ()
 	return 0.0
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getRandomDockingPosition(radius)
+---@param radius float
+---@type fun(radius:number):vec3
+EntityDescriptor.getRandomDockingPosition = function (radius)
 	return vec3()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getScripts()
+---@type fun():table<number, string>
+EntityDescriptor.getScripts = function ()
 	return {0, ""}
 end
 
 -- Retrieves the arguments to a title Inherited from Entity
-function EntityDescriptor:getTitleArguments()
+---@type fun():table<string, string>
+EntityDescriptor.getTitleArguments = function ()
 	return {"", ""}
 end
 
 -- Retrieves the title as NamedFormat Inherited from Entity
-function EntityDescriptor:getTitleFormat()
+---@type fun():NamedFormat
+EntityDescriptor.getTitleFormat = function ()
 	return NamedFormat()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurret(index)
+---@param index int
+---@type fun(index:number):Entity
+EntityDescriptor.getTurret = function (index)
 	return Entity()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurretPositions(turret, number)
+---@param turret TurretTemplate
+---@param number int
+---@type fun(turret:TurretTemplate, number:number):Matrix, number
+EntityDescriptor.getTurretPositions = function (turret, number)
 	return Matrix(), 0
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurretPositionsLineOfSight(turret, number)
+---@param turret TurretTemplate
+---@param number int
+---@type fun(turret:TurretTemplate, number:number):Matrix, number
+EntityDescriptor.getTurretPositionsLineOfSight = function (turret, number)
 	return Matrix(), 0
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurrets()
+---@type fun():Entity
+EntityDescriptor.getTurrets = function ()
 	return Entity()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurretSize()
+---@type fun():any
+EntityDescriptor.getTurretSize = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurretTemplateSize()
+---@type fun():any
+EntityDescriptor.getTurretTemplateSize = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getTurretTurningSpeed()
+---@type fun():any
+EntityDescriptor.getTurretTurningSpeed = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getUndamagedPlanMoneyValue()
+---@type fun():any
+EntityDescriptor.getUndamagedPlanMoneyValue = function ()
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getUndamagedPlanResourceValue()
+---@type fun():number
+EntityDescriptor.getUndamagedPlanResourceValue = function ()
 	return 0.0
 end
 
 -- Retrieves a custom value saved in the entity with the given key Inherited from Entity
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
-function EntityDescriptor:getValue(key)
+---@param key string
+---@type fun(key:string):any
+EntityDescriptor.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity Inherited from Entity
 -- @return A table containing all custom key-value pairs
-function EntityDescriptor:getValues()
+---@type fun():table<string, any>
+EntityDescriptor.getValues = function ()
 	return {"", nil}
 end
 
 -- Inherited from Entity
-function EntityDescriptor:getWormholeComponent()
+---@type fun():WormHole
+EntityDescriptor.getWormholeComponent = function ()
 	return WormHole()
 end
 
 -- Inherited from Entity
-function EntityDescriptor:hasComponent(type)
+---@param type int
+---@type fun(type:number):boolean
+EntityDescriptor.hasComponent = function (type)
 	return true
 end
 
 -- Inherited from Entity
-function EntityDescriptor:hasScript(name)
+---@param name string
+---@type fun(name:string):any
+EntityDescriptor.hasScript = function (name)
 	return nil
 end
 
@@ -557,19 +708,27 @@ end
 -- @param location - vector containing the hit point, if unknown/unnecessary use empty vector
 -- @param inflictorID - Index of the entity that heals
 -- @return nothing
-function EntityDescriptor:heal(damage, index, location, inflictorID)
+---@param damage float
+---@param index int
+---@param location vec3
+---@param inflictorID Uuid
+---@type fun(damage:number, index:number, location:vec3, inflictorID:Uuid):any
+EntityDescriptor.heal = function (damage, index, location, inflictorID)
 	return nil
 end
 
 -- Increases shield durability by delta Inherited from Entity
 -- @param delta - Returns
 -- @param nothing
-function EntityDescriptor:healShield(delta)
+---@param delta double
+---@type fun(delta:number):any
+EntityDescriptor.healShield = function (delta)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:hyperspaceBlocked()
+---@type fun():any
+EntityDescriptor.hyperspaceBlocked = function ()
 	return nil
 end
 
@@ -581,7 +740,14 @@ end
 -- @param location - vector containing the hit point, if unknown / unnecessary use empty vector
 -- @param inflictorId - Index of the entity that caused the damage
 -- @return nothing
-function EntityDescriptor:inflictDamage(damage, damageSource, damageType, index, location, inflictorId)
+---@param damage float
+---@param damageSource var
+---@param damageType var
+---@param index int
+---@param location vec3
+---@param inflictorId Uuid
+---@type fun(damage:number, damageSource:any, damageType:any, index:number, location:vec3, inflictorId:Uuid):any
+EntityDescriptor.inflictDamage = function (damage, damageSource, damageType, index, location, inflictorId)
 	return nil
 end
 
@@ -590,38 +756,56 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 1 The call failed because the entity with the specified index does not exist or has no Scripts component 2 The call failed because it came from another sector than the entity is in 3 The call failed because the given script was not found in the entity 4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
-function EntityDescriptor:invokeFunction(scriptName, functionName, arguments)
+---@param scriptName var
+---@param functionName string
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+EntityDescriptor.invokeFunction = function (scriptName, functionName, arguments)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:isCollectable(entity)
+---@param entity Entity
+---@type fun(entity:Entity):any
+EntityDescriptor.isCollectable = function (entity)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:isDocked(other)
+---@param other Entity
+---@type fun(other:Entity):boolean
+EntityDescriptor.isDocked = function (other)
 	return true
 end
 
 -- Inherited from Entity
-function EntityDescriptor:isInsideShield(point)
+---@param point vec3
+---@type fun(point:vec3):any
+EntityDescriptor.isInsideShield = function (point)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:isJumpRouteValid(fromX, fromY, toX, toY)
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean, any
+EntityDescriptor.isJumpRouteValid = function (fromX, fromY, toX, toY)
 	return true, nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:isManned()
+---@type fun():any
+EntityDescriptor.isManned = function ()
 	return nil
 end
 
 -- Tests if the maximum number of turrets of this kind is not reached Inherited from Entity
 -- @param ScriptTurretTemplate - the template of the turret to be placed
-function EntityDescriptor:isTurretAllowed(ScriptTurretTemplate)
+---@param ScriptTurretTemplate TurretTemplate
+---@type fun(ScriptTurretTemplate:TurretTemplate):any
+EntityDescriptor.isTurretAllowed = function (ScriptTurretTemplate)
 	return nil
 end
 
@@ -629,13 +813,18 @@ end
 -- @param x - The x-coordinates of the target sector
 -- @param y - The y-coordinates of the target sector
 -- @return Returns an error code: -1 The entity doesn't have a hyperspace drive. 0 The entity can jump. 1 The hyperspace drive needs to recharge. 2 The target sector is too far away. 3 The entity is facing the wrong direction. 4 The hyperspace drive is being jammed.
-function EntityDescriptor:jumpPossible(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):number
+EntityDescriptor.jumpPossible = function (x, y)
 	return 0
 end
 
 -- Teleports entity by vector Inherited from Entity
 -- @return nothing
-function EntityDescriptor:moveBy(delta)
+---@param delta vec3
+---@type fun(delta:vec3):any
+EntityDescriptor.moveBy = function (delta)
 	return nil
 end
 
@@ -643,14 +832,19 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
-function EntityDescriptor:registerCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+EntityDescriptor.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- Deletes bonus Inherited from Entity
 -- @param key - Location of the bonus
 -- @return nothing
-function EntityDescriptor:removeBonus(key)
+---@param key int
+---@type fun(key:number):any
+EntityDescriptor.removeBonus = function (key)
 	return nil
 end
 
@@ -658,99 +852,135 @@ end
 -- @param good - Either a TradingGood or a string with the name of a good.
 -- @param amount - The amount of cargo that should be removed. If this is more than there is on the ship, all specified cargo will be removed.
 -- @return nothing
-function EntityDescriptor:removeCargo(good, amount)
+---@param good var
+---@param amount int
+---@type fun(good:any, amount:number):any
+EntityDescriptor.removeCargo = function (good, amount)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:removeCrew(number, crewman)
+---@param number int
+---@param crewman CrewMan
+---@type fun(number:number, crewman:CrewMan):any
+EntityDescriptor.removeCrew = function (number, crewman)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:removeScript(script)
+---@param script var
+---@type fun(script:any):any
+EntityDescriptor.removeScript = function (script)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:resolveScriptPath(path)
+---@param path string
+---@type fun(path:string):any
+EntityDescriptor.resolveScriptPath = function (path)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:sendCallback()
+---@type fun():boolean
+EntityDescriptor.sendCallback = function ()
 	return true
 end
 
 -- If AccumulatingBlockHealth is true, a block needs to take as much damage as would be necessary to destroy all his children before it itself is destroyed. If it is set to false, the entity's blocks will have only their own durability. Set it to false if you want your entity to easily break apart, e.g. for wreckages. Inherited from Entity
 -- @param bool - Returns
 -- @param nothing
-function EntityDescriptor:setAccumulatingBlockHealth(bool)
+---@param bool bool
+---@type fun(bool:boolean):any
+EntityDescriptor.setAccumulatingBlockHealth = function (bool)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setAimedPosition(seat, _in)
+---@param seat int
+---@param in vec3
+---@type fun(seat:number, in:vec3):any
+EntityDescriptor.setAimedPosition = function (seat, _in)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setAttachedBlockIndex(_in)
+---@param in int
+---@type fun(in:number):any
+EntityDescriptor.setAttachedBlockIndex = function (_in)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setMalusFactor(_in, reason)
+---@param in float
+---@param reason int
+---@type fun(in:number, reason:number):any
+EntityDescriptor.setMalusFactor = function (_in, reason)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setManned(_in)
+---@param in bool
+---@type fun(in:boolean):any
+EntityDescriptor.setManned = function (_in)
 	return nil
 end
 
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This moves all the data out of the plan that is used as the first argument. The content of the plan given as argument is then undefined, but still valid. It might be empty, it might contain the previous plan. This operation is independent of the size of the plan, use it when you have to set large plans with lots of blocks. Inherited from Entity
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
-function EntityDescriptor:setMovePlan(plan)
+---@param plan BlockPlan
+---@type fun(plan:BlockPlan):any
+EntityDescriptor.setMovePlan = function (plan)
 	return nil
 end
 
 -- Set the new plan of the entity. The entity will get deleted if the plan is empty. This copies the entire plan that is given as argument, keep that in mind when setting plans with large block counts. Inherited from Entity
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
-function EntityDescriptor:setPlan(plan)
+---@param plan BlockPlan
+---@type fun(plan:BlockPlan):any
+EntityDescriptor.setPlan = function (plan)
 	return nil
 end
 
 -- Sets the title that can be used as title in menus Inherited from Entity
 -- @param title - a string that will be used as title, can be a format string for easier translation.
-function EntityDescriptor:setTitle(title, arguments)
+---@param title string
+---@param arguments string_pair...
+---@type fun(title:string, arguments:table<number,string_pair>):any
+EntityDescriptor.setTitle = function (title, arguments)
 	return nil
 end
 
 -- Sets the arguments to a title Inherited from Entity
 -- @param arguments - Set the string arguments as vector of string_pair.
 -- @return nothing
-function EntityDescriptor:setTitleArguments(arguments)
+---@param arguments string_pair...
+---@type fun(arguments:table<number,string_pair>):any
+EntityDescriptor.setTitleArguments = function (arguments)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setTurretSize(_in)
+---@param in float
+---@type fun(in:number):any
+EntityDescriptor.setTurretSize = function (_in)
 	return nil
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:setTurretTurningSpeed(_in)
+---@param in float
+---@type fun(in:number):any
+EntityDescriptor.setTurretTurningSpeed = function (_in)
 	return nil
 end
 
@@ -758,25 +988,35 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
-function EntityDescriptor:setValue(key, value)
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+EntityDescriptor.setValue = function (key, value)
 	return nil
 end
 
 -- Tells the ship to fly to given location, directly and without pathfinding. Inherited from Entity
 -- @param location - the location to fly to (in global coordinates) Paired with setting desiredVelocity to 0, this can be used to rotate the ship to a given direction.
 -- @return nothing
-function EntityDescriptor:singleFlyToLocationTick(location)
+---@param location vec3
+---@type fun(location:vec3):any
+EntityDescriptor.singleFlyToLocationTick = function (location)
 	return nil
 end
 
 -- Inherited from Entity
-function EntityDescriptor:unregisterCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+EntityDescriptor.unregisterCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- Inherited from Entity
 -- @return nothing
-function EntityDescriptor:waitUntilAsyncWorkFinished(time)
+---@param time var
+---@type fun(time:any):any
+EntityDescriptor.waitUntilAsyncWorkFinished = function (time)
 	return nil
 end
 

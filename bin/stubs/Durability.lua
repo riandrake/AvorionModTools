@@ -16,32 +16,46 @@ Durability = {
 
 setmetatable(Durability, {__call = function(self, id) return Durability end})
 
-function Durability:getWeakness()
+---@type fun():any, any
+Durability.getWeakness = function ()
 	return nil, nil
 end
 
 -- @return nothing
-function Durability:healDamage(amount, inflictorId)
+---@param amount double
+---@param inflictorId Uuid
+---@type fun(amount:number, inflictorId:Uuid):any
+Durability.healDamage = function (amount, inflictorId)
 	return nil
 end
 
 -- @return nothing
-function Durability:inflictDamage(amount, damageSource, damageType, inflictorId)
+---@param amount double
+---@param damageSource DamageSource
+---@param damageType DamageType
+---@param inflictorId Uuid
+---@type fun(amount:number, damageSource:DamageSource, damageType:DamageType, inflictorId:Uuid):any
+Durability.inflictDamage = function (amount, damageSource, damageType, inflictorId)
 	return nil
 end
 
 -- @return nothing
-function Durability:resetMalus()
+---@type fun():any
+Durability.resetMalus = function ()
 	return nil
 end
 
 -- @return nothing
-function Durability:resetWeakness()
+---@type fun():any
+Durability.resetWeakness = function ()
 	return nil
 end
 
 -- @return nothing
-function Durability:setWeakness(damageType, factor)
+---@param damageType DamageType
+---@param factor float
+---@type fun(damageType:DamageType, factor:number):any
+Durability.setWeakness = function (damageType, factor)
 	return nil
 end
 

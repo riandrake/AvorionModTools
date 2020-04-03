@@ -33,19 +33,26 @@ BlockStatistics = {
 
 setmetatable(BlockStatistics, {__call = function(self) return BlockStatistics end})
 
-function BlockStatistics:getBlockEnergyDrain(blockIndex)
+---@param blockIndex int
+---@type fun(blockIndex:number):number
+BlockStatistics.getBlockEnergyDrain = function (blockIndex)
 	return 0.0
 end
 
-function BlockStatistics:getBlockNumber(blockIndex)
+---@param blockIndex int
+---@type fun(blockIndex:number):number
+BlockStatistics.getBlockNumber = function (blockIndex)
 	return 0
 end
 
-function BlockStatistics:getBlockVolume(blockIndex)
+---@param blockIndex int
+---@type fun(blockIndex:number):number
+BlockStatistics.getBlockVolume = function (blockIndex)
 	return 0.0
 end
 
-function BlockStatistics:getTotalEnergyDrain()
+---@type fun():number
+BlockStatistics.getTotalEnergyDrain = function ()
 	return 0.0
 end
 

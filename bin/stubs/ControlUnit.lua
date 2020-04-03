@@ -18,161 +18,238 @@ ControlUnit = {
 setmetatable(ControlUnit, {__call = function(self, id) return ControlUnit end})
 
 -- @return nothing
-function ControlUnit:addSeat()
+---@type fun():any
+ControlUnit.addSeat = function ()
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:addSeatSquad(seatIndex, squad)
+---@param seatIndex int
+---@param squad int
+---@type fun(seatIndex:number, squad:number):any
+ControlUnit.addSeatSquad = function (seatIndex, squad)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:addSeatWeaponGroup(seatIndex, weaponGroup)
+---@param seatIndex int
+---@param weaponGroup int
+---@type fun(seatIndex:number, weaponGroup:number):any
+ControlUnit.addSeatWeaponGroup = function (seatIndex, weaponGroup)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:driftToLocation(location)
+---@param location vec3
+---@type fun(location:vec3):any
+ControlUnit.driftToLocation = function (location)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:flyToLocation(location, targetVelocity)
+---@param location vec3
+---@param targetVelocity float
+---@type fun(location:vec3, targetVelocity:number):any
+ControlUnit.flyToLocation = function (location, targetVelocity)
 	return nil
 end
 
-function ControlUnit:getActiveWeapons()
+---@type fun()
+ControlUnit.getActiveWeapons = function ()
 	return 
 end
 
-function ControlUnit:getAimedPositionBySeat(seatIndex)
+---@param seatIndex int
+---@type fun(seatIndex:number):vec3
+ControlUnit.getAimedPositionBySeat = function (seatIndex)
 	return vec3()
 end
 
-function ControlUnit:getAimedPositionByWeaponGroup(weaponGroup)
+---@param weaponGroup int
+---@type fun(weaponGroup:number):vec3
+ControlUnit.getAimedPositionByWeaponGroup = function (weaponGroup)
 	return vec3()
 end
 
-function ControlUnit:getAimedPositions()
+---@type fun():vec3
+ControlUnit.getAimedPositions = function ()
 	return vec3()
 end
 
-function ControlUnit:getAllControlActions()
+---@type fun():number
+ControlUnit.getAllControlActions = function ()
 	return 0
 end
 
-function ControlUnit:getControlActions(seat)
+---@param seat int
+---@type fun(seat:number):number
+ControlUnit.getControlActions = function (seat)
 	return 0
 end
 
-function ControlUnit:getControlActionsByWeaponGroup(weaponGroup)
+---@param weaponGroup int
+---@type fun(weaponGroup:number):number
+ControlUnit.getControlActionsByWeaponGroup = function (weaponGroup)
 	return 0
 end
 
-function ControlUnit:getFlownToLocation()
+---@type fun():vec3
+ControlUnit.getFlownToLocation = function ()
 	return vec3()
 end
 
-function ControlUnit:getRotationFactor(dot, cross)
+---@param dot float
+---@param cross float
+---@type fun(dot:number, cross:number):number
+ControlUnit.getRotationFactor = function (dot, cross)
 	return 0.0
 end
 
-function ControlUnit:getSeatByWeaponGroup(weaponGroup)
+---@param weaponGroup int
+---@type fun(weaponGroup:number):number
+ControlUnit.getSeatByWeaponGroup = function (weaponGroup)
 	return 0
 end
 
-function ControlUnit:getSeats()
+---@type fun():ControlUnitSeat
+ControlUnit.getSeats = function ()
 	return ControlUnitSeat()
 end
 
-function ControlUnit:getSelectedObject(seat)
+---@param seat int
+---@type fun(seat:number):Entity
+ControlUnit.getSelectedObject = function (seat)
 	return Entity()
 end
 
-function ControlUnit:getSelectedObjectId(seat)
+---@param seat int
+---@type fun(seat:number):Uuid
+ControlUnit.getSelectedObjectId = function (seat)
 	return 0
 end
 
-function ControlUnit:getSelectedObjectIds()
+---@type fun():Uuid
+ControlUnit.getSelectedObjectIds = function ()
 	return 0
 end
 
-function ControlUnit:isFiring(seat)
+---@param seat int
+---@type fun(seat:number):boolean
+ControlUnit.isFiring = function (seat)
 	return true
 end
 
-function ControlUnit:isFiringTorpedoes(seat)
+---@param seat int
+---@type fun(seat:number):boolean
+ControlUnit.isFiringTorpedoes = function (seat)
 	return true
 end
 
-function ControlUnit:isPlayerAPilot(playerIndex)
+---@param playerIndex int
+---@type fun(playerIndex:number):boolean
+ControlUnit.isPlayerAPilot = function (playerIndex)
 	return true
 end
 
-function ControlUnit:mayControlSquad(playerIndex, squad)
+---@param playerIndex int
+---@param squad int
+---@type fun(playerIndex:number, squad:number):boolean
+ControlUnit.mayControlSquad = function (playerIndex, squad)
 	return true
 end
 
-function ControlUnit:mayControlWeaponGroup(playerIndex, group)
+---@param playerIndex int
+---@param group int
+---@type fun(playerIndex:number, group:number):boolean
+ControlUnit.mayControlWeaponGroup = function (playerIndex, group)
 	return true
 end
 
-function ControlUnit:maySteer(playerIndex)
-	return true
-end
-
--- @return nothing
-function ControlUnit:removeSeat(seat)
-	return nil
-end
-
-function ControlUnit:rotatingNecessary(brake, axis, from, to)
+---@param playerIndex int
+---@type fun(playerIndex:number):boolean
+ControlUnit.maySteer = function (playerIndex)
 	return true
 end
 
 -- @return nothing
-function ControlUnit:setAimedPosition(_in, seat)
+---@param seat int
+---@type fun(seat:number):any
+ControlUnit.removeSeat = function (seat)
+	return nil
+end
+
+---@param brake float
+---@param axis vec3
+---@param from vec3
+---@param to vec3
+---@type fun(brake:number, axis:vec3, from:vec3, to:vec3):boolean
+ControlUnit.rotatingNecessary = function (brake, axis, from, to)
+	return true
+end
+
+-- @return nothing
+---@param in vec3
+---@param seat int
+---@type fun(in:vec3, seat:number):any
+ControlUnit.setAimedPosition = function (_in, seat)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setControlActions(_in, seat)
+---@param in int
+---@param seat int
+---@type fun(in:number, seat:number):any
+ControlUnit.setControlActions = function (_in, seat)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setDesiredVelocity(_in)
+---@param in float
+---@type fun(in:number):any
+ControlUnit.setDesiredVelocity = function (_in)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setKeyDownMask(mask, seat)
+---@param mask int
+---@param seat int
+---@type fun(mask:number, seat:number):any
+ControlUnit.setKeyDownMask = function (mask, seat)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setKeyUpMask(mask, seat)
+---@param mask int
+---@param seat int
+---@type fun(mask:number, seat:number):any
+ControlUnit.setKeyUpMask = function (mask, seat)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setSelectedObjectId(_in, seat)
+---@param in Uuid
+---@param seat int
+---@type fun(in:Uuid, seat:number):any
+ControlUnit.setSelectedObjectId = function (_in, seat)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:setTurningSpeedFactor(_in)
+---@param in vec3
+---@type fun(in:vec3):any
+ControlUnit.setTurningSpeedFactor = function (_in)
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:stopShip()
+---@type fun():any
+ControlUnit.stopShip = function ()
 	return nil
 end
 
 -- @return nothing
-function ControlUnit:stopSteering()
+---@type fun():any
+ControlUnit.stopSteering = function ()
 	return nil
 end
 

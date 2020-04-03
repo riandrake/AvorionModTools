@@ -8,43 +8,60 @@ CraftDesign = {
 
 setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
 
-function CraftDesign:getMovePlan()
+---@type fun():BlockPlan
+CraftDesign.getMovePlan = function ()
 	return BlockPlan()
 end
 
-function CraftDesign:getMoveTurret(i)
+---@param i int
+---@type fun(i:number):TurretDesign
+CraftDesign.getMoveTurret = function (i)
 	return TurretDesign()
 end
 
-function CraftDesign:getPlan()
+---@type fun():BlockPlan
+CraftDesign.getPlan = function ()
 	return BlockPlan()
 end
 
-function CraftDesign:getTurret(i)
+---@param i int
+---@type fun(i:number):TurretDesign
+CraftDesign.getTurret = function (i)
 	return TurretDesign()
 end
 
-function CraftDesign:getTurrets()
+---@type fun():number
+CraftDesign.getTurrets = function ()
 	return 0
 end
 
 -- @return nothing
-function CraftDesign:setMovePlan(plan)
+---@param plan BlockPlan
+---@type fun(plan:BlockPlan):any
+CraftDesign.setMovePlan = function (plan)
 	return nil
 end
 
 -- @return nothing
-function CraftDesign:setMoveTurret(i, turret)
+---@param i int
+---@param turret TurretDesign
+---@type fun(i:number, turret:TurretDesign):any
+CraftDesign.setMoveTurret = function (i, turret)
 	return nil
 end
 
 -- @return nothing
-function CraftDesign:setPlan(plan)
+---@param plan BlockPlan
+---@type fun(plan:BlockPlan):any
+CraftDesign.setPlan = function (plan)
 	return nil
 end
 
 -- @return nothing
-function CraftDesign:setTurret(i, turret)
+---@param i int
+---@param turret TurretDesign
+---@type fun(i:number, turret:nil]:[or:TurretDesign):any
+CraftDesign.setTurret = function (i, turret)
 	return nil
 end
 

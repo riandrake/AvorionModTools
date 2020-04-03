@@ -31,7 +31,10 @@ Server = {
 setmetatable(Server, {__call = function(self) return Server end})
 
 -- @return nothing
-function Server:addChatCommand(sender, command)
+---@param sender Player
+---@param command string
+---@type fun(sender:Player, command:string):any
+Server.addChatCommand = function (sender, command)
 	return nil
 end
 
@@ -41,7 +44,12 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
-function Server:broadcastChatMessage(sender, messageType, message, args)
+---@param sender var
+---@param messageType int
+---@param message string
+---@param args PluralForm...
+---@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
+Server.broadcastChatMessage = function (sender, messageType, message, args)
 	return nil
 end
 
@@ -49,48 +57,63 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback. -1 if an error occurred.
-function Server:callbacksRegistered(callbackName, functionName)
+---@param callbackName string
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Server.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
-function Server:getBlackList()
+---@type fun():string
+Server.getBlackList = function ()
 	return ""
 end
 
-function Server:getIpBlackList()
+---@type fun():string
+Server.getIpBlackList = function ()
 	return ""
 end
 
-function Server:getOnlinePlayers()
+---@type fun():Player
+Server.getOnlinePlayers = function ()
 	return Player()
 end
 
-function Server:getPlayers()
+---@type fun():Player
+Server.getPlayers = function ()
 	return Player()
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
-function Server:getValue(key)
+---@param key string
+---@type fun(key:string):any
+Server.getValue = function (key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
-function Server:getValues()
+---@type fun():table<string, any>
+Server.getValues = function ()
 	return {"", nil}
 end
 
-function Server:getWhiteList()
+---@type fun():string
+Server.getWhiteList = function ()
 	return ""
 end
 
-function Server:hasAdminPrivileges(player)
+---@param player Player
+---@type fun(player:Player):boolean
+Server.hasAdminPrivileges = function (player)
 	return true
 end
 
-function Server:isOnline(playerIndex)
+---@param playerIndex int
+---@type fun(playerIndex:number):boolean
+Server.isOnline = function (playerIndex)
 	return true
 end
 
@@ -98,32 +121,43 @@ end
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens
 -- @return 0 on success, 1 if the registration failed
-function Server:registerCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Server.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
-function Server:removeBlacklistedIp(ip)
+---@param ip string
+---@type fun(ip:string):any
+Server.removeBlacklistedIp = function (ip)
 	return nil
 end
 
 -- @return nothing
-function Server:removeBlacklistedName(name)
+---@param name string
+---@type fun(name:string):any
+Server.removeBlacklistedName = function (name)
 	return nil
 end
 
 -- @return nothing
-function Server:removeWhitelistedName(name)
+---@param name string
+---@type fun(name:string):any
+Server.removeWhitelistedName = function (name)
 	return nil
 end
 
 -- @return nothing
-function Server:save()
+---@type fun():any
+Server.save = function ()
 	return nil
 end
 
 -- @return nothing
-function Server:sendCallback()
+---@type fun():any
+Server.sendCallback = function ()
 	return nil
 end
 
@@ -131,16 +165,23 @@ end
 -- @param key - A string that serves as the name of the value
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
-function Server:setValue(key, value)
+---@param key string
+---@param value var
+---@type fun(key:string, value:any):any
+Server.setValue = function (key, value)
 	return nil
 end
 
 -- @return nothing
-function Server:stop()
+---@type fun():any
+Server.stop = function ()
 	return nil
 end
 
-function Server:unregisterCallback(callbackName, functionName)
+---@param callbackName string
+---@param functionName string
+---@type fun(callbackName:string, functionName:string):number
+Server.unregisterCallback = function (callbackName, functionName)
 	return 0
 end
 

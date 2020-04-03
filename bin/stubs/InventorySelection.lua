@@ -49,241 +49,354 @@ InventorySelection = {
 setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
 
 -- @return nothing
-function InventorySelection:add(item, pos)
+---@param item var
+---@param pos var
+---@type fun(item:any, pos:any):any
+InventorySelection.add = function (item, pos)
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:addEmpty(pos)
+---@param pos var
+---@type fun(pos:any):any
+InventorySelection.addEmpty = function (pos)
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:clear()
+---@type fun():any
+InventorySelection.clear = function ()
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:fill()
+---@type fun():any
+InventorySelection.fill = function ()
 	return nil
 end
 
-function InventorySelection:getItem(key)
+---@param key ivec2
+---@type fun(key:ivec2):UserObject
+InventorySelection.getItem = function (key)
 	return UserObject()
 end
 
-function InventorySelection:getItems()
+---@type fun():table<ivec2, UserObject>
+InventorySelection.getItems = function ()
 	return {ivec2(), UserObject()}
 end
 
-function InventorySelection:getMouseOveredKey()
+---@type fun():ivec2
+InventorySelection.getMouseOveredKey = function ()
 	return ivec2()
 end
 
-function InventorySelection:getRect(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):number, Rect
+InventorySelection.getRect = function (x, y)
 	return 0, Rect()
 end
 
 -- @return nothing
-function InventorySelection:remove(key)
+---@param key ivec2
+---@type fun(key:ivec2):any
+InventorySelection.remove = function (key)
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:select(pos)
+---@param pos ivec2
+---@type fun(pos:ivec2):any
+InventorySelection.select = function (pos)
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:selectNoCallback(pos)
+---@param pos ivec2
+---@type fun(pos:ivec2):any
+InventorySelection.selectNoCallback = function (pos)
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:unselect()
+---@type fun():any
+InventorySelection.unselect = function ()
 	return nil
 end
 
 -- @return nothing
-function InventorySelection:update(factionIndex, index)
+---@param factionIndex int
+---@param index unsigned
+---@type fun(factionIndex:number, index:number:unsigned):any
+InventorySelection.update = function (factionIndex, index)
 	return nil
 end
 
 -- Inherited from UIContainer
 -- @return nothing
-function InventorySelection:clear()
+---@type fun():any
+InventorySelection.clear = function ()
 	return nil
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createArrowLine()
+---@type fun():ArrowLine
+InventorySelection.createArrowLine = function ()
 	return ArrowLine()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createButton(rect, caption, _function)
+---@param rect Rect
+---@param caption string
+---@param function string
+---@type fun(rect:Rect, caption:string, function:string):Button
+InventorySelection.createButton = function (rect, caption, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createCheckBox(rect, caption, onCheckedFunction)
+---@param rect Rect
+---@param caption string
+---@param onCheckedFunction string
+---@type fun(rect:Rect, caption:string, onCheckedFunction:string):CheckBox
+InventorySelection.createCheckBox = function (rect, caption, onCheckedFunction)
 	return CheckBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createComboBox(rect, onSelectedFunction)
+---@param rect Rect
+---@param onSelectedFunction string
+---@type fun(rect:Rect, onSelectedFunction:string):ComboBox
+InventorySelection.createComboBox = function (rect, onSelectedFunction)
 	return ComboBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createContainer(rect)
+---@param rect Rect
+---@type fun(rect:Rect):UIContainer
+InventorySelection.createContainer = function (rect)
 	return UIContainer()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createCraftPortrait(rect)
+---@param rect Rect
+---@type fun(rect:Rect):CraftPortrait
+InventorySelection.createCraftPortrait = function (rect)
 	return CraftPortrait()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createFrame(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Frame
+InventorySelection.createFrame = function (rect)
 	return Frame()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createInputWindow()
+---@type fun():InputWindow
+InventorySelection.createInputWindow = function ()
 	return InputWindow()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createInventorySelection(rect, width)
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):InventorySelection
+InventorySelection.createInventorySelection = function (rect, width)
 	return InventorySelection()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createLabel(position, caption, fontSize)
+---@param position var
+---@param caption string
+---@param fontSize int
+---@type fun(position:any, caption:string, fontSize:number):Label
+InventorySelection.createLabel = function (position, caption, fontSize)
 	return Label()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createLine(a, b)
+---@param a vec2
+---@param b vec2
+---@type fun(a:vec2, b:vec2):Line
+InventorySelection.createLine = function (a, b)
 	return Line()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createListBox(rect)
+---@param rect Rect
+---@type fun(rect:Rect):ListBox
+InventorySelection.createListBox = function (rect)
 	return ListBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createListBoxEx(rect)
+---@param rect Rect
+---@type fun(rect:Rect):ListBoxEx
+InventorySelection.createListBoxEx = function (rect)
 	return ListBoxEx()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createMapArrowLine()
+---@type fun():MapArrowLine
+InventorySelection.createMapArrowLine = function ()
 	return MapArrowLine()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createMultiLineTextBox(rect)
+---@param rect Rect
+---@type fun(rect:Rect):MultiLineTextBox
+InventorySelection.createMultiLineTextBox = function (rect)
 	return MultiLineTextBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createNumbersBar(rect)
+---@param rect Rect
+---@type fun(rect:Rect):NumbersBar
+InventorySelection.createNumbersBar = function (rect)
 	return NumbersBar()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createPicture(rect, path)
+---@param rect Rect
+---@param path string
+---@type fun(rect:Rect, path:string):Picture
+InventorySelection.createPicture = function (rect, path)
 	return Picture()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createPlanDisplayer(rect)
+---@param rect Rect
+---@type fun(rect:Rect):PlanDisplayer
+InventorySelection.createPlanDisplayer = function (rect)
 	return PlanDisplayer()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createProgressBar(rect, color)
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):ProgressBar
+InventorySelection.createProgressBar = function (rect, color)
 	return ProgressBar()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createRect(rect, color)
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):UIRect
+InventorySelection.createRect = function (rect, color)
 	return UIRect()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createRoundButton(rect, icon, _function)
+---@param rect Rect
+---@param icon string
+---@param function string
+---@type fun(rect:Rect, icon:string, function:string):Button
+InventorySelection.createRoundButton = function (rect, icon, _function)
 	return Button()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createSavedDesignsSelection(rect, width)
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):SavedDesignsSelection
+InventorySelection.createSavedDesignsSelection = function (rect, width)
 	return SavedDesignsSelection()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createScrollFrame(rect)
+---@param rect Rect
+---@type fun(rect:Rect):ScrollFrame
+InventorySelection.createScrollFrame = function (rect)
 	return ScrollFrame()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createSelection(rect, width)
+---@param rect Rect
+---@param width int
+---@type fun(rect:Rect, width:number):Selection
+InventorySelection.createSelection = function (rect, width)
 	return Selection()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createSlider(rect, min, max, steps, caption, onValueChangedFunction)
+---@param rect Rect
+---@param min int
+---@param max int
+---@param steps int
+---@param caption string
+---@param onValueChangedFunction string
+---@type fun(rect:Rect, min:number, max:number, steps:number, caption:string, onValueChangedFunction:string):Slider
+InventorySelection.createSlider = function (rect, min, max, steps, caption, onValueChangedFunction)
 	return Slider()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createStatisticsBar(rect, color)
+---@param rect Rect
+---@param color Color
+---@type fun(rect:Rect, color:Color):StatisticsBar
+InventorySelection.createStatisticsBar = function (rect, color)
 	return StatisticsBar()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createTabbedWindow(rect)
+---@param rect Rect
+---@type fun(rect:Rect):TabbedWindow
+InventorySelection.createTabbedWindow = function (rect)
 	return TabbedWindow()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createTextBox(rect, onTextChangedFunction)
+---@param rect Rect
+---@param onTextChangedFunction string
+---@type fun(rect:Rect, onTextChangedFunction:string):TextBox
+InventorySelection.createTextBox = function (rect, onTextChangedFunction)
 	return TextBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createTextField(rect, text)
+---@param rect Rect
+---@param text string
+---@type fun(rect:Rect, text:string):TextField
+InventorySelection.createTextField = function (rect, text)
 	return TextField()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createTree(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Tree
+InventorySelection.createTree = function (rect)
 	return Tree()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createValueComboBox(rect, onSelectedFunction)
+---@param rect Rect
+---@param onSelectedFunction string
+---@type fun(rect:Rect, onSelectedFunction:string):ValueComboBox
+InventorySelection.createValueComboBox = function (rect, onSelectedFunction)
 	return ValueComboBox()
 end
 
 -- Inherited from UIContainer
-function InventorySelection:createWindow(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Window
+InventorySelection.createWindow = function (rect)
 	return Window()
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function InventorySelection:hide()
+---@type fun():any
+InventorySelection.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function InventorySelection:show()
+---@type fun():any
+InventorySelection.show = function ()
 	return nil
 end
 

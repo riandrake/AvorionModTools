@@ -15,33 +15,43 @@ Mail = {
 setmetatable(Mail, {__call = function(self) return Mail end})
 
 -- @return nothing
-function Mail:addTurret(turret)
+---@param turret TurretTemplate
+---@type fun(turret:TurretTemplate):any
+Mail.addTurret = function (turret)
 	return nil
 end
 
-function Mail:getItem(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):UserObject
+Mail.getItem = function (index)
 	return UserObject()
 end
 
-function Mail:getNumItems()
+---@type fun():number
+Mail.getNumItems = function ()
 	return 0
 end
 
-function Mail:getResources()
+---@type fun():number
+Mail.getResources = function ()
 	return 0
 end
 
-function Mail:hasAttachments()
+---@type fun():boolean
+Mail.hasAttachments = function ()
 	return true
 end
 
 -- @return nothing
-function Mail:removeItem(index)
+---@param index unsigned
+---@type fun(index:number:unsigned):any
+Mail.removeItem = function (index)
 	return nil
 end
 
 -- @return nothing
-function Mail:setResources()
+---@type fun():any
+Mail.setResources = function ()
 	return nil
 end
 

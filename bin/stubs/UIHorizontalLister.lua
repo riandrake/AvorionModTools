@@ -21,165 +21,212 @@ setmetatable(UIHorizontalLister, {__call = function(self, rect, padding, margin)
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getBottomLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getBottomLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
-function UIHorizontalLister:getBottomRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):Rect
+UIHorizontalLister.getBottomRect = function (rect)
 	return Rect()
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getBottomRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getBottomRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getCenterRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getCenterRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getRightRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getTopLeftRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getTopLeftRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getTopRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getTopRect = function (rect)
 	return nil
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
-function UIHorizontalLister:getTopRightRect(rect)
+---@param rect Rect
+---@type fun(rect:Rect):any
+UIHorizontalLister.getTopRightRect = function (rect)
 	return nil
 end
 
 -- Checks if there is enough space to fit a rect with the given height into the lister's remaining rect
 -- @param vec - The size of the rect to test for
 -- @return true if there's enough space, false if not
-function UIHorizontalLister:hasEnoughSpace(vec)
+---@param vec float
+---@type fun(vec:number):any
+UIHorizontalLister.hasEnoughSpace = function (vec)
 	return nil
 end
 
-function UIHorizontalLister:nextQuadraticRect()
+---@type fun():Rect
+UIHorizontalLister.nextQuadraticRect = function ()
 	return Rect()
 end
 
 -- Returns the next rect of a certain height that would be created. The rect will have the full width of the rect given to the lister.
 -- @param height - The height of the rect
 -- @return The Rect
-function UIHorizontalLister:nextRect(height)
+---@param height float
+---@type fun(height:number):Rect
+UIHorizontalLister.nextRect = function (height)
 	return Rect()
 end
 
 -- Uses the given vector to create a Rect of size Rect(0, 0, vec.x, vec.y), places it in the list and aligns it to the right
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
-function UIHorizontalLister:placeBottom(vec)
+---@param vec vec2
+---@type fun(vec:vec2):UIElement
+UIHorizontalLister.placeBottom = function (vec)
 	return UIElement()
 end
 
 -- Uses the given vector to create a Rect of size Rect(0, 0, vec.x, vec.y), places it in the list and centers it
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
-function UIHorizontalLister:placeCenter(vec)
+---@param vec vec2
+---@type fun(vec:vec2):UIElement
+UIHorizontalLister.placeCenter = function (vec)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementBottom(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementBottom = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementBottomLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementBottomLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementBottomRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementBottomRight = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementCenter(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementCenter = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementRight = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementTop(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementTop = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementTopLeft(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementTopLeft = function (element)
 	return UIElement()
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
-function UIHorizontalLister:placeElementTopRight(element)
+---@param element UIElement
+---@type fun(element:UIElement):UIElement
+UIHorizontalLister.placeElementTopRight = function (element)
 	return UIElement()
 end
 
 -- Uses the given vector to create a Rect of size Rect(0, 0, vec.x, vec.y), places it in the list and aligns it to the left
 -- @param vec - The given size of the rect to align
 -- @return The aligned rect
-function UIHorizontalLister:placeTop(vec)
+---@param vec vec2
+---@type fun(vec:vec2):UIElement
+UIHorizontalLister.placeTop = function (vec)
 	return UIElement()
 end
 
@@ -188,7 +235,12 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
-function UIHorizontalLister:setMargin(left, right, top, bottom)
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIHorizontalLister.setMargin = function (left, right, top, bottom)
 	return nil
 end
 
@@ -197,7 +249,12 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
-function UIHorizontalLister:setPadding(left, right, top, bottom)
+---@param left int
+---@param right int
+---@param top int
+---@param bottom int
+---@type fun(left:number, right:number, top:number, bottom:number):any
+UIHorizontalLister.setPadding = function (left, right, top, bottom)
 	return nil
 end
 

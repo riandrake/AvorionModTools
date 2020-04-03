@@ -12,15 +12,20 @@ Version = {
 
 setmetatable(Version, {__call = function(self, majorVersion, minorVersion, patch) return Version end})
 
-function Version:__eq(other)
+---@param other Version
+---@type fun(other:Version):boolean
+Version.__eq = function (other)
 	return true
 end
 
-function Version:__lt(other)
+---@param other Version
+---@type fun(other:Version):boolean
+Version.__lt = function (other)
 	return true
 end
 
-function Version:__tostring()
+---@type fun():string
+Version.__tostring = function ()
 	return ""
 end
 

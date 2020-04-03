@@ -13,7 +13,9 @@ Owner = {
 
 setmetatable(Owner, {__call = function(self, id) return Owner end})
 
-function Owner:getRelationValue(otherFactionIndex)
+---@param otherFactionIndex int
+---@type fun(otherFactionIndex:number):number
+Owner.getRelationValue = function (otherFactionIndex)
 	return 0
 end
 

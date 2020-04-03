@@ -30,19 +30,24 @@ PlanDisplayer = {
 setmetatable(PlanDisplayer, {__call = function(self, index) return PlanDisplayer end})
 
 -- @return nothing
-function PlanDisplayer:setPlans(broken, intact)
+---@param broken BlockPlan
+---@param intact BlockPlan
+---@type fun(broken:BlockPlan, intact:BlockPlan):any
+PlanDisplayer.setPlans = function (broken, intact)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function PlanDisplayer:hide()
+---@type fun():any
+PlanDisplayer.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function PlanDisplayer:show()
+---@type fun():any
+PlanDisplayer.show = function ()
 	return nil
 end
 

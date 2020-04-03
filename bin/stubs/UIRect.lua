@@ -25,13 +25,15 @@ setmetatable(UIRect, {__call = function(self, index) return UIRect end})
 
 -- Inherited from UIElement
 -- @return nothing
-function UIRect:hide()
+---@type fun():any
+UIRect.hide = function ()
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
-function UIRect:show()
+---@type fun():any
+UIRect.show = function ()
 	return nil
 end
 

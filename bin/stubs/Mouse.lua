@@ -7,15 +7,21 @@ Mouse = {
 
 setmetatable(Mouse, {__call = function(self) return Mouse end})
 
-function Mouse:mouseDown(button)
+---@param button int
+---@type fun(button:number):boolean
+Mouse.mouseDown = function (button)
 	return true
 end
 
-function Mouse:mousePressed(button)
+---@param button int
+---@type fun(button:number):boolean
+Mouse.mousePressed = function (button)
 	return true
 end
 
-function Mouse:mouseUp(button)
+---@param button int
+---@type fun(button:number):boolean
+Mouse.mouseUp = function (button)
 	return true
 end
 
