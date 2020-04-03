@@ -345,10 +345,12 @@ class StubGenerator:
 
                 for function in functions[1:]:
                     writer.write(function.remarks)
+                    writer.write(function.params)
                     writer.write(function.definition)
             else:
                 for function in functions:
                     writer.write(function.remarks)
+                    writer.write(function.params)
                     writer.write(function.definition)
 
         
