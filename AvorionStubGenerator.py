@@ -21,10 +21,8 @@ BIN_DIR = Path('bin')
 HTML_DIR = BIN_DIR / 'html'
 STUBS_DIR = BIN_DIR / 'stubs'
 
-
 if not STUBS_DIR.exists():
     STUBS_DIR.mkdir()
-
 
 DEFAULT_VALUES_BY_TYPE = {
     '': 'nil',
@@ -69,21 +67,21 @@ def split_careful(s, split=','):
     :param split: input split string
     :return: a comma-delimited argument list, with exceptions for commas found within brackets
     """
-     parts = []
-     bracket_level = 0
-     current = []
-     # trick to remove special-case of trailing chars
-     for c in (s + split):
-         if c == split and bracket_level == 0:
-             parts.append("".join(current))
-             current = []
-         else:
-             if c == "{":
-                 bracket_level += 1
-             elif c == "}":
-                 bracket_level -= 1
-             current.append(c)
-     return parts
+    parts = []
+    bracket_level = 0
+    current = []
+    # trick to remove special-case of trailing chars
+    for c in (s + split):
+        if c == split and bracket_level == 0:
+            parts.append("".join(current))
+            current = []
+        else:
+            if c == "{":
+                bracket_level += 1
+            elif c == "}":
+                bracket_level -= 1
+            current.append(c)
+    return parts
 
 
 def indent(string):
@@ -97,7 +95,7 @@ def indent(string):
     for idx, line in enumerate(lines):
         if line.strip():
             lines[idx] = '\t' + line
-    
+
     return '\n'.join(lines)
 
 
@@ -143,7 +141,7 @@ def get_default_value(in_type):
         in_type = f'table<{",".join([get_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
 
     if '...' in in_type:
-        in_type = f"table<number, {in_type.replace('...','')}>"
+        in_type = f"table<number, {in_type.replace('...', '')}>"
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')
@@ -172,7 +170,7 @@ def get_raw_default_value(in_type):
         in_type = f'table<{",".join([get_raw_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
 
     if '...' in in_type:
-        in_type = f"table<number, {in_type.replace('...','')}>"
+        in_type = f"table<number, {in_type.replace('...', '')}>"
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')
@@ -258,7 +256,7 @@ class ParsedProperty:
             in_property = in_property[:tag_begin]
         else:
             self.remark = ''
-        
+
         words = in_property.split()[1:]
         self.name = words[-1]
         self.type = ' '.join(words[:-1]).strip().replace('\n', '')
@@ -286,7 +284,7 @@ class ParsedFunction:
         """ Parse a return value for defaults """
         for strip in ('...', 'static ', 'const '):
             return_value = return_value.replace(strip, '')
-        
+
         return_value = return_value.replace('table<', '{')
         return_value = return_value.replace('>', '}')
 
@@ -310,7 +308,7 @@ class ParsedFunction:
         end_bracket = definition.rfind(')')
         start_bracket = definition.rfind('(', 0, end_bracket)
 
-        args = definition[start_bracket+1:end_bracket] 
+        args = definition[start_bracket + 1:end_bracket]
         args = split_careful(args)
         arg_types = []
 
@@ -330,7 +328,7 @@ class ParsedFunction:
                 arg = arg.replace(illegal, '')
 
             args[idx] = arg
-        
+
         args = [arg.strip() for arg in args if arg.strip()]
         self.arguments = ', '.join(args)
         self.params = ''.join(arg_types)
@@ -357,10 +355,9 @@ class ParsedFunction:
         else:
             param_args = flip_args(param_args)
 
-        param_type = f'---@type fun({param_args}){":"+param_type if param_type else ""}\n'
+        param_type = f'---@type fun({param_args}){":" + param_type if param_type else ""}\n'
 
-        self.definition = param_type + f'{namespace.replace(":",".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
-
+        self.definition = param_type + f'{namespace.replace(":", ".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
 
     def parse_definition(self, definition, namespace):
         """ Parse a definition from documentation """
@@ -372,7 +369,7 @@ class ParsedFunction:
         name_start = definition.rfind(' ', 0, start_bracket)
         self.name = definition[name_start + 1:start_bracket]
 
-        returns = definition[definition.startswith('function ')+len('function'):name_start]
+        returns = definition[definition.startswith('function ') + len('function'):name_start]
         params = definition[start_bracket + 1:end_bracket]
         params = flip_args(params)
 
@@ -404,8 +401,7 @@ class ParsedFunction:
             d_returns[idx] = get_raw_default_value(return_type)
         definition_returns = f'---@return {",".join(d_returns)}\n' if d_returns[0] else ''
 
-        self.definition = f'{definition_parameters}{definition_returns}function {namespace+":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{",".join(returns)}\nend\n\n'
-
+        self.definition = f'{definition_parameters}{definition_returns}function {namespace + ":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{",".join(returns)}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
@@ -462,7 +458,7 @@ class NamespaceDefinition:
                 self.properties[k] += v
 
         for k, v in enums.items():
-            assert(k not in self.enums)
+            assert (k not in self.enums)
             self.enums[k] = v
 
     def write(self):
@@ -524,6 +520,7 @@ class NamespaceDefinition:
 
 class StubGenerator:
     """ Program class """
+
     def __init__(self):
         html_dir = BIN_DIR / 'html'
         if not html_dir.exists():
@@ -555,7 +552,7 @@ class StubGenerator:
             text = re.sub(r'\s+(?=[^<>]*>)', '', text).strip()
             if text:
                 lines.append(text)
-        
+
         properties = {}
         functions = {}
         enums = {}
@@ -569,7 +566,7 @@ class StubGenerator:
         for line in lines:
             if line.startswith('--'):
                 continue  # ignore this line, it's just pseudo-code
-            
+
             if not properties and line.startswith('property '):
 
                 # If there's a function before some properties, it's definitely the namespace
