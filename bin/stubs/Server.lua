@@ -117,6 +117,32 @@ function Server:isOnline(playerIndex)
 	return true
 end
 
+-- @callback
+-- Executed whenever the player sent a chat message to the server. Only called if the chat message is valid and the player doesn't have a chat ban.
+-- @param playerIndex - Index of the player
+-- @param text - The text content of the chat message
+-- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
+---@type fun(playerIndex, text, channel)
+Server.onChatMessage = function (playerIndex, text, channel)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a player was logged in
+-- @param playerIndex - The index of the player who logged in
+---@type fun(playerIndex)
+Server.onPlayerLogIn = function (playerIndex)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a player was logged off
+-- @param playerIndex - The index of the player who logged off
+---@type fun(playerIndex)
+Server.onPlayerLogOff = function (playerIndex)
+	return nil
+end
+
 -- Register a callback in the server. The callback may arrive with a delay. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.
 -- @param callbackName - The name of the callback
 -- @param functionName - The name of the function that will be executed in the script when the callback happens

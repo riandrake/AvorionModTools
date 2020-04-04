@@ -1,21 +1,21 @@
 ---@class ShipWindow
 ShipWindow = {
 
-	center = vec2, -- vec2
+	center = vec2(), -- vec2
 	height = 0.0, -- float
 	index = 0, -- [read-only] int
 	layer = 0, -- int
-	localCenter = vec2, -- [read-only] vec2
-	localPosition = vec2, -- [read-only] vec2
-	localRect = Rect, -- [read-only] Rect
-	lower = vec2, -- vec2
+	localCenter = vec2(), -- [read-only] vec2
+	localPosition = vec2(), -- [read-only] vec2
+	localRect = Rect(), -- [read-only] Rect
+	lower = vec2(), -- vec2
 	mouseOver = true, -- [read-only] bool
 	onSelectedFunction = "", -- string
-	position = vec2, -- vec2
-	rect = Rect, -- Rect
-	size = vec2, -- vec2
+	position = vec2(), -- vec2
+	rect = Rect(), -- Rect
+	size = vec2(), -- vec2
 	tooltip = nil, -- var
-	upper = vec2, -- vec2
+	upper = vec2(), -- vec2
 	visible = true, -- bool
 	width = 0.0, -- float
 
@@ -24,89 +24,70 @@ ShipWindow = {
 setmetatable(ShipWindow, {__call = function(self) return ShipWindow end})
 
 -- @return nothing
----@return any
-function ShipWindow:activateAllTabs()
+---@type fun():any
+ShipWindow.activateAllTabs = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
----@return any
-function ShipWindow:activateTab(tab)
+---@type fun(tab:Tab):any
+ShipWindow.activateTab = function (tab)
 	return nil
 end
 
 ---@param name string
 ---@param icon string
 ---@param description string
----@return Tab
-function ShipWindow:createTab(name, icon, description)
-	return Tab
+---@type fun(name:string, icon:string, description:string):Tab
+ShipWindow.createTab = function (name, icon, description)
+	return Tab()
 end
 
 -- @return nothing
 ---@param tab Tab
----@return any
-function ShipWindow:deactivateTab(tab)
+---@type fun(tab:Tab):any
+ShipWindow.deactivateTab = function (tab)
 	return nil
 end
 
----@return Tab
-function ShipWindow:getActiveTab()
-	return Tab
+---@type fun():Tab
+ShipWindow.getActiveTab = function ()
+	return Tab()
 end
 
 ---@param name string
----@return Tab
-function ShipWindow:getTab(name)
-	return Tab
+---@type fun(name:string):Tab
+ShipWindow.getTab = function (name)
+	return Tab()
 end
 
+-- Inherited from UIElement
 -- @return nothing
----@return any
-function ShipWindow:hide()
+---@type fun():any
+ShipWindow.hide = function ()
 	return nil
 end
 
 -- @return nothing
 ---@param tab Tab
----@return any
-function ShipWindow:moveTabToTheRight(tab)
+---@param pos int
+---@type fun(tab:Tab, pos:number):any
+ShipWindow.moveTabToTheRight = function (tab, pos)
 	return nil
 end
 
 -- @return nothing
----@param tab Tab
----@param pos number
----@return any
-function ShipWindow:moveTabToTheRight(tab, pos)
-	return nil
-end
-
--- @return nothing
----@param val any
----@return any
-function ShipWindow:selectTab(val)
-	return nil
-end
-
--- @return nothing
----@return any
-function ShipWindow:show()
+---@param val var
+---@type fun(val:any):any
+ShipWindow.selectTab = function (val)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@return any
-function ShipWindow:hide()
-	return nil
-end
-
--- Inherited from UIElement
--- @return nothing
----@return any
-function ShipWindow:show()
+---@type fun():any
+ShipWindow.show = function ()
 	return nil
 end
 

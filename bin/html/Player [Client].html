@@ -1,0 +1,1265 @@
+<html>
+<head>
+<title> Player [Client]</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="maincentered">
+<div class="maincontent">
+<h1 class="documentationheader">Avorion Script API Documentation</h1>
+<div class="sitemap">
+<div class="headerlisting flexheader">
+<div>
+<a href="index.html">Home</a>
+<a href="Functions.html">Functions</a>
+<a href="Search.html">Search</a>
+</div>
+<div class="flexheaderwhitespace"></div>
+<form action="Search.html" method="get">Search:<input name="search" class="headersearchinput" type="search"></form></div></div>
+<div class="floatleft">
+<div class="codecontainer">
+<table>
+<tr>
+<td>
+<a class="type" href="Player [Client].html">Player [Client]</a>
+<a class="function" href="#Player">Player</a>
+</td>
+</tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Properties</span></td></tr>
+<tr><td>
+<a href="#alliance">alliance</a>
+</td></tr>
+<tr><td>
+<a href="#allianceIndex">allianceIndex</a>
+</td></tr>
+<tr><td>
+<a href="#craft">craft</a>
+</td></tr>
+<tr><td>
+<a href="#craftFaction">craftFaction</a>
+</td></tr>
+<tr><td>
+<a href="#craftIndex">craftIndex</a>
+</td></tr>
+<tr><td>
+<a href="#index">index</a>
+</td></tr>
+<tr><td>
+<a href="#infiniteResources">infiniteResources</a>
+</td></tr>
+<tr><td>
+<a href="#isAIFaction">isAIFaction</a>
+</td></tr>
+<tr><td>
+<a href="#isAlliance">isAlliance</a>
+</td></tr>
+<tr><td>
+<a href="#isPlayer">isPlayer</a>
+</td></tr>
+<tr><td>
+<a href="#maxNumMails">maxNumMails</a>
+</td></tr>
+<tr><td>
+<a href="#money">money</a>
+</td></tr>
+<tr><td>
+<a href="#name">name</a>
+</td></tr>
+<tr><td>
+<a href="#numMails">numMails</a>
+</td></tr>
+<tr><td>
+<a href="#numShips">numShips</a>
+</td></tr>
+<tr><td>
+<a href="#selectedObject">selectedObject</a>
+</td></tr>
+<tr><td>
+<a href="#state">state</a>
+</td></tr>
+<tr><td><br/></td></tr>
+<tr><td><span class="docheader">Member Functions</span></td></tr>
+<tr><td>
+<a class="code" href="#addComparisonItem">addComparisonItem</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#buildingAllowed">buildingAllowed</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#callbacksRegistered">callbacksRegistered</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#canPay">canPay</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getAllRelations">getAllRelations</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getHomeSectorCoordinates">getHomeSectorCoordinates</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getInventory">getInventory</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getKnownSector">getKnownSector</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getKnownSectorCoordinates">getKnownSectorCoordinates</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getKnownSectors">getKnownSectors</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getKnownSectorsOfFaction">getKnownSectorsOfFaction</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getKnownSectorsWithFaction">getKnownSectorsWithFaction</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getMail">getMail</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getNamesOfShipsInSector">getNamesOfShipsInSector</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPlanStyle">getPlanStyle</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getPlanStyleNames">getPlanStyleNames</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getRelation">getRelation</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getRelations">getRelations</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getRelationStatus">getRelationStatus</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getResources">getResources</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getRespawnSectorCoordinates">getRespawnSectorCoordinates</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getScripts">getScripts</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipBoundingBox">getShipBoundingBox</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipCanPassRifts">getShipCanPassRifts</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipCargo">getShipCargo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipCargos">getShipCargos</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipDestroyed">getShipDestroyed</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipHyperspaceReach">getShipHyperspaceReach</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipNames">getShipNames</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipOrderInfo">getShipOrderInfo</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipPayment">getShipPayment</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipPaymentTime">getShipPaymentTime</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipPlan">getShipPlan</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipPosition">getShipPosition</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipReconstructionValue">getShipReconstructionValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipStatus">getShipStatus</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipSystems">getShipSystems</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getShipType">getShipType</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#getValue">getValue</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#hasScript">hasScript</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#invokeFunction">invokeFunction</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#knowsFaction">knowsFaction</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#knowsSector">knowsSector</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#ownsShip">ownsShip</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#registerCallback">registerCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#sendCallback">sendCallback</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#sendChatMessage">sendChatMessage</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#startBuilding">startBuilding</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#startInteracting">startInteracting</a>
+</td></tr>
+<tr><td>
+<a class="code" href="#unregisterCallback">unregisterCallback</a>
+</td></tr>
+</table>
+</div>
+</div>
+<div class="floatright">
+<h1>Player [Client]</h1>
+<p>
+<span class="warning">This object is only available on the client.</span>
+</p>
+<div id="Player" class="codecontainer">
+<div id="Player" class="function">
+<p>
+<span class="keyword">function </span> Player() <br/>
+</p>
+</div>
+<div id="Player" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+A new instance of Player
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="Properties" class="codecontainer">
+<div id="alliance">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">Alliance </span> <span class="property">alliance</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="allianceIndex">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">allianceIndex</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="craft">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Entity.html">Entity</a> <span class="property">craft</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="craftFaction">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">UserObject </span> <span class="property">craftFaction</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="craftIndex">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Uuid.html">Uuid</a> <span class="property">craftIndex</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="index">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">index</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="infiniteResources">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">infiniteResources</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isAIFaction">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isAIFaction</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isAlliance">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isAlliance</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="isPlayer">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">bool </span> <span class="property">isPlayer</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="maxNumMails">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">unsigned int </span> <span class="property">maxNumMails</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="money">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">int </span> <span class="property">money</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="name">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">var </span> <span class="property">name</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numMails">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">unsigned int </span> <span class="property">numMails</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="numShips">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">unsigned int </span> <span class="property">numShips</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="selectedObject">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <a href="Entity.html">Entity</a> <span class="property">selectedObject</span></td><td align="right"></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+<div id="state">
+<table style="width:100%;"><tr>
+<td><span class="keyword">property</span> <span class="type">PlayerStateType </span> <span class="property">state</span></td><td align="right"><span><b>[read-only]</b></span></td></tr></table>
+<div style="padding-left:20px; padding-bottom:10px">
+</div>
+</div>
+</div>
+<div id="addComparisonItem" class="codecontainer">
+<div id="addComparisonItem" class="function">
+<p>
+<span class="keyword">function var</span> addComparisonItem(<span class="type">var</span> <span class="parameter">item</span>) <br/>
+</p>
+</div>
+<div id="addComparisonItem" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="buildingAllowed" class="codecontainer">
+<div id="buildingAllowed" class="function">
+<p>
+<span class="keyword">function bool, string</span> buildingAllowed(<a href="Entity.html">Entity</a> <span class="parameter">entity</span>) <br/>
+</p>
+</div>
+<div id="buildingAllowed" class="">
+</p>
+</div>
+</div>
+<div id="callbacksRegistered" class="codecontainer">
+<div id="callbacksRegistered" class="function">
+<p>
+<span class="keyword">function int</span> callbacksRegistered(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">var</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="callbacksRegistered" class="">
+<p>
+Check how many functions are registered to a callback from the current script VM. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function for which to check. If nil, will count all functions that are registered to this callback. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+The amount of functions registered to the callback 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="canPay" class="codecontainer">
+<div id="canPay" class="function">
+<p>
+<span class="keyword">function bool, string, table&lt;int, string&gt;</span> canPay() <br/>
+</p>
+</div>
+<div id="canPay" class="">
+</p>
+</div>
+</div>
+<div id="getAllRelations" class="codecontainer">
+<div id="getAllRelations" class="function">
+<p>
+<span class="keyword">function <a href="Relation.html">Relation</a>...</span> getAllRelations() <br/>
+</p>
+</div>
+<div id="getAllRelations" class="">
+</p>
+</div>
+</div>
+<div id="getHomeSectorCoordinates" class="codecontainer">
+<div id="getHomeSectorCoordinates" class="function">
+<p>
+<span class="keyword">function int, int</span> getHomeSectorCoordinates() <br/>
+</p>
+</div>
+<div id="getHomeSectorCoordinates" class="">
+</p>
+</div>
+</div>
+<div id="getInventory" class="codecontainer">
+<div id="getInventory" class="function">
+<p>
+<span class="keyword">function <a href="Inventory.html">Inventory</a></span> getInventory() <br/>
+</p>
+</div>
+<div id="getInventory" class="">
+</p>
+</div>
+</div>
+<div id="getKnownSector" class="codecontainer">
+<div id="getKnownSector" class="function">
+<p>
+<span class="keyword">function <a href="SectorView.html">SectorView</a></span> getKnownSector(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+</p>
+</div>
+<div id="getKnownSector" class="">
+</p>
+</div>
+</div>
+<div id="getKnownSectorCoordinates" class="codecontainer">
+<div id="getKnownSectorCoordinates" class="function">
+<p>
+<span class="keyword">function <a href="ivec2.html">ivec2</a>...</span> getKnownSectorCoordinates() <br/>
+</p>
+</div>
+<div id="getKnownSectorCoordinates" class="">
+</p>
+</div>
+</div>
+<div id="getKnownSectors" class="codecontainer">
+<div id="getKnownSectors" class="function">
+<p>
+<span class="keyword">function <a href="SectorView.html">SectorView</a>...</span> getKnownSectors() <br/>
+</p>
+</div>
+<div id="getKnownSectors" class="">
+</p>
+</div>
+</div>
+<div id="getKnownSectorsOfFaction" class="codecontainer">
+<div id="getKnownSectorsOfFaction" class="function">
+<p>
+<span class="keyword">function <a href="SectorView.html">SectorView</a>...</span> getKnownSectorsOfFaction(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="getKnownSectorsOfFaction" class="">
+</p>
+</div>
+</div>
+<div id="getKnownSectorsWithFaction" class="codecontainer">
+<div id="getKnownSectorsWithFaction" class="function">
+<p>
+<span class="keyword">function <a href="SectorView.html">SectorView</a>...</span> getKnownSectorsWithFaction(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="getKnownSectorsWithFaction" class="">
+</p>
+</div>
+</div>
+<div id="getMail" class="codecontainer">
+<div id="getMail" class="function">
+<p>
+<span class="keyword">function <a href="Mail.html">Mail</a></span> getMail(<span class="type">unsigned int</span> <span class="parameter">index</span>) <br/>
+</p>
+</div>
+<div id="getMail" class="">
+</p>
+</div>
+</div>
+<div id="getNamesOfShipsInSector" class="codecontainer">
+<div id="getNamesOfShipsInSector" class="function">
+<p>
+<span class="keyword">function string...</span> getNamesOfShipsInSector(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+</p>
+</div>
+<div id="getNamesOfShipsInSector" class="">
+</p>
+</div>
+</div>
+<div id="getPlanStyle" class="codecontainer">
+<div id="getPlanStyle" class="function">
+<p>
+<span class="keyword">function <a href="PlanStyle.html">PlanStyle</a></span> getPlanStyle(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getPlanStyle" class="">
+</p>
+</div>
+</div>
+<div id="getPlanStyleNames" class="codecontainer">
+<div id="getPlanStyleNames" class="function">
+<p>
+<span class="keyword">function string...</span> getPlanStyleNames() <br/>
+</p>
+</div>
+<div id="getPlanStyleNames" class="">
+</p>
+</div>
+</div>
+<div id="getRelation" class="codecontainer">
+<div id="getRelation" class="function">
+<p>
+<span class="keyword">function <a href="Relation.html">Relation</a></span> getRelation(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="getRelation" class="">
+</p>
+</div>
+</div>
+<div id="getRelations" class="codecontainer">
+<div id="getRelations" class="function">
+<p>
+<span class="keyword">function int</span> getRelations(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="getRelations" class="">
+</p>
+</div>
+</div>
+<div id="getRelationStatus" class="codecontainer">
+<div id="getRelationStatus" class="function">
+<p>
+<span class="keyword">function int</span> getRelationStatus(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="getRelationStatus" class="">
+</p>
+</div>
+</div>
+<div id="getResources" class="codecontainer">
+<div id="getResources" class="function">
+<p>
+<span class="keyword">function unsigned int...</span> getResources() <br/>
+</p>
+</div>
+<div id="getResources" class="">
+</p>
+</div>
+</div>
+<div id="getRespawnSectorCoordinates" class="codecontainer">
+<div id="getRespawnSectorCoordinates" class="function">
+<p>
+<span class="keyword">function int, int</span> getRespawnSectorCoordinates() <br/>
+</p>
+</div>
+<div id="getRespawnSectorCoordinates" class="">
+</p>
+</div>
+</div>
+<div id="getScripts" class="codecontainer">
+<div id="getScripts" class="function">
+<p>
+<span class="keyword">function table&lt;int, string&gt;</span> getScripts() <br/>
+</p>
+</div>
+<div id="getScripts" class="">
+</p>
+</div>
+</div>
+<div id="getShipBoundingBox" class="codecontainer">
+<div id="getShipBoundingBox" class="function">
+<p>
+<span class="keyword">function <a href="Box.html">Box</a></span> getShipBoundingBox(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipBoundingBox" class="">
+</p>
+</div>
+</div>
+<div id="getShipCanPassRifts" class="codecontainer">
+<div id="getShipCanPassRifts" class="function">
+<p>
+<span class="keyword">function bool</span> getShipCanPassRifts(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipCanPassRifts" class="">
+</p>
+</div>
+</div>
+<div id="getShipCargo" class="codecontainer">
+<div id="getShipCargo" class="function">
+<p>
+<span class="keyword">function string</span> getShipCargo(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipCargo" class="">
+</p>
+</div>
+</div>
+<div id="getShipCargos" class="codecontainer">
+<div id="getShipCargos" class="function">
+<p>
+<span class="keyword">function table&lt;TradingGood, int&gt;</span> getShipCargos(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipCargos" class="">
+</p>
+</div>
+</div>
+<div id="getShipDestroyed" class="codecontainer">
+<div id="getShipDestroyed" class="function">
+<p>
+<span class="keyword">function var</span> getShipDestroyed(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipDestroyed" class="">
+</p>
+</div>
+</div>
+<div id="getShipHyperspaceReach" class="codecontainer">
+<div id="getShipHyperspaceReach" class="function">
+<p>
+<span class="keyword">function float</span> getShipHyperspaceReach(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipHyperspaceReach" class="">
+</p>
+</div>
+</div>
+<div id="getShipNames" class="codecontainer">
+<div id="getShipNames" class="function">
+<p>
+<span class="keyword">function string...</span> getShipNames() <br/>
+</p>
+</div>
+<div id="getShipNames" class="">
+</p>
+</div>
+</div>
+<div id="getShipOrderInfo" class="codecontainer">
+<div id="getShipOrderInfo" class="function">
+<p>
+<span class="keyword">function var</span> getShipOrderInfo(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipOrderInfo" class="">
+</p>
+</div>
+</div>
+<div id="getShipPayment" class="codecontainer">
+<div id="getShipPayment" class="function">
+<p>
+<span class="keyword">function float</span> getShipPayment(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipPayment" class="">
+</p>
+</div>
+</div>
+<div id="getShipPaymentTime" class="codecontainer">
+<div id="getShipPaymentTime" class="function">
+<p>
+<span class="keyword">function float</span> getShipPaymentTime(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipPaymentTime" class="">
+</p>
+</div>
+</div>
+<div id="getShipPlan" class="codecontainer">
+<div id="getShipPlan" class="function">
+<p>
+<span class="keyword">function <a href="BlockPlan.html">BlockPlan</a></span> getShipPlan(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipPlan" class="">
+</p>
+</div>
+</div>
+<div id="getShipPosition" class="codecontainer">
+<div id="getShipPosition" class="function">
+<p>
+<span class="keyword">function int, int</span> getShipPosition(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipPosition" class="">
+</p>
+</div>
+</div>
+<div id="getShipReconstructionValue" class="codecontainer">
+<div id="getShipReconstructionValue" class="function">
+<p>
+<span class="keyword">function double</span> getShipReconstructionValue(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipReconstructionValue" class="">
+</p>
+</div>
+</div>
+<div id="getShipStatus" class="codecontainer">
+<div id="getShipStatus" class="function">
+<p>
+<span class="keyword">function string</span> getShipStatus(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipStatus" class="">
+</p>
+</div>
+</div>
+<div id="getShipSystems" class="codecontainer">
+<div id="getShipSystems" class="function">
+<p>
+<span class="keyword">function pair<class ScriptSystemUpgradeTemplate, bool>...</span> getShipSystems(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipSystems" class="">
+</p>
+</div>
+</div>
+<div id="getShipType" class="codecontainer">
+<div id="getShipType" class="function">
+<p>
+<span class="keyword">function int</span> getShipType(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getShipType" class="">
+</p>
+</div>
+</div>
+<div id="getValue" class="codecontainer">
+<div id="getValue" class="function">
+<p>
+<span class="keyword">function var</span> getValue(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="getValue" class="">
+</p>
+</div>
+</div>
+<div id="hasScript" class="codecontainer">
+<div id="hasScript" class="function">
+<p>
+<span class="keyword">function bool</span> hasScript(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="hasScript" class="">
+</p>
+</div>
+</div>
+<div id="invokeFunction" class="codecontainer">
+<div id="invokeFunction" class="function">
+<p>
+<span class="keyword">function var...</span> invokeFunction(<span class="type">var</span> <span class="parameter">scriptName</span>, <span class="type">string</span> <span class="parameter">functionName</span>, <span class="type">var...</span> <span class="parameter">arguments</span>) <br/>
+</p>
+</div>
+<div id="invokeFunction" class="">
+<p>
+Invokes a function in a script of the player. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">scriptName</span>
+The name of the script containing the function <br/>
+<span class="parameter">functionName</span>
+The name of the function that will be executed <br/>
+<span class="parameter">arguments</span>
+An arbitrary list of arguments that will be given to the invoked function. Only numbers, strings and nil are supported here. <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+Returns at least 1 value indicating if the call succeeded:<br/> 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result.<br/> 3 The call failed because the given script was not found in the player.<br/> 4 The call failed because the given function was not found in the script. <br/> 5 The call failed because the script's state has errors and is invalid <br/> 
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="knowsFaction" class="codecontainer">
+<div id="knowsFaction" class="function">
+<p>
+<span class="keyword">function bool</span> knowsFaction(<span class="type">int</span> <span class="parameter">factionIndex</span>) <br/>
+</p>
+</div>
+<div id="knowsFaction" class="">
+</p>
+</div>
+</div>
+<div id="knowsSector" class="codecontainer">
+<div id="knowsSector" class="function">
+<p>
+<span class="keyword">function bool</span> knowsSector(<span class="type">int</span> <span class="parameter">x</span>, <span class="type">int</span> <span class="parameter">y</span>) <br/>
+</p>
+</div>
+<div id="knowsSector" class="">
+</p>
+</div>
+</div>
+<div id="ownsShip" class="codecontainer">
+<div id="ownsShip" class="function">
+<p>
+<span class="keyword">function bool</span> ownsShip(<span class="type">string</span> <span class="parameter">name</span>) <br/>
+</p>
+</div>
+<div id="ownsShip" class="">
+</p>
+</div>
+</div>
+<div id="registerCallback" class="codecontainer">
+<div id="registerCallback" class="function">
+<p>
+<span class="keyword">function var</span> registerCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="registerCallback" class="">
+<p>
+Register a callback in the player. The callback will be removed when the sector is changed or the receiver, if it's an entity, is destroyed. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once. 
+</p>
+<p><span class="docheader">Parameters</span></p>
+<div class="indented">
+<span class="parameter">callbackName</span>
+The name of the callback <br/>
+<span class="parameter">functionName</span>
+The name of the function that will be executed in the script when the callback happens <br/>
+</div>
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="sendCallback" class="codecontainer">
+<div id="sendCallback" class="function">
+<p>
+<span class="keyword">function var</span> sendCallback() <br/>
+</p>
+</div>
+<div id="sendCallback" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="sendChatMessage" class="codecontainer">
+<div id="sendChatMessage" class="function">
+<p>
+<span class="keyword">function var</span> sendChatMessage(<span class="type">var</span> <span class="parameter">content</span>, <span class="type">var</span> <span class="parameter">channel</span>) <br/>
+</p>
+</div>
+<div id="sendChatMessage" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="startBuilding" class="codecontainer">
+<div id="startBuilding" class="function">
+<p>
+<span class="keyword">function var</span> startBuilding(<a href="Entity.html">Entity</a> <span class="parameter">entity</span>) <br/>
+</p>
+</div>
+<div id="startBuilding" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="startInteracting" class="codecontainer">
+<div id="startInteracting" class="function">
+<p>
+<span class="keyword">function var</span> startInteracting(<a href="Entity.html">Entity</a> <span class="parameter">entity</span>, <span class="type">string</span> <span class="parameter">scriptName</span>, <span class="type">int</span> <span class="parameter">optionIndex</span>) <br/>
+</p>
+</div>
+<div id="startInteracting" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+<div id="unregisterCallback" class="codecontainer">
+<div id="unregisterCallback" class="function">
+<p>
+<span class="keyword">function var</span> unregisterCallback(<span class="type">string</span> <span class="parameter">callbackName</span>, <span class="type">string</span> <span class="parameter">functionName</span>) <br/>
+</p>
+</div>
+<div id="unregisterCallback" class="">
+<p><span class="docheader">Returns</span></p>
+<div class="indented">
+<p>
+nothing
+</p>
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sitemap">
+<div class="flexheader">   <div class="headerlisting">
+      <span class="docheader">Overview</span>
+      <br>      <a href="index.html">Home</a>
+      <a href="Functions.html">Functions</a>
+      <a href="Search.html">Search</a>
+   </div>   <div class="flexheaderwhitespace"></div>
+   <form action="Search.html" method="get">      Search:<input name="search" class="headersearchinput" type="search">   </form></div><div class="headerlisting">
+<span class="docheader">Callbacks</span>
+<br><a href="Callbacks.html"> Callbacks</a>
+<a href="Alliance [Client] Callbacks.html">Alliance [Client]  Callbacks</a>
+<a href="Alliance [Server] Callbacks.html">Alliance [Server]  Callbacks</a>
+<a href="Alliance [Server]  Callbacks.html">Alliance [Server]   Callbacks</a>
+<a href="Entity Callbacks.html">Entity  Callbacks</a>
+<a href="Galaxy Callbacks.html">Galaxy  Callbacks</a>
+<a href="Player Callbacks.html">Player  Callbacks</a>
+<a href="Player [Client] Callbacks.html">Player [Client]  Callbacks</a>
+<a href="Sector Callbacks.html">Sector  Callbacks</a>
+<a href="Server Callbacks.html">Server  Callbacks</a>
+</div><div class="headerlisting">
+<span class="docheader">Predefined Functions & Example Scripts</span>
+<br><a href="CommandFunctions.html">Command</a>
+<a href="EntityFunctions.html">Entity</a>
+<a href="FactionDatabaseFunctions.html">FactionDatabase</a>
+<a href="PlanGeneratorFunctions.html">PlanGenerator</a>
+<a href="PlayerFunctions.html">Player</a>
+<a href="SectorFunctions.html">Sector</a>
+<a href="ServerFunctions.html">Server</a>
+<a href="UsableInventoryItemFunctions.html">UsableInventoryItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Components</span>
+<br><a href="Boarding.html">Boarding</a>
+<a href="BspTree.html">BspTree</a>
+<a href="CargoBay.html">CargoBay</a>
+<a href="ControlUnit.html">ControlUnit</a>
+<a href="DeletionTimer.html">DeletionTimer</a>
+<a href="DirectFlightPhysics.html">DirectFlightPhysics</a>
+<a href="DockingPositions.html">DockingPositions</a>
+<a href="Durability.html">Durability</a>
+<a href="EnergySystem.html">EnergySystem</a>
+<a href="Engine.html">Engine</a>
+<a href="FighterAI.html">FighterAI</a>
+<a href="Hangar.html">Hangar</a>
+<a href="InteractionText.html">InteractionText</a>
+<a href="Owner.html">Owner</a>
+<a href="Physics.html">Physics</a>
+<a href="Plan.html">Plan</a>
+<a href="ReadOnlyBoarding.html">ReadOnlyBoarding</a>
+<a href="ReadOnlyBspTree.html">ReadOnlyBspTree</a>
+<a href="ReadOnlyCargoBay.html">ReadOnlyCargoBay</a>
+<a href="ReadOnlyControlUnit.html">ReadOnlyControlUnit</a>
+<a href="ReadOnlyDeletionTimer.html">ReadOnlyDeletionTimer</a>
+<a href="ReadOnlyEnergySystem.html">ReadOnlyEnergySystem</a>
+<a href="ReadOnlyEngine.html">ReadOnlyEngine</a>
+<a href="ReadOnlyFighterAI.html">ReadOnlyFighterAI</a>
+<a href="ReadOnlyHangar.html">ReadOnlyHangar</a>
+<a href="ReadOnlyInteractionText.html">ReadOnlyInteractionText</a>
+<a href="ReadOnlyOwner.html">ReadOnlyOwner</a>
+<a href="ReadOnlyPhysics.html">ReadOnlyPhysics</a>
+<a href="ReadOnlyPlan.html">ReadOnlyPlan</a>
+<a href="ReadOnlyShipAI.html">ReadOnlyShipAI</a>
+<a href="ReadOnlyShipSystem.html">ReadOnlyShipSystem</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoAI [Server] [Client] [Server] [Client].html">ReadOnlyTorpedoAI [Server] [Client] [Server] [Client]</a>
+<a href="ReadOnlyTorpedoLauncher.html">ReadOnlyTorpedoLauncher</a>
+<a href="ReadOnlyTurretBases.html">ReadOnlyTurretBases</a>
+<a href="ReadOnlyVelocity.html">ReadOnlyVelocity</a>
+<a href="ReadOnlyWeapons.html">ReadOnlyWeapons</a>
+<a href="ReadOnlyWormHole.html">ReadOnlyWormHole</a>
+<a href="Shield.html">Shield</a>
+<a href="ShipAI.html">ShipAI</a>
+<a href="ShipSystem.html">ShipSystem</a>
+<a href="SystemUpgradeLoot.html">SystemUpgradeLoot</a>
+<a href="Thrusters.html">Thrusters</a>
+<a href="Torpedo.html">Torpedo</a>
+<a href="TorpedoAI.html">TorpedoAI</a>
+<a href="TorpedoLauncher.html">TorpedoLauncher</a>
+<a href="Turret.html">Turret</a>
+<a href="TurretAI.html">TurretAI</a>
+<a href="TurretBases.html">TurretBases</a>
+<a href="Velocity.html">Velocity</a>
+<a href="Weapons.html">Weapons</a>
+<a href="WormHole.html">WormHole</a>
+</div><div class="headerlisting">
+<span class="docheader">Common Objects</span>
+<br><a href="AllianceMember.html">AllianceMember</a>
+<a href="AllianceRank.html">AllianceRank</a>
+<a href="BlockPlan.html">BlockPlan</a>
+<a href="BlockPlanBlock.html">BlockPlanBlock</a>
+<a href="BlockStatistics.html">BlockStatistics</a>
+<a href="Box.html">Box</a>
+<a href="Color.html">Color</a>
+<a href="ControlUnitSeat.html">ControlUnitSeat</a>
+<a href="CraftDesign.html">CraftDesign</a>
+<a href="Crew.html">Crew</a>
+<a href="CrewMan.html">CrewMan</a>
+<a href="CrewProfession.html">CrewProfession</a>
+<a href="DebugInfo.html">DebugInfo</a>
+<a href="dvec2.html">dvec2</a>
+<a href="dvec3.html">dvec3</a>
+<a href="dvec4.html">dvec4</a>
+<a href="Entity.html">Entity</a>
+<a href="EntityDescriptor.html">EntityDescriptor</a>
+<a href="FighterTemplate.html">FighterTemplate</a>
+<a href="Format.html">Format</a>
+<a href="GameSettings.html">GameSettings</a>
+<a href="HighResolutionTimer.html">HighResolutionTimer</a>
+<a href="Inventory.html">Inventory</a>
+<a href="InventoryTurret.html">InventoryTurret</a>
+<a href="ivec2.html">ivec2</a>
+<a href="ivec3.html">ivec3</a>
+<a href="ivec4.html">ivec4</a>
+<a href="Language.html">Language</a>
+<a href="Mail.html">Mail</a>
+<a href="Material.html">Material</a>
+<a href="Matrix.html">Matrix</a>
+<a href="ModManager.html">ModManager</a>
+<a href="NamedFormat.html">NamedFormat</a>
+<a href="PlanBspTree.html">PlanBspTree</a>
+<a href="PlanetSpecifics.html">PlanetSpecifics</a>
+<a href="PlanGenerationStage.html">PlanGenerationStage</a>
+<a href="PlanPart.html">PlanPart</a>
+<a href="PlanStyle.html">PlanStyle</a>
+<a href="PlayerId.html">PlayerId</a>
+<a href="PluralForm.html">PluralForm</a>
+<a href="Profiler.html">Profiler</a>
+<a href="QuadTree.html">QuadTree</a>
+<a href="Random.html">Random</a>
+<a href="Rarity.html">Rarity</a>
+<a href="Ray.html">Ray</a>
+<a href="ReadOnlyEntity.html">ReadOnlyEntity</a>
+<a href="Rect.html">Rect</a>
+<a href="Relation.html">Relation</a>
+<a href="SectorView.html">SectorView</a>
+<a href="Seed.html">Seed</a>
+<a href="Sphere.html">Sphere</a>
+<a href="SystemUpgradeTemplate.html">SystemUpgradeTemplate</a>
+<a href="Timer.html">Timer</a>
+<a href="Tooltip.html">Tooltip</a>
+<a href="TooltipLine.html">TooltipLine</a>
+<a href="TorpedoTemplate.html">TorpedoTemplate</a>
+<a href="TradingGood.html">TradingGood</a>
+<a href="TurretDesign.html">TurretDesign</a>
+<a href="TurretDesignPart.html">TurretDesignPart</a>
+<a href="TurretTemplate.html">TurretTemplate</a>
+<a href="UsableInventoryItem.html">UsableInventoryItem</a>
+<a href="Uuid.html">Uuid</a>
+<a href="VanillaInventoryItem.html">VanillaInventoryItem</a>
+<a href="vec2.html">vec2</a>
+<a href="vec3.html">vec3</a>
+<a href="vec4.html">vec4</a>
+<a href="Version.html">Version</a>
+<a href="Weapon.html">Weapon</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Components</span>
+<br><a href="EntityIcon.html">EntityIcon</a>
+<a href="EntityTooltip.html">EntityTooltip</a>
+<a href="PlanMesh.html">PlanMesh</a>
+<a href="ReadOnlyIcon.html">ReadOnlyIcon</a>
+<a href="ReadOnlyPlanMesh.html">ReadOnlyPlanMesh</a>
+<a href="ReadOnlyScriptUI.html">ReadOnlyScriptUI</a>
+<a href="ReadOnlyTooltip.html">ReadOnlyTooltip</a>
+<a href="ScriptUI.html">ScriptUI</a>
+</div><div class="headerlisting">
+<span class="docheader">Client Objects</span>
+<br><a href="Achievements.html">Achievements</a>
+<a href="Alliance [Client].html">Alliance [Client]</a>
+<a href="ClientSettings.html">ClientSettings</a>
+<a href="CraftDesignSelectionItem.html">CraftDesignSelectionItem</a>
+<a href="Faction [Client].html">Faction [Client]</a>
+<a href="Galaxy [Client].html">Galaxy [Client]</a>
+<a href="GalaxyMap.html">GalaxyMap</a>
+<a href="GameInput.html">GameInput</a>
+<a href="InputWindow.html">InputWindow</a>
+<a href="InventoryReferenceSelectionItem.html">InventoryReferenceSelectionItem</a>
+<a href="InventorySelectionItem.html">InventorySelectionItem</a>
+<a href="Keyboard.html">Keyboard</a>
+<a href="LaserFX.html">LaserFX</a>
+<a href="Mouse.html">Mouse</a>
+<a href="Music.html">Music</a>
+<a href="Planet.html">Planet</a>
+<a href="Player [Client].html">Player [Client]</a>
+<a href="PlayerWindow.html">PlayerWindow</a>
+<a href="Sector [Client].html">Sector [Client]</a>
+<a href="SelectionItem.html">SelectionItem</a>
+<a href="SoundSource.html">SoundSource</a>
+<a href="TooltipRenderer.html">TooltipRenderer</a>
+<a href="TurretDesignSelectionItem.html">TurretDesignSelectionItem</a>
+</div><div class="headerlisting">
+<span class="docheader">Client UI Objects</span>
+<br><a href="AllianceTab.html">AllianceTab</a>
+<a href="ArrowLine.html">ArrowLine</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="Button [Client] [Client].html">Button [Client] [Client]</a>
+<a href="CheckBox.html">CheckBox</a>
+<a href="ComboBox.html">ComboBox</a>
+<a href="CraftPortrait.html">CraftPortrait</a>
+<a href="Frame.html">Frame</a>
+<a href="Hud.html">Hud</a>
+<a href="InventorySelection.html">InventorySelection</a>
+<a href="Label.html">Label</a>
+<a href="Line.html">Line</a>
+<a href="ListBox.html">ListBox</a>
+<a href="ListBoxEx.html">ListBoxEx</a>
+<a href="MapArrowLine.html">MapArrowLine</a>
+<a href="MultiLineTextBox.html">MultiLineTextBox</a>
+<a href="NumbersBar.html">NumbersBar</a>
+<a href="Picture.html">Picture</a>
+<a href="PlanDisplayer.html">PlanDisplayer</a>
+<a href="ProgressBar.html">ProgressBar</a>
+<a href="SavedDesignsSelection.html">SavedDesignsSelection</a>
+<a href="ScrollFrame.html">ScrollFrame</a>
+<a href="Selection.html">Selection</a>
+<a href="ShipWindow.html">ShipWindow</a>
+<a href="Slider.html">Slider</a>
+<a href="StatisticsBar.html">StatisticsBar</a>
+<a href="Tab.html">Tab</a>
+<a href="TabbedWindow.html">TabbedWindow</a>
+<a href="TextBox.html">TextBox</a>
+<a href="TextField.html">TextField</a>
+<a href="Tree.html">Tree</a>
+<a href="UIArbitraryHorizontalSplitter.html">UIArbitraryHorizontalSplitter</a>
+<a href="UIArbitraryVerticalSplitter.html">UIArbitraryVerticalSplitter</a>
+<a href="UIContainer.html">UIContainer</a>
+<a href="UIElement.html">UIElement</a>
+<a href="UIGridSplitter.html">UIGridSplitter</a>
+<a href="UIHorizontalLister.html">UIHorizontalLister</a>
+<a href="UIHorizontalMultiSplitter.html">UIHorizontalMultiSplitter</a>
+<a href="UIHorizontalSplitter.html">UIHorizontalSplitter</a>
+<a href="UIOrganizer.html">UIOrganizer</a>
+<a href="UIRect.html">UIRect</a>
+<a href="UIRenderer.html">UIRenderer</a>
+<a href="UIVerticalLister.html">UIVerticalLister</a>
+<a href="UIVerticalMultiSplitter.html">UIVerticalMultiSplitter</a>
+<a href="UIVerticalSplitter.html">UIVerticalSplitter</a>
+<a href="ValueComboBox.html">ValueComboBox</a>
+<a href="Window.html">Window</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Components</span>
+<br><a href="EntityTransferrer.html">EntityTransferrer</a>
+<a href="FighterController.html">FighterController</a>
+<a href="Loot.html">Loot</a>
+<a href="ReadOnlyEntityTransferrer.html">ReadOnlyEntityTransferrer</a>
+<a href="ReadOnlyFighterController.html">ReadOnlyFighterController</a>
+<a href="ReadOnlyLoot.html">ReadOnlyLoot</a>
+<a href="ReadOnlyTurretController.html">ReadOnlyTurretController</a>
+<a href="ReadOnlyWreckageCreator.html">ReadOnlyWreckageCreator</a>
+<a href="TurretController.html">TurretController</a>
+<a href="WreckageCreator.html">WreckageCreator</a>
+</div><div class="headerlisting">
+<span class="docheader">Server Objects</span>
+<br><a href="Alliance [Server].html">Alliance [Server]</a>
+<a href="Faction [Server].html">Faction [Server]</a>
+<a href="Galaxy [Server].html">Galaxy [Server]</a>
+<a href="Player [Server].html">Player [Server]</a>
+<a href="ReadOnlySector.html">ReadOnlySector</a>
+<a href="Sector [Server].html">Sector [Server]</a>
+<a href="Server.html">Server</a>
+</div><div class="lastheaderlisting">
+<span class="docheader">Enums</span>
+<br><a href="Enums.html#AIState">AIState</a>
+<a href="Enums.html#AlliancePrivilege">AlliancePrivilege</a>
+<a href="Enums.html#BeamShape">BeamShape</a>
+<a href="Enums.html#BlockShading">BlockShading</a>
+<a href="Enums.html#BlockType">BlockType</a>
+<a href="Enums.html#BoxType">BoxType</a>
+<a href="Enums.html#ChatChannel">ChatChannel</a>
+<a href="Enums.html#ChatMessageType">ChatMessageType</a>
+<a href="Enums.html#ComponentType">ComponentType</a>
+<a href="Enums.html#ControlAction">ControlAction</a>
+<a href="Enums.html#ControlActionBit">ControlActionBit</a>
+<a href="Enums.html#CoolingType">CoolingType</a>
+<a href="Enums.html#CrewProfessionType">CrewProfessionType</a>
+<a href="Enums.html#DamageSource">DamageSource</a>
+<a href="Enums.html#DamageType">DamageType</a>
+<a href="Enums.html#DeletionType">DeletionType</a>
+<a href="Enums.html#Difficulty">Difficulty</a>
+<a href="Enums.html#EntityArrivalType">EntityArrivalType</a>
+<a href="Enums.html#EntityType">EntityType</a>
+<a href="Enums.html#FighterOrders">FighterOrders</a>
+<a href="Enums.html#FighterStartError">FighterStartError</a>
+<a href="Enums.html#FighterType">FighterType</a>
+<a href="Enums.html#FontType">FontType</a>
+<a href="Enums.html#ImpactParticles">ImpactParticles</a>
+<a href="Enums.html#InventoryItemType">InventoryItemType</a>
+<a href="Enums.html#KeyboardKey">KeyboardKey</a>
+<a href="Enums.html#ListBoxEntryType">ListBoxEntryType</a>
+<a href="Enums.html#MalusReason">MalusReason</a>
+<a href="Enums.html#MaterialType">MaterialType</a>
+<a href="Enums.html#MoonType">MoonType</a>
+<a href="Enums.html#MouseButton">MouseButton</a>
+<a href="Enums.html#PlanetType">PlanetType</a>
+<a href="Enums.html#PlayerStateType">PlayerStateType</a>
+<a href="Enums.html#ProjectileShape">ProjectileShape</a>
+<a href="Enums.html#RarityType">RarityType</a>
+<a href="Enums.html#RelationStatus">RelationStatus</a>
+<a href="Enums.html#SavedDesignType">SavedDesignType</a>
+<a href="Enums.html#SectorChangeType">SectorChangeType</a>
+<a href="Enums.html#SoundType">SoundType</a>
+<a href="Enums.html#StatsBonuses">StatsBonuses</a>
+<a href="Enums.html#TransformationFeature">TransformationFeature</a>
+<a href="Enums.html#TurretAutoFireMode">TurretAutoFireMode</a>
+<a href="Enums.html#WeaponAppearance">WeaponAppearance</a>
+<a href="Enums.html#WeaponCategory">WeaponCategory</a>
+</div></div>
+<div class="disclaimer">
+<p>This is the official documentation for the scripting API of Avorion. This documentation is automatically generated and <strong>not</strong> necessarily complete. Depending on the context in which functions exist, some documentation such as descriptions, return values or variable names or types may be missing.</p>
+<p>Work in Progress. Documentation of Avorion Version: 1.0 r22102 938a1bf97ccb</p>
+</div>
+<div class="footer">
+<p align="center">Work in Progress.</p>
+<p align="center">Copyright &copy; 2020 Boxelware GmbH. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

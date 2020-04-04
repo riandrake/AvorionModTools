@@ -4,25 +4,25 @@ Galaxy = {
 
 setmetatable(Galaxy, {__call = function(self) return Galaxy end})
 
----@return any
-function Galaxy:addScript()
+---@type fun():any
+Galaxy.addScript = function ()
 	return nil
 end
 
----@return any
-function Galaxy:addScriptOnce()
+---@type fun():any
+Galaxy.addScriptOnce = function ()
 	return nil
 end
 
----@param index number
----@return boolean
-function Galaxy:aiFactionExists(index)
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.aiFactionExists = function (index)
 	return true
 end
 
----@param index number
----@return boolean
-function Galaxy:allianceFactionExists(index)
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.allianceFactionExists = function (index)
 	return true
 end
 
@@ -31,20 +31,20 @@ end
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback
 ---@param callbackName string
----@param functionName any
----@return number
-function Galaxy:callbacksRegistered(callbackName, functionName)
+---@param functionName var
+---@type fun(callbackName:string, functionName:any):number
+Galaxy.callbacksRegistered = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
 ---@param a Faction
 ---@param b Faction
----@param delta number
----@param notifyA any
----@param notifyB any
----@return any
-function Galaxy:changeFactionRelations(a, b, delta, notifyA, notifyB)
+---@param delta int
+---@param notifyA var
+---@param notifyB var
+---@type fun(a:Faction, b:Faction, delta:number, notifyA:any, notifyB:any):any
+Galaxy.changeFactionRelations = function (a, b, delta, notifyA, notifyB)
 	return nil
 end
 
@@ -54,74 +54,102 @@ end
 -- @param y - The y coordinate of the faction's home sector
 -- @return The new faction, or, if already existing, the existing faction
 ---@param name string
----@param x number
----@param y number
----@return Faction
-function Galaxy:createFaction(name, x, y)
-	return Faction
+---@param x int
+---@param y int
+---@type fun(name:string, x:number, y:number):Faction
+Galaxy.createFaction = function (name, x, y)
+	return Faction()
 end
 
 -- Creates a new faction with home sector at the given coordinates. Name, turrets and styles will be generated automatically.
 -- @param x - The x coordinate of the faction's home sector
 -- @param y - The y coordinate of the faction's home sector
 -- @return The new faction
----@param x number
----@param y number
----@return Faction
-function Galaxy:createRandomFaction(x, y)
-	return Faction
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):Faction
+Galaxy.createRandomFaction = function (x, y)
+	return Faction()
+end
+
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.factionExists = function (index)
+	return true
 end
 
 -- Looks for a faction with the given name or index. This will not trigger the creation of a new faction. Finding players by name with this method is not possible, since player names can change via Steam. This function returns the correct concrete type of the faction, ie. Faction, Player or Alliance.
 -- @param identifier - A string or int, describing the name or index of the faction, respectively
 -- @return The faction if found, or nil
----@param identifier any
----@return Faction
-function Galaxy:findFaction(identifier)
-	return Faction
+---@param identifier var
+---@type fun(identifier:any):Faction
+Galaxy.findFaction = function (identifier)
+	return Faction()
+end
+
+-- Does a lookup on the faction map and retrieves the faction CURRENTLY controlling the sector. The faction is determined by the influence of sectors around the sector to check. As sectors are generated while players are exploring, influence over sectors is also only generated while players are exploring. It's very possible that as long as not all sectors near the tested sector have been discovered, the influence is not yet determined nor final. Keep in mind that if the player hasn't explored enough on the client yet, this faction might not yet be known or exist on the client.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction index, or nil if the sector's controller is unknown
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getControllingFaction = function (x, y)
+	return nil
 end
 
 -- Does a lookup on the faction map and retrieves the faction controlling the sector. The faction is determined by the influence of sectors around the sector to check. As sectors are generated while players are exploring, influence over sectors is also only generated while players are exploring. It's very possible that as long as not all sectors near the tested sector have been discovered, the influence is not yet determined nor final.
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return The faction, or nil if the sector's controller is unknown
----@param x number
----@param y number
----@return Faction
-function Galaxy:getControllingFaction(x, y)
-	return Faction
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):Faction
+Galaxy.getControllingFaction = function (x, y)
+	return Faction()
 end
 
 ---@param a Faction
 ---@param b Faction
----@return number
-function Galaxy:getFactionRelations(a, b)
-	return 0
-end
-
----@param a Faction
----@param b Faction
----@return RelationStatus
-function Galaxy:getFactionRelationStatus(a, b)
+---@type fun(a:Faction, b:Faction):RelationStatus
+Galaxy.getFactionRelationStatus = function (a, b)
 	return RelationStatus.War
+end
+
+---@param a Faction
+---@param b Faction
+---@type fun(a:Faction, b:Faction):number
+Galaxy.getFactionRelations = function (a, b)
+	return 0
 end
 
 -- Returns a table containing all loaded sectors. Returned table has format {{x = 12, y = 3}, {x = 4, y = 56}, {x = 78, y = 9}, ...}
 -- @return 1 if the sector exists, 0 otherwise
----@return table_t
-function Galaxy:getLoadedSectors()
-	return table_t
+---@type fun():table_t
+Galaxy.getLoadedSectors = function ()
+	return table_t()
+end
+
+-- Does a lookup on the faction map and retrieves the faction controlling the given sector by default.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction's index, or nil if the sector is in no man's land
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getLocalFaction = function (x, y)
+	return nil
 end
 
 -- Does a lookup on the faction map and retrieves the faction controlling the given sector. This may trigger a creation of a faction that does not yet exist.
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return The (new) faction, or nil if the sector is in no man's land
----@param x number
----@param y number
----@return Faction
-function Galaxy:getLocalFaction(x, y)
-	return Faction
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):Faction
+Galaxy.getLocalFaction = function (x, y)
+	return Faction()
 end
 
 -- Does a lookup on the faction map and retrieves all factions whose home sectors are inside the radius. Note that only faction-map factions will be returned, factions that are not on the map by default won't be returned, as this is essentially a faction map look up.
@@ -129,56 +157,84 @@ end
 -- @param y - The y coordinate of the circle center
 -- @param radius - The radius of the circle
 -- @return A table containing faction indices and corresponding home sector
----@param x number
----@param y number
----@param radius number
----@return table<number,vec2>
-function Galaxy:getMapHomeSectors(x, y, radius)
-	return {0,vec2}
+---@param x int
+---@param y int
+---@param radius float
+---@type fun(x:number, y:number, radius:number):table<number, vec2>
+Galaxy.getMapHomeSectors = function (x, y, radius)
+	return {0, vec2()}
+end
+
+-- Does a lookup on the faction map and retrieves the nearest faction to the given sector. Distance is calculated from the factions' home sector. Keep in mind that if the player hasn't explored enough on the client yet, this faction might not yet exist on the client.
+-- @param x - The x coordinate of the sector
+-- @param y - The y coordinate of the sector
+-- @return The faction index
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.getNearestFaction = function (x, y)
+	return nil
 end
 
 -- Does a lookup on the faction map and retrieves the nearest faction to the given sector. Distance is calculated by the factions' home sector. This may trigger a creation of a faction that does not yet exist.
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return The (new) faction, or nil if the sector is in no man's land
----@param x number
----@param y number
----@return Faction
-function Galaxy:getNearestFaction(x, y)
-	return Faction
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):Faction
+Galaxy.getNearestFaction = function (x, y)
+	return Faction()
 end
 
----@return table<number, string>
-function Galaxy:getOnlinePlayerNames()
-	return {number, string}
+---@type fun():string
+Galaxy.getOnlinePlayerNames = function ()
+	return ""
 end
 
----@param level number
----@return Faction
-function Galaxy:getPirateFaction(level)
-	return Faction
+---@param level int
+---@type fun(level:number):Faction
+Galaxy.getPirateFaction = function (level)
+	return Faction()
 end
 
----@return table<number, string>
-function Galaxy:getPlayerNames()
-	return {number, string}
+-- Getter for the player's current craft's faction. Returns the player if the craft is owned by himself, or the alliance if the player is flying an alliance ship.
+-- @return The faction that the player's craft belongs to
+---@type fun():UserObject
+Galaxy.getPlayerCraftFaction = function ()
+	return UserObject()
 end
 
----@return table<number,string>
-function Galaxy:getScripts()
-	return {0,""}
+---@type fun():number
+Galaxy.getPlayerIndices = function ()
+	return 0
 end
 
----@param x number
----@param y number
----@return SectorView
-function Galaxy:getSectorView(x, y)
-	return SectorView
+---@type fun():table<number, string>
+Galaxy.getPlayerNames = function ()
+	return {0, ""}
+end
+
+---@type fun():string
+Galaxy.getPlayerNames = function ()
+	return ""
+end
+
+---@type fun():table<number, string>
+Galaxy.getScripts = function ()
+	return {0, ""}
+end
+
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):SectorView
+Galaxy.getSectorView = function (x, y)
+	return SectorView()
 end
 
 ---@param name string
----@return any
-function Galaxy:hasScript(name)
+---@type fun(name:string):any
+Galaxy.hasScript = function (name)
 	return nil
 end
 
@@ -187,26 +243,26 @@ end
 -- @param functionName - The name of the function that will be executed
 -- @param arguments - An arbitrary list of arguments that will be given to the invoked function
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
----@param scriptName any
+---@param scriptName var
 ---@param functionName string
----@param arguments table<number,
----@return table<number, var>
-function Galaxy:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+---@param arguments var...
+---@type fun(scriptName:any, functionName:string, arguments:table<number,var>):any
+Galaxy.invokeFunction = function (scriptName, functionName, arguments)
+	return nil
 end
 
 -- Checks if a faction is already loaded into memory.
 -- @param identifier - A string or int, describing the name or index of the faction, respectively
 -- @return A bool indicating the faction being in memory
----@param identifier any
----@return boolean
-function Galaxy:isFactionLoaded(identifier)
+---@param identifier var
+---@type fun(identifier:any):boolean
+Galaxy.isFactionLoaded = function (identifier)
 	return true
 end
 
----@param index number
----@return boolean
-function Galaxy:isMapFaction(index)
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.isMapFaction = function (index)
 	return true
 end
 
@@ -215,12 +271,26 @@ end
 -- @param fromY - The y coordinate of the first sector
 -- @param toX - The x coordinate of the second sector
 -- @param toY - The y coordinate of the second sector
----@param fromX number
----@param fromY number
----@param toX number
----@param toY number
----@return boolean
-function Galaxy:jumpRouteUnobstructed(fromX, fromY, toX, toY)
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean
+Galaxy.jumpRouteUnobstructed = function (fromX, fromY, toX, toY)
+	return true
+end
+
+-- Checks if the jump between two sectors is unobstructed by rifts
+-- @param fromX - The x coordinate of the first sector
+-- @param fromY - The y coordinate of the first sector
+-- @param toX - The x coordinate of the second sector
+-- @param toY - The y coordinate of the second sector
+---@param fromX int
+---@param fromY int
+---@param toX int
+---@param toY int
+---@type fun(fromX:number, fromY:number, toX:number, toY:number):boolean
+Galaxy.jumpRouteUnobstructed = function (fromX, fromY, toX, toY)
 	return true
 end
 
@@ -229,11 +299,11 @@ end
 -- @param y - The y coordinate of the sector
 -- @param y - The amount of time the sector is to be kept in memory. If 0, sector will be kept for at least 3 frames.
 -- @return nothing
----@param x number
----@param y number
----@param y number
----@return any
-function Galaxy:keepSector(x, y, y)
+---@param x int
+---@param y int
+---@param y float
+---@type fun(x:number, y:number, y:number):any
+Galaxy.keepSector = function (x, y, y)
 	return nil
 end
 
@@ -241,16 +311,53 @@ end
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return nothing
----@param x number
----@param y number
----@return any
-function Galaxy:loadSector(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):any
+Galaxy.loadSector = function (x, y)
 	return nil
 end
 
----@param index number
----@return boolean
-function Galaxy:playerFactionExists(index)
+-- @callback
+-- Executed whenever a new alliance is created on the server
+-- @param index - Index of the alliance that was created
+---@type fun(index)
+Galaxy.onAllianceCreated = function (index)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a new faction is created on the server
+-- @param index - Index of the faction that was created
+---@type fun(index)
+Galaxy.onFactionCreated = function (index)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a new player is created on the server
+-- @param index - Index of the player that was created
+---@type fun(index)
+Galaxy.onPlayerCreated = function (index)
+	return nil
+end
+
+-- @callback
+-- Executed whenever a the relations between two factions change
+-- @param indexA - Index of the one faction
+-- @param indexB - Index of the other faction
+-- @param relations - The new relations between the factions
+-- @param status - The new relation status between the factions
+-- @param relationsBefore - The relations between the factions before the change, nil if none
+-- @param statusBefore - The relation status between the factions before the change, nil if none
+---@type fun(indexA, indexB, relations, status, relationsBefore, statusBefore)
+Galaxy.onRelationsChanged = function (indexA, indexB, relations, status, relationsBefore, statusBefore)
+	return nil
+end
+
+---@param index int
+---@type fun(index:number):boolean
+Galaxy.playerFactionExists = function (index)
 	return true
 end
 
@@ -260,21 +367,21 @@ end
 -- @return 0 on success, 1 if the registration failed
 ---@param callbackName string
 ---@param functionName string
----@return number
-function Galaxy:registerCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):number
+Galaxy.registerCallback = function (callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
----@param script any
----@return any
-function Galaxy:removeScript(script)
+---@param script var
+---@type fun(script:any):any
+Galaxy.removeScript = function (script)
 	return nil
 end
 
 ---@param path string
----@return any
-function Galaxy:resolveScriptPath(path)
+---@type fun(path:string):any
+Galaxy.resolveScriptPath = function (path)
 	return nil
 end
 
@@ -282,10 +389,10 @@ end
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return 1 if the sector exists, 0 otherwise
----@param x number
----@param y number
----@return boolean
-function Galaxy:sectorExists(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):boolean
+Galaxy.sectorExists = function (x, y)
 	return true
 end
 
@@ -293,27 +400,16 @@ end
 -- @param x - The x coordinate of the sector
 -- @param y - The y coordinate of the sector
 -- @return 1 if the sector exists, 0 otherwise
----@param x number
----@param y number
----@return boolean
-function Galaxy:sectorLoaded(x, y)
+---@param x int
+---@param y int
+---@type fun(x:number, y:number):boolean
+Galaxy.sectorLoaded = function (x, y)
 	return true
 end
 
 -- @return nothing
----@return any
-function Galaxy:sendCallback()
-	return nil
-end
-
--- @return nothing
----@param a Faction
----@param b Faction
----@param level number
----@param notifyA any
----@param notifyB any
----@return any
-function Galaxy:setFactionRelations(a, b, level, notifyA, notifyB)
+---@type fun():any
+Galaxy.sendCallback = function ()
 	return nil
 end
 
@@ -321,10 +417,21 @@ end
 ---@param a Faction
 ---@param b Faction
 ---@param status RelationStatus
----@param notifyA any
----@param notifyB any
----@return any
-function Galaxy:setFactionRelationStatus(a, b, status, notifyA, notifyB)
+---@param notifyA var
+---@param notifyB var
+---@type fun(a:Faction, b:Faction, status:RelationStatus, notifyA:any, notifyB:any):any
+Galaxy.setFactionRelationStatus = function (a, b, status, notifyA, notifyB)
+	return nil
+end
+
+-- @return nothing
+---@param a Faction
+---@param b Faction
+---@param level int
+---@param notifyA var
+---@param notifyB var
+---@type fun(a:Faction, b:Faction, level:number, notifyA:any, notifyB:any):any
+Galaxy.setFactionRelations = function (a, b, level, notifyA, notifyB)
 	return nil
 end
 
@@ -335,18 +442,18 @@ end
 -- @param type - The type of transfer. 0 = Default, 1 = Jump, 2 = Wormhole, 3 = Gate
 -- @return nothing
 ---@param entity Entity
----@param x number
----@param y number
----@param type number
----@return any
-function Galaxy:transferEntity(entity, x, y, type)
+---@param x int
+---@param y int
+---@param type int
+---@type fun(entity:Entity, x:number, y:number, type:number):any
+Galaxy.transferEntity = function (entity, x, y, type)
 	return nil
 end
 
 ---@param callbackName string
 ---@param functionName string
----@return number
-function Galaxy:unregisterCallback(callbackName, functionName)
+---@type fun(callbackName:string, functionName:string):number
+Galaxy.unregisterCallback = function (callbackName, functionName)
 	return 0
 end
 

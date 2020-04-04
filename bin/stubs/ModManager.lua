@@ -8,150 +8,150 @@ ModManager = {
 setmetatable(ModManager, {__call = function(self) return ModManager end})
 
 ---@param folder string
----@return any
-function ModManager:addMod(folder)
+---@type fun(folder:string):any
+ModManager.addMod = function (folder)
 	return nil
 end
 
 -- @return nothing
----@return any
-function ModManager:disableAll()
+---@type fun():any
+ModManager.disableAll = function ()
 	return nil
 end
 
 ---@param id string
----@return any
-function ModManager:disableMod(id)
+---@type fun(id:string):any
+ModManager.disableMod = function (id)
 	return nil
 end
 
----@return table<number, string>
-function ModManager:enableAll()
-	return {number, string}
+---@type fun():string
+ModManager.enableAll = function ()
+	return ""
 end
 
 ---@param id string
----@return any
-function ModManager:enableMod(id)
-	return nil
-end
-
----@param id string
----@return any
-function ModManager:find(id)
+---@type fun(id:string):any
+ModManager.enableMod = function (id)
 	return nil
 end
 
 ---@param id string
----@return any
-function ModManager:findEnabled(id)
+---@type fun(id:string):any
+ModManager.find = function (id)
 	return nil
 end
 
 ---@param id string
----@return any
-function ModManager:forceDisable(id)
+---@type fun(id:string):any
+ModManager.findEnabled = function (id)
 	return nil
 end
 
 ---@param id string
----@return any
-function ModManager:forceEnable(id)
+---@type fun(id:string):any
+ModManager.forceDisable = function (id)
 	return nil
 end
 
----@return table<number, string>
-function ModManager:forceEnableAll()
-	return {number, string}
+---@param id string
+---@type fun(id:string):any
+ModManager.forceEnable = function (id)
+	return nil
 end
 
----@return table<number, table_t>
-function ModManager:getDetectedMods()
-	return {number, table_t}
+---@type fun():string
+ModManager.forceEnableAll = function ()
+	return ""
 end
 
----@return table<number, string>
-function ModManager:getEnabledLoadOrder()
-	return {number, string}
+---@type fun():table_t
+ModManager.getDetectedMods = function ()
+	return table_t()
 end
 
----@return table<number, string>
-function ModManager:getEnabledMods()
-	return {number, string}
+---@type fun():string
+ModManager.getEnabledLoadOrder = function ()
+	return ""
 end
 
----@return table<number, string>
-function ModManager:getFullLoadOrder()
-	return {number, string}
+---@type fun():string
+ModManager.getEnabledMods = function ()
+	return ""
+end
+
+---@type fun():string
+ModManager.getFullLoadOrder = function ()
+	return ""
 end
 
 ---@param id string
----@return table<number, string>
-function ModManager:getIncompatibleMods(id)
-	return {number, string}
+---@type fun(id:string):string
+ModManager.getIncompatibleMods = function (id)
+	return ""
 end
 
----@return table<number, string>
-function ModManager:getLoadOrder()
-	return {number, string}
+---@type fun():string
+ModManager.getLoadOrder = function ()
+	return ""
 end
 
----@return table<string,number>
-function ModManager:getLoadPriorities()
-	return {"",0}
+---@type fun():table<string, number>
+ModManager.getLoadPriorities = function ()
+	return {"", 0}
+end
+
+---@param id string
+---@type fun(id:string):any
+ModManager.getModTitle = function (id)
+	return nil
 end
 
 ---@param file string
----@return table<number, string>
-function ModManager:getModsModifyingFile(file)
-	return {number, string}
+---@type fun(file:string):string
+ModManager.getModsModifyingFile = function (file)
+	return ""
+end
+
+---@type fun():string
+ModManager.getOutdatedMods = function ()
+	return ""
+end
+
+---@type fun():table<string, string>
+ModManager.getProblematicMods = function ()
+	return {"", ""}
 end
 
 ---@param id string
----@return any
-function ModManager:getModTitle(id)
-	return nil
-end
-
----@return table<number, string>
-function ModManager:getOutdatedMods()
-	return {number, string}
-end
-
----@return table<string,string>
-function ModManager:getProblematicMods()
-	return {"",""}
+---@param optionalToo bool
+---@type fun(id:string, optionalToo:boolean):string
+ModManager.getRequiredMods = function (id, optionalToo)
+	return ""
 end
 
 ---@param id string
----@param optionalToo boolean
----@return table<number, string>
-function ModManager:getRequiredMods(id, optionalToo)
-	return {number, string}
-end
-
----@param id string
----@param optionalToo boolean
----@return table<number, string>
-function ModManager:getRequiringMods(id, optionalToo)
-	return {number, string}
+---@param optionalToo bool
+---@type fun(id:string, optionalToo:boolean):string
+ModManager.getRequiringMods = function (id, optionalToo)
+	return ""
 end
 
 -- @return nothing
----@return any
-function ModManager:refreshEnabledLoadOrder()
+---@type fun():any
+ModManager.refreshEnabledLoadOrder = function ()
 	return nil
 end
 
 -- @return nothing
----@return any
-function ModManager:refreshLoadOrder()
+---@type fun():any
+ModManager.refreshLoadOrder = function ()
 	return nil
 end
 
 -- @return nothing
----@return any
-function ModManager:refreshProblematicMods()
+---@type fun():any
+ModManager.refreshProblematicMods = function ()
 	return nil
 end
 
