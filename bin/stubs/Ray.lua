@@ -7,7 +7,12 @@ Ray = {
 
 }
 
-setmetatable(Ray, {__call = function(self, pos, size) return Ray end})
+---@return Ray
+---@param pos vec3
+---@param size vec3
+function Ray(pos, size)
+	return Ray
+end
 
 ---@param point vec3
 ---@return number

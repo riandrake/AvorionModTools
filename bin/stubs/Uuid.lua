@@ -8,7 +8,11 @@ Uuid = {
 
 }
 
-setmetatable(Uuid, {__call = function(self, Uuid) return Uuid end})
+---@return Uuid
+---@param Uuid any
+function Uuid(Uuid)
+	return Uuid
+end
 
 ---@param other any
 ---@return boolean

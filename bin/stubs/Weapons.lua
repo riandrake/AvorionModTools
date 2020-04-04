@@ -62,7 +62,11 @@ Weapons = {
 
 }
 
-setmetatable(Weapons, {__call = function(self, id) return Weapons end})
+---@return Weapons
+---@param id any
+function Weapons(id)
+	return Weapons
+end
 
 -- @return nothing
 ---@param str string

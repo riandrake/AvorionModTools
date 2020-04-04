@@ -11,7 +11,10 @@ PlanPart = {
 
 }
 
-setmetatable(PlanPart, {__call = function(self) return PlanPart end})
+---@return PlanPart
+function PlanPart()
+	return PlanPart
+end
 
 -- Adds a new block to the part.
 -- @param parentIndex - The index of the block this one is attached to

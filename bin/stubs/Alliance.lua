@@ -25,7 +25,10 @@ Alliance = {
 
 }
 
-setmetatable(Alliance, {__call = function(self) return Alliance end})
+---@return Alliance
+function Alliance()
+	return Alliance
+end
 
 -- @return nothing
 ---@param view SectorView

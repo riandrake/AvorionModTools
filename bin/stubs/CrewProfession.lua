@@ -11,7 +11,11 @@ CrewProfession = {
 
 }
 
-setmetatable(CrewProfession, {__call = function(self, value) return CrewProfession end})
+---@return CrewProfession
+---@param value number
+function CrewProfession(value)
+	return CrewProfession
+end
 
 ---@param amount any
 ---@return string

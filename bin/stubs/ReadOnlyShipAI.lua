@@ -12,7 +12,11 @@ ReadOnlyShipAI = {
 
 }
 
-setmetatable(ReadOnlyShipAI, {__call = function(self, id) return ReadOnlyShipAI end})
+---@return ReadOnlyShipAI
+---@param id any
+function ReadOnlyShipAI(id)
+	return ReadOnlyShipAI
+end
 
 ---@return boolean
 function ReadOnlyShipAI:enemyFightersPresent()

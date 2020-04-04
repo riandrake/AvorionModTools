@@ -6,7 +6,11 @@ TurretController = {
 
 }
 
-setmetatable(TurretController, {__call = function(self, id) return TurretController end})
+---@return TurretController
+---@param id any
+function TurretController(id)
+	return TurretController
+end
 
 ---@param group number
 ---@return number,Uuid

@@ -6,7 +6,10 @@ CraftDesign = {
 
 }
 
-setmetatable(CraftDesign, {__call = function(self) return CraftDesign end})
+---@return CraftDesign
+function CraftDesign()
+	return CraftDesign
+end
 
 ---@return BlockPlan
 function CraftDesign:getMovePlan()

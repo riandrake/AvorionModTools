@@ -35,7 +35,11 @@ SavedDesignsSelection = {
 
 }
 
-setmetatable(SavedDesignsSelection, {__call = function(self, index) return SavedDesignsSelection end})
+---@return SavedDesignsSelection
+---@param index number
+function SavedDesignsSelection(index)
+	return SavedDesignsSelection
+end
 
 -- Inherited from UIContainer
 -- @return nothing

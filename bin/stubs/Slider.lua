@@ -33,7 +33,11 @@ Slider = {
 
 }
 
-setmetatable(Slider, {__call = function(self, index) return Slider end})
+---@return Slider
+---@param index number
+function Slider(index)
+	return Slider
+end
 
 -- Inherited from UIElement
 -- @return nothing

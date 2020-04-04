@@ -8,7 +8,11 @@ Rarity = {
 
 }
 
-setmetatable(Rarity, {__call = function(self, value) return Rarity end})
+---@return Rarity
+---@param value number
+function Rarity(value)
+	return Rarity
+end
 
 ---@param other Rarity
 ---@return boolean

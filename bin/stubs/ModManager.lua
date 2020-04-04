@@ -5,7 +5,10 @@ ModManager = {
 
 }
 
-setmetatable(ModManager, {__call = function(self) return ModManager end})
+---@return ModManager
+function ModManager()
+	return ModManager
+end
 
 ---@param folder string
 ---@return any

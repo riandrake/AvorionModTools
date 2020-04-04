@@ -2,7 +2,10 @@
 Galaxy = {
 }
 
-setmetatable(Galaxy, {__call = function(self) return Galaxy end})
+---@return Galaxy
+function Galaxy()
+	return Galaxy
+end
 
 ---@return any
 function Galaxy:addScript()

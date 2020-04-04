@@ -12,7 +12,11 @@ TorpedoLauncher = {
 
 }
 
-setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
+---@return TorpedoLauncher
+---@param id any
+function TorpedoLauncher(id)
+	return TorpedoLauncher
+end
 
 ---@param torpedo TorpedoTemplate
 ---@param shaft any

@@ -10,7 +10,13 @@ Version = {
 
 }
 
-setmetatable(Version, {__call = function(self, majorVersion, minorVersion, patch) return Version end})
+---@return Version
+---@param majorVersion any
+---@param minorVersion any
+---@param patch any
+function Version(majorVersion, minorVersion, patch)
+	return Version
+end
 
 ---@param other Version
 ---@return boolean

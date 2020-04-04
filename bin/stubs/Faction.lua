@@ -22,7 +22,11 @@ Faction = {
 
 }
 
-setmetatable(Faction, {__call = function(self, index) return Faction end})
+---@return Faction
+---@param index any
+function Faction(index)
+	return Faction
+end
 
 -- @return nothing
 ---@param name string

@@ -10,5 +10,10 @@ Box = {
 
 }
 
-setmetatable(Box, {__call = function(self, pos, size) return Box end})
+---@return Box
+---@param pos vec3
+---@param size vec3
+function Box(pos, size)
+	return Box
+end
 

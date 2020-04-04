@@ -6,7 +6,11 @@ ScriptUI = {
 
 }
 
-setmetatable(ScriptUI, {__call = function(self, id) return ScriptUI end})
+---@return ScriptUI
+---@param id any
+function ScriptUI(id)
+	return ScriptUI
+end
 
 -- Adds a new dialog option to a dialog that is currently in construction. Dialogs are only in construction during the entity or player callback "onStartDialog". Invoking this function at any other point will do nothing.
 -- @param text - The text that will be displayed as a chooseable option in the dialog

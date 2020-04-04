@@ -25,7 +25,11 @@ Picture = {
 
 }
 
-setmetatable(Picture, {__call = function(self, index) return Picture end})
+---@return Picture
+---@param index number
+function Picture(index)
+	return Picture
+end
 
 -- @return nothing
 ---@param color Color

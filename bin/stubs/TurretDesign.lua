@@ -5,7 +5,10 @@ TurretDesign = {
 
 }
 
-setmetatable(TurretDesign, {__call = function(self) return TurretDesign end})
+---@return TurretDesign
+function TurretDesign()
+	return TurretDesign
+end
 
 ---@return TurretDesignPart
 function TurretDesign:getBarrels()

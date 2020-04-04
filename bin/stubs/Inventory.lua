@@ -8,7 +8,10 @@ Inventory = {
 
 }
 
-setmetatable(Inventory, {__call = function(self) return Inventory end})
+---@return Inventory
+function Inventory()
+	return Inventory
+end
 
 ---@param item InventoryItem
 ---@param recent any

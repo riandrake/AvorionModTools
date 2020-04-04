@@ -6,7 +6,10 @@ GameInput = {
 
 }
 
-setmetatable(GameInput, {__call = function(self) return GameInput end})
+---@return GameInput
+function GameInput()
+	return GameInput
+end
 
 ---@param action GameInputAction
 ---@return string

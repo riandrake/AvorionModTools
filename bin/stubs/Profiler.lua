@@ -6,7 +6,11 @@ Profiler = {
 
 }
 
-setmetatable(Profiler, {__call = function(self, str) return Profiler end})
+---@return Profiler
+---@param str string
+function Profiler(str)
+	return Profiler
+end
 
 ---@return string
 function Profiler:__tostring()

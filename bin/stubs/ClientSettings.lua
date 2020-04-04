@@ -63,5 +63,8 @@ ClientSettings = {
 
 }
 
-setmetatable(ClientSettings, {__call = function(self) return ClientSettings end})
+---@return ClientSettings
+function ClientSettings()
+	return ClientSettings
+end
 

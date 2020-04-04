@@ -6,7 +6,12 @@ ivec2 = {
 
 }
 
-setmetatable(ivec2, {__call = function(self, other) return ivec2 end})
+---@return __add
+---@param other any
+---@return ivec2
+function ivec2:__add(other)
+	return ivec2
+end
 
 ---@param other any
 ---@return ivec2

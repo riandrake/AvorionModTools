@@ -76,7 +76,10 @@ EntityDescriptor = {
 
 }
 
-setmetatable(EntityDescriptor, {__call = function(self) return EntityDescriptor end})
+---@return EntityDescriptor
+function EntityDescriptor()
+	return EntityDescriptor
+end
 
 -- Adds a flat bias for stat of type type. This bias will be added to stat after multipliers are considered. Inherited from Entity
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew

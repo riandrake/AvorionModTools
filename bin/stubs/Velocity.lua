@@ -13,7 +13,11 @@ Velocity = {
 
 }
 
-setmetatable(Velocity, {__call = function(self, id) return Velocity end})
+---@return Velocity
+---@param id any
+function Velocity(id)
+	return Velocity
+end
 
 -- @return nothing
 ---@param axis vec3

@@ -8,7 +8,10 @@ Timer = {
 
 }
 
-setmetatable(Timer, {__call = function(self) return Timer end})
+---@return Timer
+function Timer()
+	return Timer
+end
 
 -- @return nothing
 ---@return any

@@ -20,7 +20,11 @@ UIContainer = {
 
 }
 
-setmetatable(UIContainer, {__call = function(self, index) return UIContainer end})
+---@return UIContainer
+---@param index number
+function UIContainer(index)
+	return UIContainer
+end
 
 -- @return nothing
 ---@return any

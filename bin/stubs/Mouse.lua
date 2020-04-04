@@ -5,7 +5,10 @@ Mouse = {
 
 }
 
-setmetatable(Mouse, {__call = function(self) return Mouse end})
+---@return Mouse
+function Mouse()
+	return Mouse
+end
 
 ---@param button number
 ---@return boolean

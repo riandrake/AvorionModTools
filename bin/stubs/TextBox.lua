@@ -34,7 +34,11 @@ TextBox = {
 
 }
 
-setmetatable(TextBox, {__call = function(self, index) return TextBox end})
+---@return TextBox
+---@param index number
+function TextBox(index)
+	return TextBox
+end
 
 -- @return nothing
 ---@return any

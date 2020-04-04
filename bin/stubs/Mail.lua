@@ -12,7 +12,10 @@ Mail = {
 
 }
 
-setmetatable(Mail, {__call = function(self) return Mail end})
+---@return Mail
+function Mail()
+	return Mail
+end
 
 -- @return nothing
 ---@param turret TurretTemplate

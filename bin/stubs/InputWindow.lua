@@ -34,7 +34,11 @@ InputWindow = {
 
 }
 
-setmetatable(InputWindow, {__call = function(self, index) return InputWindow end})
+---@return InputWindow
+---@param index number
+function InputWindow(index)
+	return InputWindow
+end
 
 -- Inherited from UIContainer
 -- @return nothing

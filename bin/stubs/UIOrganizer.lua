@@ -16,7 +16,12 @@ UIOrganizer = {
 
 }
 
-setmetatable(UIOrganizer, {__call = function(self, a, b) return UIOrganizer end})
+---@return UIOrganizer
+---@param a any
+---@param b any
+function UIOrganizer(a, b)
+	return UIOrganizer
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

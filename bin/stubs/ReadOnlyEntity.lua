@@ -76,7 +76,11 @@ ReadOnlyEntity = {
 
 }
 
-setmetatable(ReadOnlyEntity, {__call = function(self, id) return ReadOnlyEntity end})
+---@return ReadOnlyEntity
+---@param id any
+function ReadOnlyEntity(id)
+	return ReadOnlyEntity
+end
 
 ---@param number number
 ---@param profession number

@@ -27,7 +27,11 @@ Window = {
 
 }
 
-setmetatable(Window, {__call = function(self, index) return Window end})
+---@return Window
+---@param index number
+function Window(index)
+	return Window
+end
 
 -- Inherited from UIContainer
 -- @return nothing

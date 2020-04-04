@@ -16,7 +16,10 @@ SectorView = {
 
 }
 
-setmetatable(SectorView, {__call = function(self) return SectorView end})
+---@return SectorView
+function SectorView()
+	return SectorView
+end
 
 ---@param stations number
 ---@return number

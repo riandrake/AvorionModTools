@@ -5,5 +5,9 @@ SystemUpgradeLoot = {
 
 }
 
-setmetatable(SystemUpgradeLoot, {__call = function(self, id) return SystemUpgradeLoot end})
+---@return SystemUpgradeLoot
+---@param id any
+function SystemUpgradeLoot(id)
+	return SystemUpgradeLoot
+end
 

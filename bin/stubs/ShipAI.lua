@@ -12,7 +12,11 @@ ShipAI = {
 
 }
 
-setmetatable(ShipAI, {__call = function(self, id) return ShipAI end})
+---@return ShipAI
+---@param id any
+function ShipAI(id)
+	return ShipAI
+end
 
 ---@return boolean
 function ShipAI:enemyFightersPresent()

@@ -71,7 +71,11 @@ InventoryTurret = {
 
 }
 
-setmetatable(InventoryTurret, {__call = function(self, other) return InventoryTurret end})
+---@return InventoryTurret
+---@param other nil]
+function InventoryTurret(other)
+	return InventoryTurret
+end
 
 ---@param other any
 ---@return boolean

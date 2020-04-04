@@ -2,7 +2,10 @@
 UIRenderer = {
 }
 
-setmetatable(UIRenderer, {__call = function(self) return UIRenderer end})
+---@return UIRenderer
+function UIRenderer()
+	return UIRenderer
+end
 
 -- @return nothing
 ---@return any

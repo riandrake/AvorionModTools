@@ -5,7 +5,11 @@ DockingPositions = {
 
 }
 
-setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
+---@return DockingPositions
+---@param id any
+function DockingPositions(id)
+	return DockingPositions
+end
 
 -- @return nothing
 ---@return any

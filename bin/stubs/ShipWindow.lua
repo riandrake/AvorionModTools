@@ -21,7 +21,10 @@ ShipWindow = {
 
 }
 
-setmetatable(ShipWindow, {__call = function(self) return ShipWindow end})
+---@return ShipWindow
+function ShipWindow()
+	return ShipWindow
+end
 
 -- @return nothing
 ---@return any

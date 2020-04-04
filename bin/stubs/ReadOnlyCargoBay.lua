@@ -19,7 +19,11 @@ ReadOnlyCargoBay = {
 
 }
 
-setmetatable(ReadOnlyCargoBay, {__call = function(self, id) return ReadOnlyCargoBay end})
+---@return ReadOnlyCargoBay
+---@param id any
+function ReadOnlyCargoBay(id)
+	return ReadOnlyCargoBay
+end
 
 -- Finds all cargos with the given name.
 -- @param name - A string that will be matched with the 'name' property of the cargos.

@@ -39,5 +39,8 @@ TorpedoTemplate = {
 
 }
 
-setmetatable(TorpedoTemplate, {__call = function(self) return TorpedoTemplate end})
+---@return TorpedoTemplate
+function TorpedoTemplate()
+	return TorpedoTemplate
+end
 

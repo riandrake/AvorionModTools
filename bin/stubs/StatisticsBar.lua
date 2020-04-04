@@ -23,7 +23,11 @@ StatisticsBar = {
 
 }
 
-setmetatable(StatisticsBar, {__call = function(self, index) return StatisticsBar end})
+---@return StatisticsBar
+---@param index number
+function StatisticsBar(index)
+	return StatisticsBar
+end
 
 -- Inherited from UIElement
 -- @return nothing

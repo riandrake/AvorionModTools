@@ -2,7 +2,11 @@
 PlanBspTree = {
 }
 
-setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end})
+---@return PlanBspTree
+---@param plan BlockPlan
+function PlanBspTree(plan)
+	return PlanBspTree
+end
 
 ---@param box Box
 ---@return table<number, int>

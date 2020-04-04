@@ -7,5 +7,8 @@ AllianceMember = {
 
 }
 
-setmetatable(AllianceMember, {__call = function(self) return AllianceMember end})
+---@return AllianceMember
+function AllianceMember()
+	return AllianceMember
+end
 

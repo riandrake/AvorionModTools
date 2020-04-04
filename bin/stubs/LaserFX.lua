@@ -25,5 +25,9 @@ LaserFX = {
 
 }
 
-setmetatable(LaserFX, {__call = function(self, key) return LaserFX end})
+---@return LaserFX
+---@param key number
+function LaserFX(key)
+	return LaserFX
+end
 

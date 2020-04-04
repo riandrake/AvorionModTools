@@ -9,7 +9,11 @@ ShipSystem = {
 
 }
 
-setmetatable(ShipSystem, {__call = function(self, id) return ShipSystem end})
+---@return ShipSystem
+---@param id any
+function ShipSystem(id)
+	return ShipSystem
+end
 
 ---@param upgrade SystemUpgradeTemplate
 ---@param permanent boolean

@@ -6,7 +6,11 @@ BspTree = {
 
 }
 
-setmetatable(BspTree, {__call = function(self, id) return BspTree end})
+---@return BspTree
+---@param id any
+function BspTree(id)
+	return BspTree
+end
 
 ---@param box Box
 ---@return table<number, int>

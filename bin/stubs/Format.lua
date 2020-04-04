@@ -6,7 +6,12 @@ Format = {
 
 }
 
-setmetatable(Format, {__call = function(self, text, args) return Format end})
+---@return Format
+---@param text string
+---@param args table<number,
+function Format(text, args)
+	return Format
+end
 
 -- @return nothing
 ---@return any

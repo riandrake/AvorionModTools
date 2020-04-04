@@ -6,7 +6,10 @@ Tooltip = {
 
 }
 
-setmetatable(Tooltip, {__call = function(self) return Tooltip end})
+---@return Tooltip
+function Tooltip()
+	return Tooltip
+end
 
 -- @return nothing
 ---@param line TooltipLine

@@ -25,7 +25,11 @@ MultiLineTextBox = {
 
 }
 
-setmetatable(MultiLineTextBox, {__call = function(self, index) return MultiLineTextBox end})
+---@return MultiLineTextBox
+---@param index number
+function MultiLineTextBox(index)
+	return MultiLineTextBox
+end
 
 -- @return nothing
 ---@return any

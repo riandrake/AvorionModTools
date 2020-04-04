@@ -25,7 +25,11 @@ Button = {
 
 }
 
-setmetatable(Button, {__call = function(self, index) return Button end})
+---@return Button
+---@param index number
+function Button(index)
+	return Button
+end
 
 -- Inherited from UIElement
 -- @return nothing

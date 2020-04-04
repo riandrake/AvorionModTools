@@ -22,7 +22,14 @@ UIHorizontalSplitter = {
 
 }
 
-setmetatable(UIHorizontalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIHorizontalSplitter end})
+---@return UIHorizontalSplitter
+---@param rect Rect
+---@param padding number
+---@param margin number
+---@param ratio number
+function UIHorizontalSplitter(rect, padding, margin, ratio)
+	return UIHorizontalSplitter
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

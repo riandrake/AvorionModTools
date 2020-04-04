@@ -12,7 +12,11 @@ ReadOnlyTorpedoLauncher = {
 
 }
 
-setmetatable(ReadOnlyTorpedoLauncher, {__call = function(self, id) return ReadOnlyTorpedoLauncher end})
+---@return ReadOnlyTorpedoLauncher
+---@param id any
+function ReadOnlyTorpedoLauncher(id)
+	return ReadOnlyTorpedoLauncher
+end
 
 ---@param shaftIndex any
 ---@return unsigned,number

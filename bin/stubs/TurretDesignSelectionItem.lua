@@ -16,7 +16,11 @@ TurretDesignSelectionItem = {
 
 }
 
-setmetatable(TurretDesignSelectionItem, {__call = function(self, path) return TurretDesignSelectionItem end})
+---@return TurretDesignSelectionItem
+---@param path string
+function TurretDesignSelectionItem(path)
+	return TurretDesignSelectionItem
+end
 
 -- @return nothing
 ---@return any

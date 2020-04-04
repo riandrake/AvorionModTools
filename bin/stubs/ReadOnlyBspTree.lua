@@ -6,5 +6,9 @@ ReadOnlyBspTree = {
 
 }
 
-setmetatable(ReadOnlyBspTree, {__call = function(self, id) return ReadOnlyBspTree end})
+---@return ReadOnlyBspTree
+---@param id any
+function ReadOnlyBspTree(id)
+	return ReadOnlyBspTree
+end
 

@@ -13,5 +13,9 @@ ReadOnlyWormHole = {
 
 }
 
-setmetatable(ReadOnlyWormHole, {__call = function(self, id) return ReadOnlyWormHole end})
+---@return ReadOnlyWormHole
+---@param id any
+function ReadOnlyWormHole(id)
+	return ReadOnlyWormHole
+end
 

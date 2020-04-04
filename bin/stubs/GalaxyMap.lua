@@ -11,7 +11,10 @@ GalaxyMap = {
 
 }
 
-setmetatable(GalaxyMap, {__call = function(self) return GalaxyMap end})
+---@return GalaxyMap
+function GalaxyMap()
+	return GalaxyMap
+end
 
 -- @return nothing
 ---@return any

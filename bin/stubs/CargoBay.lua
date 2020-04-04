@@ -19,7 +19,11 @@ CargoBay = {
 
 }
 
-setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
+---@return CargoBay
+---@param id any
+function CargoBay(id)
+	return CargoBay
+end
 
 -- @return nothing
 ---@param other CargoBay

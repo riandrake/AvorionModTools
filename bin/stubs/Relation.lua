@@ -11,7 +11,10 @@ Relation = {
 
 }
 
-setmetatable(Relation, {__call = function(self) return Relation end})
+---@return Relation
+function Relation()
+	return Relation
+end
 
 ---@return static,const,stdvector
 function Relation:getSegments()

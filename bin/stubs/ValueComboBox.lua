@@ -26,7 +26,11 @@ ValueComboBox = {
 
 }
 
-setmetatable(ValueComboBox, {__call = function(self, index) return ValueComboBox end})
+---@return ValueComboBox
+---@param index number
+function ValueComboBox(index)
+	return ValueComboBox
+end
 
 -- @return nothing
 ---@param value any

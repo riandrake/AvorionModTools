@@ -6,5 +6,9 @@ ReadOnlyWreckageCreator = {
 
 }
 
-setmetatable(ReadOnlyWreckageCreator, {__call = function(self, id) return ReadOnlyWreckageCreator end})
+---@return ReadOnlyWreckageCreator
+---@param id any
+function ReadOnlyWreckageCreator(id)
+	return ReadOnlyWreckageCreator
+end
 

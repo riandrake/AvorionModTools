@@ -16,7 +16,13 @@ SystemUpgradeTemplate = {
 
 }
 
-setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
+---@return SystemUpgradeTemplate
+---@param script string
+---@param rarity Rarity
+---@param seed Seed
+function SystemUpgradeTemplate(script, rarity, seed)
+	return SystemUpgradeTemplate
+end
 
 ---@param other any
 ---@return boolean

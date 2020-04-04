@@ -7,5 +7,9 @@ ReadOnlyEntityTransferrer = {
 
 }
 
-setmetatable(ReadOnlyEntityTransferrer, {__call = function(self, id) return ReadOnlyEntityTransferrer end})
+---@return ReadOnlyEntityTransferrer
+---@param id any
+function ReadOnlyEntityTransferrer(id)
+	return ReadOnlyEntityTransferrer
+end
 

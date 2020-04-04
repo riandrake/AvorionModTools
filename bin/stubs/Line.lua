@@ -21,7 +21,11 @@ Line = {
 
 }
 
-setmetatable(Line, {__call = function(self, index) return Line end})
+---@return Line
+---@param index number
+function Line(index)
+	return Line
+end
 
 -- Inherited from UIElement
 -- @return nothing

@@ -27,7 +27,11 @@ Turret = {
 
 }
 
-setmetatable(Turret, {__call = function(self, id) return Turret end})
+---@return Turret
+---@param id any
+function Turret(id)
+	return Turret
+end
 
 -- @return nothing
 ---@param amount number

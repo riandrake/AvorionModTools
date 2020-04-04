@@ -2,5 +2,9 @@
 ReadOnlyTurretBases = {
 }
 
-setmetatable(ReadOnlyTurretBases, {__call = function(self, id) return ReadOnlyTurretBases end})
+---@return ReadOnlyTurretBases
+---@param id any
+function ReadOnlyTurretBases(id)
+	return ReadOnlyTurretBases
+end
 

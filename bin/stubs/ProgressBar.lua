@@ -22,7 +22,11 @@ ProgressBar = {
 
 }
 
-setmetatable(ProgressBar, {__call = function(self, index) return ProgressBar end})
+---@return ProgressBar
+---@param index number
+function ProgressBar(index)
+	return ProgressBar
+end
 
 -- Inherited from UIElement
 -- @return nothing

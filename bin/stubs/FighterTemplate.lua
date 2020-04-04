@@ -73,7 +73,10 @@ FighterTemplate = {
 
 }
 
-setmetatable(FighterTemplate, {__call = function(self) return FighterTemplate end})
+---@return FighterTemplate
+function FighterTemplate()
+	return FighterTemplate
+end
 
 -- @return nothing
 ---@param str string

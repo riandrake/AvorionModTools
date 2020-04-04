@@ -2,7 +2,11 @@
 Random = {
 }
 
-setmetatable(Random, {__call = function(self, seed) return Random end})
+---@return Random
+---@param seed Seed
+function Random(seed)
+	return Random
+end
 
 ---@return Seed
 function Random:createSeed()

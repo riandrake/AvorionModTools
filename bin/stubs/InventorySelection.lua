@@ -46,7 +46,11 @@ InventorySelection = {
 
 }
 
-setmetatable(InventorySelection, {__call = function(self, index) return InventorySelection end})
+---@return InventorySelection
+---@param index number
+function InventorySelection(index)
+	return InventorySelection
+end
 
 -- @return nothing
 ---@param item any

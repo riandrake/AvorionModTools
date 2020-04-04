@@ -11,7 +11,13 @@ SoundSource = {
 
 }
 
-setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
+---@return SoundSource
+---@param soundName string
+---@param position any
+---@param radius any
+function SoundSource(soundName, position, radius)
+	return SoundSource
+end
 
 -- @return nothing
 ---@return any

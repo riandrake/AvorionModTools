@@ -15,7 +15,11 @@ Hangar = {
 
 }
 
-setmetatable(Hangar, {__call = function(self, id) return Hangar end})
+---@return Hangar
+---@param id any
+function Hangar(id)
+	return Hangar
+end
 
 -- @return nothing
 ---@param squad number

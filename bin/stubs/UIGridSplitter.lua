@@ -19,7 +19,15 @@ UIGridSplitter = {
 
 }
 
-setmetatable(UIGridSplitter, {__call = function(self, rect, padding, margin, horizontalTiles, verticalTiles) return UIGridSplitter end})
+---@return UIGridSplitter
+---@param rect Rect
+---@param padding number
+---@param margin number
+---@param horizontalTiles number
+---@param verticalTiles number
+function UIGridSplitter(rect, padding, margin, horizontalTiles, verticalTiles)
+	return UIGridSplitter
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

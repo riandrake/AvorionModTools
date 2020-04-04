@@ -7,5 +7,9 @@ ReadOnlyDeletionTimer = {
 
 }
 
-setmetatable(ReadOnlyDeletionTimer, {__call = function(self, id) return ReadOnlyDeletionTimer end})
+---@return ReadOnlyDeletionTimer
+---@param id any
+function ReadOnlyDeletionTimer(id)
+	return ReadOnlyDeletionTimer
+end
 

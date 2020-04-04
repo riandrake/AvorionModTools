@@ -11,5 +11,8 @@ InventorySelectionItem = {
 
 }
 
-setmetatable(InventorySelectionItem, {__call = function(self) return InventorySelectionItem end})
+---@return InventorySelectionItem
+function InventorySelectionItem()
+	return InventorySelectionItem
+end
 

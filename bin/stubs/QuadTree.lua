@@ -5,7 +5,13 @@ QuadTree = {
 
 }
 
-setmetatable(QuadTree, {__call = function(self, min, max, maxLevel) return QuadTree end})
+---@return QuadTree
+---@param min vec2
+---@param max vec2
+---@param maxLevel number
+function QuadTree(min, max, maxLevel)
+	return QuadTree
+end
 
 ---@param center vec2
 ---@param radius number

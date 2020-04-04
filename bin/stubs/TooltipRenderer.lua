@@ -2,7 +2,11 @@
 TooltipRenderer = {
 }
 
-setmetatable(TooltipRenderer, {__call = function(self, tooltip) return TooltipRenderer end})
+---@return TooltipRenderer
+---@param tooltip Tooltip
+function TooltipRenderer(tooltip)
+	return TooltipRenderer
+end
 
 -- @return nothing
 ---@param var1 vec2

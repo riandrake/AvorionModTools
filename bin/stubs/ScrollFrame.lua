@@ -23,7 +23,11 @@ ScrollFrame = {
 
 }
 
-setmetatable(ScrollFrame, {__call = function(self, index) return ScrollFrame end})
+---@return ScrollFrame
+---@param index number
+function ScrollFrame(index)
+	return ScrollFrame
+end
 
 -- Inherited from UIContainer
 -- @return nothing

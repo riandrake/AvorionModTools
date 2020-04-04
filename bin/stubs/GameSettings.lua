@@ -21,7 +21,10 @@ GameSettings = {
 
 }
 
-setmetatable(GameSettings, {__call = function(self) return GameSettings end})
+---@return GameSettings
+function GameSettings()
+	return GameSettings
+end
 
 -- @return nothing
 ---@return any

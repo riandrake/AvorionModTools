@@ -2,7 +2,10 @@
 DebugInfo = {
 }
 
-setmetatable(DebugInfo, {__call = function(self) return DebugInfo end})
+---@return DebugInfo
+function DebugInfo()
+	return DebugInfo
+end
 
 ---@return string
 function DebugInfo:getEndingLog()

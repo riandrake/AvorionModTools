@@ -14,5 +14,9 @@ ReadOnlyBoarding = {
 
 }
 
-setmetatable(ReadOnlyBoarding, {__call = function(self, id) return ReadOnlyBoarding end})
+---@return ReadOnlyBoarding
+---@param id any
+function ReadOnlyBoarding(id)
+	return ReadOnlyBoarding
+end
 

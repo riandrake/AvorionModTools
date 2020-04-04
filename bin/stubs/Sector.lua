@@ -9,7 +9,10 @@ Sector = {
 
 }
 
-setmetatable(Sector, {__call = function(self) return Sector end})
+---@return Sector
+function Sector()
+	return Sector
+end
 
 ---@return number
 function Sector:addScript()

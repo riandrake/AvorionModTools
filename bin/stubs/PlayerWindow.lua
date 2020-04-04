@@ -5,7 +5,10 @@ PlayerWindow = {
 
 }
 
-setmetatable(PlayerWindow, {__call = function(self) return PlayerWindow end})
+---@return PlayerWindow
+function PlayerWindow()
+	return PlayerWindow
+end
 
 -- @return nothing
 ---@return any

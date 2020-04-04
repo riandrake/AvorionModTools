@@ -13,7 +13,11 @@ WormHole = {
 
 }
 
-setmetatable(WormHole, {__call = function(self, id) return WormHole end})
+---@return WormHole
+---@param id any
+function WormHole(id)
+	return WormHole
+end
 
 ---@return number,number
 function WormHole:getTargetCoordinates()

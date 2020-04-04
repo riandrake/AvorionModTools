@@ -11,5 +11,8 @@ PlanetSpecifics = {
 
 }
 
-setmetatable(PlanetSpecifics, {__call = function(self) return PlanetSpecifics end})
+---@return PlanetSpecifics
+function PlanetSpecifics()
+	return PlanetSpecifics
+end
 

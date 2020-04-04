@@ -15,7 +15,11 @@ ReadOnlyControlUnit = {
 
 }
 
-setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
+---@return ReadOnlyControlUnit
+---@param id any
+function ReadOnlyControlUnit(id)
+	return ReadOnlyControlUnit
+end
 
 ---@return bitset<10>
 function ReadOnlyControlUnit:getActiveWeapons()

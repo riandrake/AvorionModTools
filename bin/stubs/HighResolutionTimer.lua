@@ -9,7 +9,10 @@ HighResolutionTimer = {
 
 }
 
-setmetatable(HighResolutionTimer, {__call = function(self) return HighResolutionTimer end})
+---@return HighResolutionTimer
+function HighResolutionTimer()
+	return HighResolutionTimer
+end
 
 -- @return nothing
 ---@return any

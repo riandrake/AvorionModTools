@@ -11,7 +11,11 @@ Material = {
 
 }
 
-setmetatable(Material, {__call = function(self, type) return Material end})
+---@return Material
+---@param type number
+function Material(type)
+	return Material
+end
 
 ---@param other Material
 ---@return boolean

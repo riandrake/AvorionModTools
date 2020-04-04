@@ -503,8 +503,8 @@ class NamespaceDefinition:
                 writer.write('}\n\n')
 
                 additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(
-                    f"setmetatable({self.namespace}, {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
+                writer.write(f'---@return {constructor.name}\n' + constructor.definition.replace('return nil', 'return ' + constructor.name))
+                #  f"setmetatable({self.namespace}, {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
 
                 for function_overloads in functions[1:]:
                     # TODO: address overloads

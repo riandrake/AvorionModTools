@@ -32,7 +32,11 @@ Label = {
 
 }
 
-setmetatable(Label, {__call = function(self, index) return Label end})
+---@return Label
+---@param index number
+function Label(index)
+	return Label
+end
 
 -- Inherited from UIElement
 -- @return nothing

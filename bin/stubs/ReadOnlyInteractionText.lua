@@ -7,5 +7,9 @@ ReadOnlyInteractionText = {
 
 }
 
-setmetatable(ReadOnlyInteractionText, {__call = function(self, id) return ReadOnlyInteractionText end})
+---@return ReadOnlyInteractionText
+---@param id any
+function ReadOnlyInteractionText(id)
+	return ReadOnlyInteractionText
+end
 

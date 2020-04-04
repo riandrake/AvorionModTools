@@ -26,7 +26,11 @@ Tab = {
 
 }
 
-setmetatable(Tab, {__call = function(self, index) return Tab end})
+---@return Tab
+---@param index number
+function Tab(index)
+	return Tab
+end
 
 -- Inherited from UIContainer
 -- @return nothing

@@ -9,5 +9,12 @@ PluralForm = {
 
 }
 
-setmetatable(PluralForm, {__call = function(self, singular, plural, contextOrAmount, amount) return PluralForm end})
+---@return PluralForm
+---@param singular string
+---@param plural any
+---@param contextOrAmount any
+---@param amount any
+function PluralForm(singular, plural, contextOrAmount, amount)
+	return PluralForm
+end
 

@@ -15,7 +15,11 @@ FighterAI = {
 
 }
 
-setmetatable(FighterAI, {__call = function(self, id) return FighterAI end})
+---@return FighterAI
+---@param id any
+function FighterAI(id)
+	return FighterAI
+end
 
 -- @return nothing
 ---@return any

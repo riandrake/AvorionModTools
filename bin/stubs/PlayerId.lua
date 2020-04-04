@@ -6,5 +6,8 @@ PlayerId = {
 
 }
 
-setmetatable(PlayerId, {__call = function(self) return PlayerId end})
+---@return PlayerId
+function PlayerId()
+	return PlayerId
+end
 

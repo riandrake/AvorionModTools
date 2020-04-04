@@ -2,7 +2,10 @@
 Achievements = {
 }
 
-setmetatable(Achievements, {__call = function(self) return Achievements end})
+---@return Achievements
+function Achievements()
+	return Achievements
+end
 
 -- @return nothing
 ---@return any

@@ -8,7 +8,11 @@ Torpedo = {
 
 }
 
-setmetatable(Torpedo, {__call = function(self, id) return Torpedo end})
+---@return Torpedo
+---@param id any
+function Torpedo(id)
+	return Torpedo
+end
 
 ---@return TorpedoTemplate
 function Torpedo:getTemplate()

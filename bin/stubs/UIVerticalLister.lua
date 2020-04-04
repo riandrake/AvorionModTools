@@ -16,7 +16,13 @@ UIVerticalLister = {
 
 }
 
-setmetatable(UIVerticalLister, {__call = function(self, rect, padding, margin) return UIVerticalLister end})
+---@return UIVerticalLister
+---@param rect Rect
+---@param padding number
+---@param margin number
+function UIVerticalLister(rect, padding, margin)
+	return UIVerticalLister
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

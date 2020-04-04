@@ -24,5 +24,8 @@ PlanGenerationStage = {
 
 }
 
-setmetatable(PlanGenerationStage, {__call = function(self) return PlanGenerationStage end})
+---@return PlanGenerationStage
+function PlanGenerationStage()
+	return PlanGenerationStage
+end
 

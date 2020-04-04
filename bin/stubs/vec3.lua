@@ -7,7 +7,12 @@ vec3 = {
 
 }
 
-setmetatable(vec3, {__call = function(self, other) return vec3 end})
+---@return __add
+---@param other any
+---@return vec3
+function vec3:__add(other)
+	return vec3
+end
 
 ---@param other any
 ---@return vec3

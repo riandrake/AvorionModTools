@@ -17,7 +17,10 @@ VanillaInventoryItem = {
 
 }
 
-setmetatable(VanillaInventoryItem, {__call = function(self) return VanillaInventoryItem end})
+---@return VanillaInventoryItem
+function VanillaInventoryItem()
+	return VanillaInventoryItem
+end
 
 ---@param other any
 ---@return boolean

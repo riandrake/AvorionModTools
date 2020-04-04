@@ -35,7 +35,11 @@ ListBoxEx = {
 
 }
 
-setmetatable(ListBoxEx, {__call = function(self, index) return ListBoxEx end})
+---@return ListBoxEx
+---@param index number
+function ListBoxEx(index)
+	return ListBoxEx
+end
 
 -- @return nothing
 ---@return any

@@ -20,7 +20,10 @@ Crew = {
 
 }
 
-setmetatable(Crew, {__call = function(self) return Crew end})
+---@return Crew
+function Crew()
+	return Crew
+end
 
 -- @return nothing
 ---@param amount number

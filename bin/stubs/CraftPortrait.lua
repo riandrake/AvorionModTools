@@ -25,7 +25,11 @@ CraftPortrait = {
 
 }
 
-setmetatable(CraftPortrait, {__call = function(self, index) return CraftPortrait end})
+---@return CraftPortrait
+---@param index number
+function CraftPortrait(index)
+	return CraftPortrait
+end
 
 -- Inherited from UIElement
 -- @return nothing

@@ -7,7 +7,10 @@ Music = {
 
 }
 
-setmetatable(Music, {__call = function(self) return Music end})
+---@return Music
+function Music()
+	return Music
+end
 
 -- @return nothing
 ---@param time number

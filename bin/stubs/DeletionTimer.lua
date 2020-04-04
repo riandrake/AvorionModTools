@@ -7,7 +7,11 @@ DeletionTimer = {
 
 }
 
-setmetatable(DeletionTimer, {__call = function(self, id) return DeletionTimer end})
+---@return DeletionTimer
+---@param id any
+function DeletionTimer(id)
+	return DeletionTimer
+end
 
 -- @return nothing
 ---@return any

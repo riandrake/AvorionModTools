@@ -11,7 +11,11 @@ Owner = {
 
 }
 
-setmetatable(Owner, {__call = function(self, id) return Owner end})
+---@return Owner
+---@param id any
+function Owner(id)
+	return Owner
+end
 
 ---@param otherFactionIndex number
 ---@return number

@@ -7,5 +7,9 @@ WreckageCreator = {
 
 }
 
-setmetatable(WreckageCreator, {__call = function(self, id) return WreckageCreator end})
+---@return WreckageCreator
+---@param id any
+function WreckageCreator(id)
+	return WreckageCreator
+end
 

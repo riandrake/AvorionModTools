@@ -2,7 +2,10 @@
 Keyboard = {
 }
 
-setmetatable(Keyboard, {__call = function(self) return Keyboard end})
+---@return Keyboard
+function Keyboard()
+	return Keyboard
+end
 
 ---@param value any
 ---@return boolean

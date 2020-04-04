@@ -31,7 +31,10 @@ BlockStatistics = {
 
 }
 
-setmetatable(BlockStatistics, {__call = function(self) return BlockStatistics end})
+---@return BlockStatistics
+function BlockStatistics()
+	return BlockStatistics
+end
 
 ---@param blockIndex number
 ---@return number

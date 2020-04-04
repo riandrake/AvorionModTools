@@ -6,5 +6,10 @@ Sphere = {
 
 }
 
-setmetatable(Sphere, {__call = function(self, center, radius) return Sphere end})
+---@return Sphere
+---@param center vec3
+---@param radius number
+function Sphere(center, radius)
+	return Sphere
+end
 

@@ -14,7 +14,11 @@ Durability = {
 
 }
 
-setmetatable(Durability, {__call = function(self, id) return Durability end})
+---@return Durability
+---@param id any
+function Durability(id)
+	return Durability
+end
 
 ---@return any,any
 function Durability:getWeakness()

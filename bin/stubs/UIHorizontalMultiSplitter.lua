@@ -19,7 +19,14 @@ UIHorizontalMultiSplitter = {
 
 }
 
-setmetatable(UIHorizontalMultiSplitter, {__call = function(self, rect, padding, margin, splits) return UIHorizontalMultiSplitter end})
+---@return UIHorizontalMultiSplitter
+---@param rect Rect
+---@param padding number
+---@param margin number
+---@param splits number
+function UIHorizontalMultiSplitter(rect, padding, margin, splits)
+	return UIHorizontalMultiSplitter
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

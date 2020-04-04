@@ -23,7 +23,11 @@ ArrowLine = {
 
 }
 
-setmetatable(ArrowLine, {__call = function(self, index) return ArrowLine end})
+---@return ArrowLine
+---@param index number
+function ArrowLine(index)
+	return ArrowLine
+end
 
 -- Inherited from UIElement
 -- @return nothing

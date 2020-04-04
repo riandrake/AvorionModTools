@@ -26,7 +26,11 @@ ComboBox = {
 
 }
 
-setmetatable(ComboBox, {__call = function(self, index) return ComboBox end})
+---@return ComboBox
+---@param index number
+function ComboBox(index)
+	return ComboBox
+end
 
 -- @return nothing
 ---@param entry string

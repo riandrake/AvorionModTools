@@ -13,7 +13,11 @@ EnergySystem = {
 
 }
 
-setmetatable(EnergySystem, {__call = function(self, id) return EnergySystem end})
+---@return EnergySystem
+---@param id any
+function EnergySystem(id)
+	return EnergySystem
+end
 
 -- @return nothing
 ---@param amount number

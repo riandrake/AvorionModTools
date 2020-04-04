@@ -10,7 +10,10 @@ Matrix = {
 
 }
 
-setmetatable(Matrix, {__call = function(self) return Matrix end})
+---@return Matrix
+function Matrix()
+	return Matrix
+end
 
 ---@param m Matrix
 ---@return Matrix

@@ -21,7 +21,11 @@ TabbedWindow = {
 
 }
 
-setmetatable(TabbedWindow, {__call = function(self, index) return TabbedWindow end})
+---@return TabbedWindow
+---@param index number
+function TabbedWindow(index)
+	return TabbedWindow
+end
 
 -- @return nothing
 ---@return any

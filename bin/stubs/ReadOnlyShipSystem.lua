@@ -9,7 +9,11 @@ ReadOnlyShipSystem = {
 
 }
 
-setmetatable(ReadOnlyShipSystem, {__call = function(self, id) return ReadOnlyShipSystem end})
+---@return ReadOnlyShipSystem
+---@param id any
+function ReadOnlyShipSystem(id)
+	return ReadOnlyShipSystem
+end
 
 ---@param index number
 ---@return SystemUpgradeTemplate

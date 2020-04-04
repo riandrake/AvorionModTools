@@ -21,7 +21,10 @@ AllianceTab = {
 
 }
 
-setmetatable(AllianceTab, {__call = function(self) return AllianceTab end})
+---@return AllianceTab
+function AllianceTab()
+	return AllianceTab
+end
 
 -- @return nothing
 ---@return any

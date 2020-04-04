@@ -11,7 +11,10 @@ Color = {
 
 }
 
-setmetatable(Color, {__call = function(self) return Color end})
+---@return Color
+function Color()
+	return Color
+end
 
 ---@return string
 function Color:__tostring()

@@ -28,7 +28,10 @@ BlockPlanBlock = {
 
 }
 
-setmetatable(BlockPlanBlock, {__call = function(self) return BlockPlanBlock end})
+---@return BlockPlanBlock
+function BlockPlanBlock()
+	return BlockPlanBlock
+end
 
 ---@return table<number, int>
 function BlockPlanBlock:getChildren()

@@ -12,5 +12,8 @@ ControlUnitSeat = {
 
 }
 
-setmetatable(ControlUnitSeat, {__call = function(self) return ControlUnitSeat end})
+---@return ControlUnitSeat
+function ControlUnitSeat()
+	return ControlUnitSeat
+end
 

@@ -16,7 +16,16 @@ TradingGood = {
 
 }
 
-setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
+---@return TradingGood
+---@param name string
+---@param plural string
+---@param description string
+---@param icon string
+---@param price number
+---@param size number
+function TradingGood(name, plural, description, icon, price, size)
+	return TradingGood
+end
 
 ---@param other TradingGood
 ---@return boolean

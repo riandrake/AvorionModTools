@@ -21,7 +21,11 @@ UIRect = {
 
 }
 
-setmetatable(UIRect, {__call = function(self, index) return UIRect end})
+---@return UIRect
+---@param index number
+function UIRect(index)
+	return UIRect
+end
 
 -- Inherited from UIElement
 -- @return nothing

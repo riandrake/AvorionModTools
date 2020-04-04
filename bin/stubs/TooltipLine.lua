@@ -23,5 +23,10 @@ TooltipLine = {
 
 }
 
-setmetatable(TooltipLine, {__call = function(self, height, fontSize) return TooltipLine end})
+---@return TooltipLine
+---@param height number
+---@param fontSize number
+function TooltipLine(height, fontSize)
+	return TooltipLine
+end
 

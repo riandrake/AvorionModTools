@@ -13,7 +13,11 @@ Physics = {
 
 }
 
-setmetatable(Physics, {__call = function(self, id) return Physics end})
+---@return Physics
+---@param id any
+function Physics(id)
+	return Physics
+end
 
 -- @return nothing
 ---@param position vec3

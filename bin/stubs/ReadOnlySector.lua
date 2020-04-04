@@ -9,5 +9,8 @@ ReadOnlySector = {
 
 }
 
-setmetatable(ReadOnlySector, {__call = function(self) return ReadOnlySector end})
+---@return ReadOnlySector
+function ReadOnlySector()
+	return ReadOnlySector
+end
 

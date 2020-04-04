@@ -62,5 +62,9 @@ ReadOnlyWeapons = {
 
 }
 
-setmetatable(ReadOnlyWeapons, {__call = function(self, id) return ReadOnlyWeapons end})
+---@return ReadOnlyWeapons
+---@param id any
+function ReadOnlyWeapons(id)
+	return ReadOnlyWeapons
+end
 

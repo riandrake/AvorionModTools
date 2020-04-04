@@ -11,7 +11,10 @@ PlanStyle = {
 
 }
 
-setmetatable(PlanStyle, {__call = function(self) return PlanStyle end})
+---@return PlanStyle
+function PlanStyle()
+	return PlanStyle
+end
 
 -- Adds a new stage to the style.
 -- @return nothing

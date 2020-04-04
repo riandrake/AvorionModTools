@@ -26,7 +26,11 @@ TextField = {
 
 }
 
-setmetatable(TextField, {__call = function(self, index) return TextField end})
+---@return TextField
+---@param index number
+function TextField(index)
+	return TextField
+end
 
 -- Inherited from UIElement
 -- @return nothing

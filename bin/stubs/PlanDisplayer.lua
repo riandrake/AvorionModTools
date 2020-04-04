@@ -27,7 +27,11 @@ PlanDisplayer = {
 
 }
 
-setmetatable(PlanDisplayer, {__call = function(self, index) return PlanDisplayer end})
+---@return PlanDisplayer
+---@param index number
+function PlanDisplayer(index)
+	return PlanDisplayer
+end
 
 -- Inherited from UIElement
 -- @return nothing

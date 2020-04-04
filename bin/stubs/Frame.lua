@@ -21,7 +21,11 @@ Frame = {
 
 }
 
-setmetatable(Frame, {__call = function(self, index) return Frame end})
+---@return Frame
+---@param index number
+function Frame(index)
+	return Frame
+end
 
 -- Inherited from UIElement
 -- @return nothing

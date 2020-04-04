@@ -19,5 +19,8 @@ SelectionItem = {
 
 }
 
-setmetatable(SelectionItem, {__call = function(self) return SelectionItem end})
+---@return SelectionItem
+function SelectionItem()
+	return SelectionItem
+end
 

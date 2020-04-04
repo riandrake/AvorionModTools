@@ -20,7 +20,11 @@ UIElement = {
 
 }
 
-setmetatable(UIElement, {__call = function(self, index) return UIElement end})
+---@return UIElement
+---@param index number
+function UIElement(index)
+	return UIElement
+end
 
 -- @return nothing
 ---@return any

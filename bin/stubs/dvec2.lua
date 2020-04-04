@@ -6,7 +6,12 @@ dvec2 = {
 
 }
 
-setmetatable(dvec2, {__call = function(self, other) return dvec2 end})
+---@return __add
+---@param other any
+---@return dvec2
+function dvec2:__add(other)
+	return dvec2
+end
 
 ---@param other any
 ---@return dvec2

@@ -6,5 +6,9 @@ ReadOnlyLoot = {
 
 }
 
-setmetatable(ReadOnlyLoot, {__call = function(self, id) return ReadOnlyLoot end})
+---@return ReadOnlyLoot
+---@param id any
+function ReadOnlyLoot(id)
+	return ReadOnlyLoot
+end
 

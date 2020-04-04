@@ -19,7 +19,11 @@ Shield = {
 
 }
 
-setmetatable(Shield, {__call = function(self, id) return Shield end})
+---@return Shield
+---@param id any
+function Shield(id)
+	return Shield
+end
 
 -- @return nothing
 ---@param amount number

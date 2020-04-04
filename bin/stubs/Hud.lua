@@ -28,7 +28,10 @@ Hud = {
 
 }
 
-setmetatable(Hud, {__call = function(self) return Hud end})
+---@return Hud
+function Hud()
+	return Hud
+end
 
 ---@param rect Rect
 ---@return UIContainer

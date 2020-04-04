@@ -14,5 +14,9 @@ Engine = {
 
 }
 
-setmetatable(Engine, {__call = function(self, id) return Engine end})
+---@return Engine
+---@param id any
+function Engine(id)
+	return Engine
+end
 

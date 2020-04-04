@@ -17,7 +17,14 @@ UIArbitraryHorizontalSplitter = {
 
 }
 
-setmetatable(UIArbitraryHorizontalSplitter, {__call = function(self, rect, padding, margin, splits) return UIArbitraryHorizontalSplitter end})
+---@return UIArbitraryHorizontalSplitter
+---@param rect Rect
+---@param padding number
+---@param margin number
+---@param splits table<number,
+function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
+	return UIArbitraryHorizontalSplitter
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

@@ -6,7 +6,11 @@ PlanMesh = {
 
 }
 
-setmetatable(PlanMesh, {__call = function(self, id) return PlanMesh end})
+---@return PlanMesh
+---@param id any
+function PlanMesh(id)
+	return PlanMesh
+end
 
 -- @return nothing
 ---@param shading number

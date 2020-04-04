@@ -6,7 +6,11 @@ Loot = {
 
 }
 
-setmetatable(Loot, {__call = function(self, id) return Loot end})
+---@return Loot
+---@param id any
+function Loot(id)
+	return Loot
+end
 
 -- @return nothing
 ---@param item InventoryItem

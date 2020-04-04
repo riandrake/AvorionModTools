@@ -16,7 +16,13 @@ UIHorizontalLister = {
 
 }
 
-setmetatable(UIHorizontalLister, {__call = function(self, rect, padding, margin) return UIHorizontalLister end})
+---@return UIHorizontalLister
+---@param rect Rect
+---@param padding number
+---@param margin number
+function UIHorizontalLister(rect, padding, margin)
+	return UIHorizontalLister
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

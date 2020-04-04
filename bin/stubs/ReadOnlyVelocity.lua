@@ -13,5 +13,9 @@ ReadOnlyVelocity = {
 
 }
 
-setmetatable(ReadOnlyVelocity, {__call = function(self, id) return ReadOnlyVelocity end})
+---@return ReadOnlyVelocity
+---@param id any
+function ReadOnlyVelocity(id)
+	return ReadOnlyVelocity
+end
 

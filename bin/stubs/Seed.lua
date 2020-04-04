@@ -6,7 +6,11 @@ Seed = {
 
 }
 
-setmetatable(Seed, {__call = function(self, _in) return Seed end})
+---@return Seed
+---@param _in any
+function Seed(_in)
+	return Seed
+end
 
 ---@param other number
 ---@return Seed

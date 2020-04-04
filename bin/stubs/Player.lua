@@ -35,7 +35,10 @@ Player = {
 
 }
 
-setmetatable(Player, {__call = function(self) return Player end})
+---@return Player
+function Player()
+	return Player
+end
 
 -- @return nothing
 ---@param item any

@@ -15,7 +15,11 @@ ControlUnit = {
 
 }
 
-setmetatable(ControlUnit, {__call = function(self, id) return ControlUnit end})
+---@return ControlUnit
+---@param id any
+function ControlUnit(id)
+	return ControlUnit
+end
 
 -- @return nothing
 ---@return any

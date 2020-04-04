@@ -15,5 +15,8 @@ InventoryReferenceSelectionItem = {
 
 }
 
-setmetatable(InventoryReferenceSelectionItem, {__call = function(self) return InventoryReferenceSelectionItem end})
+---@return InventoryReferenceSelectionItem
+function InventoryReferenceSelectionItem()
+	return InventoryReferenceSelectionItem
+end
 

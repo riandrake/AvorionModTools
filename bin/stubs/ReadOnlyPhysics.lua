@@ -13,5 +13,9 @@ ReadOnlyPhysics = {
 
 }
 
-setmetatable(ReadOnlyPhysics, {__call = function(self, id) return ReadOnlyPhysics end})
+---@return ReadOnlyPhysics
+---@param id any
+function ReadOnlyPhysics(id)
+	return ReadOnlyPhysics
+end
 

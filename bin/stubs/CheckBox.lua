@@ -28,7 +28,11 @@ CheckBox = {
 
 }
 
-setmetatable(CheckBox, {__call = function(self, index) return CheckBox end})
+---@return CheckBox
+---@param index number
+function CheckBox(index)
+	return CheckBox
+end
 
 -- Inherited from UIElement
 -- @return nothing

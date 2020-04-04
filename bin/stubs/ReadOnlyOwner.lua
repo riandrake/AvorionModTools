@@ -11,7 +11,11 @@ ReadOnlyOwner = {
 
 }
 
-setmetatable(ReadOnlyOwner, {__call = function(self, id) return ReadOnlyOwner end})
+---@return ReadOnlyOwner
+---@param id any
+function ReadOnlyOwner(id)
+	return ReadOnlyOwner
+end
 
 ---@param otherFactionIndex number
 ---@return number

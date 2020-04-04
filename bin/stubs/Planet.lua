@@ -6,5 +6,9 @@ Planet = {
 
 }
 
-setmetatable(Planet, {__call = function(self, index) return Planet end})
+---@return Planet
+---@param index number
+function Planet(index)
+	return Planet
+end
 

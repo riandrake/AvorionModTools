@@ -2,7 +2,11 @@
 TurretBases = {
 }
 
-setmetatable(TurretBases, {__call = function(self, id) return TurretBases end})
+---@return TurretBases
+---@param id any
+function TurretBases(id)
+	return TurretBases
+end
 
 -- @return nothing
 ---@param index any

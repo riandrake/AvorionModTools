@@ -6,7 +6,11 @@ Language = {
 
 }
 
-setmetatable(Language, {__call = function(self, seed) return Language end})
+---@return Language
+---@param seed Seed
+function Language(seed)
+	return Language
+end
 
 ---@return string
 function Language:getConsonantSound()

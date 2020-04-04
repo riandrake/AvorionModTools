@@ -6,7 +6,11 @@ EntityTooltip = {
 
 }
 
-setmetatable(EntityTooltip, {__call = function(self, id) return EntityTooltip end})
+---@return EntityTooltip
+---@param id any
+function EntityTooltip(id)
+	return EntityTooltip
+end
 
 -- @return nothing
 ---@param i number

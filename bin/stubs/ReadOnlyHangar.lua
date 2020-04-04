@@ -15,7 +15,11 @@ ReadOnlyHangar = {
 
 }
 
-setmetatable(ReadOnlyHangar, {__call = function(self, id) return ReadOnlyHangar end})
+---@return ReadOnlyHangar
+---@param id any
+function ReadOnlyHangar(id)
+	return ReadOnlyHangar
+end
 
 ---@param entity Entity
 ---@return boolean

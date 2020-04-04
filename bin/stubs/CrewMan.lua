@@ -7,5 +7,11 @@ CrewMan = {
 
 }
 
-setmetatable(CrewMan, {__call = function(self, profession, specialist, level) return CrewMan end})
+---@return CrewMan
+---@param profession any
+---@param specialist any
+---@param level any
+function CrewMan(profession, specialist, level)
+	return CrewMan
+end
 

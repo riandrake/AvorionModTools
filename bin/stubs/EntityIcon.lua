@@ -10,5 +10,9 @@ EntityIcon = {
 
 }
 
-setmetatable(EntityIcon, {__call = function(self, id) return EntityIcon end})
+---@return EntityIcon
+---@param id any
+function EntityIcon(id)
+	return EntityIcon
+end
 

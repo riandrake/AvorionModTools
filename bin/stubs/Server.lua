@@ -28,7 +28,10 @@ Server = {
 
 }
 
-setmetatable(Server, {__call = function(self) return Server end})
+---@return Server
+function Server()
+	return Server
+end
 
 -- @return nothing
 ---@param sender Player

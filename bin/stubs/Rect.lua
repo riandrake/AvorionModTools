@@ -16,5 +16,12 @@ Rect = {
 
 }
 
-setmetatable(Rect, {__call = function(self, a, b, c, d) return Rect end})
+---@return Rect
+---@param a any
+---@param b any
+---@param c any
+---@param d any
+function Rect(a, b, c, d)
+	return Rect
+end
 

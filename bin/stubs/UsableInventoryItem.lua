@@ -19,7 +19,13 @@ UsableInventoryItem = {
 
 }
 
-setmetatable(UsableInventoryItem, {__call = function(self, script, rarity, values) return UsableInventoryItem end})
+---@return UsableInventoryItem
+---@param script string
+---@param rarity Rarity
+---@param values table<number,
+function UsableInventoryItem(script, rarity, values)
+	return UsableInventoryItem
+end
 
 ---@param other any
 ---@return boolean

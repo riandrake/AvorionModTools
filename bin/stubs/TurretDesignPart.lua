@@ -2,7 +2,10 @@
 TurretDesignPart = {
 }
 
-setmetatable(TurretDesignPart, {__call = function(self) return TurretDesignPart end})
+---@return TurretDesignPart
+function TurretDesignPart()
+	return TurretDesignPart
+end
 
 ---@return BlockPlan
 function TurretDesignPart:getMovePlan()

@@ -14,7 +14,11 @@ Boarding = {
 
 }
 
-setmetatable(Boarding, {__call = function(self, id) return Boarding end})
+---@return Boarding
+---@param id any
+function Boarding(id)
+	return Boarding
+end
 
 -- @return nothing
 ---@param attackingFaction number

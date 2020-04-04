@@ -18,7 +18,11 @@ Plan = {
 
 }
 
-setmetatable(Plan, {__call = function(self, id) return Plan end})
+---@return Plan
+---@param id any
+function Plan(id)
+	return Plan
+end
 
 -- Add a new block to an existing plan.
 -- @param position - The position of the new

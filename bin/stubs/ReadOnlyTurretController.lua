@@ -6,7 +6,11 @@ ReadOnlyTurretController = {
 
 }
 
-setmetatable(ReadOnlyTurretController, {__call = function(self, id) return ReadOnlyTurretController end})
+---@return ReadOnlyTurretController
+---@param id any
+function ReadOnlyTurretController(id)
+	return ReadOnlyTurretController
+end
 
 ---@param group number
 ---@return number,Uuid

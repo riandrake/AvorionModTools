@@ -38,7 +38,11 @@ Selection = {
 
 }
 
-setmetatable(Selection, {__call = function(self, index) return Selection end})
+---@return Selection
+---@param index number
+function Selection(index)
+	return Selection
+end
 
 -- @return nothing
 ---@param item any

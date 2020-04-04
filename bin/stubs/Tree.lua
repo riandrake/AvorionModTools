@@ -22,7 +22,11 @@ Tree = {
 
 }
 
-setmetatable(Tree, {__call = function(self, index) return Tree end})
+---@return Tree
+---@param index number
+function Tree(index)
+	return Tree
+end
 
 ---@param parent any
 ---@param caption string

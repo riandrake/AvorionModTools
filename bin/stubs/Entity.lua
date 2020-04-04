@@ -76,7 +76,11 @@ Entity = {
 
 }
 
-setmetatable(Entity, {__call = function(self, id) return Entity end})
+---@return Entity
+---@param id any
+function Entity(id)
+	return Entity
+end
 
 -- Adds a flat bias for stat of type type. This bias will be added to stat after multipliers are considered.
 -- @param type - Type of Bonus, e.g. acceleration, higher level crew

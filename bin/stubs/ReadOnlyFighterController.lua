@@ -6,7 +6,11 @@ ReadOnlyFighterController = {
 
 }
 
-setmetatable(ReadOnlyFighterController, {__call = function(self, id) return ReadOnlyFighterController end})
+---@return ReadOnlyFighterController
+---@param id any
+function ReadOnlyFighterController(id)
+	return ReadOnlyFighterController
+end
 
 ---@param squad any
 ---@return table<number, Entity>

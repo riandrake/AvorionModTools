@@ -71,7 +71,11 @@ TurretTemplate = {
 
 }
 
-setmetatable(TurretTemplate, {__call = function(self, other) return TurretTemplate end})
+---@return TurretTemplate
+---@param other any
+function TurretTemplate(other)
+	return TurretTemplate
+end
 
 ---@param other any
 ---@return boolean

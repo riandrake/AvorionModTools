@@ -22,7 +22,14 @@ UIVerticalSplitter = {
 
 }
 
-setmetatable(UIVerticalSplitter, {__call = function(self, rect, padding, margin, ratio) return UIVerticalSplitter end})
+---@return UIVerticalSplitter
+---@param rect Rect
+---@param padding number
+---@param margin number
+---@param ratio number
+function UIVerticalSplitter(rect, padding, margin, ratio)
+	return UIVerticalSplitter
+end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect

@@ -18,7 +18,11 @@ ReadOnlyPlan = {
 
 }
 
-setmetatable(ReadOnlyPlan, {__call = function(self, id) return ReadOnlyPlan end})
+---@return ReadOnlyPlan
+---@param id any
+function ReadOnlyPlan(id)
+	return ReadOnlyPlan
+end
 
 ---@return boolean
 function ReadOnlyPlan:empty()

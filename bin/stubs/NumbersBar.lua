@@ -20,7 +20,11 @@ NumbersBar = {
 
 }
 
-setmetatable(NumbersBar, {__call = function(self, index) return NumbersBar end})
+---@return NumbersBar
+---@param index number
+function NumbersBar(index)
+	return NumbersBar
+end
 
 -- @return nothing
 ---@param num number
