@@ -6,7 +6,6 @@ Sector = {
 	numPlayers = 0, -- [read-only] unsigned int
 	pvpDamage = true, -- bool
 	seed = Seed(), -- [read-only] Seed
-	seed = Seed(), -- [read-only] Seed
 
 }
 

@@ -2,30 +2,22 @@
 Faction = {
 
 	alwaysAtWar = true, -- [read-only] bool
-	alwaysAtWar = true, -- bool
 	baseName = "", -- [read-only] string
 	homeSectorUnknown = true, -- [read-only] bool
-	homeSectorUnknown = true, -- bool
-	index = 0, -- [read-only] int
 	index = 0, -- [read-only] int
 	infiniteResources = true, -- bool
 	initialRelations = 0, -- int
 	initialRelationsToPlayer = 0, -- int
 	isAIFaction = true, -- [read-only] bool
-	isAIFaction = true, -- [read-only] bool
 	isAlliance = true, -- [read-only] bool
-	isAlliance = true, -- [read-only] bool
-	isPlayer = true, -- [read-only] bool
 	isPlayer = true, -- [read-only] bool
 	money = 0, -- int
-	name = "", -- [read-only] string
 	name = "", -- [read-only] string
 	stateForm = "", -- [read-only] string
 	staticRelationsToAI = true, -- bool
 	staticRelationsToAll = true, -- bool
 	staticRelationsToPlayers = true, -- bool
 	translatedName = "", -- [read-only] string
-	unformattedName = Format(), -- [read-only] Format
 	unformattedName = Format(), -- [read-only] Format
 
 }
