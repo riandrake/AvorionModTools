@@ -6,27 +6,27 @@ SystemUpgradeTemplate = {
 	itemType = InventoryItemType.Turret, -- [read-only] InventoryItemType
 	name = "", -- [read-only] string
 	price = 0, -- [read-only] int
-	rarity = Rarity(), -- Rarity
+	rarity = Rarity, -- Rarity
 	recent = true, -- bool
 	script = "", -- string
-	seed = Seed(), -- Seed
+	seed = Seed, -- Seed
 	stackable = true, -- [read-only] bool
-	tooltip = UserObject(), -- [read-only] UserObject
+	tooltip = UserObject, -- [read-only] UserObject
 	trash = true, -- bool
 
 }
 
 setmetatable(SystemUpgradeTemplate, {__call = function(self, script, rarity, seed) return SystemUpgradeTemplate end})
 
----@param other var
----@type fun(other:any):boolean
-SystemUpgradeTemplate.__eq = function (other)
+---@param other any
+---@return boolean
+function SystemUpgradeTemplate:__eq(other)
 	return true
 end
 
----@param permanent bool
----@type fun(permanent:boolean):number
-SystemUpgradeTemplate.getEnergy = function (permanent)
+---@param permanent boolean
+---@return number
+function SystemUpgradeTemplate:getEnergy(permanent)
 	return 0.0
 end
 

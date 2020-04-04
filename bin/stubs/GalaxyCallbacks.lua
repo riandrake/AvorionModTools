@@ -7,16 +7,14 @@ setmetatable(Galaxy, {__call = function(self, index) return Galaxy end})
 -- @callback
 -- Executed whenever a new faction is created on the server
 -- @param index - Index of the faction that was created
----@type fun(index)
-Galaxy.onFactionCreated = function (index)
+function Galaxy:onFactionCreated(index)
 	return nil
 end
 
 -- @callback
 -- Executed whenever a new player is created on the server
 -- @param index - Index of the player that was created
----@type fun(index)
-Galaxy.onPlayerCreated = function (index)
+function Galaxy:onPlayerCreated(index)
 	return nil
 end
 
@@ -28,8 +26,12 @@ end
 -- @param status - The new relation status between the factions
 -- @param relationsBefore - The relations between the factions before the change, nil if none
 -- @param statusBefore - The relation status between the factions before the change, nil if none
----@type fun(indexA, indexB, relations, status, relationsBefore, statusBefore)
-Galaxy.onRelationsChanged = function (indexA, indexB, relations, status, relationsBefore, statusBefore)
+---@param indexB 
+---@param relations 
+---@param status 
+---@param relationsBefore 
+---@param statusBefore 
+function Galaxy:onRelationsChanged(indexA, indexB, relations, status, relationsBefore, statusBefore)
 	return nil
 end
 

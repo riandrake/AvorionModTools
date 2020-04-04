@@ -4,7 +4,7 @@ Boarding = {
 	boardable = true, -- bool
 	boardingFaction = 0, -- [read-only] int
 	defenseLevel = 0.0, -- double
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	foughtRounds = 0, -- [read-only] int
 	numDefenseWeaponsCurrentAttack = 0, -- [read-only] int
@@ -17,34 +17,34 @@ Boarding = {
 setmetatable(Boarding, {__call = function(self, id) return Boarding end})
 
 -- @return nothing
----@param attackingFaction int
----@type fun(attackingFaction:number):any
-Boarding.applyBoardingSuccessful = function (attackingFaction)
+---@param attackingFaction number
+---@return any
+function Boarding:applyBoardingSuccessful(attackingFaction)
 	return nil
 end
 
----@type fun():number
-Boarding.getBoarderHealth = function ()
+---@return number
+function Boarding:getBoarderHealth()
 	return 0.0
 end
 
----@type fun():number
-Boarding.getBoarderPower = function ()
+---@return number
+function Boarding:getBoarderPower()
 	return 0.0
 end
 
----@type fun():table<number, number>
-Boarding.getBoarders = function ()
-	return {0, 0}
+---@return table<number,number>
+function Boarding:getBoarders()
+	return {0,0}
 end
 
----@type fun():number
-Boarding.getDefenderHealth = function ()
+---@return number
+function Boarding:getDefenderHealth()
 	return 0.0
 end
 
----@type fun():number
-Boarding.getDefenderPower = function ()
+---@return number
+function Boarding:getDefenderPower()
 	return 0.0
 end
 

@@ -2,9 +2,9 @@
 ReadOnlyShipAI = {
 
 	attackedEntity = 0, -- [read-only] uuid
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
-	flyTarget = vec3(), -- [read-only] vec3
+	flyTarget = vec3, -- [read-only] vec3
 	isAttackingSomething = true, -- [read-only] bool
 	isBusy = true, -- [read-only] bool
 	isStuck = true, -- [read-only] bool
@@ -14,57 +14,57 @@ ReadOnlyShipAI = {
 
 setmetatable(ReadOnlyShipAI, {__call = function(self, id) return ReadOnlyShipAI end})
 
----@type fun():boolean
-ReadOnlyShipAI.enemyFightersPresent = function ()
+---@return boolean
+function ReadOnlyShipAI:enemyFightersPresent()
 	return true
 end
 
----@param countCivilEnemies var
----@type fun(countCivilEnemies:any):boolean
-ReadOnlyShipAI.enemyShipsPresent = function (countCivilEnemies)
+---@param countCivilEnemies any
+---@return boolean
+function ReadOnlyShipAI:enemyShipsPresent(countCivilEnemies)
 	return true
 end
 
----@type fun():Entity
-ReadOnlyShipAI.getEnemies = function ()
-	return Entity()
+---@return table<number, Entity>
+function ReadOnlyShipAI:getEnemies()
+	return {number, Entity}
 end
 
----@type fun():Uuid
-ReadOnlyShipAI.getRegisteredEnemyEntities = function ()
-	return 0
+---@return table<number, uuid>
+function ReadOnlyShipAI:getRegisteredEnemyEntities()
+	return {number, uuid}
 end
 
----@type fun():number
-ReadOnlyShipAI.getRegisteredEnemyFactions = function ()
-	return 0
+---@return table<number, int>
+function ReadOnlyShipAI:getRegisteredEnemyFactions()
+	return {number, int}
 end
 
----@type fun():Uuid
-ReadOnlyShipAI.getRegisteredFriendEntities = function ()
-	return 0
+---@return table<number, uuid>
+function ReadOnlyShipAI:getRegisteredFriendEntities()
+	return {number, uuid}
 end
 
----@type fun():number
-ReadOnlyShipAI.getRegisteredFriendFactions = function ()
-	return 0
+---@return table<number, int>
+function ReadOnlyShipAI:getRegisteredFriendFactions()
+	return {number, int}
 end
 
 ---@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isEnemy = function (other)
-	return true
-end
-
----@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isRegisteredEnemy = function (other)
+---@return boolean
+function ReadOnlyShipAI:isEnemy(other)
 	return true
 end
 
 ---@param other Entity
----@type fun(other:Entity):boolean
-ReadOnlyShipAI.isRegisteredFriend = function (other)
+---@return boolean
+function ReadOnlyShipAI:isRegisteredEnemy(other)
+	return true
+end
+
+---@param other Entity
+---@return boolean
+function ReadOnlyShipAI:isRegisteredFriend(other)
 	return true
 end
 

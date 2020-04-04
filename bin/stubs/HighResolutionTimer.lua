@@ -12,26 +12,26 @@ HighResolutionTimer = {
 setmetatable(HighResolutionTimer, {__call = function(self) return HighResolutionTimer end})
 
 -- @return nothing
----@type fun():any
-HighResolutionTimer.reset = function ()
+---@return any
+function HighResolutionTimer:reset()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-HighResolutionTimer.restart = function ()
+---@return any
+function HighResolutionTimer:restart()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-HighResolutionTimer.start = function ()
+---@return any
+function HighResolutionTimer:start()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-HighResolutionTimer.stop = function ()
+---@return any
+function HighResolutionTimer:stop()
 	return nil
 end
 

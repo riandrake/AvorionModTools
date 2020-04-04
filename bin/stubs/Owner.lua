@@ -1,7 +1,7 @@
 ---@class Owner
 Owner = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	factionIndex = 0, -- int
 	isAIFaction = true, -- [read-only] bool
@@ -13,9 +13,9 @@ Owner = {
 
 setmetatable(Owner, {__call = function(self, id) return Owner end})
 
----@param otherFactionIndex int
----@type fun(otherFactionIndex:number):number
-Owner.getRelationValue = function (otherFactionIndex)
+---@param otherFactionIndex number
+---@return number
+function Owner:getRelationValue(otherFactionIndex)
 	return 0
 end
 

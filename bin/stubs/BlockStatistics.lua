@@ -1,12 +1,12 @@
 ---@class BlockStatistics
 BlockStatistics = {
 
-	averageSize = vec3(), -- [read-only] vec3
+	averageSize = vec3, -- [read-only] vec3
 	cargoHold = 0.0, -- [read-only] double
-	centerOfMass = vec3(), -- [read-only] vec3
+	centerOfMass = vec3, -- [read-only] vec3
 	durability = 0.0, -- [read-only] double
 	energyYield = 0.0, -- [read-only] double
-	gyroPower = dvec3(), -- [read-only] dvec3
+	gyroPower = dvec3, -- [read-only] dvec3
 	hangarSpace = 0.0, -- [read-only] double
 	height = 0.0, -- [read-only] double
 	hyperspacePower = 0.0, -- [read-only] double
@@ -14,7 +14,7 @@ BlockStatistics = {
 	length = 0.0, -- [read-only] double
 	maintenance = 0.0, -- [read-only] double
 	mass = 0.0, -- [read-only] double
-	momentOfInertia = vec3(), -- [read-only] vec3
+	momentOfInertia = vec3, -- [read-only] vec3
 	pitch = 0.0, -- [read-only] double
 	processingPower = 0.0, -- [read-only] double
 	productionCapacity = 0.0, -- [read-only] double
@@ -23,7 +23,7 @@ BlockStatistics = {
 	shield = 0.0, -- [read-only] double
 	storableEnergy = 0.0, -- [read-only] double
 	thrust = 0.0, -- [read-only] double
-	thrusterPower = vec3(), -- [read-only] vec3
+	thrusterPower = vec3, -- [read-only] vec3
 	torpedoSpace = 0.0, -- [read-only] double
 	volume = 0.0, -- [read-only] double
 	width = 0.0, -- [read-only] double
@@ -33,26 +33,26 @@ BlockStatistics = {
 
 setmetatable(BlockStatistics, {__call = function(self) return BlockStatistics end})
 
----@param blockIndex int
----@type fun(blockIndex:number):number
-BlockStatistics.getBlockEnergyDrain = function (blockIndex)
+---@param blockIndex number
+---@return number
+function BlockStatistics:getBlockEnergyDrain(blockIndex)
 	return 0.0
 end
 
----@param blockIndex int
----@type fun(blockIndex:number):number
-BlockStatistics.getBlockNumber = function (blockIndex)
-	return 0
+---@param blockIndex number
+---@return unsigned,number
+function BlockStatistics:getBlockNumber(blockIndex)
+	return unsigned,0
 end
 
----@param blockIndex int
----@type fun(blockIndex:number):number
-BlockStatistics.getBlockVolume = function (blockIndex)
+---@param blockIndex number
+---@return number
+function BlockStatistics:getBlockVolume(blockIndex)
 	return 0.0
 end
 
----@type fun():number
-BlockStatistics.getTotalEnergyDrain = function ()
+---@return number
+function BlockStatistics:getTotalEnergyDrain()
 	return 0.0
 end
 

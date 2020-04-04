@@ -5,7 +5,7 @@ ReadOnlyCargoBay = {
 	cargoHold = 0.0, -- [read-only] float
 	cargoVolume = 0.0, -- [read-only] float
 	empty = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	fixedSize = true, -- [read-only] bool
 	freeSpace = 0.0, -- [read-only] float
@@ -25,34 +25,34 @@ setmetatable(ReadOnlyCargoBay, {__call = function(self, id) return ReadOnlyCargo
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 ---@param name string
----@type fun(name:string):table<TradingGood, number>
-ReadOnlyCargoBay.findCargos = function (name)
-	return {TradingGood(), 0}
+---@return table<TradingGood,number>
+function ReadOnlyCargoBay:findCargos(name)
+	return {TradingGood,0}
 end
 
----@param n unsigned
----@type fun(n:number:unsigned):TradingGood, number
-ReadOnlyCargoBay.getCargo = function (n)
-	return TradingGood(), 0
+---@param n number
+---@return TradingGood,table<number, int>
+function ReadOnlyCargoBay:getCargo(n)
+	return TradingGood,{number, int}
 end
 
----@type fun():table<TradingGood, number>
-ReadOnlyCargoBay.getCargos = function ()
-	return {TradingGood(), 0}
+---@return table<TradingGood,number>
+function ReadOnlyCargoBay:getCargos()
+	return {TradingGood,0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
----@param name var
----@type fun(name:any):number
-ReadOnlyCargoBay.getNumCargos = function (name)
+---@param name any
+---@return number
+function ReadOnlyCargoBay:getNumCargos(name)
 	return 0
 end
 
----@param goods var
----@type fun(goods:any):string
-ReadOnlyCargoBay.getSummary = function (goods)
+---@param goods any
+---@return string
+function ReadOnlyCargoBay:getSummary(goods)
 	return ""
 end
 

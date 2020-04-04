@@ -1,23 +1,23 @@
 ---@class FighterController
 FighterController = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 
 }
 
 setmetatable(FighterController, {__call = function(self, id) return FighterController end})
 
----@param squad var
----@type fun(squad:any):Entity
-FighterController.getDeployedFighters = function (squad)
-	return Entity()
+---@param squad any
+---@return table<number, Entity>
+function FighterController:getDeployedFighters(squad)
+	return {number, Entity}
 end
 
----@param squadIndex unsigned
----@param fighterIndex var
----@type fun(squadIndex:number:unsigned, fighterIndex:any):any
-FighterController.getFighterStartError = function (squadIndex, fighterIndex)
+---@param squadIndex number
+---@param fighterIndex any
+---@return any
+function FighterController:getFighterStartError(squadIndex, fighterIndex)
 	return nil
 end
 
@@ -25,36 +25,36 @@ end
 -- @param type - The type of fighter
 -- @return A copy of the first fighter found to match the type, without plan
 ---@param type FighterType
----@type fun(type:FighterType):FighterTemplate
-FighterController.getFighterStatsOfType = function (type)
-	return FighterTemplate()
+---@return FighterTemplate
+function FighterController:getFighterStatsOfType(type)
+	return FighterTemplate
 end
 
 ---@param type FighterType
----@type fun(type:FighterType):any
-FighterController.getFighterTypeStartError = function (type)
+---@return any
+function FighterController:getFighterTypeStartError(type)
 	return nil
 end
 
 -- @return nothing
----@param squad unsigned
+---@param squad number
 ---@param orders FighterOrders
 ---@param targetId Uuid
----@type fun(squad:number:unsigned, orders:FighterOrders, targetId:Uuid):any
-FighterController.setSquadOrders = function (squad, orders, targetId)
+---@return any
+function FighterController:setSquadOrders(squad, orders, targetId)
 	return nil
 end
 
----@param squadIndex unsigned
----@param fighterIndex var
----@type fun(squadIndex:number:unsigned, fighterIndex:any):Entity, number
-FighterController.startFighter = function (squadIndex, fighterIndex)
-	return Entity(), 0
+---@param squadIndex number
+---@param fighterIndex any
+---@return Entity,number
+function FighterController:startFighter(squadIndex, fighterIndex)
+	return Entity,0
 end
 
 ---@param type FighterType
----@type fun(type:FighterType):Entity, number
-FighterController.startFighterOfType = function (type)
-	return Entity(), 0
+---@return Entity,number
+function FighterController:startFighterOfType(type)
+	return Entity,0
 end
 

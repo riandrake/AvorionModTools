@@ -2,78 +2,78 @@
 Language = {
 
 	apostrophes = true, -- bool
-	seed = Seed(), -- [write-only] Seed
+	seed = Seed, -- [write-only] Seed
 
 }
 
 setmetatable(Language, {__call = function(self, seed) return Language end})
 
----@type fun():string
-Language.getConsonantSound = function ()
+---@return string
+function Language:getConsonantSound()
 	return ""
 end
 
----@type fun():string
-Language.getConsonantSounds = function ()
+---@return table<number, string>
+function Language:getConsonantSounds()
+	return {number, string}
+end
+
+---@return string,string
+function Language:getFactionName()
+	return "",""
+end
+
+---@return table<number, string>
+function Language:getGeneratedWords()
+	return {number, string}
+end
+
+---@return string
+function Language:getName()
 	return ""
 end
 
----@type fun():string, string
-Language.getFactionName = function ()
-	return "", ""
-end
-
----@type fun():string
-Language.getGeneratedWords = function ()
+---@return string
+function Language:getSyllable()
 	return ""
 end
 
----@type fun():string
-Language.getName = function ()
+---@param numSyllables number
+---@return string
+function Language:getSyllableCombination(numSyllables)
 	return ""
 end
 
----@type fun():string
-Language.getSyllable = function ()
+---@return string
+function Language:getVocalSound()
 	return ""
 end
 
----@param numSyllables int
----@type fun(numSyllables:number):string
-Language.getSyllableCombination = function (numSyllables)
-	return ""
+---@return table<number, string>
+function Language:getVocalSounds()
+	return {number, string}
 end
 
----@type fun():string
-Language.getVocalSound = function ()
-	return ""
-end
-
----@type fun():string
-Language.getVocalSounds = function ()
-	return ""
-end
-
----@type fun():string
-Language.getWord = function ()
+---@return string
+function Language:getWord()
 	return ""
 end
 
 -- @return nothing
----@type fun():any
-Language.setConsonantSounds = function ()
+---@return any
+function Language:setConsonantSounds()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Language.setGeneratedWords = function ()
+---@return any
+function Language:setGeneratedWords()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Language.setVocalSounds = function ()
+---@return any
+function Language:setVocalSounds()
 	return nil
 end
 

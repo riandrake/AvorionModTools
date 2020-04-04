@@ -3,7 +3,7 @@ FighterAI = {
 
 	circling = true, -- [read-only] bool
 	clearFeedbackEachTick = true, -- bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	evading = true, -- [read-only] bool
 	ignoreMothershipOrders = true, -- bool
@@ -18,21 +18,21 @@ FighterAI = {
 setmetatable(FighterAI, {__call = function(self, id) return FighterAI end})
 
 -- @return nothing
----@type fun():any
-FighterAI.clearFeedback = function ()
+---@return any
+function FighterAI:clearFeedback()
 	return nil
 end
 
----@type fun():Entity
-FighterAI.getMothership = function ()
-	return Entity()
+---@return Entity
+function FighterAI:getMothership()
+	return Entity
 end
 
 -- @return nothing
 ---@param orders FighterOrders
 ---@param target Uuid
----@type fun(orders:FighterOrders, target:Uuid):any
-FighterAI.setOrders = function (orders, target)
+---@return any
+function FighterAI:setOrders(orders, target)
 	return nil
 end
 

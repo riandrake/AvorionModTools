@@ -1,10 +1,10 @@
 ---@class ReadOnlyPhysics
 ReadOnlyPhysics = {
 
-	centerOfMass = vec3(), -- [read-only] vec3
-	centerOfRotation = vec3(), -- [read-only] vec3
+	centerOfMass = vec3, -- [read-only] vec3
+	centerOfRotation = vec3, -- [read-only] vec3
 	driftDecrease = 0.0, -- [read-only] double
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	invMass = 0.0, -- [read-only] double
 	kineticEnergy = 0.0, -- [read-only] double

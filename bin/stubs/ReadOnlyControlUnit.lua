@@ -2,7 +2,7 @@
 ReadOnlyControlUnit = {
 
 	desiredVelocity = 0.0, -- [read-only] float
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	hasPilot = true, -- [read-only] bool
 	isBoosting = true, -- [read-only] bool
@@ -11,135 +11,135 @@ ReadOnlyControlUnit = {
 	isTurning = true, -- [read-only] bool
 	numFreeSeats = 0, -- [read-only] int
 	numOccupiedSeats = 0, -- [read-only] int
-	turningSpeedFactor = vec3(), -- [read-only] vec3
+	turningSpeedFactor = vec3, -- [read-only] vec3
 
 }
 
 setmetatable(ReadOnlyControlUnit, {__call = function(self, id) return ReadOnlyControlUnit end})
 
----@type fun()
-ReadOnlyControlUnit.getActiveWeapons = function ()
-	return 
+---@return bitset<10>
+function ReadOnlyControlUnit:getActiveWeapons()
+	return bitset<10}
 end
 
----@param seatIndex int
----@type fun(seatIndex:number):vec3
-ReadOnlyControlUnit.getAimedPositionBySeat = function (seatIndex)
-	return vec3()
+---@param seatIndex number
+---@return vec3
+function ReadOnlyControlUnit:getAimedPositionBySeat(seatIndex)
+	return vec3
 end
 
----@param weaponGroup int
----@type fun(weaponGroup:number):vec3
-ReadOnlyControlUnit.getAimedPositionByWeaponGroup = function (weaponGroup)
-	return vec3()
+---@param weaponGroup number
+---@return vec3
+function ReadOnlyControlUnit:getAimedPositionByWeaponGroup(weaponGroup)
+	return vec3
 end
 
----@type fun():vec3
-ReadOnlyControlUnit.getAimedPositions = function ()
-	return vec3()
+---@return table<number, vec3>
+function ReadOnlyControlUnit:getAimedPositions()
+	return {number, vec3}
 end
 
----@type fun():number
-ReadOnlyControlUnit.getAllControlActions = function ()
+---@return table<number, int>
+function ReadOnlyControlUnit:getAllControlActions()
+	return {number, int}
+end
+
+---@param seat number
+---@return number
+function ReadOnlyControlUnit:getControlActions(seat)
 	return 0
 end
 
----@param seat int
----@type fun(seat:number):number
-ReadOnlyControlUnit.getControlActions = function (seat)
+---@param weaponGroup number
+---@return number
+function ReadOnlyControlUnit:getControlActionsByWeaponGroup(weaponGroup)
 	return 0
 end
 
----@param weaponGroup int
----@type fun(weaponGroup:number):number
-ReadOnlyControlUnit.getControlActionsByWeaponGroup = function (weaponGroup)
-	return 0
+---@return vec3
+function ReadOnlyControlUnit:getFlownToLocation()
+	return vec3
 end
 
----@type fun():vec3
-ReadOnlyControlUnit.getFlownToLocation = function ()
-	return vec3()
-end
-
----@param dot float
----@param cross float
----@type fun(dot:number, cross:number):number
-ReadOnlyControlUnit.getRotationFactor = function (dot, cross)
+---@param dot number
+---@param cross number
+---@return number
+function ReadOnlyControlUnit:getRotationFactor(dot, cross)
 	return 0.0
 end
 
----@param weaponGroup int
----@type fun(weaponGroup:number):number
-ReadOnlyControlUnit.getSeatByWeaponGroup = function (weaponGroup)
+---@param weaponGroup number
+---@return number
+function ReadOnlyControlUnit:getSeatByWeaponGroup(weaponGroup)
 	return 0
 end
 
----@type fun():ControlUnitSeat
-ReadOnlyControlUnit.getSeats = function ()
-	return ControlUnitSeat()
+---@return table<number, ControlUnitSeat>
+function ReadOnlyControlUnit:getSeats()
+	return {number, ControlUnitSeat}
 end
 
----@param seat int
----@type fun(seat:number):Entity
-ReadOnlyControlUnit.getSelectedObject = function (seat)
-	return Entity()
+---@param seat number
+---@return Entity
+function ReadOnlyControlUnit:getSelectedObject(seat)
+	return Entity
 end
 
----@param seat int
----@type fun(seat:number):Uuid
-ReadOnlyControlUnit.getSelectedObjectId = function (seat)
+---@param seat number
+---@return Uuid
+function ReadOnlyControlUnit:getSelectedObjectId(seat)
 	return 0
 end
 
----@type fun():Uuid
-ReadOnlyControlUnit.getSelectedObjectIds = function ()
-	return 0
+---@return table<number, uuid>
+function ReadOnlyControlUnit:getSelectedObjectIds()
+	return {number, uuid}
 end
 
----@param seat int
----@type fun(seat:number):boolean
-ReadOnlyControlUnit.isFiring = function (seat)
+---@param seat number
+---@return boolean
+function ReadOnlyControlUnit:isFiring(seat)
 	return true
 end
 
----@param seat int
----@type fun(seat:number):boolean
-ReadOnlyControlUnit.isFiringTorpedoes = function (seat)
+---@param seat number
+---@return boolean
+function ReadOnlyControlUnit:isFiringTorpedoes(seat)
 	return true
 end
 
----@param playerIndex int
----@type fun(playerIndex:number):boolean
-ReadOnlyControlUnit.isPlayerAPilot = function (playerIndex)
+---@param playerIndex number
+---@return boolean
+function ReadOnlyControlUnit:isPlayerAPilot(playerIndex)
 	return true
 end
 
----@param playerIndex int
----@param squad int
----@type fun(playerIndex:number, squad:number):boolean
-ReadOnlyControlUnit.mayControlSquad = function (playerIndex, squad)
+---@param playerIndex number
+---@param squad number
+---@return boolean
+function ReadOnlyControlUnit:mayControlSquad(playerIndex, squad)
 	return true
 end
 
----@param playerIndex int
----@param group int
----@type fun(playerIndex:number, group:number):boolean
-ReadOnlyControlUnit.mayControlWeaponGroup = function (playerIndex, group)
+---@param playerIndex number
+---@param group number
+---@return boolean
+function ReadOnlyControlUnit:mayControlWeaponGroup(playerIndex, group)
 	return true
 end
 
----@param playerIndex int
----@type fun(playerIndex:number):boolean
-ReadOnlyControlUnit.maySteer = function (playerIndex)
+---@param playerIndex number
+---@return boolean
+function ReadOnlyControlUnit:maySteer(playerIndex)
 	return true
 end
 
----@param brake float
+---@param brake number
 ---@param axis vec3
 ---@param from vec3
 ---@param to vec3
----@type fun(brake:number, axis:vec3, from:vec3, to:vec3):boolean
-ReadOnlyControlUnit.rotatingNecessary = function (brake, axis, from, to)
+---@return boolean
+function ReadOnlyControlUnit:rotatingNecessary(brake, axis, from, to)
 	return true
 end
 

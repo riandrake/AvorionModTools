@@ -29,7 +29,7 @@ FighterTemplate = {
 	heatPerShot = 0.0, -- float
 	hullDamageMultiplicator = 0.0, -- [read-only] float
 	hullRepairRate = 0.0, -- [read-only] float
-	material = Material(), -- [read-only] Material
+	material = Material, -- [read-only] Material
 	maxFighterDiameter = 0.0, -- [read-only] float
 	maxHeat = 0.0, -- float
 	maxTech = 0, -- [read-only] int
@@ -42,8 +42,8 @@ FighterTemplate = {
 	numWeapons = 0, -- [read-only] int
 	otherForce = 0.0, -- [read-only] float
 	overheated = true, -- [read-only] bool
-	plan = BlockPlan(), -- BlockPlan
-	rarity = Rarity(), -- [read-only] Rarity
+	plan = BlockPlan, -- BlockPlan
+	rarity = Rarity, -- [read-only] Rarity
 	reach = 0.0, -- [read-only] float
 	requiredShootingEnergy = 0.0, -- [read-only] double
 	seeker = true, -- [read-only] bool
@@ -78,44 +78,44 @@ setmetatable(FighterTemplate, {__call = function(self) return FighterTemplate en
 -- @return nothing
 ---@param str string
 ---@param value string
----@type fun(str:string, value:string):any
-FighterTemplate.addDescription = function (str, value)
+---@return any
+function FighterTemplate:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
----@param weapon var
----@type fun(weapon:any):any
-FighterTemplate.addWeapon = function (weapon)
+---@param weapon any
+---@return any
+function FighterTemplate:addWeapon(weapon)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-FighterTemplate.clearDescriptions = function ()
+---@return any
+function FighterTemplate:clearDescriptions()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-FighterTemplate.clearWeapons = function ()
+---@return any
+function FighterTemplate:clearWeapons()
 	return nil
 end
 
----@type fun():table<string, string>
-FighterTemplate.getDescriptions = function ()
-	return {"", ""}
+---@return table<string,string>
+function FighterTemplate:getDescriptions()
+	return {"",""}
 end
 
 -- Returns all weapons of the object
----@type fun():Weapon
-FighterTemplate.getWeapons = function ()
-	return Weapon()
+---@return table<number, Weapon>
+function FighterTemplate:getWeapons()
+	return {number, Weapon}
 end
 
 -- @return nothing
----@type fun():any
-FighterTemplate.updateStaticStats = function ()
+---@return any
+function FighterTemplate:updateStaticStats()
 	return nil
 end
 

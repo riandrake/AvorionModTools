@@ -3,16 +3,16 @@
 -- @param rarity - The rarity of the item, can be changed
 -- @param values... - All values passed after rarity when calling UsableInventoryItem(script, rarity, ...)
 -- @return The completely filled in item with tooltip, values, etc.
----@type fun(item, rarity, values...)
-create = function (item, rarity, values)
+---@param rarity 
+---@param table<number, values>
+function create(item, rarity, table<number,)
 	return nil
 end
 
 -- Called when the player uses the item. Sector and Faction background variables are set, entity of the player using it CAN be set. Return true if the usage was successful and the item can be depleted, if the depletedOnUse property is set to true. If false is returned, the item won't be depleted and will be able to be used again.
 -- @param player - The player using the item. This will always be a player, never an Alliance.
 -- @return true if the usage was successful and the item can be depleted (only if the depletedOnUse property is set to true).
----@type fun(player)
-activate = function (player)
+function activate(player)
 	return nil
 end
 

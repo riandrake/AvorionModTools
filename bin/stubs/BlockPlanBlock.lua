@@ -2,8 +2,8 @@
 BlockPlanBlock = {
 
 	blockIndex = 0, -- int
-	box = Box(), -- Box
-	color = Color(), -- Color
+	box = Box, -- Box
+	color = Color, -- Color
 	costFactor = 0.0, -- [read-only] double
 	density = 0.0, -- [read-only] double
 	durability = 0.0, -- double
@@ -12,11 +12,11 @@ BlockPlanBlock = {
 	hasAO = true, -- [read-only] bool
 	index = 0, -- [read-only] int
 	maintenance = 0.0, -- [read-only] double
-	material = Material(), -- Material
+	material = Material, -- Material
 	maxDurability = 0.0, -- double
 	moneyCostFactor = 0.0, -- [read-only] double
 	numChildren = 0, -- [read-only] int
-	orientation = Matrix(), -- Matrix
+	orientation = Matrix, -- Matrix
 	parent = nil, -- [read-only] var
 	processingPower = 0.0, -- [read-only] double
 	resourceCostFactor = 0.0, -- [read-only] double
@@ -30,8 +30,8 @@ BlockPlanBlock = {
 
 setmetatable(BlockPlanBlock, {__call = function(self) return BlockPlanBlock end})
 
----@type fun():number
-BlockPlanBlock.getChildren = function ()
-	return 0
+---@return table<number, int>
+function BlockPlanBlock:getChildren()
+	return {number, int}
 end
 

@@ -8,62 +8,62 @@ GameInput = {
 
 setmetatable(GameInput, {__call = function(self) return GameInput end})
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):string
-GameInput.getActionName = function (action)
+---@param action GameInputAction
+---@return string
+function GameInput:getActionName(action)
 	return ""
 end
 
----@param action GameInput::Action
----@param primary var
----@type fun(action:GameInputAction, primary:any):string
-GameInput.getKeyName = function (action, primary)
+---@param action GameInputAction
+---@param primary any
+---@return string
+function GameInput:getKeyName(action, primary)
 	return ""
 end
 
----@type fun():boolean
-GameInput.getMouseSteeringEnabled = function ()
+---@return boolean
+function GameInput:getMouseSteeringEnabled()
 	return true
 end
 
----@type fun():boolean
-GameInput.getShowMouse = function ()
+---@return boolean
+function GameInput:getShowMouse()
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyDown = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyDown(action)
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyHeld = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyHeld(action)
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyPressed = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyPressed(action)
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyUp = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyUp(action)
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyUpHeld = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyUpHeld(action)
 	return true
 end
 
----@param action GameInput::Action
----@type fun(action:GameInputAction):boolean
-GameInput.keyUpNotHeld = function (action)
+---@param action GameInputAction
+---@return boolean
+function GameInput:keyUpNotHeld(action)
 	return true
 end
 

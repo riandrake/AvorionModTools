@@ -1,12 +1,12 @@
 ---@class EntityIcon
 EntityIcon = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	icon = "", -- string
-	iconColor = Color(), -- Color
+	iconColor = Color, -- Color
 	secondaryIcon = "", -- string
-	secondaryIconColor = Color(), -- Color
+	secondaryIconColor = Color, -- Color
 
 }
 

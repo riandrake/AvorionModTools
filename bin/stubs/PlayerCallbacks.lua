@@ -12,8 +12,12 @@ setmetatable(Player, {__call = function(self, playerIndex, text, channel) return
 -- @param cx - The coordinates X position
 -- @param cy - The coordinates Y position
 -- @param mapMoved - True if the map was moved during the mouse pressing
----@type fun(button, mx, my, cx, cy, mapMoved)
-Player.onGalaxyMapMouseUp = function (button, mx, my, cx, cy, mapMoved)
+---@param mx 
+---@param my 
+---@param cx 
+---@param cy 
+---@param mapMoved 
+function Player:onGalaxyMapMouseUp(button, mx, my, cx, cy, mapMoved)
 	return nil
 end
 
@@ -22,8 +26,9 @@ end
 -- @param playerIndex - Index of the item
 -- @param amount - The new amount of this item
 -- @param amountBefore - The amount of this item before the change
----@type fun(playerIndex, amount, amountBefore)
-Player.onItemAdded = function (playerIndex, amount, amountBefore)
+---@param amount 
+---@param amountBefore 
+function Player:onItemAdded(playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -32,8 +37,9 @@ end
 -- @param playerIndex - Index of the player
 -- @param amount - The new amount of this item
 -- @param amountBefore - The amount of this item before the change
----@type fun(playerIndex, amount, amountBefore)
-Player.onItemChanged = function (playerIndex, amount, amountBefore)
+---@param amount 
+---@param amountBefore 
+function Player:onItemChanged(playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -42,8 +48,9 @@ end
 -- @param playerIndex - Index of the player
 -- @param amount - The new amount of this item
 -- @param amountBefore - The amount of this item before the change
----@type fun(playerIndex, amount, amountBefore)
-Player.onItemRemoved = function (playerIndex, amount, amountBefore)
+---@param amount 
+---@param amountBefore 
+function Player:onItemRemoved(playerIndex, amount, amountBefore)
 	return nil
 end
 
@@ -51,16 +58,15 @@ end
 -- Executed whenever the player takes the contents of a mail
 -- @param playerIndex - Index of the player
 -- @param mailIndex - Index of the cleared mail
----@type fun(playerIndex, mailIndex)
-Player.onMailCleared = function (playerIndex, mailIndex)
+---@param mailIndex 
+function Player:onMailCleared(playerIndex, mailIndex)
 	return nil
 end
 
 -- @callback
 -- Executed whenever the player deletes a mail
 -- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onMailDeleted = function (playerIndex)
+function Player:onMailDeleted(playerIndex)
 	return nil
 end
 
@@ -68,8 +74,8 @@ end
 -- Executed whenever the player reads a mail
 -- @param playerIndex - Index of the player
 -- @param mailIndex - Index of the read mail
----@type fun(playerIndex, mailIndex)
-Player.onMailRead = function (playerIndex, mailIndex)
+---@param mailIndex 
+function Player:onMailRead(playerIndex, mailIndex)
 	return nil
 end
 
@@ -77,16 +83,15 @@ end
 -- Executed whenever the player receives a new mail
 -- @param playerIndex - Index of the player
 -- @param index - Index of the received mail
----@type fun(playerIndex, index)
-Player.onMailReceived = function (playerIndex, index)
+---@param index 
+function Player:onMailReceived(playerIndex, index)
 	return nil
 end
 
 -- @callback
 -- Executed whenever a move to reconstruction site is triggered because the player was destroyed. Called even if the player is already at his reconstruction site.
 -- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onMoveToReconstructionSite = function (playerIndex)
+function Player:onMoveToReconstructionSite(playerIndex)
 	return nil
 end
 
@@ -95,8 +100,9 @@ end
 -- @param playerIndex - Index of the player
 -- @param factionIndex - Index of the other faction
 -- @param relations - The new relations of the player to the other faction
----@type fun(playerIndex, factionIndex, relations)
-Player.onRelationLevelChanged = function (playerIndex, factionIndex, relations)
+---@param factionIndex 
+---@param relations 
+function Player:onRelationLevelChanged(playerIndex, factionIndex, relations)
 	return nil
 end
 
@@ -105,24 +111,23 @@ end
 -- @param playerIndex - Index of the player
 -- @param factionIndex - Index of the other faction
 -- @param status - The new relation status of the player to the other faction
----@type fun(playerIndex, factionIndex, status)
-Player.onRelationStatusChanged = function (playerIndex, factionIndex, status)
+---@param factionIndex 
+---@param status 
+function Player:onRelationStatusChanged(playerIndex, factionIndex, status)
 	return nil
 end
 
 -- @callback
 -- Executed whenever the money or resources of the player change
 -- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onResourcesChanged = function (playerIndex)
+function Player:onResourcesChanged(playerIndex)
 	return nil
 end
 
 -- @callback
 -- Executed whenever the money or resources of the player change
 -- @param playerIndex - Index of the player
----@type fun(playerIndex)
-Player.onResourcesChanged = function (playerIndex)
+function Player:onResourcesChanged(playerIndex)
 	return nil
 end
 
@@ -132,8 +137,10 @@ end
 -- @param x - The x coordinates of the sector entered
 -- @param y - The y coordinates of the sector entered
 -- @param sectorChangeType - The kind of sector change that is happening
----@type fun(playerIndex, x, y, sectorChangeType)
-Player.onSectorEntered = function (playerIndex, x, y, sectorChangeType)
+---@param x 
+---@param y 
+---@param sectorChangeType 
+function Player:onSectorEntered(playerIndex, x, y, sectorChangeType)
 	return nil
 end
 
@@ -143,8 +150,10 @@ end
 -- @param x - The x coordinates of the sector left
 -- @param y - The y coordinates of the sector left
 -- @param sectorChangeType - The kind of sector change that is happening
----@type fun(playerIndex, x, y, sectorChangeType)
-Player.onSectorLeft = function (playerIndex, x, y, sectorChangeType)
+---@param x 
+---@param y 
+---@param sectorChangeType 
+function Player:onSectorLeft(playerIndex, x, y, sectorChangeType)
 	return nil
 end
 
@@ -152,16 +161,15 @@ end
 -- Executed whenever the player changes the ship he is currently flying
 -- @param playerIndex - Index of the player
 -- @param craftId - The id of the new craft he is flying
----@type fun(playerIndex, craftId)
-Player.onShipChanged = function (playerIndex, craftId)
+---@param craftId 
+function Player:onShipChanged(playerIndex, craftId)
 	return nil
 end
 
 -- @callback
 -- Executed when a dialog is started.
 -- @param objectIndex - The index of the entity the dialog is started with
----@type fun(objectIndex)
-Player.onStartDialog = function (objectIndex)
+function Player:onStartDialog(objectIndex)
 	return nil
 end
 

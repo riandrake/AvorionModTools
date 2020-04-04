@@ -28,7 +28,8 @@ DEFAULT_VALUES_BY_TYPE = {
     'uuid': '0',
     'char': '0',
     'Coordinates': '0, 0',
-    'Member': 'AllianceMember()'
+    'Member': 'AllianceMember()',
+    'Resources': '{0}'
 }
 
 RAW_DEFAULT_VALUES_BY_TYPE = {
@@ -44,18 +45,19 @@ RAW_DEFAULT_VALUES_BY_TYPE = {
     'uuid': 'Uuid',
     'Coordinates': 'number, number',
     'Member': 'AllianceMember',
+    'Resources': 'table<number, number>',  # might return the wrong stuff have to check in-game to see what it returns
     'string or Format [optional]': 'string|Format',  # These are not fixing the issue
     'string or Format': 'string|Format'
 }
 
 
-def split_careful(s):
+def split_careful(s, split=','):
      parts = []
      bracket_level = 0
      current = []
      # trick to remove special-case of trailing chars
-     for c in (s + ","):
-         if c == "," and bracket_level == 0:
+     for c in (s + split):
+         if c == split and bracket_level == 0:
              parts.append("".join(current))
              current = []
          else:
@@ -78,18 +80,25 @@ def indent(string):
     return '\n'.join(lines)
 
 
-def get_default_value(in_type):
+def old_get_default_value(in_type):
     """ Return a default value for a type, so inference works in lua
     """
+    if not in_type:
+        return ''
     in_type = in_type.strip()
 
-    if '{' in in_type:
+    if '<' in in_type:
         between = in_type[1:-1]
-        between_args = [subarg for subarg in split_careful(between) if subarg.strip()]
+        between_args = [subarg.replace('table<', '').replace('>', '') for subarg in split_careful(between) if subarg.strip()]
         return '{' + ', '.join((get_default_value(arg) for arg in between_args)) + '}'
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')
+
+    # Fix ... meaning table of type
+    in_type = '{' + get_default_value(in_type.replace('...', '')) + '}' if in_type.find('...') > 0 else in_type
+    in_type = in_type.replace('...', '')
+    in_type = in_type.replace(',', '') if not '{' in in_type else in_type
 
     global DEFAULT_VALUES_BY_TYPE
     if in_type not in DEFAULT_VALUES_BY_TYPE:
@@ -100,17 +109,68 @@ def get_default_value(in_type):
                 return 'nil'
 
         #print('New type: ', type)
-        DEFAULT_VALUES_BY_TYPE[in_type] = in_type + '()'
+        DEFAULT_VALUES_BY_TYPE[in_type] = in_type if '{' in in_type else in_type + '()'
 
     return DEFAULT_VALUES_BY_TYPE[in_type]
 
+
+def get_default_value(in_type):
+    if not in_type:
+        return 'nil'
+
+    if not 'table<' in in_type:
+        in_type = in_type.replace(',', '')
+    else:
+        in_type = f'table<{",".join([get_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
+
+    if '...' in in_type:
+        in_type = f"table<number, {in_type.replace('...','')}>"
+
+    # Assume these are enums that need collapsing
+    in_type = in_type.replace('::', '')
+
+    global DEFAULT_VALUES_BY_TYPE
+    if in_type not in DEFAULT_VALUES_BY_TYPE:
+        for weird in ('=', ' '):
+            if weird in in_type and 'table' not in in_type:
+                print(f'Weird type: "{in_type}"')
+                return 'nil'
+        DEFAULT_VALUES_BY_TYPE[in_type] = in_type.replace('table<', '{').replace('>', '}')
+    return DEFAULT_VALUES_BY_TYPE[in_type]
+
+
 def get_raw_default_value(in_type):
+    if not in_type:
+        return ''
+
+    if not 'table<' in in_type:
+        in_type = in_type.replace(',', '')
+    else:
+        in_type = f'table<{",".join([get_raw_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
+
+    if '...' in in_type:
+        in_type = f"table<number, {in_type.replace('...','')}>"
+
+    # Assume these are enums that need collapsing
+    in_type = in_type.replace('::', '')
+
+    global RAW_DEFAULT_VALUES_BY_TYPE
+    if in_type not in RAW_DEFAULT_VALUES_BY_TYPE:
+        for weird in ('=', ' '):
+            if weird in in_type and 'table' not in in_type:
+                print(f'Weird type: "{in_type}"')
+                return 'nil'
+        RAW_DEFAULT_VALUES_BY_TYPE[in_type] = in_type
+    return RAW_DEFAULT_VALUES_BY_TYPE[in_type]
+
+
+def old_get_raw_default_value(in_type):
     in_type = in_type.strip()
 
     if '{' in in_type:
         between = in_type[1:-1]
         between_args = [subarg for subarg in split_careful(between) if subarg.strip()]
-        return '{' + ', '.join((get_raw_default_value(arg) for arg in between_args)) + '}'
+        return 'table<' + ', '.join((get_raw_default_value(arg) for arg in between_args)) + '>'
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')
@@ -118,6 +178,7 @@ def get_raw_default_value(in_type):
     # Fix ... meaning table of type
     in_type = f'table<number,{in_type}>' if in_type.find('...') > 0 else in_type
     in_type = in_type.replace('...', '')
+    in_type = in_type.replace(',', '') if not'<' in in_type else in_type
 
     global RAW_DEFAULT_VALUES_BY_TYPE
     if in_type not in RAW_DEFAULT_VALUES_BY_TYPE:
@@ -132,7 +193,8 @@ def get_raw_default_value(in_type):
 
     return RAW_DEFAULT_VALUES_BY_TYPE[in_type]
 
-def flip_args(arg):
+
+def old_flip_args(arg):
     if ' ' in arg:
         arg = arg.split()
         arg.reverse()
@@ -140,6 +202,18 @@ def flip_args(arg):
             arg[1] = get_raw_default_value(arg[1])
         arg = ':'.join(arg)
     return arg
+
+
+def flip_args(args):
+    args = split_careful(args)
+    for idx, arg in enumerate(args):
+        arg = split_careful(arg, ' ')
+        arg.reverse()
+        for idx2, arg2 in enumerate(arg):
+            arg[idx2] = get_raw_default_value(arg2)
+        args[idx] = ' '.join(arg)
+    return args
+
 
 class StubGeneratorError(Exception):
     pass
@@ -206,7 +280,7 @@ class ParsedFunction:
 
         self.return_value = ', '.join(return_values)
 
-    def parse_definition(self, definition, namespace):
+    def old_parse_definition(self, definition, namespace):
         """ Parse a definition from documentation """
         self.callback = definition.startswith('callback ')
 
@@ -261,11 +335,66 @@ class ParsedFunction:
         else:
             param_args = flip_args(param_args)
 
-        param_type = f'---@type fun({param_args}){":"+param_type if param_type else ""}\n'
+        param_type = split_careful(param_type)
+        param_types = ''
+        for param in param_type:
+            param_types += f'---@param {param.replace(":"," ")}\n'
+
+        return_values = f'---@return'
+        for return_value in split_careful(self.return_value):
+            param_types += f' {return_value}'
+
+        # param_type = f'---@type fun({param_args}){":"+param_type if param_type else ""}\n'
+        # alias = f'---@alias {namespace.replace(":","#")}{self.name} {namespace.replace(":",".")}{self.name}\n'
 
         # self.definition = f'{namespace}{self.name} = function({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
         #self.definition = f'function {namespace}{self.name}({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
-        self.definition = param_type + f'{namespace.replace(":",".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
+        self.definition = param_types + return_values + f'{namespace.replace(":",".")}{self.name} = function ({", ".join(args)})\n\treturn {self.return_value}\nend\n\n'
+
+    def parse_definition(self, definition, namespace):
+        """ Parse a definition from documentation """
+        self.callback = definition.startswith('callback ')
+
+        end_bracket = definition.rfind(')')
+        start_bracket = definition.rfind('(', 0, end_bracket)
+
+        name_start = definition.rfind(' ', 0, start_bracket)
+        self.name = definition[name_start + 1:start_bracket]
+
+        returns = definition[definition.startswith('function ')+len('function'):name_start]
+        params = definition[start_bracket + 1:end_bracket]
+        params = flip_args(params)
+
+        constructor_parameters = []
+        definition_parameters = ''
+        construct_count = 0  # needed to handle dumb variables that don't have a name
+        for param in params:
+            if param:
+                param = split_careful(param, ' ')
+                construct_return = param[0]
+                if not construct_return:
+                    construct_count += 1
+                    construct_return = "var" + str(construct_count)
+                for illegal in ('function', 'in'):
+                    if construct_return == illegal:
+                        construct_return = '_' + illegal
+                if len(param) > 1:
+                    definition_parameters += f'---@param {construct_return} {param[1]}\n'
+                constructor_parameters.append(construct_return)
+        self.arguments = ', '.join(constructor_parameters)
+
+        returns = split_careful(returns, ' ')
+        d_returns = returns.copy()
+        for idx, return_type in enumerate(returns):
+            for illegal in ('function', 'in'):
+                if return_type == illegal:
+                    return_type = '_' + illegal
+            returns[idx] = get_default_value(return_type)
+            d_returns[idx] = get_raw_default_value(return_type)
+        definition_returns = f'---@return {",".join(d_returns)}\n' if d_returns[0] else ''
+
+        self.definition = f'{definition_parameters}{definition_returns}function {namespace+":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{",".join(returns)}\nend\n\n'
+
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
@@ -423,12 +552,10 @@ class StubGenerator:
 
                 for function in functions[1:]:
                     writer.write(function.remarks)
-                    writer.write(function.params)
                     writer.write(function.definition)
             else:
                 for function in functions:
                     writer.write(function.remarks)
-                    writer.write(function.params)
                     writer.write(function.definition)
 
         

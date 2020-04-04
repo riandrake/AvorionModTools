@@ -17,7 +17,7 @@ Weapons = {
 	deathExplosion = true, -- [read-only] bool
 	dps = 0.0, -- [read-only] float
 	energyIncreasePerSecond = 0.0, -- float
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	fireRate = 0.0, -- [read-only] float
 	firing = true, -- bool
@@ -27,7 +27,7 @@ Weapons = {
 	heatPerShot = 0.0, -- float
 	hullDamageMultiplicator = 0.0, -- [read-only] float
 	hullRepairRate = 0.0, -- [read-only] float
-	material = Material(), -- [read-only] Material
+	material = Material, -- [read-only] Material
 	maxHeat = 0.0, -- float
 	maxTech = 0, -- [read-only] int
 	metalBestEfficiency = 0.0, -- [read-only] float
@@ -37,7 +37,7 @@ Weapons = {
 	numWeapons = 0, -- [read-only] unsigned int
 	otherForce = 0.0, -- [read-only] float
 	overheated = true, -- [read-only] bool
-	rarity = Rarity(), -- [read-only] Rarity
+	rarity = Rarity, -- [read-only] Rarity
 	reach = 0.0, -- [read-only] float
 	requiredShootingEnergy = 0.0, -- [read-only] double
 	seeker = true, -- [read-only] bool
@@ -67,44 +67,44 @@ setmetatable(Weapons, {__call = function(self, id) return Weapons end})
 -- @return nothing
 ---@param str string
 ---@param value string
----@type fun(str:string, value:string):any
-Weapons.addDescription = function (str, value)
+---@return any
+function Weapons:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
----@param weapon var
----@type fun(weapon:any):any
-Weapons.addWeapon = function (weapon)
+---@param weapon any
+---@return any
+function Weapons:addWeapon(weapon)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Weapons.clearDescriptions = function ()
+---@return any
+function Weapons:clearDescriptions()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Weapons.clearWeapons = function ()
+---@return any
+function Weapons:clearWeapons()
 	return nil
 end
 
----@type fun():table<string, string>
-Weapons.getDescriptions = function ()
-	return {"", ""}
+---@return table<string,string>
+function Weapons:getDescriptions()
+	return {"",""}
 end
 
 -- Returns all weapons of the object
----@type fun():Weapon
-Weapons.getWeapons = function ()
-	return Weapon()
+---@return table<number, Weapon>
+function Weapons:getWeapons()
+	return {number, Weapon}
 end
 
 -- @return nothing
----@type fun():any
-Weapons.updateStaticStats = function ()
+---@return any
+function Weapons:updateStaticStats()
 	return nil
 end
 

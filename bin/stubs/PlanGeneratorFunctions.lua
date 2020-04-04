@@ -2,8 +2,8 @@
 -- @param seed - The seed that is to be used
 -- @param settings - The settings for the generation
 -- @return The new generated part
----@type fun(seed, settings)
-topLevelGenerate = function (seed, settings)
+---@param settings 
+function topLevelGenerate(seed, settings)
 	return nil
 end
 

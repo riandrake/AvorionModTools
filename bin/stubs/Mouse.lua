@@ -1,27 +1,27 @@
 ---@class Mouse
 Mouse = {
 
-	position = vec2(), -- vec2
+	position = vec2, -- vec2
 
 }
 
 setmetatable(Mouse, {__call = function(self) return Mouse end})
 
----@param button int
----@type fun(button:number):boolean
-Mouse.mouseDown = function (button)
+---@param button number
+---@return boolean
+function Mouse:mouseDown(button)
 	return true
 end
 
----@param button int
----@type fun(button:number):boolean
-Mouse.mousePressed = function (button)
+---@param button number
+---@return boolean
+function Mouse:mousePressed(button)
 	return true
 end
 
----@param button int
----@type fun(button:number):boolean
-Mouse.mouseUp = function (button)
+---@param button number
+---@return boolean
+function Mouse:mouseUp(button)
 	return true
 end
 

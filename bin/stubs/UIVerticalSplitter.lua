@@ -1,8 +1,8 @@
 ---@class UIVerticalSplitter
 UIVerticalSplitter = {
 
-	inner = Rect(), -- [read-only] Rect
-	left = Rect(), -- [read-only] Rect
+	inner = Rect, -- [read-only] Rect
+	left = Rect, -- [read-only] Rect
 	leftSize = 0, -- [write-only] int
 	margin = 0, -- [write-only] int
 	marginBottom = 0, -- int
@@ -16,8 +16,8 @@ UIVerticalSplitter = {
 	paddingRight = 0, -- int
 	paddingTop = 0, -- int
 	ratio = 0.0, -- float
-	rect = Rect(), -- Rect
-	right = Rect(), -- [read-only] Rect
+	rect = Rect, -- Rect
+	right = Rect, -- [read-only] Rect
 	rightSize = 0, -- [write-only] int
 
 }
@@ -28,8 +28,8 @@ setmetatable(UIVerticalSplitter, {__call = function(self, rect, padding, margin,
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getBottomLeftRect = function (rect)
+---@return any
+function UIVerticalSplitter:getBottomLeftRect(rect)
 	return nil
 end
 
@@ -37,17 +37,17 @@ end
 -- @param rect - The given rect
 -- @return A copy of the given rect, aligned to the specific side
 ---@param rect Rect
----@type fun(rect:Rect):Rect
-UIVerticalSplitter.getBottomRect = function (rect)
-	return Rect()
+---@return Rect
+function UIVerticalSplitter:getBottomRect(rect)
+	return Rect
 end
 
 -- Aligns the given rect to a specific side
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getBottomRightRect = function (rect)
+---@return any
+function UIVerticalSplitter:getBottomRightRect(rect)
 	return nil
 end
 
@@ -55,8 +55,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getCenterRect = function (rect)
+---@return any
+function UIVerticalSplitter:getCenterRect(rect)
 	return nil
 end
 
@@ -64,8 +64,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getLeftRect = function (rect)
+---@return any
+function UIVerticalSplitter:getLeftRect(rect)
 	return nil
 end
 
@@ -73,8 +73,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getRightRect = function (rect)
+---@return any
+function UIVerticalSplitter:getRightRect(rect)
 	return nil
 end
 
@@ -82,8 +82,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getTopLeftRect = function (rect)
+---@return any
+function UIVerticalSplitter:getTopLeftRect(rect)
 	return nil
 end
 
@@ -91,8 +91,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getTopRect = function (rect)
+---@return any
+function UIVerticalSplitter:getTopRect(rect)
 	return nil
 end
 
@@ -100,8 +100,8 @@ end
 -- @param rect - The given rect
 -- @return nothing
 ---@param rect Rect
----@type fun(rect:Rect):any
-UIVerticalSplitter.getTopRightRect = function (rect)
+---@return any
+function UIVerticalSplitter:getTopRightRect(rect)
 	return nil
 end
 
@@ -109,87 +109,87 @@ end
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementBottom = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementBottom(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementBottomLeft = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementBottomLeft(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementBottomRight = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementBottomRight(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementCenter = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementCenter(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementLeft = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementLeft(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementRight = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementRight(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementTop = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementTop(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementTopLeft = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementTopLeft(element)
+	return UIElement
 end
 
 -- Aligns the given UI element to a specific side
 -- @param element - The given UI element
 -- @return A reference to the given UI element
 ---@param element UIElement
----@type fun(element:UIElement):UIElement
-UIVerticalSplitter.placeElementTopRight = function (element)
-	return UIElement()
+---@return UIElement
+function UIVerticalSplitter:placeElementTopRight(element)
+	return UIElement
 end
 
 -- Set the left side to have a quadratic size, if possible
 -- @return nothing
----@type fun():any
-UIVerticalSplitter.setLeftQuadratic = function ()
+---@return any
+function UIVerticalSplitter:setLeftQuadratic()
 	return nil
 end
 
@@ -198,12 +198,12 @@ end
 -- @param top - margin on the top side
 -- @param bottom - margin on the bottom side
 -- @return nothing
----@param left int
----@param right int
----@param top int
----@param bottom int
----@type fun(left:number, right:number, top:number, bottom:number):any
-UIVerticalSplitter.setMargin = function (left, right, top, bottom)
+---@param left number
+---@param right number
+---@param top number
+---@param bottom number
+---@return any
+function UIVerticalSplitter:setMargin(left, right, top, bottom)
 	return nil
 end
 
@@ -212,19 +212,19 @@ end
 -- @param top - padding on the top side
 -- @param bottom - padding on the bottom side
 -- @return nothing
----@param left int
----@param right int
----@param top int
----@param bottom int
----@type fun(left:number, right:number, top:number, bottom:number):any
-UIVerticalSplitter.setPadding = function (left, right, top, bottom)
+---@param left number
+---@param right number
+---@param top number
+---@param bottom number
+---@return any
+function UIVerticalSplitter:setPadding(left, right, top, bottom)
 	return nil
 end
 
 -- Set the right side to have a quadratic size, if possible
 -- @return nothing
----@type fun():any
-UIVerticalSplitter.setRightQuadratic = function ()
+---@return any
+function UIVerticalSplitter:setRightQuadratic()
 	return nil
 end
 

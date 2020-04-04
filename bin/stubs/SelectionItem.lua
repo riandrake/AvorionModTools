@@ -2,8 +2,8 @@
 SelectionItem = {
 
 	amount = nil, -- var
-	borderColor = Color(), -- Color
-	color = Color(), -- Color
+	borderColor = Color, -- Color
+	color = Color, -- Color
 	highlightStrength = 0.0, -- float
 	texture = "", -- string
 	value0 = nil, -- var

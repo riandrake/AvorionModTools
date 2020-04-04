@@ -2,7 +2,7 @@
 WreckageCreator = {
 
 	active = true, -- [write-only] bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 
 }

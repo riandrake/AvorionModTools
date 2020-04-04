@@ -1,7 +1,7 @@
 ---@class ReadOnlyTorpedoLauncher
 ReadOnlyTorpedoLauncher = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	freeStorage = 0.0, -- [read-only] float
 	maxShafts = 0, -- [read-only] int
@@ -14,39 +14,39 @@ ReadOnlyTorpedoLauncher = {
 
 setmetatable(ReadOnlyTorpedoLauncher, {__call = function(self, id) return ReadOnlyTorpedoLauncher end})
 
----@param shaftIndex var
----@type fun(shaftIndex:any):number
-ReadOnlyTorpedoLauncher.getFreeSlots = function (shaftIndex)
-	return 0
+---@param shaftIndex any
+---@return unsigned,number
+function ReadOnlyTorpedoLauncher:getFreeSlots(shaftIndex)
+	return unsigned,0
 end
 
----@param shaftIndex var
----@type fun(shaftIndex:any):number
-ReadOnlyTorpedoLauncher.getMaxTorpedoes = function (shaftIndex)
-	return 0
-end
-
--- TODO
--- @param torpedoIndex - shaftIndex,
--- @param -1 for torpedo storage
----@param shaftIndex int
----@type fun(shaftIndex:number):number
-ReadOnlyTorpedoLauncher.getNumTorpedoes = function (shaftIndex)
-	return 0
-end
-
----@type fun():number
-ReadOnlyTorpedoLauncher.getShafts = function ()
-	return 0
+---@param shaftIndex any
+---@return unsigned,number
+function ReadOnlyTorpedoLauncher:getMaxTorpedoes(shaftIndex)
+	return unsigned,0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@param torpedoIndex int
----@param shaftIndex int
----@type fun(torpedoIndex:number, shaftIndex:number):TorpedoTemplate
-ReadOnlyTorpedoLauncher.getTorpedo = function (torpedoIndex, shaftIndex)
-	return TorpedoTemplate()
+---@param shaftIndex number
+---@return unsigned,number
+function ReadOnlyTorpedoLauncher:getNumTorpedoes(shaftIndex)
+	return unsigned,0
+end
+
+---@return unsigned,table<number, int>
+function ReadOnlyTorpedoLauncher:getShafts()
+	return unsigned,{number, int}
+end
+
+-- TODO
+-- @param torpedoIndex - shaftIndex,
+-- @param -1 for torpedo storage
+---@param torpedoIndex number
+---@param shaftIndex number
+---@return TorpedoTemplate
+function ReadOnlyTorpedoLauncher:getTorpedo(torpedoIndex, shaftIndex)
+	return TorpedoTemplate
 end
 

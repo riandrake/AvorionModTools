@@ -1,7 +1,7 @@
 ---@class TorpedoLauncher
 TorpedoLauncher = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	freeStorage = 0.0, -- [read-only] float
 	maxShafts = 0, -- [read-only] int
@@ -15,75 +15,75 @@ TorpedoLauncher = {
 setmetatable(TorpedoLauncher, {__call = function(self, id) return TorpedoLauncher end})
 
 ---@param torpedo TorpedoTemplate
----@param shaft var
----@type fun(torpedo:TorpedoTemplate, shaft:any):boolean
-TorpedoLauncher.addTorpedo = function (torpedo, shaft)
+---@param shaft any
+---@return boolean
+function TorpedoLauncher:addTorpedo(torpedo, shaft)
 	return true
 end
 
 -- @return nothing
----@type fun():any
-TorpedoLauncher.clear = function ()
+---@return any
+function TorpedoLauncher:clear()
 	return nil
 end
 
 ---@param position Box
 ---@param torpedo TorpedoTemplate
----@type fun(position:Box, torpedo:TorpedoTemplate):Entity
-TorpedoLauncher.createTorpedo = function (position, torpedo)
-	return Entity()
+---@return Entity
+function TorpedoLauncher:createTorpedo(position, torpedo)
+	return Entity
 end
 
----@param shaftIndex var
----@type fun(shaftIndex:any):number
-TorpedoLauncher.getFreeSlots = function (shaftIndex)
-	return 0
+---@param shaftIndex any
+---@return unsigned,number
+function TorpedoLauncher:getFreeSlots(shaftIndex)
+	return unsigned,0
 end
 
----@param shaftIndex var
----@type fun(shaftIndex:any):number
-TorpedoLauncher.getMaxTorpedoes = function (shaftIndex)
-	return 0
-end
-
--- TODO
--- @param torpedoIndex - shaftIndex,
--- @param -1 for torpedo storage
----@param shaftIndex int
----@type fun(shaftIndex:number):number
-TorpedoLauncher.getNumTorpedoes = function (shaftIndex)
-	return 0
-end
-
----@type fun():number
-TorpedoLauncher.getShafts = function ()
-	return 0
+---@param shaftIndex any
+---@return unsigned,number
+function TorpedoLauncher:getMaxTorpedoes(shaftIndex)
+	return unsigned,0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
----@param torpedoIndex int
----@param shaftIndex int
----@type fun(torpedoIndex:number, shaftIndex:number):TorpedoTemplate
-TorpedoLauncher.getTorpedo = function (torpedoIndex, shaftIndex)
-	return TorpedoTemplate()
+---@param shaftIndex number
+---@return unsigned,number
+function TorpedoLauncher:getNumTorpedoes(shaftIndex)
+	return unsigned,0
+end
+
+---@return unsigned,table<number, int>
+function TorpedoLauncher:getShafts()
+	return unsigned,{number, int}
+end
+
+-- TODO
+-- @param torpedoIndex - shaftIndex,
+-- @param -1 for torpedo storage
+---@param torpedoIndex number
+---@param shaftIndex number
+---@return TorpedoTemplate
+function TorpedoLauncher:getTorpedo(torpedoIndex, shaftIndex)
+	return TorpedoTemplate
 end
 
 -- @return nothing
----@param shaftIndex var
----@param torpedoIndex int
----@param newShaftIndex var
----@type fun(shaftIndex:any, torpedoIndex:number, newShaftIndex:any):any
-TorpedoLauncher.moveTorpedoToShaft = function (shaftIndex, torpedoIndex, newShaftIndex)
+---@param shaftIndex any
+---@param torpedoIndex number
+---@param newShaftIndex any
+---@return any
+function TorpedoLauncher:moveTorpedoToShaft(shaftIndex, torpedoIndex, newShaftIndex)
 	return nil
 end
 
 -- @return nothing
----@param index int
----@param shaft var
----@type fun(index:number, shaft:any):any
-TorpedoLauncher.removeTorpedo = function (index, shaft)
+---@param index number
+---@param shaft any
+---@return any
+function TorpedoLauncher:removeTorpedo(index, shaft)
 	return nil
 end
 

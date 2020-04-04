@@ -1,7 +1,7 @@
 ---@class ReadOnlyOwner
 ReadOnlyOwner = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	factionIndex = 0, -- [read-only] int
 	isAIFaction = true, -- [read-only] bool
@@ -13,9 +13,9 @@ ReadOnlyOwner = {
 
 setmetatable(ReadOnlyOwner, {__call = function(self, id) return ReadOnlyOwner end})
 
----@param otherFactionIndex int
----@type fun(otherFactionIndex:number):number
-ReadOnlyOwner.getRelationValue = function (otherFactionIndex)
+---@param otherFactionIndex number
+---@return number
+function ReadOnlyOwner:getRelationValue(otherFactionIndex)
 	return 0
 end
 

@@ -2,7 +2,7 @@
 CrewMan = {
 
 	level = 0, -- int
-	profession = CrewProfession(), -- CrewProfession
+	profession = CrewProfession, -- CrewProfession
 	specialist = 0, -- int
 
 }

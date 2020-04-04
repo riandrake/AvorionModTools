@@ -5,7 +5,7 @@ CargoBay = {
 	cargoHold = 0.0, -- float
 	cargoVolume = 0.0, -- [read-only] float
 	empty = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	fixedSize = true, -- bool
 	freeSpace = 0.0, -- [read-only] float
@@ -23,8 +23,8 @@ setmetatable(CargoBay, {__call = function(self, id) return CargoBay end})
 
 -- @return nothing
 ---@param other CargoBay
----@type fun(other:CargoBay):any
-CargoBay.add = function (other)
+---@return any
+function CargoBay:add(other)
 	return nil
 end
 
@@ -33,24 +33,24 @@ end
 -- @param amount - The amount of cargo that should be added.
 -- @return nothing
 ---@param good TradingGood
----@param amount int
----@type fun(good:TradingGood, amount:number):any
-CargoBay.addCargo = function (good, amount)
+---@param amount number
+---@return any
+function CargoBay:addCargo(good, amount)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-CargoBay.clear = function ()
+---@return any
+function CargoBay:clear()
 	return nil
 end
 
 -- Destroys cargo. The destruction distribution is generally equal over all goods.
 -- @param volume - The amount of volume that should be destroyed.
 -- @return nothing
----@param volume float
----@type fun(volume:number):any
-CargoBay.destroyCargo = function (volume)
+---@param volume number
+---@return any
+function CargoBay:destroyCargo(volume)
 	return nil
 end
 
@@ -58,34 +58,34 @@ end
 -- @param name - A string that will be matched with the 'name' property of the cargos.
 -- @return A map containing all matching goods, with the good as key and amount as value.
 ---@param name string
----@type fun(name:string):table<TradingGood, number>
-CargoBay.findCargos = function (name)
-	return {TradingGood(), 0}
+---@return table<TradingGood,number>
+function CargoBay:findCargos(name)
+	return {TradingGood,0}
 end
 
----@param n unsigned
----@type fun(n:number:unsigned):TradingGood, number
-CargoBay.getCargo = function (n)
-	return TradingGood(), 0
+---@param n number
+---@return TradingGood,table<number, int>
+function CargoBay:getCargo(n)
+	return TradingGood,{number, int}
 end
 
----@type fun():table<TradingGood, number>
-CargoBay.getCargos = function ()
-	return {TradingGood(), 0}
+---@return table<TradingGood,number>
+function CargoBay:getCargos()
+	return {TradingGood,0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
 -- @param name - Either a TradingGood or a string containing the name of a trading good.
 -- @return The number of goods
----@param name var
----@type fun(name:any):number
-CargoBay.getNumCargos = function (name)
+---@param name any
+---@return number
+function CargoBay:getNumCargos(name)
 	return 0
 end
 
----@param goods var
----@type fun(goods:any):string
-CargoBay.getSummary = function (goods)
+---@param goods any
+---@return string
+function CargoBay:getSummary(goods)
 	return ""
 end
 
@@ -93,10 +93,10 @@ end
 -- @param good - Either a TradingGood or a string with the name of a good.
 -- @param amount - The amount of cargo that should be removed. If this is more than there is on the ship, all specified cargo will be removed.
 -- @return nothing
----@param good var
----@param amount int
----@type fun(good:any, amount:number):any
-CargoBay.removeCargo = function (good, amount)
+---@param good any
+---@param amount number
+---@return any
+function CargoBay:removeCargo(good, amount)
 	return nil
 end
 

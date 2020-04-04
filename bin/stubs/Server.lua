@@ -18,7 +18,7 @@ Server = {
 	runtime = 0.0, -- [read-only] double
 	sameStartSector = true, -- [read-only] bool
 	scriptThreads = 0, -- [read-only] int
-	seed = Seed(), -- [read-only] Seed
+	seed = Seed, -- [read-only] Seed
 	sessionId = nil, -- [read-only] var
 	steamMasterPort = 0, -- [read-only] int
 	steamQueryPort = 0, -- [read-only] int
@@ -33,8 +33,8 @@ setmetatable(Server, {__call = function(self) return Server end})
 -- @return nothing
 ---@param sender Player
 ---@param command string
----@type fun(sender:Player, command:string):any
-Server.addChatCommand = function (sender, command)
+---@return any
+function Server:addChatCommand(sender, command)
 	return nil
 end
 
@@ -44,12 +44,12 @@ end
 -- @param message - The message that will be sent
 -- @param args - The format arguments that will be sent
 -- @return nothing
----@param sender var
----@param messageType int
+---@param sender any
+---@param messageType number
 ---@param message string
----@param args PluralForm...
----@type fun(sender:any, messageType:number, message:string, args:table<number,PluralForm>):any
-Server.broadcastChatMessage = function (sender, messageType, message, args)
+---@param args table<number,
+---@return any
+function Server:broadcastChatMessage(sender, messageType, message, args)
 	return nil
 end
 
@@ -58,62 +58,62 @@ end
 -- @param functionName - The name of the function for which to check. If nil, will count all functions that are registered to this callback.
 -- @return The amount of functions registered to the callback. -1 if an error occurred.
 ---@param callbackName string
----@param functionName var
----@type fun(callbackName:string, functionName:any):number
-Server.callbacksRegistered = function (callbackName, functionName)
+---@param functionName any
+---@return number
+function Server:callbacksRegistered(callbackName, functionName)
 	return 0
 end
 
----@type fun():string
-Server.getBlackList = function ()
-	return ""
+---@return table<number, string>
+function Server:getBlackList()
+	return {number, string}
 end
 
----@type fun():string
-Server.getIpBlackList = function ()
-	return ""
+---@return table<number, string>
+function Server:getIpBlackList()
+	return {number, string}
 end
 
----@type fun():Player
-Server.getOnlinePlayers = function ()
-	return Player()
+---@return table<number, Player>
+function Server:getOnlinePlayers()
+	return {number, Player}
 end
 
----@type fun():Player
-Server.getPlayers = function ()
-	return Player()
+---@return table<number, Player>
+function Server:getPlayers()
+	return {number, Player}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
 -- @param key - A string that serves as the name of the value
 -- @return The value if the key exists, otherwise nil
 ---@param key string
----@type fun(key:string):any
-Server.getValue = function (key)
+---@return any
+function Server:getValue(key)
 	return nil
 end
 
 -- Retrieves all key-value pairs of custom values of the entity
 -- @return A table containing all custom key-value pairs
----@type fun():table<string, any>
-Server.getValues = function ()
-	return {"", nil}
+---@return table<string,any>
+function Server:getValues()
+	return {"",nil}
 end
 
----@type fun():string
-Server.getWhiteList = function ()
-	return ""
+---@return table<number, string>
+function Server:getWhiteList()
+	return {number, string}
 end
 
 ---@param player Player
----@type fun(player:Player):boolean
-Server.hasAdminPrivileges = function (player)
+---@return boolean
+function Server:hasAdminPrivileges(player)
 	return true
 end
 
----@param playerIndex int
----@type fun(playerIndex:number):boolean
-Server.isOnline = function (playerIndex)
+---@param playerIndex number
+---@return boolean
+function Server:isOnline(playerIndex)
 	return true
 end
 
@@ -123,41 +123,41 @@ end
 -- @return 0 on success, 1 if the registration failed
 ---@param callbackName string
 ---@param functionName string
----@type fun(callbackName:string, functionName:string):number
-Server.registerCallback = function (callbackName, functionName)
+---@return number
+function Server:registerCallback(callbackName, functionName)
 	return 0
 end
 
 -- @return nothing
 ---@param ip string
----@type fun(ip:string):any
-Server.removeBlacklistedIp = function (ip)
+---@return any
+function Server:removeBlacklistedIp(ip)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
----@type fun(name:string):any
-Server.removeBlacklistedName = function (name)
+---@return any
+function Server:removeBlacklistedName(name)
 	return nil
 end
 
 -- @return nothing
 ---@param name string
----@type fun(name:string):any
-Server.removeWhitelistedName = function (name)
+---@return any
+function Server:removeWhitelistedName(name)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Server.save = function ()
+---@return any
+function Server:save()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Server.sendCallback = function ()
+---@return any
+function Server:sendCallback()
 	return nil
 end
 
@@ -166,22 +166,22 @@ end
 -- @param value - The value to save. Must be bool, number, string or nil. If nil is given, the value will be deleted.
 -- @return nothing
 ---@param key string
----@param value var
----@type fun(key:string, value:any):any
-Server.setValue = function (key, value)
+---@param value any
+---@return any
+function Server:setValue(key, value)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Server.stop = function ()
+---@return any
+function Server:stop()
 	return nil
 end
 
 ---@param callbackName string
 ---@param functionName string
----@type fun(callbackName:string, functionName:string):number
-Server.unregisterCallback = function (callbackName, functionName)
+---@return number
+function Server:unregisterCallback(callbackName, functionName)
 	return 0
 end
 

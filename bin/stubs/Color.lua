@@ -13,22 +13,22 @@ Color = {
 
 setmetatable(Color, {__call = function(self) return Color end})
 
----@type fun():string
-Color.__tostring = function ()
+---@return string
+function Color:__tostring()
 	return ""
 end
 
 -- @return nothing
----@param h float
----@param s float
----@param v float
----@type fun(h:number, s:number, v:number):any
-Color.setHSV = function (h, s, v)
+---@param h number
+---@param s number
+---@param v number
+---@return any
+function Color:setHSV(h, s, v)
 	return nil
 end
 
----@type fun():number
-Color.toInt = function ()
+---@return number
+function Color:toInt()
 	return 0
 end
 

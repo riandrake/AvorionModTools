@@ -1,7 +1,7 @@
 ---@class BspTree
 BspTree = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 
 }
@@ -9,51 +9,51 @@ BspTree = {
 setmetatable(BspTree, {__call = function(self, id) return BspTree end})
 
 ---@param box Box
----@type fun(box:Box):number
-BspTree.getBlocksByBox = function (box)
-	return 0
+---@return table<number, int>
+function BspTree:getBlocksByBox(box)
+	return {number, int}
 end
 
 ---@param box Box
 ---@param boxOrientation Matrix
----@type fun(box:Box, boxOrientation:Matrix):number
-BspTree.getBlocksByOrientedBox = function (box, boxOrientation)
-	return 0
+---@return table<number, int>
+function BspTree:getBlocksByOrientedBox(box, boxOrientation)
+	return {number, int}
 end
 
 ---@param ray Ray
----@param t0 float
----@param t1 float
----@type fun(ray:Ray, t0:number, t1:number):number
-BspTree.getBlocksByRay = function (ray, t0, t1)
-	return 0
+---@param t0 number
+---@param t1 number
+---@return table<number, int>
+function BspTree:getBlocksByRay(ray, t0, t1)
+	return {number, int}
 end
 
 ---@param sphere Sphere
----@type fun(sphere:Sphere):number
-BspTree.getBlocksBySphere = function (sphere)
-	return 0
+---@return table<number, int>
+function BspTree:getBlocksBySphere(sphere)
+	return {number, int}
 end
 
 ---@param ray Ray
----@param t0 float
----@param t1 float
----@type fun(ray:Ray, t0:number, t1:number):any, vec3
-BspTree.intersectRay = function (ray, t0, t1)
-	return nil, vec3()
+---@param t0 number
+---@param t1 number
+---@return any,vec3
+function BspTree:intersectRay(ray, t0, t1)
+	return nil,vec3
 end
 
 ---@param box Box
----@param exceptionIndex var
----@type fun(box:Box, exceptionIndex:any):boolean
-BspTree.intersectsBox = function (box, exceptionIndex)
+---@param exceptionIndex any
+---@return boolean
+function BspTree:intersectsBox(box, exceptionIndex)
 	return true
 end
 
 ---@param sphere Sphere
----@param exceptionIndex var
----@type fun(sphere:Sphere, exceptionIndex:any):boolean
-BspTree.intersectsSphere = function (sphere, exceptionIndex)
+---@param exceptionIndex any
+---@return boolean
+function BspTree:intersectsSphere(sphere, exceptionIndex)
 	return true
 end
 

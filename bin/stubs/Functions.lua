@@ -1,40 +1,40 @@
 -- This function is only available on the client.
 -- @return nothing
 ---@param type string
----@param uuid Uuid
+---@param Uuid Uuid
 ---@param text string
 ---@param icon string
----@param color var
----@type fun(type:string, uuid:Uuid, text:string, icon:string, color:any):any
-addShipProblem = function (type, uuid, text, icon, color)
+---@param color any
+---@return any
+function addShipProblem(type, Uuid, text, icon, color)
 	return nil
 end
 
 -- Returns the system time in seconds. Since lua doesn't support clocks that are accurate down to milliseconds.
 -- @return The system time in seconds
----@type fun():number
-appTime = function ()
+---@return number
+function appTime()
 	return 0.0
 end
 
 -- Returns the system time in milliseconds. Since lua doesn't support clocks that are accurate down to milliseconds.
 -- @return The system time in milliseconds
----@type fun():number
-appTimeMs = function ()
+---@return number
+function appTimeMs()
 	return 0.0
 end
 
----@type fun():EntityDescriptor
-AsteroidDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function AsteroidDescriptor()
+	return EntityDescriptor
 end
 
 -- @return nothing
 ---@param callbackFunction string
 ---@param code string
----@param arguments var...
----@type fun(callbackFunction:string, code:string, arguments:table<number,var>):any
-async = function (callbackFunction, code, arguments)
+---@param arguments table<number,
+---@return any
+function async(callbackFunction, code, arguments)
 	return nil
 end
 
@@ -45,9 +45,9 @@ end
 -- @return nothing
 ---@param callbackFunction string
 ---@param code string
----@param arguments var...
----@type fun(callbackFunction:string, code:string, arguments:table<number,var>):any
-async = function (callbackFunction, code, arguments)
+---@param arguments table<number,
+---@return any
+function async(callbackFunction, code, arguments)
 	return nil
 end
 
@@ -58,9 +58,9 @@ end
 -- @return nothing
 ---@param callbackFunction string
 ---@param code string
----@param arguments var...
----@type fun(callbackFunction:string, code:string, arguments:table<number,var>):any
-async = function (callbackFunction, code, arguments)
+---@param arguments table<number,
+---@return any
+function async(callbackFunction, code, arguments)
 	return nil
 end
 
@@ -69,114 +69,116 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
 ---@param functionName string
----@param arguments var...
----@type fun(functionName:string, arguments:table<number,var>):any
-broadcastInvokeClientFunction = function (functionName, arguments)
+---@param arguments table<number,
+---@return any
+function broadcastInvokeClientFunction(functionName, arguments)
 	return nil
 end
 
----@type fun():EntityDescriptor
-CargoLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function CargoLootDescriptor()
+	return EntityDescriptor
 end
 
----@type fun(string):boolean
-checkReadSecureFilename = function (string)
+---@param var1 string
+---@return boolean
+function checkReadSecureFilename(var1)
 	return true
 end
 
----@type fun(string):boolean
-checkWriteSecureFilename = function (string)
+---@param var1 string
+---@return boolean
+function checkWriteSecureFilename(var1)
 	return true
 end
 
----@param a float
----@param r float
----@param g float
----@param b float
----@type fun(a:number, r:number, g:number, b:number):Color
-ColorARGB = function (a, r, g, b)
-	return Color()
+---@param a number
+---@param r number
+---@param g number
+---@param b number
+---@return Color
+function ColorARGB(a, r, g, b)
+	return Color
 end
 
----@param h float
----@param s float
----@param v float
----@type fun(h:number, s:number, v:number):Color
-ColorHSV = function (h, s, v)
-	return Color()
+---@param h number
+---@param s number
+---@param v number
+---@return Color
+function ColorHSV(h, s, v)
+	return Color
 end
 
----@param i int
----@type fun(i:number):Color
-ColorInt = function (i)
-	return Color()
+---@param i number
+---@return Color
+function ColorInt(i)
+	return Color
 end
 
----@type fun():Color
-ColorPalette = function ()
-	return Color()
+---@return table<number, Color>
+function ColorPalette()
+	return {number, Color}
 end
 
----@param r float
----@param g float
----@param b float
----@type fun(r:number, g:number, b:number):Color
-ColorRGB = function (r, g, b)
-	return Color()
+---@param r number
+---@param g number
+---@param b number
+---@return Color
+function ColorRGB(r, g, b)
+	return Color
 end
 
 -- Copies the given Object
 -- @param value - A non-POD, non-table object
 -- @return A true copy of the given object
----@param value var
----@type fun(value:any):UserObject
-copy = function (value)
-	return UserObject()
+---@param value any
+---@return UserObject
+function copy(value)
+	return UserObject
 end
 
 -- Creates a new directory, including all required parent directories. Security-specific behavior: Creating directories is only possible in the moddata/ subdirectory of the Avorion settings folder.
 -- @param directory - Path to the directory to create
 -- @return A system error code indicating if the operation was successful
 ---@param directory string
----@type fun(directory:string):any
-createDirectory = function (directory)
+---@return any
+function createDirectory(directory)
 	return nil
 end
 
 -- Inserts dots into a large number to create an easily human readable money string. Example: 10000000 will become 10.000.000
 -- @param number - The large number
 -- @return A string containing the readable number
----@param number double
----@type fun(number:number):string
-createMonetaryString = function (number)
+---@param number number
+---@return string
+function createMonetaryString(number)
 	return ""
 end
 
 ---@param turret Entity
----@type fun(turret:Entity):TurretTemplate
-CreateTemplateFromTurret = function (turret)
-	return TurretTemplate()
+---@return TurretTemplate
+function CreateTemplateFromTurret(turret)
+	return TurretTemplate
 end
 
----@type fun():string
-credits = function ()
+---@return string
+function credits()
 	return ""
 end
 
----@type fun():EntityDescriptor
-CrewLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function CrewLootDescriptor()
+	return EntityDescriptor
 end
 
 -- Calculates the dot product between two vec3s. The vectors must have the same underlying type (double or float).
 -- @param a - vector a
 -- @param b - vector b
 -- @return The cross product of the vectors
----@param a var
----@param b var
----@type fun(a:any, b:any):any
-cross = function (a, b)
+---@param a any
+---@param b any
+---@return any
+function cross(a, b)
 	return nil
 end
 
@@ -185,11 +187,11 @@ end
 -- @param function - The function that is to be executed once the time has passed as a string
 -- @param args... - Arguments that will be passed to the callback function
 -- @return true if the callback was registered, false otherwise
----@param time double
----@param function string
----@param args var...
----@type fun(time:number, function:string, args:table<number,var>):boolean
-deferredCallback = function (time, _function, args)
+---@param time number
+---@param _function string
+---@param args table<number,
+---@return boolean
+function deferredCallback(time, _function, args)
 	return true
 end
 
@@ -197,8 +199,8 @@ end
 -- @param file - Path to the file to delete
 -- @return A system error code indicating if the operation was successful
 ---@param file string
----@type fun(file:string):any
-deleteFile = function (file)
+---@return any
+function deleteFile(file)
 	return nil
 end
 
@@ -209,9 +211,9 @@ end
 -- @return nothing
 ---@param message string
 ---@param sender string
----@param type int
----@type fun(message:string, sender:string, type:number):any
-displayChatMessage = function (message, sender, type)
+---@param type number
+---@return any
+function displayChatMessage(message, sender, type)
 	return nil
 end
 
@@ -219,8 +221,8 @@ end
 -- @return nothing
 ---@param bigText string
 ---@param smallText string
----@type fun(bigText:string, smallText:string):any
-displayMissionAccomplishedText = function (bigText, smallText)
+---@return any
+function displayMissionAccomplishedText(bigText, smallText)
 	return nil
 end
 
@@ -230,8 +232,8 @@ end
 -- @return nothing
 ---@param entity Entity
 ---@param text string
----@type fun(entity:Entity, text:string):any
-displaySpeechBubble = function (entity, text)
+---@return any
+function displaySpeechBubble(entity, text)
 	return nil
 end
 
@@ -239,10 +241,10 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The linear distance between the vectors
----@param a var
----@param b var
----@type fun(a:any, b:any):any
-distance = function (a, b)
+---@param a any
+---@param b any
+---@return any
+function distance(a, b)
 	return nil
 end
 
@@ -250,10 +252,10 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The squared linear distance between the vectors
----@param a var
----@param b var
----@type fun(a:any, b:any):any
-distance2 = function (a, b)
+---@param a any
+---@param b any
+---@return any
+function distance2(a, b)
 	return nil
 end
 
@@ -261,10 +263,10 @@ end
 -- @param a - vector a
 -- @param b - vector b
 -- @return The dot product between the two vectors
----@param a var
----@param b var
----@type fun(a:any, b:any):any
-dot = function (a, b)
+---@param a any
+---@param b any
+---@return any
+function dot(a, b)
 	return nil
 end
 
@@ -274,8 +276,8 @@ end
 -- @return nothing
 ---@param rect Rect
 ---@param color Color
----@type fun(rect:Rect, color:Color):any
-drawBorder = function (rect, color)
+---@return any
+function drawBorder(rect, color)
 	return nil
 end
 
@@ -284,8 +286,8 @@ end
 ---@param box Box
 ---@param matrix Matrix
 ---@param color Color
----@type fun(box:Box, matrix:Matrix, color:Color):any
-drawDebugBox = function (box, matrix, color)
+---@return any
+function drawDebugBox(box, matrix, color)
 	return nil
 end
 
@@ -294,8 +296,8 @@ end
 ---@param a vec3
 ---@param b vec3
 ---@param color Color
----@type fun(a:vec3, b:vec3, color:Color):any
-drawDebugLine = function (a, b, color)
+---@return any
+function drawDebugLine(a, b, color)
 	return nil
 end
 
@@ -303,16 +305,16 @@ end
 -- @return nothing
 ---@param sphere Sphere
 ---@param color Color
----@type fun(sphere:Sphere, color:Color):any
-drawDebugSphere = function (sphere, color)
+---@return any
+function drawDebugSphere(sphere, color)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param fighter FighterTemplate
----@type fun(fighter:FighterTemplate):any
-drawFighterTooltip = function (fighter)
+---@return any
+function drawFighterTooltip(fighter)
 	return nil
 end
 
@@ -322,8 +324,8 @@ end
 -- @return nothing
 ---@param rect Rect
 ---@param color Color
----@type fun(rect:Rect, color:Color):any
-drawRect = function (rect, color)
+---@return any
+function drawRect(rect, color)
 	return nil
 end
 
@@ -338,15 +340,15 @@ end
 -- @param style - The style of the text, 0 is default style, 1 is shadowed, 2 is outlined
 -- @return nothing
 ---@param text string
----@param px int
----@param py int
+---@param px number
+---@param py number
 ---@param color Color
----@param size int
----@param bold int
----@param italic int
----@param style int
----@type fun(text:string, px:number, py:number, color:Color, size:number, bold:number, italic:number, style:number):any
-drawText = function (text, px, py, color, size, bold, italic, style)
+---@param size number
+---@param bold number
+---@param italic number
+---@param style number
+---@return any
+function drawText(text, px, py, color, size, bold, italic, style)
 	return nil
 end
 
@@ -363,70 +365,70 @@ end
 -- @return nothing
 ---@param text string
 ---@param rect Rect
----@param horizontalAlignment int
----@param verticalAlignment int
+---@param horizontalAlignment number
+---@param verticalAlignment number
 ---@param color Color
----@param size int
----@param bold int
----@param italic int
----@param style int
----@type fun(text:string, rect:Rect, horizontalAlignment:number, verticalAlignment:number, color:Color, size:number, bold:number, italic:number, style:number):any
-drawTextRect = function (text, rect, horizontalAlignment, verticalAlignment, color, size, bold, italic, style)
+---@param size number
+---@param bold number
+---@param italic number
+---@param style number
+---@return any
+function drawTextRect(text, rect, horizontalAlignment, verticalAlignment, color, size, bold, italic, style)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param turret TurretTemplate
----@type fun(turret:TurretTemplate):any
-drawTurretTooltip = function (turret)
+---@return any
+function drawTurretTooltip(turret)
 	return nil
 end
 
----@type fun():EntityDescriptor
-DroneDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function DroneDescriptor()
+	return EntityDescriptor
 end
 
 -- Prints errors to the console. In the ingame console, server output will be printed in magenta, client output will be printed in darkish red.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args var...
----@type fun(args:table<number,var>):any
-eprint = function (args)
+---@param args table<number,
+---@return any
+function eprint(args)
 	return nil
 end
 
----@type fun():EntityDescriptor
-FighterDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function FighterDescriptor()
+	return EntityDescriptor
 end
 
----@type fun():Seed
-GameSeed = function ()
-	return Seed()
+---@return Seed
+function GameSeed()
+	return Seed
 end
 
----@type fun():Version
-GameVersion = function ()
-	return Version()
+---@return Version
+function GameVersion()
+	return Version
 end
 
 ---@param style PlanStyle
 ---@param seed Seed
----@param volume float
----@param maxBlocks int
----@param scaleToFit var
+---@param volume number
+---@param maxBlocks number
+---@param scaleToFit any
 ---@param material Material
----@type fun(style:PlanStyle, seed:Seed, volume:number, maxBlocks:number, scaleToFit:any, material:Material):BlockPlan
-GeneratePlanFromStyle = function (style, seed, volume, maxBlocks, scaleToFit, material)
-	return BlockPlan()
+---@return BlockPlan
+function GeneratePlanFromStyle(style, seed, volume, maxBlocks, scaleToFit, material)
+	return BlockPlan
 end
 
 -- Returns the current language code. This function is only available on the client.
 -- @return The language code, e.g. "en", "de", "ru", etc.
----@type fun():string
-getCurrentLanguage = function ()
+---@return string
+function getCurrentLanguage()
 	return ""
 end
 
@@ -434,86 +436,86 @@ end
 -- @param name - The name of the global variable
 -- @return The queried variable, or nil if non-existant
 ---@param name string
----@type fun(name:string):any
-getGlobal = function (name)
+---@return any
+function getGlobal(name)
 	return nil
 end
 
 -- @param singular - The english string
 -- @return The translated string, or, if no translation exists, the english string, with comment removed
 ---@param singular string
----@type fun(singular:string):string
-GetLocalizedString = function (singular)
+---@return string
+function GetLocalizedString(singular)
 	return ""
 end
 
----@type fun():Entity
-getParentEntity = function ()
-	return Entity()
+---@return Entity
+function getParentEntity()
+	return Entity
 end
 
 -- This function is only available on the server.
----@type fun():Faction
-getParentFaction = function ()
-	return Faction()
+---@return Faction
+function getParentFaction()
+	return Faction
 end
 
 -- This function is only available on the client.
----@type fun():Faction
-getParentFaction = function ()
-	return Faction()
+---@return Faction
+function getParentFaction()
+	return Faction
 end
 
 -- This function is only available on the client.
----@type fun():Entity
-getPlayerCraft = function ()
-	return Entity()
+---@return Entity
+function getPlayerCraft()
+	return Entity
 end
 
 -- Rounds a large number and adds a suffix such as k or M. For example, 10.000 will become 10k.
 -- @param number - The number to make readable
 -- @return A string containing the rounded number and the suffix
----@param number double
----@type fun(number:number):number, string
-getReadableValue = function (number)
-	return 0.0, ""
+---@param number number
+---@return number,string
+function getReadableValue(number)
+	return 0.0,""
 end
 
 -- This function is only available on the client.
----@type fun():vec2
-getResolution = function ()
-	return vec2()
+---@return vec2
+function getResolution()
+	return vec2
 end
 
 -- This function is only available on the client.
----@type fun():string
-getSavedShips = function ()
-	return ""
+---@return table<number, string>
+function getSavedShips()
+	return {number, string}
 end
 
 -- Returns the exact path of the top-level script file that this function is called from. If the script has been required by other scripts, it will return the path that was given to, for example, the function Entity():addScript(path, args...). This function can be used to determine the script path that has to be used by, for example, calls to Entity():invokeFunction(script, args...)
 -- @return A string containing the path to the top-level script file
----@type fun():string
-getScriptPath = function ()
+---@return string
+function getScriptPath()
 	return ""
 end
 
 -- Get the script index of the currently tracked mission This function is only available on the client.
 -- @return The int index of the tracked mission script or nil
----@type fun():any
-getTrackedMissionScriptIndex = function ()
+---@return any
+function getTrackedMissionScriptIndex()
 	return nil
 end
 
 -- This function is only available on the client.
----@type fun():string
-getWorkshopShips = function ()
-	return ""
+---@return table<number, string>
+function getWorkshopShips()
+	return {number, string}
 end
 
----@type fun():Rarity
-HighestRarity = function ()
-	return Rarity()
+---@return Rarity
+function HighestRarity()
+	return Rarity
 end
 
 -- Invokes a function on a remote client, in the client instance of the caller script. Example usage would be a server Resource Trader calling the setData() function of its client instance. Return values of the remotely executed functions cannot be retrieved. This function is only available on the server.
@@ -523,9 +525,9 @@ end
 -- @return nothing
 ---@param player Player
 ---@param functionName string
----@param arguments var...
----@type fun(player:Player, functionName:string, arguments:table<number,var>):any
-invokeClientFunction = function (player, functionName, arguments)
+---@param arguments table<number,
+---@return any
+function invokeClientFunction(player, functionName, arguments)
 	return nil
 end
 
@@ -538,15 +540,15 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
----@param x int
----@param y int
----@param printErrors bool
----@param entityId var
+---@param x number
+---@param y number
+---@param printErrors boolean
+---@param entityId any
 ---@param scriptName string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, printErrors:boolean, entityId:any, scriptName:string, functionName:string, arguments:table<number,var>):number
-invokeEntityFunction = function (x, y, printErrors, entityId, scriptName, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function invokeEntityFunction(x, y, printErrors, entityId, scriptName, functionName, arguments)
 	return 0
 end
 
@@ -559,15 +561,15 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function.
 -- @return nothing
----@param x int
----@param y int
+---@param x number
+---@param y number
 ---@param errorMessage string
----@param entityId var
+---@param entityId any
 ---@param scriptName string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, errorMessage:string, entityId:any, scriptName:string, functionName:string, arguments:table<number,var>):any
-invokeEntityFunction = function (x, y, errorMessage, entityId, scriptName, functionName, arguments)
+---@param arguments table<number,
+---@return any
+function invokeEntityFunction(x, y, errorMessage, entityId, scriptName, functionName, arguments)
 	return nil
 end
 
@@ -578,13 +580,13 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the player wasn't logged in, 0 otherwise.
----@param factionIndex int
----@param printErrors bool
+---@param factionIndex number
+---@param printErrors boolean
 ---@param scriptName string
 ---@param functionName string
----@param arguments var...
----@type fun(factionIndex:number, printErrors:boolean, scriptName:string, functionName:string, arguments:table<number,var>):number
-invokeFactionFunction = function (factionIndex, printErrors, scriptName, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function invokeFactionFunction(factionIndex, printErrors, scriptName, functionName, arguments)
 	return 0
 end
 
@@ -596,14 +598,14 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function.
 -- @return nothing
----@param x int
----@param y int
----@param errorMessage var
+---@param x number
+---@param y number
+---@param errorMessage any
 ---@param scriptName string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, errorMessage:any, scriptName:string, functionName:string, arguments:table<number,var>):any
-invokeSectorFunction = function (x, y, errorMessage, scriptName, functionName, arguments)
+---@param arguments table<number,
+---@return any
+function invokeSectorFunction(x, y, errorMessage, scriptName, functionName, arguments)
 	return nil
 end
 
@@ -615,14 +617,14 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
----@param x int
----@param y int
----@param printErrors bool
+---@param x number
+---@param y number
+---@param printErrors boolean
 ---@param scriptName string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, printErrors:boolean, scriptName:string, functionName:string, arguments:table<number,var>):number
-invokeSectorFunction = function (x, y, printErrors, scriptName, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function invokeSectorFunction(x, y, printErrors, scriptName, functionName, arguments)
 	return 0
 end
 
@@ -631,33 +633,33 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
 ---@param functionName string
----@param arguments var...
----@type fun(functionName:string, arguments:table<number,var>):any
-invokeServerFunction = function (functionName, arguments)
+---@param arguments table<number,
+---@return any
+function invokeServerFunction(functionName, arguments)
 	return nil
 end
 
----@param i int
----@type fun(i:number):boolean
-IsValidMaterial = function (i)
+---@param i number
+---@return boolean
+function IsValidMaterial(i)
 	return true
 end
 
 -- Calculates the length of a vector
 -- @param vec - the vector
 -- @return The length of the vector
----@param vec var
----@type fun(vec:any):any
-length = function (vec)
+---@param vec any
+---@return any
+function length(vec)
 	return nil
 end
 
 -- Calculates the squared length of a vector
 -- @param vec - the vector
 -- @return The squared length of the vector
----@param vec var
----@type fun(vec:any):any
-length2 = function (vec)
+---@param vec any
+---@return any
+function length2(vec)
 	return nil
 end
 
@@ -665,188 +667,188 @@ end
 -- @param directory - Path to the directory to remove
 -- @return A list of files
 ---@param directory string
----@type fun(directory:string):string
-listFilesOfDirectory = function (directory)
-	return ""
+---@return table<number, string>
+function listFilesOfDirectory(directory)
+	return {number, string}
 end
 
 ---@param file string
----@type fun(file:string):BlockPlan
-LoadPlanFromFile = function (file)
-	return BlockPlan()
+---@return BlockPlan
+function LoadPlanFromFile(file)
+	return BlockPlan
 end
 
 ---@param path string
----@type fun(path:string):TurretDesign
-LoadTurretDesignFromFile = function (path)
-	return TurretDesign()
+---@return TurretDesign
+function LoadTurretDesignFromFile(path)
+	return TurretDesign
 end
 
 ---@param eye vec3
 ---@param at vec3
 ---@param up vec3
----@type fun(eye:vec3, at:vec3, up:vec3):Matrix
-lookAt = function (eye, at, up)
-	return Matrix()
+---@return Matrix
+function lookAt(eye, at, up)
+	return Matrix
 end
 
----@type fun():Rarity
-LowestRarity = function ()
-	return Rarity()
+---@return Rarity
+function LowestRarity()
+	return Rarity
 end
 
----@param x int
----@param y int
----@param seed int
----@type fun(x:number, y:number, seed:number):number
-makeFastHash = function (x, y, seed)
+---@param x number
+---@param y number
+---@param seed number
+---@return number
+function makeFastHash(x, y, seed)
 	return 0
 end
 
----@param values var...
----@type fun(values:table<number,var>):number
-makeHash = function (values)
+---@param values table<number,
+---@return number
+function makeHash(values)
 	return 0
 end
 
----@param values var...
----@type fun(values:table<number,var>):number
-makeHash64 = function (values)
+---@param values table<number,
+---@return number
+function makeHash64(values)
 	return 0.0
 end
 
 ---@param look vec3
 ---@param up vec3
----@type fun(look:vec3, up:vec3):Matrix
-MatrixLookUp = function (look, up)
-	return Matrix()
+---@return Matrix
+function MatrixLookUp(look, up)
+	return Matrix
 end
 
 ---@param look vec3
 ---@param up vec3
 ---@param pos vec3
----@type fun(look:vec3, up:vec3, pos:vec3):Matrix
-MatrixLookUpPosition = function (look, up, pos)
-	return Matrix()
+---@return Matrix
+function MatrixLookUpPosition(look, up, pos)
+	return Matrix
 end
 
 ---@param look vec3
 ---@param up vec3
 ---@param right vec3
----@type fun(look:vec3, up:vec3, right:vec3):Matrix
-MatrixLookUpRight = function (look, up, right)
-	return Matrix()
+---@return Matrix
+function MatrixLookUpRight(look, up, right)
+	return Matrix
 end
 
----@param yaw float
----@param pitch float
----@param roll float
----@type fun(yaw:number, pitch:number, roll:number):Matrix
-MatrixYawPitchRoll = function (yaw, pitch, roll)
-	return Matrix()
+---@param yaw number
+---@param pitch number
+---@param roll number
+---@return Matrix
+function MatrixYawPitchRoll(yaw, pitch, roll)
+	return Matrix
 end
 
 -- Returns a table containing all mods that are currently active. Order is the load order of the mods.
 -- @return table containing all mods
----@type fun():table_t
-Mods = function ()
-	return table_t()
+---@return table<number, table_t>
+function Mods()
+	return {number, table_t}
 end
 
----@type fun():EntityDescriptor
-MoneyLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function MoneyLootDescriptor()
+	return EntityDescriptor
 end
 
 -- Normalizes a given vector. This function creates a new normalized vector, the given vector is not changed.
 -- @param vec - the vector to normalize
 -- @return The normalized result of the given vector
----@param vec var
----@type fun(vec:any):any
-normalize = function (vec)
+---@param vec any
+---@return any
+function normalize(vec)
 	return nil
 end
 
 -- Normalizes a given vector. This function normalizes the vector in place.
 -- @param vec - the vector to normalize
----@param vec var
----@type fun(vec:any):any
-normalize_ip = function (vec)
+---@param vec any
+---@return any
+function normalize_ip(vec)
 	return nil
 end
 
----@type fun():number
-NumMaterials = function ()
+---@return number
+function NumMaterials()
 	return 0
 end
 
 -- This function is only available on the server.
----@type fun():boolean
-onClient = function ()
+---@return boolean
+function onClient()
 	return true
 end
 
 -- A function to find out in a script, whether it's currently executed on the client. This function is only available on the client.
 -- @return true when called on the client, false otherwise
----@type fun():boolean
-onClient = function ()
+---@return boolean
+function onClient()
 	return true
 end
 
 -- @return nothing
----@type fun():any
-onClient = function ()
+---@return any
+function onClient()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-onServer = function ()
+---@return any
+function onServer()
 	return nil
 end
 
 -- This function is only available on the server.
----@type fun():boolean
-onServer = function ()
+---@return boolean
+function onServer()
 	return true
 end
 
 -- A function to find out in a script, whether it's currently executed on the server. This function is only available on the client.
 -- @return true when called on the server, false otherwise
----@type fun():boolean
-onServer = function ()
+---@return boolean
+function onServer()
 	return true
 end
 
----@param fov float
----@param aspect float
----@param nearClip float
----@param farClip float
----@type fun(fov:number, aspect:number, nearClip:number, farClip:number):Matrix
-perspective = function (fov, aspect, nearClip, farClip)
-	return Matrix()
+---@param fov number
+---@param aspect number
+---@param nearClip number
+---@param farClip number
+---@return Matrix
+function perspective(fov, aspect, nearClip, farClip)
+	return Matrix
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param soundName string
----@param type int
+---@param type number
 ---@param position vec3
----@param radius float
----@param volume float
----@param entity Entity
----@type fun(soundName:string, type:number, position:vec3, radius:number, volume:number, entity:nil]:[or:Entity):any
-play3DSound = function (soundName, type, position, radius, volume, entity)
+---@param radius number
+---@param volume number
+---@param entity nil]
+---@return any
+function play3DSound(soundName, type, position, radius, volume, entity)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param soundName string
----@param type int
----@param volume float
----@type fun(soundName:string, type:number, volume:number):any
-playSound = function (soundName, type, volume)
+---@param type number
+---@param volume number
+---@return any
+function playSound(soundName, type, volume)
 	return nil
 end
 
@@ -855,9 +857,9 @@ end
 -- @param number - The number that is to be displayed
 ---@param singular string
 ---@param plural string
----@param number int
----@type fun(singular:string, plural:string, number:number):string
-plural_t = function (singular, plural, number)
+---@param number number
+---@return string
+function plural_t(singular, plural, number)
 	return ""
 end
 
@@ -868,46 +870,46 @@ end
 ---@param singular string
 ---@param plural string
 ---@param context string
----@param number int
----@type fun(singular:string, plural:string, context:string, number:number):string
-plural_with_context_t = function (singular, plural, context, number)
+---@param number number
+---@return string
+function plural_with_context_t(singular, plural, context, number)
 	return ""
 end
 
 -- Prints to the console. In the ingame console, server output will be printed in cyan, client output will be printed in grey.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args var...
----@type fun(args:table<number,var>):any
-print = function (args)
+---@param args table<number,
+---@return any
+function print(args)
 	return nil
 end
 
 -- Similar to print, but prints to the log file.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args var...
----@type fun(args:table<number,var>):any
-printlog = function (args)
+---@param args table<number,
+---@return any
+function printlog(args)
 	return nil
 end
 
 -- This function is only available on the client.
 ---@param p vec3
----@type fun(p:vec3):vec3
-projectPoint = function (p)
-	return vec3()
+---@return vec3
+function projectPoint(p)
+	return vec3
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param entityId Uuid
----@param healthColor var
----@param shieldColor var
----@param track var
----@param name var
----@type fun(entityId:Uuid, healthColor:any, shieldColor:any, track:any, name:any):any
-registerBoss = function (entityId, healthColor, shieldColor, track, name)
+---@param healthColor any
+---@param shieldColor any
+---@param track any
+---@param name any
+---@return any
+function registerBoss(entityId, healthColor, shieldColor, track, name)
 	return nil
 end
 
@@ -915,17 +917,17 @@ end
 -- @param directory - Path to the directory to remove
 -- @return A system error code indicating if the operation was successful
 ---@param directory string
----@type fun(directory:string):any
-removeDirectory = function (directory)
+---@return any
+function removeDirectory(directory)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param type string
----@param uuid Uuid
----@type fun(type:string, uuid:Uuid):any
-removeShipProblem = function (type, uuid)
+---@param Uuid Uuid
+---@return any
+function removeShipProblem(type, Uuid)
 	return nil
 end
 
@@ -933,22 +935,22 @@ end
 -- @param string - containing the error that happened
 -- @return nothing
 ---@param string string
----@type fun(string:string):any
-reportError = function (string)
+---@return any
+function reportError(string)
 	return nil
 end
 
----@type fun():EntityDescriptor
-ResourceLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function ResourceLootDescriptor()
+	return EntityDescriptor
 end
 
----@param in Matrix
----@param angle float
+---@param _in Matrix
+---@param angle number
 ---@param axis vec3
----@type fun(in:Matrix, angle:number, axis:vec3):Matrix
-rotate = function (_in, angle, axis)
-	return Matrix()
+---@return Matrix
+function rotate(_in, angle, axis)
+	return Matrix
 end
 
 -- Loads a script into a separate, temporary VM and runs a single function in it. The script will be run in the same context as the script calling this function. When the script has a namespace defined, only functions within that namespace can be called. The first return value is an int indicating if the call succeeded, followed by any return values of the invoked function. 0 = success, 1 = invalid script path, 2 = error during script loading, 3 = error during execution This function is only available on the client.
@@ -958,10 +960,10 @@ end
 -- @return An int indicating if the call succeeded, followed by the return values of the called function
 ---@param script string
 ---@param func string
----@param params var...
----@type fun(script:string, func:string, params:table<number,var>):any
-run = function (script, func, params)
-	return nil
+---@param params table<number,
+---@return table<number, var>
+function run(script, func, params)
+	return {number, var}
 end
 
 -- Loads a script into a separate, temporary VM and runs a single function in it. The script will be run in the same context as the script calling this function. When the script has a namespace defined, only functions within that namespace can be called. The first return value is an int indicating if the call succeeded, followed by any return values of the invoked function. 0 = success, 1 = invalid script path, 2 = error during script loading, 3 = error during execution This function is only available on the server.
@@ -971,10 +973,10 @@ end
 -- @return An int indicating if the call succeeded, followed by the return values of the called function
 ---@param script string
 ---@param func string
----@param params var...
----@type fun(script:string, func:string, params:table<number,var>):any
-run = function (script, func, params)
-	return nil
+---@param params table<number,
+---@return table<number, var>
+function run(script, func, params)
+	return {number, var}
 end
 
 -- Runs code in the context of an entity in a sector, during its update step. Use this function to execute arbitrary code in the context of entities that are in other sectors than the current script. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. The code will not be run immediately, but it might take up to one update tick until it is run. Therefore, return values of the executed functions will not be retrieved. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target entity exists in the sector. If it doesn't this call will silently fail. To get an error message printed out on failure as to why it failed, pass 'true' to the 'printErrors' parameter.  This function is only available on the server.
@@ -986,15 +988,15 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
----@param x int
----@param y int
----@param printErrors bool
----@param entityId var
+---@param x number
+---@param y number
+---@param printErrors boolean
+---@param entityId any
 ---@param code string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, printErrors:boolean, entityId:any, code:string, functionName:string, arguments:table<number,var>):number
-runEntityCode = function (x, y, printErrors, entityId, code, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function runEntityCode(x, y, printErrors, entityId, code, functionName, arguments)
 	return 0
 end
 
@@ -1005,13 +1007,13 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the player wasn't logged in, 0 otherwise.
----@param factionIndex int
----@param printErrors bool
+---@param factionIndex number
+---@param printErrors boolean
 ---@param code string
 ---@param functionName string
----@param arguments var...
----@type fun(factionIndex:number, printErrors:boolean, code:string, functionName:string, arguments:table<number,var>):number
-runFactionCode = function (factionIndex, printErrors, code, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function runFactionCode(factionIndex, printErrors, code, functionName, arguments)
 	return 0
 end
 
@@ -1023,63 +1025,63 @@ end
 -- @param functionName - The name of the called function
 -- @param arguments - The arguments that will be passed to the function
 -- @return 1 if the sector wasn't loaded into memory, 0 otherwise.
----@param x int
----@param y int
----@param printErrors bool
+---@param x number
+---@param y number
+---@param printErrors boolean
 ---@param code string
 ---@param functionName string
----@param arguments var...
----@type fun(x:number, y:number, printErrors:boolean, code:string, functionName:string, arguments:table<number,var>):number
-runSectorCode = function (x, y, printErrors, code, functionName, arguments)
+---@param arguments table<number,
+---@return number
+function runSectorCode(x, y, printErrors, code, functionName, arguments)
 	return 0
 end
 
----@param in Matrix
+---@param _in Matrix
 ---@param size vec3
----@type fun(in:Matrix, size:vec3):Matrix
-scale = function (_in, size)
-	return Matrix()
+---@return Matrix
+function scale(_in, size)
+	return Matrix
 end
 
 -- Returns the path of the script that is currently being executed
 -- @return string containing the path
----@type fun():string
-scriptPath = function ()
+---@return string
+function scriptPath()
 	return ""
 end
 
----@param x int
----@param y int
----@type fun(x:number, y:number):Seed
-SectorSeed = function (x, y)
-	return Seed()
+---@param x number
+---@param y number
+---@return Seed
+function SectorSeed(x, y)
+	return Seed
 end
 
 ---@param str string
----@type fun(str:string):Seed
-SeedStr = function (str)
-	return Seed()
+---@return Seed
+function SeedStr(str)
+	return Seed
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param id Uuid
----@param health var
----@param maxHealth var
----@param shield var
----@param maxShield var
----@type fun(id:Uuid, health:any, maxHealth:any, shield:any, maxShield:any):any
-setBossHealth = function (id, health, maxHealth, shield, maxShield)
+---@param health any
+---@param maxHealth any
+---@param shield any
+---@param maxShield any
+---@return any
+function setBossHealth(id, health, maxHealth, shield, maxShield)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param id Uuid
----@param health var
----@param shield var
----@type fun(id:Uuid, health:any, shield:any):any
-setBossHealthColor = function (id, health, shield)
+---@param health any
+---@param shield any
+---@return any
+function setBossHealthColor(id, health, shield)
 	return nil
 end
 
@@ -1088,117 +1090,118 @@ end
 -- @param value - The value of the global variable. POD datatypes only. Nil deletes the variable.
 -- @return nothing
 ---@param name string
----@param value var
----@type fun(name:string, value:any):any
-setGlobal = function (name, value)
+---@param value any
+---@return any
+function setGlobal(name, value)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
----@type fun(int):any
-setTrackedMission = function (int)
+---@param var1 number
+---@return any
+function setTrackedMission(var1)
 	return nil
 end
 
 -- This function is only available on the client.
 -- @return nothing
----@type fun():any
-setTrackThisMission = function ()
+---@return any
+function setTrackThisMission()
 	return nil
 end
 
----@type fun():EntityDescriptor
-ShipDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function ShipDescriptor()
+	return EntityDescriptor
 end
 
 -- sleeps for the given time
 -- @return nothing
----@param seconds float
----@type fun(seconds:number):any
-sleep = function (seconds)
+---@param seconds number
+---@return any
+function sleep(seconds)
 	return nil
 end
 
----@type fun():EntityDescriptor
-StationDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function StationDescriptor()
+	return EntityDescriptor
 end
 
----@type fun():EntityDescriptor
-SystemUpgradeLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function SystemUpgradeLootDescriptor()
+	return EntityDescriptor
 end
 
 -- Terminates the script. This function returns normally and the current function will run until finished, but no more following calls will be made to the script. The script will be removed from the entity on the next occasion.
 -- @return nothing
----@type fun():any
-terminate = function ()
+---@return any
+function terminate()
 	return nil
 end
 
----@type fun():EntityDescriptor
-TorpedoDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function TorpedoDescriptor()
+	return EntityDescriptor
 end
 
----@param in Matrix
+---@param _in Matrix
 ---@param pos vec3
----@type fun(in:Matrix, pos:vec3):Matrix
-translate = function (_in, pos)
-	return Matrix()
+---@return Matrix
+function translate(_in, pos)
+	return Matrix
 end
 
----@param in string
----@type fun(in:string):string
-trim = function (_in)
+---@param _in string
+---@return string
+function trim(_in)
 	return ""
 end
 
----@type fun():EntityDescriptor
-TurretDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function TurretDescriptor()
+	return EntityDescriptor
 end
 
----@type fun():EntityDescriptor
-TurretLootDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function TurretLootDescriptor()
+	return EntityDescriptor
 end
 
 -- This function is only available on the client.
 -- @return nothing
 ---@param entityId Uuid
----@type fun(entityId:Uuid):any
-unregisterBoss = function (entityId)
+---@return any
+function unregisterBoss(entityId)
 	return nil
 end
 
 -- Checks if the given object is valid. Some objects can become invalid, for example when an entity is deleted the instances of the Entity in the scripts will become invalid.
 -- @param value - A non-POD, non-table object
 -- @return A boolean indicating whether the object is valid. Returns false when given nil.
----@param value var
----@type fun(value:any):boolean
-valid = function (value)
+---@param value any
+---@return boolean
+function valid(value)
 	return true
 end
 
----@type fun():EntityDescriptor
-WormholeDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function WormholeDescriptor()
+	return EntityDescriptor
 end
 
----@type fun():EntityDescriptor
-WreckageDescriptor = function ()
-	return EntityDescriptor()
+---@return EntityDescriptor
+function WreckageDescriptor()
+	return EntityDescriptor
 end
 
 -- Similar to print, but prints to the user trace stream. This trace stream can be enabled by passing "-t user" to the command line arguments of client or server.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args var...
----@type fun(args:table<number,var>):any
-writeTrace = function (args)
+---@param args table<number,
+---@return any
+function writeTrace(args)
 	return nil
 end
 
