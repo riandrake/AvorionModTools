@@ -32,6 +32,6 @@ setmetatable(BlockPlanBlock, {__call = function(self) return BlockPlanBlock end}
 
 ---@return table<number, int>
 function BlockPlanBlock:getChildren()
-	return {number, int}
+	return {0}
 end
 

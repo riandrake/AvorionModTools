@@ -146,13 +146,13 @@ end
 
 ---@return table<number, Relation>
 function Player:getAllRelations()
-	return {number, Relation}
+	return {Relation}
 end
 
 -- Inherited from Faction [Server]
 ---@return table<number, Relation>
 function Player:getAllRelations()
-	return {number, Relation}
+	return {Relation}
 end
 
 ---@return number,number
@@ -193,40 +193,40 @@ end
 
 ---@return table<number, ivec2>
 function Player:getKnownSectorCoordinates()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 ---@return table<number, ivec2>
 function Player:getKnownSectorCoordinates()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 ---@return table<number, SectorView>
 function Player:getKnownSectors()
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@return table<number, SectorView>
 function Player:getKnownSectors()
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Player:getKnownSectorsOfFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Player:getKnownSectorsOfFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Player:getKnownSectorsWithFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 -- Inherited from Faction [Server]
@@ -251,14 +251,14 @@ end
 ---@param y number
 ---@return table<number, string>
 function Player:getNamesOfShipsInSector(x, y)
-	return {number, string}
+	return {""}
 end
 
 ---@param x number
 ---@param y number
 ---@return table<number, string>
 function Player:getNamesOfShipsInSector(x, y)
-	return {number, string}
+	return {""}
 end
 
 ---@param name string
@@ -276,13 +276,13 @@ end
 
 ---@return table<number, string>
 function Player:getPlanStyleNames()
-	return {number, string}
+	return {""}
 end
 
 -- Inherited from Faction [Server]
 ---@return table<number, string>
 function Player:getPlanStyleNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param factionIndex number
@@ -326,7 +326,7 @@ end
 
 ---@return unsigned,table<number, int>
 function Player:getResources()
-	return unsigned,{number, int}
+	return unsigned,{0}
 end
 
 -- Inherited from Faction [Server]
@@ -440,12 +440,12 @@ end
 
 ---@return table<number, string>
 function Player:getShipNames()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function Player:getShipNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param name string
@@ -535,13 +535,13 @@ end
 ---@param name string
 ---@return table<number, pair>
 function Player:getShipSystems(name)
-	return {number, pair}
+	return {pair}
 end
 
 ---@param name string
 ---@return table<number, ShipInfoUpgrade>
 function Player:getShipSystems(name)
-	return {number, ShipInfoUpgrade}
+	return {ShipInfoUpgrade}
 end
 
 ---@param name string
@@ -623,7 +623,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Player:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 -- Invokes a function in a script of the player. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -636,7 +636,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Player:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 ---@param factionIndex number

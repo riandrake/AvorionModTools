@@ -11,14 +11,14 @@ setmetatable(BspTree, {__call = function(self, id) return BspTree end})
 ---@param box Box
 ---@return table<number, int>
 function BspTree:getBlocksByBox(box)
-	return {number, int}
+	return {0}
 end
 
 ---@param box Box
 ---@param boxOrientation Matrix
 ---@return table<number, int>
 function BspTree:getBlocksByOrientedBox(box, boxOrientation)
-	return {number, int}
+	return {0}
 end
 
 ---@param ray Ray
@@ -26,13 +26,13 @@ end
 ---@param t1 number
 ---@return table<number, int>
 function BspTree:getBlocksByRay(ray, t0, t1)
-	return {number, int}
+	return {0}
 end
 
 ---@param sphere Sphere
 ---@return table<number, int>
 function BspTree:getBlocksBySphere(sphere)
-	return {number, int}
+	return {0}
 end
 
 ---@param ray Ray

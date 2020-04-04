@@ -103,7 +103,7 @@ end
 
 ---@return table<number, vec3>
 function ReadOnlyEntity:getAimedPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return any
@@ -152,7 +152,7 @@ end
 ---@param n number
 ---@return TradingGood,table<number, int>
 function ReadOnlyEntity:getCargo(n)
-	return TradingGood,{number, int}
+	return TradingGood,{0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
@@ -179,28 +179,28 @@ end
 -- @return Indices of all players and alliances that contributed damage to the entity
 ---@return table<number, int>
 function ReadOnlyEntity:getDamageContributorPlayerFactions()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all players that contributed damage to the entity
 -- @return Indices of all players that contributed damage to the entity
 ---@return table<number, int>
 function ReadOnlyEntity:getDamageContributorPlayers()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all factions that contributed damage to the entity
 -- @return Indices of all factions that contributed damage to the entity
 ---@return table<number, int>
 function ReadOnlyEntity:getDamageContributors()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all docking positions that the entity has
 -- @return A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock.
 ---@return table<number, vec3>
 function ReadOnlyEntity:getDockingPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return any
@@ -242,7 +242,7 @@ end
 
 ---@return table<number, int>
 function ReadOnlyEntity:getMineableResources()
-	return {number, int}
+	return {0}
 end
 
 ---@param other Entity
@@ -265,7 +265,7 @@ end
 -- @return multiple return values: indices of players
 ---@return table<number, int>
 function ReadOnlyEntity:getPilotIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@return any
@@ -275,7 +275,7 @@ end
 
 ---@return table<number, double>
 function ReadOnlyEntity:getPlanResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 ---@return table<number,string>
@@ -318,7 +318,7 @@ end
 
 ---@return table<number, Entity>
 function ReadOnlyEntity:getTurrets()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return any
@@ -328,7 +328,7 @@ end
 
 ---@return table<number, double>
 function ReadOnlyEntity:getUndamagedPlanResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key

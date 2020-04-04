@@ -71,13 +71,13 @@ end
 ---@param types table<number,
 ---@return table<number, int>
 function PlanPart:getBlocks(types)
-	return {number, int}
+	return {0}
 end
 
 -- @return Returns a table with all connectors of the part
 ---@return table<number, table_t>
 function PlanPart:getConnectors()
-	return {number, table_t}
+	return {table_t}
 end
 
 -- Merges blocks, similar to the building mode command.
@@ -86,7 +86,7 @@ end
 ---@param blocks table<number,
 ---@return table<number, int>
 function PlanPart:merge(blocks)
-	return {number, int}
+	return {0}
 end
 
 -- Mirrors the entire part along an axis.

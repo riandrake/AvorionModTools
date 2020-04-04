@@ -36,7 +36,7 @@ end
 
 ---@return table<number, TooltipLine>
 function Tooltip:getLines()
-	return {number, TooltipLine}
+	return {TooltipLine}
 end
 
 -- @return nothing

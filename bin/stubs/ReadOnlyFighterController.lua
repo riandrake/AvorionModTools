@@ -11,6 +11,6 @@ setmetatable(ReadOnlyFighterController, {__call = function(self, id) return Read
 ---@param squad any
 ---@return table<number, Entity>
 function ReadOnlyFighterController:getDeployedFighters(squad)
-	return {number, Entity}
+	return {Entity}
 end
 

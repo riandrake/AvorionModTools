@@ -36,7 +36,7 @@ end
 
 ---@return table<number, ivec2>
 function SectorView:getGateDestinations()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 ---@return table<number,number>
@@ -46,7 +46,7 @@ end
 
 ---@return table<number, NamedFormat>
 function SectorView:getStationTitles()
-	return {number, NamedFormat}
+	return {NamedFormat}
 end
 
 ---@return table<number,number>
@@ -56,7 +56,7 @@ end
 
 ---@return table<number, ivec2>
 function SectorView:getWormHoleDestinations()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 -- @return nothing

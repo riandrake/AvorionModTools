@@ -114,7 +114,7 @@ end
 
 ---@return unsigned,table<number, int>
 function Hangar:getSquads()
-	return unsigned,{number, int}
+	return unsigned,{0}
 end
 
 -- @return nothing

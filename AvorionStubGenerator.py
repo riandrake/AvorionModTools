@@ -141,7 +141,7 @@ def get_default_value(in_type):
         in_type = f'table<{",".join([get_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
 
     if '...' in in_type:
-        in_type = f"table<number, {in_type.replace('...', '')}>"
+        in_type = f"table<{get_default_value(in_type.replace('...', ''))}>"
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')

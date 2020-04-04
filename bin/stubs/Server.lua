@@ -66,22 +66,22 @@ end
 
 ---@return table<number, string>
 function Server:getBlackList()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function Server:getIpBlackList()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, Player>
 function Server:getOnlinePlayers()
-	return {number, Player}
+	return {Player}
 end
 
 ---@return table<number, Player>
 function Server:getPlayers()
-	return {number, Player}
+	return {Player}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
@@ -102,7 +102,7 @@ end
 
 ---@return table<number, string>
 function Server:getWhiteList()
-	return {number, string}
+	return {""}
 end
 
 ---@param player Player

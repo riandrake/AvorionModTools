@@ -27,7 +27,7 @@ end
 
 ---@return table<number, string>
 function ModManager:enableAll()
-	return {number, string}
+	return {""}
 end
 
 ---@param id string
@@ -62,38 +62,38 @@ end
 
 ---@return table<number, string>
 function ModManager:forceEnableAll()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, table_t>
 function ModManager:getDetectedMods()
-	return {number, table_t}
+	return {table_t}
 end
 
 ---@return table<number, string>
 function ModManager:getEnabledLoadOrder()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function ModManager:getEnabledMods()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function ModManager:getFullLoadOrder()
-	return {number, string}
+	return {""}
 end
 
 ---@param id string
 ---@return table<number, string>
 function ModManager:getIncompatibleMods(id)
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function ModManager:getLoadOrder()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<string,number>
@@ -110,12 +110,12 @@ end
 ---@param file string
 ---@return table<number, string>
 function ModManager:getModsModifyingFile(file)
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function ModManager:getOutdatedMods()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<string,string>
@@ -127,14 +127,14 @@ end
 ---@param optionalToo boolean
 ---@return table<number, string>
 function ModManager:getRequiredMods(id, optionalToo)
-	return {number, string}
+	return {""}
 end
 
 ---@param id string
 ---@param optionalToo boolean
 ---@return table<number, string>
 function ModManager:getRequiringMods(id, optionalToo)
-	return {number, string}
+	return {""}
 end
 
 -- @return nothing

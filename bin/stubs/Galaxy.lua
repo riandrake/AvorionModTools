@@ -189,7 +189,7 @@ end
 
 ---@return table<number, string>
 function Galaxy:getOnlinePlayerNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param level number
@@ -207,7 +207,7 @@ end
 
 ---@return table<number, int>
 function Galaxy:getPlayerIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@return table<number,string>
@@ -217,7 +217,7 @@ end
 
 ---@return table<number, string>
 function Galaxy:getPlayerNames()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number,string>
@@ -248,7 +248,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Galaxy:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 -- Checks if a faction is already loaded into memory.

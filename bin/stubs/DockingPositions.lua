@@ -16,12 +16,12 @@ end
 ---@param i number
 ---@return table<number, vec3>
 function DockingPositions:getDockingPosition(i)
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return table<number, vec3>
 function DockingPositions:getDockingPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@param exception nil]

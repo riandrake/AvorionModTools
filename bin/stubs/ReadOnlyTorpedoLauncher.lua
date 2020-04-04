@@ -37,7 +37,7 @@ end
 
 ---@return unsigned,table<number, int>
 function ReadOnlyTorpedoLauncher:getShafts()
-	return unsigned,{number, int}
+	return unsigned,{0}
 end
 
 -- TODO

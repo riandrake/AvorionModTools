@@ -11,7 +11,7 @@ setmetatable(FighterController, {__call = function(self, id) return FighterContr
 ---@param squad any
 ---@return table<number, Entity>
 function FighterController:getDeployedFighters(squad)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param squadIndex number

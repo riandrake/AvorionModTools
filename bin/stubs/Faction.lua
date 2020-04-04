@@ -59,7 +59,7 @@ end
 
 ---@return table<number, Relation>
 function Faction:getAllRelations()
-	return {number, Relation}
+	return {Relation}
 end
 
 ---@return number,number
@@ -90,7 +90,7 @@ end
 
 ---@return table<number, string>
 function Faction:getPlanStyleNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param factionIndex number

@@ -66,7 +66,7 @@ end
 ---@param n number
 ---@return TradingGood,table<number, int>
 function CargoBay:getCargo(n)
-	return TradingGood,{number, int}
+	return TradingGood,{0}
 end
 
 ---@return table<TradingGood,number>

@@ -1079,7 +1079,7 @@ end
 
 ---@return table<number, Color>
 function ColorPalette()
-	return {number, Color}
+	return {Color}
 end
 
 ---@param r number
@@ -1203,7 +1203,7 @@ end
 -- @return table containing all mods
 ---@return table<number, table_t>
 function Mods()
-	return {number, table_t}
+	return {table_t}
 end
 
 ---@return EntityDescriptor
@@ -1735,7 +1735,7 @@ end
 -- This function is only available on the client.
 ---@return table<number, string>
 function getSavedShips()
-	return {number, string}
+	return {""}
 end
 
 -- Returns the exact path of the top-level script file that this function is called from. If the script has been required by other scripts, it will return the path that was given to, for example, the function Entity():addScript(path, args...). This function can be used to determine the script path that has to be used by, for example, calls to Entity():invokeFunction(script, args...)
@@ -1773,7 +1773,7 @@ end
 -- This function is only available on the client.
 ---@return table<number, string>
 function getWorkshopShips()
-	return {number, string}
+	return {""}
 end
 
 -- This function is called when the game initializes the UI of the script. This function is only called once per script. You should initialize all your UI elements in this function and register all interactions for the entity here as well, so that they will be visible when the player interacts with the entity. Client Function: This function is only called on the client.
@@ -1932,7 +1932,7 @@ end
 ---@param directory string
 ---@return table<number, string>
 function listFilesOfDirectory(directory)
-	return {number, string}
+	return {""}
 end
 
 ---@param eye vec3
@@ -2282,7 +2282,7 @@ end
 ---@param params table<number,
 ---@return table<number, var>
 function run(script, func, params)
-	return {number, var}
+	return {nil}
 end
 
 -- Runs code in the context of an entity in a sector, during its update step. Use this function to execute arbitrary code in the context of entities that are in other sectors than the current script. The sector must be loaded in memory in order for this call to succeed. It will not be loaded from disk or generated. The code will not be run immediately, but it might take up to one update tick until it is run. Therefore, return values of the executed functions will not be retrieved. Due to technical, multithreading-related restrictions, there is no way to check at the time of the call, if the target entity exists in the sector. If it doesn't this call will silently fail. To get an error message printed out on failure as to why it failed, pass 'true' to the 'printErrors' parameter.  This function is only available on the server.
