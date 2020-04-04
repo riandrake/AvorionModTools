@@ -32,7 +32,7 @@ end
 
 ---@return table<number, int>
 function CraftDesign:getTurrets()
-	return {number, int}
+	return {0}
 end
 
 -- @return nothing

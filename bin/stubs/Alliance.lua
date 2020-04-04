@@ -154,13 +154,13 @@ end
 
 ---@return table<number, Relation>
 function Alliance:getAllRelations()
-	return {number, Relation}
+	return {Relation}
 end
 
 -- Inherited from Faction [Server]
 ---@return table<number, Relation>
 function Alliance:getAllRelations()
-	return {number, Relation}
+	return {Relation}
 end
 
 ---@return number,number
@@ -201,46 +201,46 @@ end
 
 ---@return table<number, ivec2>
 function Alliance:getKnownSectorCoordinates()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 ---@return table<number, ivec2>
 function Alliance:getKnownSectorCoordinates()
-	return {number, ivec2}
+	return {ivec2}
 end
 
 ---@return table<number, SectorView>
 function Alliance:getKnownSectors()
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@return table<number, SectorView>
 function Alliance:getKnownSectors()
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Alliance:getKnownSectorsOfFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Alliance:getKnownSectorsOfFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Alliance:getKnownSectorsWithFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 ---@param factionIndex number
 ---@return table<number, SectorView>
 function Alliance:getKnownSectorsWithFaction(factionIndex)
-	return {number, SectorView}
+	return {SectorView}
 end
 
 -- Inherited from Faction [Server]
@@ -282,14 +282,14 @@ end
 ---@param y number
 ---@return table<number, string>
 function Alliance:getNamesOfShipsInSector(x, y)
-	return {number, string}
+	return {""}
 end
 
 ---@param x number
 ---@param y number
 ---@return table<number, string>
 function Alliance:getNamesOfShipsInSector(x, y)
-	return {number, string}
+	return {""}
 end
 
 ---@return string
@@ -312,13 +312,13 @@ end
 
 ---@return table<number, string>
 function Alliance:getPlanStyleNames()
-	return {number, string}
+	return {""}
 end
 
 -- Inherited from Faction [Server]
 ---@return table<number, string>
 function Alliance:getPlanStyleNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param name string
@@ -468,12 +468,12 @@ end
 
 ---@return table<number, string>
 function Alliance:getShipNames()
-	return {number, string}
+	return {""}
 end
 
 ---@return table<number, string>
 function Alliance:getShipNames()
-	return {number, string}
+	return {""}
 end
 
 ---@param name string
@@ -563,13 +563,13 @@ end
 ---@param name string
 ---@return table<number, ShipInfoUpgrade>
 function Alliance:getShipSystems(name)
-	return {number, ShipInfoUpgrade}
+	return {ShipInfoUpgrade}
 end
 
 ---@param name string
 ---@return table<number, ShipInfoUpgrade>
 function Alliance:getShipSystems(name)
-	return {number, ShipInfoUpgrade}
+	return {ShipInfoUpgrade}
 end
 
 ---@param name string
@@ -645,7 +645,7 @@ end
 
 ---@return table<number, var>
 function Alliance:invokeFunction()
-	return {number, var}
+	return {nil}
 end
 
 ---@param factionIndex number

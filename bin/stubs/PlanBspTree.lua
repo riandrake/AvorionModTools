@@ -7,14 +7,14 @@ setmetatable(PlanBspTree, {__call = function(self, plan) return PlanBspTree end}
 ---@param box Box
 ---@return table<number, int>
 function PlanBspTree:getBlocksByBox(box)
-	return {number, int}
+	return {0}
 end
 
 ---@param box Box
 ---@param boxOrientation Matrix
 ---@return table<number, int>
 function PlanBspTree:getBlocksByOrientedBox(box, boxOrientation)
-	return {number, int}
+	return {0}
 end
 
 ---@param ray Ray
@@ -22,13 +22,13 @@ end
 ---@param t1 number
 ---@return table<number, int>
 function PlanBspTree:getBlocksByRay(ray, t0, t1)
-	return {number, int}
+	return {0}
 end
 
 ---@param sphere Sphere
 ---@return table<number, int>
 function PlanBspTree:getBlocksBySphere(sphere)
-	return {number, int}
+	return {0}
 end
 
 -- Intersects the given ray with the plan. This happens in the space of the plan.

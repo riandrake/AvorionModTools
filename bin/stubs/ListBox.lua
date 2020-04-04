@@ -70,7 +70,7 @@ end
 
 ---@return string,boolean,boolean,table<number, Color>
 function ListBox:getSelectedEntry()
-	return "",true,true,{number, Color}
+	return "",true,true,{Color}
 end
 
 -- Inherited from UIElement

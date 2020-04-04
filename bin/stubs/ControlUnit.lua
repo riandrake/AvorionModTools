@@ -73,12 +73,12 @@ end
 
 ---@return table<number, vec3>
 function ControlUnit:getAimedPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return table<number, int>
 function ControlUnit:getAllControlActions()
-	return {number, int}
+	return {0}
 end
 
 ---@param seat number
@@ -113,7 +113,7 @@ end
 
 ---@return table<number, ControlUnitSeat>
 function ControlUnit:getSeats()
-	return {number, ControlUnitSeat}
+	return {ControlUnitSeat}
 end
 
 ---@param seat number
@@ -130,7 +130,7 @@ end
 
 ---@return table<number, uuid>
 function ControlUnit:getSelectedObjectIds()
-	return {number, uuid}
+	return {0}
 end
 
 ---@param seat number

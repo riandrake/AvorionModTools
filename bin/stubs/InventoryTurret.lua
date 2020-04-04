@@ -119,7 +119,7 @@ end
 -- Returns all weapons of the object
 ---@return table<number, Weapon>
 function InventoryTurret:getWeapons()
-	return {number, Weapon}
+	return {Weapon}
 end
 
 ---@return TurretTemplate

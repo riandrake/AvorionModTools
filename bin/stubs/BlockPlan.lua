@@ -78,7 +78,7 @@ end
 ---@param blockIndex number
 ---@return table<number, BlockPlan>
 function BlockPlan:divide(blockIndex)
-	return {number, BlockPlan}
+	return {BlockPlan}
 end
 
 ---@return boolean
@@ -109,7 +109,7 @@ end
 
 ---@return table<number, int>
 function BlockPlan:getBlockIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@return Box
@@ -141,7 +141,7 @@ end
 
 ---@return table<number, double>
 function BlockPlan:getResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 ---@return BlockStatistics
@@ -156,7 +156,7 @@ end
 
 ---@return table<number, double>
 function BlockPlan:getUndamagedResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 -- @return nothing

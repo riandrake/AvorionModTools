@@ -10,6 +10,6 @@ setmetatable(AllianceRank, {__call = function(self) return AllianceRank end})
 
 ---@return table<number, int>
 function AllianceRank:getPrivileges()
-	return {number, int}
+	return {0}
 end
 

@@ -34,7 +34,7 @@ end
 
 ---@return unsigned,table<number, int>
 function Mail:getResources()
-	return unsigned,{number, int}
+	return unsigned,{0}
 end
 
 ---@return boolean

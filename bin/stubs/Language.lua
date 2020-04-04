@@ -15,7 +15,7 @@ end
 
 ---@return table<number, string>
 function Language:getConsonantSounds()
-	return {number, string}
+	return {""}
 end
 
 ---@return string,string
@@ -25,7 +25,7 @@ end
 
 ---@return table<number, string>
 function Language:getGeneratedWords()
-	return {number, string}
+	return {""}
 end
 
 ---@return string
@@ -51,7 +51,7 @@ end
 
 ---@return table<number, string>
 function Language:getVocalSounds()
-	return {number, string}
+	return {""}
 end
 
 ---@return string

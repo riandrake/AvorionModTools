@@ -111,13 +111,13 @@ end
 
 ---@return table<number, int>
 function Plan:getBlockIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@param index number
 ---@return table<number, int>
 function Plan:getBlocksByType(index)
-	return {number, int}
+	return {0}
 end
 
 ---@return number
@@ -153,12 +153,12 @@ end
 ---@param index number
 ---@return table<number, int>
 function Plan:getRemoved(index)
-	return {number, int}
+	return {0}
 end
 
 ---@return table<number, double>
 function Plan:getResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 ---@return BlockStatistics
@@ -173,7 +173,7 @@ end
 
 ---@return table<number, double>
 function Plan:getUndamagedResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 -- @return nothing

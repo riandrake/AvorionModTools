@@ -46,13 +46,13 @@ end
 
 ---@return table<number, int>
 function ReadOnlyPlan:getBlockIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@param index number
 ---@return table<number, int>
 function ReadOnlyPlan:getBlocksByType(index)
-	return {number, int}
+	return {0}
 end
 
 ---@return number
@@ -81,12 +81,12 @@ end
 ---@param index number
 ---@return table<number, int>
 function ReadOnlyPlan:getRemoved(index)
-	return {number, int}
+	return {0}
 end
 
 ---@return table<number, double>
 function ReadOnlyPlan:getResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 ---@return BlockStatistics
@@ -101,6 +101,6 @@ end
 
 ---@return table<number, double>
 function ReadOnlyPlan:getUndamagedResourceValue()
-	return {number, double}
+	return {0.0}
 end
 

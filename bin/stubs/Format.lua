@@ -27,7 +27,7 @@ end
 
 ---@return table<number, PluralForm>
 function Format:getArguments()
-	return {number, PluralForm}
+	return {PluralForm}
 end
 
 ---@return string

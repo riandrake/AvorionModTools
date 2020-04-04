@@ -27,17 +27,17 @@ end
 
 ---@return table<number, Entity>
 function ShipAI:getEnemies()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return table<number, Entity>
 function ShipAI:getEnemyFighters()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return table<number, Entity>
 function ShipAI:getEnemyShips()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return Entity
@@ -47,22 +47,22 @@ end
 
 ---@return table<number, uuid>
 function ShipAI:getRegisteredEnemyEntities()
-	return {number, uuid}
+	return {0}
 end
 
 ---@return table<number, int>
 function ShipAI:getRegisteredEnemyFactions()
-	return {number, int}
+	return {0}
 end
 
 ---@return table<number, uuid>
 function ShipAI:getRegisteredFriendEntities()
-	return {number, uuid}
+	return {0}
 end
 
 ---@return table<number, int>
 function ShipAI:getRegisteredFriendFactions()
-	return {number, int}
+	return {0}
 end
 
 ---@param other Entity

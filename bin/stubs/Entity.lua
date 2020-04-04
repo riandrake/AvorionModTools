@@ -353,7 +353,7 @@ end
 
 ---@return table<number, vec3>
 function Entity:getAimedPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return any
@@ -402,7 +402,7 @@ end
 ---@param n number
 ---@return TradingGood,table<number, int>
 function Entity:getCargo(n)
-	return TradingGood,{number, int}
+	return TradingGood,{0}
 end
 
 -- Counts all goods of the given type. When given a string, it will match the 'name' property of the goods. When given a TradingGood it will match the exact good.
@@ -429,28 +429,28 @@ end
 -- @return Indices of all players and alliances that contributed damage to the entity
 ---@return table<number, int>
 function Entity:getDamageContributorPlayerFactions()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all players that contributed damage to the entity
 -- @return Indices of all players that contributed damage to the entity
 ---@return table<number, int>
 function Entity:getDamageContributorPlayers()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all factions that contributed damage to the entity
 -- @return Indices of all factions that contributed damage to the entity
 ---@return table<number, int>
 function Entity:getDamageContributors()
-	return {number, int}
+	return {0}
 end
 
 -- Lists all docking positions that the entity has
 -- @return A list of vec3s where every 2 values represent a dock. The first value is the local position, the second value is the local direction of the dock.
 ---@return table<number, vec3>
 function Entity:getDockingPositions()
-	return {number, vec3}
+	return {vec3}
 end
 
 ---@return any
@@ -492,7 +492,7 @@ end
 
 ---@return table<number, int>
 function Entity:getMineableResources()
-	return {number, int}
+	return {0}
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks.
@@ -522,7 +522,7 @@ end
 -- @return multiple return values: indices of players
 ---@return table<number, int>
 function Entity:getPilotIndices()
-	return {number, int}
+	return {0}
 end
 
 ---@return any
@@ -532,7 +532,7 @@ end
 
 ---@return table<number, double>
 function Entity:getPlanResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 ---@param radius number
@@ -568,14 +568,14 @@ end
 ---@param number number
 ---@return Matrix,table<number, int>
 function Entity:getTurretPositions(turret, number)
-	return Matrix,{number, int}
+	return Matrix,{0}
 end
 
 ---@param turret TurretTemplate
 ---@param number number
 ---@return Matrix,table<number, int>
 function Entity:getTurretPositionsLineOfSight(turret, number)
-	return Matrix,{number, int}
+	return Matrix,{0}
 end
 
 ---@return any
@@ -595,7 +595,7 @@ end
 
 ---@return table<number, Entity>
 function Entity:getTurrets()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return any
@@ -605,7 +605,7 @@ end
 
 ---@return table<number, double>
 function Entity:getUndamagedPlanResourceValue()
-	return {number, double}
+	return {0.0}
 end
 
 -- Retrieves a custom value saved in the entity with the given key
@@ -699,7 +699,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Entity:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 ---@param entity Entity

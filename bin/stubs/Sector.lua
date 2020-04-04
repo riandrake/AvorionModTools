@@ -362,7 +362,7 @@ end
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getAllies(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all allies of the given faction in the sector. Allies include ships of the same faction. Allied entities are determined as follows:  - they belong to the same faction - they belong to factions whose relations are above 70.000 - they belong to players of the same group  - they belong to players of the same alliance  - they belong to a player and his alliance
@@ -371,7 +371,7 @@ end
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getAllies(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return number,number
@@ -392,7 +392,7 @@ end
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getEnemies(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all enemies of the given faction in the sector. Enemies are determined as ships of factions where relations are below -40.000
@@ -401,25 +401,25 @@ end
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getEnemies(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@return table<number, Entity>
 function Sector:getEntities()
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector
 -- @return Multiple return values: All entities in the sector
 ---@return table<number, Entity>
 function Sector:getEntities()
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param component number
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponent(component)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific component
@@ -428,7 +428,7 @@ end
 ---@param type number
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponent(type)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific set of components
@@ -437,7 +437,7 @@ end
 ---@param types table<number,
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponents(types)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific set of components
@@ -446,13 +446,13 @@ end
 ---@param types table<number,
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponents(types)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getEntitiesByFaction(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that belong to the given faction Complexity: O(n)
@@ -461,13 +461,13 @@ end
 ---@param factionIndex number
 ---@return table<number, Entity>
 function Sector:getEntitiesByFaction(factionIndex)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param sphere Sphere
 ---@return table<number, Entity>
 function Sector:getEntitiesByLocation(sphere)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector whose bounding spheres intersect with the given sphere. Entities without a bounding sphere component will not be considered.  Complexity: O(logn)
@@ -476,13 +476,13 @@ end
 ---@param sphere Sphere
 ---@return table<number, Entity>
 function Sector:getEntitiesByLocation(sphere)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param scriptName string
 ---@return table<number, Entity>
 function Sector:getEntitiesByScript(scriptName)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific script attached to them
@@ -491,7 +491,7 @@ end
 ---@param script string
 ---@return table<number, Entity>
 function Sector:getEntitiesByScript(script)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific value assigned to them. Values can be set with Entity:setValue(name, value) and read with Entity:getValue(name).
@@ -502,7 +502,7 @@ end
 ---@param value any
 ---@return table<number, Entity>
 function Sector:getEntitiesByScriptValue(name, value)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific value assigned to them. Values can be set with Entity:setValue(name, value) and read with Entity:getValue(name).
@@ -513,13 +513,13 @@ end
 ---@param value any
 ---@return table<number, Entity>
 function Sector:getEntitiesByScriptValue(name, value)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param type number
 ---@return table<number, Entity>
 function Sector:getEntitiesByType(type)
-	return {number, Entity}
+	return {Entity}
 end
 
 -- Returns all entities in the sector that have a specific type
@@ -528,7 +528,7 @@ end
 ---@param type number
 ---@return table<number, Entity>
 function Sector:getEntitiesByType(type)
-	return {number, Entity}
+	return {Entity}
 end
 
 ---@param id any
@@ -675,21 +675,21 @@ end
 -- @return Multiple return values: All players in the sector
 ---@return table<number, Player>
 function Sector:getPlayers()
-	return {number, Player}
+	return {Player}
 end
 
 -- Returns all indices of all present factions
 -- @return a list of int indices of all present factions
 ---@return table<number, int>
 function Sector:getPresentFactions()
-	return {number, int}
+	return {0}
 end
 
 -- Returns all indices of all present factions
 -- @return a list of int indices of all present factions
 ---@return table<number, int>
 function Sector:getPresentFactions()
-	return {number, int}
+	return {0}
 end
 
 ---@return table<number,string>
@@ -744,7 +744,7 @@ end
 ---@param ignoredEntityShields nil]
 ---@return table<number, UserObject>
 function Sector:intersectBeamRay(ray, ignoredEntity, ignoredEntityShields)
-	return {number, UserObject}
+	return {UserObject}
 end
 
 -- Invokes a function in a script of the sector. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -757,7 +757,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Sector:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 -- Invokes a function in a script of the sector. Use this function to invoke functions from one script in another script. The first return value of the function is an integer indicating whether or not the call was successful. When it was, this integer is followed by the return values of the invoked function.
@@ -770,7 +770,7 @@ end
 ---@param arguments table<number,
 ---@return table<number, var>
 function Sector:invokeFunction(scriptName, functionName, arguments)
-	return {number, var}
+	return {nil}
 end
 
 -- @callback
