@@ -8,91 +8,91 @@ DockingPositions = {
 setmetatable(DockingPositions, {__call = function(self, id) return DockingPositions end})
 
 -- @return nothing
----@type fun():any
-DockingPositions.deleteRemovableObstacles = function ()
+---@return any
+function DockingPositions:deleteRemovableObstacles()
 	return nil
 end
 
----@param i int
----@type fun(i:number):vec3
-DockingPositions.getDockingPosition = function (i)
-	return vec3()
+---@param i number
+---@return table<number, vec3>
+function DockingPositions:getDockingPosition(i)
+	return {number, vec3}
 end
 
----@type fun():vec3
-DockingPositions.getDockingPositions = function ()
-	return vec3()
+---@return table<number, vec3>
+function DockingPositions:getDockingPositions()
+	return {number, vec3}
 end
 
----@param exception Entity
----@type fun(exception:nil]:[or:Entity):any
-DockingPositions.getFreeDock = function (exception)
+---@param exception nil]
+---@return any
+function DockingPositions:getFreeDock(exception)
 	return nil
 end
 
 ---@param other Entity
----@param dockIndex var
----@type fun(other:Entity, dockIndex:any):boolean
-DockingPositions.inLightArea = function (other, dockIndex)
+---@param dockIndex any
+---@return boolean
+function DockingPositions:inLightArea(other, dockIndex)
 	return true
 end
 
----@param i int
----@param exception Entity
----@type fun(i:number, exception:nil]:[or:Entity):boolean
-DockingPositions.isDockFree = function (i, exception)
-	return true
-end
-
----@param other Entity
----@type fun(other:Entity):boolean
-DockingPositions.isDocked = function (other)
+---@param i number
+---@param exception nil]
+---@return boolean
+function DockingPositions:isDockFree(i, exception)
 	return true
 end
 
 ---@param other Entity
----@type fun(other:Entity):boolean
-DockingPositions.isDocking = function (other)
+---@return boolean
+function DockingPositions:isDocked(other)
 	return true
 end
 
 ---@param other Entity
----@type fun(other:Entity):boolean
-DockingPositions.isDockingOrUndocking = function (other)
+---@return boolean
+function DockingPositions:isDocking(other)
 	return true
 end
 
 ---@param other Entity
----@type fun(other:Entity):boolean
-DockingPositions.isUndocking = function (other)
+---@return boolean
+function DockingPositions:isDockingOrUndocking(other)
 	return true
 end
 
 ---@param other Entity
----@param dockIndex var
----@type fun(other:Entity, dockIndex:any):boolean
-DockingPositions.startDocking = function (other, dockIndex)
+---@return boolean
+function DockingPositions:isUndocking(other)
 	return true
 end
 
 ---@param other Entity
----@param dockIndex var
----@type fun(other:Entity, dockIndex:any):boolean
-DockingPositions.startUndocking = function (other, dockIndex)
+---@param dockIndex any
+---@return boolean
+function DockingPositions:startDocking(other, dockIndex)
+	return true
+end
+
+---@param other Entity
+---@param dockIndex any
+---@return boolean
+function DockingPositions:startUndocking(other, dockIndex)
 	return true
 end
 
 -- @return nothing
 ---@param other Entity
----@type fun(other:Entity):any
-DockingPositions.stopDocking = function (other)
+---@return any
+function DockingPositions:stopDocking(other)
 	return nil
 end
 
 -- @return nothing
 ---@param other Entity
----@type fun(other:Entity):any
-DockingPositions.stopUndocking = function (other)
+---@return any
+function DockingPositions:stopUndocking(other)
 	return nil
 end
 

@@ -275,7 +275,6 @@ class ParsedFunction:
     return_value: str
     raw_return_value: str
     arguments: str
-    params: str
 
     def __lt__(self, other):
         return self.name < other.name
@@ -331,7 +330,7 @@ class ParsedFunction:
 
         args = [arg.strip() for arg in args if arg.strip()]
         self.arguments = ', '.join(args)
-        self.params = ''.join(arg_types)
+        #  self.params = ''.join(arg_types)
 
         name_start = definition.rfind(' ', 0, start_bracket)
 
@@ -401,7 +400,9 @@ class ParsedFunction:
             d_returns[idx] = get_raw_default_value(return_type)
         definition_returns = f'---@return {",".join(d_returns)}\n' if d_returns[0] else ''
 
-        self.definition = f'{definition_parameters}{definition_returns}function {namespace + ":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{",".join(returns)}\nend\n\n'
+        self.raw_return_value = ",".join(d_returns)  # here for use in older code
+        self.return_value = ",".join(returns)  # here for use in older code
+        self.definition = f'{definition_parameters}{definition_returns}function {namespace + ":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
