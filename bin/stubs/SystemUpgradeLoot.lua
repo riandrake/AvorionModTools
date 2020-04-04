@@ -1,7 +1,7 @@
 ---@class SystemUpgradeLoot
 SystemUpgradeLoot = {
 
-	upgrade = SystemUpgradeTemplate(), -- SystemUpgradeTemplate
+	upgrade = SystemUpgradeTemplate, -- SystemUpgradeTemplate
 
 }
 

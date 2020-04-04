@@ -4,62 +4,62 @@ Random = {
 
 setmetatable(Random, {__call = function(self, seed) return Random end})
 
----@type fun():Seed
-Random.createSeed = function ()
-	return Seed()
+---@return Seed
+function Random:createSeed()
+	return Seed
 end
 
----@type fun():vec2
-Random.get2DDirection = function ()
-	return vec2()
+---@return vec2
+function Random:get2DDirection()
+	return vec2
 end
 
----@type fun():boolean
-Random.getBool = function ()
+---@return boolean
+function Random:getBool()
 	return true
 end
 
----@type fun():vec3
-Random.getDirection = function ()
-	return vec3()
+---@return vec3
+function Random:getDirection()
+	return vec3
 end
 
----@param min var
----@param max var
----@type fun(min:any, max:any):number
-Random.getFloat = function (min, max)
+---@param min any
+---@param max any
+---@return number
+function Random:getFloat(min, max)
 	return 0.0
 end
 
----@param min var
----@param max var
----@type fun(min:any, max:any):number
-Random.getInt = function (min, max)
+---@param min any
+---@param max any
+---@return number
+function Random:getInt(min, max)
 	return 0
 end
 
----@type fun():number
-Random.getValueOfDistribution = function ()
+---@return number
+function Random:getValueOfDistribution()
 	return 0
 end
 
----@param min var
----@param max var
----@type fun(min:any, max:any):vec3
-Random.getVector = function (min, max)
-	return vec3()
+---@param min any
+---@param max any
+---@return vec3
+function Random:getVector(min, max)
+	return vec3
 end
 
 -- @return nothing
 ---@param seed Seed
----@type fun(seed:Seed):any
-Random.setSeed = function (seed)
+---@return any
+function Random:setSeed(seed)
 	return nil
 end
 
----@param probability float
----@type fun(probability:number):boolean
-Random.test = function (probability)
+---@param probability number
+---@return boolean
+function Random:test(probability)
 	return true
 end
 

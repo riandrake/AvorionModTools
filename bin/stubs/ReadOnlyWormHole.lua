@@ -1,9 +1,9 @@
 ---@class ReadOnlyWormHole
 ReadOnlyWormHole = {
 
-	color = Color(), -- [read-only] Color
+	color = Color, -- [read-only] Color
 	enabled = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	oneWay = true, -- [read-only] bool
 	passageSize = 0.0, -- [read-only] float

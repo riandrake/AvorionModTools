@@ -10,47 +10,47 @@ setmetatable(Tooltip, {__call = function(self) return Tooltip end})
 
 -- @return nothing
 ---@param line TooltipLine
----@type fun(line:TooltipLine):any
-Tooltip.addLine = function (line)
+---@return any
+function Tooltip:addLine(line)
 	return nil
 end
 
 -- @return nothing
 ---@param line TooltipLine
----@type fun(line:TooltipLine):any
-Tooltip.addLineFront = function (line)
+---@return any
+function Tooltip:addLineFront(line)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Tooltip.clear = function ()
+---@return any
+function Tooltip:clear()
 	return nil
 end
 
----@param i int
----@type fun(i:number):TooltipLine
-Tooltip.getLine = function (i)
-	return TooltipLine()
+---@param i number
+---@return TooltipLine
+function Tooltip:getLine(i)
+	return TooltipLine
 end
 
----@type fun():TooltipLine
-Tooltip.getLines = function ()
-	return TooltipLine()
+---@return table<number, TooltipLine>
+function Tooltip:getLines()
+	return {number, TooltipLine}
 end
 
 -- @return nothing
----@param i int
----@type fun(i:number):any
-Tooltip.removeLine = function (i)
+---@param i number
+---@return any
+function Tooltip:removeLine(i)
 	return nil
 end
 
 -- @return nothing
----@param i int
+---@param i number
 ---@param line TooltipLine
----@type fun(i:number, line:TooltipLine):any
-Tooltip.setLine = function (i, line)
+---@return any
+function Tooltip:setLine(i, line)
 	return nil
 end
 

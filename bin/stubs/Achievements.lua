@@ -5,8 +5,8 @@ Achievements = {
 setmetatable(Achievements, {__call = function(self) return Achievements end})
 
 -- @return nothing
----@type fun():any
-Achievements.unlockProvokedSwoks = function ()
+---@return any
+function Achievements:unlockProvokedSwoks()
 	return nil
 end
 

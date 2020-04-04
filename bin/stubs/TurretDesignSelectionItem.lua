@@ -2,7 +2,7 @@
 TurretDesignSelectionItem = {
 
 	deleteable = true, -- bool
-	design = TurretDesign(), -- [read-only] TurretDesign
+	design = TurretDesign, -- [read-only] TurretDesign
 	hasWorkshopIcon = true, -- [read-only] bool
 	highlighted = true, -- bool
 	isLocalProject = true, -- bool
@@ -19,8 +19,8 @@ TurretDesignSelectionItem = {
 setmetatable(TurretDesignSelectionItem, {__call = function(self, path) return TurretDesignSelectionItem end})
 
 -- @return nothing
----@type fun():any
-TurretDesignSelectionItem.refreshTexture = function ()
+---@return any
+function TurretDesignSelectionItem:refreshTexture()
 	return nil
 end
 

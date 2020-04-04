@@ -8,7 +8,7 @@ Thrusters = {
 	currentRoll = 0.0, -- [read-only] double
 	currentYaw = 0.0, -- [read-only] double
 	fixedStats = true, -- bool
-	thrust = vec3(), -- vec3
+	thrust = vec3, -- vec3
 
 }
 

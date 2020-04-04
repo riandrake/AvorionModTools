@@ -2,12 +2,12 @@
 BlockPlan = {
 
 	accumulatingHealth = true, -- bool
-	centerOfMass = vec3(), -- [read-only] vec3
+	centerOfMass = vec3, -- [read-only] vec3
 	convex = true, -- bool
 	durability = 0.0, -- [read-only] double
 	numBlocks = 0, -- [read-only] int
 	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
+	root = BlockPlanBlock, -- [read-only] BlockPlanBlock
 	rootIndex = nil, -- [read-only] var
 	volume = 0.0, -- [read-only] double
 
@@ -27,68 +27,68 @@ setmetatable(BlockPlan, {__call = function(self) return BlockPlan end})
 -- @return Returns the index of the new block on success, nil otherwise.
 ---@param position vec3
 ---@param size vec3
----@param parentIndex int
----@param index int
+---@param parentIndex number
+---@param index number
 ---@param color Color
 ---@param material Material
 ---@param orientation Matrix
----@param blockIndex int
----@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number):number
-BlockPlan.addBlock = function (position, size, parentIndex, index, color, material, orientation, blockIndex)
+---@param blockIndex number
+---@return number
+function BlockPlan:addBlock(position, size, parentIndex, index, color, material, orientation, blockIndex)
 	return 0
 end
 
----@param parentIndex int
+---@param parentIndex number
 ---@param other BlockPlan
----@param otherBlock int
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number):any
-BlockPlan.addPlan = function (parentIndex, other, otherBlock)
+---@param otherBlock number
+---@return any
+function BlockPlan:addPlan(parentIndex, other, otherBlock)
 	return nil
 end
 
----@param parentIndex int
+---@param parentIndex number
 ---@param other BlockPlan
----@param otherBlock int
+---@param otherBlock number
 ---@param delta vec3
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3):any
-BlockPlan.addPlanDisplaced = function (parentIndex, other, otherBlock, delta)
+---@return any
+function BlockPlan:addPlanDisplaced(parentIndex, other, otherBlock, delta)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-BlockPlan.center = function ()
+---@return any
+function BlockPlan:center()
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-BlockPlan.deleteSubTree = function (index)
+---@param index number
+---@return any
+function BlockPlan:deleteSubTree(index)
 	return nil
 end
 
 -- @return nothing
 ---@param displacement vec3
----@type fun(displacement:vec3):any
-BlockPlan.displace = function (displacement)
+---@return any
+function BlockPlan:displace(displacement)
 	return nil
 end
 
----@param blockIndex int
----@type fun(blockIndex:number):BlockPlan
-BlockPlan.divide = function (blockIndex)
-	return BlockPlan()
+---@param blockIndex number
+---@return table<number, BlockPlan>
+function BlockPlan:divide(blockIndex)
+	return {number, BlockPlan}
 end
 
----@type fun():boolean
-BlockPlan.empty = function ()
+---@return boolean
+function BlockPlan:empty()
 	return true
 end
 
----@param index int
----@type fun(index:number):boolean
-BlockPlan.exists = function (index)
+---@param index number
+---@return boolean
+function BlockPlan:exists(index)
 	return true
 end
 
@@ -96,133 +96,133 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
----@type fun(material:Material):any
-BlockPlan.forceMaterial = function (material)
+---@return any
+function BlockPlan:forceMaterial(material)
 	return nil
 end
 
----@param index int
----@type fun(index:number):BlockPlanBlock
-BlockPlan.getBlock = function (index)
-	return BlockPlanBlock()
+---@param index number
+---@return BlockPlanBlock
+function BlockPlan:getBlock(index)
+	return BlockPlanBlock
 end
 
----@type fun():number
-BlockPlan.getBlockIndices = function ()
-	return 0
+---@return table<number, int>
+function BlockPlan:getBlockIndices()
+	return {number, int}
 end
 
----@type fun():Box
-BlockPlan.getBoundingBox = function ()
-	return Box()
+---@return Box
+function BlockPlan:getBoundingBox()
+	return Box
 end
 
----@type fun():Sphere
-BlockPlan.getBoundingSphere = function ()
-	return Sphere()
+---@return Sphere
+function BlockPlan:getBoundingSphere()
+	return Sphere
 end
 
----@type fun():number
-BlockPlan.getMoneyValue = function ()
+---@return number
+function BlockPlan:getMoneyValue()
 	return 0.0
 end
 
----@param n int
----@type fun(n:number):BlockPlanBlock
-BlockPlan.getNthBlock = function (n)
-	return BlockPlanBlock()
+---@param n number
+---@return BlockPlanBlock
+function BlockPlan:getNthBlock(n)
+	return BlockPlanBlock
 end
 
----@param n int
----@type fun(n:number):any
-BlockPlan.getNthIndex = function (n)
+---@param n number
+---@return any
+function BlockPlan:getNthIndex(n)
 	return nil
 end
 
----@type fun():number
-BlockPlan.getResourceValue = function ()
+---@return table<number, double>
+function BlockPlan:getResourceValue()
+	return {number, double}
+end
+
+---@return BlockStatistics
+function BlockPlan:getStats()
+	return BlockStatistics
+end
+
+---@return number
+function BlockPlan:getUndamagedMoneyValue()
 	return 0.0
 end
 
----@type fun():BlockStatistics
-BlockPlan.getStats = function ()
-	return BlockStatistics()
-end
-
----@type fun():number
-BlockPlan.getUndamagedMoneyValue = function ()
-	return 0.0
-end
-
----@type fun():number
-BlockPlan.getUndamagedResourceValue = function ()
-	return 0.0
+---@return table<number, double>
+function BlockPlan:getUndamagedResourceValue()
+	return {number, double}
 end
 
 -- @return nothing
 ---@param axis vec3
 ---@param mirrorCenter vec3
----@type fun(axis:vec3, mirrorCenter:vec3):any
-BlockPlan.mirror = function (axis, mirrorCenter)
+---@return any
+function BlockPlan:mirror(axis, mirrorCenter)
 	return nil
 end
 
 ---@param other BlockPlan
----@type fun(other:BlockPlan):boolean
-BlockPlan.propertiesEqual = function (other)
+---@return boolean
+function BlockPlan:propertiesEqual(other)
 	return true
 end
 
 -- Removes a block from the plan. This function will try to reassign parents where possible to ensure that the tree doesn't break in positions where blocks still intersect with each other.
 -- @param index - The index of the block that is to be removed
 -- @return nothing
----@param index int
----@type fun(index:number):any
-BlockPlan.removeBlock = function (index)
+---@param index number
+---@return any
+function BlockPlan:removeBlock(index)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-BlockPlan.resetDurability = function ()
+---@return any
+function BlockPlan:resetDurability()
 	return nil
 end
 
 -- @return nothing
 ---@param axis vec3
----@param dir int
----@type fun(axis:vec3, dir:number):any
-BlockPlan.rotate = function (axis, dir)
+---@param dir number
+---@return any
+function BlockPlan:rotate(axis, dir)
 	return nil
 end
 
 -- @return nothing
 ---@param factor vec3
----@type fun(factor:vec3):any
-BlockPlan.scale = function (factor)
+---@return any
+function BlockPlan:scale(factor)
 	return nil
 end
 
 -- @return nothing
----@param index int
+---@param index number
 ---@param color Color
----@type fun(index:number, color:Color):any
-BlockPlan.setBlockColor = function (index, color)
+---@return any
+function BlockPlan:setBlockColor(index, color)
 	return nil
 end
 
 -- @return nothing
----@param index int
----@param blockTypeIndex int
----@type fun(index:number, blockTypeIndex:number):any
-BlockPlan.setBlockType = function (index, blockTypeIndex)
+---@param index number
+---@param blockTypeIndex number
+---@return any
+function BlockPlan:setBlockType(index, blockTypeIndex)
 	return nil
 end
 
 -- @return nothing
 ---@param color Color
----@type fun(color:Color):any
-BlockPlan.setColor = function (color)
+---@return any
+function BlockPlan:setColor(color)
 	return nil
 end
 
@@ -230,8 +230,8 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
----@type fun(material:Material):any
-BlockPlan.setMaterial = function (material)
+---@return any
+function BlockPlan:setMaterial(material)
 	return nil
 end
 
@@ -239,8 +239,8 @@ end
 -- @param material - The new material
 -- @return nothing
 ---@param material Material
----@type fun(material:Material):any
-BlockPlan.setMaterialTier = function (material)
+---@return any
+function BlockPlan:setMaterialTier(material)
 	return nil
 end
 

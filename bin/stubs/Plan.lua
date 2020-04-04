@@ -2,16 +2,16 @@
 Plan = {
 
 	accumulatingHealth = true, -- bool
-	boundingBox = Box(), -- [read-only] Box
-	boundingSphere = Sphere(), -- [read-only] Sphere
-	centerOfMass = vec3(), -- [read-only] vec3
+	boundingBox = Box, -- [read-only] Box
+	boundingSphere = Sphere, -- [read-only] Sphere
+	centerOfMass = vec3, -- [read-only] vec3
 	convex = true, -- bool
 	durability = 0.0, -- [read-only] double
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	numBlocks = 0, -- [read-only] int
 	radius = 0.0, -- [read-only] float
-	root = BlockPlanBlock(), -- [read-only] BlockPlanBlock
+	root = BlockPlanBlock, -- [read-only] BlockPlanBlock
 	rootIndex = nil, -- [read-only] var
 	size = 0, -- [read-only] int
 	volume = 0.0, -- [read-only] float
@@ -32,157 +32,157 @@ setmetatable(Plan, {__call = function(self, id) return Plan end})
 -- @return Returns the index of the new block on success, nil otherwise.
 ---@param position vec3
 ---@param size vec3
----@param parentIndex int
----@param index int
+---@param parentIndex number
+---@param index number
 ---@param color Color
 ---@param material Material
 ---@param orientation Matrix
----@param blockIndex int
----@type fun(position:vec3, size:vec3, parentIndex:number, index:number, color:Color, material:Material, orientation:Matrix, blockIndex:number):number
-Plan.addBlock = function (position, size, parentIndex, index, color, material, orientation, blockIndex)
+---@param blockIndex number
+---@return number
+function Plan:addBlock(position, size, parentIndex, index, color, material, orientation, blockIndex)
 	return 0
 end
 
----@param parentIndex int
+---@param parentIndex number
 ---@param other BlockPlan
----@param otherBlock int
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number):number
-Plan.addPlan = function (parentIndex, other, otherBlock)
+---@param otherBlock number
+---@return number
+function Plan:addPlan(parentIndex, other, otherBlock)
 	return 0
 end
 
----@param parentIndex int
+---@param parentIndex number
 ---@param other BlockPlan
----@param otherBlock int
+---@param otherBlock number
 ---@param delta vec3
----@type fun(parentIndex:number, other:BlockPlan, otherBlock:number, delta:vec3):number
-Plan.addPlanDisplaced = function (parentIndex, other, otherBlock, delta)
+---@return number
+function Plan:addPlanDisplaced(parentIndex, other, otherBlock, delta)
 	return 0
 end
 
 -- @return nothing
----@param damage float
----@param block int
+---@param damage number
+---@param block number
 ---@param location vec3
 ---@param inflictingEntity Uuid
----@param damageSource var
----@param damageType var
----@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid, damageSource:any, damageType:any):any
-Plan.damage = function (damage, block, location, inflictingEntity, damageSource, damageType)
+---@param damageSource any
+---@param damageType any
+---@return any
+function Plan:damage(damage, block, location, inflictingEntity, damageSource, damageType)
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-Plan.deleteSubTree = function (index)
+---@param index number
+---@return any
+function Plan:deleteSubTree(index)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Plan.destroy = function ()
+---@return any
+function Plan:destroy()
 	return nil
 end
 
----@type fun():boolean
-Plan.empty = function ()
+---@return boolean
+function Plan:empty()
 	return true
 end
 
----@param index int
----@type fun(index:number):boolean
-Plan.exists = function (index)
+---@param index number
+---@return boolean
+function Plan:exists(index)
 	return true
 end
 
 -- Returns the plan of the entity. This copies the entire plan, keep that in mind when using plans with large block counts.
 -- @return A copy of the plan of the entity
----@type fun():BlockPlan
-Plan.get = function ()
-	return BlockPlan()
+---@return BlockPlan
+function Plan:get()
+	return BlockPlan
 end
 
----@param index int
----@type fun(index:number):BlockPlanBlock
-Plan.getBlock = function (index)
-	return BlockPlanBlock()
+---@param index number
+---@return BlockPlanBlock
+function Plan:getBlock(index)
+	return BlockPlanBlock
 end
 
----@type fun():number
-Plan.getBlockIndices = function ()
-	return 0
+---@return table<number, int>
+function Plan:getBlockIndices()
+	return {number, int}
 end
 
----@param index int
----@type fun(index:number):number
-Plan.getBlocksByType = function (index)
-	return 0
+---@param index number
+---@return table<number, int>
+function Plan:getBlocksByType(index)
+	return {number, int}
 end
 
----@type fun():number
-Plan.getMoneyValue = function ()
+---@return number
+function Plan:getMoneyValue()
 	return 0.0
 end
 
 -- Returns the plan of the entity. This function will move the plan out of the entity, and replace the entity's plan with a single block. This operation is independent of the size of the plan, use it when you have to get large plans with lots of blocks.
 -- @return The plan of the entity
----@type fun():BlockPlan
-Plan.getMove = function ()
-	return BlockPlan()
+---@return BlockPlan
+function Plan:getMove()
+	return BlockPlan
 end
 
----@param n int
----@type fun(n:number):BlockPlanBlock
-Plan.getNthBlock = function (n)
-	return BlockPlanBlock()
+---@param n number
+---@return BlockPlanBlock
+function Plan:getNthBlock(n)
+	return BlockPlanBlock
 end
 
----@param n int
----@type fun(n:number):any
-Plan.getNthIndex = function (n)
+---@param n number
+---@return any
+function Plan:getNthIndex(n)
 	return nil
 end
 
----@param blockIndex int
----@type fun(blockIndex:number):number
-Plan.getNumBlocks = function (blockIndex)
+---@param blockIndex number
+---@return number
+function Plan:getNumBlocks(blockIndex)
 	return 0
 end
 
----@param index int
----@type fun(index:number):number
-Plan.getRemoved = function (index)
-	return 0
+---@param index number
+---@return table<number, int>
+function Plan:getRemoved(index)
+	return {number, int}
 end
 
----@type fun():number
-Plan.getResourceValue = function ()
+---@return table<number, double>
+function Plan:getResourceValue()
+	return {number, double}
+end
+
+---@return BlockStatistics
+function Plan:getStats()
+	return BlockStatistics
+end
+
+---@return number
+function Plan:getUndamagedMoneyValue()
 	return 0.0
 end
 
----@type fun():BlockStatistics
-Plan.getStats = function ()
-	return BlockStatistics()
-end
-
----@type fun():number
-Plan.getUndamagedMoneyValue = function ()
-	return 0.0
-end
-
----@type fun():number
-Plan.getUndamagedResourceValue = function ()
-	return 0.0
+---@return table<number, double>
+function Plan:getUndamagedResourceValue()
+	return {number, double}
 end
 
 -- @return nothing
----@param damage float
----@param block int
+---@param damage number
+---@param block number
 ---@param location vec3
 ---@param inflictingEntity Uuid
----@type fun(damage:number, block:number, location:vec3, inflictingEntity:Uuid):any
-Plan.heal = function (damage, block, location, inflictingEntity)
+---@return any
+function Plan:heal(damage, block, location, inflictingEntity)
 	return nil
 end
 
@@ -190,15 +190,15 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-Plan.move = function (plan)
+---@return any
+function Plan:move(plan)
 	return nil
 end
 
 -- @return nothing
----@param index int
----@type fun(index:number):any
-Plan.removeBlock = function (index)
+---@param index number
+---@return any
+function Plan:removeBlock(index)
 	return nil
 end
 
@@ -206,38 +206,38 @@ end
 -- @param plan - The new BlockPlan of the entity
 -- @return nothing
 ---@param plan BlockPlan
----@type fun(plan:BlockPlan):any
-Plan.set = function (plan)
+---@return any
+function Plan:set(plan)
 	return nil
 end
 
 -- @return nothing
----@param index int
+---@param index number
 ---@param color Color
----@type fun(index:number, color:Color):any
-Plan.setBlockColor = function (index, color)
+---@return any
+function Plan:setBlockColor(index, color)
 	return nil
 end
 
 -- @return nothing
----@param index int
----@param type int
----@type fun(index:number, type:number):any
-Plan.setBlockType = function (index, type)
+---@param index number
+---@param type number
+---@return any
+function Plan:setBlockType(index, type)
 	return nil
 end
 
 -- @return nothing
 ---@param color Color
----@type fun(color:Color):any
-Plan.setColor = function (color)
+---@return any
+function Plan:setColor(color)
 	return nil
 end
 
 -- @return nothing
 ---@param material Material
----@type fun(material:Material):any
-Plan.setMaterial = function (material)
+---@return any
+function Plan:setMaterial(material)
 	return nil
 end
 

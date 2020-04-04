@@ -10,36 +10,36 @@ Music = {
 setmetatable(Music, {__call = function(self) return Music end})
 
 -- @return nothing
----@param time float
----@type fun(time:number):any
-Music.fadeOut = function (time)
+---@param time number
+---@return any
+function Music:fadeOut(time)
 	return nil
 end
 
 -- @return nothing
----@param time float
----@type fun(time:number):any
-Music.playSilence = function (time)
+---@param time number
+---@return any
+function Music:playSilence(time)
 	return nil
 end
 
 -- @return nothing
 ---@param path string
----@param loop bool
----@type fun(path:string, loop:boolean):any
-Music.playTrack = function (path, loop)
+---@param loop boolean
+---@return any
+function Music:playTrack(path, loop)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Music.setAmbientTrackLists = function ()
+---@return any
+function Music:setAmbientTrackLists()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Music.stop = function ()
+---@return any
+function Music:stop()
 	return nil
 end
 

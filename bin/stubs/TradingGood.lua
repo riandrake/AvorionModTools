@@ -12,32 +12,32 @@ TradingGood = {
 	size = 0.0, -- float
 	stolen = true, -- bool
 	suspicious = true, -- bool
-	tags = table_t(), -- table_t
+	tags = table_t, -- table_t
 
 }
 
 setmetatable(TradingGood, {__call = function(self, name, plural, description, icon, price, size) return TradingGood end})
 
 ---@param other TradingGood
----@type fun(other:TradingGood):boolean
-TradingGood.__eq = function (other)
+---@return boolean
+function TradingGood:__eq(other)
 	return true
 end
 
----@type fun():string
-TradingGood.__tostring = function ()
+---@return string
+function TradingGood:__tostring()
 	return ""
 end
 
----@param amount int
----@type fun(amount:number):string
-TradingGood.displayName = function (amount)
+---@param amount number
+---@return string
+function TradingGood:displayName(amount)
 	return ""
 end
 
----@param amount int
----@type fun(amount:number):PluralForm
-TradingGood.pluralForm = function (amount)
-	return PluralForm()
+---@param amount number
+---@return PluralForm
+function TradingGood:pluralForm(amount)
+	return PluralForm
 end
 

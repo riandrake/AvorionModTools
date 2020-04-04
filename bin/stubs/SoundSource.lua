@@ -6,7 +6,7 @@ SoundSource = {
 	maxRadius = 0.0, -- float
 	minRadius = 0.0, -- float
 	playing = true, -- [read-only] bool
-	position = vec3(), -- vec3
+	position = vec3, -- vec3
 	volume = 0.0, -- float
 
 }
@@ -14,21 +14,21 @@ SoundSource = {
 setmetatable(SoundSource, {__call = function(self, soundName, position, radius) return SoundSource end})
 
 -- @return nothing
----@type fun():any
-SoundSource.play = function ()
+---@return any
+function SoundSource:play()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-SoundSource.stop = function ()
+---@return any
+function SoundSource:stop()
 	return nil
 end
 
 -- Stops the sound and frees all resources connected to it. The SoundSource object will be inaccessible after this function.
 -- @return nothing
----@type fun():any
-SoundSource.terminate = function ()
+---@return any
+function SoundSource:terminate()
 	return nil
 end
 

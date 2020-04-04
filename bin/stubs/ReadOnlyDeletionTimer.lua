@@ -1,7 +1,7 @@
 ---@class ReadOnlyDeletionTimer
 ReadOnlyDeletionTimer = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	timeLeft = 0.0, -- [read-only] float
 

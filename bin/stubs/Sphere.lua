@@ -1,7 +1,7 @@
 ---@class Sphere
 Sphere = {
 
-	center = vec3(), -- vec3
+	center = vec3, -- vec3
 	radius = 0.0, -- float
 
 }

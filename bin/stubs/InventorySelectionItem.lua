@@ -2,10 +2,10 @@
 InventorySelectionItem = {
 
 	amount = nil, -- var
-	border = IconBorderMode(), -- IconBorderMode
+	border = IconBorderMode, -- IconBorderMode
 	deleteable = true, -- bool
 	highlighted = true, -- bool
-	item = InventoryItem(), -- InventoryItem
+	item = InventoryItem, -- InventoryItem
 	readyForDeletion = true, -- bool
 	uvalue = nil, -- var
 

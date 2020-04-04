@@ -14,7 +14,7 @@ TurretTemplate = {
 	coolingRate = 0.0, -- float
 	coolingTime = 0.0, -- [read-only] float
 	coolingType = 0, -- int
-	crew = Crew(), -- Crew
+	crew = Crew, -- Crew
 	damage = 0.0, -- [read-only] float
 	damageType = 0, -- [read-only] int
 	deathExplosion = true, -- [read-only] bool
@@ -30,7 +30,7 @@ TurretTemplate = {
 	hullDamageMultiplicator = 0.0, -- [read-only] float
 	hullRepairRate = 0.0, -- [read-only] float
 	itemType = 0, -- [read-only] int
-	material = Material(), -- [read-only] Material
+	material = Material, -- [read-only] Material
 	maxHeat = 0.0, -- float
 	maxTech = 0, -- [read-only] int
 	metalBestEfficiency = 0.0, -- [read-only] float
@@ -40,7 +40,7 @@ TurretTemplate = {
 	numWeapons = 0, -- [read-only] int
 	otherForce = 0.0, -- [read-only] float
 	overheated = true, -- [read-only] bool
-	rarity = Rarity(), -- [read-only] Rarity
+	rarity = Rarity, -- [read-only] Rarity
 	reach = 0.0, -- [read-only] float
 	recent = true, -- bool
 	requiredShootingEnergy = 0.0, -- [read-only] double
@@ -73,58 +73,58 @@ TurretTemplate = {
 
 setmetatable(TurretTemplate, {__call = function(self, other) return TurretTemplate end})
 
----@param other var
----@type fun(other:any):boolean
-TurretTemplate.__eq = function (other)
+---@param other any
+---@return boolean
+function TurretTemplate:__eq(other)
 	return true
 end
 
 -- @return nothing
 ---@param str string
 ---@param value string
----@type fun(str:string, value:string):any
-TurretTemplate.addDescription = function (str, value)
+---@return any
+function TurretTemplate:addDescription(str, value)
 	return nil
 end
 
 -- @return nothing
----@param weapon var
----@type fun(weapon:any):any
-TurretTemplate.addWeapon = function (weapon)
+---@param weapon any
+---@return any
+function TurretTemplate:addWeapon(weapon)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-TurretTemplate.clearDescriptions = function ()
+---@return any
+function TurretTemplate:clearDescriptions()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-TurretTemplate.clearWeapons = function ()
+---@return any
+function TurretTemplate:clearWeapons()
 	return nil
 end
 
----@type fun():Crew
-TurretTemplate.getCrew = function ()
-	return Crew()
+---@return Crew
+function TurretTemplate:getCrew()
+	return Crew
 end
 
----@type fun():table<string, string>
-TurretTemplate.getDescriptions = function ()
-	return {"", ""}
+---@return table<string,string>
+function TurretTemplate:getDescriptions()
+	return {"",""}
 end
 
 -- Returns all weapons of the object
----@type fun():Weapon
-TurretTemplate.getWeapons = function ()
-	return Weapon()
+---@return table<number, Weapon>
+function TurretTemplate:getWeapons()
+	return {number, Weapon}
 end
 
 -- @return nothing
----@type fun():any
-TurretTemplate.updateStaticStats = function ()
+---@return any
+function TurretTemplate:updateStaticStats()
 	return nil
 end
 

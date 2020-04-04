@@ -1,7 +1,7 @@
 ---@class Loot
 Loot = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 
 }
@@ -10,8 +10,8 @@ setmetatable(Loot, {__call = function(self, id) return Loot end})
 
 -- @return nothing
 ---@param item InventoryItem
----@type fun(item:InventoryItem):any
-Loot.insert = function (item)
+---@return any
+function Loot:insert(item)
 	return nil
 end
 

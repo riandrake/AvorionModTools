@@ -5,7 +5,7 @@ ReadOnlySector = {
 	numEntities = 0, -- [read-only] unsigned int
 	numPlayers = 0, -- [read-only] unsigned int
 	pvpDamage = true, -- [read-only] bool
-	seed = Seed(), -- [read-only] Seed
+	seed = Seed, -- [read-only] Seed
 
 }
 

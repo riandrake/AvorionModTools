@@ -1,7 +1,7 @@
 ---@class ScriptUI
 ScriptUI = {
 
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 
 }
@@ -12,16 +12,16 @@ setmetatable(ScriptUI, {__call = function(self, id) return ScriptUI end})
 -- @param text - The text that will be displayed as a chooseable option in the dialog
 -- @param function - The function that will be called when the dialog option is selected.
 ---@param text string
----@param function string
----@type fun(text:string, function:string):number
-ScriptUI.addDialogOption = function (text, _function)
+---@param _function string
+---@return number
+function ScriptUI:addDialogOption(text, _function)
 	return 0
 end
 
 ---@param rect Rect
----@type fun(rect:Rect):Window
-ScriptUI.createWindow = function (rect)
-	return Window()
+---@return Window
+function ScriptUI:createWindow(rect)
+	return Window
 end
 
 -- Shows a dialog, and forces the player to interact with the entity. This will close and override the currently displayed dialog.
@@ -29,31 +29,31 @@ end
 -- @param closeable - A value indicating if the dialog can be closed with the Escape key. Disable only with caution! Your dialog must be able to be terminated through every possible answer-way or the player can get stuck. Can be omitted, default is 1.
 -- @return nothing
 ---@param dialog Dialog
----@param closeable var
----@type fun(dialog:Dialog, closeable:any):any
-ScriptUI.interactShowDialog = function (dialog, closeable)
+---@param closeable any
+---@return any
+function ScriptUI:interactShowDialog(dialog, closeable)
 	return nil
 end
 
 -- @return nothing
 ---@param caption string
----@param function string
----@type fun(caption:string, function:string):any
-ScriptUI.registerInteraction = function (caption, _function)
+---@param _function string
+---@return any
+function ScriptUI:registerInteraction(caption, _function)
 	return nil
 end
 
 -- @return nothing
 ---@param window Window
 ---@param caption string
----@type fun(window:Window, caption:string):any
-ScriptUI.registerWindow = function (window, caption)
+---@return any
+function ScriptUI:registerWindow(window, caption)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-ScriptUI.restartInteraction = function ()
+---@return any
+function ScriptUI:restartInteraction()
 	return nil
 end
 
@@ -61,9 +61,9 @@ end
 -- @param dialog - A table containing the dialog that will be displayed
 -- @param closeable - A value indicating if the dialog can be closed with the Escape key. Disable only with caution! Your dialog must be able to be terminated through every possible answer-way or the player can get stuck. Can be omitted, default is 1.
 ---@param dialog Dialog
----@param closeable var
----@type fun(dialog:Dialog, closeable:any):boolean
-ScriptUI.showDialog = function (dialog, closeable)
+---@param closeable any
+---@return boolean
+function ScriptUI:showDialog(dialog, closeable)
 	return true
 end
 
@@ -73,21 +73,21 @@ end
 -- @return nothing
 ---@param acceptCallback string
 ---@param rejectCallback string
----@type fun(acceptCallback:string, rejectCallback:string):any
-ScriptUI.startHailing = function (acceptCallback, rejectCallback)
+---@return any
+function ScriptUI:startHailing(acceptCallback, rejectCallback)
 	return nil
 end
 
 -- Stop the current hailing.
 -- @return nothing
----@type fun():any
-ScriptUI.stopHailing = function ()
+---@return any
+function ScriptUI:stopHailing()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-ScriptUI.stopInteraction = function ()
+---@return any
+function ScriptUI:stopInteraction()
 	return nil
 end
 

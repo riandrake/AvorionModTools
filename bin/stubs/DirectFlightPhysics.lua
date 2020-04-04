@@ -2,7 +2,7 @@
 DirectFlightPhysics = {
 
 	drifting = true, -- bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	maxVelocity = 0.0, -- float
 	turningSpeed = 0.0, -- float

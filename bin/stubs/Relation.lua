@@ -1,7 +1,7 @@
 ---@class Relation
 Relation = {
 
-	color = Color(), -- [read-only] Color
+	color = Color, -- [read-only] Color
 	description = "", -- [read-only] string
 	factionIndex = 0, -- int
 	isStatic = true, -- bool
@@ -13,8 +13,8 @@ Relation = {
 
 setmetatable(Relation, {__call = function(self) return Relation end})
 
----@type fun():stdvector
-Relation.getSegments = function ()
-	return stdvector()
+---@return static,const,stdvector
+function Relation:getSegments()
+	return static,const,stdvector
 end
 

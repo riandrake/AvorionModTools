@@ -1,7 +1,7 @@
 ---@class Rarity
 Rarity = {
 
-	color = Color(), -- [read-only] Color
+	color = Color, -- [read-only] Color
 	name = "", -- [read-only] string
 	type = 0, -- int
 	value = 0, -- int
@@ -11,19 +11,19 @@ Rarity = {
 setmetatable(Rarity, {__call = function(self, value) return Rarity end})
 
 ---@param other Rarity
----@type fun(other:Rarity):boolean
-Rarity.__eq = function (other)
+---@return boolean
+function Rarity:__eq(other)
 	return true
 end
 
 ---@param other Rarity
----@type fun(other:Rarity):boolean
-Rarity.__lt = function (other)
+---@return boolean
+function Rarity:__lt(other)
 	return true
 end
 
----@type fun():string
-Rarity.__tostring = function ()
+---@return string
+function Rarity:__tostring()
 	return ""
 end
 

@@ -3,7 +3,7 @@ ReadOnlyFighterAI = {
 
 	circling = true, -- [read-only] bool
 	clearFeedbackEachTick = true, -- [read-only] bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	evading = true, -- [read-only] bool
 	ignoreMothershipOrders = true, -- [read-only] bool

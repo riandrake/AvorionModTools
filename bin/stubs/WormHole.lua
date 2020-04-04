@@ -1,9 +1,9 @@
 ---@class WormHole
 WormHole = {
 
-	color = Color(), -- Color
+	color = Color, -- Color
 	enabled = true, -- bool
-	entity = Entity(), -- [read-only] Entity
+	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
 	oneWay = true, -- bool
 	passageSize = 0.0, -- float
@@ -15,16 +15,16 @@ WormHole = {
 
 setmetatable(WormHole, {__call = function(self, id) return WormHole end})
 
----@type fun():number, number
-WormHole.getTargetCoordinates = function ()
-	return 0, 0
+---@return number,number
+function WormHole:getTargetCoordinates()
+	return 0,0
 end
 
 -- @return nothing
----@param x int
----@param y int
----@type fun(x:number, y:number):any
-WormHole.setTargetCoordinates = function (x, y)
+---@param x number
+---@param y number
+---@return any
+function WormHole:setTargetCoordinates(x, y)
 	return nil
 end
 

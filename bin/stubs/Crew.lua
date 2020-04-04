@@ -23,75 +23,75 @@ Crew = {
 setmetatable(Crew, {__call = function(self) return Crew end})
 
 -- @return nothing
----@param amount int
+---@param amount number
 ---@param crewman CrewMan
----@type fun(amount:number, crewman:CrewMan):any
-Crew.add = function (amount, crewman)
+---@return any
+function Crew:add(amount, crewman)
 	return nil
 end
 
----@param plan BlockPlan
----@type fun(plan:nil]:[or:BlockPlan):Crew
-Crew.buildMinimumCrew = function (plan)
-	return Crew()
+---@param plan nil]
+---@return Crew
+function Crew:buildMinimumCrew(plan)
+	return Crew
 end
 
 -- @return nothing
----@param amount int
----@param profession int
----@type fun(amount:number, profession:number):any
-Crew.changeEmployment = function (amount, profession)
+---@param amount number
+---@param profession number
+---@return any
+function Crew:changeEmployment(amount, profession)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Crew.clear = function ()
+---@return any
+function Crew:clear()
 	return nil
 end
 
----@type fun():table<CrewMan, number>
-Crew.getMembers = function ()
-	return {CrewMan(), 0}
+---@return table<CrewMan,number>
+function Crew:getMembers()
+	return {CrewMan,0}
 end
 
----@param profession int
----@type fun(profession:number):number
-Crew.getMembersByProfession = function (profession)
+---@param profession number
+---@return number
+function Crew:getMembersByProfession(profession)
 	return 0
 end
 
 ---@param crewman CrewMan
----@type fun(crewman:CrewMan):number
-Crew.getNumMembers = function (crewman)
+---@return number
+function Crew:getNumMembers(crewman)
 	return 0
 end
 
----@type fun():table<CrewProfession, number>
-Crew.getWorkforce = function ()
-	return {CrewProfession(), 0.0}
+---@return table<CrewProfession,number>
+function Crew:getWorkforce()
+	return {CrewProfession,0.0}
 end
 
 -- @return nothing
----@param num int
----@type fun(num:number):any
-Crew.kill = function (num)
+---@param num number
+---@return any
+function Crew:kill(num)
 	return nil
 end
 
 -- @return nothing
----@param amount int
+---@param amount number
 ---@param crewman CrewMan
----@type fun(amount:number, crewman:CrewMan):any
-Crew.remove = function (amount, crewman)
+---@return any
+function Crew:remove(amount, crewman)
 	return nil
 end
 
 -- @return nothing
----@param amount int
----@param crewProfessionType int
----@type fun(amount:number, crewProfessionType:number):any
-Crew.removeByProfession = function (amount, crewProfessionType)
+---@param amount number
+---@param crewProfessionType number
+---@return any
+function Crew:removeByProfession(amount, crewProfessionType)
 	return nil
 end
 

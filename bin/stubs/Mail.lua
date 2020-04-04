@@ -2,13 +2,13 @@
 Mail = {
 
 	empty = true, -- [read-only] bool
-	header = Format(), -- Format
+	header = Format, -- Format
 	id = "", -- string
 	money = 0, -- int
 	read = true, -- bool
-	receiver = PlayerId(), -- [write-only] PlayerId
-	sender = Format(), -- Format
-	text = Format(), -- Format
+	receiver = PlayerId, -- [write-only] PlayerId
+	sender = Format, -- Format
+	text = Format, -- Format
 
 }
 
@@ -16,42 +16,42 @@ setmetatable(Mail, {__call = function(self) return Mail end})
 
 -- @return nothing
 ---@param turret TurretTemplate
----@type fun(turret:TurretTemplate):any
-Mail.addTurret = function (turret)
+---@return any
+function Mail:addTurret(turret)
 	return nil
 end
 
----@param index unsigned
----@type fun(index:number:unsigned):UserObject
-Mail.getItem = function (index)
-	return UserObject()
+---@param index number
+---@return UserObject
+function Mail:getItem(index)
+	return UserObject
 end
 
----@type fun():number
-Mail.getNumItems = function ()
-	return 0
+---@return unsigned,number
+function Mail:getNumItems()
+	return unsigned,0
 end
 
----@type fun():number
-Mail.getResources = function ()
-	return 0
+---@return unsigned,table<number, int>
+function Mail:getResources()
+	return unsigned,{number, int}
 end
 
----@type fun():boolean
-Mail.hasAttachments = function ()
+---@return boolean
+function Mail:hasAttachments()
 	return true
 end
 
 -- @return nothing
----@param index unsigned
----@type fun(index:number:unsigned):any
-Mail.removeItem = function (index)
+---@param index number
+---@return any
+function Mail:removeItem(index)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Mail.setResources = function ()
+---@return any
+function Mail:setResources()
 	return nil
 end
 
