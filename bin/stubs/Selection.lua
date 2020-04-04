@@ -1,7 +1,7 @@
 ---@class Selection
 Selection = {
 
-	center = vec2(), -- vec2
+	center = vec2, -- vec2
 	dragFromEnabled = true, -- [write-only] bool
 	dropIntoEnabled = true, -- [write-only] bool
 	dropIntoSelfEnabled = true, -- [write-only] bool
@@ -11,10 +11,10 @@ Selection = {
 	index = 0, -- [read-only] int
 	isRenderingDraggedItem = true, -- [read-only] bool
 	layer = 0, -- int
-	localCenter = vec2(), -- [read-only] vec2
-	localPosition = vec2(), -- [read-only] vec2
-	localRect = Rect(), -- [read-only] Rect
-	lower = vec2(), -- vec2
+	localCenter = vec2, -- [read-only] vec2
+	localPosition = vec2, -- [read-only] vec2
+	localRect = Rect, -- [read-only] Rect
+	lower = vec2, -- vec2
 	maxHorizontalEntries = 0, -- [read-only] unsigned int
 	mouseOver = true, -- [read-only] bool
 	numEntries = 0, -- [read-only] int
@@ -25,14 +25,14 @@ Selection = {
 	onReceivedFunction = "", -- string
 	onSelectedFunction = "", -- string
 	padding = 0.0, -- [write-only] float
-	position = vec2(), -- vec2
-	rect = Rect(), -- Rect
-	selected = UserObject(), -- [read-only] UserObject
-	selectedKey = ivec2(), -- [read-only] ivec2
+	position = vec2, -- vec2
+	rect = Rect, -- Rect
+	selected = UserObject, -- [read-only] UserObject
+	selectedKey = ivec2, -- [read-only] ivec2
 	showEntriesOnly = true, -- [write-only] bool
-	size = vec2(), -- vec2
+	size = vec2, -- vec2
 	tooltip = nil, -- var
-	upper = vec2(), -- vec2
+	upper = vec2, -- vec2
 	visible = true, -- bool
 	width = 0.0, -- float
 
@@ -41,87 +41,87 @@ Selection = {
 setmetatable(Selection, {__call = function(self, index) return Selection end})
 
 -- @return nothing
----@param item var
----@param pos var
----@type fun(item:any, pos:any):any
-Selection.add = function (item, pos)
+---@param item any
+---@param pos any
+---@return any
+function Selection:add(item, pos)
 	return nil
 end
 
 -- @return nothing
----@param pos var
----@type fun(pos:any):any
-Selection.addEmpty = function (pos)
+---@param pos any
+---@return any
+function Selection:addEmpty(pos)
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Selection.clear = function ()
+---@return any
+function Selection:clear()
 	return nil
 end
 
 ---@param key ivec2
----@type fun(key:ivec2):UserObject
-Selection.getItem = function (key)
-	return UserObject()
+---@return UserObject
+function Selection:getItem(key)
+	return UserObject
 end
 
----@type fun():table<ivec2, UserObject>
-Selection.getItems = function ()
-	return {ivec2(), UserObject()}
+---@return table<ivec2,UserObject>
+function Selection:getItems()
+	return {ivec2,UserObject}
 end
 
----@type fun():ivec2
-Selection.getMouseOveredKey = function ()
-	return ivec2()
+---@return ivec2
+function Selection:getMouseOveredKey()
+	return ivec2
 end
 
----@param x int
----@param y int
----@type fun(x:number, y:number):number, Rect
-Selection.getRect = function (x, y)
-	return 0, Rect()
+---@param x number
+---@param y number
+---@return number,Rect
+function Selection:getRect(x, y)
+	return 0,Rect
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
-Selection.hide = function ()
+---@return any
+function Selection:hide()
 	return nil
 end
 
 -- @return nothing
 ---@param key ivec2
----@type fun(key:ivec2):any
-Selection.remove = function (key)
+---@return any
+function Selection:remove(key)
 	return nil
 end
 
 -- @return nothing
 ---@param pos ivec2
----@type fun(pos:ivec2):any
-Selection.select = function (pos)
+---@return any
+function Selection:select(pos)
 	return nil
 end
 
 -- @return nothing
 ---@param pos ivec2
----@type fun(pos:ivec2):any
-Selection.selectNoCallback = function (pos)
+---@return any
+function Selection:selectNoCallback(pos)
 	return nil
 end
 
 -- Inherited from UIElement
 -- @return nothing
----@type fun():any
-Selection.show = function ()
+---@return any
+function Selection:show()
 	return nil
 end
 
 -- @return nothing
----@type fun():any
-Selection.unselect = function ()
+---@return any
+function Selection:unselect()
 	return nil
 end
 
