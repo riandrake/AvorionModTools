@@ -167,7 +167,8 @@ def get_raw_default_value(in_type):
     if not 'table<' in in_type:
         in_type = in_type.replace(',', '')
     else:
-        in_type = f'table<{",".join([get_raw_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
+        test = f'table<{",".join([get_raw_default_value(val) for val in split_careful(in_type[in_type.find("<")+1:in_type.rfind(">")])])}>'
+        return test
 
     if '...' in in_type:
         in_type = f"table<number, {in_type.replace('...', '')}>"
@@ -503,8 +504,10 @@ class NamespaceDefinition:
                 writer.write('}\n\n')
 
                 additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(f'---@return {constructor.name}\n' + constructor.definition.replace('return nil', 'return ' + constructor.name))
-                #  f"setmetatable({self.namespace}, {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
+                writer.write(f'---@return {constructor.name}\n' + constructor.definition.replace('return nil',
+                                                                                                 'return ' + constructor.name))
+                #  f"setmetatable({self.namespace},
+                #  {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
 
                 for function_overloads in functions[1:]:
                     # TODO: address overloads
