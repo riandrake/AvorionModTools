@@ -33,7 +33,7 @@ function Crew:add(amount, crewman)
 	return nil
 end
 
----@param plan nil
+---@param plan nil | BlockPlan
 ---@return Crew
 function Crew:buildMinimumCrew(plan)
 	return Crew

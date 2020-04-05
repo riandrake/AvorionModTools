@@ -125,24 +125,19 @@ end
 -- @param playerIndex - Index of the player
 -- @param text - The text content of the chat message
 -- @param channel - The channel the message was sent to. 0 = All, 1 = Sector, 2 = Group, 3 = Alliance
----@param text 
----@param channel 
 function Server:onChatMessage(playerIndex, text, channel)
-	return nil
 end
 
 -- @callback
 -- Executed whenever a player was logged in
 -- @param playerIndex - The index of the player who logged in
 function Server:onPlayerLogIn(playerIndex)
-	return nil
 end
 
 -- @callback
 -- Executed whenever a player was logged off
 -- @param playerIndex - The index of the player who logged off
 function Server:onPlayerLogOff(playerIndex)
-	return nil
 end
 
 -- Register a callback in the server. The callback may arrive with a delay. Double registration of callbacks doesn't work. When the same callback to the same callback of the same script instance is registered twice, it will still only be called once.

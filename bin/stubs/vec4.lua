@@ -8,7 +8,15 @@ vec4 = {
 
 }
 
----@return __add
+---@return vec4
+---@param x any
+---@param y any
+---@param z any
+---@param w any
+function vec4(x, y, z, w)
+	return vec4
+end
+
 ---@param other any
 ---@return vec4
 function vec4:__add(other)
@@ -53,16 +61,5 @@ end
 ---@return vec4
 function vec4:__unm()
 	return vec4
-end
-
--- @param x - y
--- @param z - w
--- @return A new instance of vec4
----@param x any
----@param y any
----@param z any
----@param w any
-function vec4(x, y, z, w)
-	return nil
 end
 

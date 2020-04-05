@@ -62,7 +62,7 @@ end
 
 -- @return nothing
 ---@param i number
----@param turret nil
+---@param turret nil | TurretDesign
 ---@return any
 function CraftDesign:setTurret(i, turret)
 	return nil

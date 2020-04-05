@@ -6,7 +6,13 @@ vec2 = {
 
 }
 
----@return __add
+---@return vec2
+---@param x any
+---@param y any
+function vec2(x, y)
+	return vec2
+end
+
 ---@param other any
 ---@return vec2
 function vec2:__add(other)
@@ -51,13 +57,5 @@ end
 ---@return vec2
 function vec2:__unm()
 	return vec2
-end
-
--- @param x - y
--- @return A new instance of vec2
----@param x any
----@param y any
-function vec2(x, y)
-	return nil
 end
 

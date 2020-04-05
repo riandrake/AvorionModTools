@@ -8,7 +8,15 @@ dvec4 = {
 
 }
 
----@return __add
+---@return dvec4
+---@param x any
+---@param y any
+---@param z any
+---@param w any
+function dvec4(x, y, z, w)
+	return dvec4
+end
+
 ---@param other any
 ---@return dvec4
 function dvec4:__add(other)
@@ -53,16 +61,5 @@ end
 ---@return dvec4
 function dvec4:__unm()
 	return dvec4
-end
-
--- @param x - y
--- @param z - w
--- @return A new instance of dvec4
----@param x any
----@param y any
----@param z any
----@param w any
-function dvec4(x, y, z, w)
-	return nil
 end
 

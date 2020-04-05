@@ -6,9 +6,7 @@ NamedFormat = {
 }
 
 ---@return NamedFormat
----@param var1 string
----@param var2 MapType
-function NamedFormat(var1, var2)
+function NamedFormat(string, MapType)
 	return NamedFormat
 end
 

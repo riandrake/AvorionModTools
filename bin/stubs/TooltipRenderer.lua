@@ -9,16 +9,14 @@ function TooltipRenderer(tooltip)
 end
 
 -- @return nothing
----@param var1 vec2
 ---@return any
-function TooltipRenderer:draw(var1)
+function TooltipRenderer:draw(vec2)
 	return nil
 end
 
 -- @return nothing
----@param var1 vec2
 ---@return any
-function TooltipRenderer:drawMouseTooltip(var1)
+function TooltipRenderer:drawMouseTooltip(vec2)
 	return nil
 end
 

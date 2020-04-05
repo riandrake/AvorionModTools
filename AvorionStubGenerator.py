@@ -54,8 +54,9 @@ RAW_DEFAULT_VALUES_BY_TYPE = {
     'Coordinates': 'number, number',
     'Member': 'AllianceMember',
     'Resources': 'table<number, number>',  # might return the wrong stuff have to check in-game to see what it returns
-    'string or Format [optional]': 'string|Format',  # These are not fixing the issue
-    'string or Format': 'string|Format'
+    'string or Format [optional]': 'string,rFormat',  # These are not fixing the issue
+    'string or Format': 'string, Format',
+    '[or nil]': 'nil'
 }
 
 
@@ -71,8 +72,11 @@ def split_careful(s, split=','):
     # trick to remove special-case of trailing chars
     for c in (s + split):
         if c == split and bracket_level == 0:
-            parts.append("".join(current))
-            current = []
+            if current:
+                back = "".join(current)
+                assert(back)
+                parts.append(back)
+                current = []
         else:
             if c in "{<[":
                 bracket_level += 1
@@ -231,7 +235,7 @@ def flip_args(args):
         arg.reverse()
         for idx2, arg2 in enumerate(arg):
             arg[idx2] = get_raw_default_value(arg2)
-        args[idx] = ' '.join(arg)
+        args[idx] = ' '.join(arg)  # .replace(' |', '|')
     return args
 
 
@@ -389,23 +393,31 @@ class ParsedFunction:
                     if construct_return == illegal:
                         construct_return = '_' + illegal
                 if len(param) > 1:
-                    definition_parameters += f'---@param {construct_return} {param[1]}\n'
+                    definition_parameters += f'---@param {construct_return} {" | ".join(param[1:])}\n'
                 constructor_parameters.append(construct_return)
         self.arguments = ', '.join(constructor_parameters)
 
-        returns = split_careful(returns, ' ')
-        d_returns = returns.copy()
-        for idx, return_type in enumerate(returns):
-            for illegal in ('function', 'in'):
-                if return_type == illegal:
-                    return_type = '_' + illegal
-            returns[idx] = get_default_value(return_type)
-            d_returns[idx] = get_raw_default_value(return_type)
-        definition_returns = f'---@return {",".join(d_returns)}\n' if d_returns[0] else ''
+        if returns:
+            returns = split_careful(returns, ' ')
+            d_returns = returns.copy()
+            for idx, return_type in enumerate(returns):
+                for illegal in ('function', 'in'):
+                    if return_type == illegal:
+                        return_type = '_' + illegal
+                returns[idx] = get_default_value(return_type)
+                d_returns[idx] = get_raw_default_value(return_type)
+
+            definition_returns = f'---@return {",".join(d_returns)}\n' if d_returns else ''
+        else:
+            definition_returns = ''
+            d_returns = ''
+            returns = ''
 
         self.raw_return_value = ",".join(d_returns)  # here for use in older code
         self.return_value = ",".join(returns)  # here for use in older code
-        self.definition = f'{definition_parameters}{definition_returns}function {namespace + ":" if namespace else ""}{self.name}({self.arguments})\n\t{"return " if returns[0] else ""}{self.return_value}\nend\n\n'
+
+        return_str = '\n\treturn '
+        self.definition = f'{definition_parameters}{definition_returns}function {namespace + ":" if namespace else ""}{self.name}({self.arguments}){return_str if returns else ""}{self.return_value}\nend\n\n'
 
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
@@ -470,7 +482,15 @@ class NamespaceDefinition:
         """
         filename = f'{self.namespace if self.namespace else "Globals"}.lua'
 
-        functions = sorted(self.functions.values())
+        # Do not allow the constructor to be sorted
+        constructor = None
+
+        # Remove constructor from function list before sorting
+        if self.functions and self.namespace:
+            constructor = self.functions[self.namespace][0]
+            del self.functions[self.namespace]
+
+        functions = sorted(list(self.functions.values()))
         properties = sorted(self.properties.values())
 
         with open(STUBS_DIR / filename, 'w') as writer:
@@ -486,8 +506,6 @@ class NamespaceDefinition:
                     writer.write('}\n\n')
 
             if self.namespace is not None:
-                constructor = functions[0][0]
-
                 writer.write(f'---@class {self.namespace}\n')
                 writer.write(f'{self.namespace} = {{\n')
 
@@ -506,18 +524,18 @@ class NamespaceDefinition:
                 writer.write('}\n\n')
 
                 additional_args = f', {constructor.arguments}' if constructor.arguments else ''
-                writer.write(f'---@return {constructor.name}\n' + constructor.definition.replace('return nil',
-                                                                                                 'return ' + constructor.name))
+                writer.write(f'---@return {constructor.name}\n' + constructor.definition.replace(')\nend',
+                                                                                                 ')\n\treturn ' + constructor.name + '\nend'))
                 #  f"setmetatable({self.namespace},
                 #  {{__call = function(self{additional_args}) return {self.namespace} end}})\n\n")
 
-                for function_overloads in functions[1:]:
+                for function_overloads in functions:
                     # TODO: address overloads
                     for function in function_overloads:
                         writer.write(function.remarks)
                         writer.write(function.definition)
             else:
-                for function_overloads in functions[1:]:
+                for function_overloads in functions:
                     # TODO: address overloads
                     for function in function_overloads:
                         writer.write(function.remarks)

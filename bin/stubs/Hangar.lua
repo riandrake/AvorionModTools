@@ -155,7 +155,7 @@ end
 
 -- @return nothing
 ---@param squad number
----@param fighter nil
+---@param fighter nil | FighterTemplate
 ---@return any
 function Hangar:setBlueprint(squad, fighter)
 	return nil

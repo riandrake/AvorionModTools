@@ -7,7 +7,14 @@ dvec3 = {
 
 }
 
----@return __add
+---@return dvec3
+---@param x any
+---@param y any
+---@param z any
+function dvec3(x, y, z)
+	return dvec3
+end
+
 ---@param other any
 ---@return dvec3
 function dvec3:__add(other)
@@ -52,15 +59,5 @@ end
 ---@return dvec3
 function dvec3:__unm()
 	return dvec3
-end
-
--- @param x - y
--- @param z - Returns
--- @param A new instance of dvec3
----@param x any
----@param y any
----@param z any
-function dvec3(x, y, z)
-	return nil
 end
 

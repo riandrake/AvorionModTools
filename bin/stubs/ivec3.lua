@@ -7,7 +7,14 @@ ivec3 = {
 
 }
 
----@return __add
+---@return ivec3
+---@param x any
+---@param y any
+---@param z any
+function ivec3(x, y, z)
+	return ivec3
+end
+
 ---@param other any
 ---@return ivec3
 function ivec3:__add(other)
@@ -52,15 +59,5 @@ end
 ---@return ivec3
 function ivec3:__unm()
 	return ivec3
-end
-
--- @param x - y
--- @param z - Returns
--- @param A new instance of ivec3
----@param x any
----@param y any
----@param z any
-function ivec3(x, y, z)
-	return nil
 end
 

@@ -6,7 +6,13 @@ ivec2 = {
 
 }
 
----@return __add
+---@return ivec2
+---@param x any
+---@param y any
+function ivec2(x, y)
+	return ivec2
+end
+
 ---@param other any
 ---@return ivec2
 function ivec2:__add(other)
@@ -51,13 +57,5 @@ end
 ---@return ivec2
 function ivec2:__unm()
 	return ivec2
-end
-
--- @param x - y
--- @return A new instance of ivec2
----@param x any
----@param y any
-function ivec2(x, y)
-	return nil
 end
 

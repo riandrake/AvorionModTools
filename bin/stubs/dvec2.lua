@@ -6,7 +6,13 @@ dvec2 = {
 
 }
 
----@return __add
+---@return dvec2
+---@param x any
+---@param y any
+function dvec2(x, y)
+	return dvec2
+end
+
 ---@param other any
 ---@return dvec2
 function dvec2:__add(other)
@@ -51,13 +57,5 @@ end
 ---@return dvec2
 function dvec2:__unm()
 	return dvec2
-end
-
--- @param x - y
--- @return A new instance of dvec2
----@param x any
----@param y any
-function dvec2(x, y)
-	return nil
 end
 

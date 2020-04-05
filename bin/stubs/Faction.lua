@@ -197,7 +197,7 @@ end
 -- @param money - Money that will be removed from the faction
 -- @param resources - A list of resources, starting with iron, that will be removed from the faction
 -- @return nothing
----@param description [optional]
+---@param description [optional] | Format | or | string
 ---@param money number
 ---@param resources table<number, int>
 ---@return any
@@ -210,7 +210,7 @@ end
 -- @param material - The kind of material that will be removed from the faction
 -- @param amount - Amount that will be removed from the faction
 -- @return nothing
----@param description Format
+---@param description Format | or | string
 ---@param material Material
 ---@param amount number
 ---@return any
@@ -223,7 +223,7 @@ end
 -- @param money - Money that will be removed from the faction
 -- @param args - A list of resources, starting with iron, that will be removed from the faction
 -- @return nothing
----@param description Format
+---@param description Format | or | string
 ---@param money number
 ---@param args table<number, int>
 ---@return any
@@ -236,7 +236,7 @@ end
 -- @param money - Money that will be given to the faction
 -- @param resources - A list of resources, starting with iron, that will be given to the faction
 -- @return nothing
----@param description [optional]
+---@param description [optional] | Format | or | string
 ---@param money number
 ---@param resources table<number, int>
 ---@return any
@@ -249,7 +249,7 @@ end
 -- @param material - The kind of material that will be given to the faction
 -- @param amount - Amount that will be given to the faction
 -- @return nothing
----@param description Format
+---@param description Format | or | string
 ---@param material Material
 ---@param amount number
 ---@return any
@@ -262,7 +262,7 @@ end
 -- @param money - Money that will be given to the faction
 -- @param args - A list of resources, starting with iron, that will be given to the faction
 -- @return nothing
----@param description Format
+---@param description Format | or | string
 ---@param money number
 ---@param args table<number, int>
 ---@return any

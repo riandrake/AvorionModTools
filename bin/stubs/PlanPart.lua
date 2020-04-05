@@ -27,9 +27,9 @@ end
 ---@param parentIndex number
 ---@param directionOrPosition any
 ---@param blockType number
----@param size nil
+---@param size nil | vec3
 ---@param color any
----@param orientation nil
+---@param orientation nil | Matrix
 ---@return number
 function PlanPart:block(parentIndex, directionOrPosition, blockType, size, color, orientation)
 	return 0

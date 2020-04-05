@@ -8,7 +8,15 @@ ivec4 = {
 
 }
 
----@return __add
+---@return ivec4
+---@param x any
+---@param y any
+---@param z any
+---@param w any
+function ivec4(x, y, z, w)
+	return ivec4
+end
+
 ---@param other any
 ---@return ivec4
 function ivec4:__add(other)
@@ -53,16 +61,5 @@ end
 ---@return ivec4
 function ivec4:__unm()
 	return ivec4
-end
-
--- @param x - y
--- @param z - w
--- @return A new instance of ivec4
----@param x any
----@param y any
----@param z any
----@param w any
-function ivec4(x, y, z, w)
-	return nil
 end
 

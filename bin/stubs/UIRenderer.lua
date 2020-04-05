@@ -26,7 +26,7 @@ end
 ---@param position vec2
 ---@param color Color
 ---@param icon string
----@param uvScale nil
+---@param uvScale nil | vec2
 ---@param layer any
 ---@return any
 function UIRenderer:renderCenteredPixelIcon(position, color, icon, uvScale, layer)
@@ -73,7 +73,7 @@ end
 ---@param upper vec2
 ---@param color Color
 ---@param icon string
----@param uvScale nil
+---@param uvScale nil | vec2
 ---@param layer any
 ---@return any
 function UIRenderer:renderIcon(lower, upper, color, icon, uvScale, layer)
@@ -108,7 +108,7 @@ end
 ---@param topLeft vec2
 ---@param color Color
 ---@param icon string
----@param uvScale nil
+---@param uvScale nil | vec2
 ---@param layer any
 ---@return any
 function UIRenderer:renderPixelIcon(topLeft, color, icon, uvScale, layer)
