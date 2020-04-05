@@ -50,7 +50,7 @@ end
 -- @param highlights - Objects that should be highlighted. Can be any number of vec3, Rect, ids (string, Uuid) or Entity. Passing 0 objects will disable the hint.
 -- @return nothing
 ---@param text string
----@param highlights table<number,
+---@param highlights table<number, var>
 ---@return any
 function Hud:displayHint(text, highlights)
 	return nil

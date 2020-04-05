@@ -192,6 +192,19 @@ function Faction:knowsFaction(factionIndex)
 	return true
 end
 
+-- Makes the faction pay a certain amount of money and resources. If the faction can't pay, the respective money and resources will be set to 0. This function accepts an optional string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. To ease handling of transaction descriptions, the format description (if set) will receive all the remaining arguments given to the pay() function as format arguments, in the same order as they are given to the function. Dots for easier reading will be inserted as well. Examples: faction:pay("Paid %1% Credits and %2% iron.", 50000, 250)  -> "Paid 50.000 Credits and 250 iron." faction:pay(Format("%1% paid %2% Credits and %3% iron.", "Excelsior"), 50, 25000)  -> "Excelsior paid 50 Credits and 25.000 iron."
+-- @param description - [optional] A description for the transaction. Can either be a string or a Format. If this variable is set, money and resources will be appended to the end of the list of arguments passed to the description format string.
+-- @param money - Money that will be removed from the faction
+-- @param resources - A list of resources, starting with iron, that will be removed from the faction
+-- @return nothing
+---@param description [optional]
+---@param money number
+---@param resources table<number, int>
+---@return any
+function Faction:pay(description, money, resources)
+	return nil
+end
+
 -- Makes the faction pay a certain amount of resources. If the faction can't pay, the respective resource will be set to 0. This function accepts a string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player.
 -- @param description - A description for the transaction. Can either be a string or a Format.
 -- @param material - The kind of material that will be removed from the faction
@@ -212,9 +225,22 @@ end
 -- @return nothing
 ---@param description Format
 ---@param money number
----@param args table<number,
+---@param args table<number, int>
 ---@return any
 function Faction:payWithoutNotify(description, money, args)
+	return nil
+end
+
+-- Makes the faction receive a certain amount of money and resources. This function accepts an optional string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. To ease handling of transaction descriptions, the format description (if set) will receive all the remaining arguments given to the receive() function as format arguments, in the same order as they are given to the function. Dots for easier reading will be inserted as well. Examples: faction:receive("Got %1% Credits and %2% iron.", 50000, 250)  -> "Got 50.000 Credits and 250 iron." faction:receive(Format("%1% received %2% Credits and %3% iron.", "Excelsior"), 50, 25000)  -> "Excelsior received 50 Credits and 25.000 iron."
+-- @param description - [optional] A description for the transaction. Can either be a string or a Format. If this variable is set, money and resources will be appended to the end of the list of arguments passed to the description format string.
+-- @param money - Money that will be given to the faction
+-- @param resources - A list of resources, starting with iron, that will be given to the faction
+-- @return nothing
+---@param description [optional]
+---@param money number
+---@param resources table<number, int>
+---@return any
+function Faction:receive(description, money, resources)
 	return nil
 end
 
@@ -238,7 +264,7 @@ end
 -- @return nothing
 ---@param description Format
 ---@param money number
----@param args table<number,
+---@param args table<number, int>
 ---@return any
 function Faction:receiveWithoutNotify(description, money, args)
 	return nil

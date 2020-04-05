@@ -27,9 +27,9 @@ end
 ---@param parentIndex number
 ---@param directionOrPosition any
 ---@param blockType number
----@param size nil]
+---@param size nil
 ---@param color any
----@param orientation nil]
+---@param orientation nil
 ---@return number
 function PlanPart:block(parentIndex, directionOrPosition, blockType, size, color, orientation)
 	return 0
@@ -71,7 +71,7 @@ end
 -- Gathers all blocks of certain types.
 -- @param types - The types of the blocks
 -- @return A table containing the found blocks.
----@param types table<number,
+---@param types table<number, int>
 ---@return table<number, int>
 function PlanPart:getBlocks(types)
 	return {0}
@@ -86,7 +86,7 @@ end
 -- Merges blocks, similar to the building mode command.
 -- @param blocks - An array-style table containing all block indices that are to be merged
 -- @return multiple return values: All block indices that remain of the blocks passed into the function
----@param blocks table<number,
+---@param blocks table<number, int>
 ---@return table<number, int>
 function PlanPart:merge(blocks)
 	return {0}

@@ -8,7 +8,7 @@ Format = {
 
 ---@return Format
 ---@param text string
----@param args table<number,
+---@param args table<number, PluralForm>
 function Format(text, args)
 	return Format
 end

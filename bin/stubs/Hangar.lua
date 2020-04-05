@@ -7,8 +7,8 @@ Hangar = {
 	maxFighters = 0, -- [read-only] int
 	maxSquads = 0, -- [read-only] int
 	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
+	numFighters = 0, -- [read-only] unsigned
+	numSquads = 0, -- [read-only] unsigned
 	occupiedSpace = 0.0, -- [read-only] float
 	producing = true, -- [read-only] bool
 	space = 0.0, -- [read-only] float
@@ -30,9 +30,9 @@ function Hangar:addFighter(squad, fighter)
 end
 
 ---@param name string
----@return unsigned,number
+---@return number
 function Hangar:addSquad(name)
-	return unsigned,0
+	return 0
 end
 
 ---@param entity Entity
@@ -80,15 +80,15 @@ function Hangar:getSquadFighterType(squadIndex)
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function Hangar:getSquadFighters(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function Hangar:getSquadFreeSlots(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
@@ -105,9 +105,9 @@ function Hangar:getSquadMainWeaponCategory(squadIndex)
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function Hangar:getSquadMaxFighters(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
@@ -116,9 +116,9 @@ function Hangar:getSquadName(squadIndex)
 	return nil
 end
 
----@return unsigned,table<number, int>
+---@return table<number, unsigned>
 function Hangar:getSquads()
-	return unsigned,{0}
+	return {0}
 end
 
 -- @return nothing
@@ -155,7 +155,7 @@ end
 
 -- @return nothing
 ---@param squad number
----@param fighter nil]
+---@param fighter nil
 ---@return any
 function Hangar:setBlueprint(squad, fighter)
 	return nil

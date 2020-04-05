@@ -43,9 +43,9 @@ function BlockStatistics:getBlockEnergyDrain(blockIndex)
 end
 
 ---@param blockIndex number
----@return unsigned,number
+---@return number
 function BlockStatistics:getBlockNumber(blockIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param blockIndex number

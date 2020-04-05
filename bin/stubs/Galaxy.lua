@@ -248,7 +248,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Galaxy:invokeFunction(scriptName, functionName, arguments)
 	return {nil}

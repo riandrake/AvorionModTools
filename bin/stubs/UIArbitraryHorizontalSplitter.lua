@@ -21,7 +21,7 @@ UIArbitraryHorizontalSplitter = {
 ---@param rect Rect
 ---@param padding number
 ---@param margin number
----@param splits table<number,
+---@param splits table<number, float>
 function UIArbitraryHorizontalSplitter(rect, padding, margin, splits)
 	return UIArbitraryHorizontalSplitter
 end

@@ -6,8 +6,8 @@ TorpedoLauncher = {
 	freeStorage = 0.0, -- [read-only] float
 	maxShafts = 0, -- [read-only] int
 	maximumStorage = 0.0, -- [read-only] float
-	numShafts = 0, -- [read-only] unsigned int
-	numTorpedoes = 0, -- [read-only] unsigned int
+	numShafts = 0, -- [read-only] unsigned
+	numTorpedoes = 0, -- [read-only] unsigned
 	occupiedStorage = 0.0, -- [read-only] float
 
 }
@@ -39,29 +39,29 @@ function TorpedoLauncher:createTorpedo(position, torpedo)
 end
 
 ---@param shaftIndex any
----@return unsigned,number
+---@return number
 function TorpedoLauncher:getFreeSlots(shaftIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param shaftIndex any
----@return unsigned,number
+---@return number
 function TorpedoLauncher:getMaxTorpedoes(shaftIndex)
-	return unsigned,0
+	return 0
 end
 
 -- TODO
 -- @param torpedoIndex - shaftIndex,
 -- @param -1 for torpedo storage
 ---@param shaftIndex number
----@return unsigned,number
+---@return number
 function TorpedoLauncher:getNumTorpedoes(shaftIndex)
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,table<number, int>
+---@return table<number, unsigned>
 function TorpedoLauncher:getShafts()
-	return unsigned,{0}
+	return {0}
 end
 
 -- TODO

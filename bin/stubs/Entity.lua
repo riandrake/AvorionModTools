@@ -202,7 +202,7 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the 'initialize' function of the added script
 -- @return 0 on success, 1 if the entity could not be found
 ---@param scriptPath string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function Entity:addScript(scriptPath, arguments)
 	return nil
@@ -700,7 +700,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 1 The call failed because the entity with the specified index does not exist or has no Scripts component 2 The call failed because it came from another sector than the entity is in 3 The call failed because the given script was not found in the entity 4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Entity:invokeFunction(scriptName, functionName, arguments)
 	return {nil}
@@ -914,8 +914,8 @@ end
 -- Executed when the plan of the entity breaks. This callback is executed after the block broke. This callback is expensive, don't register for it if you don't absolutely need it.
 -- @param objectIndex - The id of the entity
 -- @param plan... - The plans of the broken off parts
----@param table<number, plan>
-function Entity:onBreak(objectIndex, table<number,)
+---@param table<number, plan> 
+function Entity:onBreak(objectIndex, table<number, plan>)
 	return nil
 end
 
@@ -1570,7 +1570,7 @@ end
 -- Sets the title that can be used as title in menus
 -- @param title - a string that will be used as title, can be a format string for easier translation.
 ---@param title string
----@param arguments table<number,
+---@param arguments table<number, string_pair>
 ---@return any
 function Entity:setTitle(title, arguments)
 	return nil
@@ -1579,7 +1579,7 @@ end
 -- Sets the arguments to a title
 -- @param arguments - Set the string arguments as vector of string_pair.
 -- @return nothing
----@param arguments table<number,
+---@param arguments table<number, string_pair>
 ---@return any
 function Entity:setTitleArguments(arguments)
 	return nil

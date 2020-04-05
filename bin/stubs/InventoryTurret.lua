@@ -72,7 +72,7 @@ InventoryTurret = {
 }
 
 ---@return InventoryTurret
----@param other nil]
+---@param other nil
 function InventoryTurret(other)
 	return InventoryTurret
 end

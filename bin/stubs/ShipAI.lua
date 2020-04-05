@@ -239,7 +239,7 @@ end
 -- Sets the status that will be set in the ship info and other places (eg. ships/fleet tab)
 -- @param status - a string that will be used as status, can be a format string for easier translation.
 ---@param status string
----@param arguments table<number,
+---@param arguments table<number, string_pair>
 ---@return any
 function ShipAI:setStatus(status, arguments)
 	return nil

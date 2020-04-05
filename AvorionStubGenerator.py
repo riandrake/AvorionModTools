@@ -29,8 +29,7 @@ DEFAULT_VALUES_BY_TYPE = {
     'bool': 'true',
     'string': '""',
     'int': '0',
-    'unsigned int': '0',
-    'unsignedint': '0',
+    'unsigned': '0',
     'float': '0.0',
     'var': 'nil',
     'double': '0.0',
@@ -47,8 +46,7 @@ RAW_DEFAULT_VALUES_BY_TYPE = {
     'bool': 'boolean',
     'string': 'string',
     'int': 'number',
-    'unsigned int': 'number',
-    'unsignedint': 'number',
+    'unsigned': 'number',
     'float': 'number',
     'var': 'any',
     'double': 'number',
@@ -76,11 +74,13 @@ def split_careful(s, split=','):
             parts.append("".join(current))
             current = []
         else:
-            if c == "{":
+            if c in "{<[":
                 bracket_level += 1
-            elif c == "}":
+            elif c in "}>]":
                 bracket_level -= 1
             current.append(c)
+
+    assert(bracket_level == 0)
     return parts
 
 
@@ -138,7 +138,7 @@ def get_default_value(in_type):
     if not 'table<' in in_type:
         in_type = in_type.replace(',', '')
     else:
-        in_type = f'table<{",".join([get_default_value(val) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
+        in_type = f'table<{",".join([get_default_value(val.strip()) for val in split_careful(in_type.replace("table<", "").replace(">", ""))])}>'
 
     if '...' in in_type:
         in_type = f"table<{get_default_value(in_type.replace('...', ''))}>"
@@ -167,7 +167,7 @@ def get_raw_default_value(in_type):
     if not 'table<' in in_type:
         in_type = in_type.replace(',', '')
     else:
-        test = f'table<{",".join([get_raw_default_value(val) for val in split_careful(in_type[in_type.find("<")+1:in_type.rfind(">")])])}>'
+        test = f'table<{",".join([get_raw_default_value(val.strip()) for val in split_careful(in_type[in_type.find("<")+1:in_type.rfind(">")])])}>'
         return test
 
     if '...' in in_type:
@@ -363,8 +363,10 @@ class ParsedFunction:
         """ Parse a definition from documentation """
         self.callback = definition.startswith('callback ')
 
-        end_bracket = definition.rfind(')')
-        start_bracket = definition.rfind('(', 0, end_bracket)
+        definition = re.sub(r'table\[(.*) -> (.*)', r'table<\1, \2', definition)
+
+        start_bracket = definition.find('(')
+        end_bracket = definition.find(')', start_bracket)
 
         name_start = definition.rfind(' ', 0, start_bracket)
         self.name = definition[name_start + 1:start_bracket]
@@ -449,14 +451,14 @@ class NamespaceDefinition:
             if k not in self.functions:
                 self.functions[k] = v
             else:
-                print(f'Overload detected: {k}')
+                # print(f'Overload detected: {k}')
                 self.functions[k] += v
 
         for k, v in properties.items():
             if k not in self.properties:
                 self.properties[k] = v
             else:
-                print(f'Overload detected: {k}')
+                # print(f'Overload detected: {k}')
                 self.properties[k] += v
 
         for k, v in enums.items():
@@ -550,10 +552,14 @@ class StubGenerator:
         for code in code_containers[1:]:
             text = str(code)
             text = re.sub(r'\<[^\<]*\>', '', text).strip()
+
+            # Naive replacement because I don't know how html encoding of <> actually works
+            text = text.replace('&amp;lt', '<')
             text = text.replace('&lt;', '<')
             text = text.replace('&gt;', '>')
             text = text.replace('&amp;', '')
-            text = re.sub(r'\s+(?=[^<>]*>)', '', text).strip()
+
+            text = text.replace('unsigned int', 'unsigned') # same thing anyway
             if text:
                 lines.append(text)
 

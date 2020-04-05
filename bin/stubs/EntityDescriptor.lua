@@ -215,7 +215,7 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the 'initialize' function of the added script
 -- @return 0 on success, 1 if the entity could not be found
 ---@param scriptPath string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function EntityDescriptor:addScript(scriptPath, arguments)
 	return nil
@@ -754,7 +754,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 1 The call failed because the entity with the specified index does not exist or has no Scripts component 2 The call failed because it came from another sector than the entity is in 3 The call failed because the given script was not found in the entity 4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function EntityDescriptor:invokeFunction(scriptName, functionName, arguments)
 	return {nil}
@@ -956,7 +956,7 @@ end
 -- Sets the title that can be used as title in menus Inherited from Entity
 -- @param title - a string that will be used as title, can be a format string for easier translation.
 ---@param title string
----@param arguments table<number,
+---@param arguments table<number, string_pair>
 ---@return any
 function EntityDescriptor:setTitle(title, arguments)
 	return nil
@@ -965,7 +965,7 @@ end
 -- Sets the arguments to a title Inherited from Entity
 -- @param arguments - Set the string arguments as vector of string_pair.
 -- @return nothing
----@param arguments table<number,
+---@param arguments table<number, string_pair>
 ---@return any
 function EntityDescriptor:setTitleArguments(arguments)
 	return nil

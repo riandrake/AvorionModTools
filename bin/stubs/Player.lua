@@ -17,14 +17,14 @@ Player = {
 	isAIFaction = true, -- [read-only] bool
 	isAlliance = true, -- [read-only] bool
 	isPlayer = true, -- [read-only] bool
-	maxNumMails = 0, -- [read-only] unsigned int
+	maxNumMails = 0, -- [read-only] unsigned
 	money = 0, -- [read-only] int
 	name = nil, -- [read-only] var
-	numCrafts = 0, -- [read-only] unsigned int
-	numMails = 0, -- [read-only] unsigned int
-	numShips = 0, -- [read-only] unsigned int
+	numCrafts = 0, -- [read-only] unsigned
+	numMails = 0, -- [read-only] unsigned
+	numShips = 0, -- [read-only] unsigned
 	numStations = 0, -- [read-only] int
-	playtime = 0, -- [read-only] unsigned int
+	playtime = 0, -- [read-only] unsigned
 	selectedObject = Entity, -- Entity
 	state = PlayerStateType.Fly, -- [read-only] PlayerStateType
 	stateForm = "", -- [read-only] string
@@ -55,9 +55,9 @@ function Player:addKnownSector(view)
 end
 
 ---@param mail Mail
----@return unsigned,number
+---@return number
 function Player:addMail(mail)
-	return unsigned,0
+	return 0
 end
 
 -- Inherited from Faction [Server]
@@ -327,9 +327,9 @@ function Player:getRelations(factionIndex)
 	return 0
 end
 
----@return unsigned,table<number, int>
+---@return table<number, unsigned>
 function Player:getResources()
-	return unsigned,{0}
+	return {0}
 end
 
 -- Inherited from Faction [Server]
@@ -623,7 +623,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found in the player. 4 The call failed because the given function was not found in the script.  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Player:invokeFunction(scriptName, functionName, arguments)
 	return {nil}
@@ -636,7 +636,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Player:invokeFunction(scriptName, functionName, arguments)
 	return {nil}
@@ -1366,6 +1366,19 @@ function Player:ownsShip(name)
 	return true
 end
 
+-- Makes the faction pay a certain amount of money and resources. If the faction can't pay, the respective money and resources will be set to 0. This function accepts an optional string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. To ease handling of transaction descriptions, the format description (if set) will receive all the remaining arguments given to the pay() function as format arguments, in the same order as they are given to the function. Dots for easier reading will be inserted as well. Examples: faction:pay("Paid %1% Credits and %2% iron.", 50000, 250)  -> "Paid 50.000 Credits and 250 iron." faction:pay(Format("%1% paid %2% Credits and %3% iron.", "Excelsior"), 50, 25000)  -> "Excelsior paid 50 Credits and 25.000 iron." Inherited from Faction [Server]
+-- @param description - [optional] A description for the transaction. Can either be a string or a Format. If this variable is set, money and resources will be appended to the end of the list of arguments passed to the description format string.
+-- @param money - Money that will be removed from the faction
+-- @param resources - A list of resources, starting with iron, that will be removed from the faction
+-- @return nothing
+---@param description [optional]
+---@param money number
+---@param resources table<number, int>
+---@return any
+function Player:pay(description, money, resources)
+	return nil
+end
+
 -- Makes the faction pay a certain amount of resources. If the faction can't pay, the respective resource will be set to 0. This function accepts a string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. Inherited from Faction [Server]
 -- @param description - A description for the transaction. Can either be a string or a Format.
 -- @param material - The kind of material that will be removed from the faction
@@ -1386,7 +1399,7 @@ end
 -- @return nothing
 ---@param description Format
 ---@param money number
----@param args table<number,
+---@param args table<number, int>
 ---@return any
 function Player:payWithoutNotify(description, money, args)
 	return nil
@@ -1396,6 +1409,19 @@ end
 ---@param index number
 ---@return any
 function Player:readMail(index)
+	return nil
+end
+
+-- Makes the faction receive a certain amount of money and resources. This function accepts an optional string for Format as first argument, as an economy notification describing the transaction that will be sent to the player, in case the faction is a player. To ease handling of transaction descriptions, the format description (if set) will receive all the remaining arguments given to the receive() function as format arguments, in the same order as they are given to the function. Dots for easier reading will be inserted as well. Examples: faction:receive("Got %1% Credits and %2% iron.", 50000, 250)  -> "Got 50.000 Credits and 250 iron." faction:receive(Format("%1% received %2% Credits and %3% iron.", "Excelsior"), 50, 25000)  -> "Excelsior received 50 Credits and 25.000 iron." Inherited from Faction [Server]
+-- @param description - [optional] A description for the transaction. Can either be a string or a Format. If this variable is set, money and resources will be appended to the end of the list of arguments passed to the description format string.
+-- @param money - Money that will be given to the faction
+-- @param resources - A list of resources, starting with iron, that will be given to the faction
+-- @return nothing
+---@param description [optional]
+---@param money number
+---@param resources table<number, int>
+---@return any
+function Player:receive(description, money, resources)
 	return nil
 end
 
@@ -1419,7 +1445,7 @@ end
 -- @return nothing
 ---@param description Format
 ---@param money number
----@param args table<number,
+---@param args table<number, int>
 ---@return any
 function Player:receiveWithoutNotify(description, money, args)
 	return nil

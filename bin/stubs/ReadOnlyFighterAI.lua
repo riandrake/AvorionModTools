@@ -10,7 +10,7 @@ ReadOnlyFighterAI = {
 	mothershipId = 0, -- [read-only] Uuid
 	orders = FighterOrders.Attack, -- [read-only] FighterOrders
 	reachedTarget = true, -- [read-only] bool
-	squad = 0, -- [read-only] unsigned int
+	squad = 0, -- [read-only] unsigned
 	target = 0, -- [read-only] uuid
 
 }

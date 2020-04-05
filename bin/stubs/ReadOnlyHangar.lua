@@ -7,8 +7,8 @@ ReadOnlyHangar = {
 	maxFighters = 0, -- [read-only] int
 	maxSquads = 0, -- [read-only] int
 	minFighters = 0, -- [read-only] int
-	numFighters = 0, -- [read-only] unsigned int
-	numSquads = 0, -- [read-only] unsigned int
+	numFighters = 0, -- [read-only] unsigned
+	numSquads = 0, -- [read-only] unsigned
 	occupiedSpace = 0.0, -- [read-only] float
 	producing = true, -- [read-only] bool
 	space = 0.0, -- [read-only] float
@@ -60,15 +60,15 @@ function ReadOnlyHangar:getSquadFighterType(squadIndex)
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function ReadOnlyHangar:getSquadFighters(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function ReadOnlyHangar:getSquadFreeSlots(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
@@ -85,9 +85,9 @@ function ReadOnlyHangar:getSquadMainWeaponCategory(squadIndex)
 end
 
 ---@param squadIndex number
----@return unsigned,number
+---@return number
 function ReadOnlyHangar:getSquadMaxFighters(squadIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param squadIndex number
@@ -96,8 +96,8 @@ function ReadOnlyHangar:getSquadName(squadIndex)
 	return nil
 end
 
----@return unsigned,table<number, int>
+---@return table<number, unsigned>
 function ReadOnlyHangar:getSquads()
-	return unsigned,{0}
+	return {0}
 end
 

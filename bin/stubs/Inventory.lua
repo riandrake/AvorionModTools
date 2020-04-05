@@ -2,9 +2,9 @@
 Inventory = {
 
 	empty = true, -- [read-only] bool
-	items = 0, -- [read-only] unsigned int
-	maxSlots = 0, -- [read-only] unsigned int
-	occupiedSlots = 0, -- [read-only] unsigned int
+	items = 0, -- [read-only] unsigned
+	maxSlots = 0, -- [read-only] unsigned
+	occupiedSlots = 0, -- [read-only] unsigned
 
 }
 
@@ -15,18 +15,18 @@ end
 
 ---@param item InventoryItem
 ---@param recent any
----@return unsigned,number
+---@return number
 function Inventory:add(item, recent)
-	return unsigned,0
+	return 0
 end
 
 ---@param item InventoryItem
 ---@param index number
 ---@param amount number
 ---@param recent any
----@return unsigned,number
+---@return number
 function Inventory:addAt(item, index, amount, recent)
-	return unsigned,0
+	return 0
 end
 
 ---@param item InventoryItem
@@ -37,9 +37,9 @@ function Inventory:addOrDrop(item, recent)
 end
 
 ---@param index number
----@return unsigned,number
+---@return number
 function Inventory:amount(index)
-	return unsigned,0
+	return 0
 end
 
 -- @return nothing
@@ -54,15 +54,15 @@ function Inventory:find(index)
 	return InventoryItem
 end
 
----@return table<number,tableltunsignedint,InventoryItem>
+---@return table<number,table<number,InventoryItem>>
 function Inventory:getItems()
-	return {0,tableltunsignedint,InventoryItem}
+	return {0,0,InventoryItem}
 end
 
 ---@param type InventoryItemType
----@return table<number,tableltunsignedint,InventoryItem>
+---@return table<number,table<number,InventoryItem>>
 function Inventory:getItemsByType(type)
-	return {0,tableltunsignedint,InventoryItem}
+	return {0,0,InventoryItem}
 end
 
 ---@param item InventoryItem

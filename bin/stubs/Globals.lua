@@ -1319,7 +1319,7 @@ end
 -- @return nothing
 ---@param callbackFunction string
 ---@param code string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function async(callbackFunction, code, arguments)
 	return nil
@@ -1330,7 +1330,7 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function broadcastInvokeClientFunction(functionName, arguments)
 	return nil
@@ -1370,8 +1370,8 @@ end
 -- @param values... - All values passed after rarity when calling UsableInventoryItem(script, rarity, ...)
 -- @return The completely filled in item with tooltip, values, etc.
 ---@param rarity 
----@param table<number, values>
-function create(item, rarity, table<number,)
+---@param table<number, values> 
+function create(item, rarity, table<number, values>)
 	return nil
 end
 
@@ -1416,7 +1416,7 @@ end
 -- @return true if the callback was registered, false otherwise
 ---@param time number
 ---@param _function string
----@param args table<number,
+---@param args table<number, var>
 ---@return boolean
 function deferredCallback(time, _function, args)
 	return true
@@ -1615,7 +1615,7 @@ end
 -- Prints errors to the console. In the ingame console, server output will be printed in magenta, client output will be printed in darkish red.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args table<number,
+---@param args table<number, var>
 ---@return any
 function eprint(args)
 	return nil
@@ -1625,8 +1625,8 @@ end
 -- @param playerIndex - The index of the player executing the command. nil if the command was issued over RCON interface or console.
 -- @param ... - The list of string arguments given
 -- @return 3 values: An int indicating whether or not the command was successfully executed (0: no success, otherwise: success), a response message, an error message
----@param table<number, >
-function execute(playerIndex, table<number,)
+---@param table<number, > 
+function execute(playerIndex, table<number, >)
 	return nil
 end
 
@@ -1788,22 +1788,19 @@ end
 
 -- This function is always the very first function that is called in a script, and only once during the lifetime of the script. The function is always called on the server first, before client instances are available, so invoking client functions will never work. This function is both called when a script gets newly attached to an object, and when the object is loaded from the database during a load from disk operation. During a load from disk operation, no parameters are passed to the function, and a global variable '_restoring' is set to true.
 -- @param ... - Parameters that are passed through from the adding of the script. nil if the script was loaded from the database while loading a sector or player or similar.
----@param table<number, >
-function initialize(table<number,)
+function initialize(table<number, >)
 	return nil
 end
 
 -- This function is always the very first function that is called in a script, and only once during the lifetime of the script. The function is always called on the server first, before client instances are available, so invoking client functions will never work. This function is both called when a script gets newly attached to an object, and when the object is loaded from the database during a load from disk operation. During a load from disk operation, no parameters are passed to the function, and a global variable '_restoring' is set to true.
 -- @param ... - Parameters that are passed through from the adding of the script. nil if the script was loaded from the database while loading a sector or player or similar.
----@param table<number, >
-function initialize(table<number,)
+function initialize(table<number, >)
 	return nil
 end
 
 -- This function is always the very first function that is called in a script, and only once during the lifetime of the script. The function is always called on the server first, before client instances are available, so invoking client functions will never work. This function is both called when a script gets newly attached to an object, and when the object is loaded from the database during a load from disk operation. During a load from disk operation, no parameters are passed to the function, and a global variable '_restoring' is set to true.
 -- @param ... - Parameters that are passed through from the adding of the script. nil if the script was loaded from the database while loading a sector or player or similar.
----@param table<number, >
-function initialize(table<number,)
+function initialize(table<number, >)
 	return nil
 end
 
@@ -1823,7 +1820,7 @@ end
 -- @return nothing
 ---@param player Player
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function invokeClientFunction(player, functionName, arguments)
 	return nil
@@ -1844,7 +1841,7 @@ end
 ---@param entityId any
 ---@param scriptName string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function invokeEntityFunction(x, y, errorMessage, entityId, scriptName, functionName, arguments)
 	return nil
@@ -1861,7 +1858,7 @@ end
 ---@param printErrors boolean
 ---@param scriptName string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return number
 function invokeFactionFunction(factionIndex, printErrors, scriptName, functionName, arguments)
 	return 0
@@ -1880,7 +1877,7 @@ end
 ---@param printErrors boolean
 ---@param scriptName string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return number
 function invokeSectorFunction(x, y, printErrors, scriptName, functionName, arguments)
 	return 0
@@ -1891,7 +1888,7 @@ end
 -- @param arguments - An arbitrary number of arguments that will be given to the remote function
 -- @return nothing
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return any
 function invokeServerFunction(functionName, arguments)
 	return nil
@@ -1951,13 +1948,13 @@ function makeFastHash(x, y, seed)
 	return 0
 end
 
----@param values table<number,
+---@param values table<number, var>
 ---@return number
 function makeHash(values)
 	return 0
 end
 
----@param values table<number,
+---@param values table<number, var>
 ---@return number
 function makeHash64(values)
 	return 0.0
@@ -2117,7 +2114,7 @@ end
 ---@param position vec3
 ---@param radius number
 ---@param volume number
----@param entity nil]
+---@param entity nil
 ---@return any
 function play3DSound(soundName, type, position, radius, volume, entity)
 	return nil
@@ -2160,7 +2157,7 @@ end
 -- Prints to the console. In the ingame console, server output will be printed in cyan, client output will be printed in grey.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args table<number,
+---@param args table<number, var>
 ---@return any
 function print(args)
 	return nil
@@ -2169,7 +2166,7 @@ end
 -- Similar to print, but prints to the log file.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args table<number,
+---@param args table<number, var>
 ---@return any
 function printlog(args)
 	return nil
@@ -2279,7 +2276,7 @@ end
 -- @return An int indicating if the call succeeded, followed by the return values of the called function
 ---@param script string
 ---@param func string
----@param params table<number,
+---@param params table<number, var>
 ---@return table<number, var>
 function run(script, func, params)
 	return {nil}
@@ -2300,7 +2297,7 @@ end
 ---@param entityId any
 ---@param code string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return number
 function runEntityCode(x, y, printErrors, entityId, code, functionName, arguments)
 	return 0
@@ -2317,7 +2314,7 @@ end
 ---@param printErrors boolean
 ---@param code string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return number
 function runFactionCode(factionIndex, printErrors, code, functionName, arguments)
 	return 0
@@ -2336,7 +2333,7 @@ end
 ---@param printErrors boolean
 ---@param code string
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return number
 function runSectorCode(x, y, printErrors, code, functionName, arguments)
 	return 0
@@ -2556,7 +2553,7 @@ end
 -- Similar to print, but prints to the user trace stream. This trace stream can be enabled by passing "-t user" to the command line arguments of client or server.
 -- @param args - Any number of arguments. The first value can be a format string. If no formatting can be done then the function falls back to printing all given values.
 -- @return nothing
----@param args table<number,
+---@param args table<number, var>
 ---@return any
 function writeTrace(args)
 	return nil

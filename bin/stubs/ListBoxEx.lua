@@ -2,7 +2,7 @@
 ListBoxEx = {
 
 	center = vec2, -- vec2
-	columns = 0, -- unsigned int
+	columns = 0, -- unsigned
 	empty = true, -- [read-only] bool
 	font = 0, -- [write-only] int
 	fontSize = 0, -- int

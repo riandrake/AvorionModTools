@@ -2,8 +2,8 @@
 ReadOnlySector = {
 
 	name = "", -- [read-only] string
-	numEntities = 0, -- [read-only] unsigned int
-	numPlayers = 0, -- [read-only] unsigned int
+	numEntities = 0, -- [read-only] unsigned
+	numPlayers = 0, -- [read-only] unsigned
 	pvpDamage = true, -- [read-only] bool
 	seed = Seed, -- [read-only] Seed
 

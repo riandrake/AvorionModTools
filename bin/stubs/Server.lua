@@ -50,7 +50,7 @@ end
 ---@param sender any
 ---@param messageType number
 ---@param message string
----@param args table<number,
+---@param args table<number, PluralForm>
 ---@return any
 function Server:broadcastChatMessage(sender, messageType, message, args)
 	return nil

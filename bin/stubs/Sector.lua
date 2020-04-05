@@ -2,8 +2,8 @@
 Sector = {
 
 	name = "", -- string
-	numEntities = 0, -- [read-only] unsigned int
-	numPlayers = 0, -- [read-only] unsigned int
+	numEntities = 0, -- [read-only] unsigned
+	numPlayers = 0, -- [read-only] unsigned
 	pvpDamage = true, -- bool
 	seed = Seed, -- [read-only] Seed
 
@@ -44,7 +44,7 @@ end
 ---@param sender any
 ---@param messageType number
 ---@param message string
----@param args table<number,
+---@param args table<number, PluralForm>
 ---@return any
 function Sector:broadcastChatMessage(sender, messageType, message, args)
 	return nil
@@ -162,8 +162,8 @@ end
 
 -- @return nothing
 ---@param entity Entity
----@param direction nil]
----@param color nil]
+---@param direction nil
+---@param color nil
 ---@param intensity any
 ---@return any
 function Sector:createHyperspaceAnimation(entity, direction, color, intensity)
@@ -216,7 +216,7 @@ end
 ---@param aliveTime number
 ---@param color Color
 ---@param slowDownFactor number
----@param entity nil]
+---@param entity nil
 ---@return any
 function Sector:createSpark(pos, v, size, aliveTime, color, slowDownFactor, entity)
 	return nil
@@ -233,7 +233,7 @@ end
 ---@param plan BlockPlan
 ---@param position Matrix
 ---@param script any
----@param args table<number,
+---@param args table<number, var>
 ---@return Entity
 function Sector:createStation(faction, plan, position, script, args)
 	return Entity
@@ -290,8 +290,8 @@ function Sector:dropBundle()
 end
 
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@param good TradingGood
 ---@param owner number
 ---@param amount number
@@ -301,8 +301,8 @@ function Sector:dropCargo(position, reservedFor, deniedFor, good, owner, amount)
 end
 
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@param amount number
 ---@return Entity
 function Sector:dropMoney(position, reservedFor, deniedFor, amount)
@@ -310,8 +310,8 @@ function Sector:dropMoney(position, reservedFor, deniedFor, amount)
 end
 
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@param material Material
 ---@param amount number
 ---@return Entity
@@ -325,16 +325,16 @@ end
 -- @param deniedFor - Faction the loot is denied for, or nil
 -- @return The new entity, or nil
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@return Entity
 function Sector:dropSectorTurret(position, reservedFor, deniedFor)
 	return Entity
 end
 
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@param desc TurretTemplate
 ---@return Entity
 function Sector:dropTurret(position, reservedFor, deniedFor, desc)
@@ -342,8 +342,8 @@ function Sector:dropTurret(position, reservedFor, deniedFor, desc)
 end
 
 ---@param position vec3
----@param reservedFor nil]
----@param deniedFor nil]
+---@param reservedFor nil
+---@param deniedFor nil
 ---@param upgrade SystemUpgradeTemplate
 ---@return Entity
 function Sector:dropUpgrade(position, reservedFor, deniedFor, upgrade)
@@ -437,7 +437,7 @@ end
 -- Returns all entities in the sector that have a specific set of components
 -- @param types - The desired set of component types (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
----@param types table<number,
+---@param types table<number, Type>
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponents(types)
 	return {Entity}
@@ -446,7 +446,7 @@ end
 -- Returns all entities in the sector that have a specific set of components
 -- @param types - The desired set of component types (See enum ComponentType)
 -- @return Multiple return values: All matching entities in the sector
----@param types table<number,
+---@param types table<number, Type>
 ---@return table<number, Entity>
 function Sector:getEntitiesByComponents(types)
 	return {Entity}
@@ -564,114 +564,114 @@ function Sector:getEntityByFactionAndName(factionIndex, name)
 end
 
 ---@param faction number
----@return unsigned,number
+---@return number
 function Sector:getNumAllies(faction)
-	return unsigned,0
+	return 0
 end
 
 ---@param faction number
----@return unsigned,number
+---@return number
 function Sector:getNumAllies(faction)
-	return unsigned,0
+	return 0
 end
 
 ---@param factionIndex number
----@return unsigned,number
+---@return number
 function Sector:getNumEnemies(factionIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param factionIndex number
----@return unsigned,number
+---@return number
 function Sector:getNumEnemies(factionIndex)
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,number
+---@return number
 function Sector:getNumEntities()
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,number
+---@return number
 function Sector:getNumEntities()
-	return unsigned,0
+	return 0
 end
 
 ---@param component number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByComponent(component)
-	return unsigned,0
+	return 0
 end
 
 ---@param component number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByComponent(component)
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByComponents()
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByComponents()
-	return unsigned,0
+	return 0
 end
 
 ---@param factionIndex number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByFaction(factionIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param factionIndex number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByFaction(factionIndex)
-	return unsigned,0
+	return 0
 end
 
 ---@param sphere Sphere
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByLocation(sphere)
-	return unsigned,0
+	return 0
 end
 
 ---@param sphere Sphere
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByLocation(sphere)
-	return unsigned,0
+	return 0
 end
 
 ---@param scriptName string
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByScript(scriptName)
-	return unsigned,0
+	return 0
 end
 
 ---@param scriptName string
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByScript(scriptName)
-	return unsigned,0
+	return 0
 end
 
 ---@param valueName string
 ---@param value any
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByScriptValue(valueName, value)
-	return unsigned,0
+	return 0
 end
 
 ---@param type number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByType(type)
-	return unsigned,0
+	return 0
 end
 
 ---@param type number
----@return unsigned,number
+---@return number
 function Sector:getNumEntitiesByType(type)
-	return unsigned,0
+	return 0
 end
 
 -- Returns all players that are currently in the sector
@@ -743,8 +743,8 @@ end
 -- @param ignoredEntityShields - A uuid that can be optionally set. If this was set, the shields of the entity with this ID will be ignored during the intersection.
 -- @return The entity closest to the origin of the ray, that was hit (if one or more were hit), as well as the point where the ray intersects with the object (or its shield).
 ---@param ray Ray
----@param ignoredEntity nil]
----@param ignoredEntityShields nil]
+---@param ignoredEntity nil
+---@param ignoredEntityShields nil
 ---@return table<number, UserObject>
 function Sector:intersectBeamRay(ray, ignoredEntity, ignoredEntityShields)
 	return {UserObject}
@@ -757,7 +757,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result. 3 The call failed because the given script was not found  4 The call failed because the given function was not found in the script  5 The call failed because the script's state has errors and is invalid
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Sector:invokeFunction(scriptName, functionName, arguments)
 	return {nil}
@@ -770,7 +770,7 @@ end
 -- @return Returns at least 1 value indicating if the call succeeded: 0 The call was successful. In this case, the return values of the script are returned in addition to the call result, following the call result 3 The call failed because the given script was not found in the sector 4 The call failed because the given function was not found in the script
 ---@param scriptName any
 ---@param functionName string
----@param arguments table<number,
+---@param arguments table<number, var>
 ---@return table<number, var>
 function Sector:invokeFunction(scriptName, functionName, arguments)
 	return {nil}

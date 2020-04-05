@@ -28,7 +28,7 @@ function DockingPositions:getDockingPositions()
 	return {vec3}
 end
 
----@param exception nil]
+---@param exception nil
 ---@return any
 function DockingPositions:getFreeDock(exception)
 	return nil
@@ -42,7 +42,7 @@ function DockingPositions:inLightArea(other, dockIndex)
 end
 
 ---@param i number
----@param exception nil]
+---@param exception nil
 ---@return boolean
 function DockingPositions:isDockFree(i, exception)
 	return true

@@ -3,9 +3,9 @@ ShipSystem = {
 
 	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
-	maxSlots = 0, -- [read-only] unsigned int
-	numSlots = 0, -- [read-only] unsigned int
-	numUpgrades = 0, -- [read-only] unsigned int
+	maxSlots = 0, -- [read-only] unsigned
+	numSlots = 0, -- [read-only] unsigned
+	numUpgrades = 0, -- [read-only] unsigned
 
 }
 
@@ -17,9 +17,9 @@ end
 
 ---@param upgrade SystemUpgradeTemplate
 ---@param permanent boolean
----@return unsigned,number
+---@return number
 function ShipSystem:addUpgrade(upgrade, permanent)
-	return unsigned,0
+	return 0
 end
 
 -- @return nothing

@@ -22,7 +22,7 @@ UsableInventoryItem = {
 ---@return UsableInventoryItem
 ---@param script string
 ---@param rarity Rarity
----@param values table<number,
+---@param values table<number, var>
 function UsableInventoryItem(script, rarity, values)
 	return UsableInventoryItem
 end

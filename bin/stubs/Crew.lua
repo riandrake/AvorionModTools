@@ -9,13 +9,13 @@ Crew = {
 	generals = 0, -- [read-only] int
 	gunners = 0, -- [read-only] int
 	lieutenants = 0, -- [read-only] int
-	maxSize = 0, -- unsigned int
+	maxSize = 0, -- unsigned
 	mechanics = 0, -- [read-only] int
 	miners = 0, -- [read-only] int
 	pilots = 0, -- [read-only] int
 	security = 0, -- [read-only] int
 	sergeants = 0, -- [read-only] int
-	size = 0, -- [read-only] unsigned int
+	size = 0, -- [read-only] unsigned
 	unemployed = 0, -- [read-only] int
 
 }
@@ -33,7 +33,7 @@ function Crew:add(amount, crewman)
 	return nil
 end
 
----@param plan nil]
+---@param plan nil
 ---@return Crew
 function Crew:buildMinimumCrew(plan)
 	return Crew

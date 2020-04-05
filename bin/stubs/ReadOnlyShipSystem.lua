@@ -3,9 +3,9 @@ ReadOnlyShipSystem = {
 
 	entity = Entity, -- [read-only] Entity
 	entityId = 0, -- [read-only] uuid
-	maxSlots = 0, -- [read-only] unsigned int
-	numSlots = 0, -- [read-only] unsigned int
-	numUpgrades = 0, -- [read-only] unsigned int
+	maxSlots = 0, -- [read-only] unsigned
+	numSlots = 0, -- [read-only] unsigned
+	numUpgrades = 0, -- [read-only] unsigned
 
 }
 

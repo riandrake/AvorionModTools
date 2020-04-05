@@ -30,14 +30,14 @@ function Mail:getItem(index)
 	return UserObject
 end
 
----@return unsigned,number
+---@return number
 function Mail:getNumItems()
-	return unsigned,0
+	return 0
 end
 
----@return unsigned,table<number, int>
+---@return table<number, unsigned>
 function Mail:getResources()
-	return unsigned,{0}
+	return {0}
 end
 
 ---@return boolean

@@ -21,7 +21,7 @@ UIArbitraryVerticalSplitter = {
 ---@param rect Rect
 ---@param padding number
 ---@param margin number
----@param splits table<number,
+---@param splits table<number, float>
 function UIArbitraryVerticalSplitter(rect, padding, margin, splits)
 	return UIArbitraryVerticalSplitter
 end
