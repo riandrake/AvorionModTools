@@ -422,29 +422,31 @@ class ParsedFunction:
     def parse_remarks(self, remarks):
         """ Parse a set of remarks from documentation """
         remarks = [remark.strip() for remark in remarks if remark.strip()]
-        self.remarks = '-- @callback\n' if self.callback else ''
+        self.remarks = '--- @callback\n' if self.callback else ''
 
         parse_parameters = False
         parse_return = False
+        parse_definition = True
 
         iterator = iter(remarks)
         remark = next(iterator, None)
         while remark is not None:
-            if remark == 'Returns' or remark == 'Expected return values':
+            if remark and not parse_return and not parse_parameters and not parse_definition:
+                self.remarks += f'--- {remark}\n'
+                parse_definition = True
+            elif remark == 'Returns' or remark == 'Expected return values':
                 parse_parameters = False
                 parse_return = True
             elif remark == 'Parameters':
                 parse_parameters = True
             elif parse_return:
-                self.remarks += f'-- @return {remark}\n'
+                self.definition = re.sub(f'---@return (.*)\n', '---@return' + r' \1 ' + f'@{remark}\n', self.definition)
             elif parse_parameters:
-                comment = next(iterator, None)
-                if comment is not None:
-                    self.remarks += f'-- @param {remark} - {comment}\n'
-                else:
-                    self.remarks += f'-- @param {remark}\n'
+                if remark in self.definition:
+                    comment = next(iterator, None)
+                    self.definition = re.sub(f'{remark} (.*)\n', remark + r' \1 ' + f'@{comment}\n', self.definition)
             else:
-                self.remarks += f'-- {remark}\n'
+                self.remarks += f'--- {remark}\n'
 
             remark = next(iterator, None)
 
@@ -565,6 +567,7 @@ class StubGenerator:
 
         soup = BeautifulSoup(text, 'html.parser')
         code_containers = soup.findAll("div", {"class": "codecontainer"})
+        # TODO have soup find <p> for use in comments on class definitions
 
         lines = []
         for code in code_containers[1:]:
