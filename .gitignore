@@ -127,4 +127,7 @@ dmypy.json
 # Idea Project Files
 .idea/
 
-.bin/
+# VSCode Project Files
+.vscode/
+
+bin/
