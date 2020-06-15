@@ -32,6 +32,12 @@ BeautifulSoup
 
 
 ### How to use
-Take the `stubs/` folder out of bin, then move it into your `mods/` directory or wherever you're developing. After that, open your workspace and hopefully your text editor has loaded the files for autocompletion.
+Download the stubs.zip from the latest release on the [release page](https://github.com/riandrake/AvorionModTools/releases), extract the contents into your `mods/` directory or wherever you're developing. After that, open your workspace and hopefully your text editor has loaded the files for autocompletion.
 
-I'm using Visual Studio Code and it required no additional setup other that a restart of the program, but you may want to look up how your text editor reads include files for you! (Maybe some setting)
+Tested for use in Intellij IDEA Community with EmmyLua 1.3.3.150-IDEA201
+
+~~Take the `stubs/` folder out of bin, then move it into your `mods/` directory or wherever you're developing. After that, open your workspace and hopefully your text editor has loaded the files for autocompletion.
+
+~~I'm using Visual Studio Code and it required no additional setup other that a restart of the program, but you may want to look up how your text editor reads include files for you! (Maybe some setting)
+
+Visual Studio might still work, but I(Bubbet) haven't tested it personally.
