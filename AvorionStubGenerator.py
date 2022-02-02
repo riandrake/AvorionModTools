@@ -38,7 +38,9 @@ DEFAULT_VALUES_BY_TYPE = {
     'char': '0',
     'Coordinates': '0, 0',
     'Member': 'AllianceMember()',
-    'Resources': '{0}'
+    'Resources': '{0}',
+    'bitset<10>': '{0}',
+    'Type': 'ComponentType'
 }
 
 RAW_DEFAULT_VALUES_BY_TYPE = {
@@ -56,7 +58,9 @@ RAW_DEFAULT_VALUES_BY_TYPE = {
     'Resources': 'table<number, number>',  # might return the wrong stuff have to check in-game to see what it returns
     'string or Format [optional]': 'string,rFormat',  # These are not fixing the issue
     'string or Format': 'string, Format',
-    '[or nil]': 'nil'
+    '[or nil]': 'nil',
+    'bitset<10>': 'bitset_10_',
+    'Type': 'ComponentType'
 }
 
 
@@ -74,7 +78,7 @@ def split_careful(s, split=','):
         if c == split and bracket_level == 0:
             if current:
                 back = "".join(current)
-                assert(back)
+                assert (back)
                 parts.append(back)
                 current = []
         else:
@@ -84,7 +88,7 @@ def split_careful(s, split=','):
                 bracket_level -= 1
             current.append(c)
 
-    assert(bracket_level == 0)
+    assert (bracket_level == 0)
     return parts
 
 
@@ -171,11 +175,13 @@ def get_raw_default_value(in_type):
     if not 'table<' in in_type:
         in_type = in_type.replace(',', '')
     else:
-        test = f'table<{",".join([get_raw_default_value(val.strip()) for val in split_careful(in_type[in_type.find("<")+1:in_type.rfind(">")])])}>'
+        test = f'table<{",".join([get_raw_default_value(val.strip()) for val in split_careful(in_type[in_type.find("<") + 1:in_type.rfind(">")])])}>'
         return test
 
+    if 'plan...' in in_type:
+        in_type = 'table_of_plans'
     if '...' in in_type:
-        in_type = f"table<number, {in_type.replace('...', '')}>"
+        in_type = f"table<number, {get_raw_default_value(in_type.replace('...', ''))}>"
 
     # Assume these are enums that need collapsing
     in_type = in_type.replace('::', '')
@@ -440,11 +446,12 @@ class ParsedFunction:
             elif remark == 'Parameters':
                 parse_parameters = True
             elif parse_return:
-                self.definition = re.sub(f'---@return (.*)\n', '---@return' + r' \1 ' + f'@{remark}\n', self.definition)
+                self.definition = re.sub(f'---@return (.*)\n', '---@return' + r' \1 ' + f'@{remark}\n',
+                                         self.definition, 1)
             elif parse_parameters:
                 if remark in self.definition:
                     comment = next(iterator, None)
-                    self.definition = re.sub(f'{remark} (.*)\n', remark + r' \1 ' + f'@{comment}\n', self.definition)
+                    self.definition = re.sub(f'{remark} (.*)\n', remark + r' \1 ' + f'@{comment}\n', self.definition, 1)
             else:
                 self.remarks += f'--- {remark}\n'
 
@@ -498,6 +505,7 @@ class NamespaceDefinition:
         with open(STUBS_DIR / filename, 'w') as writer:
             if self.enums:
                 for enum, values in self.enums.items():
+                    writer.write(f'--- @class {enum} @Enum\n')
                     writer.write(f'{enum} = {{\n')
 
                     for idx, value in enumerate(values[:-1]):
@@ -566,6 +574,8 @@ class StubGenerator:
         text = file.read_text()
 
         soup = BeautifulSoup(text, 'html.parser')
+        if soup.title.string.find('Predefined') != -1:  # Don't parse predefined scripts
+            return
         code_containers = soup.findAll("div", {"class": "codecontainer"})
         # TODO have soup find <p> for use in comments on class definitions
 
@@ -580,7 +590,7 @@ class StubGenerator:
             text = text.replace('&gt;', '>')
             text = text.replace('&amp;', '')
 
-            text = text.replace('unsigned int', 'unsigned') # same thing anyway
+            text = text.replace('unsigned int', 'unsigned')  # same thing anyway
             if text:
                 lines.append(text)
 
